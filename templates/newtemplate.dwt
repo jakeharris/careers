@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Career Development Services - Auburn University
+</title>
+<link rel="stylesheet" href="http://www.auburn.edu/template/styles/sidebar.css" media="screen" type="text/css" />
+<!--#include virtual="/template/includes/head.html" -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+<body>
+<div id="pageWrap"> 
+  <div id="headerWrap">
+    <div id="header">
+      <div id="logo">
+      	<a href="http://www.auburn.edu"><img src="http://www.auburn.edu/template/styles/images/headerLogo.png" alt="Auburn University Homepage" /></a>
+      </div>
+      <div id="headerTitle">
+        <div class="topLinks">
+          <a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a> | 
+          <a href="http://www.auburn.edu/map">Map</a> | 
+          <a href="http://www.auburn.edu/main/auweb_campus_directory.html" class="lastTopLink">People Finder</a>
+        </div>
+        <form action="http://search.auburn.edu" id="searchForm" method="get">
+          <div class="searchBox">
+            <input type="text" name="q" id="q" accesskey="q" size="28" tabindex="1" class="searchField" onfocus="if(this.value=='Search AU...'){this.value='';this.style.color='black'}" onblur="if(this.value=='')this.value='Search AU...';this.style.color='grey'" value="Search AU..." />
+            <input type="image" src="http://www.auburn.edu/template/styles/images/searchButton2.png" name="sa" accesskey="z" tabindex="2" alt="Search" value="Submit" class="searchButton" />
+          </div>
+          <input type="hidden" name="cx" value="006456623919840955604:pinevfah6qm" />
+          <input type="hidden" name="ie" value="utf-8" />
+          <label for="q" style=" position:absolute; left:-9999px; visibility:hidden;">Enter your search terms</label>
+        </form>
+        <div class="titleArea">
+       	<span class="mainHeading"><!-- TemplateBeginEditable name="unitTitle" -->Career Development Services<!-- TemplateEndEditable --></span></div>
+      </div>
+    </div>
+		<table class="nav">
+      <tr>
+        <tr>
+        <td><a href="../students">Students</a></td>
+        <td><a href="http://hire.auburn.edu">Employers</a></td>
+        <td><a href="../alumni">Alumni</a></td>
+        <td><a href="../faculty">Faculty/Staff</a></td>
+        <td><a href="../parents">Parents</a></td>
+        <td><a href="../aboutus">About Us</a></td>
+      </tr>
+      </tr>
+    </table>
+  </div>
+  <div id="contentArea">
+    <div class="contentDivision"> 
+      <p class="breadcrumb"> <!-- TemplateBeginEditable name="breadcrumb" --> <a href="http://www.auburn.edu/career">Career Development Services</a> &gt; Layout 1 <!-- TemplateEndEditable --> </p>
+			<!-- TemplateBeginEditable name="body" -->
+      <h1>&nbsp;</h1>
+      <!-- TemplateEndEditable -->
+      <p class="lastUpdated">Last Updated: <!-- TemplateBeginEditable name="lastUpdated" --> Aug. 22, 2010 <!-- TemplateEndEditable --> </p>
+    </div>
+    <div class="sidebar"> <!-- TemplateBeginEditable name="sidebar" -->
+      <p class="sidebarTitle">I NEED A ...</p>
+      <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/students/counselors.html">Career Counselor</a> <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/choose.html">Major/Career</a> <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/resources/wrresumes.html">Resume/Cover Letter</a> <a href="http://jobs.auburn.edu">Full-time job</a> <a href="http://jobs.auburn.edu">Part-time job</a> <a href="http://jobs.auburn.edu">Internship</a><a href="http://www.auburn.edu/career/presentations">Presentations</a>
+      <div class="orangeDecorBar">&nbsp;</div>
+      <p class="sidebarTitle">POPULAR RESOURCES</p>
+      <a href="http://www.auburn.edu/career/resources/assessments.html">Career Assessments</a> <a href="https://auburn-csm.symplicity.com">Tiger Recruiting Link</a> <a href="mailto:eresume@auburn.edu?subject=Resume">E-resume</a> <a href="http://www.auburn.edu/career/events">Calendar of Events/Seminars</a> <a href="http://www.careershift.com/?sc=auburn" target="_blank">CareerShift</a> <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/resources/interviewstream.html" target="_blank">InterviewStream</a><!-- TemplateEndEditable --> </div>
+  </div>
+  <div id="contentArea_bottom"></div>
+  <div id="footerWrap">
+    <div id="footer">
+    <div id="footSectionWrap">
+      <div class="footSection">
+        <ul>
+          <li><a href="http://www.auburn.edu/ess" target="_blank">Educational Support Services</a></li>
+          <li><a href="http://www.auburn.edu/academicsupport" target="_blank">Academic Support Services</a></li>
+          <li><a href="http://business.auburn.edu/OPCD/" target="_blank">COB  Career Center</a></li>
+        </ul>
+      </div>
+      <div class="footSection"> 
+        <ul>
+          <br>
+            <a href="http://www.facebook.com/home.php#/pages/Auburn-AL/AU-Career-Development-Services/114131891055?ref=nf"><img src="../buttons/icofacebook.png" alt="Facebook" width="25" height="25" border="0"></a> &nbsp;<a href="http://twitter.com/AUCDS"><img src="../buttons/icotwitter.png" alt="Twitter" width="25" height="25" border="0"></a> &nbsp;<a href="http://www.linkedin.com/groups?about=&gid=1878262" target="_blank"><img src="../buttons/icolinked.png" alt="LinkedIn" width="25" height="25" border="0"></a> <a href="http://tigersprepare.blogspot.com/" target="_blank">&nbsp;<img src="../buttons/icoblog.png" alt="Blog" width="25" height="25" border="0"></a></li>
+        </ul>
+      </div>
+      <div class="footSection noBorder">
+        <ul>
+          <li><a href="http://www.auburn.edu/studentaffairs" target="_blank">Student Affairs</a></li>
+          <li><a href="http://www.auburn.edu/academic/societies/advisors_counselors_caucus/member.html#arch" target="_blank">Academic Advisors</a></li>
+          <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/" target="_blank">Majors/Academic Departments</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>  
+    <div id="subfooter">
+      Career Development Services | Auburn University | Auburn, Alabama 36849 | (334) 844-4744  | 
+        <script type="text/javascript">emailE='auburn.edu'; emailE=('cdsserv@auburn.edu' + '@' + emailE); document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");</script>
+      <br />
+      <a href="https://fp.auburn.edu/ocm/auweb_survey">Website Feedback</a> | <a href="http://www.auburn.edu/privacy">Privacy</a> | <a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; 
+      <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a>
+    </div>
+  </div>
+  <!--#include virtual="/template/includes/gatc.html" --> 
+</div>
+</body>
+</html>

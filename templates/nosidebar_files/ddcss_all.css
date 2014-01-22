@@ -1,0 +1,132 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 100%; BACKGROUND: url(http://www.auburn.edu/includes/ddBackground.gif) #03244d repeat-y center top; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+TABLE {
+	FONT-SIZE: 1em
+}
+A {
+	COLOR: #1c5ca3; BORDER-BOTTOM: #d7e4f3 1px solid; TEXT-DECORATION: none; voice-family: inherit
+}
+A:hover {
+	BORDER-BOTTOM-COLOR: #003366; COLOR: #003366
+}
+A:visited {
+	COLOR: #336699
+}
+.orangeDecorBar {
+	FONT-SIZE: 1px; HEIGHT: 2px; BACKGROUND-COLOR: #f9903f
+}
+.orangeDecorBar2 {
+	FONT-SIZE: 1px; HEIGHT: 12px; BACKGROUND-COLOR: #dd550c
+}
+#topLinksBackground {
+	BACKGROUND: url(http://www.auburn.edu/includes/ddTopLinksBackground.jpg) #052c5c no-repeat left top
+}
+#topLinksBackgroundMedium {
+	BACKGROUND: url(http://www.auburn.edu/includes/ddTopLinksBack_Small.jpg) #052c5c no-repeat left top
+}
+#topLinks {
+	PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+#topLinks A {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 3px; BORDER-TOP: medium none; PADDING-LEFT: 3px; FONT-WEIGHT: bold; FONT-SIZE: 0.71em; PADDING-BOTTOM: 5px; BORDER-LEFT: medium none; COLOR: #ffffff; PADDING-TOP: 3px; BORDER-BOTTOM: medium none; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+#topLinks A:hover {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: #ffffff; BORDER-BOTTOM: medium none; TEXT-DECORATION: underline
+}
+#topLinks A:active {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: #ffffff; BORDER-BOTTOM: medium none; TEXT-DECORATION: underline
+}
+#topLinks A:visited {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: #f5f5f5; BORDER-BOTTOM: medium none
+}
+#toolbar {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; WIDTH: 565px; BORDER-BOTTOM: medium none; HEIGHT: 35px; TEXT-ALIGN: center
+}
+#toolbar A {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 11px; OVERFLOW: hidden; BORDER-LEFT: medium none; COLOR: #ffffff; PADDING-TOP: 11px; BORDER-BOTTOM: medium none; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+#toolbar A:hover {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BACKGROUND: url(http://www.auburn.edu/includes/ddToolbarHover.jpg) repeat-x left top; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+#sidebar {
+	FONT-SIZE: 0.79em; BACKGROUND: url(http://www.auburn.edu/includes/ddSidebar2.jpg) #03244d repeat-x left top; PADDING-BOTTOM: 20px; COLOR: #ffffff; PADDING-TOP: 40px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+#sidebar P {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px
+}
+#sidebar A {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; MARGIN-TOP: 2px; DISPLAY: block; FONT-WEIGHT: bold; MARGIN-LEFT: 10px; BORDER-LEFT: medium none; COLOR: white; MARGIN-RIGHT: 5px; PADDING-TOP: 4px; BORDER-BOTTOM: medium none; TEXT-DECORATION: none
+}
+#sidebar A:visited {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: white; BORDER-BOTTOM: medium none; TEXT-DECORATION: none
+}
+#sidebar A:hover {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: #f0f0f0; BORDER-BOTTOM: medium none; TEXT-DECORATION: underline
+}
+.sidebarTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #a1c1e7; LETTER-SPACING: 1px; FONT-VARIANT: small-caps
+}
+#contentArea {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; FONT-SIZE: 0.75em; PADDING-BOTTOM: 8px
+}
+#contentArea TABLE {
+	
+}
+#contentArea H1 {
+	PADDING-LEFT: 10px; FONT-WEIGHT: normal; BORDER-BOTTOM: #cccccc 1px dashed; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+#contentArea H2 {
+	PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-SIZE: 1.8em; BORDER-BOTTOM: #cccccc 1px dashed; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+#contentArea H3 {
+	PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-SIZE: 1.5em; BORDER-BOTTOM: #cccccc 1px dashed; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+#contentArea H4 {
+	MARGIN-TOP: 0px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 0.9em; MARGIN-LEFT: 10px; PADDING-TOP: 2px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.breadcrumb {
+	MARGIN-TOP: 5px; FONT-WEIGHT: bold; FONT-SIZE: 11px; MARGIN-LEFT: 5px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+#contentArea .breadcrumb {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 0px
+}
+#contentArea .inputForm {
+	BORDER-RIGHT: #f9903f 2px solid; PADDING-RIGHT: 5px; BORDER-TOP: #f9903f 2px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 5px; BORDER-LEFT: #f9903f 2px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #f9903f 2px solid; BACKGROUND-COLOR: #fcebb1
+}
+#searchBox {
+	BORDER-RIGHT: #001835 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #001835 1px solid; PADDING-LEFT: 5px; Z-INDEX: 2; VISIBILITY: hidden; PADDING-BOTTOM: 5px; OVERFLOW: hidden; BORDER-LEFT: #001835 1px solid; WIDTH: 200px; PADDING-TOP: 5px; BORDER-BOTTOM: #001835 1px solid; HEIGHT: 40px; BACKGROUND-COLOR: #003b76; TEXT-ALIGN: center
+}
+#searchBox .buttons {
+	FONT-SIZE: 10px; COLOR: #ffffff; MARGIN-RIGHT: 6px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #333333
+}
+#quickLinksBox {
+	BORDER-RIGHT: #001835 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #001835 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 0.69em; Z-INDEX: 3; VISIBILITY: hidden; PADDING-BOTTOM: 5px; MARGIN: 10px; OVERFLOW: visible; BORDER-LEFT: #001835 1px solid; WIDTH: 250px; COLOR: white; PADDING-TOP: 5px; BORDER-BOTTOM: #001835 1px solid; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 230px; BACKGROUND-COLOR: #003b76
+}
+#quickLinksBox UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 2px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#quickLinksBox A {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: #ffffff; BORDER-BOTTOM: medium none
+}
+#quickLinksBox A:hover {
+	COLOR: #76b7ff
+}
+#footer {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; FONT-SIZE: 0.65em; BACKGROUND: url(http://www.auburn.edu/includes/ddBottomGradient.gif) #03244d repeat-x left top; PADDING-BOTTOM: 25px; COLOR: #ffffff; PADDING-TOP: 15px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: center
+}
+#footer A {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: #ecebeb; BORDER-BOTTOM: medium none; TEXT-DECORATION: none
+}
+#footer A:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+#footer A:visited {
+	COLOR: #ecebeb
+}
+#footer A:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+A.img {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; TEXT-DECORATION: none
+}

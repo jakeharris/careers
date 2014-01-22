@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.auburn.edu/includes/template_subpage_include.php -->
+<HTML><HEAD><TITLE>Large Header Template using PHP</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+media=screen href="Large Header Template using PHP_files/ddcss_all.css" 
+type=text/css rel=stylesheet><LINK media=print 
+href="Large Header Template using PHP_files/ddcss_print.css" type=text/css 
+rel=stylesheet>
+<SCRIPT language=JavaScript type=text/javascript>
+// global variables
+var searchBoxHasFocus = false;
+function getInsideWindowWidth() {
+	// if a Netscape-compatible browser
+	if (window.innerWidth) {
+		return window.innerWidth;
+	// if IE6 with CSS support
+	} else if (document.compatMode && document.compatMode.indexOf("CSS1") >= 0) {
+		return document.body.parentElement.clientWidth;
+	// if IE 5.5 or earlier
+	} else if (document.body && document.body.clientWidth) {
+		return document.body.clientWidth;
+	}
+	return 0;
+}
+function displayQuickLinks() {
+	quickLinksObj = document.getElementById("quickLinksBox");
+	if(quickLinksObj.style.visibility == "visible") {
+		quickLinksObj.style.visibility = "hidden";
+	} else {
+		quickLinksObj.style.visibility = "visible";
+		quickLinksObj.style.left = getInsideWindowWidth() / 2 + 100;
+		quickLinksObj.style.top = 162;
+	}
+}
+function displaySearchBox() {
+	searchBoxObj = document.getElementById("searchBox");
+	if (searchBoxHasFocus != true) {
+		if(searchBoxObj.style.visibility == "visible") {
+			searchBoxObj.style.visibility = "hidden";
+		} else {
+			searchBoxObj.style.visibility = "visible";
+			searchBoxObj.style.left = getInsideWindowWidth() / 2 + 60;
+			searchBoxObj.style.top = 172;
+		}
+	}
+}
+function positionBoxes() {
+	quickLinksObj = document.getElementById("quickLinksBox");
+	quickLinksObj.style.left = getInsideWindowWidth() / 2 + 100;
+	quickLinksObj.style.top = 162;
+	searchBoxObj = document.getElementById("searchBox");
+	searchBoxObj.style.left = getInsideWindowWidth() / 2 + 60;
+	searchBoxObj.style.top = 172;
+}
+function setSearchStatus(value) {
+	searchBoxHasFocus = value;
+}
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2802" name=GENERATOR></HEAD>
+<BODY onresize=positionBoxes() onload=positionBoxes()>
+<TABLE cellSpacing=0 cellPadding=0 width=770 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>
+      <DIV id=searchBox onmouseover=displaySearchBox() 
+      style="POSITION: absolute" onmouseout=displaySearchBox()>
+      <FORM action=http://search.auburn.edu/query.html method=get><INPUT 
+      type=hidden value=au name=col> <INPUT type=hidden value=rbd name=col> 
+      <INPUT type=hidden value=it name=col> <INPUT onfocus=setSearchStatus(true) 
+      size=12 name=qt> <INPUT type=submit value=Search> </FORM></DIV>
+      <DIV id=quickLinksBox onmouseover=displayQuickLinks() 
+      style="POSITION: absolute" onmouseout=displayQuickLinks()>
+      <UL>
+        <LI><A href="http://www.ag.auburn.edu/aaes/">Alabama Agricultural 
+        Experiment Station</A> 
+        <LI><A href="http://www.aces.edu/">Alabama Cooperative Extension 
+        System</A> 
+        <LI><A href="http://www.alumni.auburn.edu/aoc/index.html">Auburn Online 
+        Community</A> 
+        <LI><A href="http://auburn.edu/bookstore/">Bookstore</A> 
+        <LI><A 
+        href="http://www.auburn.edu/administration/center_diversity_race_relations/">Center 
+        for Diversity</A> 
+        <LI><A 
+        href="http://www.ocm.auburn.edu/crisisassistance.html">Crisis/Incident 
+        Assistance</A> 
+        <LI><A 
+        href="http://www.auburn.edu/administration/multicultural_affairs/">Diversity 
+        and Multicultural Affairs</A> 
+        <LI><A 
+        href="http://www.auburn.edu/student_info/student_affairs/finaid/index.html">Financial 
+        Aid</A> 
+        <LI><A href="http://www.auhcc.com/">Hotel and Conference Center</A> 
+        <LI><A href="http://jcsm.auburn.edu/">Jule Collins Smith Museum of Fine 
+        Art</A> 
+        <LI><A href="http://www.auburn.edu/au_medical/index.html">Medical 
+        Clinic</A> 
+        <LI><A href="http://www.vetmed.auburn.edu/index.pl/raptor">Southeastern 
+        Raptor Center</A> 
+        <LI><A 
+        href="http://www.auburn.edu/administration/specialreports">Special 
+        Reports</A> 
+        <LI><A href="http://www.auburn.edu/disability/">Students w/ 
+        Disabilities</A> 
+        <LI><A href="http://www.auburn.edu/theatre/">Theatre</A> 
+    </LI></UL></DIV></TD></TR><!-- NOTE: Viewable information doesn't start until now. Everything above is for the pop-up boxes. -->
+  <TR>
+    <TD align=middle width=205 bgColor=#03244d height=110 rowSpan=2>
+      <DIV><A 
+      style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+      href="http://www.auburn.edu/"><IMG title="Auburn University" 
+      style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 5px" height=96 
+      alt="Auburn University" 
+      src="Large Header Template using PHP_files/ddLogoEmblem2.gif" width=160 
+      border=0></A></DIV><!--<div><a href="http://www.auburn.edu" style="border:none"><img src="http://www.auburn.edu/includes/ddLogoEmblem.gif" alt="Auburn University" width="104" height="90" border="0" style="margin-top:7px;margin-bottom:7px"></a></div>-->
+      <DIV><A 
+      style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+      href="http://www.auburn.edu/"><IMG height=28 alt="Auburn University" 
+      src="Large Header Template using PHP_files/ddLogoAuburn.gif" width=177 
+      border=0></A></DIV></TD>
+    <TD id=topLinksBackground vAlign=top width=565 bgColor=#052c5c 
+      height=110>&nbsp; </TD></TR>
+  <TR>
+    <TD style="BACKGROUND: #dd550c" width=565 bgColor=#dd550c height=35>
+      <DIV id=toolbar>
+      <DIV style="FLOAT: left"><A 
+      href="http://www.auburn.edu/main/currentstudents.html"><IMG height=13 
+      alt=Students 
+      src="Large Header Template using PHP_files/ddToolbarStudents.gif" width=95 
+      border=0></A></DIV>
+      <DIV style="FLOAT: left"><A 
+      href="http://www.auburn.edu/main/prospectivestudents.html"><IMG height=13 
+      alt="Prospective Students" 
+      src="Large Header Template using PHP_files/ddToolbarProsStudents.gif" 
+      width=188 border=0></A></DIV>
+      <DIV style="FLOAT: left"><A 
+      href="http://www.auburn.edu/main/employees.html"><IMG height=13 
+      alt=Employees 
+      src="Large Header Template using PHP_files/ddToolbarEmployees.gif" 
+      width=104 border=0></A></DIV>
+      <DIV style="FLOAT: left"><A href="http://www.aualum.org/"><IMG height=13 
+      alt=Alunmi src="Large Header Template using PHP_files/ddToolbarAlumni.gif" 
+      width=70 border=0></A></DIV>
+      <DIV style="FLOAT: left"><A href="http://www.auburntigers.com/"><IMG 
+      height=13 alt="Tiger Fans" 
+      src="Large Header Template using PHP_files/ddToolbarTigerFans.gif" 
+      width=107 border=0></A></DIV></DIV></TD></TR>
+  <TR>
+    <TD vAlign=top width=205 bgColor=#03244d>
+      <DIV align=right><IMG height=2 
+      src="Large Header Template using PHP_files/ddLogoBar.gif" width=190></DIV>
+      <DIV style="MARGIN-TOP: 8px; MARGIN-BOTTOM: 8px" align=center><A 
+      style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+      href="http://www.auburn.edu/"><IMG height=15 alt="Auburn University" 
+      src="Large Header Template using PHP_files/ddLogoUniversity.gif" width=139 
+      border=0></A></DIV></TD>
+    <TD vAlign=top align=middle bgColor=#03244d>
+      <DIV class=orangeDecorBar></DIV>
+      <DIV id=topLinks align=center><A 
+      href="http://www.auburn.edu/main/sitemap.php">A to Z Index</A> <IMG 
+      height=9 src="Large Header Template using PHP_files/ddTopLinkDot.gif" 
+      width=2> <A href="https://oitapps.auburn.edu/campusmap/">Campus Map</A> 
+      <IMG height=9 src="Large Header Template using PHP_files/ddTopLinkDot.gif" 
+      width=2> <A 
+      href="http://www.auburn.edu/main/auweb_campus_directory.html">People 
+      Finder</A> <IMG height=9 
+      src="Large Header Template using PHP_files/ddTopLinkDot.gif" width=2> <A 
+      onmouseover=displaySearchBox() onmouseout=displaySearchBox() 
+      href="http://search.auburn.edu/">Search<IMG height=9 
+      src="Large Header Template using PHP_files/ddTopLinkArrow.gif" width=13 
+      border=0></A> <IMG height=9 
+      src="Large Header Template using PHP_files/ddTopLinkDot.gif" width=2> <A 
+      onmouseover=displayQuickLinks() onmouseout=displayQuickLinks() 
+      href="http://www.auburn.edu/main/sitemap.php">Quick Links<IMG height=9 
+      src="Large Header Template using PHP_files/ddTopLinkArrow.gif" width=13 
+      border=0></A> </DIV></TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <DIV class=orangeDecorBar 
+  style="BACKGROUND-COLOR: #e1e1e1"></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=770 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD id=contentArea style="PADDING-TOP: 6px" vAlign=top width=770 
+    bgColor=#ffffff colSpan=2><!-- BEGIN CONTENT AREA -->
+      <H2>Large Header Template using PHP</H2>
+      <P>This is a test of the PHP header and footer includes.</P>
+      <P>Everything surrounding this test was included from other files by the 
+      browser. </P>
+      <P><STRONG><EM>Note: Your content will be enclosed by a table with a width 
+      of 770 pixels.</EM></STRONG></P>
+      <P>Daniel Dixon (updated August 15th, 2005)</P>
+      <P><STRONG>Here is the code for this page:</STRONG></P>
+      <BLOCKQUOTE>
+        <P>&lt;html&gt;<BR>&lt;head&gt;<BR>&lt;title&gt;Test 
+        Template&lt;/title&gt;</P>
+        <P><STRONG>&lt;? include("../includes/au_header_large.php"); 
+        ?&gt;</STRONG></P>
+        <P>&lt;style type="text/css"&gt;<BR>&lt;!--<BR>#topLinksBackground 
+        {<BR>/* Use to replace the default Top Links background with your custom 
+        565 x 110 pixel title graphic. */<BR>background: 
+        url(http://www.auburn.edu/includes/topLinksBackground.jpg) #052C5C 
+        no-repeat top left;<BR>}<BR>--&gt;<BR>&lt;/style&gt;</P>
+        <P>&lt;h2&gt;Your Title Here&lt;/h2&gt;</P>
+        <P>&lt;p&gt;Your Content Here&lt;/p&gt;</P>
+        <P><STRONG>&lt;? include("../includes/au_footer.php"); 
+      ?&gt;</STRONG></P></BLOCKQUOTE><!-- END CONTENT AREA --></TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <DIV class=orangeDecorBar></DIV></TD></TR>
+  <TR>
+    <TD id=footer align=middle colSpan=2><BR><BR>Auburn University &nbsp;| 
+      &nbsp;Auburn, Alabama 36849 &nbsp;| &nbsp;Phone: (334) 844-4000 &nbsp;| 
+      &nbsp;E-mail:
+      <SCRIPT language=JavaScript type=text/javascript>
+		<!-- 
+		emailE='auburn.edu'
+		emailE=('webmaster' + '@' + emailE)
+		document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+		//-->
+		</SCRIPT>
+       <BR>©
+      <SCRIPT language=JavaScript type=text/javascript>
+		<!--
+		date = new Date();
+		document.write(date.getFullYear());
+		//-->
+	  	</SCRIPT>
+       <A 
+      href="http://www.auburn.edu/it_policies/copyright_regulations.php">Copyright 
+      Regulations</A></TD></TR></TBODY></TABLE></BODY></HTML>

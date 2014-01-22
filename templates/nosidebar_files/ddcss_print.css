@@ -1,0 +1,54 @@
+BODY {
+	FONT-SIZE: 12pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A {
+	COLOR: #0000ff; TEXT-DECORATION: underline
+}
+#contentArea {
+	FONT-SIZE: 12pt; PADDING-TOP: 10px; TEXT-ALIGN: justify
+}
+#contentArea H1 {
+	PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H2 {
+	PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H3 {
+	PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H4 {
+	PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+#contentArea H4 {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 10px; PADDING-TOP: 2px
+}
+ HTML #contentArea {
+	WIDTH: 670px
+}
+ HTML #footer {
+	WIDTH: 670px
+}
+#footer {
+	FONT-SIZE: 10pt; PADDING-TOP: 5px
+}
+#topLinks {
+	DISPLAY: none
+}
+#searchBox {
+	DISPLAY: none
+}
+#quickLinksBox {
+	DISPLAY: none
+}
+#captionTop {
+	DISPLAY: none
+}
+#captionBottom {
+	DISPLAY: none
+}
+#orangeDecorBar {
+	DISPLAY: none
+}
+#toolbar {
+	DISPLAY: none
+}

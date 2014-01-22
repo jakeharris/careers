@@ -1,0 +1,43 @@
+Last login: Fri Jan 25 15:31:40 2013 from node-33-149.martin.auburn.edu
+/home/home6/thornde: career2
+/export/vol2/httpd/htdocs/academic/provost/undergrad_studies/career: 
+/export/vol2/httpd/htdocs/academic/provost/undergrad_studies/career: cd..
+cd..: Command not found.
+/export/vol2/httpd/htdocs/academic/provost/undergrad_studies/career: cd ..
+/export/vol2/httpd/htdocs/academic/provost/undergrad_studies: cd ..
+/export/vol2/httpd/htdocs/academic/provost: cd ..
+/export/vol2/httpd/htdocs/academic: cd ..
+/export/vol2/httpd/htdocs: cd template
+/export/vol2/httpd/htdocs/template: cd styles
+/export/vol2/httpd/htdocs/template/styles: vi sidebar.css
+
+
+
+
+
+
+
+
+
+
+
+
+@import url(//www.auburn.edu/template/styles/mainSidebar.css);
+
+/*****  General Page Formatting **************************/
+body {background:#f4f4f4 url(//www.auburn.edu/template/styles/images/bodyBackground2.png) top center repeat-x;}
+
+/**************  Header Section **************************/
+#headerWrap{height:140px;}
+#header { height:110px;}
+#headerTitle { background:none; height:94px; position:relative; width:730px; }
+#logo{margin-top:20px;}
+#searchForm{ height:20px; margin-top:-2px; padding-left:5px; position:absolute; right:0; top:3px; width:179px;}
+.searchBox { background: url(//www.auburn.edu/template/styles/images/searchField3.png) center center no-repeat; height:18px; text-align:left;}
+.searchField { background-color:transparent; border:none; color:gray; font-size:9px; height:15px; letter-spacing:normal; line-height:10px; outline:none; margin:2px 0 0 7px; padding:0; }
+.searchButton { position:absolute; right:3px; top:3px; }
+
+/**************  Content Section *************************/
+.contentDivision { display:block; float:right; padding:0 20px 20px 20px; position:relative; width:688px; }
+"sidebar.css" [readonly] 18L, 1121C                           1,1           Top
+

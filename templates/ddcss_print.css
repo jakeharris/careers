@@ -1,0 +1,53 @@
+/*
+	Auburn University Style Sheet (for making pages printer-friendly)
+	Last Modified: March 6, 2006
+*/
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+}
+a {
+	text-decoration: underline;
+	color: #0000FF;
+}
+#contentArea {
+	padding-top: 10px;
+	text-align: justify;
+	font-size: 12pt;
+}
+#contentArea h1,h2,h3,h4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	padding-left:10px;
+}
+#contentArea h4 {
+	margin-left:10px;
+	padding-top:2px; 
+	margin-top:0px
+}
+*html #contentArea { /* IE printing capabilities suck */
+	width: 670px;
+}
+*html #footer { /* again, IE */
+	width: 670px;
+}
+#footer {
+	font-size: 10pt;
+	padding-top: 5px;
+}
+/*#sidebar {
+	visibility: collapse;
+}*/
+/* hide all navigation */
+#topLinks,
+#searchBox,
+#quickLinksBox,
+#captionTop,
+#captionBottom,
+#orangeDecorBar,
+
+#toolbar {
+	display: none;
+}

@@ -1,0 +1,170 @@
+<html>
+
+<head><title>SSC Graduation Survey</title></head>
+
+<body bgcolor=#FFFFFF>
+<basefont face="Times New Roman" size=3>
+
+<center><img src="sscsurvey.gif" border=0></center>
+
+<center><font face="Antique Olive Compact" size=5 color=#CA0000><i><u>CONFIDENTIAL</u></i></font></center>
+
+<form method="post" action="http://www.auburn.edu/cgi-bin/mailto.pl">
+
+<table width=630 cellspacing=10>
+<tr>
+	<td>1.</td>
+	<td width="85">Your Major</td>
+	<td colspan=3><input type="text" name="major" size="25" maxlength="40"></td>
+</tr>
+
+<tr>
+	<td>2.</td>
+	<td>Your Degree</td>
+	<td colspan=3><select name="degree">
+		<option selected value="none">(Select your degree level)
+		<option value="bs">Bachelor's
+		<option value="ms">Master's
+		<option value="phd">Ph.D.
+		</select>
+	</td>
+</tr>
+
+<tr>
+	<td>3.</td>
+	<td colspan=4>After receiving your degree, which best describes your status?</td>
+</tr>
+<tr>
+	<td></td>
+	<td colspan=2><input type="radio" name="status" value="employed">Employed <font size=2>(<i>*Please complete question #4</i>)</font></td>
+	<td colspan=2><input type="radio" name="status" value="notemp">Not currently employed</td>
+</tr>
+<tr>
+	<td></td>
+	<td colspan=2><input type="radio" name="status" value="conted">Continuing education</td>
+	<td colspan=2><input type="radio" name="status" value="military">Military</td>
+</tr>
+<tr>
+	<td></td>
+	<td><input type="radio" name="status" value="other">Other (please list)</td>
+	<td colspan=3><input type="text" name="statusother" size="25" maxlength="40"></td>
+</tr>
+
+<tr>
+	<td valign=top>4.</td>
+	<td>Name of employer</td>
+	<td colspan=3><input type="text" name="employer" size="40" maxlength="40"></td>
+</tr>
+<tr>
+	<td></td>
+	<td>Job Title</td>
+	<td colspan=3><input type="text" name="jobtitle" size="40" maxlength="40"></td>
+</tr>
+<tr>
+	<td></td>
+	<td>Location: City</td>
+	<td><input type="text" name="city" size="20" maxlength="40"></td>
+	<td width=5>State</td>
+	<td><input type="text" name="state" size="5" maxlength="5"></td>
+</tr>
+
+<tr>
+	<td></td>
+	<td>Annual Salary</td>
+	<td colspan=3><input type="text" name="salary" size="10" maxlength="10">
+		<font size=2>(<i><b>Confidential</b></i> - for statistical use only)</font></td>
+</tr>
+<tr>
+	<td></td>
+	<td>Date of Offer</td>
+	<td colspan=3><input type="text" name="offerdate" size="10" maxlength="10"> <font size=2><i>(mm/dd/yyyy)</i></font></td>
+</tr>
+
+<tr>
+	<td>5.</td>
+	<td colspan=3>How much work experience did you have prior to graduating?</td>
+	<td><select name="workexperience">
+		<option selected value="none">None
+		<option value="oneorless">One year or less
+		<option value="onetotwo">One to two years
+		<option value="overtwo">Over two years
+		</select>
+	</td>
+</tr>
+
+<tr>
+	<td>6.</td>
+	<td colspan=2>Did you Co-op while at Auburn University?</td>
+	<td><input type="radio" name="coop" value="yes">Yes</td>
+	<td><input type="radio" name="coop" value="no">No</td>
+</tr>
+
+<tr>
+	<td>7.</td>
+	<td colspan=2>Did you do an Internship while at Auburn University?</td>
+	<td><input type="radio" name="internship" value="yes">Yes</td>
+	<td><input type="radio" name="internship" value="no">No</td>
+</tr>
+
+<tr>
+	<td valign=top>8.</td>
+	<td colspan=4>Which of the following Student Success Center services did you use while at Auburn?<br> <font 
+		size=2>(please check all that apply)</font></td>
+</tr>
+<tr>
+	<td></td>
+	<td colspan=4><input type="checkbox" name="fye">Freshman Year Experience - <font size=2>Camp War Eagle/U100</font></td>
+</tr>
+<tr>
+	<td></td>
+	<td colspan=4><input type="checkbox" name="as">Academic Support - <font size=2>Study Partners/Supplemental Instruction/Study Smart Class</font></td>
+</tr>
+<tr>
+	<td></td>
+	<td colspan=4><input type="checkbox" name="scs">Student Counseling Services - <font size=2>Personal Counseling/College Life Series</font></td>
+</tr>
+<tr>
+	<td></td>
+	<td colspan=4><input type="checkbox" name="cds">
+        Career Development Services - <font size=2>Career Counseling/Campus Recruiting/Job 
+        Search Assistance/Career Fairs</font></td>
+</tr>
+
+<tr>
+	<td valign=top>9.</td>
+	  <td colspan=4>Please enter your e-mail address<br>
+	    <input type="text" size="50" name="user_email">
+      </td>
+</tr>
+
+<tr>
+	<td valign=top>10.</td>
+	<td>Comments</td>
+</tr>
+<tr>
+	<td></td>
+	<td colspan=4><textarea name="comments" rows="4" cols="60"></textarea></td>
+</tr>
+
+</table>
+  <p> 
+    <center>
+      <font size=4>Thank you for your help -- War Eagle!</font>
+    </center>
+    <br>
+    <center>
+      <input type="submit" value="Click here to send">
+      <input type="reset" value="Clear Form">
+    </center>
+    <input type="hidden" name="to" value="allenkm@auburn.edu">
+    <input type="hidden" name="sub" value="SSC Graduation Survey">
+    <input type="hidden" name="body" value="response">
+    <input type="hidden" name="nexturl" value="http://www.auburn.edu/student_info/student_affairs/success/career/survey/thanks.html">
+    <input type="hidden" name="from" value="allenkm@auburn.edu">
+  
+</form>
+
+
+</body>
+
+</html>

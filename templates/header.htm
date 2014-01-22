@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+media=screen 
+href="ddcss_all.css" 
+type=text/css rel=stylesheet><LINK media=screen 
+href="ddcss_mainpages.css" 
+type=text/css rel=stylesheet><LINK media=print 
+href="ddcss_print.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript type=text/javascript>
+// global variables
+var searchBoxHasFocus = false;
+function getInsideWindowWidth() {
+	// if a Netscape-compatible browser
+	if (window.innerWidth) {
+		return window.innerWidth;
+	// if IE6 with CSS support
+	} else if (document.compatMode && document.compatMode.indexOf("CSS1") >= 0) {
+		return document.body.parentElement.clientWidth;
+	// if IE 5.5 or earlier
+	} else if (document.body && document.body.clientWidth) {
+		return document.body.clientWidth;
+	}
+	return 0;
+}
+function displayQuickLinks() {
+	quickLinksObj = document.getElementById("quickLinksBox");
+	if(quickLinksObj.style.visibility == "visible") {
+		quickLinksObj.style.visibility = "hidden";
+	} else {
+		quickLinksObj.style.visibility = "visible";
+		quickLinksObj.style.left = getInsideWindowWidth() / 2 + 100;
+	}
+}
+function displaySearchBox() {
+	searchBoxObj = document.getElementById("searchBox");
+	if (searchBoxHasFocus != true) {
+		if(searchBoxObj.style.visibility == "visible") {
+			searchBoxObj.style.visibility = "hidden";
+		} else {
+			searchBoxObj.style.visibility = "visible";
+			searchBoxObj.style.left = getInsideWindowWidth() / 2 + 60;
+		}
+	}
+}
+function positionBoxes() {
+	quickLinksObj = document.getElementById("quickLinksBox");
+	quickLinksObj.style.left = getInsideWindowWidth() / 2 + 100;
+	quickLinksObj.style.top = 16;
+	searchBoxObj = document.getElementById("searchBox");
+	searchBoxObj.style.left = getInsideWindowWidth() / 2 + 60;
+	searchBoxObj.style.top = 26;
+}
+function setSearchStatus(value) {
+	searchBoxHasFocus = value;
+}
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2802" name=GENERATOR></HEAD>
+<BODY onresize=positionBoxes() onload=positionBoxes()>
+<TABLE cellSpacing=0 cellPadding=0 width=770 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>
+      <DIV id=searchBox onmouseover=displaySearchBox() 
+      style="POSITION: absolute" onmouseout=displaySearchBox()>
+      <FORM action=http://search.auburn.edu/query.html method=get><INPUT 
+      type=hidden value=au name=col> <INPUT type=hidden value=rbd name=col> 
+      <INPUT type=hidden value=it name=col> <INPUT onfocus=setSearchStatus(true) 
+      size=12 name=qt> <INPUT type=submit value=Search> </FORM></DIV>
+      <DIV id=quickLinksBox onmouseover=displayQuickLinks() 
+      style="POSITION: absolute" onmouseout=displayQuickLinks()>
+      <UL>
+        <LI><A href="http://www.ag.auburn.edu/aaes/">Alabama Agricultural 
+        Experiment Station</A> 
+        <LI><A href="http://www.aces.edu/">Alabama Cooperative Extension 
+        System</A> 
+        <LI><A href="http://www.alumni.auburn.edu/aoc/index.html">Auburn Online 
+        Community</A> 
+        <LI><A href="http://auburn.edu/bookstore/">Bookstore</A> 
+        <LI><A 
+        href="http://www.auburn.edu/administration/center_diversity_race_relations/">Center 
+        for Diversity</A> 
+        <LI><A 
+        href="http://www.ocm.auburn.edu/crisisassistance.html">Crisis/Incident 
+        Assistance</A> 
+        <LI><A 
+        href="http://www.auburn.edu/administration/multicultural_affairs/">Diversity 
+        and Multicultural Affairs</A> 
+        <LI><A 
+        href="http://www.auburn.edu/student_info/student_affairs/finaid/index.html">Financial 
+        Aid</A> 
+        <LI><A href="http://www.auhcc.com/">Hotel and Conference Center</A> 
+        <LI><A href="http://jcsm.auburn.edu/">Jule Collins Smith Museum of Fine 
+        Art</A> 
+        <LI><A href="http://www.auburn.edu/au_medical/index.html">Medical 
+        Clinic</A> 
+        <LI><A href="http://www.vetmed.auburn.edu/index.pl/raptor">Southeastern 
+        Raptor Center</A> 
+        <LI><A 
+        href="http://www.auburn.edu/administration/specialreports">Special 
+        Reports</A> 
+        <LI><A href="http://www.auburn.edu/disability/">Students w/ 
+        Disabilities</A> 
+        <LI><A href="http://www.auburn.edu/theatre/">Theatre</A> 
+    </LI></UL></DIV></TD></TR><!-- BEGIN TOP LINKS AREA -->
+  <TR>
+    <TD align=middle width=205 bgColor=#03244d height=110 rowSpan=2>
+      <DIV><A 
+      style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+      href="http://www.auburn.edu/"><IMG title="Auburn University" 
+      style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 5px" height=96 
+      alt="Auburn University" 
+      src="ddLogoEmblem2.gif" 
+      width=160 border=0></A></DIV><!--<div><a href="http://www.auburn.edu" style="border:none"><img src="http://www.auburn.edu/includes/ddLogoEmblem.gif" alt="Auburn University" width="104" height="90" border="0" style="margin-top:7px;margin-bottom:7px"></a></div>-->
+      <DIV><A 
+      style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+      href="http://www.auburn.edu/"><IMG height=28 alt="Auburn University" 
+      src="ddLogoAuburn.gif" 
+      width=177 border=0></A></DIV></TD>
+    <TD id=topLinksBackground vAlign=top width=565 bgColor=#052c5c height=110>
+      <DIV id=topLinks align=center><A 
+      href="http://www.auburn.edu/main/sitemap.php">A to Z Index</A> <IMG 
+      height=9 
+      src="ddTopLinkDot.gif" 
+      width=2> <A href="https://oitapps.auburn.edu/campusmap/">Campus Map</A> 
+      <IMG height=9 
+      src="ddTopLinkDot.gif" 
+      width=2> <A 
+      href="http://www.auburn.edu/main/auweb_campus_directory.html">People 
+      Finder</A> <IMG height=9 
+      src="ddTopLinkDot.gif" 
+      width=2> <A onmouseover=displaySearchBox() onmouseout=displaySearchBox() 
+      href="http://search.auburn.edu/">Search<IMG height=9 
+      src="ddTopLinkArrow.gif" 
+      width=13 border=0></A> <IMG height=9 
+      src="ddTopLinkDot.gif" 
+      width=2> <A onmouseover=displayQuickLinks() onmouseout=displayQuickLinks() 
+      href="http://www.auburn.edu/main/sitemap.php">Quick Links<IMG height=9 
+      src="ddTopLinkArrow.gif" 
+      width=13 border=0></A> </DIV></TD></TR>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+
+<body>
+</body>
+</html>
