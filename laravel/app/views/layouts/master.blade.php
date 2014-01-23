@@ -7,17 +7,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <title>Auburn University Template</title>
+        <title>@yield('title')</title>
         
         <!-- Bootstrap & Core CSS -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
         <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
         
-        <!-- Site/Application CSS -->
-        <link href="assets/css/application.css" rel="stylesheet">
-        <style type="text/css">
-        </style>
+        <!-- Application CSS -->
+        <?= stylesheet_link_tag() ?>
         
         <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
         <!--[if lt IE 9]>
@@ -34,6 +32,9 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
         <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
+        
+        <!-- Application-specific CSS/JS -->
+        @yield('head')
     </head>
 
     <body>
@@ -43,9 +44,10 @@
                 <a href="#nav-section" class="skip">Skip to Navigation</a>
                 
                 <header role="banner">
-                    <div class="logo hidden-print" onclick="window.location='http://www.auburn.edu'" title="AU Homepage" aria-label="Auburn University Homepage">
-                        <img src="//cdn.auburn.edu/assets/img/header-logo.png" alt="Auburn University Homepage" height="75" width="203">
+                    <div class="site-logo hidden-print">
+                        <img src="//cdn.auburn.edu/assets/img/header-logo.png">
                     </div>
+
                     <div class="menu-icon hidden-print" data-toggle="offcanvas">
                         <i class="icon-reorder"></i>
                     </div>
@@ -54,6 +56,7 @@
                     </div>
                     
                     <div class="header-title">
+<!--
                         <div class="top-links hidden-print">
                             <a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a> | <a href="http://www.auburn.edu/map">Map</a> | <a href="http://www.auburn.edu/main/auweb_campus_directory.html" class="lastTopLink">People Finder</a>
                         </div>
@@ -66,49 +69,61 @@
                             <input type="hidden" name="ie" value="utf-8">
                             <label for="q" class="form-control" style=" position:absolute; left:-9999px; visibility:hidden;">Enter your search terms</label>
                         </form>
+-->
                         
                         <div class="title-area">
                             <img class="visible-print" src="//cdn.auburn.edu/assets/img/header-logo-print.png" height="48" width="245" alt="Auburn University Logo">
                             <div class="main-heading hidden-print">
-                                <a href="http://www.auburn.edu/template/2013">Official AU Template Website</a>
+                                <a href="http://www.auburn.edu/template/2013">@yield('mainHeading')</a>
                             </div>
                             <div class="sub-heading hidden-print">
-                                <a href="http://www.auburn.edu/oit">Office of Information Technology</a>
+                                <a href="http://www.auburn.edu/oit">@yield('subHeading')</a>
                             </div>
                         </div>
                     </div>
                 </header>
                 
                 <a href="#content" class="skip">Skip to Main Content</a>
-                
+<!--
                 <nav id="nav-section" class="navbar hidden-print" role="navigation">
-                    <div class="navbar-brand collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">Main Navigation<span>&nbsp;</span></div>
+                    <div class="navbar-brand collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        Main Navigation<span>&nbsp;</span>
+                    </div>
+                    
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="http://www.auburn.edu/main/currentstudents.html">Students</a></li>
-                        <li><a href="http://www.auburn.edu/main/prospectivestudents.html">Future Students</a></li>
-                        <li><a href="http://www.auburn.edu/main/employees.html">Employees</a></li>
-                        <li><a href="http://www.aualum.org/">Alumni</a></li>
-                        <li><a href="http://www.auburn.edu/main/parents.html">Parents</a></li>
-                        <li><a href="http://www.auburntigers.com/">Athletics</a></li>
-                    </ul>
+                        <ul class="nav navbar-nav">
+                            @yield('navbar')
+                        </ul>
                     </div>
                 </nav>
+-->
             </div>
             
             <div id="content" class="row row-offcanvas row-offcanvas-left content-area">
-                <div id="sidebar" class="hidden-print col-sm-3 sidebar sidebar-offcanvas">
-                    <div class="sidebar-content accordion"></div>
-                </div>
-        
-                <div class="content-division col-sm-9" role="main">
-                    <!-- Content -->
-                    @yield('content')
+                <div class="content-division col-sm-12" role="main">
+                    <ul class="breadcrumb hidden-print">
+                        @yield('breadcrumb')
+                    </ul>
+                    <div class="banner">
+                        @yield('banner')
+                    </div>
+<!--
+                    <div class="row">
+                        <div id="sidebar" class="hidden-print col-sm-3 sidebar sidebar-offcanvas sidebar-white" style="display: block; height: 60px;">
+                            <div class="sidebar-content accordion">
+                                @yield('sidebar')
+                            </div>
+                        </div>
+                        @yield('body')
+                    </div>
+-->
+                    @yield('body')
                 </div>
             </div>
             
             <div class="row footer-wrap hidden-print">
                 <footer>
+                    @section('footer')
                     <section>
                         <ul>
                             <li><a href="http://www.aaes.auburn.edu/">Alabama Agricultural Experiment Station</a></li>
@@ -138,6 +153,7 @@
                     Reinvestment Act</a>
                         </p>
                     </section>
+                    @show
                 </footer>
                 
                 <div class="subfooter" role="contentinfo">
@@ -162,7 +178,9 @@
         <!-- jQuery, Bootstrap, and Default AU Code JavaScript --> 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
-        <script src="//cdn.auburn.edu/assets/js/default.min.js"></script> <!-- Site/Application JavaScript -->
-        <script src="assets/js/application.js"></script>
+        <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
+        
+        <!-- Application JavaScript -->
+        <?= javascript_include_tag() ?>
     </body>
 </html>

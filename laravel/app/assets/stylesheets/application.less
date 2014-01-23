@@ -1,0 +1,149 @@
+/**
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any Css/Less files within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+ * can be referenced here using a relative path.
+ *
+ * It's not advisable to add code directly here, but if you do, it'll appear in whatever order it 
+ * gets included (e.g. say you have require_tree . then the code will appear after all the directories 
+ * but before any files alphabetically greater than 'application.css' 
+ *
+ *= require_tree .
+ */
+
+//
+// COLORS
+//
+
+@gray: #aaa;
+@blue: #7bbeca;
+@green: #beca7b;
+@red: #ca7bbe;
+
+@thisisblue: #496e9c;
+@thisisorange: #f68026;
+@thisisbluer: #03244d;
+@thisisoranger: #dd550c;
+@thisisgray: #f4f4f4;
+@thisisgrayer: #d7d7d7;
+
+@bootstrap-red: #d9534f;
+@bootstrap-green: #5cb85c;
+@bootstrap-yellow: #f0ad4e;
+
+//
+// SIZES
+//
+
+@screen-xs: 480px;
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+
+//
+// MIXINS
+//
+
+.colorize (@color: @gray) {
+    color: darken(@color, 15%);
+    background: lighten(@color, 30%);
+    border-left: 4px solid lighten(@color, 15%);
+}
+
+.colorizeplus (@color: @gray) {
+    color: darken(@color, 15%);
+    background: lighten(@color, 30%);
+}
+
+.columns (@total: 1) {
+    flex-basis: (100% / @total);
+    width: (100% / @total);
+}
+
+.columnsplus (@total: 1) {
+    flex-basis: (100% / @total) - 1%;
+    width: (100% / @total) - 1%;
+}
+
+.absolute (@top: 0, @right: 0, @bottom: 0, @left: 0) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+}
+
+.relative {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+}
+
+//
+// AUBURN OVERRIDES
+//
+
+body {
+    background: @thisisgray;
+    font-size: 16px;
+}
+
+.header-wrap {
+    background: white;
+    border-left: @thisisgrayer 1px solid;
+    border-right: @thisisgrayer 1px solid;
+    border-bottom: @thisisgrayer 1px solid;
+    line-height: 0;
+}
+
+.site-logo {
+    .relative;
+    background: @thisisbluer;
+    display: inline-block;
+    padding: 2rem;
+}
+
+.header-title {
+    .relative;
+    display: inline-block;
+}
+
+.title-area {
+    .relative;
+    background: @thisisbluer;
+    display: inline-block;
+    padding: 2rem;
+}
+
+//
+// STATES
+//
+
+.blue {
+    .colorize(@blue);
+}
+
+.bluer {
+    .colorize(darken(@blue, 10%));
+}
+
+.red {
+    .colorize(@red);
+}
+
+.redder {
+    .colorize(darken(@red, 10%));
+}
+
+.green {
+    .colorize(@green);
+}
+
+.white,
+.white:hover {
+    .colorize(white);
+    cursor: default;
+}
