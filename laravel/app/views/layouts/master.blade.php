@@ -82,16 +82,16 @@
                         <ul>
                             <li>
                                 <a href="http://www.facebook.com/AUCareer">
-                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/fb_template.png" alt="Facebook">
-                                </a> &nbsp;
+                                    <i class="fa fa-facebook footer-icon"></i>
+                                </a>
                                 <a href="http://twitter.com/AUCareer">
-                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/twitter_template.png" alt="Twitter">
-                                </a> &nbsp;
+                                    <i class="fa fa-twitter footer-icon"></i>
+                                </a>
                                 <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262">
-                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/li_template.png" alt="LinkedIn">
-                                </a> &nbsp;
+                                    <i class="fa fa-linkedin footer-icon"></i>
+                                </a>
                                 <a href="http://www.youtube.com/user/AUCDS/featured">
-                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/yt_template.png" alt="You Tube">
+                                    <i class="fa fa-youtube footer-icon"></i>
                                 </a>
                                 <a href="http://tigersprepare.blogspot.com/">
                                     <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/blog_template.png" alt="Blog">
