@@ -11,7 +11,7 @@
         
         <!-- Bootstrap & Core CSS -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
         <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
         
         <!-- Application CSS -->
@@ -40,83 +40,29 @@
     <body>
         <!-- Container -->
         <div class="container">
-            <div id="top" class="row header-wrap">
-                <a href="#nav-section" class="skip">Skip to Navigation</a>
+            <header role="banner" class="flex">
+                <a class="header-logo" href="http://www.auburn.edu">
+                    <img src="//cdn.auburn.edu/assets/img/header-logo.png" alt="Auburn University Homepage" height="75" width="203">
+                </a>
                 
-                <header role="banner">
-                    <div class="site-logo hidden-print">
-                        <img src="//cdn.auburn.edu/assets/img/header-logo.png">
-                    </div>
-
-                    <div class="menu-icon hidden-print" data-toggle="offcanvas">
-                        <i class="icon-reorder"></i>
-                    </div>
-                    <div class="search-icon hidden-print">
-                        <i class="icon-search"></i>
-                    </div>
-                    
-                    <div class="header-title">
-<!--
-                        <div class="top-links hidden-print">
-                            <a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a> | <a href="http://www.auburn.edu/map">Map</a> | <a href="http://www.auburn.edu/main/auweb_campus_directory.html" class="lastTopLink">People Finder</a>
-                        </div>
-                        
-                        <form action="http://search.auburn.edu" class="search-form form-group hidden-print" method="get">
-                            <div class="search-box">
-                                <input type="text" name="q" id="q" role="search" accesskey="q" tabindex="1" class="search-field form-control" placeholder="Search AU..." value="">
-                            </div>
-                            <input type="hidden" name="cx" value="006456623919840955604:pinevfah6qm">
-                            <input type="hidden" name="ie" value="utf-8">
-                            <label for="q" class="form-control" style=" position:absolute; left:-9999px; visibility:hidden;">Enter your search terms</label>
-                        </form>
--->
-                        
-                        <div class="title-area">
-                            <img class="visible-print" src="//cdn.auburn.edu/assets/img/header-logo-print.png" height="48" width="245" alt="Auburn University Logo">
-                            <div class="main-heading hidden-print">
-                                <a href="http://www.auburn.edu/template/2013">@yield('mainHeading')</a>
-                            </div>
-                            <div class="sub-heading hidden-print">
-                                <a href="http://www.auburn.edu/oit">@yield('subHeading')</a>
-                            </div>
-                        </div>
-                    </div>
-                </header>
+                <div class="header-navbar">
+                    @yield('navbar')
+                </div>
                 
-                <a href="#content" class="skip">Skip to Main Content</a>
-<!--
-                <nav id="nav-section" class="navbar hidden-print" role="navigation">
-                    <div class="navbar-brand collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        Main Navigation<span>&nbsp;</span>
-                    </div>
-                    
-                    <div class="collapse navbar-collapse navbar-ex1-collapse">
-                        <ul class="nav navbar-nav">
-                            @yield('navbar')
-                        </ul>
-                    </div>
-                </nav>
--->
-            </div>
+                <div class="header-title">
+                    @yield('mainHeading')
+                    @yield('subHeading')
+                </div>
+            </header>
             
+            <div class="row">
+                <div class="banner flex">
+                    @yield('banner')
+                </div>
+            </div>
+
             <div id="content" class="row row-offcanvas row-offcanvas-left content-area">
                 <div class="content-division col-sm-12" role="main">
-                    <ul class="breadcrumb hidden-print">
-                        @yield('breadcrumb')
-                    </ul>
-                    <div class="banner">
-                        @yield('banner')
-                    </div>
-<!--
-                    <div class="row">
-                        <div id="sidebar" class="hidden-print col-sm-3 sidebar sidebar-offcanvas sidebar-white" style="display: block; height: 60px;">
-                            <div class="sidebar-content accordion">
-                                @yield('sidebar')
-                            </div>
-                        </div>
-                        @yield('body')
-                    </div>
--->
                     @yield('body')
                 </div>
             </div>
@@ -126,49 +72,63 @@
                     @section('footer')
                     <section>
                         <ul>
-                            <li><a href="http://www.aaes.auburn.edu/">Alabama Agricultural Experiment Station</a></li>
-                            <li><a href="http://www.aces.edu/">Alabama Cooperative Extension System</a></li>
-                            <li><a href="http://www.aum.edu/">Auburn University at Montgomery</a></li>
-                            <li><a href="http://www.auburn.edu/emergency/">Campus Safety/Emergency Preparedness</a></li>
+                            <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
+                            <li><a href="http://www.auburn.edu/fye">First Year Experience</a></li>
+                            <li><a href="http://business.auburn.edu/student-services/office-of-professional-career-development/">College of Business OPCD</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section> 
+                        <ul>
+                            <li>
+                                <a href="http://www.facebook.com/AUCareer">
+                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/fb_template.png" alt="Facebook">
+                                </a> &nbsp;
+                                <a href="http://twitter.com/AUCareer">
+                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/twitter_template.png" alt="Twitter">
+                                </a> &nbsp;
+                                <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262">
+                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/li_template.png" alt="LinkedIn">
+                                </a> &nbsp;
+                                <a href="http://www.youtube.com/user/AUCDS/featured">
+                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/yt_template.png" alt="You Tube">
+                                </a>
+                                <a href="http://tigersprepare.blogspot.com/">
+                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/blog_template.png" alt="Blog">
+                                </a>
+                            </li>
                         </ul>
                     </section>
                     
                     <section>
-                        <p class="social">
-                            <a href="http://www.facebook.com/auburnu/" class="facebook social" target="_blank"></a> 
-                            <a href="http://itunes.auburn.edu/" class="itunes social" target="_blank"></a> 
-                            <a href="http://twitter.com/auburnu/" class="twitter social" target="_blank"></a> 
-                            <a href="https://www.google.com/+AuburnUniversity/" class="google-plus social" target="_blank"></a> 
-                            <a href="http://www.youtube.com/AuburnUniversity/" class="you-tube social" target="_blank"></a> 
-                            <a href="http://family.auburn.edu/" class="au-family social" target="_blank"></a> 
-                            <a href="http://www.secacademicnetwork.com/" class="sec social" target="_blank"></a> 
-                        </p>
-                        <p class="social-details" style="background-position: 0px -177px;"></p>
-                    </section>
-                    
-                    <section>
-                        <p>
-                            <a href="http://www.auburn.edu/arra/" class="arra-image" title="American Recovery and Reinvestment Act"></a>
-                            <a href="http://www.auburn.edu/arra/">American Recovery &amp;<br>
-                    Reinvestment Act</a>
-                        </p>
+                        <ul>
+                            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
+                            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
+                            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
+                        </ul>
                     </section>
                     @show
                 </footer>
                 
                 <div class="subfooter" role="contentinfo">
-                    <p>
-                        <span>Auburn University |</span> 
-                        <span>Auburn, Alabama 36849 |</span> 
-                        <span>(334) 844-4000  |</span> 
-                        <span><script type="text/javascript">emailE='auburn.edu'; emailE=('webmaster' + '@' + emailE); document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");</script></span>
-                    </p>
+                    <div>
+                           <span>Auburn University</span>&sdot;<!--
+                        --><span>Auburn, Alabama 36849</span>&sdot;<!--
+                        --><span>(334) 844-4000</span>&sdot;<!--
+                        --><span><!--
+                                --><script type="text/javascript">
+                                    emailE='auburn.edu';
+                                    emailE=('webmaster' + '@' + emailE);
+                                    document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");
+                                </script>
+                           </span>
+                    </div>
                     
-                    <p>
-                        <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a> |</span> 
-                        <span><a href="http://www.auburn.edu/privacy/">Privacy</a> |</span> 
-                        <span><a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a></span>
-                    </p>
+                    <div>
+                        <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a></span>&sdot;<!-- 
+                        --><span><a href="http://www.auburn.edu/privacy/">Privacy</a></span>&sdot;<!--
+                        --><span><a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a></span>
+                    </div>
                 </div>
             </div>
         </div>

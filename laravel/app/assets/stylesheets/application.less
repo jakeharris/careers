@@ -9,7 +9,7 @@
  * gets included (e.g. say you have require_tree . then the code will appear after all the directories 
  * but before any files alphabetically greater than 'application.css' 
  *
- *= require_tree .
+ *= require_self
  */
 
 //
@@ -42,6 +42,21 @@
 @screen-lg: 1200px;
 
 //
+// FONTS
+//
+
+@font-face {
+    font-family: 'Norwester';
+    src: asset-url("norwester.eot?9309851", font);
+    src: asset-url("norwester.eot?9309851#iefix", font) format("embedded-opentype"),
+         asset-url("norwester.woff?9309851", font) format("woff"),
+         asset-url("norwester.ttf?9309851", font) format("truetype"),
+         asset-url("norwester.svg?9309851#fontello", font) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+//
 // MIXINS
 //
 
@@ -62,8 +77,8 @@
 }
 
 .columnsplus (@total: 1) {
-    flex-basis: (100% / @total) - 1%;
-    width: (100% / @total) - 1%;
+    flex-basis: (100% / @total) - 1.4%;
+    width: (100% / @total) - 1.4%;
 }
 
 .absolute (@top: 0, @right: 0, @bottom: 0, @left: 0) {
@@ -83,40 +98,246 @@
 }
 
 //
+// FLEX
+//
+
+.flex {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack: end;
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+    -ms-flex-pack: distribute;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.flex-item {
+    .columns();
+}
+
+//
 // AUBURN OVERRIDES
 //
 
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
 body {
     background: @thisisgray;
+    font-family: "Source Sans Pro";
     font-size: 16px;
 }
 
-.header-wrap {
-    background: white;
-    border-left: @thisisgrayer 1px solid;
-    border-right: @thisisgrayer 1px solid;
-    border-bottom: @thisisgrayer 1px solid;
-    line-height: 0;
+ul li {
+    background: none;
 }
 
-.site-logo {
-    .relative;
+a,
+a:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    color: @thisisorange;
+}
+
+header {
+    min-height: inherit;
+    margin-left: -15px;
+    margin-right: -15px;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.header-logo {
     background: @thisisbluer;
-    display: inline-block;
     padding: 2rem;
+    .columns(1);
+    
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .header-title {
-    .relative;
-    display: inline-block;
+    color: white;
+    .columns(1);
 }
 
-.title-area {
-    .relative;
-    background: @thisisbluer;
-    display: inline-block;
-    padding: 2rem;
+.header-navbar {
+    font-size: 3rem;
+    text-align: left;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    ul li {
+        margin: 0;
+        padding: 1rem .5rem;
+        font-family: "Norwester";
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+    ul li:after {
+        color: lighten(@thisisbluer, 10%);
+        content: " /";
+        padding-left: 0.5rem;
+    }
+    
+    ul li:last-of-type {
+        padding-right: 0;
+    }
+    
+    ul li:last-of-type:after {
+        content: "";
+    }
+    
+    ul li a {
+        color: @thisisblue;
+    }
+    
+    ul li a:hover {
+        color: @thisisorange;
+    }
 }
+
+@media (min-width: @screen-md) {
+    .header-logo {
+        border-left: 1px solid @thisisgrayer;
+        border-right: 1px solid @thisisgrayer;
+        .columns(3);
+    }
+    .header-navbar {
+        border-bottom: 1px solid @thisisgrayer;
+        .columns(1.5);
+        text-align: right;
+    }
+}
+
+footer {
+    font-size: 1.4rem;
+}
+
+.footer-wrap footer section {
+    padding-bottom: 0;
+    vertical-align: middle;
+    min-height: inherit;
+}
+
+.subfooter {
+    font-size: 1.3rem;
+}
+
+.subfooter div {
+    margin-bottom: .6rem;
+}
+
+.subfooter div span {
+    margin-left: .6rem;
+    margin-right: .6rem;
+}
+
+//
+// BASE
+//
+
+h2 {
+    color: @thisisbluer;
+    font-family: "Norwester";
+}
+
+h3 {
+    color: @thisisbluer;
+    font-size: 2rem;
+    line-height: 170%;
+    margin-top: 0;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+//
+// BANNER
+//
+.banner {
+    position: relative;
+    z-index: 2000;
+}
+
+.banner img {
+    .columns(1);
+    border-left: 1px solid @thisisgrayer;
+    border-bottom: 1px solid @thisisgrayer;
+}
+
+.banner img:nth-of-type(2) {
+    border-right: 1px solid @thisisgrayer;
+}
+
+@media (min-width: @screen-md) {
+    .banner img {
+        .columns(2);
+    }
+}
+
+//
+// BLOCKS
+//
+
+.block {
+    .columns(1);
+    margin-bottom: 2rem;
+}
+
+@media (min-width: @screen-sm) {
+    .block {
+        .columnsplus(2);
+    }
+}
+
+@media (min-width: @screen-md) {
+    .block {
+        .columnsplus(3);
+        margin-bottom: 0;
+    }
+    
+    .block:nth-of-type(1),
+    .block:nth-of-type(2),
+    .block:nth-of-type(3) {
+        margin-bottom: 2rem;
+    }
+}
+
+.block {
+    position: relative;
+}
+
+.tweets-text {
+    position: relative;
+    z-index: 2000;
+    font-size: 2rem;
+    line-height: 170%;
+}
+
+.block-bg {
+    color: lighten(@thisisblue, 20%);
+    font-size: 12rem;
+    position: absolute;
+    z-index: 100;
+    opacity: .1;
+    top: 0;
+    right: 2rem;
+}
+
 
 //
 // STATES
