@@ -15,3 +15,8 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
+
+Route::get('/slider', function()
+{
+	return View::make('slider');
+});
