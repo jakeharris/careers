@@ -296,20 +296,20 @@ h3 {
 }
 
 .banner > img,
-.banner .slcontainer {
+.banner .slider {
     @include columns(1);
     border-left: 1px solid $thisisgrayer;
     border-bottom: 1px solid $thisisgrayer;
 }
 
 .banner > img:nth-of-type(2),
-.banner .slcontainer:nth-of-type(2) {
+.banner .slider:nth-of-type(2) {
     border-right: 1px solid $thisisgrayer;
 }
 
 @media (min-width: $screen-md) {
     .banner > img,
-    .banner .slcontainer {
+    .banner .slider {
         @include columns(2);
     }
 }
@@ -368,13 +368,13 @@ h3 {
 //
 
 $sliderheight: 350px;
-$sliderwidth: 584px;
+$sliderwidth: 585px;
 $slidercount: 5;
 $sliderduration: 5s;
 $slidertotalduration: $slidercount * $sliderduration;
 $sliderkps: 100 / $slidertotalduration;
 
-#slider {
+.slider {
    background: #000;
    height: $sliderheight;
    width: $sliderwidth;
@@ -382,25 +382,18 @@ $sliderkps: 100 / $slidertotalduration;
    position: relative;
 }
 
-// Left slider has one 1px border.
-// Right slider has two 1px borders.
-// Prevent right slider from overflowing.
-.slcontainer:nth-of-type(2) #slider {
-    width: $sliderwidth - 1;
-}
-
-#mask {
+.slider-mask {
    overflow: hidden;
    height: $sliderheight; 
 }
 
-#slider ul {
+/*ul*/.slider-list {
    margin: 0;
    padding: 0;
    position: relative;
 }
 
-#slider li {
+/*li*/.slider-list-item {
     margin: 0;
     padding: 0;
     width: $sliderwidth;
@@ -412,15 +405,8 @@ $sliderkps: 100 / $slidertotalduration;
     -webkit-animation:cycle 25s linear infinite;
 }
 
-// Left slider has one 1px border.
-// Right slider has two 1px borders.
-// Prevent right slider from overflowing.
-.slcontainer:nth-of-type(2) #slider li {
-    width: $sliderwidth - 1;
-}
-
 @for $i from 1 through $slidercount {
-    #slider li:nth-of-type(#{$i}) {
+    .slider-list-item:nth-of-type(#{$i}) {
         -moz-animation-delay: -25s + 5 * $i;
         -webkit-animation-delay: -25s + 5 * $i;
     }
