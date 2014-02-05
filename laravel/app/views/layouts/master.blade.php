@@ -94,7 +94,7 @@
                                     <i class="fa fa-youtube footer-icon"></i>
                                 </a>
                                 <a href="http://tigersprepare.blogspot.com/">
-                                    <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/blog_template.png" alt="Blog">
+                                    <i class="fa fa-blogger footer-icon"></i>
                                 </a>
                             </li>
                         </ul>
