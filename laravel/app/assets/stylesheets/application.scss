@@ -135,6 +135,18 @@ $screen-lg: 1200px;
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
+.container {
+    max-width: none !important;
+    width: 100vw !important;
+}
+
+@media (min-width: $screen-sm) {
+    .container {
+        max-width: none !important;
+        width: 90vw !important;
+    }
+}
+
 body {
     background: $thisisgray;
     font-family: "Source Sans Pro";
@@ -303,56 +315,27 @@ h3 {
 .banner {
     position: relative;
     z-index: 2000;
+    border-left: 1px solid $thisisgrayer;
+    border-right: 1px solid $thisisgrayer;
+    border-bottom: 1px solid $thisisgrayer;
 }
 
-.banner > img,
 .banner .slider {
     @include columns(1);
-    border-left: 1px solid $thisisgrayer;
-    border-bottom: 1px solid $thisisgrayer;
-    border-right: 1px solid $thisisgrayer;
 }
 
-.banner > img:nth-of-type(2),
 .banner .slider:nth-of-type(2) {
     display: none;
 }
 
 @media (min-width: $screen-md) {
-    .banner > img,
     .banner .slider {
         @include columns(2);
     }
- 
-    .banner > img:nth-of-type(1),
-    .banner .slider:nth-of-type(1) {
-        border-right: none;
-    }
     
-    .banner > img:nth-of-type(2),
     .banner .slider:nth-of-type(2) {
         display: inline-block;
-    }
-    
-    .banner .slider {
-        height: 29.9vw;
-        width: 50%;
-    }
-    
-    .banner .slider-mask {
-        height: 29.9vw; 
-    }
-
-    .banner /*li*/.slider-list-item {
-        width: 50vw;
-        height: 29.9vw;
-        top: -29.9vw - 5px;
-        -moz-animation: lightcycle 25s linear infinite;
-    -webkit-animation: lightcycle 25s linear infinite;
-    }
-    
-    .banner .slider-list-item img {
-        width: 100%;
+        border-left: 1px solid $thisisgrayer;
     }
 }
 
@@ -409,102 +392,92 @@ h3 {
 // SLIDER
 //
 
-$sliderheight: 59.8vw; // 350px;
-$sliderwidth: 100vw; // 585px;
-$slidercount: 5;
-$sliderduration: 5s;
-$slidertotalduration: $slidercount * $sliderduration;
-$sliderkps: 100 / $slidertotalduration;
+@mixin slider ($screen: $screen-sm, $aspect: (350 / 585), $count: 5, $duration: 5s ) {
+    @if $screen >= $screen-sm {
+        $width: 45vw;
+    } @else {
+        $width: 100vw;
+    }
 
-.slider {
-    background: #000;
-    height: $sliderheight;
-    width: $sliderwidth;
-    overflow: visible;
-    position: relative;
-}
-
-.slider-mask {
-    overflow: hidden;
-    height: $sliderheight; 
-}
-
-/*ul*/.slider-list {
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-/*li*/.slider-list-item {
-    margin: 0;
-    padding: 0;
-    width: $sliderwidth;
-    height: $sliderheight;
-    position: absolute;
-    top: -$sliderheight - 5px;
-    list-style: none;
-    -moz-animation:cycle 25s linear infinite;
-    -webkit-animation:cycle 25s linear infinite;
-}
-
-.slider-list-item img {
-    width: 100%;
-}
-
-@for $i from 1 through $slidercount {
-    .slider-list-item:nth-of-type(#{$i}) {
-        -moz-animation-delay: -25s + 5 * $i;
-        -webkit-animation-delay: -25s + 5 * $i;
+    $height: $aspect * $width;
+    $totalduration: $count * $duration;
+    $kps: 100 / $totalduration;
+    
+    .slider {
+       background: #000;
+       height: $height;
+       width: $width;
+       overflow: visible;
+       position: relative;
+    }
+    
+    .slider-mask {
+       overflow: hidden;
+       height: $height; 
+    }
+    
+    /*ul*/.slider-list {
+       margin: 0;
+       padding: 0;
+       position: relative;
+    }
+    
+    /*li*/.slider-list-item {
+        margin: 0;
+        padding: 0;
+        width: $width;
+        height: $height;
+        position: absolute;
+        top: -$height - 5px;
+        list-style: none;
+        -moz-animation:cycle 25s linear infinite;
+        -webkit-animation:cycle 25s linear infinite;
+    }
+    
+    /*li*/.slider-list-item img {
+        width: $width;
+        height: $height;
+    }
+    
+    @for $i from 1 through $count {
+        .slider-list-item:nth-of-type(#{$i}) {
+            -moz-animation-delay: -25s + 5 * $i;
+            -webkit-animation-delay: -25s + 5 * $i;
+        }
+    }
+    
+    //#slider:hover li {
+    //	-moz-animation-play-state:paused;
+    //	-webkit-animation-play-state:paused;
+    //}
+    
+    @-moz-keyframes cycle {
+        0%   { top: -$height; z-index: 0;}
+        56%  { top: -$height; z-index: 0;}
+        60%  { top: 0px; z-index: 1;}
+        64%  { top: 0px; z-index: 1;}
+        76%  { top: 0px; z-index: 0; }
+        80%  { top: $height; z-index: 0; }
+        81%  { top: -$height; z-index: -1; }
+        100% { top: -$height; z-index: -1; }	
+    }
+    
+    @-webkit-keyframes cycle {
+        0%   { top: -$height; z-index: 0;}
+        56%  { top: -$height; z-index: 0;}
+        60%  { top: 0px; z-index: 1;}
+        64%  { top: 0px; z-index: 1;}
+        76%  { top: 0px; z-index: 0; }
+        80%  { top: $height; z-index: 0; }
+        81%  { top: -$height; z-index: -1; }
+        100% { top: -$height; z-index: -1; }	
     }
 }
 
-//#slider:hover li {
-//	-moz-animation-play-state:paused;
-//	-webkit-animation-play-state:paused;
-//}
+@include slider($screen-xs);
 
-@-moz-keyframes cycle {
-	0%   { top: -$sliderheight; z-index: 0;}
-	56%  { top: -$sliderheight; z-index: 0;}
-	60%  { top: 0px; z-index: 1;}
-	64%  { top: 0px; z-index: 1;}
-	76%  { top: 0px; z-index: 0; }
-	80%  { top: $sliderheight; z-index: 0; }
-	81%  { top: -$sliderheight; z-index: -1; }
-	100% { top: -$sliderheight; z-index: -1; }	
-}
-
-@-webkit-keyframes cycle {
-	0%   { top: -$sliderheight; z-index: 0;}
-	56%  { top: -$sliderheight; z-index: 0;}
-	60%  { top: 0px; z-index: 1;}
-	64%  { top: 0px; z-index: 1;}
-	76%  { top: 0px; z-index: 0; }
-	80%  { top: $sliderheight; z-index: 0; }
-	81%  { top: -$sliderheight; z-index: -1; }
-	100% { top: -$sliderheight; z-index: -1; }	
-}
-
-@-moz-keyframes lightcycle {
-	0%   { top: -29.9vw; z-index: 0;}
-	56%  { top: -29.9vw; z-index: 0;}
-	60%  { top: 0px; z-index: 1;}
-	64%  { top: 0px; z-index: 1;}
-	76%  { top: 0px; z-index: 0; }
-	80%  { top: 29.9vw; z-index: 0; }
-	81%  { top: -29.9vw; z-index: -1; }
-	100% { top: -29.9vw; z-index: -1; }	
-}
-
-@-webkit-keyframes lightcycle {
-	0%   { top: -29.9vw; z-index: 0;}
-	56%  { top: -29.9vw; z-index: 0;}
-	60%  { top: 0px; z-index: 1;}
-	64%  { top: 0px; z-index: 1;}
-	76%  { top: 0px; z-index: 0; }
-	80%  { top: 29.9vw; z-index: 0; }
-	81%  { top: -29.9vw; z-index: -1; }
-	100% { top: -29.9vw; z-index: -1; }	
+@media (min-width: $screen-sm) {
+    @include slider($screen-sm);
 }
 
 //
