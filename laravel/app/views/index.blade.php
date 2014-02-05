@@ -13,7 +13,7 @@ Career Center
 @section('navbar')
     <ul>
         <li><a href="http://www.auburn.edu/career/students/">Students</a></li>
-        <li><a href="http://www.auburn.edu/career/parents/">Parents</a></li>
+        <li><a href="http://www.auburn.edu/career/parents/">Family</a></li>
         <li><a href="http://hire.auburn.edu">Employers</a></li>
     </ul>
 @endsection
@@ -24,31 +24,31 @@ Career Center
             <ul class="slider-list">
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/major.png" />
+                        <img src="assets/major.png">
                     </a>
                 </li>
                 
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/using.png" />
+                        <img src="assets/using.png">
                     </a>
                 </li>
                 
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/major.png" />
+                        <img src="assets/eng.png">
                     </a>
                 </li>
                 
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/using.png" />
+                        <img src="assets/vimeo.png">
                     </a>
                 </li>
                 
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/major.png" />
+                        <img src="assets/eng.png">
                     </a>
                 </li>
             </ul>
@@ -59,31 +59,31 @@ Career Center
             <ul class="slider-list">
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/using.png" />
+                        <img src="assets/eng.png">
                     </a>
                 </li>
                 
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/major.png" />
+                        <img src="assets/vimeo.png">
                     </a>
                 </li>
                 
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/using.png" />
+                        <img src="assets/major.png">
                     </a>
                 </li>
                 
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/major.png" />
+                        <img src="assets/using.png">
                     </a>
                 </li>
                 
                 <li class="slider-list-item">
                     <a href="#">
-                        <img src="assets/using.png" />
+                        <img src="assets/vimeo.png">
                     </a>
                 </li>
             </ul>
