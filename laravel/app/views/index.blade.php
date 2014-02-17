@@ -12,13 +12,17 @@ Career Center
 
 @section('navbar')
     <ul>
-        <li><a href="http://www.auburn.edu/career/students/">Students</a></li>
+        <li><a href="http://www.auburn.edu/career/students/">Students &amp; Alumni</a></li>
         <li><a href="http://www.auburn.edu/career/parents/">Family</a></li>
+        <li><a href="http://www.auburn.edu/career/faculty/">Faculty</a></li>
         <li><a href="http://hire.auburn.edu">Employers</a></li>
     </ul>
 @endsection
 
 @section('banner')
+    <img class="slider" src="assets/major.png">
+    <img class="slider" src="assets/using.png">
+<!--
     <div class="slider">
         <div class="slider-mask">
             <ul class="slider-list">
@@ -54,6 +58,8 @@ Career Center
             </ul>
         </div>
     </div>
+-->
+<!--
     <div class="slider">
         <div class="slider-mask">
             <ul class="slider-list">
@@ -89,19 +95,34 @@ Career Center
             </ul>
         </div>
     </div>
+-->
 @endsection
 
 @section('body')
     <div class="flex">
         <div class="block hours">
-            <h2><a href="http://auburn.edu/map/?id=76">Office Hours</a></h2>
-            Filter fair trade, robust froth café au lait, mazagran eu aftertaste cultivar sit single shot. Extraction, et, eu, chicory caramelization robusta milk redeye. Iced barista foam, robusta aroma extra turkish grounds sit cappuccino. Lungo, siphon brewed steamed turkish cup macchiato whipped.
-            <i class="fa fa-clock-o block-bg hours-bg"></i>
+            <h2><a href="http://www.auburn.edu/career/aboutus/">About Our Office</a></h2>
+            <div class="place">
+                <a href="#" class="place-icon">
+                    <i class="fa fa-map-marker"></i>
+                </a>
+                <address class="place-address">
+                    303 Mary Martin Hall<br>
+                    Auburn, AL 36849
+                </address>
+            </div>
+            <div class="times">
+                <i class="fa fa-clock-o times-icon"></i>
+                <div class="times-address">
+                    Visit us! We're open Monday through Friday. No appointment necessary from noon until 4 pm. If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744</a>.
+                </div>
+            </div>
+            <i class="fa fa-briefcase block-bg hours-bg"></i>
         </div>
         
         <div class="block tweets">
             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
-            <div class="tweets-text" data-twitter=""></div>
+            <div class="tweets-text" data-twitter=""><?php echo $tweet; ?></div>
             <i class="fa fa-twitter block-bg tweets-bg"></i>
         </div>
         
@@ -114,20 +135,72 @@ Career Center
         
         <div class="block social">
             <h2><a href="#">Connect With Us</a></h2>
-            Flavour caffeine cappuccino aged carajillo french press, est aroma cup mocha aroma. Dripper lungo, grinder aromatic coffee eu steamed at grounds. And frappuccino galão americano froth kopi-luwak mug galão eu spoon. Dripper, so, caffeine froth cultivar, that macchiato saucer at single origin.
+            <ul>
+                <li>
+                    <a href="http://www.facebook.com/AUCareer">
+                        <i class="fa fa-facebook social-icon"></i>
+                    </a>
+                    <a href="http://twitter.com/AUCareer">
+                        <i class="fa fa-twitter social-icon"></i>
+                    </a>
+                    <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262">
+                        <i class="fa fa-linkedin social-icon"></i>
+                    </a>
+                    <a href="http://www.youtube.com/user/AUCDS/featured">
+                        <i class="fa fa-youtube social-icon"></i>
+                    </a>
+                    <a href="http://tigersprepare.blogspot.com/">
+                        <i class="fa fa-blogger social-icon"></i>
+                    </a>
+                </li>
+            </ul>
             <i class="fa fa-group block-bg social-bg"></i>
         </div>
         
         <div class="block events">
             <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
-            Mocha doppio, extraction espresso, cinnamon roast in and lungo. Et foam instant, a latte saucer siphon mazagran. Café au lait, crema, saucer id mocha irish galão viennese filter. White, extra aftertaste brewed foam java steamed cultivar.
+            <ul>
+                <li class="event">
+                    <div class="event-date">
+                        <div class="event-date-month">FEB</div>
+                        <div class="event-date-day">11</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-details-name">Engineering &amp; Technical Career Expo</div>
+                        <div class="event-details-location">The Hotel at Auburn University and Dixon Conference Center</div>
+                        <div class="event-details-time">3 PM - 7 PM</div>
+                    </div>
+                </li>
+                <li class="event">
+                    <div class="event-date">
+                        <div class="event-date-month">FEB</div>
+                        <div class="event-date-day">17</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-details-name">Using Your Major | Panel Discussion | Government</div>
+                        <div class="event-details-location">Student Center, Room 2107</div>
+                        <div class="event-details-time">12 PM - 1 PM</div>
+                    </div>
+                </li>
+            </ul>
             <i class="fa fa-calendar block-bg events-bg"></i>
         </div>
         
         <div class="block sponsors">
             <h2><a href="#">Sponsor</a></h2>
-            Kopi-luwak est so, cultivar grounds ut rich steamed cortado caffeine. Ristretto cream black crema crema instant black fair trade. A mocha aroma aromatic as sweet french press carajillo caffeine crema milk.
+            <a class="ad" href="http://www.nxtbook.com/nxtbooks/nace/JobChoices0812/index.php">
+                <img class="ad-image" src="assets/choices.jpg">
+            </a>
             <i class="fa fa-certificate block-bg sponsors-bg"></i>
         </div>
     </div>
+@endsection
+
+@section('banner-bottom')
+    <img class="slider" src="assets/vimeo.png">
+    <img class="slider" src="assets/eng.png">
+<!--
+    <img class="slider" src="assets/using.png">
+    <img class="slider" src="assets/major.png">
+-->
 @endsection

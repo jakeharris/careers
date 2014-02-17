@@ -11,7 +11,6 @@
 // The available directives right now are require, require_directory, and require_tree
 //
 //= require jquery
-//= require twitter-text
 //= require_self
 
 /*jshint browser: true, devel: true */
@@ -21,31 +20,31 @@
 // FRAMEWORK
 //
 
-function Framework() {
-    this.data = {
-        twitter: "TEST."
-    };
-}
-
-Framework.prototype.update = function(key) {
-    if (this.data.hasOwnProperty(key)) {
-        var elem = document.querySelector('[data-' + key + ']');
-        elem.innerHTML = this.data[key];
-    }
-};
-
-Framework.prototype.update_all = function() {
-    for (var key in this.data) {
-        this.update(key);
-    }
-};
-
-var frame = new Framework();
-frame.update_all();
+//function Framework() {
+//    this.data = {
+//        twitter: "TEST."
+//    };
+//}
+//
+//Framework.prototype.update = function(key) {
+//    if (this.data.hasOwnProperty(key)) {
+//        var elem = document.querySelector('[data-' + key + ']');
+//        elem.innerHTML = this.data[key];
+//    }
+//};
+//
+//Framework.prototype.update_all = function() {
+//    for (var key in this.data) {
+//        this.update(key);
+//    }
+//};
+//
+//var frame = new Framework();
+//frame.update_all();
 
 //
 // TWITTER
 //
 
-frame.data.twitter = twttr.txt.autoLink("Applications due TODAY 1/27 for Applications Engineer (ME) position w/ SKF USA, Inc. | TRL http://jobs.auburn.edu #hireAuburn");
-frame.update("twitter");
+//frame.data.twitter = twttr.txt.autoLink("Applications due TODAY 1/27 for Applications Engineer (ME) position w/ SKF USA, Inc. | TRL http://jobs.auburn.edu #hireAuburn");
+//frame.update("twitter");

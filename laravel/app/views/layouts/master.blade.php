@@ -67,6 +67,12 @@
                 </div>
             </div>
             
+            <div class="row">
+                <div class="banner banner-bottom flex">
+                    @yield('banner-bottom')
+                </div>
+            </div>
+            
             <div class="row footer-wrap hidden-print">
                 <footer>
                     @section('footer')

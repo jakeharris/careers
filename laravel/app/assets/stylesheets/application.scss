@@ -138,6 +138,11 @@ $flex-pad: 90vw;
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
+address {
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     max-width: none !important;
     width: $flex-full !important;
@@ -147,6 +152,30 @@ $flex-pad: 90vw;
     .container {
         max-width: none !important;
         width: $flex-pad !important;
+    }
+}
+
+.content-division {
+    padding: 15px;
+}
+
+@media (min-width: $screen-sm) {
+    .content-division {
+//        padding: 15px 30px;
+    }
+}
+
+.content-area {
+    margin-bottom: 0;
+}
+
+.footer-wrap {
+    margin-top: 0;
+}
+
+@media (min-width: $screen-sm) {
+    .footer-wrap {
+        margin-top: 10px;
     }
 }
 
@@ -207,15 +236,29 @@ header {
         margin: 0;
         padding: 1rem .5rem;
         font-family: "Norwester";
-        display: inline-block;
+        display: block;
         vertical-align: middle;
-        text-align: center;
+        text-align: left;
+    }
+    
+    @media (min-width: $screen-sm) {
+        ul li {
+            display: inline-block;
+            text-align: center;
+        }
     }
     
     ul li:after {
         color: lighten($thisisbluer, 10%);
-        content: " /";
-        padding-left: 0.5rem;
+        content: "";
+        padding-left: 0;
+    }
+    
+    @media (min-width: $screen-sm) {
+        ul li:after {
+            content: " /";
+            padding-left: 0.5rem;
+        }
     }
     
     ul li:last-of-type {
@@ -280,6 +323,13 @@ footer {
     color: white;
 }
 
+.footer-icon.fa-blogger:hover {
+    background-image: url("blogger-invert.svg") !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: 3rem !important;
+}
+
 .subfooter {
     font-size: 1.3rem;
 }
@@ -305,10 +355,20 @@ h2 {
 h3 {
     color: $thisisbluer;
     font-size: 2rem;
-    line-height: 170%;
+    line-height: 160%;
     margin-top: 0;
     font-weight: normal;
     margin-bottom: 5px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin: 0;
+    padding: 0;
 }
 
 //
@@ -346,17 +406,30 @@ h3 {
 }
 
 //
+// BANNER-BOTTOM
+//
+
+.blank {
+    visibility: hidden;
+}
+
+.banner-bottom {
+    background: white;
+}
+
+//
 // BLOCKS
 //
 
 .block {
     @include columns(1);
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
 }
 
 @media (min-width: $screen-sm) {
     .block {
         @include columnsplus(2);
+        margin-bottom: 0;
     }
 }
 
@@ -369,19 +442,20 @@ h3 {
     .block:nth-of-type(1),
     .block:nth-of-type(2),
     .block:nth-of-type(3) {
-        margin-bottom: 2rem;
+//        margin-bottom: 2rem;
     }
 }
 
 .block {
     position: relative;
+    padding: 5px;
 }
 
 .tweets-text {
     position: relative;
     z-index: 2000;
     font-size: 2rem;
-    line-height: 170%;
+    line-height: 160%;
 }
 
 .block-bg {
@@ -390,8 +464,140 @@ h3 {
     position: absolute;
     z-index: 100;
     opacity: .1;
-    top: 0;
+    top: 5px;
     right: 2rem;
+}
+
+//
+// HOURS BLOCK
+//
+
+.place,
+.times {
+    margin-bottom: 1.6rem;
+    @extend .flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-line-pack: start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.place-icon,
+.times-icon {
+    font-size: 6rem;
+    color: $thisisblue;
+    width: 18%;
+    text-align: center;
+    margin-right: 1rem;
+}
+
+.place-address {
+    font-size: 2rem;
+    line-height: 170%;
+}
+
+.place-address,
+.times-address {
+    width: 82%;
+}
+
+//
+// SOCIAL BLOCK
+//
+
+.social-icon {
+    color: white;
+    background: $thisisblue;
+    border: 1px solid $thisisgray;
+    width: 8rem;
+    height: 8rem;
+    font-size: 6rem;
+    padding-top: 11px;
+    margin-right: 1.3rem;
+    margin-bottom: 1.6rem;
+    vertical-align: middle;
+    text-align: center;
+    z-index: 9999999;
+    position: relative;
+}
+
+.social-icon:hover {
+    background: darken($thisisorange, 1%);
+    color: white;
+}
+
+.social-icon.fa-blogger {
+    background-image: url("blogger-invert.svg") !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: 8rem !important;
+}
+
+//
+// EVENTS BLOCK
+//
+
+.event {
+    margin-bottom: 1.6rem;
+    @extend .flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-line-pack: start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.event-date,
+.event-details {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.event-date {
+    color: $thisisoranger;
+    text-align: right;
+    margin-right: 1.8rem;
+    width: 18%;
+}
+
+.event-date-day {
+    font-size: 6rem;
+    margin-top: -1.8rem;
+}
+
+.event-details {
+    color: darken($thisisgrayer, 39%);
+    width: 82%;
+    line-height: 160%;
+    font-size: 1.7rem;
+}
+
+.event-details-name {
+    color: $thisisbluer;
+    font-size: 2rem;
+}
+
+//
+// SPONSOR BLOCK
+//
+
+.ad {
+    position: relative;
+    z-index: 9999;
+}
+
+.ad-image {
+    border: 1px solid $thisisgray;
+    width: 100%;
 }
 
 //
@@ -555,34 +761,4 @@ $half-height: $aspect * $half-width;
     80%  { top: $full-height; z-index: 0; }
     81%  { top: -$full-height; z-index: -1; }
     100% { top: -$full-height; z-index: -1; }	
-}
-
-//
-// STATES
-//
-
-.blue {
-    @include colorize($blue);
-}
-
-.bluer {
-    @include colorize(darken($blue, 10%));
-}
-
-.red {
-    @include colorize($red);
-}
-
-.redder {
-    @include colorize(darken($red, 10%));
-}
-
-.green {
-    @include colorize($green);
-}
-
-.white,
-.white:hover {
-    @include colorize(white);
-    cursor: default;
 }
