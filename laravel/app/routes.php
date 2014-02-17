@@ -16,10 +16,13 @@ Route::get('/', function()
     if (!Cache::has('tweet')) {
         $tweet = Twitter::getUserTimeline(array('screen_name' => 'aucareer', 'count' => 1, 'format' => 'json'));
         $tweet = json_decode($tweet, true);
-        //$tweet = $tweet[0]['text'];
-        //$tweet = Twitter::linkify($tweet);
-        //Cache::put('tweet', $tweet, 10);
+        if (array_key_exists(0, $tweet)) {
+            $tweet = $tweet[0]['text'];
+            $tweet = Twitter::linkify($tweet);
+            Cache::put('tweet', $tweet, 10);
+        }
     }
 
 	return View::make('index', array('tweet' => Cache::get('tweet', 'No recent tweets.')));
+//    return View::make('index', array('tweet' => 'No recent tweets.'));
 });
