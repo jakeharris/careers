@@ -128,8 +128,8 @@ Career Center
         
         <div class="block blog">
             <h2><a href="http://tigersprepare.blogspot.com">Our Blog</a></h2>
-            <h3>Career Mythbusters: &ldquo;I have a great GPA. I don’t need an internship.&rdquo;</h3>
-            <div>Don’t get me wrong. GPA is an important factor in your job search, making you more (or less) marketable and possibly impacting your starting salary. However&hellip;</div>
+            <h3><?php echo $blog["title"]; ?></h3>
+            <div><?php echo $blog["body"]; ?></div>
             <i class="fa fa-edit block-bg blog-bg"></i>
         </div>
         

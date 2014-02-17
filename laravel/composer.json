@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.1.*",
         "codesleeve/asset-pipeline": "dev-master",
-        "thujohn/twitter": "dev-master"
+        "thujohn/twitter": "dev-master",
+        "rmccue/requests": ">=1.0"
 	},
 	"autoload": {
 		"classmap": [

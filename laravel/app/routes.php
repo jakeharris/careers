@@ -22,7 +22,23 @@ Route::get('/', function()
             Cache::put('tweet', $tweet, 10);
         }
     }
+    
+    if (!Cache::has('blog')) {
+        $blog = array('title' => '', 'body' => '');
+        $request = Requests::get('http://tigersprepare.blogspot.com/feeds/posts/default?alt=rss');
+        $request = simplexml_load_string($request->body);
+        $request = json_encode($request);
+        $request = json_decode($request, true);
+        if (array_key_exists('channel', $request)) {
+            $blog['title'] = $request['channel']['item'][0]['title'];
+            $blog['body'] = $request['channel']['item'][0]['description'];
+            $blog['body'] = implode(" ", array_slice(explode(" ", strip_tags($blog['body'])), 0, 50)) . '&hellip;';
+            Cache::put('blog', $blog, 10);
+        }
+    }
 
-	return View::make('index', array('tweet' => Cache::get('tweet', 'No recent tweets.')));
-//    return View::make('index', array('tweet' => 'No recent tweets.'));
+	return View::make('index', array(
+        'tweet' => Cache::get('tweet', 'No recent tweets.'),
+        'blog' => Cache::get('blog', array('title' => 'No recent posts.', 'body' => ''))
+    ));
 });
