@@ -202,8 +202,8 @@ Career Center
 @endsection
 
 @section('banner-bottom')
-    <img class="slider" src="assets/vimeo.png">
-    <img class="slider" src="assets/eng.png">
+    <img class="slider" src="assets/expo.jpg">
+    <img class="slider" src="assets/education.jpg">
 <!--
     <img class="slider" src="assets/using.png">
     <img class="slider" src="assets/major.png">
