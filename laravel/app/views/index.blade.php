@@ -146,8 +146,11 @@ Career Center
                     <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262">
                         <i class="fa fa-linkedin social-icon"></i>
                     </a>
-                    <a href="http://www.youtube.com/user/AUCDS/featured">
-                        <i class="fa fa-youtube social-icon"></i>
+                    <a href="http://www.pinterest.com/aucareer/">
+                        <i class="fa fa-pinterest social-icon"></i>
+                    </a>
+                    <a href="https://vimeo.com/aucareer">
+                        <i class="fa fa-vimeo-square social-icon"></i>
                     </a>
                     <a href="http://tigersprepare.blogspot.com/">
                         <i class="fa fa-blogger social-icon"></i>
