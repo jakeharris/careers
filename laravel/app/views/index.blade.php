@@ -103,13 +103,15 @@ Career Center
         <div class="block hours">
             <h2><a href="http://www.auburn.edu/career/aboutus/">About Our Office</a></h2>
             <div class="place">
-                <a href="#" class="place-icon">
+                <a href="http://auburn.edu/map/?id=76" class="place-icon">
                     <i class="fa fa-map-marker"></i>
                 </a>
-                <address class="place-address">
-                    303 Mary Martin Hall<br>
-                    Auburn, AL 36849
-                </address>
+                <a href="http://auburn.edu/map/?id=76" class="place-address">
+                    <address>
+                        303 Mary Martin Hall<br>
+                        Auburn, AL 36849
+                    </address>
+                </a>
             </div>
             <div class="times">
                 <i class="fa fa-clock-o times-icon"></i>
