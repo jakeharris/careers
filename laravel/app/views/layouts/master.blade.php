@@ -69,7 +69,7 @@
             
             <div class="row">
                 <div class="banner banner-bottom flex">
-                    @yield('banner-bottom')
+                    @yield('banner-bottom') 
                 </div>
             </div>
             
