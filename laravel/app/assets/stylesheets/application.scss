@@ -285,8 +285,8 @@ header {
         @include columns(3);
     }
     .header-navbar {
-        border-bottom: 1px solid $thisisgrayer;
         @include columns(1.5);
+        border-bottom: 1px solid $thisisgrayer;
         text-align: right;
     }
 }
@@ -378,15 +378,17 @@ ul li {
 .banner {
     position: relative;
     z-index: 2000;
+    border-top: 1px solid $thisisgrayer;
     border-bottom: 1px solid $thisisgrayer;
 }
 
 .banner .slider {
+    display: none;
     @include columns(1);
 }
 
-.banner .slider:nth-of-type(2) {
-    display: none;
+.banner .slider:nth-of-type(1) {
+    display: inline-block;
 }
 
 @media (min-width: $screen-sm) {
@@ -405,6 +407,16 @@ ul li {
     }
 }
 
+@media (min-width: $screen-md) {
+    .banner {
+        border-top: none;
+    }
+    
+    .banner .slider {
+        display: inline-block;
+    }
+}
+
 //
 // BANNER-BOTTOM
 //
@@ -415,6 +427,32 @@ ul li {
 
 .banner-bottom {
     background: white;
+    border-top: 1px solid $thisisgrayer;
+}
+
+.banner-bottom .slider {
+    border: none;
+    @include columns(1);
+}   
+
+@media (min-width: $screen-sm) {
+    .banner-bottom {
+        border-top: none;
+    }
+    
+    .banner-bottom .slider {
+        @include columns(2);
+    }
+}
+
+@media (min-width: $screen-md) {
+    .banner-bottom .slider {
+        @include columns(3);
+    }
+    
+    .banner-bottom .slider:nth-of-type(2) {
+        border-left: none;
+    }
 }
 
 //
