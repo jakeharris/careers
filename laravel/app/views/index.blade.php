@@ -136,7 +136,7 @@ Career Center
             <div class="times">
                 <i class="fa fa-clock-o times-icon"></i>
                 <div class="times-address">
-                    Visit us! We're open Monday through Friday. No appointment necessary from noon until 4 pm. If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744</a>.
+                    Visit us! We’re open Monday through Friday. Walk-ins are 15 minute sessions (from noon to 4 pm) for résumé, cover letters and basic job search questions. If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744</a>.
                 </div>
             </div>
             <i class="fa fa-briefcase block-bg hours-bg"></i>
