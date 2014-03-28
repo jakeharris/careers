@@ -28,7 +28,7 @@ Career Center
             <p class="login-description">Your link to jobs, interviews and employers.</p>
             <div class="input-group login-username">
                 <span class="input-group-addon input-group-addon-md"><i class="fa fa-user"></i></span>
-                <input type="text" name="username" class="form-control input-md" placeholder="Username">
+                <input type="text" name="username" class="form-control input-md" placeholder="Student Username">
             </div>
             <div class="input-group login-password">
                 <span class="input-group-addon input-group-addon-md"><i class="fa fa-lock"></i></span>
