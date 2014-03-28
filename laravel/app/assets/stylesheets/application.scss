@@ -917,6 +917,11 @@ $half-height: $aspect * $half-width;
     font-size: 20rem;
 }
 
+.trl {
+    position: relative;
+    z-index: 1000000;
+}
+
 .trl::before {
     content: 'TRL';
 }
