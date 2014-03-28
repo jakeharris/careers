@@ -142,10 +142,33 @@ Career Center
             <i class="fa fa-briefcase block-bg hours-bg"></i>
         </div>
         
-        <div class="block tweets">
-            <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
-            <div class="tweets-text" data-twitter=""><?php echo $tweet; ?></div>
-            <i class="fa fa-twitter block-bg tweets-bg"></i>
+        <div class="block events">
+            <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
+            <ul>
+                <li class="event">
+                    <div class="event-date">
+                        <div class="event-date-month">FEB</div>
+                        <div class="event-date-day">11</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-details-name">Engineering &amp; Technical Career Expo</div>
+                        <div class="event-details-location">The Hotel at Auburn University and Dixon Conference Center</div>
+                        <div class="event-details-time">3 PM - 7 PM</div>
+                    </div>
+                </li>
+                <li class="event">
+                    <div class="event-date">
+                        <div class="event-date-month">FEB</div>
+                        <div class="event-date-day">17</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-details-name">Using Your Major | Panel Discussion | Government</div>
+                        <div class="event-details-location">Student Center, Room 2107</div>
+                        <div class="event-details-time">12 PM - 1 PM</div>
+                    </div>
+                </li>
+            </ul>
+            <i class="fa fa-calendar block-bg events-bg"></i>
         </div>
         
         <div class="block blog">
@@ -181,34 +204,11 @@ Career Center
             </ul>
             <i class="fa fa-group block-bg social-bg"></i>
         </div>
-        
-        <div class="block events">
-            <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
-            <ul>
-                <li class="event">
-                    <div class="event-date">
-                        <div class="event-date-month">FEB</div>
-                        <div class="event-date-day">11</div>
-                    </div>
-                    <div class="event-details">
-                        <div class="event-details-name">Engineering &amp; Technical Career Expo</div>
-                        <div class="event-details-location">The Hotel at Auburn University and Dixon Conference Center</div>
-                        <div class="event-details-time">3 PM - 7 PM</div>
-                    </div>
-                </li>
-                <li class="event">
-                    <div class="event-date">
-                        <div class="event-date-month">FEB</div>
-                        <div class="event-date-day">17</div>
-                    </div>
-                    <div class="event-details">
-                        <div class="event-details-name">Using Your Major | Panel Discussion | Government</div>
-                        <div class="event-details-location">Student Center, Room 2107</div>
-                        <div class="event-details-time">12 PM - 1 PM</div>
-                    </div>
-                </li>
-            </ul>
-            <i class="fa fa-calendar block-bg events-bg"></i>
+
+        <div class="block tweets">
+            <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
+            <div class="tweets-text" data-twitter=""><?php echo $tweet; ?></div>
+            <i class="fa fa-twitter block-bg tweets-bg"></i>
         </div>
         
         <div class="block sponsors">
