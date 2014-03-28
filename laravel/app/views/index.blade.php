@@ -212,7 +212,7 @@ Career Center
         </div>
         
         <div class="block sponsors">
-            <h2><a href="#">Sponsor</a></h2>
+            <h2><a href="#">Sponsors</a></h2>
             <a class="ad" href="http://www.nxtbook.com/nxtbooks/nace/JobChoices0812/index.php">
                 <img class="ad-image" src="assets/ussteel.jpg">
             </a>
