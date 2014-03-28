@@ -36,6 +36,7 @@ $bootstrap-yellow: #f0ad4e;
 // SIZES
 //
 
+$screen-xxs: 320px;
 $screen-xs: 480px;
 $screen-sm: 768px;
 $screen-md: 992px;
@@ -58,6 +59,8 @@ $flex-pad: 90vw;
     font-weight: normal;
     font-style: normal;
 }
+
+$font-headers: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .fa-blogger {
 	background-image: url("blogger.svg") !important;
@@ -242,7 +245,7 @@ header {
 
 .header-title {
     color: $thisisbluer;
-    font-family: "Norwester";
+    font-family: $font-headers;
     font-size: 3rem;
     text-align: left;
     padding: 0.5rem;
@@ -262,7 +265,7 @@ header {
     ul li {
         margin: 0;
         padding: 1rem .5rem;
-        font-family: "Norwester";
+        font-family: $font-headers;
         display: block;
         vertical-align: middle;
         text-align: left;
@@ -402,7 +405,7 @@ footer {
 
 h2 {
     color: $thisisbluer;
-    font-family: "Norwester";
+    font-family: $font-headers;
 }
 
 h3 {
@@ -870,22 +873,37 @@ $half-height: $aspect * $half-width;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    height: 280px;
+}
+
+@media (min-width: $screen-sm) {
+    .login {
+        height: auto;
+    }
 }
 
 .login-wrap {
     position: absolute;
     display: block;
     top: 50%;
-    margin-left: -17rem;
-    margin-top: -12rem;
-    height: 15rem;
+    margin-left: -15rem;
+    margin-top: -13.5rem;
+    height: 20rem;
     left: 50%;
-    width: 34rem;
+    width: 30rem;
+}
+
+@media (min-width: $screen-xs) {
+    .login-wrap {
+        margin-left: -17rem;
+        width: 34rem;
+    }
 }
 
 @media (min-width: $screen-md) {
     .login-wrap {
         margin-left: -20rem;
+        margin-top: -12rem;
         width: 40rem;
     }
 }
@@ -915,6 +933,10 @@ $half-height: $aspect * $half-width;
     z-index: 1000000;
 }
 
+.login-description {
+    text-align: center;
+}
+
 .btn-md {
     color: $thisisbluer;
     height: 40px;
@@ -929,4 +951,18 @@ $half-height: $aspect * $half-width;
 .input-group-addon-md {
     color: $thisisbluer;
     font-size: 24px;
+}
+
+.login-button--active {
+    color: white;
+    background: $thisisbluer;
+}
+
+.login-button--active:hover {
+    background: $thisisblue;
+    color: white;
+}
+
+.flex--login {
+    height: auto;
 }

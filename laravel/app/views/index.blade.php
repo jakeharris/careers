@@ -25,6 +25,7 @@ Career Center
     <form class="slider login" method="post" action="https://auburn-csm.symplicity.com/students/index.php">
         <div class="login-wrap">
             <h2 class="login-title">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
+            <p class="login-description">Your link to jobs, interviews and employers.</p>
             <div class="input-group login-username">
                 <span class="input-group-addon input-group-addon-md"><i class="fa fa-user"></i></span>
                 <input type="text" name="username" class="form-control input-md" placeholder="Username">
@@ -33,7 +34,10 @@ Career Center
                 <span class="input-group-addon input-group-addon-md"><i class="fa fa-lock"></i></span>
                 <input type="password" name="password" class="form-control input-md" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-default btn-md login-button">Sign in</button>
+            <div class="flex flex--login">
+                <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/jobs/trl.html" class="btn btn-default btn-md login-button">Sign up</a>
+                <button type="submit" class="btn btn-default btn-md login-button login-button--active">Sign in</button>
+            </div>
         </div>
     </form>
     <iframe class="slider" src="//player.vimeo.com/video/80103483" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
