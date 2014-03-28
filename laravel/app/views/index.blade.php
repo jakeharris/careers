@@ -13,7 +13,8 @@ Career Center
 
 @section('navbar')
     <ul>
-        <li><a href="http://www.auburn.edu/career/students/">Students &amp; Alumni</a></li>
+        <li><a href="http://www.auburn.edu/career/students/">Students</a></li>
+        <li><a href="http://www.auburn.edu/career/alumni/">Alumni</a></li>
         <li><a href="http://www.auburn.edu/career/parents/">Family</a></li>
         <li><a href="http://www.auburn.edu/career/faculty/">Faculty</a></li>
         <li><a href="http://hire.auburn.edu">Employers</a></li>
