@@ -5,6 +5,7 @@ Career Center
 @endsection
 
 @section('mainHeading')
+Career Center
 @endsection
 
 @section('subHeading')
@@ -20,8 +21,23 @@ Career Center
 @endsection
 
 @section('banner')
-    <img class="slider" src="assets/major.png">
-    <img class="slider" src="assets/using.png">
+<!--    <img class="slider" src="assets/major.png">-->
+    <form class="slider login" method="post" action="https://auburn-csm.symplicity.com/students/index.php">
+        <div class="login-wrap">
+            <h2 class="login-title">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
+            <div class="input-group login-username">
+                <span class="input-group-addon input-group-addon-md"><i class="fa fa-user"></i></span>
+                <input type="text" name="username" class="form-control input-md" placeholder="Username">
+            </div>
+            <div class="input-group login-password">
+                <span class="input-group-addon input-group-addon-md"><i class="fa fa-lock"></i></span>
+                <input type="password" name="password" class="form-control input-md" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default btn-md login-button">Sign in</button>
+        </div>
+    </form>
+    <iframe class="slider" src="//player.vimeo.com/video/80103483" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<!--    <img class="slider" src="assets/using.png">-->
 <!--
     <div class="slider">
         <div class="slider-mask">
@@ -194,7 +210,7 @@ Career Center
         <div class="block sponsors">
             <h2><a href="#">Sponsor</a></h2>
             <a class="ad" href="http://www.nxtbook.com/nxtbooks/nace/JobChoices0812/index.php">
-                <img class="ad-image" src="assets/choices.jpg">
+                <img class="ad-image" src="assets/ussteel.jpg">
             </a>
             <i class="fa fa-certificate block-bg sponsors-bg"></i>
         </div>

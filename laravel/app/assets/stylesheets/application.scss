@@ -73,6 +73,7 @@ $flex-pad: 90vw;
 //
 
 @mixin colorize ($color: $gray) {
+    box-sizing: border-box;
     color: darken($color, 15%);
     background: lighten($color, 30%);
     border-left: 4px solid lighten($color, 15%);
@@ -132,6 +133,18 @@ $flex-pad: 90vw;
     @include columns();
 }
 
+.centered {
+    @extend .flex;
+    text-align: center; 
+    -ms-flex-line-pack: center;
+    -webkit-align-content: center;
+    align-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
 //
 // AUBURN OVERRIDES
 //
@@ -144,13 +157,12 @@ address {
 }
 
 .container {
-    max-width: none !important;
+    max-width: $screen-lg !important;
     width: $flex-full !important;
 }
 
 @media (min-width: $screen-sm) {
     .container {
-        max-width: none !important;
         width: $flex-pad !important;
     }
 }
@@ -170,7 +182,9 @@ address {
 }
 
 .footer-wrap {
+    background: none;
     margin-top: 0;
+    padding: .5em 0 0 0;
 }
 
 @media (min-width: $screen-sm) {
@@ -204,6 +218,7 @@ header {
     margin-right: -15px;
     -webkit-align-items: flex-end;
     align-items: flex-end;
+    position: relative;
 }
 
 .header-logo {
@@ -218,14 +233,26 @@ header {
     }
 }
 
+.header-right {
+    @include columns(1);
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
 .header-title {
-    color: white;
+    color: $thisisbluer;
+    font-family: "Norwester";
+    font-size: 3rem;
+    text-align: left;
+    padding: 0.5rem;
     @include columns(1);
 }
 
 .header-navbar {
     font-size: 3rem;
     text-align: left;
+    width: 100%;
     
     ul {
         margin: 0;
@@ -255,9 +282,13 @@ header {
     }
     
     @media (min-width: $screen-sm) {
-        ul li:after {
+        ul li::after {
             content: " /";
             padding-left: 0.5rem;
+        }
+        
+        ul li:last-of-type::after {
+            padding: 0;
         }
     }
     
@@ -280,14 +311,22 @@ header {
 
 @media (min-width: $screen-md) {
     .header-logo {
+        box-sizing: border-box;
         border-left: 1px solid $thisisgrayer;
         border-right: 1px solid $thisisgrayer;
         @include columns(3);
     }
     .header-navbar {
-        @include columns(1.5);
+        box-sizing: border-box;
         border-bottom: 1px solid $thisisgrayer;
         text-align: right;
+    }
+    .header-title {
+        text-align: right;
+        padding: 0;
+    }
+    .header-right {
+        @include columns(1.5);
     }
 }
 
@@ -343,6 +382,20 @@ footer {
     margin-right: .6rem;
 }
 
+.outforwork {
+    position: absolute;
+    margin-left: -117px;
+    margin-top: -117px;
+}
+
+.footer-wrap {
+    padding: 69px 0;
+}
+
+.footer-wrap .subfooter {
+    padding-top: 69px;
+}
+
 //
 // BASE
 //
@@ -376,6 +429,7 @@ ul li {
 //
 
 .banner {
+    box-sizing: border-box;
     position: relative;
     z-index: 2000;
     border-top: 1px solid $thisisgrayer;
@@ -383,7 +437,9 @@ ul li {
 }
 
 .banner .slider {
+    box-sizing: border-box;
     display: none;
+    max-height: 360px;
     @include columns(1);
 }
 
@@ -426,6 +482,7 @@ ul li {
 }
 
 .banner-bottom {
+    box-sizing: border-box;
     background: white;
     border-top: 1px solid $thisisgrayer;
 }
@@ -550,6 +607,7 @@ ul li {
 //
 
 .social-icon {
+    box-sizing: border-box;
     color: white;
     background: $thisisblue;
     border: 1px solid $thisisgray;
@@ -634,6 +692,7 @@ ul li {
 }
 
 .ad-image {
+    box-sizing: border-box;
     border: 1px solid $thisisgray;
     width: 100%;
 }
@@ -799,4 +858,75 @@ $half-height: $aspect * $half-width;
     80%  { top: $full-height; z-index: 0; }
     81%  { top: -$full-height; z-index: -1; }
     100% { top: -$full-height; z-index: -1; }	
+}
+
+//
+// LOGIN
+//
+
+.login {
+    @extend .flex;
+    background: #f1f1f1;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-wrap {
+    position: absolute;
+    display: block;
+    top: 50%;
+    margin-left: -17rem;
+    margin-top: -12rem;
+    height: 15rem;
+    left: 50%;
+    width: 34rem;
+}
+
+@media (min-width: $screen-md) {
+    .login-wrap {
+        margin-left: -20rem;
+        width: 40rem;
+    }
+}
+
+.login-wrap::before {
+    @extend .block-bg;
+    font-family: 'FontAwesome';
+    content: '\f14e';
+    margin-top: -9rem;
+    margin-right: -9rem;
+    font-size: 20rem;
+}
+
+.trl::before {
+    content: 'TRL';
+}
+
+@media (min-width: $screen-md) {
+    .trl::before {
+        content: 'Tiger Recruiting Link';
+    }
+}
+
+.login-username, 
+.login-password {
+    margin-bottom: 1.6rem;
+    z-index: 1000000;
+}
+
+.btn-md {
+    color: $thisisbluer;
+    height: 40px;
+    font-size: 16px;
+}
+
+.input-md {
+    height: 40px;
+    font-size: 16px;
+}
+
+.input-group-addon-md {
+    color: $thisisbluer;
+    font-size: 24px;
 }

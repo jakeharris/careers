@@ -45,13 +45,15 @@
                     <img src="//cdn.auburn.edu/assets/img/header-logo.png" alt="Auburn University Homepage" height="75" width="203">
                 </a>
                 
-                <div class="header-navbar">
-                    @yield('navbar')
-                </div>
-                
-                <div class="header-title">
-                    @yield('mainHeading')
-                    @yield('subHeading')
+                <div class="header-right flex">                
+                    <div class="header-title">
+                        @yield('mainHeading')
+                        @yield('subHeading')
+                    </div>
+                    
+                    <div class="header-navbar">
+                        @yield('navbar')
+                    </div>
                 </div>
             </header>
             
@@ -84,7 +86,9 @@
                         </ul>
                     </section>
                     
-                    <section> 
+                    <section>
+                        <img class="outforwork" src="assets/outforwork.png">
+<!--
                         <ul>
                             <li>
                                 <a href="http://www.facebook.com/AUCareer">
@@ -107,6 +111,7 @@
                                 </a>
                             </li>
                         </ul>
+-->
                     </section>
                     
                     <section>
