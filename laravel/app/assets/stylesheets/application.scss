@@ -456,6 +456,7 @@ ul li {
     .banner {
         border-left: 1px solid $thisisgrayer;
         border-right: 1px solid $thisisgrayer;
+        margin-top: 50px;
     }
     
     .banner .slider {
@@ -469,8 +470,12 @@ ul li {
 }
 
 @media (min-width: $screen-md) {
+    .brow {
+        margin-top: 50px;
+    }
+    
     .banner {
-        border-top: none;
+        margin-top: 0;
     }
     
     .banner .slider {
@@ -974,4 +979,116 @@ $half-height: $aspect * $half-width;
 
 .flex--login {
     height: auto;
+}
+
+//
+// BLANKER
+//
+
+.blanker {
+    background: #f1f1f1;
+}
+
+.blanker-wrap {
+    position: absolute;
+    display: block;
+    top: 50%;
+    margin-left: -15rem;
+    margin-top: -13.5rem;
+    height: 20rem;
+    left: 50%;
+    width: 30rem;
+}
+
+@media (min-width: $screen-xs) {
+    .blanker-wrap {
+        margin-left: -17rem;
+        width: 34rem;
+    }
+}
+
+@media (min-width: $screen-md) {
+    .blanker-wrap {
+        margin-left: -20rem;
+        margin-top: -15.2rem;
+        width: 40rem;
+    }
+}
+
+.blanker-wrap::before {
+    @extend .block-bg;
+    font-family: 'FontAwesome';
+    content: '\f073';
+    margin-top: -3.8rem;
+    margin-right: -6rem;
+    font-size: 16rem;
+}
+
+//
+// INBETWEEN
+//
+
+.inbetween {
+    background: $thisisbluer;
+    padding: 2rem;
+    box-shadow: 
+        inset 0px 4px 4px -4px black,
+        inset 0px -4px 4px -4px black; 
+}
+
+.between {
+    background: #f1f1f1;
+    width: 22%;
+    padding: 2rem;
+    border-radius: 2px;
+    box-shadow: 0 0 3px black;
+}
+
+.small-text {
+    font-size: 1.4rem;
+}
+
+//
+// PATH
+//
+
+.path-title {
+    color: $thisisblue;
+}
+
+.path-title i {
+    font-size: 2rem;
+}
+
+.path-title i::before {
+    margin-bottom: 2rem;
+}
+
+.path {
+    margin-top: 3rem;
+}
+
+.path-block {
+    width: 31.5%;
+    margin-bottom: 3rem;
+    border: 1px solid $thisisgrayer;
+    border-radius: 2px;
+    padding: 2rem;
+    box-shadow: 0 0 3px lighten($thisisgrayer, 5);
+    position: relative;
+}
+
+@for $i from 1 through 6 {
+    .path-block:nth-of-type(#{$i})::before {
+        content: "#{$i}";
+        color: lighten($thisisblue, 20%);
+        font-size: 12rem;
+        position: absolute;
+        z-index: 100;
+        opacity: .1;
+        top: 0;
+        left: 0;
+        margin-top: -5rem;
+        font-weight: bold;
+    }
 }

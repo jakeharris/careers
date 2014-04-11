@@ -42,3 +42,7 @@ Route::get('/', function()
         'blog' => Cache::get('blog', array('title' => 'No recent posts.', 'body' => ''))
     ));
 });
+
+Route::get('/jobs', function() {
+    return View::make('jobs');
+});

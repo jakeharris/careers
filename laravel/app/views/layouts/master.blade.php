@@ -57,9 +57,15 @@
                 </div>
             </header>
             
-            <div class="row">
+            <div class="brow row">
                 <div class="banner flex">
                     @yield('banner')
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="inbetween flex">
+                    @yield('inbetween')
                 </div>
             </div>
 

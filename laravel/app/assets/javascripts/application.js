@@ -16,6 +16,22 @@
 /*jshint browser: true, devel: true */
 /*globals twttr */
 
+$(document).ready(function () {
+    $.ajax({
+        url: "http://vimeo.com/api/v2/aucareer/videos.json",
+        type: "GET"
+    }).success(function(data) {
+        $("iframe.slider").attr("src", "//player.vimeo.com/video/" + data[0].id);
+    });
+});
+//var r = new XMLHttpRequest();
+//r.open("GET", "http://vimeo.com/api/v2/aucareer/videos.json", true);
+//r.onreadystatechange = function () {
+//  if (r.readyState != 4 || r.status != 200) return;
+//  console.log("Success: " + r.responseText);
+//};
+//r.send(); // for GET requests
+
 //
 // FRAMEWORK
 //
