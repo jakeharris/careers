@@ -243,13 +243,18 @@ header {
     justify-content: flex-end;
 }
 
-.header-title {
+.header-title,
+.header-title a {
     color: white;
     font-family: $font-headers;
     font-size: 3rem;
     text-align: left;
     padding: 0.5rem;
     @include columns(1);
+}
+
+.header-title a:hover {
+    color: $thisisorange;
 }
 
 .header-navbar {
@@ -1028,7 +1033,7 @@ $half-height: $aspect * $half-width;
 // INBETWEEN
 //
 
-.inbetween {
+.jobs .inbetween {
     background: $thisisbluer;
     padding: 2rem;
     box-shadow: 

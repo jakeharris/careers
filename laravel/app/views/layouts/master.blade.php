@@ -37,7 +37,7 @@
         @yield('head')
     </head>
 
-    <body>
+    <body class="{{ $action }}">
         <!-- Container -->
         <div class="container">
             <header role="banner" class="flex">
@@ -47,7 +47,7 @@
                 
                 <div class="header-right flex">                
                     <div class="header-title">
-                        @yield('mainHeading')
+                        <a href="/">@yield('mainHeading')</a>
                         @yield('subHeading')
                     </div>
                     

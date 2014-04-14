@@ -38,11 +38,14 @@ Route::get('/', function()
     }
 
 	return View::make('index', array(
+        'action' => 'home',
         'tweet' => Cache::get('tweet', 'No recent tweets.'),
         'blog' => Cache::get('blog', array('title' => 'No recent posts.', 'body' => ''))
     ));
 });
 
 Route::get('/jobs', function() {
-    return View::make('jobs');
+    return View::make('jobs', array(
+        'action' => 'jobs'
+    ));
 });
