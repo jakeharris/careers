@@ -87,6 +87,61 @@ Career Center
 
 @section('body')
     <h2>This is <span class="path-title">Teaching <i class="fa fa-chevron-down"></i></span></h2>
+<div class="modal-body">
+    <div class="career flex">
+        <div class="career-block">
+            <i class="fa fa-leaf"></i>
+            <h3 class="career-title">Agriculture</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-pencil"></i> 
+            <h3 class="career-title">Architecture, Design and Construction</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-briefcase"></i>
+            <h3 class="career-title">Business</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-book"></i>   
+            <h3 class="career-title">Education</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-wrench"></i>
+            <h3 class="career-title">Engineering</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-bug"></i>
+            <h3 class="career-title">Forestry and Wildlife Sciences</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-group"></i>
+            <h3 class="career-title">Human Sciences</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-globe"></i>
+            <h3 class="career-title">Liberal Arts</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-book"></i>
+            <h3 class="career-title">Library</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-user-md"></i>
+            <h3 class="career-title">Nursing</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-stethoscope"></i>
+            <h3 class="career-title">Pharmacy</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-flask"></i>
+            <h3 class="career-title">Sciences and Mathematics</h3>
+        </div>
+        <div class="career-block">
+            <i class="fa fa-medkit"></i>
+            <h3 class="career-title">Veterinary Medicine</h3>
+        </div>
+    </div>
     <div class="path flex">
         <div class="path-block">
             Dramatically visualize customer directed convergence without revolutionary ROI.

@@ -1054,6 +1054,52 @@ $half-height: $aspect * $half-width;
 }
 
 //
+// CAREER
+//
+
+.career-block {
+    width: 31.5%;
+    margin-bottom: 3rem;
+    border: 1px solid $thisisgrayer;
+    border-radius: 2px;
+    padding: 1rem;
+    box-shadow: 0 0 3px lighten($thisisgrayer, 5);
+    position: relative;
+    min-height: 12rem;
+}
+
+.career-block:hover {
+    cursor: pointer;
+    background: lighten($thisisgrayer, 13%);
+}
+
+.career-block:hover i::before {
+    color: white;
+    opacity: .7;
+}
+
+.career-block i::before {
+    color: lighten($thisisblue, 20%);
+    font-size: 12rem;
+    position: absolute;
+    z-index: 100;
+    opacity: .1;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+}
+
+.career-title {
+    color: $thisisblue;
+    font-family: $font-headers;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    z-index: 2000;
+    position: relative;
+}
+
+//
 // PATH
 //
 
