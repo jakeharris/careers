@@ -992,6 +992,7 @@ $half-height: $aspect * $half-width;
 
 .blanker {
     background: #f1f1f1;
+    overflow: hidden;
 }
 
 .blanker-wrap {
@@ -1043,10 +1044,33 @@ $half-height: $aspect * $half-width;
 
 .between {
     background: #f1f1f1;
-    width: 22%;
+    width: 100%;
     padding: 2rem;
     border-radius: 2px;
     box-shadow: 0 0 3px black;
+    margin-bottom: 1em;
+}
+
+.between:last-of-type {
+    margin-bottom: 0;
+}
+
+@media (min-width: $screen-sm) {
+    .between {
+        width: 50%
+    }
+}
+
+@media (min-width: $screen-md) {
+    .between {
+        width: 22%;
+        margin-bottom: 0;
+    }
+}
+
+.between img {
+    display: block;
+    margin: 0 auto;
 }
 
 .small-text {
@@ -1065,7 +1089,7 @@ $half-height: $aspect * $half-width;
     padding: 1rem;
     box-shadow: 0 0 3px lighten($thisisgrayer, 5);
     position: relative;
-    min-height: 12rem;
+    min-height: 13rem;
 }
 
 .career-block:hover {
@@ -1086,6 +1110,7 @@ $half-height: $aspect * $half-width;
     opacity: .1;
     top: 0;
     left: 0;
+    padding: 5px;
     font-weight: bold;
 }
 
