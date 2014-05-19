@@ -12,6 +12,7 @@ Here at the Career Center, you'll be doing work on THREE (3) different web sites
 
 We have some inconsistencies in how things are named now and how they will be named, as well.
 For example:
+
 1. There is a file in careers/jobs/ named index.html. However, this is NOT the jobs home. The jobs home is being redesigned, and while current LIVE version exists at careers/jobs/index.php, the current DEV version exists at careers/laravel/public/jobs.blade.php.
 2. The Career Center site exists on mallard at /export/vol2/httpd/htdocs/career, but our repository name is careers. This is easy to mix up.
 3. Most of our work will be done in careers/laravel/, but there is a TON of other stuff out there. This would require serious effort to overhaul and may not be worth it.
