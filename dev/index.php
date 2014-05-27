@@ -270,8 +270,8 @@ So I guess I was doing a civil service. But really, it was all selfish."; ?>
                         </div>
 <?php
     $tweet = "";
-    if (version_compare(phpversion(), '5.3.10', '<'))
-        $tweet = "PHP version on this server is " . phpversion() . ", which is insufficient to run this application. (req. 5.3.1)";
+    if (version_compare(phpversion(), '5.3', '<'))
+        $tweet = "PHP version on this server is " . phpversion() . ", which is insufficient to run this application. (req. 5.3)";
     else 
         $tweet = "PHP version on this server is " . phpversion() . ".";
 ?>
