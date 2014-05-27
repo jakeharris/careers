@@ -268,23 +268,23 @@ So I guess I was doing a civil service. But really, it was all selfish."; ?>
                             </ul>
                             <i class="fa fa-group block-bg social-bg"></i>
                         </div>
-<?php
+<!--<?php
     $tweet = "";
     if (version_compare(phpversion(), '5.3', '<'))
         $tweet = "PHP version on this server is " . phpversion() . ", which is insufficient to run this application. (req. 5.3)";
     else 
         $tweet = "PHP version on this server is " . phpversion() . ".";
-?>
+?>-->
                         <div class="block tweets">
                             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
                             <div class="tweets-text" data-twitter="">
-                                <?php 
+                                <!--<?php 
                                     echo $tweet;
                                     foreach (get_loaded_extensions() as $i => $ext) 
                                     { 
                                        echo $ext .' => '. phpversion($ext). '<br/>'; 
                                     } 
-                                ?>
+                                ?>-->
                             </div>
                             <i class="fa fa-twitter block-bg tweets-bg"></i>
                         </div>
