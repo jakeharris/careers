@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="career-center-home">
     <head>
         <!-- Meta Data -->
         <meta charset="utf-8">
@@ -34,7 +34,8 @@
         <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
         
         <!-- Application-specific CSS/JS -->
-        
+        <script src="components/angular/angular.js"></script>
+        <script src="js/controllers.js"></script>
     </head>
 
     <body class="{{ $action }}">
@@ -277,14 +278,15 @@ So I guess I was doing a civil service. But really, it was all selfish."; ?>
 ?>-->
                         <div class="block tweets">
                             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
-                            <div class="tweets-text" data-twitter="">
+                            <div class="tweets-text" ng-controller="basic-ctrl" data-twitter="">
                                 <!--<?php 
                                     echo $tweet;
                                     foreach (get_loaded_extensions() as $i => $ext) 
                                     { 
                                        echo $ext .' => '. phpversion($ext). '<br/>'; 
                                     } 
-                                ?>-->
+?>-->
+                                {{hw}}
                             </div>
                             <i class="fa fa-twitter block-bg tweets-bg"></i>
                         </div>
