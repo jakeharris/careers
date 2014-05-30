@@ -274,10 +274,10 @@ So I guess I was doing a civil service. But really, it was all selfish."; ?>
                             </ul>
                             <i class="fa fa-group block-bg social-bg"></i>
                         </div>
-                        <div class="block tweets">
+                        <div class="block tweets" ng-controller="twitter-ctrl">
                             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
-                            <div class="tweets-text" ng-controller="basic-ctrl" data-twitter="">
-                                {{hw}}
+                            <div class="tweets-text" ng-repeat="tweet in tweets" data-twitter="">
+                                {{tweet.text}}
                             </div>
                             <i class="fa fa-twitter block-bg tweets-bg"></i>
                         </div>
