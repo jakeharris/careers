@@ -302,6 +302,7 @@ footer {
 h2 {
   color: #03244d;
   font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 29px;
 }
 
 h3 {
@@ -439,10 +440,20 @@ ul li {
   z-index: 2000;
   font-size: 2rem;
   line-height: 160%;
-  padding: 10px;
+  padding-bottom: 20px;
 }
 .tweets-link {
   color: #333;
+}
+.tweets-date {
+  color: #747474; 
+  font-size: 1.5rem;
+  padding: 0;
+  display:block;
+}
+.tweets-date:hover {
+  color: #747474;
+  text-decoration: underline;
 }
 
 .block-bg, .login-wrap::before, .blanker-wrap::before {

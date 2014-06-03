@@ -238,7 +238,7 @@ So I make a habit of mythos..." I create stories to keep myself awake, and I tel
 <br /><br />
 So I guess I was doing a civil service. But really, it was all selfish."; -->
                         <div class="block blog">
-                            <h2><a href="http://tigersprepare.blogspot.com">Our Blog</a></h2>
+                            <h2><a href="http://tigersprepare.blogspot.com">Tigers Prepare Blog</a></h2>
                             <h3><?php echo $blog["title"]; ?></h3>
                             <div><?php echo $blog["body"]; ?></div>
                             <i class="fa fa-edit block-bg blog-bg"></i>
@@ -248,22 +248,22 @@ So I guess I was doing a civil service. But really, it was all selfish."; -->
                             <h2><a href="#">Connect With Us</a></h2>
                             <ul>
                                 <li>
-                                    <a href="http://www.facebook.com/AUCareer">
+                                    <a href="http://www.facebook.com/AUCareer" target="_blank">
                                         <i class="fa fa-facebook social-icon"></i>
                                     </a>
-                                    <a href="http://twitter.com/AUCareer">
+                                    <a href="http://twitter.com/AUCareer" target="_blank">
                                         <i class="fa fa-twitter social-icon"></i>
                                     </a>
-                                    <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262">
+                                    <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262" target="_blank">
                                         <i class="fa fa-linkedin social-icon"></i>
                                     </a>
-                                    <a href="http://www.pinterest.com/aucareer/">
+                                    <a href="http://www.pinterest.com/aucareer/" target="_blank">
                                         <i class="fa fa-pinterest social-icon"></i>
                                     </a>
-                                    <a href="https://vimeo.com/aucareer">
+                                    <a href="https://vimeo.com/aucareer" target="_blank">
                                         <i class="fa fa-vimeo-square social-icon"></i>
                                     </a>
-                                    <a href="http://tigersprepare.blogspot.com/">
+                                    <a href="http://tigersprepare.blogspot.com/" target="_blank">
                                         <i class="fa fa-blogger social-icon"></i>
                                     </a>
                                 </li>
@@ -272,8 +272,15 @@ So I guess I was doing a civil service. But really, it was all selfish."; -->
                         </div>
                         <div class="block tweets" ng-controller="twitter-ctrl">
                             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
-                            <div class="tweets-text" ng-repeat="tweet in tweets" data-twitter="">
-                                <a class="tweets-link" href="{{ tweet.data.url }}">{{ tweet.data.text }}</a>
+                            <div class="tweets-text" data-twitter="">
+                                <a class="tweets-link" ng-if="tweets[0].data.url !== undefined && tweets[0].data.url != ''" href="{{ tweets[0].data.url }}">{{ tweets[0].data.text }}</a>
+                                <span ng-if="tweets[0].data.url === undefined || tweets[0].data.url == ''">{{ tweets[0].data.text }}</span>
+                                <a class="tweets-date" href="https://twitter.com/{{ tweets[0].user.screen_name }}/status/{{ tweets[0].id_str }}">{{ tweets[0].data.date }}</a>
+                            </div>
+                            <div class="tweets-text" data-twitter="">
+                                <a class="tweets-link" ng-if="tweets[1].data.url !== undefined && tweets[1].data.url != ''" href="{{ tweets[1].data.url }}">{{ tweets[1].data.text }}</a>
+                                <span ng-if="tweets[1].data.url === undefined || tweets[1].data.url == ''">{{ tweets[1].data.text }}</span>
+                                <a class="tweets-date" href="https://twitter.com/{{ tweets[1].user.screen_name }}/status/{{ tweets[1].id_str }}">{{ tweets[1].data.date }}</a>
                             </div>
                             <i class="fa fa-twitter block-bg tweets-bg"></i>
                         </div>
