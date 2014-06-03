@@ -36,11 +36,6 @@
         <!-- Application-specific CSS/JS -->
         <script src="components/angular/angular.js"></script>
         <script src="js/controllers.js"></script>
-        <script src="js/oauth.js"></script>
-        <script type="text/javascript">
-            OAuth.initialize('g3ijt5kz_ST3_glKgvuo6WEsIkg');
-            
-        </script>
     </head>
 
     <body class="{{ $action }}">
@@ -228,19 +223,20 @@
                             </ul>
                             <i class="fa fa-calendar block-bg events-bg"></i>
                         </div>
-<?php $blog["title"] = "The long road home"; $blog["body"] = "Some days take longer than others. Sure, it's all twenty-four hours, but somewhere along the line, they get longer or shorter. The sun changes cycle. Your body changes sleep habits. So much can make this vary, and take you to sleep sooner or later than expected. 
+<?php $blog["title"] = "The long road home"; $blog["body"] = "Some days take longer than others. Sure, it's all twenty-four hours, but somewhere along the line, they get longer or shorter. The sun changes cycle. Your body changes sleep habits. So much can make this vary, and take you to the dreaming ether sooner or later than expected. 
 
 <br /><br />
 
-I've been travelling for half a year now, and the somber sunrises are gracious Ra's raw prevention of solace and slumber's embrace. It's so hard to stay awake as a trucker. You get used to the way the tires bump along, even with the irregularities, the occasional tire fragments or rabbits you hit along the way.
+I've been travelling for half a year now, and the somber sunrises are gracious Ra's prevention of solace and slumber's embrace. It's so hard to stay awake as a trucker. You get used to the way the tires bump along, even with the irregularities, the occasional tire fragments or rabbits you hit along the way."
+
+?>
+                        <!--  <br /><br />
+
+So I make a habit of mythos..." I create stories to keep myself awake, and I tell them to other truckers over the otherwise desolate HAM radio. They don't all get to hear the endings, because their paths deviate from my own. But while they were waiting for the ending, they stayed awake, feet fumbling to find the brake pedals in case something went awry. They might not have paid as much attention to the road as they should have, but it was more than they would have had it been silent, had they been dozing. 
+
 
 <br /><br />
-
-So I make a habit of mythos. I create stories to keep myself awake, and I tell them to other truckers over the otherwise desolate HAM radio. They don't all get to hear the endings, because their paths deviate from my own. But while they were waiting for the ending, they stayed awake, feet fumbling to find the brake pedals in case something went awry. They might not have paid as much attention to the road as they should have, but it was more than they would have had it been silent, had they been dozing. 
-
-
-<br /><br />
-So I guess I was doing a civil service. But really, it was all selfish."; ?>
+So I guess I was doing a civil service. But really, it was all selfish."; -->
                         <div class="block blog">
                             <h2><a href="http://tigersprepare.blogspot.com">Our Blog</a></h2>
                             <h3><?php echo $blog["title"]; ?></h3>
@@ -277,7 +273,7 @@ So I guess I was doing a civil service. But really, it was all selfish."; ?>
                         <div class="block tweets" ng-controller="twitter-ctrl">
                             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
                             <div class="tweets-text" ng-repeat="tweet in tweets" data-twitter="">
-                                {{tweet.text}}
+                                <a class="tweets-link" href="{{ tweet.data.url }}">{{ tweet.data.text }}</a>
                             </div>
                             <i class="fa fa-twitter block-bg tweets-bg"></i>
                         </div>

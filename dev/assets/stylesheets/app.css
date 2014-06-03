@@ -439,6 +439,10 @@ ul li {
   z-index: 2000;
   font-size: 2rem;
   line-height: 160%;
+  padding: 10px;
+}
+.tweets-link {
+  color: #333;
 }
 
 .block-bg, .login-wrap::before, .blanker-wrap::before {
