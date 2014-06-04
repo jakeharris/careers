@@ -36,4 +36,8 @@ home.controller('twitter-ctrl', function ($scope, $http) {
   }
 })
 
+home.controller('blogger-ctrl', function ($scope, $http) {
+  $http.get('') 
+})
+
 

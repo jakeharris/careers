@@ -228,8 +228,8 @@ header {
 
   .header-right {
     padding-right: 2rem;
-    flex-basis: 71.42857%;
-    width: 71.42857%;
+    flex-basis: 61.42857%;
+    width: 61.42857%;
   }
 }
 footer {
@@ -479,6 +479,7 @@ ul li {
   align-items: center;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
+  height:auto;
 }
 
 .place-icon,
