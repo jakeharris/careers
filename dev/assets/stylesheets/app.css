@@ -70,6 +70,13 @@ address {
   width: 100vw !important;
 }
 
+.blog-title {
+  font-family: "Source Sans Pro"; 
+}
+.blog-readmore {
+  padding-top: 1rem;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 90vw !important;
@@ -228,8 +235,8 @@ header {
 
   .header-right {
     padding-right: 2rem;
-    flex-basis: 61.42857%;
-    width: 61.42857%;
+    flex-basis: 71.42%;
+    width: 71.42%;
   }
 }
 footer {
@@ -305,7 +312,7 @@ h2 {
   font-size: 29px;
 }
 
-h3 {
+h3,.h3-a {
   color: #03244d;
   font-size: 2rem;
   line-height: 160%;

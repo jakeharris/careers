@@ -237,10 +237,11 @@ So I make a habit of mythos..." I create stories to keep myself awake, and I tel
 
 <br /><br />
 So I guess I was doing a civil service. But really, it was all selfish."; -->
-                        <div class="block blog">
+                        <div class="block blog" ng-controller="blogger-ctrl">
                             <h2><a href="http://tigersprepare.blogspot.com">Tigers Prepare Blog</a></h2>
-                            <h3><?php echo $blog["title"]; ?></h3>
-                            <div><?php echo $blog["body"]; ?></div>
+                            <h3><a class="h3-a blog-title" href="{{ blog.items[0].url }}">{{ blog.items[0].title }}</a></h3>
+                            <div>{{ blog.sanitized.post }}</div>
+                            <div class="blog-readmore"><a href="{{ blog.items[0].url }}">Read more</a></div>
                             <i class="fa fa-edit block-bg blog-bg"></i>
                         </div>
 

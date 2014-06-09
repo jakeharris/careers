@@ -1,5 +1,20 @@
 var home = angular.module('career-center-home', [])
 
+/* NOTE:
+ * This code is TECHNICALLY vulnerable to XSS. However,
+ * I made the assumption that, since we are ALWAYS ONLY
+ * pulling from AUCareer accounts. If the Tigers
+ * Prepare blog has an author trying to XSS people,
+ * we have bigger problems. 
+ *
+ * However, that means that if you want to scrape from
+ * a different user's accounts, please make sure that
+ * we either purely trust that user's output, or 
+ * (safer) we prevent against XSS. The eval() function
+ * should help you.
+*/
+
+
 home.controller('twitter-ctrl', function ($scope, $http) {
   $scope.hw = 'Hello world!'
   $http.get('./twitter.json')
@@ -10,6 +25,7 @@ home.controller('twitter-ctrl', function ($scope, $http) {
             }
            $scope.tweets = tweets
        })
+  // Named massage because we are getting the data into a nicer format for the page
   var massage = function (tweet) {
     var m = tweet.text
       , link = ''
@@ -37,7 +53,35 @@ home.controller('twitter-ctrl', function ($scope, $http) {
 })
 
 home.controller('blogger-ctrl', function ($scope, $http) {
-  $http.get('') 
+  $http.get('https://www.googleapis.com/blogger/v3/blogs/2761218641303524120/posts?key=AIzaSyAsBnM3FEIP1giu8NLIFG7TpoJAFLyIung&maxCount=1')
+       .then(function (res) {
+           $scope.blog = res.data
+           $scope.blog.sanitized = { }
+           $scope.blog.sanitized.post = sanitize($scope.blog.items[0])
+       })
+  // Named sanitize, and not massage, because we are stripping out lots of needless data
+  var sanitize = function (post) {
+    var m = post.content
+    
+    if(~m.indexOf('<')) {
+        m = m.split(/\<!--[A-Za-z\s\S]*?--\>/).join('')
+        m = m.split(/\<span[A-Za-z\s\S]*?\>/).join('').split(/\<\/span[A-Za-z\s\S]*?\>/).join('')
+        m = m.split(/\<div[A-Za-z\s\S]*?\>/).join('').split(/\<\/div[A-Za-z\s\S]*?\>/).join('')
+        m = m.split(/\<b\>/).join('').split(/\<\/b\>/).join('')
+        m = m.split(/\<i\>/).join('').split(/\<\/i\>/).join('')
+        m = m.split(/\<br \/\>/)
+        for(var x = 0; x < m.length; x++) {
+            m[x] = m[x].split(/\<[A-Za-z\s\S]*?\>[A-Za-z\s\S]*?\<\/[A-Za-z\s\S]*?\>/).join('')
+            m[x] = m[x].split(/\<[A-Za-z\s\S]*?\>/).join('')
+            m[x] = m[x].split(/&nbsp;/).join('')
+        }
+        m = m.join('')
+        m = m.substr(0, 400)
+        m += '...'
+    }
+        
+    return m;
+  }
 })
 
 
