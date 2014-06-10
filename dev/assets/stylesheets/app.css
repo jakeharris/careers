@@ -281,12 +281,6 @@ header {
     text-align: right;
     padding: 0;
   }
-
-  .header-right {
-    padding-right: 2rem;
-    flex-basis: 71.42%;
-    width: 71.42%;
-  }
 }
 
 footer {

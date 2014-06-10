@@ -29,7 +29,7 @@ home.controller('twitter-ctrl', function ($scope, $http) {
   var massage = function (tweet) {
     var m = tweet.text
       , link = ''
-      , d = new Date(tweet.created_at)
+      , d = new Date(tweet.created_at.split('+0000').join(''))
       , mentions = tweet.user_mentions
       
       //TODO: make this have multiplicity, i.e. it can handle many links per tweet
