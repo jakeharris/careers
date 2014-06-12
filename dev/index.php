@@ -200,24 +200,24 @@
                             <ul>
                                 <li class="event">
                                     <div class="event-date">
-                                        <div class="event-date-month">FEB</div>
-                                        <div class="event-date-day">11</div>
+                                        <div class="event-date-month">AUG</div>
+                                        <div class="event-date-day">27</div>
                                     </div>
                                     <div class="event-details">
-                                        <div class="event-details-name">Engineering &amp; Technical Career Expo</div>
-                                        <div class="event-details-location">The Hotel at Auburn University and Dixon Conference Center</div>
-                                        <div class="event-details-time">3 PM - 7 PM</div>
+                                        <div class="event-details-name">Internship &amp; Part-Time Job Fair</div>
+                                        <div class="event-details-location">Student Center Ballroom</div>
+                                        <div class="event-details-time">10 AM - 1 PM</div>
                                     </div>
                                 </li>
                                 <li class="event">
                                     <div class="event-date">
-                                        <div class="event-date-month">FEB</div>
-                                        <div class="event-date-day">17</div>
+                                        <div class="event-date-month">SEP</div>
+                                        <div class="event-date-day">3</div>
                                     </div>
                                     <div class="event-details">
-                                        <div class="event-details-name">Using Your Major | Panel Discussion | Government</div>
-                                        <div class="event-details-location">Student Center, Room 2107</div>
-                                        <div class="event-details-time">12 PM - 1 PM</div>
+                                        <div class="event-details-name">Get Cookin' with the Career Center</div>
+                                        <div class="event-details-location">Student Center Lawn</div>
+                                        <div class="event-details-time">11 AM - 1 PM</div>
                                     </div>
                                 </li>
                             </ul>
@@ -299,9 +299,12 @@ So I guess I was doing a civil service. But really, it was all selfish."; -->
             
             <div class="row">
                 <div class="banner banner-bottom flex">
-                    <img class="slider" src="assets/images/expo.jpg">
+                    <img class="slider">
+                    <img class="slider">
+                    <img class="slider">
+                    <!--<img class="slider" src="assets/images/expo.jpg">
                     <img class="slider" src="assets/images/education.jpg">
-                    <img class="slider" src="assets/images/major.png"> 
+                    <img class="slider" src="assets/images/major.png"> -->
                 </div>
             </div>
             

@@ -281,6 +281,12 @@ header {
     text-align: right;
     padding: 0;
   }
+
+  .header-right {
+    padding-right: 2rem;
+    flex-basis: 65%;
+    width: 65%;
+  }
 }
 
 footer {
@@ -452,12 +458,26 @@ ul li {
   box-sizing: border-box;
   background: white;
   border-top: 1px solid #d7d7d7;
+  height: 25rem;
+  overflow: hidden;
 }
 
 .banner-bottom .slider {
   border: none;
   flex-basis: 100%;
   width: 100%;
+}
+
+.banner-bottom .slider {
+  background-color: #d7d7d7;
+}
+
+.banner-bottom .slider:nth-of-type(3n+2) {
+  background-color: #777;
+}
+
+.banner-bottom .slider:nth-of-type(3n+3) {
+  background-color: #aaa;
 }
 
 @media (min-width: 768px) {
@@ -559,6 +579,7 @@ ul li {
   width: 18%;
   text-align: center;
   margin-right: 1rem;
+  display:inline-block;
 }
 
 .place-address {
