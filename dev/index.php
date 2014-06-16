@@ -238,7 +238,7 @@ So I make a habit of mythos..." I create stories to keep myself awake, and I tel
 <br /><br />
 So I guess I was doing a civil service. But really, it was all selfish."; -->
                         <div class="block blog" ng-controller="blogger-ctrl">
-                            <h2><a href="http://tigersprepare.blogspot.com">Tigers Prepare Blog</a></h2>
+                            <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
                             <h3><a class="h3-a blog-title" href="{{ blog.items[0].url }}">{{ blog.items[0].title }}</a></h3>
                             <div>{{ blog.sanitized.post }}</div>
                             <div class="blog-readmore"><a href="{{ blog.items[0].url }}">Read more</a></div>
@@ -288,7 +288,7 @@ So I guess I was doing a civil service. But really, it was all selfish."; -->
 
                         <div class="block sponsors">
                             <h2><a href="#">Sponsors</a></h2>
-                            <a class="ad" href="http://www.nxtbook.com/nxtbooks/nace/JobChoices0812/index.php">
+                            <a class="ad" href="http://www.ussteel.com/uss/portal/home/careers/jobopportunities">
                                 <img class="ad-image" src="assets/images/ussteel.jpg">
                             </a>
                             <i class="fa fa-certificate block-bg sponsors-bg"></i>
@@ -319,7 +319,7 @@ So I guess I was doing a civil service. But really, it was all selfish."; -->
                     </section>
                     
                     <section>
-                        <img class="outforwork" src="assets/images/outforwork.png">
+                        <!--<img class="outforwork" src="assets/images/outforwork.png">-->
 <!--
                         <ul>
                             <li>

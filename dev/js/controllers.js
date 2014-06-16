@@ -28,15 +28,13 @@ home.controller('twitter-ctrl', function ($scope, $http) {
   // Named massage because we are getting the data into a nicer format for the page
   var massage = function (tweet) {
     var m = tweet.text
-      , link = ''
+      , link = tweet.entities.urls[0].expanded_url
       , d = new Date(tweet.created_at.split('+0000').join(''))
       , mentions = tweet.user_mentions
       
       //TODO: make this have multiplicity, i.e. it can handle many links per tweet
       
-      if(~m.indexOf('http:\/\/') && m[m.indexOf('http:\/\/') - 1] == ' ') {
-          link = m.substr(m.indexOf('http:\/\/'), m.substr(m.indexOf('http:\/\/')).indexOf(' '))
-          if(link == '') link = m.substr(m.indexOf('http:\/\/'))
+      if(~m.indexOf(link)) {
           m = m.replace(link, '')
       }
       while(~m.indexOf('&amp;'))
