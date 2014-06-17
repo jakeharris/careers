@@ -221,6 +221,7 @@
                                     </div>
                                 </li>
                             </ul>
+                            <a href="http://www.auburn.edu/career/events/">Read more</a>
                             <i class="fa fa-calendar block-bg events-bg"></i>
                         </div>
 <?php $blog["title"] = "The long road home"; $blog["body"] = "Some days take longer than others. Sure, it's all twenty-four hours, but somewhere along the line, they get longer or shorter. The sun changes cycle. Your body changes sleep habits. So much can make this vary, and take you to the dreaming ether sooner or later than expected. 
