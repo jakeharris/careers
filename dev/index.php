@@ -56,7 +56,7 @@
                             <ul>
                                 <li><a href="http://www.auburn.edu/career/students/">Students</a></li>
                                 <li><a href="http://www.auburn.edu/career/alumni/">Alumni</a></li>
-                                <li><a href="http://www.auburn.edu/career/parents/">Family</a></li>
+                                <li><a href="http://www.auburn.edu/career/parents/">Families</a></li>
                                 <li><a href="http://www.auburn.edu/career/faculty/">Faculty</a></li>
                                 <li><a href="http://hire.auburn.edu">Employers</a></li>
                             </ul>
@@ -189,7 +189,7 @@
                             <div class="times">
                                 <i class="fa fa-clock-o times-icon"></i>
                                 <div class="times-address">
-                                    Visit us! We’re open Monday through Friday. Walk-ins are 15 minute sessions (from noon to 4 pm) for résumé, cover letters and basic job search questions. If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744</a>.
+                                    Visit us! We’re open Monday through Friday (from 8am to 4pm). Walk-ins are 15 minute sessions (from noon to 4 pm) for résumé, cover letters and basic job search questions. If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744</a>.
                                 </div>
                             </div>
                             <i class="fa fa-briefcase block-bg hours-bg"></i>

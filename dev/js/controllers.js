@@ -34,9 +34,9 @@ home.controller('twitter-ctrl', function ($scope, $http) {
       
       //TODO: make this have multiplicity, i.e. it can handle many links per tweet
       
-      if (tweet.entities.urls.length > 0)
+      if (tweet.entities.hasOwnProperty('urls') && tweet.entities.urls.length > 0)
         link = tweet.entities.urls[0].url
-      else if (tweet.entities.media.length > 0)
+      else if (tweet.entities.hasOwnProperty('media') && tweet.entities.media.length > 0)
         link = tweet.entities.media[0].expanded_url
       else if (/(http:\/\/\S*){1}?/.test(m)) {
         //yes I could write this in fewer lines but I'm trying to help you read it
