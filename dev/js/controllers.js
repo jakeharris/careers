@@ -14,6 +14,13 @@ var home = angular.module('career-center-home', [])
  * should help you.
 */
 
+home.controller('calendar-ctrl', function ($scope, $http) {
+  $http.get('./events.json')
+       .then(function (res) {
+         $scope.events = res.data
+       })
+})
+
 
 home.controller('twitter-ctrl', function ($scope, $http) {
   $scope.hw = 'Hello world!'

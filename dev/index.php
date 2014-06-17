@@ -195,29 +195,18 @@
                             <i class="fa fa-briefcase block-bg hours-bg"></i>
                         </div>
 
-                        <div class="block events">
+                        <div class="block events" ng-controller="calendar-ctrl">
                             <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
                             <ul>
-                                <li class="event">
+                                <li class="event" ng-repeat="event in events">
                                     <div class="event-date">
-                                        <div class="event-date-month">AUG</div>
-                                        <div class="event-date-day">27</div>
+                                        <div class="event-date-month">{{ event.date['shortened-month'] }}</div>
+                                        <div class="event-date-day">{{ event.date['day'] }}</div>
                                     </div>
                                     <div class="event-details">
-                                        <div class="event-details-name">Internship &amp; Part-Time Job Fair</div>
-                                        <div class="event-details-location">Student Center Ballroom</div>
-                                        <div class="event-details-time">10 AM - 1 PM</div>
-                                    </div>
-                                </li>
-                                <li class="event">
-                                    <div class="event-date">
-                                        <div class="event-date-month">SEP</div>
-                                        <div class="event-date-day">3</div>
-                                    </div>
-                                    <div class="event-details">
-                                        <div class="event-details-name">Get Cookin' with the Career Center</div>
-                                        <div class="event-details-location">Student Center Lawn</div>
-                                        <div class="event-details-time">11 AM - 1 PM</div>
+                                        <div class="event-details-name">{{ event.name }}</div>
+                                        <div class="event-details-location">{{ event.location }}</div>
+                                        <div class="event-details-time">{{ event.date.time.start}} - {{ event.date.time.end }}</div>
                                     </div>
                                 </li>
                             </ul>
