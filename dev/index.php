@@ -169,7 +169,7 @@
                     
                 </div>
             </div>
-
+            
             <div id="content" class="row row-offcanvas row-offcanvas-left content-area">
                 <div class="content-division col-sm-12" role="main">
                     <div class="flex">
@@ -204,7 +204,7 @@
                                         <div class="event-date-day">{{ event.date['day'] }}</div>
                                     </div>
                                     <div class="event-details">
-                                        <div class="event-details-name">{{ event.name }}</div>
+                                        <div class="event-details-name">{{ event.name }}</a></div>
                                         <div class="event-details-location">{{ event.location }}</div>
                                         <div class="event-details-time">{{ event.date.time.start}} - {{ event.date.time.end }}</div>
                                     </div>
