@@ -9,4 +9,27 @@
 
 body {
   font-family: 'Open Sans Pro', sans-serif;   
+  padding: 0; margin: 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+#widget-header {
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+#sub-head {
+  position: inherit;
+    height: auto;
+}
+
+#page-count {
+  padding-left: 1rem;   
+}
+
+#_list_form_widget {
+  overflow: auto;   
 }
