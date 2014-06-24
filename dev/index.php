@@ -226,7 +226,12 @@ So I make a habit of mythos..." I create stories to keep myself awake, and I tel
 
 
 <br /><br />
-So I guess I was doing a civil service. But really, it was all selfish."; -->
+So I guess I was doing a civil service. But really, it was all selfish."; 
+
+She was broken for days, years. 
+The dawn had faded, the trees and leaves made gentle cracking sounds when the wind blew, and her kneecaps were gone.
+
+The goddess of lux-->
                         <div class="block blog" ng-controller="blogger-ctrl">
                             <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
                             <h3><a class="h3-a blog-title" href="{{ blog.items[0].url }}">{{ blog.items[0].title }}</a></h3>

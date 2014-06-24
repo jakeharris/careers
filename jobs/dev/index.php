@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="career-center-jobs">
     <head>
         <!-- Meta Data -->
         <meta charset="utf-8">
@@ -15,7 +15,7 @@
         <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
         
         <!-- Application CSS -->
-        <link rel="stylesheet" href="assets/stylesheets/app.css">
+        <link rel=stylesheet href="assets/stylesheets/app.css">
         
         <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
         <!--[if lt IE 9]>
@@ -34,7 +34,8 @@
         <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
         
         <!-- Application-specific CSS/JS -->
-        
+        <script src="components/angular/angular.js"></script>
+        <script src="assets/js/controllers.js"></script>
     </head>
 
     <body class="jobs">
@@ -80,32 +81,23 @@
                         </div>
                     </form>
                     <div class="slider blanker">
-                        <div class="blanker-wrap">
+                        <div class="block events blanker-wrap" ng-controller="calendar-ctrl">
                             <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
                             <ul>
-                                <li class="event">
+                                <li class="event" ng-repeat="event in events">
                                     <div class="event-date">
-                                        <div class="event-date-month">FEB</div>
-                                        <div class="event-date-day">11</div>
+                                        <div class="event-date-month">{{ event.date['shortened-month'] }}</div>
+                                        <div class="event-date-day">{{ event.date['day'] }}</div>
                                     </div>
                                     <div class="event-details">
-                                        <div class="event-details-name">Engineering &amp; Technical Career Expo</div>
-                                        <div class="event-details-location">The Hotel at Auburn University and Dixon Conference Center</div>
-                                        <div class="event-details-time">3 PM - 7 PM</div>
-                                    </div>
-                                </li>
-                                <li class="event">
-                                    <div class="event-date">
-                                        <div class="event-date-month">FEB</div>
-                                        <div class="event-date-day">17</div>
-                                    </div>
-                                    <div class="event-details">
-                                        <div class="event-details-name">Using Your Major | Panel Discussion | Government</div>
-                                        <div class="event-details-location">Student Center, Room 2107</div>
-                                        <div class="event-details-time">12 PM - 1 PM</div>
+                                        <div class="event-details-name">{{ event.name }}</a></div>
+                                        <div class="event-details-location">{{ event.location }}</div>
+                                        <div class="event-details-time">{{ event.date.time.start}} - {{ event.date.time.end }}</div>
                                     </div>
                                 </li>
                             </ul>
+                            <a href="http://www.auburn.edu/career/events/">Read more</a>
+                            <i class="fa fa-calendar block-bg events-bg"></i>
                         </div>
                     </div>
                 </div>

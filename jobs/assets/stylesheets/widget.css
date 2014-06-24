@@ -1,0 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@font-face {
+  font-family: 'Norwester';
+  src: asset-url("norwester.eot?9309851", font);
+  src: asset-url("norwester.eot?9309851#iefix", font) format("embedded-opentype"), asset-url("norwester.woff?9309851", font) format("woff"), asset-url("norwester.ttf?9309851", font) format("truetype"), asset-url("norwester.svg?9309851#fontello", font) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Open Sans Pro', sans-serif;   
+}

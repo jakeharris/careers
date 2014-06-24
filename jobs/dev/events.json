@@ -1,0 +1,35 @@
+[
+    {
+        "name":"Internship &amp; Part-Time Job Fair",
+        "location":"Student Center Ballroom",
+        "date":
+        {
+          "month":"August",
+          "shortened-month":"AUG",
+          "numerical-month":"8",
+          "day":"27",
+          "time":
+          {
+              "start":"10AM",
+              "end":"1PM"
+          }
+        }
+    },
+    {
+        "name":"Get Cookin' with the Career Center",
+        "location":"Student Center Lawn",
+        "date":
+        {
+          "month":"September",
+          "shortened-month":"SEP",
+          "numerical-month":"9",
+          "day":"3",
+          "time":
+          {
+              "start":"11AM",
+              "end":"1PM"
+          }
+        }
+    }
+    
+]
