@@ -15,6 +15,7 @@ body {
 ol, ul {
 	list-style: none;
     margin-left: 0;
+    padding-left: 1rem;
 }
 
 #widget-header {
@@ -24,6 +25,7 @@ ol, ul {
 
 #subHead {
   top:-25px;
+  padding-left: 0.5rem;
 }
 
 #page-count {
