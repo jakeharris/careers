@@ -22,8 +22,7 @@ ol, ul {
 }
 
 #subHead {
-  position: inherit;
-  height: auto;
+  top:-35px;
 }
 
 #page-count {
