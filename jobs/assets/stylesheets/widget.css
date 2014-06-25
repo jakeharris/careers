@@ -35,3 +35,19 @@ ol, ul {
 #_list_form_widget {
   overflow: auto;   
 }
+
+#_list_form_widget a {
+  text-decoration: none;
+}
+
+#_list_form_widget a:hover {
+  color: #f68026;   
+}
+
+.sumlist-rw-title-widget {
+  font-size: 1.2rem;   
+}
+
+.sumlist-bd2-widget {
+  font-size: 1rem;   
+}
