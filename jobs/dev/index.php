@@ -123,6 +123,28 @@
             </div>
 
             <div id="content" class="row row-offcanvas row-offcanvas-left content-area">
+                <!--<div class="content-division col-sm-6" role="part-time-jobs-widget">
+                    <div id="symp_jobswidget" 
+                         data-csm="auburn-csm.symplicity.com" 
+                         data-id="cafc7f8b2e4d76da719080d5cc417823" 
+                         data-size="auto" 
+                         data-css="https://auburn-csm.symplicity.com/css/list_jobs_widget.css" 
+                         data-logo="" 
+                         data-header-text="Part-Time Jobs" 
+                         data-width="250" 
+                         data-height="480" 
+                         data-sort-by="posting_date"></div> 
+                    <script>
+                        (function(d, s, id) {
+                            var js, sjs = d.getElementsByTagName(s)[0];   
+                            if (d.getElementById(id)) return;   
+                            js = d.createElement(s); 
+                            js.id = id;   
+                            js.src = "https://static.symplicity.com/jslib/jobswidget/jobswidget.js";   
+                            sjs.parentNode.insertBefore(js, sjs); 
+                        }(document, "script", "symp_jobswidget_js"));
+                    </script>
+                </div>-->
                 <div class="content-division col-sm-12" role="main">
                     <h2>This is <span class="path-title">Teaching <i class="fa fa-chevron-down"></i></span></h2>
                     <div class="modal-body">
