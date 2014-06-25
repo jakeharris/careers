@@ -48,7 +48,7 @@
                 
                 <div class="header-right flex">                
                     <div class="header-title">
-                        <a href="./">Career Center</a>
+                        <a href="/career/">Career Center</a>
                         
                     </div>
                     
