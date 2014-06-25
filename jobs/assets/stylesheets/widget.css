@@ -45,9 +45,11 @@ ol, ul {
 }
 
 .sumlist-rw-title-widget {
-  font-size: 1.2rem;   
+  font-size: 1.2rem; 
+  font-family: 'Norwester', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .sumlist-bd2-widget {
   font-size: 1rem;   
+  font-family: 'Source Sans Pro', sans-serif;
 }
