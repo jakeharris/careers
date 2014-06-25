@@ -53,3 +53,7 @@ ol, ul {
   font-size: 1rem;   
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+.widget-job-info > p:nth-of-type(3){
+  font-color: #747474;
+}
