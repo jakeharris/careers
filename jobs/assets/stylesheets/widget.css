@@ -36,11 +36,11 @@ ol, ul {
   overflow: auto;   
 }
 
-#_list_form_widget a {
+a {
   text-decoration: none;
 }
 
-#_list_form_widget a:hover {
+a:hover {
   color: #f68026;   
 }
 
@@ -55,5 +55,9 @@ ol, ul {
 }
 
 .widget-job-info > p:nth-of-type(3){
-  font-color: #747474;
+  color: #747474;
+}
+
+.search-buttons > input[type=button] {
+  text-transform: capitalize;
 }

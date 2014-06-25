@@ -28,6 +28,10 @@
   vertical-align: bottom;
 }
 
+iframe {
+  border: none !important;   
+}
+
 .flex, .centered, .place,
 .times, .event, .login {
   display: -ms-flexbox;
