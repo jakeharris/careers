@@ -48,7 +48,7 @@
                 
                 <div class="header-right flex">                
                     <div class="header-title">
-                        <a href="/">Career Center</a>
+                        <a href="./">Career Center</a>
                         
                     </div>
                     
@@ -292,16 +292,16 @@ The goddess of lux-->
                 </div>
             </div>
             
-            <div class="row">
+            <!--<div class="row">
                 <div class="banner banner-bottom flex">
                     <img class="slider">
                     <img class="slider">
                     <img class="slider">
-                    <!--<img class="slider" src="assets/images/expo.jpg">
+                    <img class="slider" src="assets/images/expo.jpg">
                     <img class="slider" src="assets/images/education.jpg">
-                    <img class="slider" src="assets/images/major.png"> -->
+                    <img class="slider" src="assets/images/major.png"> 
                 </div>
-            </div>
+            </div>-->
             
             <div class="row footer-wrap hidden-print">
                 <footer>
@@ -309,7 +309,7 @@ The goddess of lux-->
                         <ul>
                             <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
                             <li><a href="http://www.auburn.edu/fye">First Year Experience</a></li>
-                            <li><a href="http://business.auburn.edu/student-services/office-of-professional-career-development/">College of Business OPCD</a></li>
+                            <li><a href="http://harbert.auburn.edu/students/current/professional-and-career-development-resources/index.php">College of Business OPCD</a></li>
                         </ul>
                     </section>
                     
