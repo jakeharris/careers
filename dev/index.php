@@ -189,7 +189,7 @@
                             <div class="times">
                                 <i class="fa fa-clock-o times-icon"></i>
                                 <div class="times-address">
-                                    Visit us! We’re open Monday through Friday (from 8am to 4pm). Walk-ins are 15 minute sessions (from noon to 4 pm) for résumé, cover letters and basic job search questions. If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744</a>.
+                                    Visit us! The Career Center is open Monday through Friday from 7:45am to 4:45pm. Walk-in hours are from noon – 4:00 pm and are 15 minute sessions for resume and cover letter reviews and basic job search questions. If you prefer an appointment, call (334) 844-4744.</a>.
                                 </div>
                             </div>
                             <i class="fa fa-briefcase block-bg hours-bg"></i>
@@ -283,8 +283,8 @@ The goddess of lux-->
 
                         <div class="block sponsors">
                             <h2><a href="#">Sponsors</a></h2>
-                            <a class="ad" href="http://www.ussteel.com/uss/portal/home/careers/jobopportunities">
-                                <img class="ad-image" src="assets/images/ussteel.jpg">
+                            <a class="ad" href="http://www.erac.com/default.aspx">
+                                <img class="ad-image" src="assets/images/erac.jpg">
                             </a>
                             <i class="fa fa-certificate block-bg sponsors-bg"></i>
                         </div>
