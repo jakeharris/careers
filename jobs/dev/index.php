@@ -90,7 +90,7 @@
                                         <div class="event-date-day">{{ event.date['day'] }}</div>
                                     </div>
                                     <div class="event-details">
-                                        <div class="event-details-name">{{ event.name }}</a></div>
+                                        <div class="event-details-name">{{ event.name }}</div>
                                         <div class="event-details-location">{{ event.location }}</div>
                                         <div class="event-details-time">{{ event.date.time.start}} - {{ event.date.time.end }}</div>
                                     </div>
@@ -104,127 +104,65 @@
             </div>
             
             <div class="row">
-                <div class="inbetween flex">
-                    <div class="between">
-                        <img src="assets/images/jobs-handbook.png" alt="Interview Prep" />
+                <section class="milieu">
+                    
+                </section>
+            </div>
+    
+            <div class="row flex">
+                <div class="hero inbetween">
+                    <h2 class="hero-text">Looking for more?</h2>
+                </div>
+                <!--mn: milieu-nav-->
+                <div class="milieu-nav">
+                    <div class="milieu-navbar accordion">
+                        <label class="milieu-navbar-text accordion-header" for="accordion-chk">
+                            Major archetype
+                        </label>
+                        <div class="accordion-arrow">
+                        </div>
+                        <input type=checkbox id="accordion-chk" class="accordion-chk">
+                        <!-- probably use a model and ng-repeat for each valid entry -->
+                        <div class="accordion-content">
+                            <div class="accordion-element bar bar-grey">
+                                Design
+                            </div>
+                            <div class="accordion-element bar bar-grey">
+                                Engineering
+                            </div>
+                            <div class="accordion-element bar bar-grey">
+                                Human Sciences
+                            </div>
+                        </div>
                     </div>
-                    <div class="between">
-                        <img src="assets/images/jobs-interview.png" alt="Interview Prep" />
+                    <div class="milieu-navbar">
+                        <div class="milieu-navbar-text">
+                            Particular major
+                        </div>
+                        <input type=text class="milieu-navbar-search filter" data-filterables={{ }}>
                     </div>
-                    <div class="between">
-                        <img src="assets/images/jobs-salary.png" alt="Interview Prep" />
+                    <div class="milieu-navbar">
+                        <div class="milieu-navbar-text">
+                            Interview prep
+                        </div>
                     </div>
-                    <div class="between small-text">
-                        <p>Your résumé will be reviewed in TRL by a staff member before it can be used in applications.</p>
-                        <p>Résumé reviews take 1-2 business days from time of upload and are conducted M-F 7:45 am - 4:45 pm.</p>
-                        <p>Please do not upload multiple copies of your résumé for review.</p>
+                    <div class="milieu-navbar">
+                        <div class="milieu-navbar-text">
+                            Job prep
+                        </div>
                     </div>
                 </div>
+                <div class="jobs-widget">
+                    
+                </div>
             </div>
+    
+            
+    
+    
+    
+    
 
-            <div id="content" class="row row-offcanvas row-offcanvas-left content-area">
-                <!--<div class="content-division col-sm-6" role="part-time-jobs-widget">
-                    <div id="symp_jobswidget" 
-                         data-csm="auburn-csm.symplicity.com" 
-                         data-id="cafc7f8b2e4d76da719080d5cc417823" 
-                         data-size="auto" 
-                         data-css="https://auburn-csm.symplicity.com/css/list_jobs_widget.css" 
-                         data-logo="" 
-                         data-header-text="Part-Time Jobs" 
-                         data-width="250" 
-                         data-height="480" 
-                         data-sort-by="posting_date"></div> 
-                    <script>
-                        (function(d, s, id) {
-                            var js, sjs = d.getElementsByTagName(s)[0];   
-                            if (d.getElementById(id)) return;   
-                            js = d.createElement(s); 
-                            js.id = id;   
-                            js.src = "https://static.symplicity.com/jslib/jobswidget/jobswidget.js";   
-                            sjs.parentNode.insertBefore(js, sjs); 
-                        }(document, "script", "symp_jobswidget_js"));
-                    </script>
-                </div>-->
-                <div class="content-division col-sm-12" role="main">
-                    <h2>This is <span class="path-title">Teaching <i class="fa fa-chevron-down"></i></span></h2>
-                    <div class="modal-body">
-                        <div class="career flex">
-                            <div class="career-block">
-                                <i class="fa fa-leaf"></i>
-                                <h3 class="career-title">Agriculture</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-pencil"></i> 
-                                <h3 class="career-title">Architecture, Design and Construction</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-briefcase"></i>
-                                <h3 class="career-title">Business</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-book"></i>   
-                                <h3 class="career-title">Education</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-wrench"></i>
-                                <h3 class="career-title">Engineering</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-bug"></i>
-                                <h3 class="career-title">Forestry and Wildlife Sciences</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-group"></i>
-                                <h3 class="career-title">Human Sciences</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-globe"></i>
-                                <h3 class="career-title">Liberal Arts</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-book"></i>
-                                <h3 class="career-title">Library</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-user-md"></i>
-                                <h3 class="career-title">Nursing</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-stethoscope"></i>
-                                <h3 class="career-title">Pharmacy</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-flask"></i>
-                                <h3 class="career-title">Sciences and Mathematics</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-medkit"></i>
-                                <h3 class="career-title">Veterinary Medicine</h3>
-                            </div>
-                        </div>
-                        <div class="path flex">
-                            <div class="path-block">
-                                Dramatically visualize customer directed convergence without revolutionary ROI.
-                            </div>
-                            <div class="path-block">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions.
-                            </div>
-                            <div class="path-block">
-                                Dynamically innovate resource-leveling customer service for state of the art customer service.
-                            </div>
-                            <div class="path-block">
-                                Holisticly predominate extensible testing procedures for reliable supply chains.
-                            </div>
-                            <div class="path-block">
-                                Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.
-                            </div>
-                            <div class="path-block">
-                                Quickly maximize timely deliverables for real-time schemas.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             
             
@@ -310,4 +248,128 @@
         <!-- Application JavaScript -->
         
     </body>
+
+<!--        old clay stuff
+            <div class="row">
+                <div class="inbetween flex">
+                    <div class="between">
+                        <img src="assets/images/jobs-handbook.png" alt="Interview Prep" />
+                    </div>
+                    <div class="between">
+                        <img src="assets/images/jobs-interview.png" alt="Interview Prep" />
+                    </div>
+                    <div class="between">
+                        <img src="assets/images/jobs-salary.png" alt="Interview Prep" />
+                    </div>
+                    <div class="between small-text">
+                        <p>Your résumé will be reviewed in TRL by a staff member before it can be used in applications.</p>
+                        <p>Résumé reviews take 1-2 business days from time of upload and are conducted M-F 7:45 am - 4:45 pm.</p>
+                        <p>Please do not upload multiple copies of your résumé for review.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content" class="row row-offcanvas row-offcanvas-left content-area">
+                <div class="content-division col-sm-6" role="part-time-jobs-widget">
+                    <div id="symp_jobswidget" 
+                         data-csm="auburn-csm.symplicity.com" 
+                         data-id="cafc7f8b2e4d76da719080d5cc417823" 
+                         data-size="auto" 
+                         data-css="https://auburn-csm.symplicity.com/css/list_jobs_widget.css" 
+                         data-logo="" 
+                         data-header-text="Part-Time Jobs" 
+                         data-width="250" 
+                         data-height="480" 
+                         data-sort-by="posting_date"></div> 
+                    <script>
+                        (function(d, s, id) {
+                            var js, sjs = d.getElementsByTagName(s)[0];   
+                            if (d.getElementById(id)) return;   
+                            js = d.createElement(s); 
+                            js.id = id;   
+                            js.src = "https://static.symplicity.com/jslib/jobswidget/jobswidget.js";   
+                            sjs.parentNode.insertBefore(js, sjs); 
+                        }(document, "script", "symp_jobswidget_js"));
+                    </script>
+                </div>
+                <div class="content-division col-sm-12" role="main">
+                    <h2>This is <span class="path-title">Teaching <i class="fa fa-chevron-down"></i></span></h2>
+                    <div class="modal-body">
+                        <div class="career flex">
+                            <div class="career-block">
+                                <i class="fa fa-leaf"></i>
+                                <h3 class="career-title">Agriculture</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-pencil"></i> 
+                                <h3 class="career-title">Architecture, Design and Construction</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-briefcase"></i>
+                                <h3 class="career-title">Business</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-book"></i>   
+                                <h3 class="career-title">Education</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-wrench"></i>
+                                <h3 class="career-title">Engineering</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-bug"></i>
+                                <h3 class="career-title">Forestry and Wildlife Sciences</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-group"></i>
+                                <h3 class="career-title">Human Sciences</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-globe"></i>
+                                <h3 class="career-title">Liberal Arts</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-book"></i>
+                                <h3 class="career-title">Library</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-user-md"></i>
+                                <h3 class="career-title">Nursing</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-stethoscope"></i>
+                                <h3 class="career-title">Pharmacy</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-flask"></i>
+                                <h3 class="career-title">Sciences and Mathematics</h3>
+                            </div>
+                            <div class="career-block">
+                                <i class="fa fa-medkit"></i>
+                                <h3 class="career-title">Veterinary Medicine</h3>
+                            </div>
+                        </div>
+                        <div class="path flex">
+                            <div class="path-block">
+                                Dramatically visualize customer directed convergence without revolutionary ROI.
+                            </div>
+                            <div class="path-block">
+                                Dramatically maintain clicks-and-mortar solutions without functional solutions.
+                            </div>
+                            <div class="path-block">
+                                Dynamically innovate resource-leveling customer service for state of the art customer service.
+                            </div>
+                            <div class="path-block">
+                                Holisticly predominate extensible testing procedures for reliable supply chains.
+                            </div>
+                            <div class="path-block">
+                                Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.
+                            </div>
+                            <div class="path-block">
+                                Quickly maximize timely deliverables for real-time schemas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
 </html>
