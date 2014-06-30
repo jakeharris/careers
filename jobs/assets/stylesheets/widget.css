@@ -27,8 +27,15 @@ ol, ul {
   padding: 0 1rem;
 }
 
+#logo > h1 {
+  margin-top: -0.31rem;
+  position: relative;
+  top: 1.55rem;
+}
+
 #subHead {
   position: inherit;
+  top: 1.55rem;
   margin-top: -3.3rem;
   float: right;
   height: auto;
