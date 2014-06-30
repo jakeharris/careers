@@ -30,6 +30,7 @@
 
 iframe {
   border: none !important;
+  height: 32rem !important;
 }
 
 .flex, .centered, .place,
