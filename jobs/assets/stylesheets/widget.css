@@ -18,7 +18,7 @@ ol, ul {
     padding-left: 1rem;
 }
 
-#widget-container {
+#widgetContainer {
     height: auto !important;
     max-height: 32rem;
 }
