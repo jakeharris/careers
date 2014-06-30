@@ -18,6 +18,11 @@ ol, ul {
     padding-left: 1rem;
 }
 
+#widget-container {
+    height: auto !important;
+    max-height: 32rem;
+}
+
 #widget-header {
   padding: 1rem;
   padding-bottom: 0;

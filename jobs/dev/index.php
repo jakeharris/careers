@@ -97,7 +97,6 @@
                                 </li>
                             </ul>
                             <a href="http://www.auburn.edu/career/events/">Read more</a>
-                            <i class="fa fa-calendar block-bg events-bg"></i>
                         </div>
                     </div>
                 </div>
@@ -153,7 +152,41 @@
                     </div>
                 </div>
                 <div class="jobs-widget">
+                    <div id="symp_jobswidget" 
+                         data-csm="auburn-csm.symplicity.com" 
+                         data-id="cafc7f8b2e4d76da719080d5cc417823" 
+                         data-size="auto"
+                         data-css="https://auburn.edu/career/jobs/assets/stylesheets/widget.css"
+                         data-logo=""
+                         data-header-text="Part-Time Jobs"
+                         data-sort-by="posting_date"></div>
+                    <script>
+                        (
+                            function(d, s, id) {
+                                
+                                console.log('d: ')
+                                console.log(d)
+                                console.log('s: ')
+                                console.log(s)
+                                console.log('id: ')
+                                console.log(id)
+                                
+                                var js
+                                  , sjs = d.getElementsByTagName(s)[0]
+                                
+                                console.log('sjs: ')
+                                console.log(sjs)
+                                
+                                if (d.getElementById(id)) return
+                                js = d.createElement(s)
+                                js.id = id
+                                js.src = "https://static.symplicity.com/jslib/jobswidget/jobswidget.js"
+                                sjs.parentNode.insertBefore(js, sjs)
+                            }   
+                            (document, "script", "symp_jobswidget_js")
+                        )
                     
+                    </script>
                 </div>
             </div>
     

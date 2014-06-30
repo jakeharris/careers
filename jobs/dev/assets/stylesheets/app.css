@@ -28,6 +28,10 @@
   vertical-align: bottom;
 }
 
+iframe {
+  border: none !important;
+}
+
 .flex, .centered, .place,
 .times, .event, .login,
 .milieu {
@@ -1470,4 +1474,14 @@ ul li {
 
 .accordion {
     
+}
+
+.jobs-widget {
+    flex-basis: 50%;
+    width: 50%;
+}
+
+#symp_jobswidget {
+    width: i% !important;
+    height: 100% !important;
 }
