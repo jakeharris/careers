@@ -46,7 +46,7 @@ ol, ul {
 #_list_form_widget {
   overflow: auto;   
   overflow-y: scroll;
-  height: 15rem;
+  height: 15rem !important;
 }
 
 a {
