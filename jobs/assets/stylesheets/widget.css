@@ -29,8 +29,14 @@ ol, ul {
 }
 
 #subHead {
-  top:-25px;
-  padding-left: 0.5rem;
+  position: inherit;
+  margin-top: -3.3rem;
+  float: right;
+  height: auto;
+}
+
+#pager > .ct {
+  display: none;
 }
 
 #page-count {
@@ -39,6 +45,8 @@ ol, ul {
 
 #_list_form_widget {
   overflow: auto;   
+  overflow-y: scroll;
+  height: 15rem;
 }
 
 a {
