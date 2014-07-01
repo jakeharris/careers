@@ -189,7 +189,7 @@
                             <div class="times">
                                 <i class="fa fa-clock-o times-icon"></i>
                                 <div class="times-address">
-                                    Visit us! The Career Center is open Monday through Friday from 7:45am to 4:45pm. Walk-in hours are from noon – 4:00 pm and are 15 minute sessions for resume and cover letter reviews and basic job search questions. If you prefer an appointment, call (334) 844-4744.</a>.
+                                    Visit us! The Career Center is open Monday through Friday from 7:45am to 4:45pm. Walk-in hours are from noon to 4:00 pm and are 15 minute sessions for resume and cover letter reviews and basic job search questions. If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744.</a>
                                 </div>
                             </div>
                             <i class="fa fa-briefcase block-bg hours-bg"></i>
@@ -204,13 +204,14 @@
                                         <div class="event-date-day">{{ event.date['day'] }}</div>
                                     </div>
                                     <div class="event-details">
-                                        <div class="event-details-name">{{ event.name }}</a></div>
+                                        <a ng-if="event.url" href="{{ event.url }}" class="event-details-name">{{ event.name }}</a>
+                                        <div ng-if="!event.url" class="event-details-name">{{ event.name }}</div>
                                         <div class="event-details-location">{{ event.location }}</div>
                                         <div class="event-details-time">{{ event.date.time.start}} - {{ event.date.time.end }}</div>
                                     </div>
                                 </li>
                             </ul>
-                            <a href="http://www.auburn.edu/career/events/">Read more</a>
+                            <a href="http://www.auburn.edu/career/events/">More events</a>
                             <i class="fa fa-calendar block-bg events-bg"></i>
                         </div>
 <?php $blog["title"] = "The long road home"; $blog["body"] = "Some days take longer than others. Sure, it's all twenty-four hours, but somewhere along the line, they get longer or shorter. The sun changes cycle. Your body changes sleep habits. So much can make this vary, and take you to the dreaming ether sooner or later than expected. 
