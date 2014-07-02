@@ -204,7 +204,7 @@
                                         <div class="event-date-day">{{ event.date['day'] }}</div>
                                     </div>
                                     <div class="event-details">
-                                        <a ng-if="event.url" href="{{ event.url }}" class="event-details-name">{{ event.name }}</a>
+                                        <a ng-if="event.url" href="{{ event.url }}" class="event-details-name" target="_blank">{{ event.name }}</a>
                                         <div ng-if="!event.url" class="event-details-name">{{ event.name }}</div>
                                         <div class="event-details-location">{{ event.location }}</div>
                                         <div class="event-details-time">{{ event.date.time.start}} - {{ event.date.time.end }}</div>
@@ -214,25 +214,23 @@
                             <a href="http://www.auburn.edu/career/events/">More events</a>
                             <i class="fa fa-calendar block-bg events-bg"></i>
                         </div>
-<?php $blog["title"] = "The long road home"; $blog["body"] = "Some days take longer than others. Sure, it's all twenty-four hours, but somewhere along the line, they get longer or shorter. The sun changes cycle. Your body changes sleep habits. So much can make this vary, and take you to the dreaming ether sooner or later than expected. 
+                        
+<!-- EASTER EGG EXPOSITION: "The long road home"
 
-<br /><br />
+Some days take longer than others. Sure, it's all twenty-four hours, but somewhere along the line, they get longer or shorter. The sun changes cycle. Your body changes sleep habits. So much can make this vary, and take you to the dreaming ether sooner or later than expected. 
 
 I've been travelling for half a year now, and the somber sunrises are gracious Ra's prevention of solace and slumber's embrace. It's so hard to stay awake as a trucker. You get used to the way the tires bump along, even with the irregularities, the occasional tire fragments or rabbits you hit along the way."
 
-?>
-                        <!--  <br /><br />
-
 So I make a habit of mythos..." I create stories to keep myself awake, and I tell them to other truckers over the otherwise desolate HAM radio. They don't all get to hear the endings, because their paths deviate from my own. But while they were waiting for the ending, they stayed awake, feet fumbling to find the brake pedals in case something went awry. They might not have paid as much attention to the road as they should have, but it was more than they would have had it been silent, had they been dozing. 
 
-
-<br /><br />
 So I guess I was doing a civil service. But really, it was all selfish."; 
 
 She was broken for days, years. 
 The dawn had faded, the trees and leaves made gentle cracking sounds when the wind blew, and her kneecaps were gone.
 
-The goddess of lux-->
+The goddess of lux...
+
+-->
                         <div class="block blog" ng-controller="blogger-ctrl">
                             <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
                             <h3><a class="h3-a blog-title" href="{{ blog.items[0].url }}">{{ blog.items[0].title }}</a></h3>

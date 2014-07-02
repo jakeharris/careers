@@ -134,12 +134,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="milieu-navbar">
+                    <!--<div class="milieu-navbar">
                         <div class="milieu-navbar-text">
                             Particular major
                         </div>
                         <input type=text class="milieu-navbar-search filter" data-filterables={{ }}>
-                    </div>
+                    </div>-->
                     <div class="milieu-navbar">
                         <div class="milieu-navbar-text">
                             Interview prep
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="jobs-widget">
+                <!--<div class="jobs-widget">
                     <div id="symp_jobswidget" 
                          data-csm="auburn-csm.symplicity.com" 
                          data-id="cafc7f8b2e4d76da719080d5cc417823" 
@@ -187,7 +187,7 @@
                         )
                     
                     </script>
-                </div>
+                </div>-->
             </div>
     
             
