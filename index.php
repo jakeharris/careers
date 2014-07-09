@@ -82,12 +82,12 @@
                             <div class="flex flex--login">
                                 <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/jobs/trl.html" 
                                    class="btn btn-default btn-md login-button" 
-                                   onClick="ga('send', 'event', { eventCategory: 'Student', eventAction: 'Registration Request'});">
+                                   onClick="_gaq.push(['_trackEvent', 'Student', 'Registration Request']);">
                                     Sign up
                                 </a>
                                 <button type="submit" 
                                         class="btn btn-default btn-md login-button login-button--active" 
-                                        onClick="ga('send', 'event', { eventCategory: 'Student', eventAction: 'Login Request'});">
+                                        onClick="_gaq.push(['_trackEvent', 'Student', 'Login Request']);">
                                     Sign in
                                 </button>
                             </div>
