@@ -80,8 +80,16 @@
                                 <input type="password" name="password" class="form-control input-md" placeholder="Password">
                             </div>
                             <div class="flex flex--login">
-                                <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/jobs/trl.html" class="btn btn-default btn-md login-button">Sign up</a>
-                                <button type="submit" class="btn btn-default btn-md login-button login-button--active">Sign in</button>
+                                <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/jobs/trl.html" 
+                                   class="btn btn-default btn-md login-button" 
+                                   onClick="ga('send', 'event', { eventCategory: 'Student', eventAction: 'Registration Request'});">
+                                    Sign up
+                                </a>
+                                <button type="submit" 
+                                        class="btn btn-default btn-md login-button login-button--active" 
+                                        onClick="ga('send', 'event', { eventCategory: 'Student', eventAction: 'Login Request'});">
+                                    Sign in
+                                </button>
                             </div>
                         </div>
                     </form>
