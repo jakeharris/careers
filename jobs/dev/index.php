@@ -115,23 +115,10 @@
                 <!--mn: milieu-nav-->
                 <div class="milieu-nav">
                     <div class="milieu-navbar accordion">
-                        <label class="milieu-navbar-text accordion-header" for="accordion-chk">
+                        <div class="milieu-navbar-text accordion-header" data-for="archetype">
                             Major archetype
-                        </label>
-                        <div class="accordion-arrow">
                         </div>
-                        <input type=checkbox id="accordion-chk" class="accordion-chk">
-                        <!-- probably use a model and ng-repeat for each valid entry -->
-                        <div class="accordion-content">
-                            <div class="accordion-element bar bar-grey">
-                                Design
-                            </div>
-                            <div class="accordion-element bar bar-grey">
-                                Engineering
-                            </div>
-                            <div class="accordion-element bar bar-grey">
-                                Human Sciences
-                            </div>
+                        <div class="accordion-arrow">
                         </div>
                     </div>
                     <!--<div class="milieu-navbar">
@@ -141,15 +128,58 @@
                         <input type=text class="milieu-navbar-search filter" data-filterables={{ }}>
                     </div>-->
                     <div class="milieu-navbar">
-                        <div class="milieu-navbar-text">
+                        <div class="milieu-navbar-text" data-category="prep" data-filter="interview">
                             Interview prep
                         </div>
                     </div>
                     <div class="milieu-navbar">
-                        <div class="milieu-navbar-text">
+                        <div class="milieu-navbar-text" data-category="prep" data-filter="job">
                             Job prep
                         </div>
                     </div>
+                    <div class="milieu-navbar accordion">
+                        <div class="milieu-navbar-text accordion-header" data-for="listings">
+                            Job and Internship Listings
+                        </div>
+                        <div class="accordion-arrow">
+                        </div>
+                    </div>
+                </div>
+                <div class="milieu-supplement">
+                    <div class="milieu-supplement-text" data-supplement="default">
+                        <h1 class="milieu-supplement-header">Resume policy</h1>
+                        <p>
+                            Your resume will be reviewed in TRL by a staff member before it can be used in applications. 
+                            Resume reviews take 1-2 business days from time of upload and are conducted M-F 7:45 am - 4:45 pm.
+                            <strong>Please do not upload multiple copies of your resume for review.</strong>
+                        </p>
+                    </div>
+                    <!-- probably use a model and ng-repeat for each valid entry -->
+                    <div class="milieu-supplement-nav hide" data-supplement="archetype">
+                        <div class="accordion-element bar bar-grey" data-category="major-archetype" data-filter="design">
+                            Design
+                        </div>
+                        <div class="accordion-element bar bar-grey">
+                            Engineering
+                        </div>
+                        <div class="accordion-element bar bar-grey">
+                            Human Sciences
+                        </div>
+                    </div>
+                    <div class="milieu-supplement-nav hide" data-category="major-archetype" data-supplement="listings">
+                        <div class="accordion-element bar bar-grey">
+                            Part-time Jobs
+                        </div>
+                        <div class="accordion-element bar bar-grey">
+                            Full-time Jobs
+                        </div>
+                        <div class="accordion-element bar bar-grey">
+                            Co-ops
+                        </div>
+                        <div class="accordion-element bar bar-grey">
+                            Internships
+                        </div>
+                  </div>
                 </div>
                 <!--<div class="jobs-widget">
                     <div id="symp_jobswidget" 
@@ -279,7 +309,16 @@
         <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
         
         <!-- Application JavaScript -->
-        
+        <script type="text/javascript">
+            $(function () {
+              $('.accordion-header').click(function () {
+                $('.milieu-supplement').children().addClass('hide')
+                console.log('[data-supplement=' + $(this).attr('data-for') +']')
+                console.log($('.milieu-supplement').children('[data-supplement=' + $(this).attr('data-for') +']'))
+                $('.milieu-supplement').children('[data-supplement=' + $(this).attr('data-for') +']').removeClass('hide')
+              })
+            })
+        </script>
     </body>
 
 <!--        old clay stuff

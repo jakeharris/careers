@@ -1384,9 +1384,15 @@ ul li {
     padding-top: 0.75rem;
 }
 
+.milieu-nav {
+    flex-basis: 50%;
+    width: 50%;
+}
+
 .bar, .milieu-navbar {
     width: 100%;
     min-height: 8rem;
+    max-height: 8rem;
     background: #496e9c;
     cursor: pointer;
 }
@@ -1396,11 +1402,16 @@ ul li {
    color: #03244d;
 }
 
+.milieu-navbar.milieu-navbar--default,
+.milieu-navbar.milieu-navbar--default:hover {
+  background: #496e9c;
+  color: white;
+}
 
-
-
-
-
+.milieu-navbar.milieu-navbar--default .milieu-navbar-text,
+.milieu-navbar.milieu-navbar--default:hover .milieu-navbar-text {
+  color: white;
+}
 
 .milieu-navbar--static {
     background: #dd550c;
@@ -1443,19 +1454,23 @@ ul li {
     padding: 0.33rem;
 }
 
+
+
+
 .accordion-chk {
     display:none;
 }
 
 .accordion-content {
     display: none;
-    position: relative;
-    left: 0;
-    top: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 67.65rem;
+    width: 31%;
+    overflow-x: hidden;
 }
 .accordion-chk:checked ~ .accordion-content {
     display: inline-block;
-    left:
 }
 
 .bar-grey {
@@ -1473,8 +1488,20 @@ ul li {
     cursor: pointer;
 }
 
-.accordion {
-    
+.milieu-supplement {
+    flex-basis: 50%;
+    width: 50%;
+}
+
+.milieu-supplement-text {
+    padding: 3rem;
+    padding-top: 0.2rem;
+    width: 70%;
+    padding-left: 10rem;
+}
+
+.milieu-supplement-header {
+    padding-bottom: 1.3rem;   
 }
 
 .jobs-widget {
