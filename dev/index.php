@@ -189,7 +189,13 @@
                             <div class="times">
                                 <i class="fa fa-clock-o times-icon"></i>
                                 <div class="times-address">
-                                    Visit us! The Career Center is open Monday through Friday from 7:45am to 4:45pm. Walk-in hours are from noon to 4:00 pm and are 15 minute sessions for resume and cover letter reviews and basic job search questions. If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744.</a>
+                                    Hours: Mon-Fri 7:45am-4:45pm <br>
+                                    Walk-in hours: Mon-Fri 12:00n-4:00pm
+                                    <p class="subtle">
+                                        15 minute sessions for resume and cover 
+                                        letter reviews and basic job search questions.
+                                    </p>
+                                    If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744.</a>
                                 </div>
                             </div>
                             <i class="fa fa-briefcase block-bg hours-bg"></i>

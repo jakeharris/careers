@@ -611,6 +611,12 @@ ul li {
   width: 82%;
 }
 
+.subtle,
+.times-address .subtle {
+    color: #747474;
+    margin-top: 10px;
+}
+
 .social-icon {
   box-sizing: border-box;
   color: white;
