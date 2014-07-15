@@ -409,7 +409,7 @@ ul li {
 .banner {
   box-sizing: border-box;
   position: relative;
-  z-index: 2000;
+/*  z-index: 2000;*/
   border-top: 1px solid #d7d7d7;
   border-bottom: 1px solid #d7d7d7;
 }
@@ -1082,7 +1082,7 @@ ul li {
 
 .trl {
   position: relative;
-  z-index: 1000000;
+  /* z-index: 10000000; */
 }
 
 .trl::before {
@@ -1097,7 +1097,7 @@ ul li {
 .login-username,
 .login-password {
   margin-bottom: 1.6rem;
-  z-index: 1000000;
+  /* z-index: 10000000; */
 }
 
 .login-description {

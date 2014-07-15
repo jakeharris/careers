@@ -1,0 +1,14 @@
+.events {
+    flex-direction: row;
+    width: 100%;
+}
+
+.events h2 {
+    justify-content: center;
+    font-size: 5rem;
+    padding-bottom: 1rem;
+}
+
+.events ul .event {
+    display: inline-flex;  
+}

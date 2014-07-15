@@ -34,7 +34,8 @@
         <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
         
         <!-- Application-specific CSS/JS -->
-        <script src="components/angular/angular.js"></script>
+        <script src="components/angular/angular.min.js"></script>
+        <script src="components/angular/angular-cookies.min.js"></script>
         <script src="assets/js/controllers.js"></script>
     </head>
 
@@ -102,17 +103,42 @@
                 </div>
             </div>
             
-            <div class="row">
-                <section class="milieu">
-                    
+            <div class="row dynamo" ng-controller="dynamo-ctrl">
+                <div class="hero inbetween dynamo-select" data-toggle="modal" data-target="#dynamo-modal" ng-model="currentType">
+                    <h2 class="hero-text">{{ currentType }}</h2>
+                </div>
+                <section class="dynamo-content" ng-repeat="c in content | filter:{types: '! '+currentType}">
+                    <div class="dynamo-atom">
+                        <h4 class="atom-header">{{ c.title }}</h4>
+                        <p class="atom-body">{{ c.body }}</p>
+                    </div>
                 </section>
+                <div class="modal fade" id="dynamo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title"></h4>
+                      </div>
+                      <div class="modal-body flex" ng-repeat="type in types['major-types']">
+                        <div class="dynamo-filter bar" ng-click="currentType = type">{{ type }}</div>
+                      </div>
+                      <div class="modal-body flex" ng-repeat="type in types['globals']">
+                        <div class="dynamo-filter bar" ng-click="currentType = type">{{ type }}</div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
             </div>
-    
-            <div class="row flex">
+            
+            <!--<div class="row flex">
                 <div class="hero inbetween">
                     <h2 class="hero-text">Looking for more?</h2>
                 </div>
-                <!--mn: milieu-nav-->
                 <div class="milieu-nav">
                     <div class="milieu-navbar accordion">
                         <div class="milieu-navbar-text accordion-header" data-for="archetype">
@@ -126,7 +152,7 @@
                             Particular major
                         </div>
                         <input type=text class="milieu-navbar-search filter" data-filterables={{ }}>
-                    </div>-->
+                    </div>
                     <div class="milieu-navbar">
                         <div class="milieu-navbar-text" data-category="prep" data-filter="interview">
                             Interview prep
@@ -154,7 +180,7 @@
                             <strong>Please do not upload multiple copies of your resume for review.</strong>
                         </p>
                     </div>
-                    <!-- probably use a model and ng-repeat for each valid entry -->
+                    <!-- probably use a model and ng-repeat for each valid entry
                     <div class="milieu-supplement-nav hide" data-supplement="archetype">
                         <div class="accordion-element bar bar-grey" data-category="major-archetype" data-filter="design">
                             Design
@@ -217,8 +243,8 @@
                         )
                     
                     </script>
-                </div>-->
-            </div>
+                </div>
+            </div>-->
     
             
     

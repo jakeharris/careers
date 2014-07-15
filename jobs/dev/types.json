@@ -1,0 +1,15 @@
+[
+    {
+        "major-types": [
+            "design",
+            "engineering",
+            "human sciences"
+        ],
+        "globals": [
+            "job-prep",
+            "intrvw-prep",
+            "job-list",
+            "coop-intrn-list"
+        ]
+    }
+]
