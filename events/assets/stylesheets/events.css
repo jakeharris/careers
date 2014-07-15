@@ -12,6 +12,8 @@
 .events ul .event {
     display: inline-flex;  
     justify-content: space-between;
+    padding-bottom: 1rem;
+    padding-right: 3rem;
     flex-basis: 100%;
     width: 100%;
 }
