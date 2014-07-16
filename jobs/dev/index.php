@@ -104,35 +104,7 @@
             </div>
             
             <div class="row dynamo" ng-controller="dynamo-ctrl">
-                <div class="hero inbetween dynamo-select" data-toggle="modal" data-target="#dynamo-modal" ng-model="currentType">
-                    <h2 class="hero-text">{{ currentType }}</h2>
-                </div>
-                <section class="dynamo-content" ng-repeat="c in content | filter:{types: '! '+currentType}">
-                    <div class="dynamo-atom">
-                        <h4 class="atom-header">{{ c.title }}</h4>
-                        <p class="atom-body">{{ c.body }}</p>
-                    </div>
-                </section>
-                <div class="modal fade" id="dynamo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title"></h4>
-                      </div>
-                      <div class="modal-body flex" ng-repeat="type in types['major-types']">
-                        <div class="dynamo-filter bar" ng-click="currentType = type">{{ type }}</div>
-                      </div>
-                      <div class="modal-body flex" ng-repeat="type in types['globals']">
-                        <div class="dynamo-filter bar" ng-click="currentType = type">{{ type }}</div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                      </div>
-                    </div><!-- /.modal-content -->
-                  </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
+                <dynamo></dynamo>
             </div>
             
             <!--<div class="row flex">

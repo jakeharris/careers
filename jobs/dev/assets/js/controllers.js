@@ -8,22 +8,74 @@ home.controller('calendar-ctrl', function ($scope, $http) {
 })
 
 home.controller('dynamo-ctrl', function ($scope, $http, $cookieStore) {
-    console.log('Loading types.json')
     $http.get('./types.json')
          .then(function (res) {
-            console.log('Loaded. Assigning types to scope')
             $scope.types = res.data[0]
-            console.log($scope.types)
          })
     
-    $scope.currentType = $cookieStore.get('type') || "Job prep"
+    $scope.currentType = $cookieStore.get('displayType') || "Job Prep"
     
-    console.log('Loading content.json')
     $http.get('./content.json')
          .then(function (res) {
-            console.log('Loaded. Assigning content to scope')
             $scope.content = res.data 
-            console.log($scope.content) 
          })
+
     
+})
+
+home.directive('ngRepeatComplete', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, elem, attrs) {
+            scope.$emit(attrs['ngRepeatComplete'] || 'repeat-complete', elem)   
+        }
+    }
+})
+/* YOU NEED THIS ARTICLE http://onehungrymind.com/angularjs-dynamic-templates/ */
+home.directive('dynamoContent', function () {
+    return {
+        restrict: 'E',
+        replace: 'true',
+        templateUrl: './assets/templates/dynamo-content.html',
+        link: function (scope, elem, attrs) {   
+            $scope.$watch('currentType', function (n, o) {
+                
+            })
+        }
+    }
+})
+
+home.directive('dynamo', function ($cookieStore) {
+    return {
+        restrict: 'E',
+        replace: 'true',
+        templateUrl: './assets/templates/dynamo.html',
+        link: function (scope, elem, attrs) {  
+            
+            scope.$on('major-done', function (event, melem) {
+                $(melem).bind('click', function () {
+                    var e = $(this).html()
+
+                    $(elem.find('.dynamo-header')).html(e)
+                    $cookieStore.put('type', $(this).attr('data-type'))
+                    $cookieStore.put('displayType', e)
+                    scope.$apply(function () {
+                        scope.currentType = e
+                    })
+                })
+            })
+            scope.$on('global-done', function (event, gelem) {
+                $(gelem).bind('click', function () {
+                    var e = $(this).html()
+
+                    $(elem.find('.dynamo-header')).html(e)
+                    $cookieStore.put('type', $(this).attr('data-type'))
+                    $cookieStore.put('displayType', e)
+                    scope.$apply(function () {
+                        scope.currentType = e
+                    })
+                })
+            })
+        }
+    };
 })
