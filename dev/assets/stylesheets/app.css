@@ -33,7 +33,8 @@ iframe {
 }
 
 .flex, .centered, .place,
-.times, .event, .login {
+.times, .appointments,
+.event, .login {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -574,7 +575,8 @@ ul li {
 }
 
 .place,
-.times {
+.times, 
+.appointments {
   margin-bottom: 1.6rem;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
@@ -590,7 +592,8 @@ ul li {
 }
 
 .place-icon,
-.times-icon {
+.times-icon,
+.appointments-icon {
   font-size: 6rem;
   color: #496e9c;
   width: 18%;
@@ -607,7 +610,8 @@ ul li {
 }
 
 .place-address,
-.times-address {
+.times-address,
+.appointments-address {
   width: 82%;
 }
 

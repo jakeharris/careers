@@ -17,7 +17,7 @@ var home = angular.module('career-center-home', [])
 home.controller('calendar-ctrl', function ($scope, $http) {
   $http.get('./events.json')
        .then(function (res) {
-         $scope.events = res.data.slice(0, 2)
+         $scope.events = res.data.slice(0, 3)
        })
 })
 
@@ -92,7 +92,7 @@ home.controller('blogger-ctrl', function ($scope, $http) {
             m[x] = m[x].split(/&nbsp;/).join('')
         }
         m = m.join('')
-        m = m.substr(0, 400)
+        m = m.substr(0, 600)
         m += '...'
     }
         

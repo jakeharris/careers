@@ -195,6 +195,13 @@
                                         15 minute sessions for resume and cover 
                                         letter reviews and basic job search questions.
                                     </p>
+                                </div>
+                            </div>
+                            <div class="appointments">
+                                <a href="tel:3348444744" class="appointments-icon">
+                                    <i class="fa fa-phone"></i>
+                                </a>
+                                <div class="appointments-address">
                                     To schedule an appointment, call <a href="tel:3348444744">(334) 844-4744.</a>
                                     <p class="subtle">
                                         Due to accessibility limitations of Martin 
