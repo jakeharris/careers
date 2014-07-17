@@ -190,12 +190,17 @@
                                 <i class="fa fa-clock-o times-icon"></i>
                                 <div class="times-address">
                                     Hours: Mon-Fri 7:45am-4:45pm <br>
-                                    Walk-in hours: Mon-Fri 12:00n-4:00pm
+                                    Walk-ins: Mon-Fri 12:00n-4:00pm
                                     <p class="subtle">
                                         15 minute sessions for resume and cover 
                                         letter reviews and basic job search questions.
                                     </p>
-                                    If you prefer an appointment, call <a href="tel:3348444744">(334) 844-4744.</a>
+                                    To schedule an appointment, call <a href="tel:3348444744">(334) 844-4744.</a>
+                                    <p class="subtle">
+                                        Due to accessibility limitations of Martin 
+                                        Hall, please notify us when setting your 
+                                        appointment if accommodations are needed.
+                                    </p>
                                 </div>
                             </div>
                             <i class="fa fa-briefcase block-bg hours-bg"></i>
