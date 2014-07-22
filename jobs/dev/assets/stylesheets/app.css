@@ -1520,3 +1520,12 @@ ul li {
 .dynamo-filter {
     color: white;
 }
+
+.dynamo-select {
+    cursor: pointer;
+}
+
+.dynamo-select:hover {
+    background: #496e9c;
+    box-shadow: inset 0px 4px 4px -4px #395e8c, inset 0px -4px 4px -4px #395e8c;
+}

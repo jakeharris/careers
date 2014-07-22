@@ -8,9 +8,10 @@
           "numerical-month" :"7",
           "day"             :"14"
         },
-        "types" : [
+        "categories" : [
             "job-prep",
             "design"
-        ]
+        ],
+        "content-type":"text"
     }    
 ]

@@ -52,12 +52,12 @@
                         <a href="/">Career Center</a>
                     </div>
                     
-                    <div class="header-navbar">
+                    <!--<div class="header-navbar">
                         <ul>
                             <li><a href="http://www.auburn.edu/career/students/">Career Center</a></li>
                             <li><a href="http://www.auburn.edu/career/alumni/">College of Business</a></li>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
             </header>
             
@@ -97,7 +97,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <a href="http://www.auburn.edu/career/events/">Read more</a>
+                            <a href="http://www.auburn.edu/career/events/">More events</a>
                         </div>
                     </div>
                 </div>
