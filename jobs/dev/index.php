@@ -37,6 +37,8 @@
         <script src="components/angular/angular.min.js"></script>
         <script src="components/angular/angular-cookies.min.js"></script>
         <script src="assets/js/controllers.js"></script>
+        <!-- Use latest PDF.js build from Github -->
+        <script src="http://mozilla.github.io/pdf.js/build/pdf.js"></script>
     </head>
 
     <body class="jobs">

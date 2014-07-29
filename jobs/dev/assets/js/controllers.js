@@ -49,41 +49,59 @@ home.directive('ngRepeatComplete', function () {
     }
 })
 /* YOU NEED THIS ARTICLE http://onehungrymind.com/angularjs-dynamic-templates/ */
-home.directive('dynamoAtom', function ($compile) {
+home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
     
-    var imageTemplate =  '<div class="entry-photo">'
+    var imageTemplate =  '<div class="atom-image">'
                         +   '<h2>&nbsp;</h2>'
-                        +   '<div class="entry-img">'
+                        +   '<div class="atom-img">'
                         +       '<span>'
                         +           '<a href="{{rootDirectory}}{{content.data}}">'
                         +               '<img ng-src="{{rootDirectory}}{{content.data}}" alt="entry photo">'
                         +           '</a>'
                         +       '</span>'
                         +   '</div>'
-                        +   '<div class="entry-text">'
-                        +       '<div class="entry-title">{{content.title}}</div>'
-                        +       '<div class="entry-copy">{{content.description}}</div>'
+                        +   '<div class="image-details">'
+                        +       '<div class="image-title">{{content.title}}</div>'
+                        +       '<div class="image-body">{{content.description}}</div>'
                         +   '</div>'
                         +'</div>'
-    var videoTemplate =  '<div class="entry-video">'
-                        +   '<h2>&nbsp;</h2>'
-                        +   '<div class="entry-vid">'
-                        +       '<iframe ng-src="{{content.data}}" width="280" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'
+    var videoTemplate =  '<div class="atom-video">'
+                        +   '<h3>&nbsp;</h3>'
+                        +   '<div class="atom-vid">'
+                        +       '<iframe ng-src="{{content.url}}" width="280" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'
                         +   '</div>'
-                        +   '<div class="entry-text">'
-                        +       '<div class="entry-title">{{content.title}}</div>'
-                        +       '<div class="entry-copy">{{content.description}}</div>'
-                        +   '</div>'
-                        +'</div>'
-    var noteTemplate =   '<div class="entry-note">'
-                        +   '<h2>&nbsp;</h2>'
-                        +   '<div class="entry-text">'
-                        +       '<div class="entry-title">{{content.title}}</div>'
-                        +       '<div class="entry-copy">{{content.body}}</div>'
+                        +   '<div class="video-details">'
+                        +       '<div class="video-title">{{content.title}}</div>'
+                        +       '<div class="video-body">{{content.description}}</div>'
                         +   '</div>'
                         +'</div>'
+    var textTemplate =   '<div class="atom-text">'
+                        +   '<h2 class="text-header">{{content.title}}</h2>'
+                        +   '<div class="text-body">{{content.body}}</div>'
+                        +'</div>'
+    var sectionTemplate= '<section class="atom-section">'
+                        +   '<h2>{{content.title}}</h2>'
+                        +   '<dynamo-atom ng-repeat="c in content.body" content="c"></dynamo-atom>'
+                        +'</section>'
+    var pdfTemplate =    '<div class="atom-pdf">'
+                        +   '<h2>{{content.title}}</h2>'
+                        +   '<canvas id="{{content.title}}" data-url="{{content.url}}" data-drawn="false"></canvas>'
+                        +   '<script defer="defer">'
+                
+                        +   '</script>'
+                        +   '<div class="pdf-details">'
+                        +       '<div class="pdf-body">{{content.body}}</div>'
+                        +   '</div>'
+                        +'</div>'
+    var linkTemplate =   '<a class="atom-link" href="{{content.url}}">{{content.title}}</a>'
+    var portalTemplate = '<div class="atom-portal">'
+                        +   '<h2>{{content.title}}</h2>'
+                        +   '<div class="portal-text">{{content.body}}</div>'
+                        +   '<a class="btn" href="{{content.url}}">{{content["button-text"]}}</button>'
+                        +'</div>'
+    var hasRenderedPDFs = false
     
-    var getTemplate = function (type) {
+    var getTemplate = function (type, opts) {
         var template = ''
         switch(type) {
             case 'video':
@@ -91,9 +109,17 @@ home.directive('dynamoAtom', function ($compile) {
             case 'image':
                 return template = imageTemplate
             case 'text':
-                return template = noteTemplate
+                return template = textTemplate
+            case 'section':
+                return template = sectionTemplate
+            case 'pdf':
+                return template = pdfTemplate
+            case 'link':
+                return template = linkTemplate
+            case 'login-portal':
+                return template = portalTemplate
             default:
-                return template = noteTemplate
+                return template = textTemplate
         }
     }
     
@@ -105,18 +131,33 @@ home.directive('dynamoAtom', function ($compile) {
         },
         link: function (scope, elem, attrs) { 
             scope.rootDirectory = 'assets/images'
-            console.log('==== LINKING DYNAMO-CONTENT ITEM ====')
-            console.log('elem: ')
-            console.log(elem)
-            console.log('scope: ')
-            console.log(scope)
-            console.log('scope.content: ')
-            console.log(scope.content)
-            console.log()
-            $(elem).html(getTemplate(scope.content['content-type'])).show()
-            console.log('element html: ')
-            console.log($(elem).html())
+            if(scope.content.url) scope.content.url = $sce.trustAsResourceUrl(scope.content.url)
+            $(elem).html(getTemplate(scope.content['content-type'], { 'url' : scope.content.url })).show()
             $compile(elem.contents())(scope)
+            if(!hasRenderedPDFs) {
+                $timeout(function () {
+                    console.log('==== STARTING RUN ====')
+                    console.log($("canvas[data-drawn=false]"))
+                    var c = $("canvas[data-drawn=false]").length
+                    for(var i = c; i > 0; i--) {
+                        PDFJS.disableWorker = true
+                        var url = $($("canvas[data-drawn=false]")[c - i]).attr("data-url")
+                        PDFJS.getDocument(url).then(function getPdfHelloWorld(pdf) {
+                            pdf.getPage(1).then(function getPageHelloWorld(page) {
+                                var scale = 1,
+                                    viewport = page.getViewport(scale),
+                                    canvas = $("canvas[data-url=" + url + "]")[0],
+                                    context = canvas.getContext("2d")
+                                canvas.height = viewport.height
+                                canvas.width = viewport.width
+                                $(canvas).attr('data-drawn', 'true')
+                                page.render({canvasContext: context, viewport: viewport})
+                            })
+                        })
+                    }
+                }, 2000)
+                hasRenderedPDFs = true;
+            }
         }
     }
 })

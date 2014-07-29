@@ -1529,3 +1529,12 @@ ul li {
     background: #496e9c;
     box-shadow: inset 0px 4px 4px -4px #395e8c, inset 0px -4px 4px -4px #395e8c;
 }
+
+.dynamo-molecule {
+    justify-content: space-around;
+}
+
+.dynamo-molecule dynamo-atom {
+    flex-basis: 30%;
+    width: 30%;
+}

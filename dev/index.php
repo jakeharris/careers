@@ -309,16 +309,13 @@ The goddess of lux...
                 </div>
             </div>
             
-            <!--<div class="row">
+            <div class="row">
                 <div class="banner banner-bottom flex">
-                    <img class="slider">
-                    <img class="slider">
-                    <img class="slider">
-                    <img class="slider" src="assets/images/expo.jpg">
-                    <img class="slider" src="assets/images/education.jpg">
-                    <img class="slider" src="assets/images/major.png"> 
+                    <img class="slider" src="assets/images/E&TCE_Hompage_Tile.jpg">
+                    <img class="slider" src="assets/images/G&PSF_Homepage_Tile.jpg">
+                    <img class="slider" src="assets/images/I&PTJF_Homepage_Tile.jpg"> 
                 </div>
-            </div>-->
+            </div>
             
             <div class="row footer-wrap hidden-print">
                 <footer>

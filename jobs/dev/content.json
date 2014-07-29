@@ -1,5 +1,6 @@
 [
     {
+        "content-type":"text",
         "title":"Why is the Dragonslayer Blade iconic?",
         "body" :"It is the very symbol of brute strength in a sword, for starters.",
         "date" : {
@@ -11,7 +12,85 @@
         "categories" : [
             "job-prep",
             "design"
+        ]
+    },
+    {
+        "content-type":"text",
+        "title":"Zombini Wizard Breaks Down RBD Library Door, Career Center Uncomfortable",
+        "body":"well there was a zombie and then he got out of his restraints so they called him zombini and then he also knew magic and now he got in the library and maybe we're next because we're right next door",
+        "date" : {
+          "month"           :"July",
+          "shortened-month" :"JUL",
+          "numerical-month" :"7",
+          "day"             :"14"
+        },
+        "categories" : [
+            "job-prep",
+            "design",
+            "engr"
+        ]
+                
+    },
+    {
+        "content-type":"text",
+        "title":"",
+        "body":"Interviewing is the ultimate trial for securing your job and is your chance to showcase the skills and abilities you described in your job search documents. Additionally, the interview is both you and the employer’s opportunity to ensure that you are a good fit for the company and its unique culture.",
+        "categories" : [
+            "intrvw-prep"   
+        ]
+    },
+    {
+        "content-type":"section",
+        "title":"Popular Resources",
+        "body":[
+            {
+                "content-type":"pdf",
+                "title":"Career Center Job Search Guide",
+                "url":"http://www.auburn.edu/career/students/handbook.pdf"
+            },
+            {
+                "content-type":"link",
+                "title":"InterviewStream",
+                "url":"http://www.auburn.edu/career/resources/interviewstream.html"
+            }
         ],
-        "content-type":"text"
-    }    
+        "date": {
+            
+        },
+        "categories" : [
+            "intrvw-prep"
+        ]
+    },
+    {
+        "content-type":"section",
+        "title":"The Interview",
+        "body": [
+            {
+                "content-type":"link",
+                "title":"Candid Career Interview Advice",
+                "url":"https://www.candidcareer.com/video-interviewing+advice,45d361982edc10ce738a,Auburn"
+            },
+            {
+                "content-type":"pdf",
+                "title":"Interview Tips",
+                "body":"Before you begin practicing your interview skills, review these interview preparation strategies and sample questions.",
+                "url":"http://www.auburn.edu/career/tipsheets/Tip%20Sheet%20Interview%20Prep.pdf"
+            },
+            {
+                "content-type":"login-portal",
+                "title":"InterviewStream",
+                "body":"Digitally record multiple practice interviews using a web-cam equipped computer using InterviewStream. You can choose from a list of predefined interview questions sets or select your own set of interview questions. InterviewStream is a great starting point for those new to interviewing.",
+                "button-text":"Create an account (must use an Auburn email address)",
+                "url":"https://auburn.interviewstream.com/Account/Login?ReturnUrl=%2f"
+            },
+            {
+                "content-type":"text",
+                "title":"Mock Interviews",
+                "body":"When you have an interview scheduled and have practiced with InterviewStream, schedule a mock interview with a career counselor/advisor to serve as a dress rehearsal. You will come to the interview dressed professionally with a resume. Call the Career Center at 334-844-4744 to schedule an appointment."
+            }
+        ],
+        "categories" : [
+            "intrvw-prep"   
+        ]
+    }
 ]
