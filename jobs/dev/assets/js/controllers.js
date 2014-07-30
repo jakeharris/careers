@@ -86,9 +86,6 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
     var pdfTemplate =    '<div class="atom-pdf">'
                         +   '<h2>{{content.title}}</h2>'
                         +   '<canvas id="{{content.title}}" data-url="{{content.url}}" data-drawn="false"></canvas>'
-                        +   '<script defer="defer">'
-                
-                        +   '</script>'
                         +   '<div class="pdf-details">'
                         +       '<div class="pdf-body">{{content.body}}</div>'
                         +   '</div>'
@@ -155,7 +152,7 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
                             })
                         })
                     }
-                }, 2000)
+                }, 3000)
                 hasRenderedPDFs = true;
             }
         }

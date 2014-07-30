@@ -471,6 +471,7 @@ ul li {
   border: none;
   flex-basis: 100%;
   width: 100%;
+  top: 2.5rem;
 }
 
 .banner-bottom .slider {
@@ -499,6 +500,7 @@ ul li {
   .banner-bottom .slider {
     flex-basis: 33.33333%;
     width: 33.33333%;
+    height: 33.33333%;
   }
 
   .banner-bottom .slider:nth-of-type(2) {
@@ -508,13 +510,13 @@ ul li {
 
 @media (min-width: 1105px) {
   .banner-bottom {
-    height: 21rem;   
+    /*height: 21rem;   */
   }
 }
 
 @media (min-width: 1300px) {
   .banner-bottom {
-    height: 25rem;   
+    /*height: 25rem;   */
   }
 }
 
