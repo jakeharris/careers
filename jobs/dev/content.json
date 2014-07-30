@@ -32,33 +32,37 @@
                 
     },
     {
-        "content-type":"text",
-        "title":"",
-        "body":"Interviewing is the ultimate trial for securing your job and is your chance to showcase the skills and abilities you described in your job search documents. Additionally, the interview is both you and the employer’s opportunity to ensure that you are a good fit for the company and its unique culture.",
-        "categories" : [
-            "intrvw-prep"   
-        ]
-    },
-    {
         "content-type":"section",
-        "title":"Popular Resources",
+        "title":"",
         "body":[
             {
-                "content-type":"pdf",
-                "title":"Career Center Job Search Guide",
-                "url":"http://auburn.edu/career/students/handbook.pdf"
+                "content-type":"special-text",
+                "title":"",
+                "body":" is the ultimate trial for securing your job and is your chance to showcase the skills and abilities you described in your job search documents. Additionally, the interview is both you and the employer’s opportunity to ensure that you are a good fit for the company and its unique culture.",
+                "first-word":"Interviewing"
             },
             {
-                "content-type":"link",
-                "title":"InterviewStream",
-                "url":"http://auburn.edu/career/resources/interviewstream.html"
+                "content-type":"section",
+                "title":"Popular Resources",
+                "body":[
+                    {
+                        "content-type":"pdf",
+                        "title":"Career Center Job Search Guide",
+                        "url":"http://auburn.edu/career/students/handbook.pdf"
+                    },
+                    {
+                        "content-type":"link",
+                        "title":"InterviewStream",
+                        "url":"http://auburn.edu/career/resources/interviewstream.html"
+                    }
+                ],
+                "date": {
+
+                }
             }
         ],
-        "date": {
-            
-        },
         "categories" : [
-            "intrvw-prep"
+            "intrvw-prep"   
         ]
     },
     {

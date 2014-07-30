@@ -79,16 +79,28 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
                         +   '<h2 class="text-header">{{content.title}}</h2>'
                         +   '<div class="text-body">{{content.body}}</div>'
                         +'</div>'
+    var specialTextTemplate='<div class="atom-text--special">'
+                        +   '<h2 class="text-header">{{content.title}}</h2>'
+                        +   '<div class="text-body">'
+                        +       '<span class="text-body--special">'
+                        +           '{{content["first-word"]}}'
+                        +       '</span>'
+                        +       '{{content.body}}'
+                        +   '</div>'
+                        +'</div>'
     var sectionTemplate= '<section class="atom-section">'
                         +   '<h2>{{content.title}}</h2>'
                         +   '<dynamo-atom ng-repeat="c in content.body" content="c"></dynamo-atom>'
                         +'</section>'
     var pdfTemplate =    '<div class="atom-pdf">'
-                        +   '<h2>{{content.title}}</h2>'
-                        +   '<canvas id="{{content.title}}" data-url="{{content.url}}" data-drawn="false"></canvas>'
-                        +   '<div class="pdf-details">'
-                        +       '<div class="pdf-body">{{content.body}}</div>'
+                        +   '<a href="{{content.url}}"><i class="fa fa-file-pdf-o"></i>'
+                        +   '<div class="pdf-details--wrapper">'
+                        +       '<div class="pdf-details">'
+                        +           '<h3 class="pdf-title">{{content.title}}</h3>'
+                        +           '<div class="pdf-body">{{content.body}}</div>'
+                        +       '</div>'
                         +   '</div>'
+                        +   '</a>'
                         +'</div>'
     var linkTemplate =   '<a class="atom-link" href="{{content.url}}">{{content.title}}</a>'
     var portalTemplate = '<div class="atom-portal">'
@@ -107,6 +119,8 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
                 return template = imageTemplate
             case 'text':
                 return template = textTemplate
+            case 'special-text':
+                return template = specialTextTemplate
             case 'section':
                 return template = sectionTemplate
             case 'pdf':
@@ -131,30 +145,6 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
             if(scope.content.url) scope.content.url = $sce.trustAsResourceUrl(scope.content.url)
             $(elem).html(getTemplate(scope.content['content-type'], { 'url' : scope.content.url })).show()
             $compile(elem.contents())(scope)
-            if(!hasRenderedPDFs) {
-                $timeout(function () {
-                    console.log('==== STARTING RUN ====')
-                    console.log($("canvas[data-drawn=false]"))
-                    var c = $("canvas[data-drawn=false]").length
-                    for(var i = c; i > 0; i--) {
-                        PDFJS.disableWorker = true
-                        var url = $($("canvas[data-drawn=false]")[c - i]).attr("data-url")
-                        PDFJS.getDocument(url).then(function getPdfHelloWorld(pdf) {
-                            pdf.getPage(1).then(function getPageHelloWorld(page) {
-                                var scale = 1,
-                                    viewport = page.getViewport(scale),
-                                    canvas = $("canvas[data-url=" + url + "]")[0],
-                                    context = canvas.getContext("2d")
-                                canvas.height = viewport.height
-                                canvas.width = viewport.width
-                                $(canvas).attr('data-drawn', 'true')
-                                page.render({canvasContext: context, viewport: viewport})
-                            })
-                        })
-                    }
-                }, 3000)
-                hasRenderedPDFs = true;
-            }
         }
     }
 })
