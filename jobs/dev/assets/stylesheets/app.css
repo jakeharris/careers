@@ -1391,6 +1391,10 @@ ul li {
     content: '\f1c1';
 }
 
+.fa-external-link {
+    content: '\f08e';   
+}
+
 .dynamo-filter {
     color: white;
 }
@@ -1416,10 +1420,16 @@ ul li {
 .dynamo-molecule dynamo-atom {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
 }
 
 dynamo-atom .atom-link {
-    
+    display: block;
+}
+
+dynamo-atom .atom-vid {
+    width: 100%;   
 }
 
 dynamo-atom .atom-text--special {
@@ -1433,20 +1443,37 @@ dynamo-atom .atom-text--special .text-body--special {
     color: #333;
 }
 
+dynamo-atom .atom-portal a {
+    margin-top: 2rem;
+}
 
-dynamo-atom .atom-pdf {
+dynamo-atom .atom-portal .portal-note {
+    margin-top: 2rem;
+    color: #747474;   
+}
+
+dynamo-atom .atom-pdf,
+dynamo-atom .atom-link {
     position: relative;
     overflow-y: hidden;
+    margin-bottom: 3rem;
 }
 
-dynamo-atom .atom-pdf i {
-    font-size: 30rem;
-    color: #333;
+dynamo-atom .atom-pdf i,
+dynamo-atom .atom-link i {
+    font-size: 25rem;
+    color: #747474;
     padding-left: 23%;
-    padding-left: calc(50% - 15rem);
+    padding-left: calc(50% - 10.5rem);
 }
 
-dynamo-atom .atom-pdf .pdf-details--wrapper {
+dynamo-atom .atom-pdf:hover i,
+dynamo-atom .atom-link:hover i {
+    color: #496e9c;   
+}
+
+dynamo-atom .atom-pdf .pdf-details--wrapper,
+dynamo-atom .atom-link .link-details--wrapper {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -1468,11 +1495,13 @@ dynamo-atom .atom-pdf .pdf-details--wrapper {
     max-height: 0;
 }
 
-dynamo-atom .atom-pdf h3 {
+dynamo-atom .atom-pdf h3,
+dynamo-atom .atom-link h3 {
     color: white;   
 }
 
-dynamo-atom .atom-pdf:hover .pdf-details--wrapper {
+dynamo-atom .atom-pdf:hover .pdf-details--wrapper,
+dynamo-atom .atom-link:hover .link-details--wrapper {
     display: inline-block;
     max-height: 100%;
 }

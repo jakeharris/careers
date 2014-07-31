@@ -68,7 +68,7 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
     var videoTemplate =  '<div class="atom-video">'
                         +   '<h3>&nbsp;</h3>'
                         +   '<div class="atom-vid">'
-                        +       '<iframe ng-src="{{content.url}}" width="280" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'
+                        +       '<iframe src="{{content.ur}}" height="100%" width="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>'
                         +   '</div>'
                         +   '<div class="video-details">'
                         +       '<div class="video-title">{{content.title}}</div>'
@@ -92,21 +92,34 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
                         +   '<h2>{{content.title}}</h2>'
                         +   '<dynamo-atom ng-repeat="c in content.body" content="c"></dynamo-atom>'
                         +'</section>'
+    var headlessSectionTemplate =   '<section class="atom-section">'
+                        +               '<dynamo-atom ng-repeat="c in content.body" content="c"></dynamo-atom>'
+                        +           '</section>'
     var pdfTemplate =    '<div class="atom-pdf">'
-                        +   '<a href="{{content.url}}"><i class="fa fa-file-pdf-o"></i>'
-                        +   '<div class="pdf-details--wrapper">'
-                        +       '<div class="pdf-details">'
-                        +           '<h3 class="pdf-title">{{content.title}}</h3>'
-                        +           '<div class="pdf-body">{{content.body}}</div>'
+                        +   '<a href="{{content.url}}">'
+                        +       '<i class="fa fa-file-pdf-o"></i>'
+                        +       '<div class="pdf-details--wrapper">'
+                        +           '<div class="pdf-details">'
+                        +               '<h3 class="pdf-title">{{content.title}}</h3>'
+                        +               '<div class="pdf-body">{{content.body}}</div>'
+                        +           '</div>'
                         +       '</div>'
-                        +   '</div>'
                         +   '</a>'
                         +'</div>'
-    var linkTemplate =   '<a class="atom-link" href="{{content.url}}">{{content.title}}</a>'
+    var linkTemplate =   '<a class="atom-link" href="{{content.url}}" target="_blank">'
+                        +   '<i class="fa fa-external-link"></i>'
+                        +   '<div class="link-details--wrapper">'
+                        +       '<div class="link-details">'
+                        +           '<h3 class="link-title">{{content.title}}</h3>'
+                        +           '<div class="link-body">{{content.body}}</div>'
+                        +       '</div>'
+                        +   '</div>'
+                        +'</a>'
     var portalTemplate = '<div class="atom-portal">'
                         +   '<h2>{{content.title}}</h2>'
                         +   '<div class="portal-text">{{content.body}}</div>'
-                        +   '<a class="btn" href="{{content.url}}">{{content["button-text"]}}</button>'
+                        +   '<div class="portal-note">{{content.note}}</div>'
+                        +   '<a class="btn btn-default btn-md login-button login-button--active" href="{{content.url}}">{{content["button-text"]}}</a>'
                         +'</div>'
     var hasRenderedPDFs = false
     
@@ -123,6 +136,8 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
                 return template = specialTextTemplate
             case 'section':
                 return template = sectionTemplate
+            case 'headless-section':
+                return template = headlessSectionTemplate
             case 'pdf':
                 return template = pdfTemplate
             case 'link':
