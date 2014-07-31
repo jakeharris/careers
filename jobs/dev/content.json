@@ -30,18 +30,12 @@
         "body":[
             {  
                 "content-type":"special-text",
-                "title":"Getting Started",
                 "first-word":"Finding ",
                 "body":"a job and starting your career is a process that can take time. It is recommended that you begin the search for your post-graduation job 9-10 months prior to finishing school. This will give you ample time to explore options, research companies, prepare your documents, apply for jobs, conduct interviews and negotiate offers.",
                 "categories":[
                     "job-prep"
                 ]
-            },
-            {
-                "content-type":"link",
-                "title":"General Job Search Tip Sheet",
-                "url":"http://www.auburn.edu/career/tipsheets/Tip%20Sheet%20Job%20Search.pdf"
-            },
+            }
             {
                 "content-type":"section",
                 "title":"Popular Resources",
@@ -55,6 +49,11 @@
                         "content-type":"link",
                         "title":"What Can I Do With a Major In...?",
                         "url":"http://whatcanidowiththismajor.com/major/majors/"
+                    },
+                    {
+                        "content-type":"pdf",
+                        "title":"General Job Search Tip Sheet",
+                        "url":"http://www.auburn.edu/career/tipsheets/Tip%20Sheet%20Job%20Search.pdf"
                     },
                     {
                         "content-type":"link",
@@ -82,7 +81,8 @@
         ]
     },
     {
-        "content-type":"headless-section",
+        "content-type":"section",
+        "title":"Getting Started",
         "body":[
             {
                 "content-type":"text",
@@ -98,7 +98,7 @@
                 "content-type":"text",
                 "title":"3. Prepare Job Search Documents",
                 "body":"Learn more about the companies that interest you by researching their history, mission, products and services, awards or accolades, company culture and open positions. This research can help you assess whether or not a particular company will be a good fit with your career goals, values and skills."
-            },
+            }
         ],
         "categories" : [
             "job-prep"   
