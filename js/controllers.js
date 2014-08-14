@@ -2,7 +2,7 @@ var home = angular.module('career-center-home', [])
 
 /* NOTE:
  * This code is TECHNICALLY vulnerable to XSS. However,
- * I made the assumption that, since we are ALWAYS ONLY
+ * I made the assumption that this was okay, since we are ALWAYS ONLY
  * pulling from AUCareer accounts. If the Tigers
  * Prepare blog has an author trying to XSS people,
  * we have bigger problems. 
@@ -69,11 +69,14 @@ home.controller('twitter-ctrl', function ($scope, $http) {
 })
 
 home.controller('blogger-ctrl', function ($scope, $http) {
-  $http.get('https://www.googleapis.com/blogger/v3/blogs/2761218641303524120/posts?key=AIzaSyAsBnM3FEIP1giu8NLIFG7TpoJAFLyIung&maxCount=1')
+  $http.get('https://www.googleapis.com/blogger/v3/blogs/2761218641303524120/posts?key=AIzaSyAsBnM3FEIP1giu8NLIFG7TpoJAFLyIung&maxCount=3')
        .then(function (res) {
-           $scope.blog = res.data
+           $scope.blog = res.data[0]
+           console.log(res.data.items.slice(0, 3))
+           $scope.blog.items = res.data.items.slice(0, 3)
            $scope.blog.sanitized = { }
-           $scope.blog.sanitized.post = sanitize($scope.blog.items[0])
+           //for(var p in $scope.blog.items) //only necessary to sanitize post contents, not title
+             //$scope.blog.sanitized.posts[p] = sanitize($scope.blog.items[p])
        })
   // Named sanitize, and not massage, because we are stripping out lots of needless data
   var sanitize = function (post) {

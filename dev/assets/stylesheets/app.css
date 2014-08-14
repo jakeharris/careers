@@ -76,8 +76,15 @@ address {
   width: 100vw !important;
 }
 
-.blog-title {
+.blog-post {
+  padding-bottom: 2rem;
+}
+.post-title {
   font-family: "Source Sans Pro"; 
+}
+.post-details {
+  color: #747474;
+  font-size: 1.7rem;
 }
 .blog-readmore {
   padding-top: 1rem;
@@ -548,7 +555,7 @@ ul li {
 }
 .tweets-date {
   color: #747474; 
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   padding: 0;
   display:block;
 }

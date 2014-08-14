@@ -42,6 +42,11 @@
         <!-- Container -->
         <div class="container">
             <header role="banner" class="flex">
+                
+                <div class="header-aubnav">
+                    
+                </div>
+                
                 <a class="header-logo" href="http://www.auburn.edu">
                     <img src="//cdn.auburn.edu/assets/img/header-logo.png" alt="Auburn University Homepage" height="75" width="203">
                 </a>
@@ -251,9 +256,13 @@ The goddess of lux...
 -->
                         <div class="block blog" ng-controller="blogger-ctrl">
                             <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
-                            <h3><a class="h3-a blog-title" href="{{ blog.items[0].url }}">{{ blog.items[0].title }}</a></h3>
-                            <div>{{ blog.sanitized.post }}</div>
-                            <div class="blog-readmore"><a href="{{ blog.items[0].url }}">Read more</a></div>
+                            <ul>
+                                <li class="blog-post" ng-repeat="post in blog.items">
+                                    <h3><a class="h3-a post-title" href="{{ post.url }}">{{ post.title }}</a></h3>
+                                    <div class="post-details">{{ post.date }}</div>
+                                </li>
+                            </ul>
+                            <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
                             <i class="fa fa-edit block-bg blog-bg"></i>
                         </div>
 
@@ -311,9 +320,9 @@ The goddess of lux...
             
             <div class="row">
                 <div class="banner banner-bottom flex">
+                    <a class="slider" href="http://auburn.edu/career/cookin/"><img src="assets/images/Cookout14_Homepage_Tile.jpg"></a>
                     <a class="slider" href="http://www.auburn.edu/career/students/events/tech.html"><img src="assets/images/E&TCE_Hompage_Tile.jpg"></a>
-                    <a class="slider" href="http://alabamaconnection.org/STUDENT.htm"><img src="assets/images/G&PSF_Homepage_Tile.jpg"></a>
-                    <a class="slider" href="http://www.auburn.edu/career/students/events/iptjf.html"><img src="assets/images/I&PTJF_Homepage_Tile.jpg"> </a>
+                    <a class="slider" href="http://www.auburn.edu/career/students/events/iptjf.html"><img src="assets/images/I&PTJF_Homepage_Tile.jpg"></a>
                 </div>
             </div>
             
