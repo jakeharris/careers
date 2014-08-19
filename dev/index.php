@@ -194,8 +194,8 @@
                             <div class="times">
                                 <i class="fa fa-clock-o times-icon"></i>
                                 <div class="times-address">
-                                    <strong>Hours:</strong><br>Mon-Fri 7:45am-4:45pm <br>
-                                    <strong>Walk-ins:</strong><br>MRF 12:00n-4pm | TW 9:00am-4:00pm
+                                    Hours: Mon-Fri 7:45am-4:45pm <br>
+                                    Walk-ins: MRF 12:00n-4pm | TW 9:00am-4:00pm
                                     <p class="subtle">
                                         15 minute sessions for resume and cover 
                                         letter reviews and basic job search questions.
