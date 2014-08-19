@@ -194,7 +194,7 @@
                             <div class="times">
                                 <i class="fa fa-clock-o times-icon"></i>
                                 <div class="times-address">
-                                    Hours: Mon-Fri 7:45am-4:45pm <br>
+                                    Hours: MRF noon-4pm | TW 9am-4pm <br>
                                     Walk-ins: Mon-Fri 12:00n-4:00pm
                                     <p class="subtle">
                                         15 minute sessions for resume and cover 
