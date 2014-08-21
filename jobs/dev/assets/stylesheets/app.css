@@ -1510,6 +1510,7 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
     position: relative;
     background: white;
     padding: 0 2rem;
+    padding-bottom: 2rem;
 }
 
 .features-header {
