@@ -1511,6 +1511,9 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
     background: white;
     padding: 0 2rem;
     padding-bottom: 2rem;
+    
+    border: 1px solid #d7d7d7;
+    border-top: none;
 }
 
 .features-header {
