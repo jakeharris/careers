@@ -1508,18 +1508,19 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
 
 .features {
     position: relative;
+    background: white;
+    padding: 0 2rem;
 }
 
 .features-header {
     width: 100%;
     text-align: center;
-    margin: 3rem 0;
-    font-size: 8rem;
+    margin: 2rem 0;
     font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .feature-icon {
-    background: #777;
+    background: #aaa;
     border-radius: 50%;
     height: 12rem;
     width: 12rem;
@@ -1531,7 +1532,7 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
 }
 
 .feature-icon::before {
-    color: #fafafa;
+    color: white;
     font-family: 'FontAwesome';
     font-size: 12rem;
     z-index: 100;

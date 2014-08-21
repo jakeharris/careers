@@ -104,7 +104,7 @@
             </div>
             
             <div class="row features">
-                <h3 class="features-header">TRL Features</h3>
+                <h2 class="features-header">TRL Features</h3>
                 <div class="features-content flex">
                     <div class="feature">
                         <div class="feature-icon aw-parttime"></div>
