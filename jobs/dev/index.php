@@ -103,9 +103,39 @@
                 </div>
             </div>
             
-            <div class="row dynamo" ng-controller="dynamo-ctrl">
-                <dynamo></dynamo>
+            <div class="row features">
+                <h3 class="features-header">TRL Features</h3>
+                <div class="features-content flex">
+                    <div class="feature">
+                        <div class="feature-icon aw-parttime"></div>
+                        <div class="feature-content">Part-time Jobs</div>
+                    </div>
+                    <div class="feature">
+                        <div class="aw-fulltime-internships feature-icon"></div>
+                        <div class="feature-content">Full-time Jobs and Internships</div>
+                    </div>
+                    <div class="feature">
+                        <div class="aw-events feature-icon"></div>
+                        <div class="feature-content">Events</div>
+                    </div>
+                    <div class="feature">
+                        <div class="aw-employers feature-icon"></div>
+                        <div class="feature-content">Employers Coming to Campus</div>
+                    </div>
+                    <div class="feature">
+                        <div class="aw-interviews feature-icon"></div>
+                        <div class="feature-content">Interviews</div>
+                    </div>
+                    <div class="feature">
+                        <div class="aw-ellipsis feature-icon"></div>
+                        <div class="feature-content">...and more!</div>
+                    </div>
+                </div>
             </div>
+            
+            <!--<div class="row dynamo" ng-controller="dynamo-ctrl">
+                <dynamo></dynamo>
+            </div>-->
                 <!--<div class="jobs-widget">
                     <div id="symp_jobswidget" 
                          data-csm="auburn-csm.symplicity.com" 

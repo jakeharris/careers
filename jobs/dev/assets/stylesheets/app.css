@@ -1505,3 +1505,73 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
     display: inline-block;
     max-height: 100%;
 }
+
+.features {
+    position: relative;
+}
+
+.features-header {
+    width: 100%;
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 8rem;
+    font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.feature-icon {
+    background: #777;
+    border-radius: 50%;
+    height: 12rem;
+    width: 12rem;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+.feature-icon::before {
+    color: #fafafa;
+    font-family: 'FontAwesome';
+    font-size: 12rem;
+    z-index: 100;
+    position:relative;
+}
+
+.aw-parttime::before {
+    content: '\f14e';
+    bottom: 2.4rem;
+}
+
+.aw-fulltime-internships::before {
+    content: '\f0c0';
+    font-size: 8.5rem;
+    bottom: 0rem;
+}
+
+.aw-events::before {
+    content: '\f073';
+    font-size: 8.5rem;
+    bottom: 0.4rem;
+}
+
+.aw-employers::before {
+    content: '\f015';
+    font-size: 11rem;
+    bottom: 2rem;
+}
+
+.aw-interviews::before {
+    content: '\f164';
+    font-size: 10rem;
+    bottom: 1.6rem;
+}
+
+.aw-ellipsis::before {
+    content: '\f141';
+    bottom: 1.8rem;
+}
+
+.feature-content {
+    text-align: center;   
+}
