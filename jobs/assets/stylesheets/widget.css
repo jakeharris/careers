@@ -34,10 +34,8 @@ ol, ul {
 }
 
 #subHead {
-  position: inherit;
   top: 1.55rem;
-  margin-top: -3.3rem;
-  float: right;
+  margin-bottom: 3rem;
   height: auto;
 }
 
@@ -82,12 +80,10 @@ a:hover {
     border: 1px solid rgb(204, 204, 204);
     border-radius: 4px;
     font-size: 14px;
-    display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
     font-weight: normal;
     line-height: 1.428571429;
-    text-align: center;
 }
 
 .search-buttons > input[type=button] {
