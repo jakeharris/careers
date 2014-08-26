@@ -30,7 +30,7 @@
 
 iframe {
   border: none !important;
-  height: 32rem !important;
+  height: 52.2rem !important;
 }
 
 .flex, .centered, .place,
@@ -1579,4 +1579,79 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
 
 .feature-content {
     text-align: center;   
+}
+
+
+.resources {
+    height: 100%;
+}
+
+.resources .row {
+    margin-left: 0;
+    margin-right: -17px;
+}
+
+.resource-buttons {
+    flex-basis: 66.9%;
+    width: 66.9%;  
+    background: #222;
+    margin-left: 0;
+    cursor: pointer;
+}
+
+.resource-button {
+    align-content: center;
+    max-width: 50%;
+    margin-right: -3px;
+    margin-left: 0; 
+}
+
+.resource-button:last-of-type{
+    
+}
+
+.resource-button:hover {
+    opacity: .5;
+}
+
+.widget {
+    flex-basis: 33%;
+    width: 33%;
+    height: 100%;
+    border: 1px solid #d7d7d7;
+    border-top: none;
+    border-right: none;
+    margin-left: -1px;
+    box-sizing: border-box;
+}
+
+.sponsors {
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    border-top: none;
+    background: white;
+}
+
+.sponsors-header {
+    text-align: center;  
+    margin-bottom: 3rem;
+}
+
+.sponsors-content {
+    justify-content: space-around;   
+}
+
+.sponsor {
+    background: #777;
+    width: 24.22rem;
+    height: 15rem;
+    margin-bottom: 4rem;
+}
+
+.sponsor:nth-of-type(2n) {
+    background: #333;
+}
+
+.sponsor:nth-of-type(3n) {
+    background: #d7d7d7;   
 }

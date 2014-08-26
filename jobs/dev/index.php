@@ -52,12 +52,15 @@
                         <a href="/">Career Center</a>
                     </div>
                     
-                    <!--<div class="header-navbar">
+                    <div class="header-navbar">
                         <ul>
-                            <li><a href="http://www.auburn.edu/career/students/">Career Center</a></li>
-                            <li><a href="http://www.auburn.edu/career/alumni/">College of Business</a></li>
+                            <li><a href="http://www.auburn.edu/career/students/">Students</a></li>
+                            <li><a href="http://www.auburn.edu/career/alumni/">Alumni</a></li>
+                            <li><a href="http://www.auburn.edu/career/parents/">Families</a></li>
+                            <li><a href="http://www.auburn.edu/career/faculty/">Faculty</a></li>
+                            <li><a href="http://hire.auburn.edu">Employers</a></li>
                         </ul>
-                    </div>-->
+                    </div>
                 </div>
             </header>
             
@@ -130,6 +133,67 @@
                         <div class="aw-ellipsis feature-icon"></div>
                         <div class="feature-content">...and more!</div>
                     </div>
+                </div>
+            </div>
+            
+            <div class="row resources flex">
+                <div class="widget">
+                    <div id="symp_jobswidget" 
+                         data-csm="auburn-csm.symplicity.com" 
+                         data-id="cafc7f8b2e4d76da719080d5cc417823" 
+                         data-size="auto"
+                         data-css="https://auburn.edu/career/jobs/assets/stylesheets/widget.css"
+                         data-logo=""
+                         data-header-text="Part-Time Jobs"
+                         data-sort-by="posting_date"></div>
+                    <script>
+                        (
+                            function(d, s, id) {
+                                
+                                console.log('d: ')
+                                console.log(d)
+                                console.log('s: ')
+                                console.log(s)
+                                console.log('id: ')
+                                console.log(id)
+                                
+                                var js
+                                  , sjs = d.getElementsByTagName(s)[0]
+                                
+                                console.log('sjs: ')
+                                console.log(sjs)
+                                
+                                if (d.getElementById(id)) return
+                                js = d.createElement(s)
+                                js.id = id
+                                js.src = "https://static.symplicity.com/jslib/jobswidget/jobswidget.js"
+                                sjs.parentNode.insertBefore(js, sjs)
+                            }   
+                            (document, "script", "symp_jobswidget_js")
+                        )
+                    
+                    </script>
+                </div>
+                <div class="resource-buttons">
+                    <div>
+                        <a href="#"><img class="resource-button" src="assets/images/Handbook_Button-01.jpg" /></a>
+                        <a href="#"><img class="resource-button" src="assets/images/ResumeWriting_Button-01.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="#"><img class="resource-button" src="assets/images/GainExperience_Button-01.jpg" /></a>
+                        <a href="#"><img class="resource-button" src="assets/images/InterviewPrep_Button-01.jpg" /></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row sponsors">
+                <h2 class="sponsors-header">Sponsors</h2>
+                <div class="flex sponsors-content">
+                    <div class="sponsor"></div>
+                    <div class="sponsor"></div>
+                    <div class="sponsor"></div>
+                    <div class="sponsor"></div>
+                    <div class="sponsor"></div>
                 </div>
             </div>
             

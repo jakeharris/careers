@@ -53,7 +53,7 @@ ol, ul {
 #_list_form_widget {
   overflow: auto;   
   overflow-y: scroll;
-  height: 13rem !important;
+  height: 21rem !important;
 }
 
 a {
@@ -76,6 +76,18 @@ a:hover {
 
 .widget-job-info > p:nth-of-type(3){
   color: #747474;
+}
+
+#job_board_widget_filter_keywords_ {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
 }
 
 .search-buttons > input[type=button] {
