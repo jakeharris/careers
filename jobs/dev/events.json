@@ -30,6 +30,22 @@
               "end":"1PM"
           }
         }
+    },
+    {
+        "name":"Extra Test Event",
+        "location":"Student Center 2nd Floor",
+        "date":
+        {
+          "month":"September",
+          "shortened-month":"SEP",
+          "numerical-month":"9",
+          "day":"11",
+          "time":
+          {
+              "start":"8AM",
+              "end":"5PM"
+          }
+        }
     }
     
 ]

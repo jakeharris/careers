@@ -2,3 +2,6 @@ config.php
 twitter.php
 twitter.json
 dev/events.json
+node_modules/jshint/*
+node_modules/.bin/jshint*
+.jshintrc

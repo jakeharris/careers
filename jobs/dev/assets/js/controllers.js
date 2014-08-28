@@ -1,6 +1,8 @@
+
 var home = angular.module('career-center-jobs', ['ngCookies'])
 
 home.controller('calendar-ctrl', function ($scope, $http) {
+    'use strict';
     $http.get('./events.json')
          .then(function (res) {
             $scope.events = res.data.slice(0, 2)
@@ -8,17 +10,19 @@ home.controller('calendar-ctrl', function ($scope, $http) {
 })
 
 home.controller('dynamo-ctrl', function ($scope, $http, $cookieStore) {
+    'use strict';
     $http.get('./categories.json')
          .then(function (res) {
             $scope.categories = res.data[0]
             $scope.currentCategory = $cookieStore.get('category') || 'job-prep'
             for(var mc in $scope.categories['major-categories']) 
-                if ($scope.categories['major-categories'][mc]['category'] == $scope.currentCategory)
+                if ($scope.categories['major-categories'][mc].category == $scope.currentCategory)
                     $scope.currentDisplayCategory = $scope.categories['major-categories'][mc]['display-category']
-            for(var mc in $scope.categories['globals']) 
-                if ($scope.categories['globals'][mc]['category'] == $scope.currentCategory)
-                    $scope.currentDisplayCategory = $scope.categories['globals'][mc]['display-category']
-            if ($scope.currentDisplayCategory === undefined) $score.currentDisplayCategory = 'ERR: Couldn\'t read display category.'
+                    
+            for(var mc in $scope.categories.globals) //jshint ignore:line
+                if ($scope.categories.globals[mc].category == $scope.currentCategory)
+                    $scope.currentDisplayCategory = $scope.categories.globals[mc]['display-category']
+            if ($scope.currentDisplayCategory === undefined) $scope.currentDisplayCategory = 'ERR: Couldn\'t read display category.'
          })
     
     
@@ -30,26 +34,32 @@ home.controller('dynamo-ctrl', function ($scope, $http, $cookieStore) {
 
     $scope.getCurrentContent = function () {
         var cc = []
-        for(var con in $scope.content) {
-            for (var cat in $scope.content[con].categories) {
-                if($scope.content[con].categories[cat] == $scope.currentCategory) cc.push($scope.content[con])
-            }
-        }
+        for(var con in $scope.content)
+            if($scope.content.hasOwnProperty(con))
+                
+                for (var cat in $scope.content[con].categories) 
+                    if($scope.content[con].categories.hasOwnProperty(cat)) 
+                        
+                        if($scope.content[con].categories[cat] == $scope.currentCategory) 
+                            cc.push($scope.content[con])
+
         return cc
     }
     
 })
 
 home.directive('ngRepeatComplete', function () {
+    'use strict';
     return {
         restrict: 'A',
         link: function (scope, elem, attrs) {
-            scope.$emit(attrs['ngRepeatComplete'] || 'repeat-complete', elem)   
+            scope.$emit(attrs.ngRepeatComplete || 'repeat-complete', elem)   
         }
     }
 })
 /* YOU NEED THIS ARTICLE http://onehungrymind.com/angularjs-dynamic-templates/ */
 home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
+    'use strict';
     
     var imageTemplate =  '<div class="atom-image">'
                         +   '<h2>&nbsp;</h2>'
@@ -121,31 +131,30 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
                         +   '<div class="portal-note">{{content.note}}</div>'
                         +   '<a class="btn btn-default btn-md login-button login-button--active" href="{{content.url}}">{{content["button-text"]}}</a>'
                         +'</div>'
-    var hasRenderedPDFs = false
     
     var getTemplate = function (type, opts) {
         var template = ''
         switch(type) {
             case 'video':
-                return template = videoTemplate
+                return (template = videoTemplate)
             case 'image':
-                return template = imageTemplate
+                return (template = imageTemplate)
             case 'text':
-                return template = textTemplate
+                return (template = textTemplate)
             case 'special-text':
-                return template = specialTextTemplate
+                return (template = specialTextTemplate)
             case 'section':
-                return template = sectionTemplate
+                return (template = sectionTemplate)
             case 'headless-section':
-                return template = headlessSectionTemplate
+                return (template = headlessSectionTemplate)
             case 'pdf':
-                return template = pdfTemplate
+                return (template = pdfTemplate)
             case 'link':
-                return template = linkTemplate
+                return (template = linkTemplate)
             case 'login-portal':
-                return template = portalTemplate
+                return (template = portalTemplate)
             default:
-                return template = textTemplate
+                return (template = textTemplate)
         }
     }
     
@@ -165,7 +174,7 @@ home.directive('dynamoAtom', function ($compile, $sce, $timeout) {
 })
 
 home.directive('dynamo', function ($cookieStore) {
-    
+    'use strict';
     return {
         restrict: 'E',
         replace: 'true',

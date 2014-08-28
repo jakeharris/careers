@@ -19,6 +19,11 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.row {
+    margin: 0;
+}
+
 .fa-blogger {
   background-image: url("blogger.svg") !important;
   background-repeat: no-repeat !important;
@@ -1589,12 +1594,13 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
 .resources .row {
     margin-left: 0;
     margin-right: -17px;
+    width: 100%;
 }
 
 .resource-buttons {
     flex-basis: 66.9%;
     width: 66.9%;  
-    background: #222;
+    background: #ddd;
     margin-left: 0;
     cursor: pointer;
 }
@@ -1620,8 +1626,8 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
     height: 100%;
     border: 1px solid #d7d7d7;
     border-top: none;
-    border-right: none;
-    margin-left: -1px;
+    border-left: none;
+    padding-left: 1px;
     box-sizing: border-box;
 }
 
