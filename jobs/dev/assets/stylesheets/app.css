@@ -19,6 +19,34 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?dzl7kw');
+	src:url('../fonts/icomoon.eot?#iefixdzl7kw') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?dzl7kw') format('woff'),
+		url('../fonts/icomoon.ttf?dzl7kw') format('truetype'),
+		url('../fonts/icomoon.svg?dzl7kw#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.:before {
+	content: "\";
+}
 
 .row {
     margin: 0;
@@ -1081,7 +1109,7 @@ ul li {
   }
 }
 .login-wrap::before {
-  font-family: 'FontAwesome';
+  font-family: 'icomoon';
   content: '\f14e';
   margin-top: -9rem;
   margin-right: -9rem;
@@ -1172,7 +1200,7 @@ ul li {
   }
 }
 .blanker-wrap::before {
-  font-family: 'FontAwesome';
+  font-family: 'icomoon';
   content: '\f073';
   margin-top: -3.8rem;
   margin-right: -6rem;
@@ -1542,19 +1570,20 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
 
 .feature-icon::before {
     color: white;
-    font-family: 'FontAwesome';
+    font-family: 'icomoon';
     font-size: 12rem;
     z-index: 100;
     position:relative;
 }
 
 .aw-parttime::before {
-    content: '\f14e';
-    bottom: 2.4rem;
+    content: '\e604';
+    bottom: 2.6rem;
+    left: 1px;
 }
 
 .aw-fulltime-internships::before {
-    content: '\f0c0';
+    content: '\f0f2';
     font-size: 8.5rem;
     bottom: 0rem;
 }
@@ -1566,19 +1595,20 @@ dynamo-atom .atom-link:hover .link-details--wrapper {
 }
 
 .aw-employers::before {
-    content: '\f015';
+    content: '\f041';
     font-size: 11rem;
     bottom: 2rem;
 }
 
 .aw-interviews::before {
-    content: '\f164';
-    font-size: 10rem;
-    bottom: 1.6rem;
+    content: '\e603';
+    font-size: 12rem;
+    bottom: 4.2rem;
+    left: 19px;
 }
 
 .aw-ellipsis::before {
-    content: '\f141';
+    content: '\e602';
     bottom: 1.8rem;
 }
 
