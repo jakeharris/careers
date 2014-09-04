@@ -1448,7 +1448,7 @@ ul li {
 .aw-fulltime-internships::before {
     content: '\f0f2';
     font-size: 8.5rem;
-    bottom: 0rem;
+    bottom: 0.5rem;
 }
 
 .aw-events::before {
@@ -1471,8 +1471,8 @@ ul li {
 
 .aw-ellipsis::before {
     content: '\e602';
-    bottom: 1.6rem;
-    right: 0px;
+    bottom: 1.5rem;
+    right: 10px;
 }
 
 .feature-content {

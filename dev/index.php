@@ -11,7 +11,7 @@
         
         <!-- Bootstrap & Core CSS -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+        <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">-->
         <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
         
         <!-- Application CSS -->
@@ -77,11 +77,11 @@
                             <h2 class="login-title">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
                             <p class="login-description">Your link to jobs, interviews and employers.</p>
                             <div class="input-group login-username">
-                                <span class="input-group-addon input-group-addon-md"><i class="fa fa-user"></i></span>
+                                <span class="input-group-addon input-group-addon-md"><i class="icon fa-user"></i></span>
                                 <input type="text" name="username" class="form-control input-md" placeholder="Student Username">
                             </div>
                             <div class="input-group login-password">
-                                <span class="input-group-addon input-group-addon-md"><i class="fa fa-lock"></i></span>
+                                <span class="input-group-addon input-group-addon-md"><i class="icon fa-lock"></i></span>
                                 <input type="password" name="password" class="form-control input-md" placeholder="Password">
                             </div>
                             <div class="flex flex--login">
