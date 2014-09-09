@@ -1524,6 +1524,12 @@ ul li {
     box-sizing: border-box;
 }
 
+.widget iframe {
+    position: relative;
+    top: 10px;
+    left: 1px;
+}
+
 .sponsors {
     width: 100%;
     border: 1px solid #d7d7d7;
