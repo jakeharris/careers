@@ -71,7 +71,8 @@
 
 iframe {
   border: none !important;
-  height: 52.2rem !important;
+  width: 100% !important;
+  height: 51rem !important;
 }
 
 .flex, .centered, .place,
@@ -1482,6 +1483,8 @@ ul li {
 
 .resources {
     height: 100%;
+    border: 1px solid #d7d7d7;
+    border-top: none;
 }
 
 .resources .row {
@@ -1493,7 +1496,7 @@ ul li {
 .resource-buttons {
     flex-basis: 66.9%;
     width: 66.9%;  
-    background: #ddd;
+    background: #d7d7d7;
     margin-left: 0;
     cursor: pointer;
 }
@@ -1517,9 +1520,6 @@ ul li {
     flex-basis: 33%;
     width: 33%;
     height: 100%;
-    border: 1px solid #d7d7d7;
-    border-top: none;
-    border-left: none;
     padding-left: 1px;
     box-sizing: border-box;
 }
@@ -1541,16 +1541,37 @@ ul li {
 }
 
 .sponsor {
-    background: #777;
-    width: 24.22rem;
-    height: 15rem;
+    background: white;
+    width: 20rem;
+    height: 12.39rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
     margin-bottom: 4rem;
+    overflow: hidden;
+    align-content: center;
+    text-align: center;
+    vertical-align: bottom;
 }
 
-.sponsor:nth-of-type(2n) {
-    background: #333;
+.vert-centerer {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
 
-.sponsor:nth-of-type(3n) {
-    background: #d7d7d7;   
+.sponsor img {
+    max-width: 20rem;
+    max-height: 12.39rem;
+}
+
+/* Thanks to demosthenes.info! */
+img.desaturate {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+    filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+img.desaturate:hover {
+    -webkit-filter:none;
+    filter:none;
 }

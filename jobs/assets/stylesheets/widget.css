@@ -21,6 +21,8 @@ ol, ul {
 #widgetContainer {
     height: auto !important;
     max-height: 32rem;
+    position: relative;
+    top: 13px;
 }
 
 #widget-header {
@@ -39,6 +41,11 @@ ol, ul {
   height: auto;
 }
 
+#job_board {
+  position: relative;
+  bottom: 7px;
+}
+
 #pager > .ct {
   display: none;
 }
@@ -51,7 +58,8 @@ ol, ul {
 #_list_form_widget {
   overflow: auto;   
   overflow-y: scroll;
-  height: 21rem !important;
+  overflow-y: overlay;
+  height: 19.8rem !important;
 }
 
 a {
