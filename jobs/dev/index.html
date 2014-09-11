@@ -65,7 +65,7 @@
             
             <div class="brow row">
                 <div class="banner flex">
-                    <form class="slider login" method="post" action="https://auburn-csm.symplicity.com/students/index.php">
+                    <form id="fm1" class="slider login" method="get" action="https://authenticate.auburn.edu/cas/login">
                         <div class="login-wrap">
                             <h2 class="login-title">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
                             <p class="login-description">Your link to jobs, interviews and employers.</p>
@@ -77,9 +77,44 @@
                                 <span class="input-group-addon input-group-addon-md"><i class="icon-lock"></i></span>
                                 <input type="password" name="password" class="form-control input-md" placeholder="Password">
                             </div>
+                            <input id="lt"        type="hidden" name="lt"        value="">
+                            <input id="execution" type="hidden" name="execution" value="">
+                            <input id="_eventId"  type="hidden" name="_eventId"  value="">
+                            <script type="text/javascript">
+                                var yb = 'https://query.yahooapis.com/v1/public/yql?'
+                                  , yq = 'q=select%20*%20from%20html%20where%20url%3D%22https%3A%2F%2Fauthenticate.auburn.edu%2Fcas%2Flogin%22%20'
+                                  , yx = 'and%20xpath%3D\'%2F%2Fdiv%5B%40class%3D%22loginWrapper%22%5D%2F%2Fdiv%5B%40class%3D%22login%22%5D%2F%2Finput%5B%40type%3D%22hidden%22%5D\''
+                                  , yf = '&format=json&diagnostics=false&callback='
+                                  , url = yb + yq + yx + yf
+                                  , jo = ''
+                                
+                                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                                    xmlhttp = new XMLHttpRequest()
+                                } 
+                                else {// code for IE6, IE5
+                                    xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
+                                } 
+                                xmlhttp.open('POST', url, false)
+                                xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+                                xmlhttp.send('data')
+                                
+                                jo = JSON.parse(xmlhttp.responseText)
+                                
+                                jo = jo['query']['results']['input']
+                                
+                                for(var input in jo) {
+                                    if(jo[input].name !== undefined) {
+                                        var e = document.getElementById(jo[input].name)
+                                        if (e) e.value = jo[input].value
+                                    }
+                                }
+                                
+                                //document.getElementById('lt').value = 'I\'m javakat@auburn or jch0039@auburn if you care to talk about what\'s going on here'
+                                
+                            </script>
                             <div class="flex flex--login">
                                 <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/jobs/trl.html" class="btn btn-default btn-md login-button">Sign up</a>
-                                <button type="submit" class="btn btn-default btn-md login-button login-button--active">Sign in</button>
+                                <button type="submit" name="submit" class="btn btn-default btn-md login-button login-button--active">Sign in</button>
                             </div>
                         </div>
                     </form>
@@ -138,12 +173,12 @@
             <div class="row resources flex">
                 <div class="resource-buttons">
                     <div>
-                        <a href="#"><img class="resource-button" src="assets/images/Handbook_Button-01.jpg" /></a>
-                        <a href="#"><img class="resource-button" src="assets/images/ResumeWriting_Button-01.jpg" /></a>
+                        <a href="#"><img class="resource-button" src="assets/images/handbook.jpg" /></a>
+                        <a href="#"><img class="resource-button" src="assets/images/resume-writing.jpg" /></a>
                     </div>
                     <div>
-                        <a href="#"><img class="resource-button" src="assets/images/GainExperience_Button-01.jpg" /></a>
-                        <a href="#"><img class="resource-button" src="assets/images/InterviewPrep_Button-01.jpg" /></a>
+                        <a href="#"><img class="resource-button" src="assets/images/gain-experience.jpg" /></a>
+                        <a href="#"><img class="resource-button" src="assets/images/interview-prep.jpg" /></a>
                     </div>
                 </div>
                 <div class="widget">

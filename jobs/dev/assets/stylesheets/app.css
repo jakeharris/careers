@@ -1497,7 +1497,7 @@ ul li {
     flex-basis: 66.9%;
     width: 66.9%;  
     background: #d7d7d7;
-    margin-left: 0;
+    margin-left: -1px;
     cursor: pointer;
 }
 
@@ -1525,9 +1525,8 @@ ul li {
 }
 
 .widget iframe {
-    position: relative;
-    top: 10px;
-    left: 1px;
+    margin-top: 10px;
+    margin-left: 2px;
 }
 
 .sponsors {

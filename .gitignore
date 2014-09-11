@@ -5,3 +5,4 @@ dev/events.json
 node_modules/jshint/*
 node_modules/.bin/jshint*
 .jshintrc
+node_modules/

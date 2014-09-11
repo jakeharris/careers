@@ -1,23 +1,11 @@
 {
   "name": "careers",
-  "version": "0.0.0",
-  "homepage": "https://github.com/javakat/careers",
+  "version": "0.0.1",
+  "description": "Career Center website",
+  "main": "assets/stylesheets/app.css",
   "authors": [
-    "jake harris <milieu@javakat.io>",
-    "clay miller <clay@smockle.com>"
-  ],
-  "description": "Career Center web apps",
-  "main": "dev/index.html",
-  "moduleType": [
-    "globals"
-  ],
-  "dependencies": [
-    "angular": "1.2.16"
-  ],
-  "keywords": [
-    "simple",
-    "auburn",
-    "web-app"
+    "Jake Harris (milieu@javakat.io)",
+    "Clay Miller (clay@smockle.com)"
   ],
   "license": "MIT",
   "private": true,
@@ -25,8 +13,10 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "dev/components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "normalize.css": "~3.0.1"
+  }
 }
