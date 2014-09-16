@@ -5,9 +5,9 @@
  * Any Css/Less files within this directory, lib/assets/javascripts, vendor/assets/javascripts,
  * can be referenced here using a relative path.
  *
- * It's not advisable to add code directly here, but if you do, it'll appear in whatever order it 
- * gets included (e.g. say you have require_tree . then the code will appear after all the directories 
- * but before any files alphabetically greater than 'application.css' 
+ * It's not advisable to add code directly here, but if you do, it'll appear in whatever order it
+ * gets included (e.g. say you have require_tree . then the code will appear after all the directories
+ * but before any files alphabetically greater than 'application.css'
  *
  *= require_self
  */
@@ -52,7 +52,7 @@
     content: '\f007';
 }
 .icon-lock:before {
-    content: '\f023';   
+    content: '\f023';
 }
 
 
@@ -76,7 +76,7 @@ iframe {
 }
 
 .flex, .centered, .place,
-.times, .appointments, 
+.times, .appointments,
 .event, .login, .milieu {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -120,7 +120,7 @@ address {
 }
 
 .blog-title {
-  font-family: "Source Sans Pro"; 
+  font-family: "Source Sans Pro";
 }
 .blog-readmore {
   padding-top: 1rem;
@@ -248,7 +248,7 @@ header {
     padding: 0;
   }
   .header-navbar {
-    font-size: 1.9rem;   
+    font-size: 1.9rem;
   }
   .header-navbar {
     text-align: right;
@@ -283,13 +283,13 @@ header {
 
 @media (min-width: 992px) {
   .header-navbar {
-    font-size: 2.5rem;   
+    font-size: 2.5rem;
   }
-    
+
   /*.header-title a {
-    font-size: 2.5rem;   
+    font-size: 2.5rem;
   }
-   */ 
+   */
   .header-navbar {
     text-align: right;
   }
@@ -459,7 +459,7 @@ ul li {
 .banner .slider {
   box-sizing: border-box;
   display: none;
-  max-height: 360px;
+/*  max-height: 360px;*/
   flex-basis: 100%;
   width: 100%;
 }
@@ -551,13 +551,13 @@ ul li {
 
 @media (min-width: 1105px) {
   .banner-bottom {
-    height: 21rem;   
+    height: 21rem;
   }
 }
 
 @media (min-width: 1300px) {
   .banner-bottom {
-    height: 25rem;   
+    height: 25rem;
   }
 }
 
@@ -597,7 +597,7 @@ ul li {
   color: #333;
 }
 .tweets-date {
-  color: #747474; 
+  color: #747474;
   font-size: 1.5rem;
   padding: 0;
   display:block;
@@ -1408,7 +1408,7 @@ ul li {
     background: white;
     padding: 0 2rem;
     padding-bottom: 2rem;
-    
+
     border: 1px solid #d7d7d7;
     border-top: none;
 }
@@ -1477,7 +1477,7 @@ ul li {
 }
 
 .feature-content {
-    text-align: center;   
+    text-align: center;
 }
 
 
@@ -1495,7 +1495,7 @@ ul li {
 
 .resource-buttons {
     flex-basis: 66.9%;
-    width: 66.9%;  
+    width: 66.9%;
     background: #d7d7d7;
     margin-left: -1px;
     cursor: pointer;
@@ -1505,11 +1505,11 @@ ul li {
     align-content: center;
     max-width: 50%;
     margin-right: -3px;
-    margin-left: 0; 
+    margin-left: 0;
 }
 
 .resource-button:last-of-type{
-    
+
 }
 
 .resource-button:hover {
@@ -1537,21 +1537,21 @@ ul li {
 }
 
 .sponsors-header {
-    text-align: center;  
+    text-align: center;
     margin-bottom: 2.3rem;
 }
 
 .sponsors-content {
-    justify-content: space-around;   
+    justify-content: space-around;
 }
 
 .sponsor {
     background: white;
     width: 20rem;
     height: 12.39rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 4rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 5rem;
     overflow: hidden;
     align-content: center;
     text-align: center;

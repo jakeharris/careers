@@ -8,14 +8,14 @@
         <meta name="description" content="">
         <meta name="keywords" content="">
         <title>Tiger Recruiting Link</title>
-        
+
         <!-- Bootstrap & Core CSS -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
-        
+
         <!-- Application CSS -->
         <link rel=stylesheet href="assets/stylesheets/app.css">
-        
+
         <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
         <!--[if lt IE 9]>
           <script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
@@ -24,14 +24,14 @@
           <link href="assets/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
           <script src="assets/js/respond.proxy.js"></script>
         <![endif]-->
-        
+
         <!-- Favicons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
         <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
-        
+
         <!-- Application-specific CSS/JS -->
         <script src="components/angular/angular.min.js"></script>
         <script src="components/angular/angular-cookies.min.js"></script>
@@ -45,12 +45,12 @@
                 <a class="header-logo" href="http://www.auburn.edu">
                     <img src="//cdn.auburn.edu/assets/img/header-logo.png" alt="Auburn University Homepage" height="75" width="203">
                 </a>
-                
-                <div class="header-right flex">                
+
+                <div class="header-right flex">
                     <div class="header-title">
                         <a href="/">Career Center</a>
                     </div>
-                    
+
                     <div class="header-navbar">
                         <ul>
                             <li><a href="http://www.auburn.edu/career/students/">Students</a></li>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </header>
-            
+
             <div class="brow row">
                 <div class="banner flex">
                     <form id="fm1" class="slider login" method="post" action="https://authenticate.auburn.edu/cas/login">
@@ -87,30 +87,30 @@
                                   , yf = '&format=json&diagnostics=false&callback='
                                   , url = yb + yq + yx + yf
                                   , jo = ''
-                                
+
                                 if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
                                     xmlhttp = new XMLHttpRequest()
-                                } 
+                                }
                                 else {// code for IE6, IE5
                                     xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
-                                } 
+                                }
                                 xmlhttp.open('POST', url, false)
                                 xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
                                 xmlhttp.send('data')
-                                
+
                                 jo = JSON.parse(xmlhttp.responseText)
-                                
+
                                 jo = jo['query']['results']['input']
-                                
+
                                 for(var input in jo) {
                                     if(jo[input].name !== undefined) {
                                         var e = document.getElementById(jo[input].name)
                                         if (e) e.value = jo[input].value
                                     }
                                 }
-                                
+
                                 //document.getElementById('lt').value = 'I\'m javakat@auburn or jch0039@auburn if you care to talk about what\'s going on here'
-                                
+
                             </script>
                             <div class="flex flex--login">
                                 <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/jobs/trl.html" class="btn btn-default btn-md login-button">Sign up</a>
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row features">
                 <h2 class="features-header">TRL Features</h3>
                 <div class="features-content flex">
@@ -169,7 +169,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row resources flex">
                 <div class="resource-buttons">
                     <div>
@@ -182,9 +182,9 @@
                     </div>
                 </div>
                 <div class="widget">
-                    <div id="symp_jobswidget" 
-                         data-csm="auburn-csm.symplicity.com" 
-                         data-id="cafc7f8b2e4d76da719080d5cc417823" 
+                    <div id="symp_jobswidget"
+                         data-csm="auburn-csm.symplicity.com"
+                         data-id="cafc7f8b2e4d76da719080d5cc417823"
                          data-size="auto"
                          data-css="https://auburn.edu/career/jobs/assets/stylesheets/widget.css"
                          data-logo=""
@@ -193,40 +193,36 @@
                     <script>
                         (
                             function(d, s, id) {
-                                
+
                                 console.log('d: ')
                                 console.log(d)
                                 console.log('s: ')
                                 console.log(s)
                                 console.log('id: ')
                                 console.log(id)
-                                
+
                                 var js
                                   , sjs = d.getElementsByTagName(s)[0]
-                                
+
                                 console.log('sjs: ')
                                 console.log(sjs)
-                                
+
                                 if (d.getElementById(id)) return
                                 js = d.createElement(s)
                                 js.id = id
                                 js.src = "https://static.symplicity.com/jslib/jobswidget/jobswidget.js"
                                 sjs.parentNode.insertBefore(js, sjs)
-                            }   
+                            }
                             (document, "script", "symp_jobswidget_js")
                         )
-                    
+
                     </script>
                 </div>
             </div>
-            
+
             <div class="row sponsors">
                 <h2 class="sponsors-header">Sponsors</h2>
                 <div class="flex sponsors-content">
-                    <div class="sponsor"><span class="vert-centerer"></span><a href="http://coyote.com"><img src="assets/images/sponsors/all majors/coyote.jpg" class="desaturate"></img></a></div>
-                    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.sherwin-williams.com/"><img src="assets/images/sponsors/all majors/sherwin-williams.jpg" class="desaturate"></img></a></div>
-                    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="assets/images/sponsors/all majors/tower-loan.jpg" class="desaturate"></img></a></div>
-        
                     <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.adtran.com/"><img src="assets/images/sponsors/tech-eng/adtran.jpg" class="desaturate"></img></a></div>
                     <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.ascendmaterials.com/"><img src="assets/images/sponsors/tech-eng/ascend.png" class="desaturate"></img></a></div>
                     <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.chevron.com/"><img src="assets/images/sponsors/tech-eng/chevron.gif" class="desaturate"></img></a></div>
@@ -238,16 +234,22 @@
                     <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.milliken.com/en-us/Pages/default.aspx"><img src="assets/images/sponsors/tech-eng/milliken.png" class="desaturate"></img></a></div>
                     <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.neptunetg.com/home/"><img src="assets/images/sponsors/tech-eng/neptune.jpg" class="desaturate"></img></a></div>
                     <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.southerncompany.com/"><img src="assets/images/sponsors/tech-eng/southern-company.jpg" class="desaturate"></img></a></div>
+
+                    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.enterprise.com/"><img src="assets/images/sponsors/erac.jpg" class="desaturate"></img></a></div>
+
+                    <div class="sponsor"><span class="vert-centerer"></span><a href="http://coyote.com"><img src="assets/images/sponsors/all majors/coyote.jpg" class="desaturate"></img></a></div>
+                    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.sherwin-williams.com/"><img src="assets/images/sponsors/all majors/sherwin-williams.jpg" class="desaturate"></img></a></div>
+                    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="assets/images/sponsors/all majors/tower-loan.jpg" class="desaturate"></img></a></div>
                 </div>
             </div>
-            
+
             <!--<div class="row dynamo" ng-controller="dynamo-ctrl">
                 <dynamo></dynamo>
             </div>-->
                 <!--<div class="jobs-widget">
-                    <div id="symp_jobswidget" 
-                         data-csm="auburn-csm.symplicity.com" 
-                         data-id="cafc7f8b2e4d76da719080d5cc417823" 
+                    <div id="symp_jobswidget"
+                         data-csm="auburn-csm.symplicity.com"
+                         data-id="cafc7f8b2e4d76da719080d5cc417823"
                          data-size="auto"
                          data-css="https://auburn.edu/career/jobs/assets/stylesheets/widget.css"
                          data-logo=""
@@ -256,36 +258,36 @@
                     <script>
                         (
                             function(d, s, id) {
-                                
+
                                 console.log('d: ')
                                 console.log(d)
                                 console.log('s: ')
                                 console.log(s)
                                 console.log('id: ')
                                 console.log(id)
-                                
+
                                 var js
                                   , sjs = d.getElementsByTagName(s)[0]
-                                
+
                                 console.log('sjs: ')
                                 console.log(sjs)
-                                
+
                                 if (d.getElementById(id)) return
                                 js = d.createElement(s)
                                 js.id = id
                                 js.src = "https://static.symplicity.com/jslib/jobswidget/jobswidget.js"
                                 sjs.parentNode.insertBefore(js, sjs)
-                            }   
+                            }
                             (document, "script", "symp_jobswidget_js")
                         )
-                    
+
                     </script>
                 </div>
-            </div>--> 
-            
+            </div>-->
+
             <div class="row footer-wrap hidden-print">
                 <footer>
-                    
+
                     <section>
                         <ul>
                             <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
@@ -293,9 +295,9 @@
                             <li><a href="http://business.auburn.edu/student-services/office-of-professional-career-development/">College of Business OPCD</a></li>
                         </ul>
                     </section>
-                    
+
                     <section>
-                        
+
 <!--
                         <ul>
                             <li>
@@ -321,7 +323,7 @@
                         </ul>
 -->
                     </section>
-                    
+
                     <section>
                         <ul>
                             <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
@@ -329,9 +331,9 @@
                             <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
                         </ul>
                     </section>
-                    
+
                 </footer>
-                
+
                 <div class="subfooter" role="contentinfo">
                     <div>
                            <span>Auburn University</span>&sdot;<!--
@@ -345,23 +347,23 @@
                                 </script>
                            </span>
                     </div>
-                    
+
                     <div>
-                        <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a></span>&sdot;<!-- 
+                        <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a></span>&sdot;<!--
                         --><span><a href="http://www.auburn.edu/privacy/">Privacy</a></span>&sdot;<!--
                         --><span><a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a></span>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="to-top" style="display:none;"><a href="#top"></a></div>
-        
-        <!-- jQuery, Bootstrap, and Default AU Code JavaScript --> 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
+
+        <!-- jQuery, Bootstrap, and Default AU Code JavaScript -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
-        
+
         <!-- Application JavaScript -->
     </body>
 
@@ -387,105 +389,25 @@
 
             <div id="content" class="row row-offcanvas row-offcanvas-left content-area">
                 <div class="content-division col-sm-6" role="part-time-jobs-widget">
-                    <div id="symp_jobswidget" 
-                         data-csm="auburn-csm.symplicity.com" 
-                         data-id="cafc7f8b2e4d76da719080d5cc417823" 
-                         data-size="auto" 
-                         data-css="https://auburn-csm.symplicity.com/css/list_jobs_widget.css" 
-                         data-logo="" 
-                         data-header-text="Part-Time Jobs" 
-                         data-width="250" 
-                         data-height="480" 
-                         data-sort-by="posting_date"></div> 
+                    <div id="symp_jobswidget"
+                         data-csm="auburn-csm.symplicity.com"
+                         data-id="cafc7f8b2e4d76da719080d5cc417823"
+                         data-size="auto"
+                         data-css="https://auburn-csm.symplicity.com/css/list_jobs_widget.css"
+                         data-logo=""
+                         data-header-text="Part-Time Jobs"
+                         data-width="250"
+                         data-height="480"
+                         data-sort-by="posting_date"></div>
                     <script>
                         (function(d, s, id) {
-                            var js, sjs = d.getElementsByTagName(s)[0];   
-                            if (d.getElementById(id)) return;   
-                            js = d.createElement(s); 
-                            js.id = id;   
-                            js.src = "https://static.symplicity.com/jslib/jobswidget/jobswidget.js";   
-                            sjs.parentNode.insertBefore(js, sjs); 
+                            var js, sjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = "https://static.symplicity.com/jslib/jobswidget/jobswidget.js";
+                            sjs.parentNode.insertBefore(js, sjs);
                         }(document, "script", "symp_jobswidget_js"));
                     </script>
                 </div>
-                <div class="content-division col-sm-12" role="main">
-                    <h2>This is <span class="path-title">Teaching <i class="fa fa-chevron-down"></i></span></h2>
-                    <div class="modal-body">
-                        <div class="career flex">
-                            <div class="career-block">
-                                <i class="fa fa-leaf"></i>
-                                <h3 class="career-title">Agriculture</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-pencil"></i> 
-                                <h3 class="career-title">Architecture, Design and Construction</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-briefcase"></i>
-                                <h3 class="career-title">Business</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-book"></i>   
-                                <h3 class="career-title">Education</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-wrench"></i>
-                                <h3 class="career-title">Engineering</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-bug"></i>
-                                <h3 class="career-title">Forestry and Wildlife Sciences</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-group"></i>
-                                <h3 class="career-title">Human Sciences</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-globe"></i>
-                                <h3 class="career-title">Liberal Arts</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-book"></i>
-                                <h3 class="career-title">Library</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-user-md"></i>
-                                <h3 class="career-title">Nursing</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-stethoscope"></i>
-                                <h3 class="career-title">Pharmacy</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-flask"></i>
-                                <h3 class="career-title">Sciences and Mathematics</h3>
-                            </div>
-                            <div class="career-block">
-                                <i class="fa fa-medkit"></i>
-                                <h3 class="career-title">Veterinary Medicine</h3>
-                            </div>
-                        </div>
-                        <div class="path flex">
-                            <div class="path-block">
-                                Dramatically visualize customer directed convergence without revolutionary ROI.
-                            </div>
-                            <div class="path-block">
-                                Dramatically maintain clicks-and-mortar solutions without functional solutions.
-                            </div>
-                            <div class="path-block">
-                                Dynamically innovate resource-leveling customer service for state of the art customer service.
-                            </div>
-                            <div class="path-block">
-                                Holisticly predominate extensible testing procedures for reliable supply chains.
-                            </div>
-                            <div class="path-block">
-                                Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.
-                            </div>
-                            <div class="path-block">
-                                Quickly maximize timely deliverables for real-time schemas.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
 </html>
