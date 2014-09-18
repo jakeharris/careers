@@ -1438,13 +1438,20 @@ ul li {
 }
 
 .features {
-    position: relative;
-    background: white;
-    padding: 0 2rem;
-    padding-bottom: 2rem;
+    display: none;
+}
 
-    border: 1px solid #d7d7d7;
-    border-top: none;
+@media (min-width: 768px){
+    .features {
+        display: block;
+        position: relative;
+        background: white;
+        padding: 0 2rem;
+        padding-bottom: 2rem;
+
+        border: 1px solid #d7d7d7;
+        border-top: none;
+    }
 }
 
 .features-header {
