@@ -337,33 +337,34 @@ header {
   }
 }
 
-.subheader-navbar {
+.preheader-navbar {
     background: white;
     height: 3rem;
     width: 100%;
     border-bottom: 1px solid #d7d7d7;
     text-align: right;
+    box-sizing: border-box;
 }
-.subheader-navbar ul li {
+.preheader-navbar ul li {
     display: inline-block;
     padding: 0;
     margin-left: 1rem;
 }
-.subheader-navbar ul li::after {
+.preheader-navbar ul li::after {
     content: ' /';
     padding-left: 1rem;
 }
-.subheader-navbar ul li:last-of-type::after {
+.preheader-navbar ul li:last-of-type::after {
     padding: 0;
     content: none;
 }
-.subheader-navbar ul li input {
+.preheader-navbar ul li input {
     border: none;   
     height: 2.9rem;
     width: 14rem;
 }
-.subheader-navbar ul li input::selected {
-    
+.preheader-navbar ul li input:focus {
+    outline: none;
 }
 
 footer {
@@ -1580,8 +1581,8 @@ ul li {
 
 .sponsor {
     background: white;
-    width: 20rem;
-    height: 12.39rem;
+    width: 15rem;
+    height: 9.29rem;
     margin-left: 4rem;
     margin-right: 4rem;
     margin-bottom: 7rem;
@@ -1598,8 +1599,8 @@ ul li {
 }
 
 .sponsor img {
-    max-width: 20rem;
-    max-height: 12.39rem;
+    max-width: 15rem;
+    max-height: 9.29rem;
 }
 
 /* Thanks to demosthenes.info! */
