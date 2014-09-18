@@ -72,7 +72,7 @@
 iframe {
   border: none !important;
   width: 100% !important;
-  height: 51rem !important;
+  height: 50rem !important;
 }
 
 .flex, .centered, .place,
@@ -337,6 +337,35 @@ header {
   }
 }
 
+.subheader-navbar {
+    background: white;
+    height: 3rem;
+    width: 100%;
+    border-bottom: 1px solid #d7d7d7;
+    text-align: right;
+}
+.subheader-navbar ul li {
+    display: inline-block;
+    padding: 0;
+    margin-left: 1rem;
+}
+.subheader-navbar ul li::after {
+    content: ' /';
+    padding-left: 1rem;
+}
+.subheader-navbar ul li:last-of-type::after {
+    padding: 0;
+    content: none;
+}
+.subheader-navbar ul li input {
+    border: none;   
+    height: 2.9rem;
+    width: 14rem;
+}
+.subheader-navbar ul li input::selected {
+    
+}
+
 footer {
   font-size: 1.4rem;
 }
@@ -448,6 +477,10 @@ ul li {
   padding: 0;
 }
 
+.input-group-addon {
+  min-width: 44px;   
+}
+
 .banner {
   box-sizing: border-box;
   position: relative;
@@ -459,7 +492,7 @@ ul li {
 .banner .slider {
   box-sizing: border-box;
   display: none;
-/*  max-height: 360px;*/
+  max-height: 360px;
   flex-basis: 100%;
   width: 100%;
 }
@@ -1542,7 +1575,7 @@ ul li {
 }
 
 .sponsors-content {
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .sponsor {
@@ -1551,7 +1584,7 @@ ul li {
     height: 12.39rem;
     margin-left: 4rem;
     margin-right: 4rem;
-    margin-bottom: 5rem;
+    margin-bottom: 7rem;
     overflow: hidden;
     align-content: center;
     text-align: center;
