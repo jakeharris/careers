@@ -371,11 +371,11 @@ The goddess of lux...
                     <div>
                            <span>Auburn University</span>&sdot;<!--
                         --><span>Auburn, Alabama 36849</span>&sdot;<!--
-                        --><span>(334) 844-4000</span>&sdot;<!--
+                        --><span><a href="tel:3348444744">(334) 844-4744</a></span>&sdot;<!--
                         --><span><!--
                                 --><script type="text/javascript">
                                     emailE='auburn.edu';
-                                    emailE=('webmaster' + '@' + emailE);
+                                    emailE=('aucc' + '@' + emailE);
                                     document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");
                                 </script>
                            </span>

@@ -338,10 +338,8 @@ header {
 }
 
 .preheader-navbar {
-    background: white;
     height: 3rem;
     width: 100%;
-    border-bottom: 1px solid #d7d7d7;
     text-align: right;
     box-sizing: border-box;
 }
@@ -353,6 +351,7 @@ header {
 .preheader-navbar ul li::after {
     content: ' /';
     padding-left: 1rem;
+    color: #496e9c;
 }
 .preheader-navbar ul li:last-of-type::after {
     padding: 0;
@@ -362,6 +361,8 @@ header {
     border: none;   
     height: 2.9rem;
     width: 14rem;
+    background: #03244d;
+    color: white;
 }
 .preheader-navbar ul li input:focus {
     outline: none;
