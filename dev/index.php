@@ -321,8 +321,8 @@ The goddess of lux...
             <div class="row">
                 <div class="banner banner-bottom flex">
                     <a class="slider" href="https://www.alabamaconnection.org/STUDENT.htm"><img src="assets/images/G&PSF_Homepage_Tile.jpg"></a>
-                    <a class="slider" href="http://www.auburn.edu/career/students/events/tech.html"><img src="assets/images/E&TCE_Hompage_Tile.jpg"></a>
-                    <a class="slider" href="http://auburn.edu/career/cookin/"><img src="assets/images/Cookout14_Homepage_Tile.jpg"></a>
+                    <a class="slider" href="http://www.auburn.edu/career/students/events/tech.html"><img src="assets/images/AMCE_Homepage_Tile.jpg"></a>
+                    <a class="slider" href="http://auburn.edu/career/cookin/"><img src="assets/images/EID_Homepage_Tile.jpg"></a>
                 </div>
             </div>
             
