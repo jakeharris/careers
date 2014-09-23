@@ -14,18 +14,21 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @font-face {
   font-family: 'Norwester';
-  src: asset-url("norwester.eot?9309851", font);
-  src: asset-url("norwester.eot?9309851#iefix", font) format("embedded-opentype"), asset-url("norwester.woff?9309851", font) format("woff"), asset-url("norwester.ttf?9309851", font) format("truetype"), asset-url("norwester.svg?9309851#fontello", font) format("svg");
+  src: url("../fonts/norwester.eot?9309851");
+  src: url("../fonts/norwester.eot?9309851#iefix") format("embedded-opentype"), 
+       url("../fonts/norwester.woff?9309851") format("woff"), 
+       url("../fonts/norwester.ttf?9309851") format("truetype"), 
+       url("../fonts/norwester.svg?9309851#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?dzl7kw');
-	src:url('../fonts/icomoon.eot?#iefixdzl7kw') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?dzl7kw') format('woff'),
-		url('../fonts/icomoon.ttf?dzl7kw') format('truetype'),
-		url('../fonts/icomoon.svg?dzl7kw#icomoon') format('svg');
+	src:url('../fonts/icomoon.eot?-e9s38z');
+	src:url('../fonts/icomoon.eot?#iefix-e9s38z') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-e9s38z') format('woff'),
+		url('../fonts/icomoon.ttf?-e9s38z') format('truetype'),
+		url('../fonts/icomoon.svg?-e9s38z#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -44,13 +47,125 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.:before {
-	content: "\";
+.flex.start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.input-group-addon-md {
+    min-width: 44px;   
+}
+
+.icon-tack:before {
+	content: "\e600";
+}
+.icon-office:before {
+	content: "\e601";
+}
+.icon-ellipsis-glass:before {
+	content: "\e602";
+}
+.icon-interviewer:before {
+	content: "\e603";
+}
+.icon-tie:before {
+	content: "\e604";
+}
+.icon-user:before {
+	content: "\f007";
+}
+.icon-clock-o:before {
+	content: "\f017";
+}
+.icon-lock:before {
+	content: "\f023";
+}
+.icon-bookmark:before {
+	content: "\f02e";
+}
+.icon-edit:before {
+	content: "\f040";
+}
+.icon-map-marker:before {
+	content: "\f041";
+}
+.icon-calendar:before {
+	content: "\f073";
+}
+.icon-twitter-square:before {
+	content: "\f081";
+}
+.icon-facebook-square:before {
+	content: "\f082";
+}
+.icon-linkedin-square:before {
+	content: "\f08c";
+}
+.icon-thumb-tack:before {
+	content: "\f08d";
+}
+.icon-phone:before {
+	content: "\f095";
+}
+.icon-twitter:before {
+	content: "\f099";
+}
+.icon-facebook:before {
+	content: "\f09a";
+    margin-left: -3px;
+}
+.icon-certificate:before {
+    content: '\f0a3';   
+}
+.icon-group:before {
+	content: "\f0c0";
+}
+.icon-chain:before {
+	content: "\f0c1";
+}
+.icon-navicon:before {
+	content: "\f0c9";
+}
+.icon-pinterest:before {
+	content: "\f0d2";
+    margin-left: 10px;
+}
+.icon-pinterest-square:before {
+	content: "\f0d3";
+}
+.icon-google-plus-square:before {
+	content: "\f0d4";
+}
+.icon-google-plus:before {
+	content: "\f0d5";
+}
+.icon-linkedin:before {
+	content: "\f0e1";
+}
+.icon-briefcase:before {
+	content: "\f0f2";
+}
+.icon-ellipsis-h:before {
+	content: "\f141";
+}
+.icon-compass:before {
+	content: "\f14e";
+}
+.icon-tumblr:before {
+	content: "\f173";
+}
+.icon-tumblr-square:before {
+	content: "\f174";
+}
+.icon-vimeo-square:before {
+    content: '\f194'; 
+    margin-left: 8px;
 }
 
 
+
 .fa-blogger {
-  background-image: url("blogger.svg") !important;
+  background-image: url("../images/blogger-invert.svg") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 2rem !important;
@@ -193,7 +308,7 @@ header {
 .header-title,
 .header-title a {
   color: white;
-  font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 3rem;
   text-align: left;
   padding: 0.5rem;
@@ -204,7 +319,36 @@ header {
 .header-title a:hover {
   color: #f68026;
 }
-
+.preheader-navbar {
+    height: 3rem;
+    width: 100%;
+    text-align: right;
+    box-sizing: border-box;
+}
+.preheader-navbar ul li {
+    display: inline-block;
+    padding: 0;
+    margin-left: 1rem;
+}
+.preheader-navbar ul li::after {
+    content: ' /';
+    padding-left: 1rem;
+    color: #496e9c;
+}
+.preheader-navbar ul li:last-of-type::after {
+    padding: 0;
+    content: none;
+}
+.preheader-navbar ul li input {
+    border: none;   
+    height: 2.9rem;
+    width: 14rem;
+    background: #03244d;
+    color: white;
+}
+.preheader-navbar ul li input:focus {
+    outline: none;
+}
 .header-navbar {
   font-size: 3rem;
   text-align: left;
@@ -217,7 +361,7 @@ header {
 .header-navbar ul li {
   margin: 0;
   padding: 1rem .5rem;
-  font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: block;
   vertical-align: middle;
   text-align: left;

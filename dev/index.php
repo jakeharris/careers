@@ -42,11 +42,19 @@
         <!-- Container -->
         <div class="container">
             <header role="banner" class="flex">
-                
-                <div class="header-aubnav">
-                    
+                <div class="preheader-navbar">
+                    <ul>
+                        <li><a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a></li>
+                        <li><a href="http://www.auburn.edu/map">Map</a></li>
+                        <li><a href="http://www.auburn.edu/main/auweb_campus_directory.html">People Finder</a></li>
+                        <li><a href="http://auaccess.auburn.edu/">AU Access</a></li>
+                        <li>
+                            <form action="http://search.auburn.edu" method="get">
+                                <input type="search" placeholder="Search Auburn" name="q">
+                            </form>
+                        </li>
+                    </ul>
                 </div>
-                
                 <a class="header-logo" href="http://www.auburn.edu">
                     <img src="//cdn.auburn.edu/assets/img/header-logo.png" alt="Auburn University Homepage" height="75" width="203">
                 </a>
@@ -77,15 +85,15 @@
                             <h2 class="login-title">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
                             <p class="login-description">Your link to jobs, interviews and employers.</p>
                             <div class="input-group login-username">
-                                <span class="input-group-addon input-group-addon-md"><i class="icon fa-user"></i></span>
+                                <span class="input-group-addon input-group-addon-md"><i class="icon icon-user"></i></span>
                                 <input type="text" name="username" class="form-control input-md" placeholder="Student Username">
                             </div>
                             <div class="input-group login-password">
-                                <span class="input-group-addon input-group-addon-md"><i class="icon fa-lock"></i></span>
+                                <span class="input-group-addon input-group-addon-md"><i class="icon icon-lock"></i></span>
                                 <input type="password" name="password" class="form-control input-md" placeholder="Password">
                             </div>
                             <div class="flex flex--login">
-                                <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/jobs/trl.html" class="btn btn-default btn-md login-button">Sign up</a>
+                                <a href="http://auburn.edu/career/jobs/tipsheets.html" class="btn btn-default btn-md login-button">View tips</a>
                                 <button type="submit" class="btn btn-default btn-md login-button login-button--active">Sign in</button>
                             </div>
                         </div>
@@ -182,7 +190,7 @@
                             <h2><a href="http://www.auburn.edu/career/aboutus/">About Our Office</a></h2>
                             <div class="place">
                                 <a href="http://auburn.edu/map/?id=76" class="place-icon">
-                                    <i class="fa fa-map-marker"></i>
+                                    <i class="icon-map-marker"></i>
                                 </a>
                                 <a href="http://auburn.edu/map/?id=76" class="place-address">
                                     <address>
@@ -192,7 +200,7 @@
                                 </a>
                             </div>
                             <div class="times">
-                                <i class="fa fa-clock-o times-icon"></i>
+                                <i class="fa icon-clock-o times-icon"></i>
                                 <div class="times-address">
                                     Hours: <br /> Mon-Fri 7:45am-4:45pm <br />
                                     Walk-ins: <br />Mon, Thurs, Fri 12:00 noon-4pm <br /> Tues, Wed 9:00am-4:00pm
@@ -204,7 +212,7 @@
                             </div>
                             <div class="appointments">
                                 <a href="tel:3348444744" class="appointments-icon">
-                                    <i class="fa fa-phone"></i>
+                                    <i class="fa icon-phone"></i>
                                 </a>
                                 <div class="appointments-address">
                                     To schedule an appointment, call <a href="tel:3348444744">(334) 844-4744.</a>
@@ -215,7 +223,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <i class="fa fa-briefcase block-bg hours-bg"></i>
+                            <i class="fa icon-briefcase block-bg hours-bg"></i>
                         </div>
 
                         <div class="block events" ng-controller="calendar-ctrl">
@@ -235,7 +243,7 @@
                                 </li>
                             </ul>
                             <a href="http://www.auburn.edu/career/events/">More events</a>
-                            <i class="fa fa-calendar block-bg events-bg"></i>
+                            <i class="fa icon-calendar block-bg events-bg"></i>
                         </div>
                         
 <!-- EASTER EGG EXPOSITION: "The long road home"
@@ -263,34 +271,20 @@ The goddess of lux...
                                 </li>
                             </ul>
                             <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
-                            <i class="fa fa-edit block-bg blog-bg"></i>
+                            <i class="fa icon-edit block-bg blog-bg"></i>
                         </div>
 
                         <div class="block social">
                             <h2><a href="#">Connect With Us</a></h2>
-                            <ul>
-                                <li>
-                                    <a href="http://www.facebook.com/AUCareer" target="_blank">
-                                        <i class="fa fa-facebook social-icon"></i>
-                                    </a>
-                                    <a href="http://twitter.com/AUCareer" target="_blank">
-                                        <i class="fa fa-twitter social-icon"></i>
-                                    </a>
-                                    <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262" target="_blank">
-                                        <i class="fa fa-linkedin social-icon"></i>
-                                    </a>
-                                    <a href="http://www.pinterest.com/aucareer/" target="_blank">
-                                        <i class="fa fa-pinterest social-icon"></i>
-                                    </a>
-                                    <a href="https://vimeo.com/aucareer" target="_blank">
-                                        <i class="fa fa-vimeo-square social-icon"></i>
-                                    </a>
-                                    <a href="http://tigersprepare.blogspot.com/" target="_blank">
-                                        <i class="fa fa-blogger social-icon"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <i class="fa fa-group block-bg social-bg"></i>
+                            <div class="flex start">
+                                <a href="http://www.facebook.com/AUCareer" target="_blank" class="social-icon icon-facebook"></a>
+                                <a href="http://twitter.com/AUCareer" target="_blank" class="social-icon icon-twitter"></a>
+                                <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262" target="_blank" class="social-icon icon-linkedin"></a>
+                                <a href="http://www.pinterest.com/aucareer/" target="_blank" class="social-icon icon-pinterest"></a>
+                                <a href="https://vimeo.com/aucareer" target="_blank" class="social-icon icon-vimeo-square"></a>
+                                <a href="http://tigersprepare.blogspot.com/" target="_blank" class="social-icon fa-blogger"></a>
+                            </div>
+                            <i class="fa icon-group block-bg social-bg"></i>
                         </div>
                         <div class="block tweets" ng-controller="twitter-ctrl">
                             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
@@ -304,7 +298,7 @@ The goddess of lux...
                                 <span ng-if="tweets[1].data.url === undefined || tweets[1].data.url == ''">{{ tweets[1].data.text }}</span>
                                 <a class="tweets-date" href="https://twitter.com/{{ tweets[1].user.screen_name }}/status/{{ tweets[1].id_str }}">{{ tweets[1].data.date }}</a>
                             </div>
-                            <i class="fa fa-twitter block-bg tweets-bg"></i>
+                            <i class="fa icon-twitter block-bg tweets-bg"></i>
                         </div>
 
                         <div class="block sponsors">
@@ -312,7 +306,7 @@ The goddess of lux...
                             <a class="ad" href="http://www.erac.com/default.aspx">
                                 <img class="ad-image" src="assets/images/erac.jpg">
                             </a>
-                            <i class="fa fa-certificate block-bg sponsors-bg"></i>
+                            <i class="fa icon-certificate block-bg sponsors-bg"></i>
                         </div>
                     </div>
                 </div>
