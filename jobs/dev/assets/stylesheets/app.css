@@ -286,14 +286,6 @@ header {
 
 @media (min-width: 992px) {
   .header-navbar {
-    font-size: 2.5rem;
-  }
-
-  /*.header-title a {
-    font-size: 2.5rem;
-  }
-   */
-  .header-navbar {
     text-align: right;
   }
 
