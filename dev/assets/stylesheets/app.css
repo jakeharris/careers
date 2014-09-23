@@ -290,7 +290,7 @@ header {
 }
 
 .header-logo {
-  padding: 2rem;
+  padding: 0 0 2rem 2rem;
   flex-basis: 100%;
   width: 100%;
 }
@@ -313,6 +313,7 @@ header {
   font-size: 3rem;
   text-align: left;
   padding: 0.5rem;
+  margin-bottom: -6px;
   flex-basis: 100%;
   width: 100%;
 }

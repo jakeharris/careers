@@ -183,7 +183,7 @@ header {
 }
 
 .header-logo {
-  padding: 2rem;
+  padding: 0 0 2rem 2rem;
   flex-basis: 100%;
   width: 100%;
 }
@@ -206,6 +206,7 @@ header {
   font-size: 3rem;
   text-align: left;
   padding: 0.5rem;
+  margin-bottom: -6px;
   flex-basis: 100%;
   width: 100%;
 }
@@ -1533,7 +1534,7 @@ ul li {
 .resource-buttons {
     flex-basis: 66.9%;
     width: 66.9%;
-    background: #d7d7d7;
+    background: #f4f4f4;
     margin-left: -1px;
     cursor: pointer;
 }
