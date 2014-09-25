@@ -127,8 +127,6 @@
                                     }
                                 }
 
-                                //document.getElementById('lt').value = 'I\'m javakat@auburn or jch0039@auburn if you care to talk about what\'s going on here'
-
                             </script>
                             <div class="flex flex--login">
                                 <a href="http://auburn.edu/career/jobs/tipsheets.html" class="btn btn-default btn-md login-button">View tips</a>
@@ -211,19 +209,8 @@
                     <script>
                         (
                             function(d, s, id) {
-
-                                console.log('d: ')
-                                console.log(d)
-                                console.log('s: ')
-                                console.log(s)
-                                console.log('id: ')
-                                console.log(id)
-
                                 var js
                                   , sjs = d.getElementsByTagName(s)[0]
-
-                                console.log('sjs: ')
-                                console.log(sjs)
 
                                 if (d.getElementById(id)) return
                                 js = d.createElement(s)
@@ -239,7 +226,8 @@
             </div>
 
             <div class="row sponsors">
-                <h2 class="sponsors-header">Sponsors</h2>
+                <h2 class="sponsors-header"><label for="sponsors" >Sponsors</label></h2>
+                <input type="checkbox" id="sponsors" class="accordion-toggle">
                 <div class="flex sponsors-content">
                     <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.adtran.com/"><img src="assets/images/sponsors/tech-eng/adtran.jpg" class="desaturate"></img></a></div>
                     <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.ascendmaterials.com/"><img src="assets/images/sponsors/tech-eng/ascend.png" class="desaturate"></img></a></div>
@@ -436,5 +424,5 @@
                             sjs.parentNode.insertBefore(js, sjs);
                         }(document, "script", "symp_jobswidget_js"));
                     </script>
-                </div>
+                </div>-->
 </html>

@@ -1607,7 +1607,24 @@ ul li {
 
 .sponsors-header {
     text-align: center;
-    margin-bottom: 2.3rem;
+    margin: 0;
+}
+.sponsors-header label::after {
+    content: '   V';
+    color: #d7d7d7;
+}
+.sponsors-header:hover {
+    cursor: pointer;
+    background: #03244d;
+    color: white;
+}
+.sponsors-header label {
+    padding-top: 2.5rem;
+    padding-bottom: 2.3rem;
+    width: 100%;
+}
+.sponsors-header label:hover {
+    cursor: pointer;   
 }
 
 .sponsors-content {
@@ -1636,6 +1653,27 @@ ul li {
 .sponsor img {
     max-width: 15rem;
     max-height: 9.29rem;
+}
+
+.accordion-toggle {
+    display: none;   
+}
+
+.sponsors-content {
+    max-height: 0;
+    overflow-y: hidden;
+    
+    -webkit-transition: max-height 0.3s ease-in-out;
+       -moz-transition: max-height 0.3s ease-in-out;
+        -ms-transition: max-height 0.3s ease-in-out;
+         -o-transition: max-height 0.3s ease-in-out;
+            transition: max-height 0.3s ease-in-out;
+}
+.accordion-toggle:checked + .sponsors-content {
+    border-top: 1px solid #d7d7d7;
+    
+    max-height: 89rem;
+    padding-top: 2.3rem;
 }
 
 /* Thanks to demosthenes.info! */
