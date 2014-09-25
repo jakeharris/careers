@@ -57,6 +57,24 @@
 .icon-lock:before {
     content: '\f023';
 }
+.icon-twitter-square:before {
+	content: "\f081";
+}
+.icon-facebook-square:before {
+	content: "\f082";
+}
+.icon-linkedin-square:before {
+	content: "\f08c";
+}
+.icon-pinterest-square:before {
+	content: "\f0d3";
+}
+.icon-google-plus-square:before {
+	content: "\f0d4";
+}
+.icon-tumblr:before {
+	content: "\f173";
+}
 
 
 .row {
@@ -362,6 +380,19 @@ header {
 }
 .preheader-navbar ul li input:focus {
     outline: none;
+}
+
+.social-nav {
+    position: fixed;
+    left: 0;
+    top: 40%;
+    
+    padding: 0; margin: 0;
+    
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    
 }
 
 footer {

@@ -77,6 +77,15 @@
                 </div>
             </header>
             
+            <div class="social-nav">
+                <a href="http://www.facebook.com/AUCareer" class="social-icon icon-facebook"></a>
+                <a href="http://www.twitter.com/AUCareer" class="social-icon icon-twitter"></a>
+                <a href="http://www.linkedin.com/groups?about=&gid=1878262" class="social-icon icon-linkedin"></a>
+                <a href="http://www.pinterest.com/AUCareer" class="social-icon icon-pinterest"></a>
+                <a href="http://www.vimeo.com/AUCareer" class="social-icon icon-vimeo-square"></a>
+                <a href="http://tigersprepare.blogspot.com/" class="social-icon fa-blogger"></a>
+            </div>
+            
             <div class="brow row">
                 <div class="banner flex">
                     <!--    <img class="slider" src="assets/major.png">-->
@@ -99,81 +108,6 @@
                         </div>
                     </form>
                     <iframe class="slider" src="//player.vimeo.com/video/79522828" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                <!--    <img class="slider" src="assets/using.png">-->
-                <!--
-                    <div class="slider">
-                        <div class="slider-mask">
-                            <ul class="slider-list">
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/major.png">
-                                    </a>
-                                </li>
-
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/using.png">
-                                    </a>
-                                </li>
-
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/eng.png">
-                                    </a>
-                                </li>
-
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/vimeo.png">
-                                    </a>
-                                </li>
-
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/eng.png">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                -->
-                <!--
-                    <div class="slider">
-                        <div class="slider-mask">
-                            <ul class="slider-list">
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/eng.png">
-                                    </a>
-                                </li>
-
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/vimeo.png">
-                                    </a>
-                                </li>
-
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/major.png">
-                                    </a>
-                                </li>
-
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/using.png">
-                                    </a>
-                                </li>
-
-                                <li class="slider-list-item">
-                                    <a href="#">
-                                        <img src="assets/vimeo.png">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                -->
                 </div>
             </div>
             
