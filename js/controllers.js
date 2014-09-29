@@ -17,7 +17,10 @@ var home = angular.module('career-center-home', [])
 home.controller('calendar-ctrl', function ($scope, $http) {
   $http.get('./events.json')
        .then(function (res) {
-         $scope.events = res.data.slice(0, 2)
+         $scope.events = res.data.sort(function (a, b) {
+            if(a.date['numerical-month'] == b.date['numerical-month']) return a.date['day'] - b.date['day']
+            return a.date['numerical-month'] - b.date['numerical-month']
+         }).slice(0, 3)
        })
 })
 
@@ -71,10 +74,14 @@ home.controller('twitter-ctrl', function ($scope, $http) {
 home.controller('blogger-ctrl', function ($scope, $http) {
   $http.get('https://www.googleapis.com/blogger/v3/blogs/2761218641303524120/posts?key=AIzaSyAsBnM3FEIP1giu8NLIFG7TpoJAFLyIung&maxCount=3')
        .then(function (res) {
-           $scope.blog = res.data[0]
+           $scope.blog = res.data[0] || res.data || { }
            console.log(res.data.items.slice(0, 3))
            $scope.blog.items = res.data.items.slice(0, 3)
            $scope.blog.sanitized = { }
+           for(var post in $scope.blog.items) {
+               var d = new Date($scope.blog.items[post].published.split('+0000').join(''))
+               $scope.blog.items[post].date = '' + d.toDateString().substr(0, d.toDateString().length - 5)
+           }
            //for(var p in $scope.blog.items) //only necessary to sanitize post contents, not title
              //$scope.blog.sanitized.posts[p] = sanitize($scope.blog.items[p])
        })
