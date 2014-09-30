@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @font-face {
   font-family: 'Norwester';
-  src: asset("../fonts/norwester.eot?9309851");
-  src: asset("../fonts/norwester.eot?9309851#iefix") format("embedded-opentype"), 
-       asset("../fonts/norwester.woff?9309851") format("woff"), 
-       asset("../fonts/norwester.ttf?9309851") format("truetype"),
-       asset("../fonts/norwester.svg?9309851#fontello") format("svg");
+  src: asset("http://auburn.edu/career/jobs/dev/assets/fonts/norwester.eot?9309851");
+  src: asset("http://auburn.edu/career/jobs/dev/assets/fonts/norwester.eot?9309851#iefix") format("embedded-opentype"), 
+       asset("http://auburn.edu/career/jobs/dev/assets/fonts/norwester.woff?9309851") format("woff"), 
+       asset("http://auburn.edu/career/jobs/dev/assets/fonts/norwester.ttf?9309851") format("truetype"),
+       asset("http://auburn.edu/career/jobs/dev/assets/fonts/norwester.svg?9309851#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -41,13 +41,13 @@ ol, ul {
 
 #subHead {
   top: 0.7rem;
-  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0.75rem;
   height: auto !important;
 }
 
 #job_board {
   position: relative;
-  bottom: 7px;
 }
 
 #pager > .ct {
@@ -56,14 +56,18 @@ ol, ul {
 
 #page-count {
   padding-left: 1rem;   
-  padding-top: 2rem;
+  padding-top: 0rem;
+  position:absolute;
+  top: 18.8rem;
+  background: #f1f1f1;
+  width: 100%;
 }
 
 #_list_form_widget {
   overflow: auto;   
   overflow-y: scroll;
   overflow-y: overlay;
-  height: 19.8rem !important;
+  height: 18.4rem !important;
 }
 
 a {
