@@ -68,17 +68,22 @@ ol, ul {
 
 a {
   text-decoration: none;
+  color: #496e9c !important;
 }
 
 a:hover {
-  color: #f68026;   
+  color: #f68026 !important; 
 }
 
 .sumlist-rw-title-widget {
   font-size: 1.2rem; 
-  font-family: 'Norwester', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Norwester', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 0.5rem;
   margin-top: 1.5rem;
+}
+
+span.job-type {
+  display: none;   
 }
 
 .sumlist-bd2-widget {
@@ -136,7 +141,8 @@ a:hover {
 }
 .search-buttons > input[type=button]:nth-of-type(1):hover {
   color: white;
-  background: #496e9c;   
+  background: #496e9c;
+  border-color: white;
 }
 
 .search-buttons > input[type=button]:hover,

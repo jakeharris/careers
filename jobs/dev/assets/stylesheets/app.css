@@ -80,8 +80,6 @@
 	content: "\f173";
 }
 
-
-
 .row {
     margin: 0;
 }
@@ -370,7 +368,13 @@ header {
 .preheader-navbar ul li:after {
     content: ' /';
     padding-left: 1rem;
-    color: #496e9c;
+    color: #6287b6;
+}
+.preheader-navbar a {
+    color: #6287b6;
+}
+.preheader-navbar a:hover {
+    color: #f68026;   
 }
 .preheader-navbar ul li:last-of-type:after {
     padding: 0;
