@@ -1,8 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @font-face {
   font-family: 'Norwester';
-  src: asset-url("norwester.eot?9309851", font);
-  src: asset-url("norwester.eot?9309851#iefix", font) format("embedded-opentype"), asset-url("norwester.woff?9309851", font) format("woff"), asset-url("norwester.ttf?9309851", font) format("truetype"), asset-url("norwester.svg?9309851#fontello", font) format("svg");
+  src: asset("../fonts/norwester.eot?9309851");
+  src: asset("../fonts/norwester.eot?9309851#iefix") format("embedded-opentype"), 
+       asset("../fonts/norwester.woff?9309851") format("woff"), 
+       asset("../fonts/norwester.ttf?9309851") format("truetype"),
+       asset("../fonts/norwester.svg?9309851#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -32,13 +35,14 @@ ol, ul {
 #logo > h1 {
   margin-top: -0.31rem;
   position: relative;
-  top: 1.55rem;
+  top: 1rem;
+  font-family: 'Norwester', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #subHead {
-  top: 1.55rem;
-  margin-bottom: 3rem;
-  height: auto;
+  top: 0.7rem;
+  margin-bottom: 2rem;
+  height: auto !important;
 }
 
 #job_board {
@@ -73,11 +77,17 @@ a:hover {
 .sumlist-rw-title-widget {
   font-size: 1.2rem; 
   font-family: 'Norwester', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
 }
 
 .sumlist-bd2-widget {
   font-size: 0.9rem;   
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.widget-job-info > p {
+  margin: 0;   
 }
 
 .widget-job-info > p:nth-of-type(3){
@@ -89,7 +99,7 @@ a:hover {
     border-radius: 4px;
     font-size: 14px;
     padding: 6px 12px;
-    margin-bottom: 0;
+    margin-bottom: 6px;
     font-weight: normal;
     line-height: 1.428571429;
 }
@@ -122,7 +132,7 @@ a:hover {
 
 .search-buttons > input[type=button]:nth-of-type(1) {
   color: white;
-  background: #03244d;   
+  background: #03244d;
 }
 .search-buttons > input[type=button]:nth-of-type(1):hover {
   color: white;
