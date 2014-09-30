@@ -96,7 +96,7 @@
 iframe {
   border: none !important;
   width: 100% !important;
-  height: 50rem !important;
+  height: 100% !important;
 }
 
 .flex, .centered, .place,
@@ -1599,14 +1599,35 @@ ul li {
 .widget {
     flex-basis: 33%;
     width: 33%;
-    height: 100%;
+    max-height: 520px;
+    height: 280px;
     padding-left: 1px;
     box-sizing: border-box;
 }
 
 .widget iframe {
     margin-top: 10px;
-    margin-left: 2px;
+    margin-left: 1px;
+}
+
+@media(min-width: 1024px) {
+    .widget {
+        height: 400px;   
+    }
+    .widget iframe {
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+
+@media(min-width: 1335px) {
+    .widget {
+        height: 520px;
+    }
+    .widget iframe {
+        margin-top: 10px;
+        margin-left: 2px;
+    }
 }
 
 .sponsors {

@@ -48,6 +48,8 @@ ol, ul {
 
 #job_board {
   position: relative;
+  top: 20px;
+  height: 182px;  
 }
 
 #pager > .ct {
@@ -58,7 +60,7 @@ ol, ul {
   padding-left: 1rem;   
   padding-top: 0rem;
   position:absolute;
-  top: 18.8rem;
+  top: 17.8rem;
   background: #f1f1f1;
   width: 100%;
 }
@@ -67,7 +69,25 @@ ol, ul {
   overflow: auto;   
   overflow-y: scroll;
   overflow-y: overlay;
-  height: 18.4rem !important;
+  height: 100% !important;
+}
+
+@media(min-width: 293px) {
+    #job_board {
+        height: 10.5rem;   
+    }
+    #page-count {
+        top: 10.9rem;   
+    }
+}
+
+@media(min-width: 384px) {
+    #job_board {
+        height: 17.4rem;
+    }
+    #page-count {
+        top: 17.8rem;   
+    }
 }
 
 a {
@@ -131,7 +151,7 @@ span.job-type {
   border: 1px solid #ccc;
   border-radius: 4px;
   -webkit-user-select: none;
-     -moz-user-select: none;
+     -moz-user-select: none; 
       -ms-user-select: none;
        -o-user-select: none;
           user-select: none;
