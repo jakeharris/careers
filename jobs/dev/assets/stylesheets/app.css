@@ -1594,10 +1594,6 @@ ul li {
 
 }
 
-.resource-button:hover {
-    opacity: .5;
-}
-
 .widget {
     flex-basis: 33%;
     width: 33%;
@@ -1636,10 +1632,6 @@ ul li {
     width: 100%;
     border: 1px solid #d7d7d7;
     background: white;
-}
-
-.sponsors:hover {
-    border: 1px solid #03244d;
 }
 
 .sponsors-header {
@@ -1708,11 +1700,14 @@ ul li {
          -o-transition: max-height 0.3s ease-in-out;
             transition: max-height 0.3s ease-in-out;
 }
-.accordion-toggle:checked + .sponsors-content {
+.accordion-toggle:checked ~ .sponsors-content {
     border-top: 1px solid #d7d7d7;
     
     max-height: 89rem;
     padding-top: 2.3rem;
+}
+.accordion-toggle:checked ~ .sponsors-header label i:after {
+    content: "\f077";
 }
 
 /* Thanks to demosthenes.info! */
