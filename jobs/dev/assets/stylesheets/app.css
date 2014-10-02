@@ -1588,10 +1588,27 @@ ul li {
     max-width: 50%;
     margin-right: -3px;
     margin-left: 0;
+    background: #d7d7d7;
 }
 
-.resource-button:last-of-type{
+/*.resource-button.resource-button--yellow {
+    background:#aaa;   
+}*/
 
+.resource-button.resource-button--yellow:hover {
+    background:#c90;
+}
+
+.resource-button.resource-button--green:hover {
+    background: #060;
+}
+
+.resource-button.resource-button--orange:hover {
+    background: #f63;
+}
+
+.resource-button.resource-button--blue:hover {
+    background: #036;
 }
 
 .widget {
