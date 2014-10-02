@@ -1,0 +1,229 @@
+[
+    {
+        "__README":[
+            "This first JSON object is gonna be ignored by our app.",
+            "Below, I listed all content-types for which a template",
+            "already exists. We can make more templates easily, but",
+            "we'll need to know what we're trying to template first.",
+            "There may be a smarter way to make this even more",
+            "flexible, but I figured getting something out the door",
+            "that was pretty reasonably dynamic (and maintainable)",
+            "was better."
+        ],
+        "__content-types":[
+            "text",
+            "special-text",
+            "section",
+            "headless-section",
+            "link",
+            "video",
+            "pdf",
+            "login-portal"
+        ]
+    },
+    
+    
+    
+    
+    {
+        "content-type":"headless-section",
+        "body":[
+            {  
+                "content-type":"special-text",
+                "first-word":"Finding ",
+                "body":"a job and starting your career is a process that can take time. It is recommended that you begin the search for your post-graduation job 9-10 months prior to finishing school. This will give you ample time to explore options, research companies, prepare your documents, apply for jobs, conduct interviews and negotiate offers.",
+                "categories":[
+                    "job-prep"
+                ]
+            },
+            {
+                "content-type":"section",
+                "title":"Popular Resources",
+                "body":[
+                    {
+                        "content-type":"pdf",
+                        "title":"Career Center Job Search Guide",
+                        "url":"http://auburn.edu/career/students/handbook.pdf"
+                    },
+                    {
+                        "content-type":"link",
+                        "title":"What Can I Do With a Major In...?",
+                        "url":"http://whatcanidowiththismajor.com/major/majors/"
+                    },
+                    {
+                        "content-type":"pdf",
+                        "title":"General Job Search Tip Sheet",
+                        "url":"http://www.auburn.edu/career/tipsheets/Tip%20Sheet%20Job%20Search.pdf"
+                    },
+                    {
+                        "content-type":"link",
+                        "title":"Candid Career Videos",
+                        "url":"http://candidcareer.com/do_login.php?u=Auburn&p=92d19e9626e3e23c23bfa1f6dcdc1837"
+                    },
+                    {
+                        "content-type":"link",
+                        "title":"eResumé Review",
+                        "url":"http://auburn.edu/career/eresume"
+                    },
+                    {
+                        "content-type":"link",
+                        "title":"InterviewStream",
+                        "url":"http://auburn.edu/career/resources/interviewstream.html"
+                    }
+                ],
+                "categories" : [
+                    "job-prep"   
+                ]
+            }
+        ],
+        "categories":[
+            "job-prep"
+        ]
+    },
+    {
+        "content-type":"section",
+        "title":"Getting Started",
+        "body":[
+            {
+                "content-type":"text",
+                "title":"1. Identify a Career Path",
+                "body":"Your major does not lock you into one career option. Utilize the resources below explore the many options available to narrow down the specific types of jobs for which you want to apply."
+            },
+            {
+                "content-type":"text",
+                "title":"2. Research Companies",
+                "body":"Learn more about the companies that interest you by researching their history, mission, products and services, awards or accolades, company culture and open positions. This research can help you assess whether or not a particular company will be a good fit with your career goals, values and skills."
+            },
+            {
+                "content-type":"text",
+                "title":"3. Prepare Job Search Documents",
+                "body":"Learn more about the companies that interest you by researching their history, mission, products and services, awards or accolades, company culture and open positions. This research can help you assess whether or not a particular company will be a good fit with your career goals, values and skills."
+            }
+        ],
+        "categories" : [
+            "job-prep"   
+        ]
+    },
+    
+    
+    {
+        "content-type":"text",
+        "title":"Why is the Dragonslayer Blade iconic?",
+        "body" :"It is the very symbol of brute strength in a sword, for starters.",
+        "date" : {
+          "month"           :"July",
+          "shortened-month" :"JUL",
+          "numerical-month" :"7",
+          "day"             :"14"
+        },
+        "categories" : [
+            "design"
+        ]
+    },
+    {
+        "content-type":"text",
+        "title":"Zombini Wizard Breaks Down RBD Library Door, Career Center Uncomfortable",
+        "body":"well there was a zombie and then he got out of his restraints so they called him zombini and then he also knew magic and now he got in the library and maybe we're next because we're right next door",
+        "date" : {
+          "month"           :"July",
+          "shortened-month" :"JUL",
+          "numerical-month" :"7",
+          "day"             :"14"
+        },
+        "categories" : [
+            "design",
+            "engr"
+        ]
+                
+    },
+    {
+        "content-type":"headless-section",
+        "body":[
+            {
+                "content-type":"special-text",
+                "title":"",
+                "body":" is the ultimate trial for securing your job and is your chance to showcase the skills and abilities you described in your job search documents. Additionally, the interview is both you and the employer’s opportunity to ensure that you are a good fit for the company and its unique culture.",
+                "first-word":"Interviewing"
+            },
+            {
+                "content-type":"section",
+                "title":"Popular Resources",
+                "body":[
+                    {
+                        "content-type":"pdf",
+                        "title":"Career Center Job Search Guide",
+                        "url":"http://auburn.edu/career/students/handbook.pdf"
+                    },
+                    {
+                        "content-type":"link",
+                        "title":"InterviewStream",
+                        "url":"http://auburn.edu/career/resources/interviewstream.html"
+                    }
+                ],
+                "date": {
+
+                }
+            }
+        ],
+        "categories" : [
+            "intrvw-prep"   
+        ]
+    },
+    {
+        "content-type":"section",
+        "title":"The Interview",
+        "body": [
+            {
+                "content-type":"link",
+                "title":"Candid Career Interview Advice",
+                "url":"https://www.candidcareer.com/video-interviewing+advice,45d361982edc10ce738a,Auburn"
+            },
+            {
+                "content-type":"pdf",
+                "title":"Interview Tips",
+                "body":"Before you begin practicing your interview skills, review these interview preparation strategies and sample questions.",
+                "url":"http://auburn.edu/career/tipsheets/Tip%20Sheet%20Interview%20Prep.pdf"
+            },
+            {
+                "content-type":"login-portal",
+                "title":"InterviewStream",
+                "body":"Digitally record multiple practice interviews using a web-cam equipped computer using InterviewStream. You can choose from a list of predefined interview questions sets or select your own set of interview questions. InterviewStream is a great starting point for those new to interviewing.",
+                "button-text":"Create an account",
+                "url":"https://auburn.interviewstream.com/Account/Login?ReturnUrl=%2f",
+                "note":"You must use an Auburn email address."
+            },
+            {
+                "content-type":"text",
+                "title":"Mock Interviews",
+                "body":"When you have an interview scheduled and have practiced with InterviewStream, schedule a mock interview with a career counselor/advisor to serve as a dress rehearsal. You will come to the interview dressed professionally with a resume. Call the Career Center at 334-844-4744 to schedule an appointment."
+            }
+        ],
+        "categories" : [
+            "intrvw-prep"   
+        ]
+    },
+    {
+        "content-type":"section",
+        "title":"Dress for Success",
+        "body": [
+            {
+                "content-type":"video",
+                "title":"For Men",
+                "url":"https://www.candidcareer.com/video-men+s+how+to+dress,c1390e9cc329001cf145,Auburn"
+            },
+            {
+                "content-type":"video",
+                "title":"For Women",
+                "url":"https://www.candidcareer.com/video-women+s+how+to+dress,633266fdced4089d42dd,Auburn"
+            },
+            {
+                "content-type":"text",
+                "title":"Thank You",
+                "body":"Following an interview, always send a thank you note to the person or persons with whom you interviewed. Handwritten notes are preferred; however, if you have poor handwriting skills or know that the employer will be making a final decision very quickly, you may elect to send an e-mail thank you message. Thank the interviewer for his or her time and reiterate your specific interest in the position and company. A general rule of thumb is to send a thank you note to any company employee who spent more than 10-15 minutes with you. This may include an individual you gave you a tour of the facility or took you to lunch during the course of your interview. Remember to ask for business cards while on your interview so that you can have the individuals’ names and mailing information."
+            }
+        ],
+        "categories" : [
+            "intrvw-prep"   
+        ]
+    }
+]

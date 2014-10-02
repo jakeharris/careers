@@ -1,0 +1,36 @@
+[
+    {
+        "major-categories": [
+            {
+                "category":"design",
+                "display-category":"Design"
+            },
+            {
+                "category":"engr",
+                "display-category":"Engineering"
+            },
+            {
+                "category":"hum-sci",
+                "display-category":"Human Sciences"
+            }
+        ],
+        "globals": [
+            {
+                "category":"job-prep",
+                "display-category":"Job Search Prep"
+            },
+            {
+                "category":"intrvw-prep",
+                "display-category":"Interview Prep"
+            },
+            {
+                "category":"job-list",
+                "display-category":"Part-time and Full-time Job Listings"
+            },
+            {
+                "category":"coop-intrn-list",
+                "display-category":"Co-op and Internship Listings"
+            }
+        ]
+    }
+]
