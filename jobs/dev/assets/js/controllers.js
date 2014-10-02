@@ -3,7 +3,7 @@ var home = angular.module('career-center-jobs', ['ngCookies'])
 
 home.controller('calendar-ctrl', function ($scope, $http) {
     'use strict';
-    $http.get('./events.json')
+    $http.get('../events.json')
          .then(function (res) {
             $scope.events = res.data.sort(function (a, b) {
                 if(a.date['numerical-month'] == b.date['numerical-month']) return a.date['day'] - b.date['day']
