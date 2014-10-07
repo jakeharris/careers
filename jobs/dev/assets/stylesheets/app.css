@@ -1249,6 +1249,20 @@ ul li {
   border-color: white;
 }
 
+.login-button--alums {
+     
+}
+@media (min-width: 480px) {
+  .login-button--alums {
+    margin-left: 8rem;   
+  }
+}
+@media (min-width: 992px) {
+  .login-button--alums {
+    margin-left: 14rem;  
+  }
+}
+
 .flex--login {
   height: auto;
 }
@@ -1588,12 +1602,13 @@ ul li {
     max-width: 50%;
     margin-right: -3px;
     margin-left: 0;
-    background: #d7d7d7;
+    background: #aaa;
 }
 
-/*.resource-button.resource-button--yellow {
-    background:#aaa;   
-}*/
+.resource-button.resource-button--blue,
+.resource-button.resource-button--orange {
+    background: #d7d7d7;
+}
 
 .resource-button.resource-button--yellow:hover {
     background:#c90;
