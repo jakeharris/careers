@@ -16,6 +16,7 @@
         
         <!-- Application CSS -->
         <link rel=stylesheet href="assets/stylesheets/app.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
         
         <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
         <!--[if lt IE 9]>
@@ -107,7 +108,28 @@
                             </div>
                         </div>
                     </form>
-                    <iframe class="slider" src="//player.vimeo.com/video/79522828" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <div class="slider blanker">
+                        <div class="block events blanker-wrap" ng-controller="calendar-ctrl">
+                            <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
+                            <ul>
+                                <li class="event" ng-repeat="event in events">
+                                    <div class="event-date">
+                                        <div class="event-date-month">{{ event.date['shortened-month'] }}</div>
+                                        <div class="event-date-day">{{ event.date['day'] }}</div>
+                                    </div>
+                                    <div class="event-details">
+                                        <a ng-if="event.url" href="{{ event.url }}" class="event-details-name" target="_blank">{{ event.name }}</a>
+                                        <div ng-if="!event.url" class="event-details-name">{{ event.name }}</div>
+                                        <div class="event-details-location">{{ event.location }}</div>
+                                        <div class="event-details-time">{{ event.date.time.start}} - {{ event.date.time.end }}</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="http://www.auburn.edu/career/events/">More events</a>
+                            <!--<i class="fa icon-calendar block-bg events-bg"></i>-->
+                        </div>
+                    </div>
+                    <!--<iframe class="slider" src="//player.vimeo.com/video/79522828" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
                 </div>
             </div>
             
@@ -159,8 +181,8 @@
                             </div>
                             <i class="fa icon-briefcase block-bg hours-bg"></i>
                         </div>
-
-                        <div class="block events" ng-controller="calendar-ctrl">
+                        
+                        <!--<div class="block events" ng-controller="calendar-ctrl">
                             <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
                             <ul>
                                 <li class="event" ng-repeat="event in events">
@@ -178,17 +200,21 @@
                             </ul>
                             <a href="http://www.auburn.edu/career/events/">More events</a>
                             <i class="fa icon-calendar block-bg events-bg"></i>
-                        </div>
+                        </div>-->
                         
-<!-- EASTER EGG EXPOSITION: "The long road home"
+<!-- 
+
+EASTER EGG EXPOSITION: 
+
+"The long road home"
 
 Some days take longer than others. Sure, it's all twenty-four hours, but somewhere along the line, they get longer or shorter. The sun changes cycle. Your body changes sleep habits. So much can make this vary, and take you to the dreaming ether sooner or later than expected. 
 
-I've been travelling for half a year now, and the somber sunrises are gracious Ra's prevention of solace and slumber's embrace. It's so hard to stay awake as a trucker. You get used to the way the tires bump along, even with the irregularities, the occasional tire fragments or rabbits you hit along the way."
+I've been travelling for half a year now, and the somber sunrises are gracious Ra's prevention of solace and slumber's embrace. It's so hard to stay awake as a trucker. You get used to the way the tires bump along, even with the irregularities, the occasional tire fragments or rabbits you hit along the way.
 
-So I make a habit of mythos..." I create stories to keep myself awake, and I tell them to other truckers over the otherwise desolate HAM radio. They don't all get to hear the endings, because their paths deviate from my own. But while they were waiting for the ending, they stayed awake, feet fumbling to find the brake pedals in case something went awry. They might not have paid as much attention to the road as they should have, but it was more than they would have had it been silent, had they been dozing. 
+So I make a habit of mythos. I create stories to keep myself awake, and I tell them to other truckers over the otherwise desolate HAM radio. They don't all get to hear the endings, because their paths deviate from my own. But while they were waiting for the ending, they stayed awake, feet fumbling to find the brake pedals in case something went awry. They might not have paid as much attention to the road as they should have, but it was more than they would have had it been silent, had they been dozing. 
 
-So I guess I was doing a civil service. But really, it was all selfish."; 
+I guess I was doing a civil service. But really, it was all selfish.
 
 She was broken for days, years. 
 The dawn had faded, the trees and leaves made gentle cracking sounds when the wind blew, and her kneecaps were gone.
@@ -196,7 +222,7 @@ The dawn had faded, the trees and leaves made gentle cracking sounds when the wi
 The goddess of lux...
 
 -->
-                        <div class="block blog" ng-controller="blogger-ctrl">
+                        <!--<div class="block blog" ng-controller="blogger-ctrl">
                             <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
                             <ul>
                                 <li class="blog-post" ng-repeat="post in blog.items">
@@ -206,9 +232,9 @@ The goddess of lux...
                             </ul>
                             <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
                             <i class="fa icon-edit block-bg blog-bg"></i>
-                        </div>
+                        </div>-->
 
-                        <div class="block social">
+                        <!--<div class="block social">
                             <h2><a href="#">Connect With Us</a></h2>
                             <div class="flex start">
                                 <a href="http://www.facebook.com/AUCareer" target="_blank" class="social-icon icon-facebook"></a>
@@ -219,7 +245,7 @@ The goddess of lux...
                                 <a href="http://tigersprepare.blogspot.com/" target="_blank" class="social-icon fa-blogger"></a>
                             </div>
                             <i class="fa icon-group block-bg social-bg"></i>
-                        </div>
+                        </div>-->
                         <div class="block tweets" ng-controller="twitter-ctrl">
                             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
                             <div class="tweets-text" data-twitter="">
@@ -235,24 +261,70 @@ The goddess of lux...
                             <i class="fa icon-twitter block-bg tweets-bg"></i>
                         </div>
 
-                        <div class="block sponsors">
+                        <div class="block blog" ng-controller="blogger-ctrl">
+                            <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
+                            <ul>
+                                <li class="blog-post" ng-repeat="post in blog.items">
+                                    <h3><a class="h3-a post-title" href="{{ post.url }}">{{ post.title }}</a></h3>
+                                    <div class="post-details">{{ post.date }}</div>
+                                </li>
+                            </ul>
+                            <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
+                            <i class="fa icon-edit block-bg blog-bg"></i>
+                        </div>
+                        
+                        <!--<div class="block sponsors">
                             <h2><a href="#">Sponsors</a></h2>
                             <a class="ad" href="http://www.erac.com/default.aspx">
                                 <img class="ad-image" src="assets/images/erac.jpg">
                             </a>
                             <i class="fa icon-certificate block-bg sponsors-bg"></i>
+                        </div>-->
+                    </div>
+                    <div class="row sponsors">
+                        <h2 class="sponsors-header">Sponsors</h2>
+                        <div class="flex sponsors-content">
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.adtran.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/adtran.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.ascendmaterials.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/ascend.png" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.chevron.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/chevron.gif" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.evonik.com/en/Pages/default.aspx"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/evonik.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.exxonmobil.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/exxon-mobil.ps" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.gp.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/georgia-pacific.eps" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://harris.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/harris.eps" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.johnsoncontrols.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/johnson-controls.bmp" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.milliken.com/en-us/Pages/default.aspx"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/milliken.png" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.neptunetg.com/home/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/neptune.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.southerncompany.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/southern-company.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.altec.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/altec.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.amec.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/amec.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.globaldenso.com/en/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/denso.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.hondaalabama.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/honda.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.michelinman.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/michelin.gif" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.pandj.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/phillips-and-jordan.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.saic.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/saic.png" class="grayscale grayscale-fade"></img></a></div>
+
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.enterprise.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/erac.JPG" class="grayscale grayscale-fade"></img></a></div>
+
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://coyote.com"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/coyote.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.sherwin-williams.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/sherwin-williams.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/tower-loan.jpg" class="grayscale grayscale-fade"></img></a></div>
+                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/callidus-cloud.png" class="grayscale grayscale-fade"></img></a></div>
                         </div>
+                        <!--<a class="ad" href="http://www.erac.com/default.aspx">
+                            <img class="ad-image" src="assets/images/erac.jpg">
+                        </a>-->
+                        <!--<i class="fa icon-certificate block-bg sponsors-bg"></i>-->
                     </div>
                 </div>
             </div>
             
-            <div class="row">
+            <!--<div class="row">
                 <div class="banner banner-bottom flex">
                     <a class="slider" href="https://www.alabamaconnection.org/STUDENT.htm"><img src="assets/images/G&PSF_Homepage_Tile.jpg"></a>
                     <a class="slider" href="http://www.auburn.edu/career/students/events/am.html"><img src="assets/images/AMCE_Homepage_Tile.jpg"></a>
                     <a class="slider" href="http://auburn.edu/career/students/events/eid.html"><img src="assets/images/EID_Homepage_Tile.jpg"></a>
                 </div>
-            </div>
+            </div>-->
             
             <div class="row footer-wrap hidden-print">
                 <footer>
