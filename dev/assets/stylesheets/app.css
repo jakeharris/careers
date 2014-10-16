@@ -499,7 +499,7 @@ header {
     
     padding: 0; margin: 0;
     
-    width: 18rem;
+    width: 16rem;
     
     display: flex;
     align-content: flex-start;
@@ -512,9 +512,9 @@ header {
     
     border: none;
     padding: 0; margin: 0;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     padding-bottom: 0.5rem;
-    height: 8.5rem;
+    height: 8rem;
 }
 
 .sponsors {
@@ -528,6 +528,8 @@ header {
     padding-top: 2.5rem;
     padding-bottom: 2.3rem;
     width: 100%;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
 }
 
 .sponsors-content {
