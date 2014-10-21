@@ -499,7 +499,7 @@ header {
     
     padding: 0; margin: 0;
     
-    width: 16rem;
+    width: 13.3rem;
     
     display: flex;
     align-content: flex-start;
@@ -514,7 +514,7 @@ header {
     padding: 0; margin: 0;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
-    height: 8rem;
+    height: 6rem;
 }
 
 .sponsors {
@@ -902,7 +902,7 @@ ul li {
   border: 1px solid #f4f4f4;
   width: 8rem;
   height: 8rem;
-  font-size: 6rem;
+  font-size: 4rem;
   padding-top: 11px;
   margin-right: 1.3rem;
   margin-bottom: 1.6rem;
@@ -921,7 +921,7 @@ ul li {
   background-image: url("../images/blogger-invert.svg") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-size: 8rem !important;
+  background-size: 7rem !important;
 }
 
 .event {
@@ -1410,6 +1410,7 @@ ul li {
 .login-button--active:hover {
   background: #496e9c;
   color: white;
+  border: 1px solid white;
 }
 
 .flex--login {
@@ -1644,4 +1645,15 @@ ul li {
 }
 .aw-map-marker {
   content: '/';
+}
+
+#cc-carousel.carousel > .carousel-indicators {
+  bottom: 10px;
+  left: 50%;
+  text-align: center;
+  top:auto;
+}
+
+.carousel-inner > .item > img {
+    margin-top: -9rem;
 }

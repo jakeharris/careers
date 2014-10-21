@@ -108,7 +108,45 @@
                             </div>
                         </div>
                     </form>
-                    <div class="slider blanker">
+                    <div id="cc-carousel" class="carousel slider blanker" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#cc-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#cc-carousel" data-slide-to="1"></li>
+                            <li data-target="#cc-carousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="assets/images/AMCE_Homepage_Tile.jpg" alt="...">
+                                <div class="carousel-caption">
+                                    
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="assets/images/E&TCE_Hompage_Tile.jpg" alt="...">
+                                <div class="carousel-caption">
+                                    
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="assets/images/G&PSF_Homepage_Tile.jpg" alt="...">
+                                <div class="carousel-caption">
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#cc-carousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#cc-carousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                    <!--<div class="slider blanker">
                         <div class="block events blanker-wrap" ng-controller="calendar-ctrl">
                             <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
                             <ul>
@@ -126,9 +164,9 @@
                                 </li>
                             </ul>
                             <a href="http://www.auburn.edu/career/events/">More events</a>
-                            <!--<i class="fa icon-calendar block-bg events-bg"></i>-->
+                            <i class="fa icon-calendar block-bg events-bg"></i>
                         </div>
-                    </div>
+                    </div>-->
                     <!--<iframe class="slider" src="//player.vimeo.com/video/79522828" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
                 </div>
             </div>
@@ -182,7 +220,7 @@
                             <i class="fa icon-briefcase block-bg hours-bg"></i>
                         </div>
                         
-                        <!--<div class="block events" ng-controller="calendar-ctrl">
+                        <div class="block events" ng-controller="calendar-ctrl">
                             <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
                             <ul>
                                 <li class="event" ng-repeat="event in events">
@@ -200,7 +238,7 @@
                             </ul>
                             <a href="http://www.auburn.edu/career/events/">More events</a>
                             <i class="fa icon-calendar block-bg events-bg"></i>
-                        </div>-->
+                        </div>
                         
 <!-- 
 
@@ -261,7 +299,7 @@ The goddess of lux...
                             <i class="fa icon-twitter block-bg tweets-bg"></i>
                         </div>
 
-                        <div class="block blog" ng-controller="blogger-ctrl">
+                        <!--<div class="block blog" ng-controller="blogger-ctrl">
                             <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
                             <ul>
                                 <li class="blog-post" ng-repeat="post in blog.items">
@@ -271,14 +309,6 @@ The goddess of lux...
                             </ul>
                             <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
                             <i class="fa icon-edit block-bg blog-bg"></i>
-                        </div>
-                        
-                        <!--<div class="block sponsors">
-                            <h2><a href="#">Sponsors</a></h2>
-                            <a class="ad" href="http://www.erac.com/default.aspx">
-                                <img class="ad-image" src="assets/images/erac.jpg">
-                            </a>
-                            <i class="fa icon-certificate block-bg sponsors-bg"></i>
                         </div>-->
                     </div>
                     <div class="row sponsors">

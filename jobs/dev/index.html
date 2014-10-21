@@ -92,7 +92,7 @@
 
             <div class="brow row">
                 <div class="banner flex">
-                    <form id="fm1" class="slider login" method="post" action="https://auburn-csm.symplicity.com/sso/students">
+                    <form id="fm1" class="slider login" method="post" action="https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents%2Flogin">
                         <div class="login-wrap">
                             <h2 class="login-title">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
                             <p class="login-description">Your link to jobs, interviews and employers.</p>
@@ -108,9 +108,10 @@
                             <input id="execution" type="hidden" name="execution" value="">
                             <input id="_eventId"  type="hidden" name="_eventId"  value="">
                             <script type="text/javascript">
+                                
                                 var yb = 'https://query.yahooapis.com/v1/public/yql?'
-                                  , yq = 'q=select%20*%20from%20html%20where%20url%3D%22https%3A%2F%2Fauthenticate.auburn.edu%2Fcas%2Flogin%22%20'
-                                  , yx = 'and%20xpath%3D\'%2F%2Fdiv%5B%40class%3D%22loginWrapper%22%5D%2F%2Fdiv%5B%40class%3D%22login%22%5D%2F%2Finput%5B%40type%3D%22hidden%22%5D\''
+                                  , yq = 'q=select%20*%20from%20html%20where%20url%3D\'https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents\'%20'
+                                  , yx = 'and%20xpath%3D\'%2F%2Fdiv%5Bcontains(%40class%2C%20%22loginWrapper%22)%5D%2Fdiv%2Fform\''
                                   , yf = '&format=json&diagnostics=false&callback='
                                   , url = yb + yq + yx + yf
                                   , jo = ''
@@ -127,14 +128,22 @@
 
                                 jo = JSON.parse(xmlhttp.responseText)
 
-                                jo = jo['query']['results']['input']
+                                jo = jo['query']['results']['form']
 
-                                for(var input in jo) {
+                                //document.getElementById('fm1').setAttribute('action', jo['action'])
+                                document.getElementById('lt').value = jo['input'][0]['value']
+                                document.getElementById('execution').value = jo['input'][1]['value']
+                                document.getElementById('_eventId').value = jo['input'][2]['value']
+                                
+                                //LT-14028-WBpMX5RPDcXKRGrsmmcehfcHf73Bis
+                                //LT-13990-YftELqJBkuQQduVWfR6d6EZrLGcs3N
+                                
+                                /*for(var input in jo) {
                                     if(jo[input].name !== undefined) {
                                         var e = document.getElementById(jo[input].name)
                                         if (e) e.value = jo[input].value
                                     }
-                                }
+                                }*/
 
                             </script>
                             <div class="flex flex--login">
