@@ -829,6 +829,7 @@ ul li {
   flex-direction: column;
 }
 .tweet-column {
+  display: inline-block;
   display: -webkit-inline-flex;
   display:     -ms-inline-flex;
   display:         inline-flex;
@@ -839,6 +840,8 @@ ul li {
   
   flex-basis: 49%;
   width: 49%;
+  
+  
 }
 
 .tweets-text {
@@ -953,11 +956,12 @@ ul li {
 }
 
 .events ul {
+  display: -ms-flex-box;
   display: flex;
   flex-direction: column;
   -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   max-height: 45rem;
   height: 45rem;
 }
