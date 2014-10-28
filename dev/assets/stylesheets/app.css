@@ -933,11 +933,12 @@ ul li {
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 45rem;
+  height: 45rem;
 }
 
 .event {
-  height: auto;
   min-height: 14rem;
+  max-height: 14rem;
   flex-basis: 50%;
   width: 50%;
   margin: 0.4rem 0;
