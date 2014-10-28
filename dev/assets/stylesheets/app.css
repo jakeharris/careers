@@ -503,11 +503,13 @@ header {
     width: 13.3rem;
     
     display: -webkit-flex;
-    display: flex;
+    display:     -ms-flexbox;
+    display:         flex;
     align-content: flex-start;
     justify-content: flex-start;
     -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
 }
 .social-nav .social-icon {
     flex-basis: 49%;
@@ -823,13 +825,19 @@ ul li {
 
 .tweets {
   flex-basis: 66%;
+  width: 66%;
   flex-direction: column;
 }
+.tweet-column {
 .tweet-column {
   display: -webkit-inline-flex;
   display:     -ms-inline-flex;
   display:         inline-flex;
-  flex-direction: column;
+  
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  
   flex-basis: 49%;
   width: 49%;
 }
