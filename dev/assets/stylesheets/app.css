@@ -985,15 +985,6 @@ ul li {
   margin-right: 1.8rem;
 }
 
-/* Events page events */
-#events .events {
-  flex-basis: auto;
-  width: auto;
-}
-#events .events ul {
-  display: inline-block;
-}
-
 .ad {
   position: relative;
   z-index: 9999;
