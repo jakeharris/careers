@@ -37,6 +37,7 @@
         <!-- Application-specific CSS/JS -->
         <script src="components/angular/angular.js"></script>
         <script src="js/controllers.js"></script>
+        <script src="js/modernizr.js"></script>
     </head>
 
     <body class="{{ $action }}">
@@ -119,13 +120,13 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img src="assets/images/AMCE_Homepage_Tile.jpg" alt="...">
+                                <img src="assets/images/Comm&Med_Homepage.png" alt="...">
                             </div>
                             <div class="item">
-                                <img src="assets/images/E&TCE_Hompage_Tile.jpg" alt="...">
+                                <img src="assets/images/POP_Homepage.png" alt="...">
                             </div>
                             <div class="item">
-                                <img src="assets/images/G&PSF_Homepage_Tile.jpg" alt="...">
+                                <img src="assets/images/Welcome_Homepage.png" alt="...">
                             </div>
                         </div>
 
