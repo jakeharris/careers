@@ -92,7 +92,7 @@
 
             <div class="brow row">
                 <div class="banner flex">
-                    <form id="fm1" class="slider login" method="post" action="https://auburn-csm.symplicity.com/sso/students/login">
+                    <form id="fm1" class="slider login" method="post" action="https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents%2Flogin">
                         <div class="login-wrap">
                             <h2 class="login-title">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
                             <p class="login-description">Your link to jobs, interviews and employers.</p>
@@ -109,6 +109,8 @@
                             <input id="_eventId"  type="hidden" name="_eventId"  value="">
                             <script type="text/javascript">
                                 
+                              //https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents%2Flogin
+                              
                                 var yb = 'https://query.yahooapis.com/v1/public/yql?'
                                   , yq = 'q=select%20*%20from%20html%20where%20url%3D\'https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents\'%20'
                                   , yx = 'and%20xpath%3D\'%2F%2Fdiv%5Bcontains(%40class%2C%20%22loginWrapper%22)%5D%2Fdiv%2Fform\''

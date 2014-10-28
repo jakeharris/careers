@@ -892,7 +892,6 @@ ul li {
 .subtle,
 .times-address .subtle {
     color: #747474;
-    margin-top: 10px;
 }
 
 .social-icon {
@@ -924,8 +923,24 @@ ul li {
   background-size: 7rem !important;
 }
 
+.events {
+  flex-basis: 66%;
+  width: 66%;
+}
+
+.events ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 45rem;
+}
+
 .event {
-  margin-bottom: 1.6rem;
+  height: auto;
+  min-height: 14rem;
+  flex-basis: 50%;
+  width: 50%; 
+  margin: 0.4rem 0;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
@@ -946,7 +961,7 @@ ul li {
   color: #dd550c;
   text-align: right;
   margin-right: 1.8rem;
-  width: 18%;
+  width: 15%;
 }
 
 .event-date-day {

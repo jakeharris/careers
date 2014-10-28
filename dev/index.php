@@ -120,21 +120,12 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <img src="assets/images/AMCE_Homepage_Tile.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    
-                                </div>
                             </div>
                             <div class="item">
                                 <img src="assets/images/E&TCE_Hompage_Tile.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    
-                                </div>
                             </div>
                             <div class="item">
                                 <img src="assets/images/G&PSF_Homepage_Tile.jpg" alt="...">
-                                <div class="carousel-caption">
-                                
-                                </div>
                             </div>
                         </div>
 
@@ -146,27 +137,6 @@
                             <span class="glyphicon glyphicon-chevron-right"></span>
                         </a>
                     </div>
-                    <!--<div class="slider blanker">
-                        <div class="block events blanker-wrap" ng-controller="calendar-ctrl">
-                            <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
-                            <ul>
-                                <li class="event" ng-repeat="event in events">
-                                    <div class="event-date">
-                                        <div class="event-date-month">{{ event.date['shortened-month'] }}</div>
-                                        <div class="event-date-day">{{ event.date['day'] }}</div>
-                                    </div>
-                                    <div class="event-details">
-                                        <a ng-if="event.url" href="{{ event.url }}" class="event-details-name" target="_blank">{{ event.name }}</a>
-                                        <div ng-if="!event.url" class="event-details-name">{{ event.name }}</div>
-                                        <div class="event-details-location">{{ event.location }}</div>
-                                        <div class="event-details-time">{{ event.date.time.start}} - {{ event.date.time.end }}</div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <a href="http://www.auburn.edu/career/events/">More events</a>
-                            <i class="fa icon-calendar block-bg events-bg"></i>
-                        </div>
-                    </div>-->
                     <!--<iframe class="slider" src="//player.vimeo.com/video/79522828" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
                 </div>
             </div>
@@ -220,7 +190,7 @@
                             <i class="fa icon-briefcase block-bg hours-bg"></i>
                         </div>
                         
-                        <div class="block events" ng-controller="calendar-ctrl">
+                        <div class="block events" ng-controller="calendar-ctrl" style="flex-basis: 66%;">
                             <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
                             <ul>
                                 <li class="event" ng-repeat="event in events">
@@ -239,7 +209,8 @@
                             <a href="http://www.auburn.edu/career/events/">More events</a>
                             <i class="fa icon-calendar block-bg events-bg"></i>
                         </div>
-                        
+                    </div>
+                    <div class="flex">
 <!-- 
 
 EASTER EGG EXPOSITION: 
@@ -260,46 +231,35 @@ The dawn had faded, the trees and leaves made gentle cracking sounds when the wi
 The goddess of lux...
 
 -->
-                        <!--<div class="block blog" ng-controller="blogger-ctrl">
-                            <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
-                            <ul>
-                                <li class="blog-post" ng-repeat="post in blog.items">
-                                    <h3><a class="h3-a post-title" href="{{ post.url }}">{{ post.title }}</a></h3>
-                                    <div class="post-details">{{ post.date }}</div>
-                                </li>
-                            </ul>
-                            <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
-                            <i class="fa icon-edit block-bg blog-bg"></i>
-                        </div>-->
-
-                        <!--<div class="block social">
-                            <h2><a href="#">Connect With Us</a></h2>
-                            <div class="flex start">
-                                <a href="http://www.facebook.com/AUCareer" target="_blank" class="social-icon icon-facebook"></a>
-                                <a href="http://twitter.com/AUCareer" target="_blank" class="social-icon icon-twitter"></a>
-                                <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262" target="_blank" class="social-icon icon-linkedin"></a>
-                                <a href="http://www.pinterest.com/aucareer/" target="_blank" class="social-icon icon-pinterest"></a>
-                                <a href="https://vimeo.com/aucareer" target="_blank" class="social-icon icon-vimeo-square"></a>
-                                <a href="http://tigersprepare.blogspot.com/" target="_blank" class="social-icon fa-blogger"></a>
-                            </div>
-                            <i class="fa icon-group block-bg social-bg"></i>
-                        </div>-->
-                        <div class="block tweets" ng-controller="twitter-ctrl">
+                        <div class="block tweets" ng-controller="twitter-ctrl" style="flex-basis: 66%; flex-direction: row;">
                             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
-                            <div class="tweets-text" data-twitter="">
-                                <a class="tweets-link" ng-if="tweets[0].data.url !== undefined && tweets[0].data.url != ''" href="{{ tweets[0].data.url }}">{{ tweets[0].data.text }}</a>
-                                <span ng-if="tweets[0].data.url === undefined || tweets[0].data.url == ''">{{ tweets[0].data.text }}</span>
-                                <a class="tweets-date" href="https://twitter.com/{{ tweets[0].user.screen_name }}/status/{{ tweets[0].id_str }}">{{ tweets[0].data.date }}</a>
+                            <div class="tweet-column" style="width: 49%;display:inline-flex;flex-direction:column;flex-basis:49%;">
+                              <div class="tweets-text" data-twitter="">
+                                  <a class="tweets-link" ng-if="tweets[0].data.url !== undefined && tweets[0].data.url != ''" href="{{ tweets[0].data.url }}">{{ tweets[0].data.text }}</a>
+                                  <span ng-if="tweets[0].data.url === undefined || tweets[0].data.url == ''">{{ tweets[0].data.text }}</span>
+                                  <a class="tweets-date" href="https://twitter.com/{{ tweets[0].user.screen_name }}/status/{{ tweets[0].id_str }}">{{ tweets[0].data.date }}</a>
+                              </div>
+                              <div class="tweets-text" data-twitter="">
+                                  <a class="tweets-link" ng-if="tweets[1].data.url !== undefined && tweets[1].data.url != ''" href="{{ tweets[1].data.url }}">{{ tweets[1].data.text }}</a>
+                                  <span ng-if="tweets[1].data.url === undefined || tweets[1].data.url == ''">{{ tweets[1].data.text }}</span>
+                                  <a class="tweets-date" href="https://twitter.com/{{ tweets[1].user.screen_name }}/status/{{ tweets[1].id_str }}">{{ tweets[1].data.date }}</a>
+                              </div>
                             </div>
-                            <div class="tweets-text" data-twitter="">
-                                <a class="tweets-link" ng-if="tweets[1].data.url !== undefined && tweets[1].data.url != ''" href="{{ tweets[1].data.url }}">{{ tweets[1].data.text }}</a>
-                                <span ng-if="tweets[1].data.url === undefined || tweets[1].data.url == ''">{{ tweets[1].data.text }}</span>
-                                <a class="tweets-date" href="https://twitter.com/{{ tweets[1].user.screen_name }}/status/{{ tweets[1].id_str }}">{{ tweets[1].data.date }}</a>
-                            </div>
+                            <div class="tweet-column" style="width: 50%;display:inline-flex;flex-direction:column;flex-basis:50%;">
+                              <div class="tweets-text" data-twitter="">
+                                  <a class="tweets-link" ng-if="tweets[2].data.url !== undefined && tweets[2].data.url != ''" href="{{ tweets[2].data.url }}">{{ tweets[2].data.text }}</a>
+                                  <span ng-if="tweets[2].data.url === undefined || tweets[2].data.url == ''">{{ tweets[2].data.text }}</span>
+                                  <a class="tweets-date" href="https://twitter.com/{{ tweets[2].user.screen_name }}/status/{{ tweets[2].id_str }}">{{ tweets[2].data.date }}</a>
+                              </div>
+                              <div class="tweets-text" data-twitter="">
+                                  <a class="tweets-link" ng-if="tweets[3].data.url !== undefined && tweets[3].data.url != ''" href="{{ tweets[3].data.url }}">{{ tweets[3].data.text }}</a>
+                                  <span ng-if="tweets[3].data.url === undefined || tweets[3].data.url == ''">{{ tweets[3].data.text }}</span>
+                                  <a class="tweets-date" href="https://twitter.com/{{ tweets[3].user.screen_name }}/status/{{ tweets[3].id_str }}">{{ tweets[3].data.date }}</a>
+                              </div>
+                            </div> 
                             <i class="fa icon-twitter block-bg tweets-bg"></i>
                         </div>
-
-                        <!--<div class="block blog" ng-controller="blogger-ctrl">
+                        <div class="block blog" ng-controller="blogger-ctrl">
                             <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
                             <ul>
                                 <li class="blog-post" ng-repeat="post in blog.items">
@@ -309,119 +269,107 @@ The goddess of lux...
                             </ul>
                             <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
                             <i class="fa icon-edit block-bg blog-bg"></i>
-                        </div>-->
-                    </div>
-                    <div class="row sponsors">
-                        <h2 class="sponsors-header">Sponsors</h2>
-                        <div class="flex sponsors-content">
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.adtran.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/adtran.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.ascendmaterials.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/ascend.png" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.chevron.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/chevron.gif" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.evonik.com/en/Pages/default.aspx"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/evonik.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.exxonmobil.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/exxon-mobil.ps" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.gp.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/georgia-pacific.eps" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://harris.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/harris.eps" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.johnsoncontrols.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/johnson-controls.bmp" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.milliken.com/en-us/Pages/default.aspx"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/milliken.png" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.neptunetg.com/home/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/neptune.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.southerncompany.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/southern-company.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.altec.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/altec.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.amec.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/amec.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.globaldenso.com/en/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/denso.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.hondaalabama.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/honda.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.michelinman.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/michelin.gif" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.pandj.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/phillips-and-jordan.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.saic.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/saic.png" class="grayscale grayscale-fade"></img></a></div>
-
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.enterprise.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/erac.JPG" class="grayscale grayscale-fade"></img></a></div>
-
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://coyote.com"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/coyote.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.sherwin-williams.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/sherwin-williams.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/tower-loan.jpg" class="grayscale grayscale-fade"></img></a></div>
-                            <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/callidus-cloud.png" class="grayscale grayscale-fade"></img></a></div>
                         </div>
-                        <!--<a class="ad" href="http://www.erac.com/default.aspx">
-                            <img class="ad-image" src="assets/images/erac.jpg">
-                        </a>-->
-                        <!--<i class="fa icon-certificate block-bg sponsors-bg"></i>-->
+                    </div>
+                </div>
+                <div class="row sponsors">
+                    <h2 class="sponsors-header">Sponsors</h2>
+                    <div class="flex sponsors-content">
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.adtran.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/adtran.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.ascendmaterials.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/ascend.png" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.chevron.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/chevron.gif" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.evonik.com/en/Pages/default.aspx"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/evonik.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.exxonmobil.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/exxon-mobil.ps" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.gp.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/georgia-pacific.eps" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://harris.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/harris.eps" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.johnsoncontrols.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/johnson-controls.bmp" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.milliken.com/en-us/Pages/default.aspx"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/milliken.png" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.neptunetg.com/home/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/neptune.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.southerncompany.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/southern-company.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.altec.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/altec.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.amec.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/amec.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.globaldenso.com/en/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/denso.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.hondaalabama.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/honda.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.michelinman.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/michelin.gif" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.pandj.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/phillips-and-jordan.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.saic.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/saic.png" class="grayscale grayscale-fade"></img></a></div>
+
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.enterprise.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/erac.JPG" class="grayscale grayscale-fade"></img></a></div>
+
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://coyote.com"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/coyote.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.sherwin-williams.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/sherwin-williams.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/tower-loan.jpg" class="grayscale grayscale-fade"></img></a></div>
+                        <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/callidus-cloud.png" class="grayscale grayscale-fade"></img></a></div>
                     </div>
                 </div>
             </div>
+        </div>
             
-            <!--<div class="row">
-                <div class="banner banner-bottom flex">
-                    <a class="slider" href="https://www.alabamaconnection.org/STUDENT.htm"><img src="assets/images/G&PSF_Homepage_Tile.jpg"></a>
-                    <a class="slider" href="http://www.auburn.edu/career/students/events/am.html"><img src="assets/images/AMCE_Homepage_Tile.jpg"></a>
-                    <a class="slider" href="http://auburn.edu/career/students/events/eid.html"><img src="assets/images/EID_Homepage_Tile.jpg"></a>
-                </div>
-            </div>-->
-            
-            <div class="row footer-wrap hidden-print">
-                <footer>
-                    <section>
-                        <ul>
-                            <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
-                            <li><a href="http://www.auburn.edu/fye">First Year Experience</a></li>
-                            <li><a href="http://harbert.auburn.edu/students/current/professional-and-career-development-resources/index.php">College of Business OPCD</a></li>
-                        </ul>
-                    </section>
-                    
-                    <section>
-                        <!--<img class="outforwork" src="assets/images/outforwork.png">-->
+        <div class="row footer-wrap hidden-print">
+            <footer>
+                <section>
+                    <ul>
+                        <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
+                        <li><a href="http://www.auburn.edu/fye">First Year Experience</a></li>
+                        <li><a href="http://harbert.auburn.edu/students/current/professional-and-career-development-resources/index.php">College of Business OPCD</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <!--<img class="outforwork" src="assets/images/outforwork.png">-->
 <!--
-                        <ul>
-                            <li>
-                                <a href="http://www.facebook.com/AUCareer">
-                                    <i class="fa fa-facebook footer-icon"></i>
-                                </a>
-                                <a href="http://twitter.com/AUCareer">
-                                    <i class="fa fa-twitter footer-icon"></i>
-                                </a>
-                                <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262">
-                                    <i class="fa fa-linkedin footer-icon"></i>
-                                </a>
-                                <a href="http://www.pinterest.com/aucareer/">
-                                    <i class="fa fa-pinterest footer-icon"></i>
-                                </a>
-                                <a href="https://vimeo.com/aucareer">
-                                    <i class="fa fa-vimeo-square footer-icon"></i>
-                                </a>
-                                <a href="http://tigersprepare.blogspot.com/">
-                                    <i class="fa fa-blogger footer-icon"></i>
-                                </a>
-                            </li>
-                        </ul>
+                    <ul>
+                        <li>
+                            <a href="http://www.facebook.com/AUCareer">
+                                <i class="fa fa-facebook footer-icon"></i>
+                            </a>
+                            <a href="http://twitter.com/AUCareer">
+                                <i class="fa fa-twitter footer-icon"></i>
+                            </a>
+                            <a href="http://www.linkedin.com/groups?about=&amp;gid=1878262">
+                                <i class="fa fa-linkedin footer-icon"></i>
+                            </a>
+                            <a href="http://www.pinterest.com/aucareer/">
+                                <i class="fa fa-pinterest footer-icon"></i>
+                            </a>
+                            <a href="https://vimeo.com/aucareer">
+                                <i class="fa fa-vimeo-square footer-icon"></i>
+                            </a>
+                            <a href="http://tigersprepare.blogspot.com/">
+                                <i class="fa fa-blogger footer-icon"></i>
+                            </a>
+                        </li>
+                    </ul>
 -->
-                    </section>
-                    
-                    <section>
-                        <ul>
-                            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
-                            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
-                            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
-                        </ul>
-                    </section>
-                </footer>
-                
-                <div class="subfooter" role="contentinfo">
-                    <div>
-                           <span>Auburn University</span>&sdot;<!--
-                        --><span>Auburn, Alabama 36849</span>&sdot;<!--
-                        --><span><a href="tel:3348444744">(334) 844-4744</a></span>&sdot;<!--
-                        --><span><!--
-                                --><script type="text/javascript">
-                                    emailE='auburn.edu';
-                                    emailE=('aucc' + '@' + emailE);
-                                    document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");
-                                </script>
-                           </span>
-                    </div>
-                    
-                    <div>
-                        <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a></span>&sdot;<!-- 
-                        --><span><a href="http://www.auburn.edu/privacy/">Privacy</a></span>&sdot;<!--
-                        --><span><a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a></span>
-                    </div>
+                </section>
+
+                <section>
+                    <ul>
+                        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
+                        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
+                        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
+                    </ul>
+                </section>
+            </footer>
+
+            <div class="subfooter" role="contentinfo">
+                <div>
+                       <span>Auburn University</span>&sdot;<!--
+                    --><span>Auburn, Alabama 36849</span>&sdot;<!--
+                    --><span><a href="tel:3348444744">(334) 844-4744</a></span>&sdot;<!--
+                    --><span><!--
+                            --><script type="text/javascript">
+                                emailE='auburn.edu';
+                                emailE=('aucc' + '@' + emailE);
+                                document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");
+                            </script>
+                       </span>
+                </div>
+
+                <div>
+                    <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a></span>&sdot;<!-- 
+                    --><span><a href="http://www.auburn.edu/privacy/">Privacy</a></span>&sdot;<!--
+                    --><span><a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a></span>
                 </div>
             </div>
         </div>
@@ -434,8 +382,7 @@ The goddess of lux...
         <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
         
         <!-- Application JavaScript -->
-        
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
             $(document).ready(function () {
                 $.ajax({
                     url: "http://vimeo.com/api/v2/aucareer/videos.json",
@@ -444,6 +391,6 @@ The goddess of lux...
                     $("iframe.slider").attr("src", "//player.vimeo.com/video/" + data[0].id);
                 });
             });
-        </script>
+        </script>-->
     </body>
 </html>

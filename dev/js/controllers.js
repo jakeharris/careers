@@ -15,19 +15,37 @@ var home = angular.module('career-center-home', [])
 */
 
 home.controller('calendar-ctrl', function ($scope, $http) {
-  $http.get('./events.json')
+  $http.get('http://auburn.edu/career/events.json')
        .then(function (res) {
          $scope.events = res.data.sort(function (a, b) {
-            if(a.date['numerical-month'] == b.date['numerical-month']) return a.date['day'] - b.date['day']
-            return a.date['numerical-month'] - b.date['numerical-month']
-         }).slice(0, 3)
+            var aRelativeMonth = getRelativeMonth(a.date['numerical-month'])
+              , bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
+            
+            if(aRelativeMonth == bRelativeMonth) return a.date['day'] - b.date['day']
+            return aRelativeMonth - bRelativeMonth
+         }).slice(0, 6)
        })
+  
+  var getRelativeMonth = function (month) {    
+    var currentMonth = new Date().getMonth() + 1
+    
+    // Examples:
+    // month = 10, currentMonth = 11
+    //   return 10 + (12 - 11) = 11
+    // month = 1, currentMonth = 1
+    //   return 0
+    
+    if(month - currentMonth >= 0)
+      return month - currentMonth
+    else
+      return month + (12 - currentMonth)
+    
+  }
 })
-
 
 home.controller('twitter-ctrl', function ($scope, $http) {
   $scope.hw = 'Hello world!'
-  $http.get('./twitter.json')
+  $http.get('http://auburn.edu/career/twitter.json')
        .then(function (res) {
            var tweets = res.data
             for(var t in tweets) {
@@ -75,7 +93,6 @@ home.controller('blogger-ctrl', function ($scope, $http) {
   $http.get('https://www.googleapis.com/blogger/v3/blogs/2761218641303524120/posts?key=AIzaSyAsBnM3FEIP1giu8NLIFG7TpoJAFLyIung&maxCount=3')
        .then(function (res) {
            $scope.blog = res.data[0] || res.data || { }
-           console.log(res.data.items.slice(0, 3))
            $scope.blog.items = res.data.items.slice(0, 3)
            $scope.blog.sanitized = { }
            for(var post in $scope.blog.items) {
@@ -109,5 +126,3 @@ home.controller('blogger-ctrl', function ($scope, $http) {
     return m;
   }
 })
-
-
