@@ -960,7 +960,7 @@ ul li {
 .event-date {
   color: #dd550c;
   text-align: right;
-  
+  margin-right: 2.1rem;
   width: 15%;
 }
 
@@ -982,7 +982,9 @@ ul li {
 }
 
 @media (min-width: 1105px) {
-  margin-right: 1.8rem;
+  .event-date { 
+    margin-right: 1.8rem;
+  }
 }
 
 .ad {
