@@ -37,7 +37,6 @@
         <!-- Application-specific CSS/JS -->
         <script src="components/angular/angular.js"></script>
         <script src="js/controllers.js"></script>
-        <script src="js/modernizr.js"></script>
     </head>
 
     <body class="{{ $action }}">
@@ -191,7 +190,7 @@
                             <i class="fa icon-briefcase block-bg hours-bg"></i>
                         </div>
                         
-                        <div class="block events" ng-controller="calendar-ctrl" style="flex-basis: 66%;">
+                        <div class="block events" ng-controller="calendar-ctrl">
                             <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
                             <ul>
                                 <li class="event" ng-repeat="event in events">
@@ -232,9 +231,9 @@ The dawn had faded, the trees and leaves made gentle cracking sounds when the wi
 The goddess of lux...
 
 -->
-                        <div class="block tweets" ng-controller="twitter-ctrl" style="flex-basis: 66%; flex-direction: row;">
+                        <div class="block tweets" ng-controller="twitter-ctrl">
                             <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
-                            <div class="tweet-column" style="width: 49%;display:inline-flex;flex-direction:column;flex-basis:49%;">
+                            <div class="tweet-column">
                               <div class="tweets-text" data-twitter="">
                                   <a class="tweets-link" ng-if="tweets[0].data.url !== undefined && tweets[0].data.url != ''" href="{{ tweets[0].data.url }}">{{ tweets[0].data.text }}</a>
                                   <span ng-if="tweets[0].data.url === undefined || tweets[0].data.url == ''">{{ tweets[0].data.text }}</span>
@@ -246,7 +245,7 @@ The goddess of lux...
                                   <a class="tweets-date" href="https://twitter.com/{{ tweets[1].user.screen_name }}/status/{{ tweets[1].id_str }}">{{ tweets[1].data.date }}</a>
                               </div>
                             </div>
-                            <div class="tweet-column" style="width: 50%;display:inline-flex;flex-direction:column;flex-basis:50%;">
+                            <div class="tweet-column">
                               <div class="tweets-text" data-twitter="">
                                   <a class="tweets-link" ng-if="tweets[2].data.url !== undefined && tweets[2].data.url != ''" href="{{ tweets[2].data.url }}">{{ tweets[2].data.text }}</a>
                                   <span ng-if="tweets[2].data.url === undefined || tweets[2].data.url == ''">{{ tweets[2].data.text }}</span>
