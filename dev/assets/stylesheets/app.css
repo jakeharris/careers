@@ -839,9 +839,7 @@ ul li {
           flex-direction: column;
   
   flex-basis: 49%;
-  width: 49%;
-  
-  
+  width: 49%;  
 }
 
 .tweets-text {
@@ -956,7 +954,7 @@ ul li {
 }
 
 .events ul {
-  display: -ms-flex-box;
+  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   -webkit-flex-wrap: wrap;
