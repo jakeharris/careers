@@ -306,6 +306,7 @@ header {
 
 .header-logo {
   padding: 0 0 2rem 2rem;
+  display: inline-block;
   flex-basis: 100%;
   width: 100%;
 }
@@ -509,6 +510,7 @@ header {
 .social-nav .social-icon {
     flex-basis: 49%;
     width: 49%;
+    display: inline-block;
     
     border: none;
     padding: 0; margin: 0;
