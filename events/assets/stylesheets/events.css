@@ -1,6 +1,6 @@
 .events {
-    flex-direction: column;
     width: 100%;
+    height: 100%;
 }
 .events h2 {
     justify-content: center;
@@ -8,26 +8,49 @@
     padding-bottom: 1rem;
 }
 
+.events-internal {
+    flex-basis: 66%;
+    width: 66%;
+    height: 50%;
+}
+.events-external {
+    flex-basis: 33%;
+    width: 33%; 
+    height: 50%;
+}
+
+.events-internal ul,
+.events-external ul{
+    display: -webkit-flex;
+    display:    -moz-flex;
+    display:     -ms-flexbox;
+    display:         flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 600px;
+}
+
 .events ul .event {
-    display: inline-flex;  
     justify-content: space-between;
     padding-bottom: 1rem;
     padding-right: 3rem;
     flex-basis: 100%;
     width: 100%;
+    max-height: 13rem;
 }
 
-@media (min-width: 768px) {
-    .events ul .event {
-        flex-basis: 50%;
-        width: 50%;
-    } 
+.events-external ul .event-date {
+  color: #127539;
 }
 
 @media (min-width: 992px) {
     .events ul .event {
-        flex-basis: 33%;
-        width: 33%;
+        flex-basis: 50%;
+        width: 50%;
+    }
+    .events .events-external ul .event {
+        flex-basis: 100%;
+        width:100%;
     }
 }
 

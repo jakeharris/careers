@@ -4,14 +4,21 @@ events.controller('calendar-ctrl', function ($scope, $http) {
   'use strict';
   $http.get('../events.json')
        .then(function (res) {
-         $scope.events = res.data.sort(function (a, b) {
-            var aRelativeMonth = getRelativeMonth(a.date['numerical-month'])
-              , bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
-            
-            if(aRelativeMonth == bRelativeMonth) return a.date.day - b.date.day
-            return aRelativeMonth - bRelativeMonth
-         }).slice(0, 6)
-       })
+         $scope.events = res.data.filter(function (el) {
+           return !('external-event' in el)
+         }).sort(function (a, b) { return byRelativeImmediacy(a, b) })
+         $scope.externalEvents = res.data.filter(function (el) {
+           return 'external-event' in el
+         }).sort(function (a, b) { return byRelativeImmediacy(a, b) })
+  })
+  
+  var byRelativeImmediacy = function(a, b) {
+      var aRelativeMonth = getRelativeMonth(a.date['numerical-month'])
+        , bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
+
+      if(aRelativeMonth == bRelativeMonth) return a.date.day - b.date.day
+      return aRelativeMonth - bRelativeMonth
+  }
   
   var getRelativeMonth = function (month) {    
     var currentMonth = new Date().getMonth() + 1
