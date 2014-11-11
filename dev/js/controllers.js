@@ -17,12 +17,14 @@ var home = angular.module('career-center-home', [])
 home.controller('calendar-ctrl', function ($scope, $http) {
   $http.get('http://auburn.edu/career/events.json')
        .then(function (res) {
-         $scope.events = res.data.sort(function (a, b) {
-            var aRelativeMonth = getRelativeMonth(a.date['numerical-month'])
-              , bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
+         $scope.events = res.data.filter(function (el) {
+           return !('external-event' in el)
+         }).sort(function (a, b) {
+           var aRelativeMonth = getRelativeMonth(a.date['numerical-month'])
+             , bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
             
-            if(aRelativeMonth == bRelativeMonth) return a.date['day'] - b.date['day']
-            return aRelativeMonth - bRelativeMonth
+           if(aRelativeMonth == bRelativeMonth) return a.date['day'] - b.date['day']
+           return aRelativeMonth - bRelativeMonth
          }).slice(0, 6)
        })
   
