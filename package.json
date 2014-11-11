@@ -1,0 +1,52 @@
+{
+  "name": "careers",
+  "version": "1.0.0",
+  "description": "careers\r =======",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "*",
+    
+    "time-grunt": "1.0.0",
+    "jit-grunt": "0.9.0",
+    
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-contrib-connect": "0.8.0",
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-contrib-sass": "0.8.1",
+    "autoprefixer": "3.1.0",
+    "wiredep": "1.8.5",
+    "grunt-rev": "0.1.0",
+    "grunt-usemin": "2.6.0",
+    "grunt-contrib-imagemin": "0.9.1",
+    "grunt-svgmin": "1.0.0",
+    "grunt-htmlmin": "0.1.4",
+    "grunt-concurrent": "1.0.0",
+    "assemble": "0.4.42",
+    "grunt-ftp-deploy": "0.1.9",
+    
+    "jshint": "^2.5.5",
+    "jshint-stylish": "1.0.0",
+    "broccoli": "^0.12.3",
+    "handlebars": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javakat/careers.git"
+  },
+  "author": "Clay Miller (clay@smockle.com), Jake Harris (milieu@javakat.io)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javakat/careers/issues"
+  },
+  "homepage": "https://github.com/javakat/careers"
+}
+
