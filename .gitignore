@@ -7,3 +7,4 @@ node_modules/.bin/jshint*
 .jshintrc
 node_modules/
 */*/assets/images
+events.json

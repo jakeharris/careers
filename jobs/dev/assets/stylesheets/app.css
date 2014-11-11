@@ -760,6 +760,11 @@ ul li {
   background-size: 8rem !important;
 }
 
+.events ul + a {
+  position: relative;
+  top: -1.75rem;
+}
+
 .event {
   margin-bottom: 1.6rem;
   -webkit-flex-wrap: nowrap;
