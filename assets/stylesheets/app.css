@@ -14,13 +14,159 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @font-face {
   font-family: 'Norwester';
-  src: asset-url("norwester.eot?9309851", font);
-  src: asset-url("norwester.eot?9309851#iefix", font) format("embedded-opentype"), asset-url("norwester.woff?9309851", font) format("woff"), asset-url("norwester.ttf?9309851", font) format("truetype"), asset-url("norwester.svg?9309851#fontello", font) format("svg");
+  src: url("../fonts/norwester.eot?9309851");
+  src: url("../fonts/norwester.eot?9309851#iefix") format("embedded-opentype"), 
+       url("../fonts/norwester.woff?9309851") format("woff"), 
+       url("../fonts/norwester.ttf?9309851") format("truetype"), 
+       url("../fonts/norwester.svg?9309851#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-e9s38z');
+	src:url('../fonts/icomoon.eot?#iefix-e9s38z') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-e9s38z') format('woff'),
+		url('../fonts/icomoon.ttf?-e9s38z') format('truetype'),
+		url('../fonts/icomoon.svg?-e9s38z#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.flex.start {
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.input-group-addon-md {
+    min-width: 44px;   
+}
+
+.icon-tack:before {
+	content: "\e600";
+}
+.icon-office:before {
+	content: "\e601";
+}
+.icon-ellipsis-glass:before {
+	content: "\e602";
+}
+.icon-interviewer:before {
+	content: "\e603";
+}
+.icon-tie:before {
+	content: "\e604";
+}
+.icon-user:before {
+	content: "\f007";
+}
+.icon-clock-o:before {
+	content: "\f017";
+}
+.icon-lock:before {
+	content: "\f023";
+}
+.icon-bookmark:before {
+	content: "\f02e";
+}
+.icon-edit:before {
+	content: "\f040";
+}
+.icon-map-marker:before {
+	content: "\f041";
+}
+.icon-calendar:before {
+	content: "\f073";
+}
+.icon-twitter-square:before {
+	content: "\f081";
+}
+.icon-facebook-square:before {
+	content: "\f082";
+}
+.icon-linkedin-square:before {
+	content: "\f08c";
+}
+.icon-thumb-tack:before {
+	content: "\f08d";
+}
+.icon-phone:before {
+	content: "\f095";
+}
+.icon-twitter:before {
+	content: "\f099";
+}
+.icon-facebook:before {
+	content: "\f09a";
+    margin-left: -3px;
+}
+.icon-certificate:before {
+    content: '\f0a3';   
+}
+.icon-group:before {
+	content: "\f0c0";
+}
+.icon-chain:before {
+	content: "\f0c1";
+}
+.icon-navicon:before {
+	content: "\f0c9";
+}
+.icon-pinterest:before {
+	content: "\f0d2";
+    margin-left: 10px;
+}
+.icon-pinterest-square:before {
+	content: "\f0d3";
+}
+.icon-google-plus-square:before {
+	content: "\f0d4";
+}
+.icon-google-plus:before {
+	content: "\f0d5";
+}
+.icon-linkedin:before {
+	content: "\f0e1";
+}
+.icon-briefcase:before {
+	content: "\f0f2";
+}
+.icon-ellipsis-h:before {
+	content: "\f141";
+}
+.icon-compass:before {
+	content: "\f14e";
+}
+.icon-tumblr:before {
+	content: "\f173";
+}
+.icon-tumblr-square:before {
+	content: "\f174";
+}
+.icon-vimeo-square:before {
+    content: '\f194'; 
+    margin-left: 8px;
+}
+
+
+
 .fa-blogger {
-  background-image: url("blogger.svg") !important;
+  background-image: url("../images/blogger-invert.svg") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 2rem !important;
@@ -28,12 +174,23 @@
   vertical-align: bottom;
 }
 
+.row {
+  margin-left: 0; margin-right: 0;   
+}
+
 iframe {
   border: none !important;   
 }
 
+.video {
+  height: 22.92308vw;
+  width: 67%;
+  margin-top: -1.5rem;
+  margin-right: -2rem;
+}
+
 .flex, .centered, .place,
-.times, .appointments, 
+.times, .appointments,
 .event, .login {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -76,8 +233,15 @@ address {
   width: 100vw !important;
 }
 
-.blog-title {
+.blog-post {
+  padding-bottom: 2rem;
+}
+.post-title {
   font-family: "Source Sans Pro"; 
+}
+.post-details {
+  color: #747474;
+  font-size: 1.7rem;
 }
 .blog-readmore {
   padding-top: 1rem;
@@ -113,6 +277,10 @@ body {
   font-size: 16px;
 }
 
+ul {
+  list-style: none;
+}
+
 ul li {
   background: none;
 }
@@ -137,7 +305,8 @@ header {
 }
 
 .header-logo {
-  padding: 2rem;
+  padding: 0 0 2rem 2rem;
+  display: inline-block;
   flex-basis: 100%;
   width: 100%;
 }
@@ -156,10 +325,11 @@ header {
 .header-title,
 .header-title a {
   color: white;
-  font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 3rem;
   text-align: left;
   padding: 0.5rem;
+  margin-bottom: -6px;
   flex-basis: 100%;
   width: 100%;
 }
@@ -167,7 +337,36 @@ header {
 .header-title a:hover {
   color: #f68026;
 }
-
+.preheader-navbar {
+    height: 3rem;
+    width: 100%;
+    text-align: right;
+    box-sizing: border-box;
+}
+.preheader-navbar ul li {
+    display: inline-block;
+    padding: 0;
+    margin-left: 1rem;
+}
+.preheader-navbar ul li::after {
+    content: ' /';
+    padding-left: 1rem;
+    color: #496e9c;
+}
+.preheader-navbar ul li:last-of-type::after {
+    padding: 0;
+    content: none;
+}
+.preheader-navbar ul li input {
+    border: none;   
+    height: 2.9rem;
+    width: 12rem;
+    background: #03244d;
+    color: white;
+}
+.preheader-navbar ul li input:focus {
+    outline: none;
+}
 .header-navbar {
   font-size: 3rem;
   text-align: left;
@@ -180,7 +379,7 @@ header {
 .header-navbar ul li {
   margin: 0;
   padding: 1rem .5rem;
-  font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: block;
   vertical-align: middle;
   text-align: left;
@@ -293,6 +492,93 @@ header {
     width: 65%;
   }
 }
+
+.social-nav {
+    position: fixed;
+    left: 0;
+    top: 40%;
+    
+    padding: 0; margin: 0;
+    
+    width: 13.3rem;
+    
+    display: -webkit-flex;
+    display:     -ms-flexbox;
+    display:         flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+.social-nav .social-icon {
+    flex-basis: 49%;
+    width: 49%;
+    display: inline-block;
+    
+    border: none;
+    padding: 0; margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    height: 6rem;
+}
+
+.sponsors {
+    width: 100%;
+    background: white;
+}
+
+.sponsors-header {
+    text-align: center;
+    margin: 0;
+    padding-top: 2.5rem;
+    padding-bottom: 2.3rem;
+    width: 100%;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.sponsors-content {
+    justify-content: space-between;
+    padding-top: 2.3rem;
+}
+
+.sponsor {
+    background: white;
+    width: 15rem;
+    height: 9.29rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 7rem;
+    overflow: hidden;
+    align-content: center;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.vert-centerer {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.sponsor img {
+    max-width: 15rem;
+    max-height: 9.29rem;
+}
+
+/* Thanks to demosthenes.info! */
+img.desaturate {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+    filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+img.desaturate:hover {
+    -webkit-filter:none;
+    filter:none;
+}
+
 
 footer {
   font-size: 1.4rem;
@@ -411,6 +697,7 @@ ul li {
   z-index: 2000;
   border-top: 1px solid #d7d7d7;
   border-bottom: 1px solid #d7d7d7;
+  min-height: 36rem;
 }
 
 .banner .slider {
@@ -463,7 +750,6 @@ ul li {
   box-sizing: border-box;
   background: white;
   border-top: 1px solid #d7d7d7;
-  height: 18rem;
   overflow: hidden;
 }
 
@@ -471,6 +757,11 @@ ul li {
   border: none;
   flex-basis: 100%;
   width: 100%;
+}
+
+.banner-bottom .slider img {
+    width: 100%;
+    height: 100%;
 }
 
 .banner-bottom .slider {
@@ -499,22 +790,11 @@ ul li {
   .banner-bottom .slider {
     flex-basis: 33.33333%;
     width: 33.33333%;
+    height: 100%;
   }
 
   .banner-bottom .slider:nth-of-type(2) {
     border-left: none;
-  }
-}
-
-@media (min-width: 1105px) {
-  .banner-bottom {
-    height: 21rem;   
-  }
-}
-
-@media (min-width: 1300px) {
-  .banner-bottom {
-    height: 25rem;   
   }
 }
 
@@ -543,23 +823,33 @@ ul li {
   padding: 5px;
 }
 
-.tweets-text {
+.tweets {
+  flex-basis: 66%;
+  width: 66%;
+}
+
+.tweet {
+  display: inline-flex;
+  width: 48%;
+  margin-right: 1%;
+}
+.tweet-text {
   position: relative;
   z-index: 2000;
   font-size: 2rem;
   line-height: 160%;
   padding-bottom: 20px;
 }
-.tweets-link {
+.tweet-link {
   color: #333;
 }
-.tweets-date {
+.tweet-date {
   color: #747474; 
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   padding: 0;
   display:block;
 }
-.tweets-date:hover {
+.tweet-date:hover {
   color: #747474;
   text-decoration: underline;
 }
@@ -575,7 +865,7 @@ ul li {
 }
 
 .place,
-.times,
+.times, 
 .appointments {
   margin-bottom: 1.6rem;
   -webkit-flex-wrap: nowrap;
@@ -615,6 +905,11 @@ ul li {
   width: 82%;
 }
 
+.subtle,
+.times-address .subtle {
+    color: #747474;
+}
+
 .social-icon {
   box-sizing: border-box;
   color: white;
@@ -622,7 +917,7 @@ ul li {
   border: 1px solid #f4f4f4;
   width: 8rem;
   height: 8rem;
-  font-size: 6rem;
+  font-size: 4rem;
   padding-top: 11px;
   margin-right: 1.3rem;
   margin-bottom: 1.6rem;
@@ -641,11 +936,37 @@ ul li {
   background-image: url("../images/blogger-invert.svg") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-size: 8rem !important;
+  background-size: 7rem !important;
+}
+
+.events {
+  flex-basis: 66%;
+  width: 66%;
+}
+
+.events ul,
+.tweets ul {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  max-height: 45rem;
+  height: 45rem;
+}
+
+.tweets ul {
+  max-height: 40rem;
+  height: 40rem;
 }
 
 .event {
-  margin-bottom: 1.6rem;
+  min-height: 14rem;
+  max-height: 14rem;
+  flex-basis: 50%;
+  width: 50%;
+  margin: 0.4rem 0;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
@@ -654,6 +975,9 @@ ul li {
   align-content: flex-start;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flex;
+  display: inline-flex;
 }
 
 .event-date,
@@ -665,8 +989,8 @@ ul li {
 .event-date {
   color: #dd550c;
   text-align: right;
-  margin-right: 1.8rem;
-  width: 18%;
+  margin-right: 2.1rem;
+  width: 15%;
 }
 
 .event-date-day {
@@ -684,6 +1008,12 @@ ul li {
 .event-details-name {
   color: #03244d;
   font-size: 2rem;
+}
+
+@media (min-width: 1105px) {
+  .event-date { 
+    margin-right: 1.8rem;
+  }
 }
 
 .ad {
@@ -1075,7 +1405,7 @@ ul li {
   }
 }
 .login-wrap::before {
-  font-family: 'FontAwesome';
+  font-family: 'icomoon';
   content: '\f14e';
   margin-top: -9rem;
   margin-right: -9rem;
@@ -1130,6 +1460,7 @@ ul li {
 .login-button--active:hover {
   background: #496e9c;
   color: white;
+  border: 1px solid white;
 }
 
 .flex--login {
@@ -1166,7 +1497,7 @@ ul li {
   }
 }
 .blanker-wrap::before {
-  font-family: 'FontAwesome';
+  font-family: 'icomoon';
   content: '\f073';
   margin-top: -3.8rem;
   margin-right: -6rem;
@@ -1358,18 +1689,21 @@ ul li {
   margin-top: -5rem;
   font-weight: bold;
 }
-.outforwork {
-    
+
+.icon {
+  font-family: 'icomoon';   
+}
+.aw-map-marker {
+  content: '/';
 }
 
-.outforwork {
-    
+#cc-carousel.carousel > .carousel-indicators {
+  bottom: 10px;
+  left: 50%;
+  text-align: center;
+  top:auto;
 }
 
-.outforwork {
-    
-}
-
-.outforwork {
+.carousel-inner > .item > img {
     
 }

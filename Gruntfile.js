@@ -1,5 +1,3 @@
-'use strict';
-
 // # Directory structure
 // We have a dev environment and a live environment.
 // The dev environment should always live within the
@@ -35,7 +33,7 @@
 
 
 module.exports = function (grunt) {
-  
+  'use strict';
   // # time-grunt
   // Times how long tasks take. Handy for identifying bottlenecks.
   require('time-grunt')(grunt)
@@ -98,23 +96,24 @@ module.exports = function (grunt) {
         port: 9000,
         open: true,
         livereload: 35729,
-        hostname: 'localhost'
+        hostname: 'localhost',
+        base: ''
       },
       livereload: {
-        options: {
-          middleware: function (tmp) {
-            return [
+        //options: {
+          //middleware: function (connect) {
+            //return [
               // TODO: consider whether we need this pattern
-              connect.static('.tmp'),
-              connect().use('/bower_components', connect.static('./bower_components')),
-              connect.static(config.dist)
-            ]
-          }
-        }
+              //connect.static('.tmp'),
+              //connect().use('/bower_components', connect.static('./bower_components')),
+              //connect.static('<%= config.dist %>')
+            //]
+          //}
+        //}
       },
       dist: {
         options: {
-          base: '<%= config.dist %>',
+          base: '',
           livereload: false
         }
       }
@@ -320,7 +319,11 @@ module.exports = function (grunt) {
           flatten: true,
           layout: '<%= config.master %>',
           data: '<%= config.assets %>/data/*.{json,yml}',
-          partials: '<%= config.partials %>'
+          partials: '<%= config.partials %>',
+          helpers: [
+            'handlebars-helpers',
+            '<%= config.assets %>/scripts/handlebars-helpers/*'
+          ]
         },
         files: {
           './': ['<%= config.views %>/*.hbs'] 

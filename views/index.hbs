@@ -1,68 +1,4 @@
-<!doctype html>
-<html lang="en" ng-app="career-center-home">
-  <head>
-    <!-- Meta Data -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <title>Career Center</title>
-
-    <!-- Bootstrap & Core CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
-
-    <!-- Application CSS -->
-    <link rel=stylesheet href="assets/stylesheets/app.css">
-
-    <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
-    <!--[if lt IE 9]>
-<script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
-<script src="//cdn.auburn.edu/assets/js/respond.src.js"></script>
-<link href="//cdn.auburn.edu/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
-<link href="assets/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
-<script src="assets/js/respond.proxy.js"></script>
-<![endif]-->
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
-
-    <!-- Application-specific CSS/JS -->
-    <script src="components/angular/angular.js"></script>
-    <script src="js/controllers.js"></script>
-  </head>
-
-  <body class="">
-    <div class="container">
-      <header role="banner" class="flex">
-  <a class="header-logo" href="http://www.auburn.edu">
-    <img src="//cdn.auburn.edu/assets/img/header-logo.png" alt="Auburn University Homepage" height="75" width="203">
-  </a>
-
-  <div class="header-right flex">                
-    <div class="header-title">
-      <a href="/career/">Career Center</a>
-
-    </div>
-
-    <div class="header-navbar">
-      <ul>
-        <li><a href="http://www.auburn.edu/career/students/">Students</a></li>
-        <li><a href="http://www.auburn.edu/career/alumni/">Alumni</a></li>
-        <li><a href="http://www.auburn.edu/career/parents/">Families</a></li>
-        <li><a href="http://www.auburn.edu/career/faculty/">Faculty</a></li>
-        <li><a href="http://hire.auburn.edu">Employers</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
-      <div class="social-nav">
+<div class="social-nav">
   <a href="http://www.facebook.com/AUCareer" class="social-icon icon-facebook"></a>
   <a href="http://www.twitter.com/AUCareer" class="social-icon icon-twitter"></a>
   <a href="http://www.linkedin.com/groups?about=&gid=1878262" class="social-icon icon-linkedin"></a>
@@ -172,91 +108,23 @@
         <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
          <!--Calendar -->
           <ul>
-          
+          {{#calendar events r=6}}
           <li class="event">
             <div class="event-date">
-              <div class="event-date-month">Jan</div>
-              <div class="event-date-day">28</div>
+              <div class="event-date-month">{{ date.[shortened-month] }}</div>
+              <div class="event-date-day">{{ date.day }}</div>
             </div>
             <div class="event-details">
-              
-              <div class="event-details-name">Internship and Part-Time Job Fair</div>
-              
-              <div class="event-details-location">Student Center Ballroom</div>
-              <div class="event-details-time">10AM - 1PM</div>
+              {{#if hasUrl}}
+              <a href="{{ url }}" class="event-details-name" target="_blank">{{ name }}</a>
+              {{else}}
+              <div class="event-details-name">{{ name }}</div>
+              {{/if}}
+              <div class="event-details-location">{{ location }}</div>
+              <div class="event-details-time">{{ date.time.start}} - {{ date.time.end }}</div>
             </div>
           </li>
-          
-          <li class="event">
-            <div class="event-date">
-              <div class="event-date-month">Feb</div>
-              <div class="event-date-day">10</div>
-            </div>
-            <div class="event-details">
-              
-              <div class="event-details-name">Engineering and Technical Career Expo</div>
-              
-              <div class="event-details-location">Auburn University Hotel and Conference Center</div>
-              <div class="event-details-time">3PM - 7PM</div>
-            </div>
-          </li>
-          
-          <li class="event">
-            <div class="event-date">
-              <div class="event-date-month">Feb</div>
-              <div class="event-date-day">25</div>
-            </div>
-            <div class="event-details">
-              
-              <div class="event-details-name">Communication and Media Career Day</div>
-              
-              <div class="event-details-location">Student Center Ballroom</div>
-              <div class="event-details-time">8AM - 3PM</div>
-            </div>
-          </li>
-          
-          <li class="event">
-            <div class="event-date">
-              <div class="event-date-month">Mar</div>
-              <div class="event-date-day">10</div>
-            </div>
-            <div class="event-details">
-              
-              <div class="event-details-name">Education Interview Day</div>
-              
-              <div class="event-details-location">Auburn University Hotel and Conference Center</div>
-              <div class="event-details-time">8AM - 3PM</div>
-            </div>
-          </li>
-          
-          <li class="event">
-            <div class="event-date">
-              <div class="event-date-month">Apr</div>
-              <div class="event-date-day">7</div>
-            </div>
-            <div class="event-details">
-              
-              <div class="event-details-name">All Majors Career Expo</div>
-              
-              <div class="event-details-location">Auburn University Hotel and Conference Center</div>
-              <div class="event-details-time">3PM - 7PM</div>
-            </div>
-          </li>
-          
-          <li class="event">
-            <div class="event-date">
-              <div class="event-date-month">Oct</div>
-              <div class="event-date-day">31</div>
-            </div>
-            <div class="event-details">
-              
-              <div class="event-details-name">Wicked Walk-ins with the Career Center</div>
-              
-              <div class="event-details-location">303 Martin Hall</div>
-              <div class="event-details-time">9AM - 4PM</div>
-            </div>
-          </li>
-          
+          {{/calendar}}
         </ul>
         <a href="http://www.auburn.edu/career/events/">More events</a>
         <i class="fa fa-calendar block-bg events-bg"></i>
@@ -265,50 +133,30 @@
         <div class="block tweets">
           <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
           <ul>
-            
+            {{#twitter tweets r=6}}
             <li class="tweet">
               <div class="tweet-text">
-                
-                <a class="tweet-link" href="http://t.co/VHCiqbZw0E">RT @TheAUPlainsman: REMINDER: Applications to work @TheAUPlainsman are due THIS Wednesday by 5 p.m. in SC 1111.  http…</a>
-                
-                <a class="tweet-date" href="https://twitter.com/AUCareer/status/534450259544776706">Mon Nov 17</a>
+                {{#if hasUrl}}
+                <a class="tweet-link" href="{{ data.url }}">{{ data.text }}</a>
+                {{else}}
+                <span>{{data.text}}</span>
+                {{/if}}
+                <a class="tweet-date" href="https://twitter.com/{{user.screen_name}}/status/{{id_str}}">{{data.date}}</a>
               </div>
             </li>
-            
-            <li class="tweet">
-              <div class="tweet-text">
-                
-                <a class="tweet-link" href="http://t.co/83QWc7gIdq">The holidays is a great time to give back, but who says you can&#x27;t do it year round w/ your career?  #giveback </a>
-                
-                <a class="tweet-date" href="https://twitter.com/AUCareer/status/534385790273740801">Mon Nov 17</a>
-              </div>
-            </li>
-            
-            <li class="tweet">
-              <div class="tweet-text">
-                
-                <span>@MeaghanWeir We are so glad you&#x27;re back! Yay!</span>
-                
-                <a class="tweet-date" href="https://twitter.com/AUCareer/status/533344981369757697">Fri Nov 14</a>
-              </div>
-            </li>
-            
-            <li class="tweet">
-              <div class="tweet-text">
-                
-                <span>Personal statement panel discussion 11/19, 3-4PM, Haley 2182. Learn what faculty look for in applications to grad programs. #gradschool</span>
-                
-                <a class="tweet-date" href="https://twitter.com/AUCareer/status/533282326613344256">Fri Nov 14</a>
-              </div>
-            </li>
-            
+            {{/twitter}}
           </ul>
           <i class="fa icon-twitter block-bg tweets-bg"></i>
         </div>
         <div class="block blog">
           <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
           <ul>
-            
+            {{#blog blog.items r=3}}
+            <li class="blog-post">
+              <h3><a class="h3-a post-title" href="{{ url }}">{{ title }}</a></h3>
+              <div class="post-details">{{ date }}</div>
+            </li>
+            {{/blog}}
           </ul>
           <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
           <i class="fa icon-edit block-bg blog-bg"></i>
@@ -359,65 +207,3 @@
 </div>
 </div>
 </div>
-      <div class="row footer-wrap hidden-print">
-  <footer>
-    <section>
-      <ul>
-        <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
-        <li><a href="http://www.auburn.edu/fye">First Year Experience</a></li>
-        <li><a href="http://harbert.auburn.edu/students/current/professional-and-career-development-resources/index.php">College of Business OPCD</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <ul>
-        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
-        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
-        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
-      </ul>
-    </section>
-  </footer>
-
-  <div class="subfooter" role="contentinfo">
-    <div>
-      <span>Auburn University</span>&sdot;
-      <span>Auburn, Alabama 36849</span>&sdot;
-      <span>(334) 844-4000</span>&sdot;
-      <span>
-        <script type="text/javascript">
-          emailE='auburn.edu';
-          emailE=('webmaster' + '@' + emailE);
-          document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");
-        </script>
-      </span>
-    </div>
-
-    <div>
-      <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a></span>&sdot;
-      <span><a href="http://www.auburn.edu/privacy/">Privacy</a></span>&sdot;
-      <span><a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a></span>
-    </div>
-  </div>
-</div>
-    </div>
-
-    <div class="to-top" style="display:none;"><a href="#top"></a></div>
-
-    <!-- jQuery, Bootstrap, and Default AU Code JavaScript --> 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
-    <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
-
-  </body>
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-12338791-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</html>
