@@ -26,7 +26,6 @@ home.controller('calendar-ctrl', function ($scope, $http) {
 
 
 home.controller('twitter-ctrl', function ($scope, $http) {
-  $scope.hw = 'Hello world!'
   $http.get('./twitter.json')
        .then(function (res) {
            var tweets = res.data
