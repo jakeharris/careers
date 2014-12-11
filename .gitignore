@@ -10,3 +10,4 @@ node_modules/.bin/jshint*
 */*/assets/images
 events.json
 .sass-cache/
+./*.html
