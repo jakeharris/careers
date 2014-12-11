@@ -9,3 +9,4 @@ node_modules/.bin/jshint*
 .jshintrc
 */*/assets/images
 events.json
+.sass-cache/
