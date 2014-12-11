@@ -1,11 +1,4 @@
-<div class="social-nav">
-  <a href="http://www.facebook.com/AUCareer" class="social-icon icon-facebook"></a>
-  <a href="http://www.twitter.com/AUCareer" class="social-icon icon-twitter"></a>
-  <a href="http://www.linkedin.com/groups?about=&gid=1878262" class="social-icon icon-linkedin"></a>
-  <a href="http://www.pinterest.com/AUCareer" class="social-icon icon-pinterest"></a>
-  <a href="http://www.vimeo.com/AUCareer" class="social-icon icon-vimeo-square"></a>
-  <a href="http://tigersprepare.blogspot.com/" class="social-icon fa-blogger"></a>
-</div>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
 
 <div class="brow row">
   <div class="banner flex">
@@ -28,13 +21,13 @@
       </div>
     </form>
     <div id="cc-carousel" class="carousel slider blanker" data-ride="carousel">
-      
+
       <ol class="carousel-indicators">
         <li data-target="#cc-carousel" data-slide-to="0" class="active"></li>
         <li data-target="#cc-carousel" data-slide-to="1"></li>
       </ol>
 
-      
+
       <div class="carousel-inner">
         <div class="item active">
           <img src="assets/images/Comm&Med_Homepage.png" alt="...">
@@ -44,7 +37,7 @@
         </div>
       </div>
 
-      
+
       <a class="left carousel-control" href="#cc-carousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
@@ -52,12 +45,6 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
     </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="inbetween flex">
-
   </div>
 </div>
 
@@ -103,85 +90,71 @@
         </div>
         <i class="fa icon-briefcase block-bg hours-bg"></i>
       </div>
-
       <div class="block events">
         <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
-         <!--Calendar -->
-          <ul>
-          {{#calendar events r=6}}
-          <li class="event">
+        <ul ng-controller="calendar-ctrl">
+          <li class="event" ng-repeat="event in events">
             <div class="event-date">
-              <div class="event-date-month">{{ date.[shortened-month] }}</div>
-              <div class="event-date-day">{{ date.day }}</div>
+              <div class="event-date-month">[[ event.date.[shortened-month] ]]</div>
+              <div class="event-date-day">[[ event.date.day ]]</div>
             </div>
             <div class="event-details">
-              {{#if hasUrl}}
-              <a href="{{ url }}" class="event-details-name" target="_blank">{{ name }}</a>
-              {{else}}
-              <div class="event-details-name">{{ name }}</div>
-              {{/if}}
-              <div class="event-details-location">{{ location }}</div>
-              <div class="event-details-time">{{ date.time.start}} - {{ date.time.end }}</div>
+              <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
+              <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
+              <div class="event-details-location">[[ event.location ]]</div>
+              <div class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
             </div>
           </li>
-          {{/calendar}}
         </ul>
         <a href="http://www.auburn.edu/career/events/">More events</a>
         <i class="fa fa-calendar block-bg events-bg"></i>
       </div>
-      <div class="flex">
-        <div class="block tweets">
-          <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
-          <ul>
-            {{#twitter tweets r=6}}
-            <li class="tweet">
-              <div class="tweet-text">
-                {{#if hasUrl}}
-                <a class="tweet-link" href="{{ data.url }}">{{ data.text }}</a>
-                {{else}}
-                <span>{{data.text}}</span>
-                {{/if}}
-                <a class="tweet-date" href="https://twitter.com/{{user.screen_name}}/status/{{id_str}}">{{data.date}}</a>
-              </div>
-            </li>
-            {{/twitter}}
-          </ul>
-          <i class="fa icon-twitter block-bg tweets-bg"></i>
-        </div>
-        <div class="block blog">
-          <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
-          <ul>
-            {{#blog blog.items r=3}}
-            <li class="blog-post">
-              <h3><a class="h3-a post-title" href="{{ url }}">{{ title }}</a></h3>
-              <div class="post-details">{{ date }}</div>
-            </li>
-            {{/blog}}
-          </ul>
-          <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
-          <i class="fa icon-edit block-bg blog-bg"></i>
-        </div>
-        </div>
+    </div>
+    <div class="flex">
+      <div class="block tweets">
+        <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
+        <ul ng-controller="twitter-ctrl">
+          <li class="tweet" ng-repeat="tweet in tweets">
+            <div class="tweet-text">
+              <a ng-if="tweet.data.url != '' && tweet.data.url !== undefined" class="tweet-link" href="[[ tweet.data.url ]]">[[ tweet.data.text ]]</a>
+              <span ng-if="tweet.data.url == '' || tweet.data.url === undefined">[[tweet.data.text]]</span>
+              <a class="tweet-date" href="https://twitter.com/[[tweet.user.screen_name]]/status/[[tweet.id_str]]">[[tweet.data.date]]</a>
+            </div>
+          </li>
+        </ul>
+        <i class="fa icon-twitter block-bg tweets-bg"></i>
+      </div>
+      <div class="block blog">
+        <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
+        <ul ng-controller="blogger-ctrl">
+          <li class="blog-post" ng-repeat="post in blog.posts">
+            <h3><a class="h3-a post-title" href="{{ post.url }}">{{ post.title }}</a></h3>
+            <div class="post-details">{{ post.date }}</div>
+          </li>
+        </ul>
+        <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
+        <i class="fa icon-edit block-bg blog-bg"></i>
       </div>
     </div>
-    <div class="row sponsors">
-      <h2 class="sponsors-header">Sponsors</h2>
-      <div class="flex sponsors-content">
-        <div class="sponsor">
-          <span class="vert-centerer"></span>
-          <a href="http://www.adtran.com/">
-            <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/adtran.jpg" class="grayscale grayscale-fade"></img>
-          </a>
-      </div>
+  </div>
+  <div class="row sponsors">
+    <h2 class="sponsors-header">Sponsors</h2>
+    <div class="flex sponsors-content">
       <div class="sponsor">
-        <span class="vert-centerer">
-        </span>
-        <a href="http://www.ascendmaterials.com/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/ascend.png" class="grayscale grayscale-fade"></img>
+        <span class="vert-centerer"></span>
+        <a href="http://www.adtran.com/">
+          <img src="jobs/assets/images/sponsors/tech-eng/adtran.jpg" class="grayscale grayscale-fade"></img>
         </a>
     </div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.chevron.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/chevron.gif" class="grayscale grayscale-fade"></img></a></div>
-  <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.evonik.com/en/Pages/default.aspx"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/evonik.jpg" class="grayscale grayscale-fade"></img></a></div>
+    <div class="sponsor">
+      <span class="vert-centerer">
+      </span>
+      <a href="http://www.ascendmaterials.com/">
+        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/ascend.png" class="grayscale grayscale-fade"></img>
+      </a>
+  </div>
+  <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.chevron.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/chevron.gif" class="grayscale grayscale-fade"></img></a></div>
+<div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.evonik.com/en/Pages/default.aspx"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/evonik.jpg" class="grayscale grayscale-fade"></img></a></div>
 <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.exxonmobil.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/exxon-mobil.ps" class="grayscale grayscale-fade"></img></a></div>
 <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.gp.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/georgia-pacific.eps" class="grayscale grayscale-fade"></img></a></div>
 <div class="sponsor"><span class="vert-centerer"></span><a href="http://harris.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/harris.eps" class="grayscale grayscale-fade"></img></a></div>
@@ -203,7 +176,6 @@
 <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.sherwin-williams.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/sherwin-williams.jpg" class="grayscale grayscale-fade"></img></a></div>
 <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/tower-loan.jpg" class="grayscale grayscale-fade"></img></a></div>
 <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/callidus-cloud.png" class="grayscale grayscale-fade"></img></a></div>
-</div>
 </div>
 </div>
 </div>

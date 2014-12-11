@@ -2,8 +2,8 @@ var home = angular.module('career-center-home', [])
 
 home.config(function($interpolateProvider) {
   'use strict';
-  $interpolateProvider.startSymbol('{[{');
-  $interpolateProvider.endSymbol('}]}');
+  $interpolateProvider.startSymbol('[[');
+  $interpolateProvider.endSymbol(']]');
 });
 
 /* NOTE:
@@ -88,6 +88,9 @@ home.controller('twitter-ctrl', function ($scope, $http) {
       }
       while(~m.indexOf('&amp;'))
           m = m.replace('&amp;', '&')
+      if(~m.indexOf('RT'))
+        while(/(http:\/\/\S*){1}?/.test(m))
+          m = m.replace(/(http:\/\/\S*){1}?/.exec(m)[0], '')
       for(var u in mentions) {
              
       }
@@ -103,11 +106,11 @@ home.controller('blogger-ctrl', function ($scope, $http) {
   $http.get('https://www.googleapis.com/blogger/v3/blogs/2761218641303524120/posts?key=AIzaSyAsBnM3FEIP1giu8NLIFG7TpoJAFLyIung&maxCount=3')
        .then(function (res) {
            $scope.blog = res.data[0] || res.data || { }
-           $scope.blog.items = res.data.items.slice(0, 3)
+           $scope.blog.posts = res.data.items.slice(0, 3)
            $scope.blog.sanitized = { }
-           for(var post in $scope.blog.items) {
-               var d = new Date($scope.blog.items[post].published.split('+0000').join(''))
-               $scope.blog.items[post].date = '' + d.toDateString().substr(0, d.toDateString().length - 5)
+           for(var post in $scope.blog.posts) {
+               var d = new Date($scope.blog.posts[post].published.split('+0000').join(''))
+               $scope.blog.posts[post].date = '' + d.toDateString().substr(0, d.toDateString().length - 5)
            }
            //for(var p in $scope.blog.items) //only necessary to sanitize post contents, not title
              //$scope.blog.sanitized.posts[p] = sanitize($scope.blog.items[p])
