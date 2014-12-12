@@ -12,3 +12,4 @@ events.json
 .sass-cache/
 *.html
 assets/styles/*.cs*
+npm-debug.log
