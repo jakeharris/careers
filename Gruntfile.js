@@ -1,6 +1,6 @@
 // # Directory structure
 
-// ## TODO: Determine how to develop via Github, and how that 
+// ## TODO: Determine how to develop via Github, and how that
 //    incorporates the live/dev directory structure.
 
 // ## If we have a dev environment and a live environment:
@@ -46,13 +46,13 @@ module.exports = function (grunt) {
   // # time-grunt
   // Times how long tasks take. Handy for identifying bottlenecks.
   require('time-grunt')(grunt);
-  
+
   // # jit-grunt
   // Load grunt plugins without using a .loadNpmTasks block at the end of the Gruntfile.
   require('jit-grunt')(grunt);
-  
+
   grunt.initConfig({
-    
+
     // # Project settings
     config: {
       assets: 'assets',
@@ -61,12 +61,12 @@ module.exports = function (grunt) {
       partials: 'views/partials/*.hbs',
       dist: '.'
     },
-    
+
     // # Tasks I'd like to run, but I am not yet:
     // ## autoprefixer
     //    Automagically adds vendor-prefixed rules to match non-prefixed rules
     //    we use that we might've forgotten about!
-    //    e.g. 
+    //    e.g.
     //    `display: flex;`
     //    becomes
     //    `display: flex;
@@ -79,18 +79,18 @@ module.exports = function (grunt) {
     //    Minify our files.
     // ## ftp-deploy
     //    Pushes files over ftp for you.
-    
+
     // # Tasks I might like to run if they prove useful enough:
     // ## wiredep
     //    Inject Bower components into our master page.
     // ## concurrent
     //    Runs specified tasks in parallel to speed up builds.
- 
-    
-    
-    
+
+
+
+
     // # watch
-    // Watch for changes in the specified files and run the 
+    // Watch for changes in the specified files and run the
     // associated tasks.
     watch: {
       assemble: {
@@ -98,7 +98,7 @@ module.exports = function (grunt) {
         tasks: ['assemble']
       },
       gruntfile: {
-        files: ['Gruntfile.js'] 
+        files: ['Gruntfile.js']
       },
       sass: {
         files: ['<%= config.assets %>/styles/{,*/}*.{scss,sass}'],
@@ -107,9 +107,31 @@ module.exports = function (grunt) {
       js: {
         files: ['<%= config.assets %>/scripts/{,*/}*.js'],
         tasks: ['jshint:all']
+      },
+      livereload: {
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        },
+        files: [
+          '<%= config.dist %>/{,*/}*.html',
+          '<%= config.assets %>/styles/{,*/}*.css',
+          '<%= config.assets %>/scripts/{,*/}*.js'
+        ]
       }
     },
-    
+
+    connect: {
+      options: {
+        port: 1107,
+        open: true,
+        livereload: 35729,
+        hostname: 'localhost'
+      },
+      livereload: {
+
+      }
+    },
+
     // # clean
     // Empty out folders.
     clean: {
@@ -123,9 +145,9 @@ module.exports = function (grunt) {
         }]
       }
     },
-    
+
     // # sass
-    // Compiles Sass to CSS. 
+    // Compiles Sass to CSS.
     sass: {
       options: {
         loadPath: 'bower_components'
@@ -140,7 +162,7 @@ module.exports = function (grunt) {
         }]
       }
     },
-    
+
     // # assemble
     // Compiles Handlebars layouts, partials, and pages
     // into servable HTML.
@@ -157,13 +179,13 @@ module.exports = function (grunt) {
           ]
         },
         files: {
-          './': ['<%= config.views %>/*.hbs'] 
+          './': ['<%= config.views %>/*.hbs']
         }
       }
     },
-    
+
     // # jshint
-    // Ensure js is up-to-snuff. (Does not do heavy 
+    // Ensure js is up-to-snuff. (Does not do heavy
     // validation, just coding style and basic syntax.)
     jshint: {
       options: {
@@ -171,11 +193,20 @@ module.exports = function (grunt) {
         asi: true
       },
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
+    },
+
+    // # express
+    // Launch an express server.
+    express: {
+      options: {
+        livereload: true,
+        bases: '.'
+      }
     }
-    
+
   });
-  
-  // # grunt b
+
+  // # grunt build
   // Build the project. Don't serve it. Crafted from scratch.
   grunt.registerTask('build', [
     'clean',
@@ -183,22 +214,32 @@ module.exports = function (grunt) {
     'jshint',
     'assemble'
   ]);
-  
+
+  // # grunt auto
+  // Build the project, then wait for updates and rebuild selectively.
   grunt.registerTask('auto', [
     'build',
     'watch'
   ]);
-    
+
   // # grunt (default)
   // Build the project. (Same as `grunt build`.)
   grunt.registerTask('default', [ 'auto' ]);
-  
+
+  // # grunt serve
+  // Build, watch, and livereload on an express server.
+  grunt.registerTask('serve', [
+    'build',
+    'connect:livereload',
+    'watch'
+  ]);
+
   /*grunt.registerTask('publish', 'commit work, push to github, and deploy on server; requires target [valid: dev, prod]', function (target) {
     if (target !== 'dev' && target !== 'prod') {
       grunt.log.error('Invalid target `' + target + '`. [valid: dev, prod]');
       return false;
     }
-    
+
     grunt.task.run([
       'build',
       //'commit',
