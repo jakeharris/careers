@@ -4,6 +4,8 @@ $bg-gray: #f4f4f4;
 $text-charcoal: #333;
 $thisisdarkblue: #03244d;
 $thisislightblue: #496e9c;
+$thisisburntorange: #dd550c;
+$thisislightorange: #f68026;
 
 /* Typefaces */
 
@@ -12,9 +14,9 @@ $thisislightblue: #496e9c;
 @font-face {
   font-family: 'Norwester';
   src: url("../fonts/norwester.eot?9309851");
-  src: url("../fonts/norwester.eot?9309851#iefix") format("embedded-opentype"), 
-       url("../fonts/norwester.woff?9309851") format("woff"), 
-       url("../fonts/norwester.ttf?9309851") format("truetype"), 
+  src: url("../fonts/norwester.eot?9309851#iefix") format("embedded-opentype"),
+       url("../fonts/norwester.woff?9309851") format("woff"),
+       url("../fonts/norwester.ttf?9309851") format("truetype"),
        url("../fonts/norwester.svg?9309851#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
@@ -107,7 +109,7 @@ $icon-font-family: icomoon;
     margin-left: -3px;
 }
 .icon-certificate:before {
-    content: '\f0a3';   
+    content: '\f0a3';
 }
 .icon-group:before {
 	content: "\f0c0";
@@ -150,7 +152,7 @@ $icon-font-family: icomoon;
 	content: "\f174";
 }
 .icon-vimeo-square:before {
-    content: '\f194'; 
+    content: '\f194';
     margin-left: 8px;
 }
 .fa-blogger {
