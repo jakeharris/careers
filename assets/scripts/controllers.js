@@ -2,8 +2,8 @@ var home = angular.module('career-center-home', [])
 
 home.config(function($interpolateProvider) {
   'use strict';
-  $interpolateProvider.startSymbol('[[');
-  $interpolateProvider.endSymbol(']]');
+  $interpolateProvider.startSymbol('[[')
+  $interpolateProvider.endSymbol(']]')
 });
 
 /* NOTE:
@@ -27,10 +27,10 @@ home.controller('calendar-ctrl', function ($scope, $http) {
          $scope.events = res.data.filter(function (el) {
            return !('external-event' in el)
          }).sort(function (a, b) {
-           var aRelativeMonth = getRelativeMonth(a.date['numerical-month'])
-             , bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
+           var aRelativeMonth = getRelativeMonth(a.date['numerical-month']),
+               bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
             
-           if(aRelativeMonth == bRelativeMonth) return a.date['day'] - b.date['day']
+           if(aRelativeMonth == bRelativeMonth) return a.date.day - b.date.day
            return aRelativeMonth - bRelativeMonth
          }).slice(0, 6)
        })
@@ -54,7 +54,6 @@ home.controller('calendar-ctrl', function ($scope, $http) {
 
 home.controller('twitter-ctrl', function ($scope, $http) {
   'use strict';
-  $scope.hw = 'Hello world!'
   $http.get('http://auburn.edu/career/twitter.json')
        .then(function (res) {
            var tweets = res.data
@@ -65,10 +64,10 @@ home.controller('twitter-ctrl', function ($scope, $http) {
        })
   // Named massage because we are getting the data into a nicer format for the page
   var massage = function (tweet) {
-    var m = tweet.text
-      , link = ''
-      , d = new Date(tweet.created_at.split('+0000').join(''))
-      , mentions = tweet.user_mentions
+    var m = tweet.text,
+        link = '',
+        d = new Date(tweet.created_at.split('+0000').join('')),
+        mentions = tweet.user_mentions
       
       //TODO: make this have multiplicity, i.e. it can handle many links per tweet
       
@@ -83,7 +82,7 @@ home.controller('twitter-ctrl', function ($scope, $http) {
       }
       else link = ''
     
-      if(link != '' && ~m.indexOf(link)) {
+      if(link !== '' && ~m.indexOf(link)) {
           m = m.replace(link, '')
       }
       while(~m.indexOf('&amp;'))
@@ -120,15 +119,15 @@ home.controller('blogger-ctrl', function ($scope, $http) {
     var m = post.content
     
     if(~m.indexOf('<')) {
-        m = m.split(/\<!--[A-Za-z\s\S]*?--\>/).join('')
-        m = m.split(/\<span[A-Za-z\s\S]*?\>/).join('').split(/\<\/span[A-Za-z\s\S]*?\>/).join('')
-        m = m.split(/\<div[A-Za-z\s\S]*?\>/).join('').split(/\<\/div[A-Za-z\s\S]*?\>/).join('')
-        m = m.split(/\<b\>/).join('').split(/\<\/b\>/).join('')
-        m = m.split(/\<i\>/).join('').split(/\<\/i\>/).join('')
-        m = m.split(/\<br \/\>/)
+        m = m.split(/\\<!--[A-Za-z\s\S]*?--\\>/).join('')
+        m = m.split(/\\<span[A-Za-z\s\S]*?\\>/).join('').split(/\\<\/span[A-Za-z\s\S]*?\\>/).join('')
+        m = m.split(/\\<div[A-Za-z\s\S]*?\\>/).join('').split(/\\<\/div[A-Za-z\s\S]*?\\>/).join('')
+        m = m.split(/\\<b\\>/).join('').split(/\\<\/b\\>/).join('')
+        m = m.split(/\\<i\\>/).join('').split(/\\<\/i\\>/).join('')
+        m = m.split(/\\<br \/\\>/)
         for(var x = 0; x < m.length; x++) {
-            m[x] = m[x].split(/\<[A-Za-z\s\S]*?\>[A-Za-z\s\S]*?\<\/[A-Za-z\s\S]*?\>/).join('')
-            m[x] = m[x].split(/\<[A-Za-z\s\S]*?\>/).join('')
+            m[x] = m[x].split(/\\<[A-Za-z\s\S]*?\\>[A-Za-z\s\S]*?\\<\/[A-Za-z\s\S]*?\\>/).join('')
+            m[x] = m[x].split(/\\<[A-Za-z\s\S]*?\\>/).join('')
             m[x] = m[x].split(/&nbsp;/).join('')
         }
         m = m.join('')
