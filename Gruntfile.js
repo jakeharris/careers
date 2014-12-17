@@ -63,10 +63,6 @@ module.exports = function (grunt) {
     },
     
     // # Tasks I'd like to run, but I am not yet:
-    // ## watch
-    //    Watch for changes in the specified files and run the associated tasks.
-    // ## jshint
-    //    Ensure js is up-to-snuff. (Does not do heavy validation, just coding style and basic syntax.)
     // ## autoprefixer
     //    Automagically adds vendor-prefixed rules to match non-prefixed rules
     //    we use that we might've forgotten about!
@@ -89,7 +85,13 @@ module.exports = function (grunt) {
     //    Inject Bower components into our master page.
     // ## concurrent
     //    Runs specified tasks in parallel to speed up builds.
+ 
     
+    
+    
+    // # watch
+    // Watch for changes in the specified files and run the 
+    // associated tasks.
     watch: {
       assemble: {
         files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}'],
@@ -101,9 +103,12 @@ module.exports = function (grunt) {
       sass: {
         files: ['<%= config.assets %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['sass']
+      },
+      js: {
+        files: ['<%= config.assets %>/scripts/{,*/}*.js'],
+        tasks: ['jshint:all']
       }
     },
-    
     
     // # clean
     // Empty out folders.
@@ -157,6 +162,17 @@ module.exports = function (grunt) {
       }
     },
     
+    // # jshint
+    // Ensure js is up-to-snuff. (Does not do heavy 
+    // validation, just coding style and basic syntax.)
+    jshint: {
+      options: {
+        reporter: require('jshint-stylish'),
+        asi: true
+      },
+      all: ['<%= config.assets %>/scripts/{,*/}*.js']
+    }
+    
   });
   
   // # grunt b
@@ -164,12 +180,18 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean',
     'sass',
+    'jshint',
     'assemble'
+  ]);
+  
+  grunt.registerTask('auto', [
+    'build',
+    'watch'
   ]);
     
   // # grunt (default)
   // Build the project. (Same as `grunt build`.)
-  grunt.registerTask('default', [ 'build' ]);
+  grunt.registerTask('default', [ 'auto' ]);
   
   /*grunt.registerTask('publish', 'commit work, push to github, and deploy on server; requires target [valid: dev, prod]', function (target) {
     if (target !== 'dev' && target !== 'prod') {
