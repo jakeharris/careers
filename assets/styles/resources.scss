@@ -13,15 +13,15 @@ header {
   background: white;
   border: 1px solid $border;
   text-align: center;
-  
+
   padding: 3rem;
-  
+
   & > h1 {
     font-family: $header-font-family;
     font-size: 12rem;
   }
   & > h2 {
-    color: $text-charcoal; 
+    color: $text-charcoal;
   }
 }
 
@@ -33,11 +33,11 @@ header {
     flex-basis: 50%;
     width: 50%;
   }
-  
+
   &:nth-of-type(odd) > .links {
     margin-right: 3rem;
   }
-  
+
   & > div:nth-of-type(2) > h2::before {
     counter-increment: c;
     content: counter(c) '. ';
@@ -47,36 +47,59 @@ header {
     border: 1px solid $border;
     flex-direction: row-reverse;
   }
-  
+
   & .link-wedges,
   & .tooltips {
     max-width: 75%;
     max-height: 6rem;
     display: flex;
-    
+
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    
+
     box-shadow: 1px 1px 2px #777;
-    
+
     & > .wedge {
       min-height: 4rem;
-      
+      flex-basis: 100%;
+      width: 100%;
+
       // ===== Icon stuff =====
       &:before {
-        color: white; 
         font-size: 5rem;
         padding: 2rem;
         position: relative;
       }
+      // ====== Triangle ======
+      &:after {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent $thisisdarkblue transparent;
+        line-height: 0px;
+        _border-color: #000000 #000000 #698db3 #000000;
+        _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+
+        position: relative;
+        top: 29px;
+
+        margin-left: auto;
+        margin-right: auto;
+        content: ' ';
+        display: none;
+      }
+      &.wedge--hovered:after {
+        display: flex;
+      }
       &.icon-briefcase:before {
         top: 3px;
-        left: 4px;
+        left: -3px;
       }
       &.icon-compass:before {
         top: 4px;
-        left: 38%;
+        left: 40%;
       }
       &.icon-tie:before {
         top: 4px;
@@ -86,40 +109,37 @@ header {
         font-family: $header-font-family;
         content: 'TRL';
       }
-      
-      // ===== Link stuff =====      
+
+      // ===== Link stuff =====
       &:hover {
         cursor: pointer;
-        
-        & > .wedge-link {
-          top: -7rem; 
-          z-index: 1;
-        }
-        
       }
-      
+
       & > .wedge-link {
         display: block;
         width: 50rem;
-        
+
         position: relative;
         z-index: -1;
-        
+
         font-family: $body-font-family;
       }
-      
-      &:nth-child(0n + 1) {
-        background: $thisisdarkblue; 
+
+      &:nth-child(3n - 2) {
+        background: $thisisdarkblue;
+        color: white;
       }
-      &:nth-child(0n + 2) {
-        background: $bg-gray; 
+      &:nth-child(3n - 1) {
+        background: $bg-gray;
+        color: $thisisdarkblue;
       }
-      &:nth-child(0n + 3) {
-        background: $thisislightblue; 
+      &:nth-child(3n) {
+        background: $thisislightblue;
+        color: white;
       }
-      &:nth-child(0n + 4) {
-        background: $thisisdarkblue; 
-      }
+    }
+    &:nth-child(3) {
+      margin-top: 10rem;
     }
   }
 }
@@ -132,33 +152,26 @@ header {
 
 .tooltip {
   display: none;
-  
+
   padding: 2rem;
-  
+
   //overwriting Bootstrap's styles
   position: inherit;
   z-index: 1;
   font-size: 1.4rem;
   opacity: 1;
+
+  & > h2 {
+    margin-top: 16px;
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 }
 .tooltip--show {
   display: block;
 }
 
 .triangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 10px 10px 10px;
-  border-color: transparent transparent $thisisdarkblue transparent;
-  line-height: 0px;
-  _border-color: #000000 #000000 #698db3 #000000;
-  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
-  
-  position: relative;
-  top: 14px;
-  
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
+
 }
