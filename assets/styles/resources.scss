@@ -48,12 +48,13 @@ header {
     flex-direction: row-reverse;
   }
   
-  & .link-wedges {
+  & .link-wedges,
+  & .tooltips {
     max-width: 75%;
     max-height: 6rem;
     display: flex;
     
-    margin-top: 7rem;
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
     
@@ -121,4 +122,43 @@ header {
       }
     }
   }
+}
+
+.step .tooltips {
+  margin-top: 3rem;
+  max-height: none;
+  height: 13rem;
+}
+
+.tooltip {
+  display: none;
+  
+  padding: 2rem;
+  
+  //overwriting Bootstrap's styles
+  position: inherit;
+  z-index: 1;
+  font-size: 1.4rem;
+  opacity: 1;
+}
+.tooltip--show {
+  display: block;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent $thisisdarkblue transparent;
+  line-height: 0px;
+  _border-color: #000000 #000000 #698db3 #000000;
+  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+  
+  position: relative;
+  top: 14px;
+  
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
