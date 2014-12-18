@@ -22,7 +22,7 @@ header {
     font-size: 12rem;
   }
   & > h2 {
-    color: $thisisburntorange;
+    color: $thisislightorange;
   }
 }
 
@@ -127,7 +127,7 @@ header {
         color: white;
       }
       &:nth-child(3n - 1) {
-        background: $thisisiceblue;
+        background: $bg-gray;
         color: $thisisdarkblue;
       }
       &:nth-child(3n) {
