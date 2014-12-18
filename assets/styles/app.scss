@@ -5,9 +5,9 @@
  * Any Css/Less files within this directory, lib/assets/javascripts, vendor/assets/javascripts,
  * can be referenced here using a relative path.
  *
- * It's not advisable to add code directly here, but if you do, it'll appear in whatever order it 
- * gets included (e.g. say you have require_tree . then the code will appear after all the directories 
- * but before any files alphabetically greater than 'application.css' 
+ * It's not advisable to add code directly here, but if you do, it'll appear in whatever order it
+ * gets included (e.g. say you have require_tree . then the code will appear after all the directories
+ * but before any files alphabetically greater than 'application.css'
  *
  *= require_self
  */
@@ -21,15 +21,15 @@
 }
 
 .input-group-addon-md {
-    min-width: 44px;   
+    min-width: 44px;
 }
 
 .row {
-  margin-left: 0; margin-right: 0;   
+  margin-left: 0; margin-right: 0;
 }
 
 iframe {
-  border: none !important;   
+  border: none !important;
 }
 
 .video {
@@ -87,7 +87,7 @@ address {
   padding-bottom: 2rem;
 }
 .post-title {
-  font-family: "Source Sans Pro"; 
+  font-family: "Source Sans Pro";
 }
 .post-details {
   color: #747474;
@@ -170,12 +170,13 @@ header {
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
+  font-family: $header-font-family;
 }
 
 .header-title,
 .header-title a {
   color: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $header-font-family;
   font-size: 3rem;
   text-align: left;
   padding: 0.5rem;
@@ -208,7 +209,7 @@ header {
     content: none;
 }
 .preheader-navbar ul li input {
-    border: none;   
+    border: none;
     height: 2.9rem;
     width: 12rem;
     background: #03244d;
@@ -229,7 +230,7 @@ header {
 .header-navbar ul li {
   margin: 0;
   padding: 1rem .5rem;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $header-font-family;
   display: block;
   vertical-align: middle;
   text-align: left;
@@ -254,7 +255,7 @@ header {
     padding: 0;
   }
   .header-navbar {
-    font-size: 1.9rem;   
+    font-size: 1.9rem;
   }
   .header-navbar {
     text-align: right;
@@ -289,13 +290,13 @@ header {
 
 @media (min-width: 992px) {
   .header-navbar {
-    font-size: 1.9rem;   
+    font-size: 1.9rem;
   }
-    
+
   /*.header-title a {
-    font-size: 2.5rem;   
+    font-size: 2.5rem;
   }
-   */ 
+   */
   .header-navbar {
     text-align: right;
   }
@@ -347,11 +348,11 @@ header {
     position: fixed;
     left: 0;
     top: 40%;
-    
+
     padding: 0; margin: 0;
-    
+
     width: 13.3rem;
-    
+
     display: -webkit-flex;
     display:     -ms-flexbox;
     display:         flex;
@@ -365,7 +366,7 @@ header {
     flex-basis: 49%;
     width: 49%;
     display: inline-block;
-    
+
     border: none;
     padding: 0; margin: 0;
     padding-top: 1rem;
@@ -694,7 +695,7 @@ ul li {
   color: #333;
 }
 .tweet-date {
-  color: #747474; 
+  color: #747474;
   font-size: 1.7rem;
   padding: 0;
   display:block;
@@ -715,7 +716,7 @@ ul li {
 }
 
 .place,
-.times, 
+.times,
 .appointments {
   margin-bottom: 1.6rem;
   -webkit-flex-wrap: nowrap;
@@ -861,7 +862,7 @@ ul li {
 }
 
 @media (min-width: 1105px) {
-  .event-date { 
+  .event-date {
     margin-right: 1.8rem;
   }
 }
@@ -1541,7 +1542,7 @@ ul li {
 }
 
 .icon {
-  font-family: 'icomoon';   
+  font-family: 'icomoon';
 }
 .aw-map-marker {
   content: '/';
@@ -1555,5 +1556,5 @@ ul li {
 }
 
 .carousel-inner > .item > img {
-    
+
 }
