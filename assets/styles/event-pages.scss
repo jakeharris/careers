@@ -1,0 +1,122 @@
+@import 'app';
+
+.hero {
+  width: 100%;
+  text-align: center;
+  
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  
+  padding-top: 3rem;
+}
+
+.content {
+  background: white;
+  
+  padding: 5rem;
+  box-shadow: 6px 6px 0 #ccc;
+  
+  & > .row {
+    
+    display: flex;
+    justify-content: space-around;
+    
+    padding-top: 5rem;
+    
+    & > p.blurb {
+      text-align: center;
+
+      flex-basis: 33%;
+      width: 33%;
+    }
+    & > a {
+      flex-basis: 40%;
+      width: 40%;
+      
+      height: 7rem;
+      padding: 1.2rem 0;
+      text-align: center;
+      
+      background: $thisislightblue;
+      color: white;
+      font-family: $header-font-family;
+      font-size: 3rem;
+      
+      border: none;
+      box-shadow: 6px 6px 0 #ccc;
+      
+      &:hover {
+        background: $thisisiceblue;
+        color: $charcoal;
+      }
+    }
+  }
+  
+  & > .attributes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    
+    border-bottom: 1px solid $border;
+    padding-bottom: 5rem;
+    
+    & > .attribute {
+      
+      flex-basis: 33%;
+      width: 33%;
+      
+      & > .icon {
+        background: #ccc;
+        color: white;
+        border-radius: 10rem 10rem;
+        font-size: 6rem;
+        width: 10rem;
+        height: 10rem;
+        
+        margin-left: auto;
+        margin-right: auto;
+      
+        &.dress {
+          padding-left: 1.9rem;
+          padding-top: 1.4rem;
+        }
+        &.format {
+          padding-left: 2rem;
+          padding-top: 1rem;
+        }
+        &.majors {
+          padding-left: 1.2rem;
+          padding-top: 1.3rem;
+        }
+      }
+      & > .details {
+        padding-top: 3rem;
+        text-align: center;
+        font-family: $header-font-family;
+        font-size: 3rem;
+      }
+    }
+  }
+  
+  & > .attendants {
+    padding: 5rem 0; 
+    
+    & > h2 {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-bottom: 5rem;
+    }
+    
+    & > .attendant-list {
+      display: flex;
+      & > li {
+        flex-basis: 33%;
+        width: 33%;
+        
+        font-size: 3rem;
+      }
+    }
+  }
+}

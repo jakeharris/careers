@@ -58,6 +58,7 @@ module.exports = function (grunt) {
       assets: 'assets',
       views: 'views',
       master: 'views/layouts/default.hbs',
+      eventsmaster: 'views/layouts/events.hbs',
       partials: 'views/partials/*.hbs',
       dist: '.'
     },
@@ -172,14 +173,26 @@ module.exports = function (grunt) {
           flatten: true,
           layout: '<%= config.master %>',
           data: '<%= config.assets %>/data/*.{json,yml}',
-          partials: '<%= config.partials %>',
-          helpers: [
-            'handlebars-helpers',
-            '<%= config.assets %>/scripts/handlebars-helpers/*'
-          ]
+          partials: '<%= config.partials %>'
         },
         files: {
           './': ['<%= config.views %>/*.hbs']
+        }
+      },
+      events: {
+        options: {
+          flatten: true,
+          layout: '<%= config.eventsmaster %>',
+          data: '<%= config.assets %>/data/*.{json,yml}',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'events/': [
+            '<%= config.views %>/am.hbs',
+            '<%= config.views %>/eid.hbs',
+            '<%= config.views %>/iptjf.hbs',
+            '<%= config.views %>/tech.hbs',
+          ] 
         }
       }
     },
