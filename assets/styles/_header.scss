@@ -209,9 +209,10 @@ header {
 
 @media (max-width: 768px) {
   .header-logo {
-    display:inline-block;
-    width: auto;
-    flex-basis: auto;
+    display: inline-block;
+    width: 33%;
+    flex-basis: 33%;
+    height: 9rem;
   }
   .header-right {
     width: 49%;

@@ -164,6 +164,25 @@
         font-family: $header-font-family;
         font-size: 3rem;
       }
+      @media (max-width: 768px) {
+        .details {
+          font-size: 2rem; 
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .attributes {
+      flex-wrap: wrap;
+      .attribute {
+        flex-basis: 100%;
+        width: 100%;
+        .details {
+          padding-top: 1rem;
+          padding-bottom: 3rem;
+        }
+      }
     }
   }
   
@@ -209,3 +228,4 @@
 #sponsor-adtran > img {
   max-width: 14rem;
 }
+
