@@ -74,6 +74,13 @@ header {
 .preheader-navbar ul li input:focus {
     outline: none;
 }
+
+@media (max-width: 768px) {
+  .preheader-navbar {
+    display: none; 
+  }
+}
+
 .header-navbar {
   font-size: 3rem;
   text-align: left;
@@ -197,5 +204,28 @@ header {
     padding-right: 1.9rem;
     flex-basis: 65%;
     width: 65%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    display:inline-block;
+    width: auto;
+    flex-basis: auto;
+  }
+  .header-right {
+    width: 49%;
+    flex-basis: 49%;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+  }
+  .header-title {
+    display: inline-block; 
+    width: 100%;
+    flex-basis: 100%;
+    text-align: right;
+  }
+  .header-navbar {
+    display: none; 
   }
 }

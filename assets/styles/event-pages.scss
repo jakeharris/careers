@@ -11,7 +11,6 @@
   
   overflow: hidden;
   margin-top: 3rem;
-  height: 45rem;
   
   & > img {
     width: 100%;
@@ -21,6 +20,10 @@
       height:60rem; 
     }
   }
+}
+
+@media (min-width: 768px) {
+  height: 45rem;
 }
 
 .content {
@@ -38,8 +41,8 @@
   }
   
   .buttons {
-    flex-basis: 40%;
-    width: 40%;
+    flex-basis: 100%;
+    width: 100%;
     
     & > .flat-btn {
       flex-basis: 100%;
@@ -70,6 +73,16 @@
     }
   }
   
+  @media (min-width: 768px) {
+    .row {
+      flex-wrap: nowrap; 
+    }
+    .buttons {
+      flex-basis: 40%;
+      width: 40%;
+    }
+  }
+  
   @media (min-width: 1100px) {
     .buttons > .flat-btn {
       font-size: 2.5rem;
@@ -89,15 +102,23 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     
     padding-bottom: 5rem;
     
     & > p.blurb {
       text-align: center;
 
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .row > p.blurb {
       flex-basis: 33%;
       width: 33%;
-    }
+    } 
   }
   
   & > .attributes {
