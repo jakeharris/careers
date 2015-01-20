@@ -14,7 +14,6 @@
   
   & > img {
     width: 100%;
-    margin-top: -9rem;
     
     &.iptjf {
       height:60rem; 
@@ -23,7 +22,12 @@
 }
 
 @media (min-width: 768px) {
-  height: 45rem;
+  .hero {
+    height: 45rem;
+    & > img {
+      margin-top: -11.5rem;  
+    }
+  }
 }
 
 .content {
