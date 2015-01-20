@@ -1,12 +1,4 @@
-var button = document.getElementById('download-btn');
-var row = document.getElementById('download-row');
-
-button.onclick = function () {
-  if(this.getData('os') !== 'Android' && this.getData !== 'iOS')
-    console.log('thing')
-}
-
-(function () {
+document.addEventListener('DOMContentLoaded', function (e) {
 
   // Thanks @Ludwig! (http://stackoverflow.com/questions/9514179/how-to-find-the-operating-system-version-using-javascript)
 
@@ -41,6 +33,11 @@ button.onclick = function () {
       {s:'OS/2', r:/OS\/2/},
       {s:'Search Bot', r:/(nuhk|Googlebot|Yammybot|Openbot|Slurp|MSNBot|Ask Jeeves\/Teoma|ia_archiver)/}
   ];
+  
+  var button = document.getElementById('download-btn');
+  var row = document.getElementById('download-row');
+
+  
   for (var id in clientStrings) {
       var cs = clientStrings[id];
       if (cs.r.test(nAgt)) {
@@ -73,7 +70,9 @@ button.onclick = function () {
 
   console.log('os: ' + os)
   if (os !== 'Android' && os !== 'iOS')
-    row.style.display = 'none';
-  else 
-    button.setData('os', os)
-})()
+    button.style.display = 'none';
+  else if (os === 'Android') 
+    button.href = 'https://play.google.com/store/apps/details?id=com.careerfairplus.au_al'
+  else
+    button.href = 'https://itunes.apple.com/us/app/auburn-career-fair-plus/id691680982?mt=8'
+})
