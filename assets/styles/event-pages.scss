@@ -193,10 +193,17 @@
 .sponsors-header {
   border-top: none;
   padding-bottom: 3.3rem;
+  margin-bottom: 0;
+}
+
+.sponsors-content {
+  padding-top: 0;
 }
 
 .sponsor {
   margin-bottom: 0;
+  width: 16rem;
+  margin-top: 7rem;
 }
 
 #sponsor-adtran > img {
