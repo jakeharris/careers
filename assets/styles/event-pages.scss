@@ -182,9 +182,12 @@
       .attribute {
         flex-basis: 100%;
         width: 100%;
-        .details {
+        & > .details {
           padding-top: 1rem;
           padding-bottom: 3rem;
+        }
+        &:last-of-type > .details {
+           padding-bottom: 0;
         }
       }
     }
