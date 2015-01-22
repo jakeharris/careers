@@ -141,6 +141,18 @@ iframe {
     margin-right: 1.8rem;
   }
 }
+@media (max-width: 480px) {
+  .events {
+    flex-basis: 100%;
+    width: 100%;
+    flex-basis: wrap;
+  }
+  .event {
+    width: 100%;
+    flex-basis: 100%;
+    
+  }
+}
 
 .tweets {
   flex-basis: 66%;

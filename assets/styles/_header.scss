@@ -5,8 +5,6 @@ header {
   min-height: inherit;
   margin-left: -15px;
   margin-right: -15px;
-  -webkit-align-items: flex-end;
-  align-items: flex-end;
   position: relative;
 }
 
@@ -15,10 +13,17 @@ header {
   display: inline-block;
   flex-basis: 100%;
   width: 100%;
+
+  //background: url(//cdn.auburn.edu/assets/img/header-logo-mobile.png) center no-repeat;
 }
 .header-logo img {
   display: block;
 }
+
+.header-menu-icon {
+  display: none;
+}
+
 
 .header-right {
   flex-basis: 100%;
@@ -109,6 +114,21 @@ header {
   content: "";
   padding-left: 0;
 }
+
+@media (min-width: 480px) {
+  .header-logo {
+    flex-basis: 100%;
+    width: 100%;
+    & > img {
+      height: 64px; 
+    }
+  }
+  .header-right {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .header-navbar ul li::after {
     content: " /";
@@ -131,11 +151,14 @@ header {
   .header-logo {
     flex-basis: 22%;
     width: 22%;
+    & > img {
+      height: 64px; 
+    }
   }
   .header-right {
     padding-right: 2rem;
-    flex-basis: 70%;
-    width: 70%;
+    flex-basis: 50%;
+    width: 50%;
   }
 }
 .header-navbar ul li:last-of-type {
@@ -186,11 +209,6 @@ header {
     border-right: 1px solid #d7d7d7;
   }
 
-  .header-logo {
-    flex-basis: 25%;
-    width: 25%;
-  }
-
   .header-navbar {
     text-align: right;
   }
@@ -206,27 +224,88 @@ header {
     width: 65%;
   }
 }
-
+@media (max-width: 1100px) {
+  .header-logo > img {
+    height: 70px;
+  }
+}
 @media (max-width: 768px) {
   .header-logo {
     display: inline-block;
-    width: 33%;
-    flex-basis: 33%;
-    height: 9rem;
+    width: 45%;
+    flex-basis: 45%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    & > img {
+      height: 52px;
+      width: 100%;
+    }
   }
   .header-right {
     width: 49%;
     flex-basis: 49%;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+    justify-content: flex-end;
+    & > .header-title {
+      padding-top: 1.5rem;
+    }
+    & > .nav-toggle {
+      padding-top: 1.5rem; 
+    }
   }
   .header-title {
     display: inline-block; 
-    width: 100%;
-    flex-basis: 100%;
+    width: 80%;
+    flex-basis: 80%;
     text-align: right;
+    & a {
+      font-size: 2.6rem; 
+    }
   }
   .events .header-navbar {
-    display: none; 
+    //display: none; 
+  }
+  .header-menu-icon {
+    display: inline-block;
+    color: white;
+    width: 20%;
+    flex-basis: 20%;
+    font-size: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    height: 100%;
+    cursor: pointer;
+    &:hover {
+      background: $thisislightblue; 
+    }
+  }
+  
+  .header-navbar ul li,
+  .header-navbar ul li:last-of-type {
+    text-align: right; 
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .header-logo {
+    width: 100%;
+    flex-basis: 100%;
+    & > img {
+      width: 100%;
+      padding-right: 2rem;
+    }
+  }
+  .header-right {
+    width: 100%;
+    flex-basis: 100%;
+    padding-bottom: 0;
+    &.flex {
+      justify-content: flex-end;
+    }
+    .header-title {
+      text-align: left;
+      width: auto;
+      flex-basis: auto;
+      margin-right: 0.4rem;
+    }
   }
 }

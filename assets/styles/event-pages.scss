@@ -21,15 +21,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  .hero {
-    height: 45rem;
-    & > img {
-      margin-top: -11.5rem;  
-    }
-  }
-}
-
 .content {
   background: white;
   
@@ -40,7 +31,7 @@
     margin-top: 4rem;
     padding-top: 1.5rem;
     & > .row {
-      padding-bottom: 0; 
+      padding-bottom: 0;
     }
   }
   
@@ -77,6 +68,13 @@
     }
   }
   
+  @media (max-width: 480px) {
+    .buttons > .flat-btn {
+      font-size: 1.8rem;
+      padding: 2.3rem 0;
+    }
+  }
+  
   @media (min-width: 768px) {
     .row {
       flex-wrap: nowrap; 
@@ -84,6 +82,11 @@
     .buttons {
       flex-basis: 40%;
       width: 40%;
+      
+      & > .flat-btn {
+        font-size: 1.8rem;
+        padding: 2.1rem;
+      }
     }
   }
   
