@@ -1,0 +1,89 @@
+/*! responsive-nav.js 1.0.34 by @viljamis */
+
+@import 'variables';
+
+.nav-collapse ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+}
+
+.nav-collapse li {
+  width: 100%;
+  display: block;
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+.nav-toggle {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@media screen and (min-width: 768px) {
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .nav-collapse li {
+    width: auto; 
+  }
+}
+
+/* Personal edits (@milieu) */
+.nav-toggle {
+  font-family: icomoon;
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  padding-left: 1.4rem;
+  padding-right: 1rem;
+  height: 100%;
+  
+  &:hover,
+  &.active {
+    background: $thisislightblue; 
+    color: white;
+  }
+  
+  &.active:hover {
+    color: $thisislightorange; 
+  }
+  
+  &.active + .nav-collapse {
+    background: $thisislightblue;
+  }
+  
+  &:focus {
+    color: white; 
+    text-decoration: none;
+  }
+  
+  &:before {
+    content: '\f0c9';
+  }
+}
