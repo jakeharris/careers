@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
           break;
   } 
 
-  console.log('os: ' + os)
   if (os !== 'Android' && os !== 'iOS')
     button.style.display = 'none';
   else if (os === 'Android') 
