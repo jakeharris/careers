@@ -64,15 +64,6 @@ module.exports = function (grunt) {
     },
 
     // # Tasks I'd like to run, but I am not yet:
-    // ## autoprefixer
-    //    Automagically adds vendor-prefixed rules to match non-prefixed rules
-    //    we use that we might've forgotten about!
-    //    e.g.
-    //    `display: flex;`
-    //    becomes
-    //    `display: flex;
-    //     ms-display: flex-box;
-    //     display: -webkit-flex;`
     // ## rev
     //    Rename files to bust browser caches.
     // ## *-min
@@ -208,6 +199,24 @@ module.exports = function (grunt) {
       },
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
     },
+    
+    // ## autoprefixer
+    //    Automagically adds vendor-prefixed rules to match non-prefixed rules
+    //    we use that we might've forgotten about!
+    //    e.g.
+    //    `display: flex;`
+    //    becomes
+    //    `display: flex;
+    //     ms-display: flex-box;
+    //     display: -webkit-flex;`
+    autoprefixer: {
+      options: {
+        browsers: ['>5%', 'ie >= 8']
+      },
+      all: {
+        src: ['<%= config.assets %>/styles/{,*/}*.css']
+      }
+    },
 
     // # express
     // Launch an express server.
@@ -226,6 +235,7 @@ module.exports = function (grunt) {
     'clean',
     'sass',
     'jshint',
+    'autoprefixer',
     'assemble'
   ]);
 
