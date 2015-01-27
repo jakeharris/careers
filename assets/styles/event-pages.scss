@@ -187,6 +187,12 @@
       flex-basis: 33%;
       width: 33%;
       
+      
+      
+      & > a.icon:hover {
+        background: $thisislightblue;
+      }
+      
       & > .icon {
         background: #ccc;
         color: white;
@@ -195,9 +201,11 @@
         width: 10rem;
         height: 10rem;
         
+        display: block;
+        
         margin-left: auto;
         margin-right: auto;
-      
+        
         &.dress {
           padding-left: 1.9rem;
           padding-top: 1.4rem;
