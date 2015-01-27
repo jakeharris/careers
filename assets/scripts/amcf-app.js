@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   } 
 
   if (os !== 'Android' && os !== 'iOS')
-    button.style.display = 'none';
+    button.href = 'http://www.careerfairplus.com/';
   else if (os === 'Android') 
     button.href = 'https://play.google.com/store/apps/details?id=com.careerfairplus.au_al'
   else
