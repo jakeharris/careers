@@ -87,14 +87,14 @@ module.exports = function (grunt) {
     watch: {
       assemble: {
         files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}'],
-        tasks: ['assemble']
+        tasks: ['assemble'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
         files: ['Gruntfile.js']
       },
       sass: {
         files: ['<%= config.assets %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['sass']
+        tasks: ['sass', 'autoprefixer'] //tasks: ['sass', 'uncss', 'autoprefixer']
       },
       js: {
         files: ['<%= config.assets %>/scripts/{,*/}*.js'],
@@ -200,6 +200,40 @@ module.exports = function (grunt) {
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
     },
     
+    // ## uncss
+    //    Concatenates all CSS files used on a page, then removes
+    //    all unnecessary selectors (and affiliated rules). Massive
+    //    performance difference!
+    uncss: {
+      options: {
+        ignore: [/nav-collapse.*/, 'closed', 'nav-toggle', 'font-family', 'header-navbar'] 
+      },
+      index: {
+        options: { 
+          report: 'min'
+        },
+        files: {
+          'assets/styles/index.css': ['index.html']
+        }
+      },
+      eventpages: {
+        options: { report: 'min' },
+        files: {
+          'assets/styles/event-pages.css': ['am.html', 'eid.html', 'iptjf.html', 'cmcd.html', 'tech.html']
+        }
+      }
+    },
+    
+    // ## processhtml
+    //    Merges all css references onto a page into the one that uncss generates.
+    processhtml: {
+      dist: {
+        files: {
+          'index.html': ['index.html'] 
+        }
+      }
+    },
+    
     // ## autoprefixer
     //    Automagically adds vendor-prefixed rules to match non-prefixed rules
     //    we use that we might've forgotten about!
@@ -235,8 +269,8 @@ module.exports = function (grunt) {
     'clean',
     'sass',
     'jshint',
-    'autoprefixer',
-    'assemble'
+    'assemble',
+    'autoprefixer'
   ]);
 
   // # grunt auto
