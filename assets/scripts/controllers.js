@@ -22,8 +22,12 @@ home.config(function($interpolateProvider) {
 
 home.controller('calendar-ctrl', function ($scope, $http) {
   'use strict';
+  console.time('complete calendar data')
+  console.time('fetch calendar json')
   $http.get('http://auburn.edu/career/events.json')
        .then(function (res) {
+         console.timeEnd('fetch calendar json')
+         console.time('filter and sort calendar events')
          $scope.events = res.data.filter(function (el) {
            return !('external-event' in el)
          }).sort(function (a, b) {
@@ -33,6 +37,8 @@ home.controller('calendar-ctrl', function ($scope, $http) {
            if(aRelativeMonth == bRelativeMonth) return a.date.day - b.date.day
            return aRelativeMonth - bRelativeMonth
          }).slice(0, 6)
+         console.timeEnd('filter and sort calendar events')
+         console.timeEnd('complete calendar data')
        })
   
   var getRelativeMonth = function (month) {    
@@ -54,13 +60,19 @@ home.controller('calendar-ctrl', function ($scope, $http) {
 
 home.controller('twitter-ctrl', function ($scope, $http) {
   'use strict';
+  console.time('complete twitter data')
+  console.time('fetch twitter json')
   $http.get('http://auburn.edu/career/twitter.json')
        .then(function (res) {
+           console.timeEnd('fetch twitter json')
+           console.time('massage tweets')
            var tweets = res.data
             for(var t in tweets) {
                 if(tweets[t].text !== undefined) tweets[t].data = massage(tweets[t])
             }
            $scope.tweets = tweets
+           console.timeEnd('massage tweets')
+           console.timeEnd('complete twitter data')
        })
   // Named massage because we are getting the data into a nicer format for the page
   var massage = function (tweet) {
@@ -102,8 +114,13 @@ home.controller('twitter-ctrl', function ($scope, $http) {
 })
 
 home.controller('blogger-ctrl', function ($scope, $http) {
+  'use strict';
+  console.time('complete blog data')
+  console.time('fetch blog json')
   $http.get('https://www.googleapis.com/blogger/v3/blogs/2761218641303524120/posts?key=AIzaSyAsBnM3FEIP1giu8NLIFG7TpoJAFLyIung&maxCount=3')
        .then(function (res) {
+           console.timeEnd('fetch blog json')
+           console.time('sanitize and filter blog posts')
            $scope.blog = res.data[0] || res.data || { }
            $scope.blog.posts = res.data.items.slice(0, 3)
            $scope.blog.sanitized = { }
@@ -111,6 +128,8 @@ home.controller('blogger-ctrl', function ($scope, $http) {
                var d = new Date($scope.blog.posts[post].published.split('+0000').join(''))
                $scope.blog.posts[post].date = '' + d.toDateString().substr(0, d.toDateString().length - 5)
            }
+           console.timeEnd('sanitize and filter blog posts')
+           console.timeEnd('complete blog data')
            //for(var p in $scope.blog.items) //only necessary to sanitize post contents, not title
              //$scope.blog.sanitized.posts[p] = sanitize($scope.blog.items[p])
        })
