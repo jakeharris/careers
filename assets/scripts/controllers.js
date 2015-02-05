@@ -29,7 +29,7 @@ home.controller('calendar-ctrl', function ($scope, $http) {
          console.timeEnd('fetch calendar json')
          console.time('filter and sort calendar events')
          $scope.events = res.data.filter(function (el) {
-           return !('external-event' in el)
+           return !('external-event' in el) && (getRelativeMonth(el.date['numerical-month']) <= 6)
          }).sort(function (a, b) {
            var aRelativeMonth = getRelativeMonth(a.date['numerical-month']),
                bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
