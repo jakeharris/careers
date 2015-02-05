@@ -121,7 +121,7 @@ home.controller('blogger-ctrl', function ($scope, $http) {
        .then(function (res) {
            console.timeEnd('fetch blog json')
            console.time('sanitize and filter blog posts')
-           $scope.blog = res.data[0] || res.data || { }
+           $scope.blog = { }
            $scope.blog.posts = res.data.items.slice(0, 3)
            $scope.blog.sanitized = { }
            for(var post in $scope.blog.posts) {
