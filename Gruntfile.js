@@ -59,7 +59,7 @@ module.exports = function (grunt) {
       views: 'views',
       master: 'views/layouts/default.hbs',
       jobsmaster: 'views/layouts/jobs.hbs',
-      eventsmaster: 'views/layouts/events.hbs',
+      nosocial: 'views/layouts/no-social.hbs',
       partials: 'views/partials/*.hbs',
       dist: '.'
     },
@@ -174,7 +174,7 @@ module.exports = function (grunt) {
       events: {
         options: {
           flatten: true,
-          layout: '<%= config.eventsmaster %>',
+          layout: '<%= config.nosocial %>',
           partials: '<%= config.partials %>'
         },
         files: {

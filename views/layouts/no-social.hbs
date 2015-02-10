@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="career-center-home">
+<html lang="en" ng-app="{{ ng-app }}">
   <head>
     <!-- Meta Data -->
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>Career Center</title>
+    <title>{{ title }}</title>
 
     <!-- Bootstrap & Core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="http://auburn.edu/career/assets/styles/responsive-nav.css">
 
     <!-- Application CSS -->
-    <link rel=stylesheet href="http://auburn.edu/career/assets/styles/event-pages.css">
+    <link rel=stylesheet href="http://auburn.edu/career/assets/styles/{{ name }}.css">
 
     <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
     <!--[if lt IE 9]>
@@ -46,7 +46,7 @@
     <script src="http://auburn.edu/career/assets/scripts/amcf-app.js"></script>
   </head>
 
-  <body class="events">
+  <body class="{{ name }}">
     <div class="container">
       {{> header }}
       {{  body   }}
