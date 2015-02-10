@@ -58,6 +58,7 @@ module.exports = function (grunt) {
       assets: 'assets',
       views: 'views',
       master: 'views/layouts/default.hbs',
+      jobsmaster: 'views/layouts/jobs.hbs',
       eventsmaster: 'views/layouts/events.hbs',
       partials: 'views/partials/*.hbs',
       dist: '.'
@@ -159,22 +160,21 @@ module.exports = function (grunt) {
     // Compiles Handlebars layouts, partials, and pages
     // into servable HTML.
     assemble: {
-      pages: {
+      home: {
         options: {
           flatten: true,
           layout: '<%= config.master %>',
-          data: '<%= config.assets %>/data/*.{json,yml}',
           partials: '<%= config.partials %>'
         },
         files: {
-          './': ['<%= config.views %>/*.hbs']
+          './':    ['<%= config.views %>/index.hbs'],
+          'jobs/index.html': ['<%= config.views %>/jobs.hbs'] 
         }
       },
       events: {
         options: {
           flatten: true,
           layout: '<%= config.eventsmaster %>',
-          data: '<%= config.assets %>/data/*.{json,yml}',
           partials: '<%= config.partials %>'
         },
         files: {
@@ -195,7 +195,8 @@ module.exports = function (grunt) {
     jshint: {
       options: {
         reporter: require('jshint-stylish'),
-        asi: true
+        asi: true,
+        laxbreak: true
       },
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
     },
