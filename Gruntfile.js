@@ -167,7 +167,7 @@ module.exports = function (grunt) {
           partials: '<%= config.partials %>'
         },
         files: {
-          './':    ['<%= config.views %>/index.hbs'],
+          './index.html':    ['<%= config.views %>/home.hbs'],
           'jobs/index.html': ['<%= config.views %>/jobs.hbs'] 
         }
       },
