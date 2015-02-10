@@ -12,3 +12,195 @@ iframe {
   width: 100% !important;
   height: 100% !important;
 }
+
+.jobs .inbetween {
+  background: #03244d;
+  padding: 2rem;
+  box-shadow: inset 0px 4px 4px -4px black, inset 0px -4px 4px -4px black;
+  color: white;
+}
+
+.jobs .events ul {
+  height: auto;
+  max-height: none;
+  
+  margin-bottom: 2rem;
+  padding-top: 0.5rem;
+}
+
+.jobs .event {
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.jobs .blanker-wrap:before {
+  margin-top: -2.8rem;
+}
+
+.features {
+    display: none;
+}
+
+@media (min-width: 768px){
+    .features {
+        display: block;
+        position: relative;
+        background: white;
+        padding: 0 2rem;
+        padding-bottom: 2rem;
+
+        border: 1px solid #d7d7d7;
+        border-top: none;
+    }
+}
+
+.features-header {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.feature-icon {
+    background: #aaa;
+    border-radius: 50%;
+    height: 12rem;
+    width: 12rem;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+.feature-icon:before {
+    color: white;
+    font-family: 'icomoon';
+    font-size: 12rem;
+    z-index: 100;
+    position:relative;
+}
+
+.aw-parttime:before {
+    content: '\e604';
+    font-size: 11rem;
+    bottom: 2rem;
+}
+
+.aw-fulltime-internships:before {
+    content: '\f0f2';
+    font-size: 8.5rem;
+    bottom: 0.5rem;
+}
+
+.aw-events:before {
+    content: '\f073';
+    font-size: 8.5rem;
+    bottom: 0.4rem;
+}
+
+.aw-employers:before {
+    content: '\f041';
+    font-size: 11rem;
+    bottom: 2rem;
+}
+
+.aw-interviews:before {
+    content: '\e603';
+    font-size: 9rem;
+    bottom: 0.6rem;
+}
+
+.aw-ellipsis:before {
+    content: '\e602';
+    bottom: 1.5rem;
+    right: 10px;
+}
+
+.feature-content {
+    text-align: center;
+}
+
+
+.resources {
+    height: 100%;
+    border: 1px solid #d7d7d7;
+    border-top: none;
+    border-bottom: none;
+}
+
+.resources .row {
+    margin-left: 0;
+    margin-right: -17px;
+    width: 100%;
+}
+
+.resource-buttons {
+    flex-basis: 66.9%;
+    width: 66.9%;
+    background: #f4f4f4;
+    margin-left: -1px;
+    cursor: pointer;
+}
+
+.resource-button {
+    align-content: center;
+    max-width: 50%;
+    margin-right: -3px;
+    margin-left: 0;
+    background: #d7d7d7;
+}
+
+/*.resource-button.resource-button--yellow {
+    background:#aaa;   
+}*/
+
+.resource-button.resource-button--yellow:hover {
+    background:#c90;
+}
+
+.resource-button.resource-button--green:hover {
+    background: #060;
+}
+
+.resource-button.resource-button--orange:hover {
+    background: #f63;
+}
+
+.resource-button.resource-button--blue:hover {
+    background: #036;
+}
+
+.widget {
+    flex-basis: 33%;
+    width: 33%;
+    max-height: 520px;
+    height: 280px;
+    padding-left: 1px;
+    box-sizing: border-box;
+}
+
+.widget iframe {
+    margin-top: 10px;
+    margin-left: 1px;
+}
+
+@media(min-width: 1024px) {
+    .widget {
+        height: 400px;   
+    }
+    .widget iframe {
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+
+@media(min-width: 1335px) {
+    .widget {
+        height: 520px;
+    }
+    .widget iframe {
+        margin-top: 10px;
+        margin-left: 2px;
+    }
+}
