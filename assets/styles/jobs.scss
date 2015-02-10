@@ -124,7 +124,6 @@ iframe {
 
 .resources {
     height: 100%;
-    border: 1px solid #d7d7d7;
     border-top: none;
     border-bottom: none;
 }
@@ -138,7 +137,6 @@ iframe {
 .resource-buttons {
     flex-basis: 66.9%;
     width: 66.9%;
-    background: #f4f4f4;
     margin-left: -1px;
     cursor: pointer;
 }
@@ -148,7 +146,6 @@ iframe {
     max-width: 50%;
     margin-right: -3px;
     margin-left: 0;
-    background: #d7d7d7;
 }
 
 /*.resource-button.resource-button--yellow {

@@ -48,7 +48,7 @@ ol, ul {
 
 #job_board {
   position: relative;
-  top: 20px;
+  top: 10px;
   height: 182px;  
 }
 
@@ -61,7 +61,6 @@ ol, ul {
   padding-top: 0rem;
   position:absolute;
   top: 17.8rem;
-  background: #f1f1f1;
   width: 100%;
 }
 
@@ -74,10 +73,10 @@ ol, ul {
 
 @media(min-width: 293px) {
     #job_board {
-        height: 10.5rem;   
+        height: 15.5rem;   
     }
     #page-count {
-        top: 10.9rem;   
+        top: 15.9rem;   
     }
 }
 
@@ -156,7 +155,7 @@ span.job-type {
        -o-user-select: none;
           user-select: none;
   box-sizing: border-box;
-  
+  margin-right: 6px;
 }
 
 .search-buttons > input[type=button]:nth-of-type(1) {
