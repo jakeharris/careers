@@ -178,6 +178,7 @@ module.exports = function (grunt) {
           partials: '<%= config.partials %>'
         },
         files: {
+          'events/index.html': ['<%= config.views %>/events.hbs'],
           'events/': [
             '<%= config.views %>/am.hbs',
             '<%= config.views %>/eid.hbs',
