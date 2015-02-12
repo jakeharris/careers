@@ -53,8 +53,6 @@ home.controller('calendar-ctrl', function ($scope, $http) {
   
   var isOver = function (date) {
     var currentDate = new Date()
-    console.log(date['numerical-month'])
-    console.log((currentDate.getMonth() + 1))
     if(date['numerical-month'] == (currentDate.getMonth() + 1))
       if(date.day < currentDate.getDate())
         return true;
@@ -112,19 +110,21 @@ home.controller('twitter-ctrl', function ($scope, $http) {
 
 home.controller('blogger-ctrl', function ($scope, $http) {
   'use strict';
-  console.time('complete blog data')
-  console.time('fetch blog json')
-  $http.get('https://www.googleapis.com/blogger/v3/blogs/2761218641303524120/posts?key=AIzaSyAsBnM3FEIP1giu8NLIFG7TpoJAFLyIung&maxCount=3')
+  $http.get('http://auburn.edu/career/blog.json')
   .then(function (res) {
-    $scope.blog = { }
-    $scope.blog.posts = res.data.items.slice(0, 3)
-    $scope.blog.sanitized = { }
-    for(var post in $scope.blog.posts) {
-      var d = new Date($scope.blog.posts[post].published.split('+0000').join(''))
-      $scope.blog.posts[post].date = '' + d.toDateString().substr(0, d.toDateString().length - 5)
+    var posts = (res.data.feed.entry)
+        $scope.blog = { }
+        $scope.blog.posts = [ ]
+    
+    for(var post in posts) {
+      var d = new Date(posts[post].published.$t.split('+0000').join(''))
+      posts[post].date = '' + d.toDateString().substr(0, d.toDateString().length - 5)
+      $scope.blog.posts[post] = { 
+        "title": posts[post].title.$t,
+        "url":   posts[post].link[4].href, // 4 is the "alternate" URL, which is more human-readable and branded as ours
+        "date":  posts[post].date
+      }
     }
-    //for(var p in $scope.blog.items) //only necessary to sanitize post contents, not title
-    //$scope.blog.sanitized.posts[p] = sanitize($scope.blog.items[p])
   })
   // Named sanitize, and not massage, because we are stripping out lots of needless data
   var sanitize = function (post) {
