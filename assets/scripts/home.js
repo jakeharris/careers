@@ -25,7 +25,7 @@ home.controller('calendar-ctrl', function ($scope, $http) {
   $http.get('http://auburn.edu/career/events.json')
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
-      return !('external-event' in el) && (getRelativeMonth(el.date['numerical-month']) <= 6)
+      return (!isOver(el.date)) && (getRelativeMonth(el.date['numerical-month']) <= 6)
     }).sort(function (a, b) {
       var aRelativeMonth = getRelativeMonth(a.date['numerical-month']),
           bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
@@ -49,8 +49,15 @@ home.controller('calendar-ctrl', function ($scope, $http) {
       else
         return month + (12 - currentMonth)
 
-        }
-  })
+  }
+  
+  var isOver = function (date) {
+    var currentDate = new Date()
+    if(date['numerical-month'] === (currentDate.getMonth() + 1))
+      if(date.day < currentDate.getDate())
+        return true;
+  }
+})
 
 home.controller('twitter-ctrl', function ($scope, $http) {
   'use strict';
