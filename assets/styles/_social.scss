@@ -73,7 +73,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: $social-shrink-size) {
   .social-nav {
     width: 13.3rem;
     

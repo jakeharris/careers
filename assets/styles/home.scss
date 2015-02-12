@@ -79,6 +79,18 @@ iframe {
   width: 66%;
 }
 
+.tweets ul {
+  display: -webkit-flex;
+  display:     -ms-flexbox;
+  display:         flex;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  height: 55rem;
+  max-height: 55rem;
+}
+
 .tweet {
   display: inline-flex;
   width: 48%;
@@ -117,5 +129,26 @@ iframe {
 }
 .blog-readmore {
   padding-top: 1rem;
+}
+
+
+/*
+   *************************
+   ***** MEDIA QUERIES ***** 
+   *************************
+*/
+
+@media (min-width: $moderate-screen-size) {
+  .tweets ul {
+    height: 45rem;
+    max-height: 45rem;
+  }
+}
+
+@media (min-width: $social-shrink-size) {
+  .banner {
+    height: auto;
+    max-height: none;
+  }
 }
 
