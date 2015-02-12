@@ -120,7 +120,8 @@ name: home
             <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
             <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
             <div class="event-details-location">[[ event.location ]]</div>
-            <div class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
+            <div ng-if="event.date != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
+            <div ng-if="event.date == ''" class="event-details-time">All day</div>
           </div>
         </li>
       </ul>
