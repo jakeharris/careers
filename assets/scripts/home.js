@@ -53,7 +53,9 @@ home.controller('calendar-ctrl', function ($scope, $http) {
   
   var isOver = function (date) {
     var currentDate = new Date()
-    if(date['numerical-month'] === (currentDate.getMonth() + 1))
+    console.log(date['numerical-month'])
+    console.log((currentDate.getMonth() + 1))
+    if(date['numerical-month'] == (currentDate.getMonth() + 1))
       if(date.day < currentDate.getDate())
         return true;
   }
