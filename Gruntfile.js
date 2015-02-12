@@ -160,6 +160,9 @@ module.exports = function (grunt) {
     // Compiles Handlebars layouts, partials, and pages
     // into servable HTML.
     assemble: {
+      options: {
+        helpers: ['*-helper.js']
+      },
       home: {
         options: {
           flatten: true,
