@@ -1,5 +1,33 @@
-<header role="banner" class="flex">
-  <div class="preheader-navbar">
+<header role="banner">
+
+  <nav id="nav" class="postheader nav-collapse">
+    <div class="nav-wrapper">
+      <ul>
+        <li class="nav-home"><a href="http://auburn.edu/"><img src="//cdn.auburn.edu/assets/img/header-logo-mobile@2x.png"><span>AU</span></a></li>
+        <li class="nav-home"><a href="http://auburn.edu/career">Career Center</a></li>
+        <li>
+          <a href="http://www.auburn.edu/career/students/">Students</a>
+          <ul>
+            <li><a href="#">Prospective</a></li>
+            <li><a href="#">Current</a></li>
+            <li><a href="#">Graduate</a></li>
+            <li><a href="#">Alumnus</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.auburn.edu/career/parents/">Families</a>
+        </li>
+        <li>
+          <a href="http://www.auburn.edu/career/faculty/">Faculty</a>
+        </li>
+        <li>
+          <a href="http://hire.auburn.edu">Employers</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <nav class="preheader" id="pre-header">
     <ul>
         <li><a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a></li>
         <li><a href="http://www.auburn.edu/map">Map</a></li>
@@ -11,24 +39,23 @@
             </form>
         </li>
     </ul>
-  </div>
-  <a class="header-logo" href="http://www.auburn.edu">
-    <img src="//cdn.auburn.edu/assets/img/header-logo-mobile@2x.png" srcset="//cdn.auburn.edu/assets/img/header-logo-mobile@2x.png 420w, //cdn.auburn.edu/assets/img/header-logo-mobile@2x.png 768w, //cdn.auburn.edu/assets/img/header-logo@2x.png 2x" alt="Auburn University Homepage">
-  </a>
-
-  <div class="header-right flex">                
-    <div class="header-title">
-      <a href="/career/">Career Center</a>
-    </div>
-
-    <div class="header-navbar nav-collapse">
-      <ul>
-        <li><a href="http://www.auburn.edu/career/students/">Students</a></li>
-        <li><a href="http://www.auburn.edu/career/alumni/">Alumni</a></li>
-        <li><a href="http://www.auburn.edu/career/parents/">Families</a></li>
-        <li><a href="http://www.auburn.edu/career/faculty/">Faculty</a></li>
-        <li><a href="http://hire.auburn.edu">Employers</a></li>
-      </ul>
-    </div>
-  </div>
+  </nav>
 </header>
+
+
+<!-- Positioning the nav -->
+<script>
+  var header;
+  window.onscroll = function () {
+    if(header === undefined) header = document.getElementById('pre-header')
+    if(header === undefined) return
+    
+    var nav = document.getElementById('nav')
+    if(header.getBoundingClientRect().bottom <= 0 + 50 && nav.style.position !== 'bordered') { 
+      nav.classList.add('bordered')
+    
+    } else if (header.getBoundingClientRect().bottom > 0 + 50 && nav.classList.contains('bordered')) {
+      nav.classList.remove('bordered') 
+    }
+  }
+</script>
