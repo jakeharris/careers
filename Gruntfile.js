@@ -250,7 +250,7 @@ module.exports = function (grunt) {
     //     display: -webkit-flex;`
     autoprefixer: {
       options: {
-        browsers: ['>5%', 'ie >= 8']
+        browsers: '> 5%, ie >= 8'
       },
       all: {
         src: ['<%= config.assets %>/styles/{,*/}*.css']
