@@ -1,10 +1,13 @@
 <header role="banner">
 
-  <nav id="nav" class="postheader nav-collapse">
+  <nav id="nav" class="preheader nav-collapse">
+    <div class="nav-controller" id="hamburger">
+      <i class="icon-navicon"></i>
+    </div>
     <div class="nav-wrapper">
       <ul>
-        <li class="nav-home"><a href="http://auburn.edu/"><img src="//cdn.auburn.edu/assets/img/header-logo-mobile@2x.png"><span>AU</span></a></li>
-        <li class="nav-home"><a href="http://auburn.edu/career">Career Center</a></li>
+        <li class="nav-home"><a href="http://auburn.edu/"><img class="nav-home-content--bigger" src="//cdn.auburn.edu/assets/img/header-logo-mobile@2x.png"><span class="nav-home-content--smaller">AU</span></a></li>
+        <li class="nav-home"><a href="http://auburn.edu/career"><span class="nav-home-content--bigger">Career Center</span><span class="nav-home-content--smaller">Careers</span></a></li>
         <li>
           <a href="http://www.auburn.edu/career/students/">Students</a>
           <ul>
@@ -23,11 +26,20 @@
         <li>
           <a href="http://hire.auburn.edu">Employers</a>
         </li>
+        <li><a href="http://auburn.edu/career/events/">Events</a></li>
+        <li>
+          <a href="#">About Us</a>
+          <ul>
+            <li><a href="#">Office Info</a></li>
+            <li><a href="#">Staff</a></li>
+            <li><a href="#">Campus Partners</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>
   
-  <nav class="preheader" id="pre-header">
+  <nav class="postheader" id="postheader">
     <ul>
         <li><a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a></li>
         <li><a href="http://www.auburn.edu/map">Map</a></li>
@@ -47,15 +59,32 @@
 <script>
   var header;
   window.onscroll = function () {
-    if(header === undefined) header = document.getElementById('pre-header')
+    if(header === undefined) header = document.getElementById('postheader')
     if(header === undefined) return
     
     var nav = document.getElementById('nav')
-    if(header.getBoundingClientRect().bottom <= 0 + 50 && nav.style.position !== 'bordered') { 
+    if(header.getBoundingClientRect().bottom <= 0 + 20 && !nav.classList.contains('bordered')) { 
       nav.classList.add('bordered')
     
-    } else if (header.getBoundingClientRect().bottom > 0 + 50 && nav.classList.contains('bordered')) {
+    } else if (header.getBoundingClientRect().bottom > 0 + 20 && nav.classList.contains('bordered')) {
       nav.classList.remove('bordered') 
     }
   }
+</script>
+<!-- Mobile menu -->
+<script>
+  var hamburger = document.getElementById('hamburger')
+  hamburger.onclick = function () {
+    var navWrapper = document.getElementById('nav').children[1]
+     
+    if(hamburger === undefined) hamburger = document.getElementById('hamburger')
+    if(hamburger === undefined) return
+     
+    if(navWrapper.classList.contains('mobile-nav--active'))
+      navWrapper.classList.remove('mobile-nav--active')
+    else 
+      navWrapper.classList.add('mobile-nav--active')
+  }
+  
+  var submenus = document.getElementById('nav').children[1].getElementsByTagName('')
 </script>
