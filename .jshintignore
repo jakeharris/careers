@@ -1,2 +1,1 @@
-assets/scripts/picturefill.min.js
-assets/scripts/responsive-nav.min.js
+assets/scripts/*.min.js
