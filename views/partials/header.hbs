@@ -1,13 +1,20 @@
 <header role="banner">
 
-  <nav id="nav" class="preheader nav-collapse">
+  <div class="preheader" id="preheader">
+    <div class="hexes">
+      <div class="hex"><a href="http://auburn.edu"><img src="/assets/images/AUtowerlogov10.svg"></a></div>
+      <div class="hex hex-under"></div>
+    </div>
+    <h1><a href="/">Career Center</a></h1>
+  </div>
+  
+  
+  <nav id="nav" class="header nav-collapse">
     <div class="nav-controller" id="hamburger">
       <i class="icon-navicon"></i>
     </div>
     <div class="nav-wrapper">
       <ul>
-        <li class="nav-home"><a href="http://auburn.edu/"><img class="nav-home-content--bigger" src="//cdn.auburn.edu/assets/img/header-logo-mobile@2x.png"><span class="nav-home-content--smaller">AU</span></a></li>
-        <li class="nav-home"><a href="http://auburn.edu/career"><span class="nav-home-content--bigger">Career Center</span><span class="nav-home-content--smaller">Careers</span></a></li>
         <li>
           <a href="http://www.auburn.edu/career/students/">Students</a>
           <ul>
@@ -57,16 +64,29 @@
 
 <!-- Positioning the nav -->
 <script>
-  var header;
+  var preheader, nav, postheader;
   window.onscroll = function () {
-    if(header === undefined) header = document.getElementById('postheader')
-    if(header === undefined) return
+    if(preheader === undefined) preheader = document.getElementById('preheader')
+    if(preheader === undefined) return
     
-    var nav = document.getElementById('nav')
-    if(header.getBoundingClientRect().bottom <= 0 + 20 && !nav.classList.contains('bordered')) { 
+    if(nav === undefined) nav = document.getElementById('nav')
+    if(nav === undefined) return
+    
+    if(postheader === undefined) postheader = document.getElementById('postheader')
+    if(postheader === undefined) return  
+    
+    if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed')) {
+      nav.classList.add('fixed') 
+      postheader.classList.add('absolute')
+    } else if (preheader.getBoundingClientRect().bottom >= 0 && nav.classList.contains('fixed')) {
+      nav.classList.remove('fixed')
+      postheader.classList.remove('absolute')
+    }
+    
+    if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered')) { 
       nav.classList.add('bordered')
     
-    } else if (header.getBoundingClientRect().bottom > 0 + 20 && nav.classList.contains('bordered')) {
+    } else if (postheader.getBoundingClientRect().top > 0 + 30 && nav.classList.contains('bordered')) {
       nav.classList.remove('bordered') 
     }
   }

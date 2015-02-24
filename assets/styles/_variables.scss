@@ -18,3 +18,46 @@ $small-screen-size: 768px;
 $medium-screen-size: 992px;
 $moderate-screen-size: 1105px;
 $social-shrink-size: 1440px;
+
+@mixin hex($width, $color) {
+  $height: $width * (78/104);
+  
+  
+  /* A good standard is 104w x 120h. */
+  /* We want wider than that, though */
+  background-color: $color;
+  
+  width: $width;
+  height: ($height / 2);
+  
+  position: relative;
+  
+  &:before {
+    content: "";
+    width: 0; height: 0;
+    border-bottom: ($height / 4) solid $color;
+    border-left: ($width / 2) solid transparent;
+    border-right: ($width / 2) solid transparent;
+    position: absolute;
+    top: (-1 * $height / 4);
+  }
+  &:after {
+    content: "";
+    width: 0; height: 0;
+    border-top: ($height / 4) solid $color;
+    border-left: ($width / 2) solid transparent;
+    border-right: ($width / 2) solid transparent;
+    position: absolute;
+    bottom: (-1 * $height / 4);
+  }
+  
+  &:hover {
+    background-color: $thisislightblue; 
+  }
+  &:hover:before {
+    border-bottom-color: $thisislightblue; 
+  }
+  &:hover:after {
+    border-top-color: $thisislightblue; 
+  }
+}
