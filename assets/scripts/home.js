@@ -22,7 +22,7 @@ home.config(function($interpolateProvider) {
 
 home.controller('calendar-ctrl', function ($scope, $http) {
   'use strict';
-  $http.get('http://auburn.edu/career/events.json')
+  $http.get('/career/events.json')
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
       return (!isOver(el.date)) && (getRelativeMonth(el.date['numerical-month']) <= 6)
@@ -61,7 +61,7 @@ home.controller('calendar-ctrl', function ($scope, $http) {
 
 home.controller('twitter-ctrl', function ($scope, $http) {
   'use strict';
-  $http.get('http://auburn.edu/career/twitter.json')
+  $http.get('/career/twitter.json')
   .then(function (res) {
     var tweets = res.data
     for(var t in tweets) {
@@ -110,7 +110,7 @@ home.controller('twitter-ctrl', function ($scope, $http) {
 
 home.controller('blogger-ctrl', function ($scope, $http) {
   'use strict';
-  $http.get('http://auburn.edu/career/blog.json')
+  $http.get('/career/blog.json')
   .then(function (res) {
     var posts = (res.data.feed.entry)
         $scope.blog = { }
