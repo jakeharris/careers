@@ -34,18 +34,18 @@ header {
   }
   .hex-under {
     z-index: 1;
-    @include hex(166px, #ccc);
-    height: 65px;
+    @include hex(160px, #ccc);
+    height: 66px;
     position: absolute;
-    left: 6px;
+    left: 12px;
     top: 0;
   }
   h1 {
-    padding-top: 0rem; 
+    padding-top: 1rem; 
     padding-bottom: 2rem;
     margin-bottom: 0;
     font-family: $header-font-family;
-    font-size: 7rem;
+    font-size: 5rem;
     text-align: right;
     position: absolute;
     top: 0;
