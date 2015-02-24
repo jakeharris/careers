@@ -14,7 +14,7 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   
-  height: 11rem;
+  height: 13rem;
   
   position: relative;
   
@@ -41,11 +41,12 @@ header {
     top: 0;
   }
   h1 {
-    padding-top: 1rem; 
+    width: 50%;
+    padding-top: 2rem; 
     padding-bottom: 2rem;
     margin-bottom: 0;
     font-family: $header-font-family;
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: right;
     position: absolute;
     top: 0;
@@ -102,9 +103,11 @@ nav.header {
   
   .nav-wrapper.mobile-nav--active {
     display: inline-block;
+    position: fixed;
     left: 0;
+    top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     
     ul {
       display: block;
@@ -135,8 +138,8 @@ nav.header {
   
   .nav-controller {
     display: block;
-    position: fixed;
-    top: 10%;
+    position: absolute;
+    top: 30%;
     right: 0;
     height: 60px;
     width: 60px;
@@ -148,7 +151,7 @@ nav.header {
     cursor: pointer;
     background: $thisislightblue;
     color: white;
-    z-index: 2;
+    z-index: 3;
     
     &:hover {
       background: white;
@@ -161,10 +164,6 @@ nav.header {
     
     .nav-home:first-of-type:hover {
        background: white;
-    }
-
-    .nav-controller {
-      top: 0; 
     }
   }
   
@@ -293,7 +292,7 @@ nav.postheader {
   background: $thisisdarkblue;
   
   font-family: $body-font-family;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   height: 3rem;
   
   box-shadow: 6px 6px 0 #ccc;
@@ -303,12 +302,10 @@ nav.postheader {
     position: absolute;
     right: 0;
     
-    padding: 1px 1rem;
-    
     li {
       display: inline-block; 
       
-      padding-right: 2rem;
+      padding-right: 8px;
       
       a {
         color: white;
@@ -337,7 +334,7 @@ nav.postheader {
     box-shadow: none;
     border: none;
     padding: 0.25rem 0;
-    width: 9.3rem;
+    width: 6rem;
     
     background: $thisisdarkblue;
     color: white;
@@ -361,6 +358,23 @@ ul li ul li {
 }
 
 /* Media queries */
+@media (min-width: $tiny-screen-size) {
+  .preheader {
+    h1 {
+      width: auto;
+      font-size: 5rem;
+    }
+  }
+  nav.postheader {
+    padding: 1px 1rem; 
+    ul li {
+      padding-right: 2rem;
+    }
+    input[type="search"] {
+      width: 9.3rem; 
+    }
+  }
+}
 @media (min-width: $small-screen-size) {
   .preheader {
     width: 90vw !important; 
@@ -393,7 +407,10 @@ ul li ul li {
     &.absolute {
       position: relative;
       top: 60px;
-      margin-bottom: 60px;
+      margin-bottom: 80px;
+    }
+    ul {
+      font-size: 1.5rem;
     }
   }
 }
