@@ -97,8 +97,6 @@ nav.header {
       max-width: 1200px; 
       margin-left: auto;
       margin-right: auto;
-      padding-left: 15px;
-      padding-right: 15px;
     }
   }
   
@@ -203,7 +201,7 @@ nav.header {
       height: auto;
       z-index: 100000;
       
-      margin-top: 1.55rem; /* slightly less than one to cover the box-shadow gap */
+      margin-top: 1.25rem; /* slightly less than one to cover the box-shadow gap */
       
       list-style: none;  
     }
@@ -300,12 +298,6 @@ nav.postheader {
   
   box-shadow: 6px 6px 0 #ccc;
   
-  &.absolute {
-    position: relative;
-    top: 60px;
-    margin-bottom: 60px;
-  }
-  
   ul {
     display: inline-block;
     position: absolute;
@@ -370,6 +362,9 @@ ul li ul li {
 
 /* Media queries */
 @media (min-width: $small-screen-size) {
+  .preheader {
+    width: 90vw !important; 
+  }
   nav.header { 
     .nav-controller {
       display: none; 
@@ -380,18 +375,26 @@ ul li ul li {
       left: 0;
       ul {
         display: flex;
-        width:100%;
-
+        width: 90vw;
+        padding-left: 15px;
+        padding-right: 15px;
         li {
           width: 100%; 
         }
       }
     }
     
+    ul ul {
+      margin-top: 1.55rem; 
+    }
+    
   }
-  
   nav.postheader {
-    top: 60px; 
+    &.absolute {
+      position: relative;
+      top: 60px;
+      margin-bottom: 60px;
+    }
   }
 }
 @media (min-width: $moderate-screen-size) {
