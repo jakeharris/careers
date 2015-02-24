@@ -51,14 +51,4 @@ $social-shrink-size: 1440px;
     position: absolute;
     bottom: (-1 * $height / 4);
   }
-  
-  &:hover {
-    background-color: $thisislightblue; 
-  }
-  &:hover:before {
-    border-bottom-color: $thisislightblue; 
-  }
-  &:hover:after {
-    border-top-color: $thisislightblue; 
-  }
 }
