@@ -14,7 +14,7 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   
-  height: 13rem;
+  min-height: 13rem;
   
   position: relative;
   
@@ -36,9 +36,9 @@ header {
     z-index: 1;
     @include hex(160px, #ccc);
     height: 66px;
-    position: absolute;
+    position: relative;
     left: 12px;
-    top: 0;
+    top: -64px;
   }
   h1 {
     width: 50%;
@@ -47,10 +47,7 @@ header {
     margin-bottom: 0;
     font-family: $header-font-family;
     font-size: 3rem;
-    text-align: right;
-    position: absolute;
-    top: 0;
-    right: 15px;
+    text-align: center;
     a {
       color: white;
       &:hover {
@@ -349,6 +346,8 @@ nav.postheader {
 
 .hex {
   @include hex(166px, white);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -378,6 +377,11 @@ ul li ul li {
 @media (min-width: $small-screen-size) {
   .preheader {
     width: 90vw !important; 
+    h1 {
+      font-size: 8rem;
+      padding-top: 0;
+      margin-top: -1rem;
+    }
   }
   nav.header { 
     .nav-controller {
