@@ -46,7 +46,7 @@ events.controller('calendar-ctrl', function ($scope, $http) {
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
       return !('external-event' in el) && (getRelativeMonth(el.date['numerical-month']) > 0 && getRelativeMonth(el.date['numerical-month']) <= 6)
-    }).sort(byRelativeImmediacy).slice(0, 6)
+    }).sort(byRelativeImmediacy)
   })
   
   var byRelativeImmediacy = function(a, b) {
