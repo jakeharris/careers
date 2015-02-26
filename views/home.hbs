@@ -6,21 +6,13 @@ name: home
 
 <div class="brow row">
   <div class="banner flex">
-    <form class="slider login" method="post" action="https://auburn-csm.symplicity.com/students/index.php">
+    <form class="slider login" method="post" action="https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents%2Flogin">
       <div class="login-wrap">
         <h2 class="login-title">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
         <p class="login-description">Your link to jobs, interviews and employers.</p>
-        <div class="input-group login-username">
-          <span class="input-group-addon input-group-addon-md"><i class="icon icon-user"></i></span>
-          <input type="text" name="username" class="form-control input-md" placeholder="Student Username">
-        </div>
-        <div class="input-group login-password">
-          <span class="input-group-addon input-group-addon-md"><i class="icon icon-lock"></i></span>
-          <input type="password" name="password" class="form-control input-md" placeholder="Password">
-        </div>
-        <div class="flex flex--login">
-          <a href="http://auburn.edu/career/jobs/tipsheets.html" class="btn btn-default btn-md login-button">View tips</a>
-          <button type="submit" class="btn btn-default btn-md login-button login-button--active">Sign in</button>
+        <div class="buttons">
+          <a class="flat-btn" href="https://auburn-csm.symplicity.com/sso/students/">Sign in</a>
+          <a class="flat-btn" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
         </div>
       </div>
     </form>

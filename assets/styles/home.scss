@@ -28,6 +28,17 @@ iframe {
   border: none;
 }
 
+.buttons {
+  position: relative;
+}
+
+.login-wrap::before {
+  z-index: 0;
+}
+.login-wrap .flat-btn {
+  z-index: 101;
+}
+
 .place,
 .times,
 .appointments {
