@@ -17,10 +17,10 @@
         <li>
           <a href="http://www.auburn.edu/career/students/">Students</a>
           <ul>
-            <li><a href="#">Prospective</a></li>
-            <li><a href="#">Current</a></li>
+            <li><a href="http://www.auburn.edu/career/futuretigers/">Prospective</a></li>
+            <li><a href="http://www.auburn.edu/career/students/">Current</a></li>
             <!--<li><a href="#">Graduate</a></li>-->
-            <li><a href="#">Alumnus</a></li>
+            <li><a href="http://www.auburn.edu/career/alumni/">Alumnus</a></li>
           </ul>
         </li>
         <li>
@@ -34,7 +34,7 @@
         </li>
         <li><a href="http://auburn.edu/career/events/">Events</a></li>
         <li>
-          <a href="#">About Us</a>
+          <a href="http://auburn.edu/career/aboutus/">About Us</a>
           <!--<ul>
             <li><a href="#">Office Info</a></li>
             <li><a href="#">Staff</a></li>
@@ -59,7 +59,6 @@
     </ul>
   </nav>
 </header>
-
 
 <!-- Positioning the nav -->
 <script>
@@ -105,7 +104,7 @@
      
     if(hamburger === undefined) hamburger = document.getElementById('hamburger')
     if(hamburger === undefined) return
-     
+    
     if(navWrapper.classList.contains('mobile-nav--active'))
       navWrapper.classList.remove('mobile-nav--active')
     else 
@@ -113,6 +112,7 @@
   })
   window.addEventListener('resize', function () {
     var navWrapper = document.getElementById('nav').children[1]
+    
     if(window.innerWidth >= 768 && navWrapper.classList.contains('mobile-nav--active'))
       navWrapper.classList.remove('mobile-nav--active')
   })
