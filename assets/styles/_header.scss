@@ -85,6 +85,7 @@ nav.header {
     display: none;
     position: relative; 
     left: 100%;
+    background-color: $thisislightblue;
     
     & > ul {
       max-width: 1200px; 
@@ -364,7 +365,7 @@ ul li  {
       padding-right: 2rem;
     }
     input[type="search"] {
-      width: 9.3rem; 
+      width: 10rem; 
     }
   }
 }
@@ -381,12 +382,14 @@ ul li  {
       display: block;
       left: 0;
       ul {
-        display: flex;
+        display: -webkit-flex;
+        display:     -ms-flexbox;
+        display:         flex;
         width: 90vw;
         padding-left: 15px;
         padding-right: 15px;
         li {
-          width: 100%; /* devil magic */ 
+          width: 16.6667%;
         }
       }
     }
