@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
-    <link rel="stylesheet" href="http://auburn.edu/career/assets/styles/responsive-nav.css">
 
     <!-- Application CSS -->
     <link rel=stylesheet href="http://auburn.edu/career/assets/styles/{{ name }}.css">
@@ -43,14 +42,13 @@
     <!-- It would be awesome if I could only load angular based on whether the particular view had a controller -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
     <script src="http://auburn.edu/career/assets/scripts/{{ name }}.js"></script>
-    <script src="http://auburn.edu/career/assets/scripts/responsive-nav.min.js"></script>
     
     <script src="http://auburn.edu/career/assets/scripts/amcf-app.js"></script>
   </head>
 
   <body class="{{ name }}">
+    {{> header }}
     <div class="container">
-      {{> header }}
       {{  body   }}
       {{> footer }}
     </div>
