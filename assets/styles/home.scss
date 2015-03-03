@@ -30,8 +30,42 @@ iframe {
 
 .buttons {
   position: relative;
+  display: -webkit-flex;
+  display:     -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
+.flat-btn {
+  font-size: 18px;
+  height: auto;
+  padding: 1.2rem 0.5rem;
+}
+.flat-btn--half {
+  box-sizing: border-box;
+  flex-basis: 45%;
+  width: 45%;
+}
+.flat-btn--white {
+  background: white;
+  color: $thisislightblue;
+  &:hover {
+    background: $thisisiceblue;
+  }
+  &.flat-btn--half {
+    margin-right: 0; 
+  }
+}
+
+.login-wrap {
+  width: 40rem;
+  margin-left: -20rem;
+}
 .login-wrap::before {
   z-index: 0;
 }
@@ -167,11 +201,22 @@ iframe {
    *************************
 */
 
+@media (min-width: $tiny-screen-size) {
+  .flat-btn {
+    height: auto;
+    padding: 1.2rem 0;
+  }
+}
+
 @media (min-width: $small-screen-size) {
   .tweets,
   .events ul {
     height: 55rem;
     max-height: 55rem;
+  }
+  .flat-btn {
+    height: auto;
+    padding: 1.2rem 0;
   }
 }
 
@@ -180,6 +225,10 @@ iframe {
   .events {
     width: 66%;
     flex-basis: 66%;
+  }
+  .flat-btn {
+    height: auto;
+    padding: 1.2rem 0.5rem; 
   }
 }
 
@@ -196,6 +245,11 @@ iframe {
     width: 50%;
     min-height: 14rem;
     max-height: 14rem;
+  }
+  
+  .flat-btn {
+    height: auto; 
+    padding: 1.2rem 0;
   }
 }
 
