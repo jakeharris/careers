@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" ng-app="{{ ng-app  }}">
   <head>
+    <base href="/career/">
     <!-- Meta Data -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +10,16 @@
     <meta name="keywords" content="">
     <title>{{ title }}</title>
 
-    <!-- build:css assets/styles/index.css -->
-      <!-- Bootstrap & Core CSS -->
-      <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-      <link rel="stylesheet" href="http://cdn.auburn.edu/assets/css/default.min.css">
-      <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
+    <!-- Bootstrap & Core CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.auburn.edu/assets/css/default.min.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
 
-      <!-- Application CSS -->
+    <!-- Application CSS -->
+    <!-- build:css assets/styles/{{ name }}.min.css -->
       <link rel="stylesheet" href="assets/styles/{{ name }}.css">
-    <!-- /build -->
+    <!-- endbuild -->
 
     <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
     <!--[if lt IE 9]>
@@ -55,7 +56,16 @@
         }
       </style>
     <![endif]-->
-    
+    <!--[if IE]>
+      <style>
+        /* IE SVG hotfix */
+        img,
+        #cc-carousel.carousel > .carousel-inner > .item > img,
+        #cc-carousel.carousel > .carousel-inner > .item > a > img {
+          height: 100%;
+        }
+      </style>
+    <![endif]-->
 
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-144-precomposed.png">
@@ -64,13 +74,17 @@
     <link rel="apple-touch-icon-precomposed" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
 
-    <!-- Application-specific CSS/JS -->
+    <!-- Angular & Core JS -->
     <script>
       document.createElement('picture')
     </script>
     <script src="http://auburn.edu/career/assets/scripts/picturefill.min.js" async></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
-    <script src="http://auburn.edu/career/assets/scripts/{{ name }}.js"></script>
+    
+    <!-- Application-specific CSS/JS -->
+    <!-- build:js assets/scripts/{{ name }}.min.js -->
+      <script src="assets/scripts/{{ name }}.js"></script>
+    <!-- endbuild -->
   </head>
 
   <body class="{{ name }}">
