@@ -11,50 +11,10 @@ analytics-token: UA-12338791-3
       <div class="login-wrap">
         <h2 class="login-title">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
         <p class="login-description">Your link to jobs, interviews and employers.</p>
-        <div class="input-group login-username">
-          <span class="input-group-addon input-group-addon-md"><i class="icon-user"></i></span>
-          <input type="text" name="username" class="form-control input-md" placeholder="Student Username">
-        </div>
-        <div class="input-group login-password">
-          <span class="input-group-addon input-group-addon-md"><i class="icon-lock"></i></span>
-          <input type="password" name="password" class="form-control input-md" placeholder="Password">
-        </div>
-        <input id="lt"        type="hidden" name="lt"        value="">
-        <input id="execution" type="hidden" name="execution" value="">
-        <input id="_eventId"  type="hidden" name="_eventId"  value="">
-        <script type="text/javascript">
-          var yb = 'https://query.yahooapis.com/v1/public/yql?'
-          , yq = 'q=select%20*%20from%20html%20where%20url%3D%22https%3A%2F%2Fauthenticate.auburn.edu%2Fcas%2Flogin%22%20'
-          , yx = 'and%20xpath%3D\'%2F%2Fdiv%5B%40class%3D%22loginWrapper%22%5D%2F%2Fdiv%5B%40class%3D%22login%22%5D%2F%2Finput%5B%40type%3D%22hidden%22%5D\''
-          , yf = '&format=json&diagnostics=false&callback='
-          , url = yb + yq + yx + yf
-          , jo = ''
-
-          if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest()
-          }
-          else {// code for IE6, IE5
-            xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
-          }
-          xmlhttp.open('POST', url, false)
-          xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-          xmlhttp.send('data')
-
-          jo = JSON.parse(xmlhttp.responseText)
-
-          jo = jo['query']['results']['input']
-
-          for(var input in jo) {
-            if(jo[input].name !== undefined) {
-              var e = document.getElementById(jo[input].name)
-              if (e) e.value = jo[input].value
-                }
-          }
-
-        </script>
-        <div class="flex flex--login">
-          <a href="http://auburn.edu/career/jobs/tipsheets.html" class="btn btn-default btn-md login-button">View tips</a>
-          <button type="submit" name="submit" class="btn btn-default btn-md login-button login-button--active">Sign in</button>
+        <div class="buttons">
+          <a class="flat-btn" href="https://auburn-csm.symplicity.com/sso/students/">Sign in</a>
+          <a class="flat-btn flat-btn--half" href="https://auburn-csm.symplicity.com/students/">Sign in as alumnus</a>
+          <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
         </div>
       </div>
     </form>
