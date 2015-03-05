@@ -43,13 +43,16 @@
 
 module.exports = function (grunt) {
   'use strict';
+  
   // # time-grunt
   // Times how long tasks take. Handy for identifying bottlenecks.
   require('time-grunt')(grunt);
 
   // # jit-grunt
   // Load grunt plugins without using a .loadNpmTasks block at the end of the Gruntfile.
-  require('jit-grunt')(grunt);
+  require('jit-grunt')(grunt, {
+    useminPrepare: 'grunt-usemin' 
+  });
 
   grunt.initConfig({
 
@@ -65,23 +68,24 @@ module.exports = function (grunt) {
     },
 
     // # Tasks I'd like to run, but I am not yet:
-    // ## rev
-    //    Rename files to bust browser caches.
-    // ## *-min
-    //    (htmlmin, cssmin, imagemin, svgmin, uglify)
-    //    Minify our files.
     // ## ftp-deploy
     //    Pushes files over ftp for you.
 
     // # Tasks I might like to run if they prove useful enough:
+    // ## concat
+    //    Concatenates multiple static assets into one file.
+    //    Useful when pages load multiple disparate stylesheets or scripts.
     // ## wiredep
     //    Inject Bower components into our master page.
     // ## concurrent
     //    Runs specified tasks in parallel to speed up builds.
 
-
-
-
+    
+    /*                 */
+    /*      TASKS      */
+    /*                 */
+    
+    
     // # watch
     // Watch for changes in the specified files and run the
     // associated tasks.
@@ -133,7 +137,7 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '.tmp',
-            'dist/*'
+            'dist'
           ]
         }]
       }
@@ -205,40 +209,6 @@ module.exports = function (grunt) {
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
     },
     
-    // ## uncss
-    //    Concatenates all CSS files used on a page, then removes
-    //    all unnecessary selectors (and affiliated rules). Massive
-    //    performance difference!
-    uncss: {
-      options: {
-        ignore: [/nav-collapse.*/, 'closed', 'nav-toggle', 'font-family', 'header-navbar'] 
-      },
-      index: {
-        options: { 
-          report: 'min'
-        },
-        files: {
-          'assets/styles/index.css': ['index.html']
-        }
-      },
-      eventpages: {
-        options: { report: 'min' },
-        files: {
-          'assets/styles/event-pages.css': ['am.html', 'eid.html', 'iptjf.html', 'cmcd.html', 'tech.html']
-        }
-      }
-    },
-    
-    // ## processhtml
-    //    Merges all css references onto a page into the one that uncss generates.
-    processhtml: {
-      dist: {
-        files: {
-          'index.html': ['index.html'] 
-        }
-      }
-    },
-    
     // ## autoprefixer
     //    Automagically adds vendor-prefixed rules to match non-prefixed rules
     //    we use that we might've forgotten about!
@@ -250,33 +220,103 @@ module.exports = function (grunt) {
     //     display: -webkit-flex;`
     autoprefixer: {
       options: {
-        browsers: '> 5%, ie >= 8'
+        browsers: '> 1%, ie >= 8'
       },
       all: {
         src: ['<%= config.assets %>/styles/{,*/}*.css']
       }
     },
-
-    // # express
-    // Launch an express server.
-    express: {
-      options: {
-        livereload: true,
-        bases: '.'
+    
+    // ## *-min
+    // (htmlmin, cssmin, imagemin, svgmin, uglify)
+    // Minify our files.
+    
+    // ### cssmin
+    // Minify our CSS.
+/*    cssmin: {
+      generated: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.assets %>/styles',
+          src: ['*.css', '!*.min.css'],
+          dest: '<%= config.assets %>/styles',
+          ext: '.min.css'
+        }]
       }
+    },*/
+    
+    // ### uglify
+    // Minify our JS.
+/*    uglify: {
+      generated: {
+        options: {
+          sourceMap: true 
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.assets %>/scripts',
+          src: ['*.js', '!*.min.js'],
+          dest: '<%= config.assets %>/scripts',
+          ext: '.min.js'
+        }]
+      }
+    },*/
+    
+    // ## filerev
+    // Rename files to bust browser caches.
+    filerev: {
+      css: {
+        src: 'dist/assets/styles/{,*/}*.min.css',
+        dest: '<%= config.assets %>/styles'
+      },
+      js: {
+        src: 'dist/assets/scripts/{,*/}*.min.js' ,
+        dest: '<%= config.assets %>/scripts'
+      }
+    },
+  
+    
+    // ## usemin
+    // Change blocks of local CSS and JS references
+    // into singular, cache-busting downloads n
+    // your production HTML!
+    usemin: {
+      html: ['index.html', 'events/*.html', 'jobs/index.html'],
+      css: ['<%= config.assets %>/styles/*.css']
     }
 
   });
-
+  
+  // # grunt validate
+  // Validate project files, checking for syntax errors.
+  // If we had test code, it would go here.
+  grunt.registerTask('validate', [
+    'jshint' 
+  ]);
+  
+  // # grunt compile
+  // Compile the project. Generate CSS and HTML from Sass and Handlebars.
+  grunt.registerTask('compile', [
+    'sass',
+    'assemble'
+  ]);
+  
+  // # grunt enhance
+  // Improve upon the compiled project. Minify files, cache bust, and autoprefix.
+  grunt.registerTask('enhance', [
+    //'autoprefixer'
+    /* usemin here */
+  ]);
+  
   // # grunt build
   // Build the project. Don't serve it. Crafted from scratch.
   grunt.registerTask('build', [
     'clean',
-    'sass',
-    'jshint',
-    'assemble',
-    'autoprefixer'
+    'validate',
+    'compile',
+    'enhance'
   ]);
+  
 
   // # grunt auto
   // Build the project, then wait for updates and rebuild selectively.
@@ -286,8 +326,8 @@ module.exports = function (grunt) {
   ]);
 
   // # grunt (default)
-  // Build the project. (Same as `grunt build`.)
-  grunt.registerTask('default', [ 'auto' ]);
+  // Build the project. (Same as `grunt serve`.)
+  grunt.registerTask('default', [ 'serve' ]);
 
   // # grunt serve
   // Build, watch, and livereload on an express server.
