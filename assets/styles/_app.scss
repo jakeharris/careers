@@ -612,10 +612,7 @@ h3,.h3-a {
   top:auto;
 }
 
-/* IE SVG hotfix */
-img,
-#cc-carousel.carousel > .carousel-inner > .item > img,
-#cc-carousel.carousel > .carousel-inner > .item > a > img {
+img {
   height: 100%;
 }
 
