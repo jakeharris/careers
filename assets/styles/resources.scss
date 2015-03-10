@@ -11,7 +11,7 @@ header {
 .hero {
   width: 100%;
   background: white;
-  border: 1px solid $border;
+  box-shadow: 6px 6px 0 $box-shadow;
   text-align: center;
 
   padding: 3rem;
@@ -45,7 +45,7 @@ header {
   }
   &:nth-of-type(2n) {
     background: white;
-    border: 1px solid $border;
+    box-shadow: 6px 6px 0 $box-shadow;
     flex-direction: row-reverse;
   }
 
@@ -59,11 +59,12 @@ header {
     margin-left: auto;
     margin-right: auto;
 
-    box-shadow: 1px 1px 2px #777;
+    box-shadow: 6px 6px 0 $box-shadow;
     counter-reset: i;
 
     & > .wedge {
       min-height: 4rem;
+      max-height: 6rem;
       flex-basis: 100%;
       width: 100%;
 
@@ -138,6 +139,12 @@ header {
     &:nth-child(3) {
       margin-top: 10rem;
     }
+  }
+  
+  & .tooltips {
+    box-shadow: none;
+    border: 6px solid $thisisdarkblue;
+    box-sizing: content-box;
   }
 }
 
