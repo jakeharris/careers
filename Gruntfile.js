@@ -60,6 +60,7 @@ module.exports = function (grunt) {
     config: {
       assets: 'assets',
       views: 'views',
+      layouts: 'views/layouts',
       master: 'views/layouts/default.hbs',
       jobsmaster: 'views/layouts/jobs.hbs',
       nosocial: 'views/layouts/no-social.hbs',
@@ -165,7 +166,8 @@ module.exports = function (grunt) {
     // into servable HTML.
     assemble: {
       options: {
-        helpers: ['*-helper.js']
+        helpers: ['*-helper.js'],
+        prod: 'false'
       },
       home: {
         options: {
@@ -186,15 +188,47 @@ module.exports = function (grunt) {
         },
         files: {
           'events/index.html': ['<%= config.views %>/events.hbs'],
-          'events/': [
-            '<%= config.views %>/am.hbs',
-            '<%= config.views %>/eid.hbs',
-            '<%= config.views %>/iptjf.hbs',
-            '<%= config.views %>/tech.hbs',
-            '<%= config.views %>/cmcd.hbs'
+          'students/events/': [
+            '<%= config.views %>/events-pages/am.hbs',
+            '<%= config.views %>/events-pages/eid.hbs',
+            '<%= config.views %>/events-pages/iptjf.hbs',
+            '<%= config.views %>/events-pages/tech.hbs',
+            '<%= config.views %>/events-pages/cmcd.hbs'
           ] 
         }
-      }
+      },
+      students: {
+        options:  {
+          flatten: true,
+          layout: '<%= config.layouts %>/resources.hbs',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'students/index.html': ['<%= config.views %>/students/current.hbs'],
+          'students/': ['<%= config.views %>/students/*.hbs']
+        }
+      },
+      families: {
+        options:  {
+          flatten: true,
+          layout: '<%= config.layouts %>/resources.hbs',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'parents/index.html': ['<%= config.views %>/families.hbs']
+        }
+      },
+      faculty: {
+        options:  {
+          flatten: true,
+          layout: '<%= config.layouts %>/resources.hbs',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'faculty/index.html': ['<%= config.views %>/faculty.hbs']
+        }
+      },
+      
     },
 
     // # jshint
