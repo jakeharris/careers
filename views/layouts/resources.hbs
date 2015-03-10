@@ -1,0 +1,17 @@
+---
+layout: views/layouts/no-social.hbs
+name: resources
+path-to-root: ..
+hero-title: GET GUIDED.
+hero-subtitle: Which stage of the process are you in?
+---
+
+<div class="hero row">
+  <h1>{{ hero-title }}</h1>
+  <h2>{{ hero-subtitle }}</h2>
+</div>
+
+<!-- Good place for a usemin block. Could turn this into resources.min.js. -->
+<script src="assets/scripts/tooltip.js"></script>
+
+{{> body}}
