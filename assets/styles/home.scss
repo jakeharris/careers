@@ -51,15 +51,8 @@ iframe {
   flex-basis: 45%;
   width: 45%;
 }
-.flat-btn--white {
-  background: white;
-  color: $thisislightblue;
-  &:hover {
-    background: $thisisiceblue;
-  }
-  &.flat-btn--half {
-    margin-right: 0; 
-  }
+.flat-btn--white.flat-btn--half {
+  margin-right: 0; 
 }
 
 .login-wrap {

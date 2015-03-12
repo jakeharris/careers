@@ -511,6 +511,14 @@ h3,.h3-a {
   } 
 }
 
+.flat-btn--white {
+  background: white;
+  color: $thisislightblue;
+  &:hover {
+    background: $thisisiceblue;
+  }
+}
+
 .blanker {
   background: #f1f1f1;
   overflow: hidden;

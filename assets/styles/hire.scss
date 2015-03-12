@@ -1,1 +1,61 @@
 @import 'app';
+
+.content {
+  margin-top: 3rem;
+}
+
+.login {
+  background: none repeat scroll 0% 0% white;
+  overflow: visible;
+  flex-basis: auto;
+  width: auto;
+  padding: 0 6rem;
+  .login-wrap {
+    margin: 0;
+    position: relative;
+    width: auto;
+    top: auto;
+    left: auto;
+    height: auto;
+  }
+}
+
+.student-employment {
+  padding-right: 10rem;
+  width: 45%; 
+  position: relative;
+  &::before {
+    font-family: "icomoon";
+    content: "\e603";
+    margin-top: -9rem;
+    margin-right: -9rem;
+    font-size: 20rem; 
+    color: #85a2c6;
+    position: absolute;
+    z-index: 100;
+    opacity: .1;
+    top: 5px;
+    right: 8rem;
+  }
+}
+
+.flat-btn {
+  font-size: 18px;
+  height: auto;
+  padding: 1.2rem 0.5rem;
+}
+
+.events {
+  ul {
+    padding-top: 2rem; 
+    height: 85vh;
+  }
+}
+
+// OVERWRITING BOOTSTRAP
+
+.row::before,
+.row::after {
+  display: block;
+  content: none;
+}
