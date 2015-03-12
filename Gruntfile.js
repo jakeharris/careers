@@ -194,6 +194,16 @@ module.exports = function (grunt) {
             '<%= config.views %>/cmcd.hbs'
           ] 
         }
+      },
+      hire: {
+        options: {
+          flatten: true,
+          layout: '<%= config.master %>',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'employers/index.html': ['<%= config.views %>/hire.hbs'] 
+        }
       }
     },
 
