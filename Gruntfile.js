@@ -194,6 +194,16 @@ module.exports = function (grunt) {
             '<%= config.views %>/cmcd.hbs'
           ] 
         }
+      },
+      aboutUs: {
+        options:  {
+          flatten: true,
+          layout: '<%= config.nosocial %>',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'aboutus/index.html': ['<%= config.views %>/about-us.hbs'] 
+        }
       }
     },
 
