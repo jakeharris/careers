@@ -202,7 +202,10 @@ module.exports = function (grunt) {
           partials: '<%= config.partials %>'
         },
         files: {
-          'aboutus/index.html': ['<%= config.views %>/about-us.hbs'] 
+          'aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
+          'aboutus/': [
+            '<%= config.views %>/plan-your-visit.hbs' 
+          ]
         }
       }
     },
