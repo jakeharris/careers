@@ -100,18 +100,24 @@
     font-size: 3rem;
     
     a {
-      margin-left: 6rem;
+      margin-left: 6.6rem;
       display: inline-block; 
     }
   }
 
-  .phone, .email {
-    margin-top: 1rem;
+  .address, .phone, .email {
     position: relative;
     a {
       position: absolute;
-      top: 1.5rem;
+      top: 2.5rem;
+    }
+  }
+  
+  .phone, .email {
+    margin-top: 1rem;
+    a {
       margin-left: 5.1rem;
+      top: 1.5rem;
     }
   }
   .email {
@@ -140,4 +146,8 @@
   .email:before {
     @extend .icon-comments-o; 
   }
+}
+
+.ginn {
+  margin-top: -17rem;
 }
