@@ -1,0 +1,24 @@
+{
+  "staff-member": [
+    {
+      "name": "Nancy Bernard",
+      "position": "Director",
+      "email": "nmb"
+    },
+    {
+      "name": "Shari Black",
+      "position": "Graduate Assistant",
+      "email": "smb0059"
+    },
+    {
+      "name": "Addye Buckley-Burnell",
+      "position": "AD, Career Development",
+      "email": "addyebb"
+    },
+    {
+      "name": "Kayla Gomillion",
+      "position": "Graduate Student Assistant",
+      "email": "krg0002"
+    }
+  ]
+}

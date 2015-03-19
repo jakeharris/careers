@@ -199,13 +199,15 @@ module.exports = function (grunt) {
         options:  {
           flatten: true,
           layout: '<%= config.nosocial %>',
-          partials: '<%= config.partials %>'
+          partials: '<%= config.partials %>',
+          data: '<%= config.assets %>/data/staff.json'
         },
         files: {
           'aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
           'aboutus/': [
             '<%= config.views %>/plan-your-visit.hbs',
-            '<%= config.views %>/campus-partners.hbs'
+            '<%= config.views %>/campus-partners.hbs',
+            '<%= config.views %>/staff.hbs'
           ]
         }
       }
