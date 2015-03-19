@@ -28,7 +28,7 @@
       width: 34%;
       text-align: center;
       a {
-        padding: 3rem; 
+        padding: 1rem; 
       }
     }
     .option:first-child {
@@ -61,7 +61,9 @@
     }
     h3 {
       font-family: $header-font-family;
-      font-size: 4rem;
+      font-size: 3.5rem;
+      padding: 0;
+      margin: 0;
     }
   }
 
@@ -152,8 +154,14 @@ iframe {
 
 .map {
   max-height: none;
+  margin-top: 0;
+  box-shadow: 6px 6px 0 $box-shadow;
+  z-index: 1;
 }
-
+.directions-content {
+  margin-top: 0;
+  z-index: 2;
+}
 .parking-content {
   display: flex;
   justify-content: space-between;
@@ -166,15 +174,20 @@ iframe {
     width: 40%;
   }
 }
+.first-lodging {
+  margin-top: 0;
+}
 .location-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   
-  address {
+  .location-contact {
     flex-basis: 40%;
-    width: 40%;
-    
+    width: 40%; 
+  }
+  
+  .address, .phone {
     font-family: $header-font-family;
     font-size: 3rem;
     
@@ -183,18 +196,31 @@ iframe {
       display: inline-block; 
     }
   }
+
+  .phone {
+    margin-top: 1rem;
+    position: relative;
+    a {
+      position: absolute;
+      top: 1.5rem;
+    }
+  }
   
-  address:before {
+  .address:before, .phone:before {
     @extend [class^="icon-"], [class*=" icon-"];
-    @extend .icon-map-marker;
   
     display: inline;
     margin: 0 auto;
 
     font-size: 8rem;  
     color: $box-shadow;
-
-    margin-bottom: 4rem; 
+     
+  }
+  .address:before {
+    @extend .icon-map-marker;
+  }
+  .phone:before {
+    @extend .icon-phone; 
   }
   
   .location-info {
