@@ -18,6 +18,7 @@
   margin-top: 3rem;
   
   max-height: 22rem;
+  min-height: 160px;
   
   position: relative;
   
@@ -69,7 +70,7 @@
       z-index: 3;
       
       position: absolute;
-      top: 65%;
+      bottom: 5%;
       right: 0;
       padding-right: 3rem;
       font-size: 4rem;
@@ -85,23 +86,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   
   .partner-contact {
-    flex-basis: 40%;
-    width: 40%;
+    flex-basis: 100%;
+    width: 100%;
+    align-content: space-around;
+    margin-bottom: 3rem;
   }
   .partner-info {
-    flex-basis: 50%;
-    width: 50%;
+    flex-basis: 100%;
+    width: 100%;
   }
   
   .address, .phone, .email {
     font-family: $header-font-family;
-    font-size: 3rem;
+    font-size: 2rem;
+    
+    margin-left: auto;
+    margin-right: auto;
     
     a {
       margin-left: 6.6rem;
       display: inline-block; 
+      word-wrap: break-word;
     }
   }
 
@@ -147,7 +155,50 @@
     @extend .icon-comments-o; 
   }
 }
-
 .ginn {
-  margin-top: -17rem;
+  margin-top: -7rem;
+}
+
+/* *************** 
+    MEDIA QUERIES
+   *************** */
+@media (min-width: $tiny-screen-size) {
+  .partner-content {
+    .address, .phone, .email {
+      width: 40rem; 
+      font-size: 3rem;
+    }
+  }
+}
+@media (min-width: $small-screen-size) {
+  .partner-content {
+    .partner-contact {
+      flex-basis: 60%;
+      width: 60%;
+      margin-bottom: 0;
+    }
+    .partner-info {
+      flex-basis: 40%;
+      width: 40%;
+    }
+    .address, .phone, .email {
+      width: auto;
+    }
+  }
+  .ginn {
+    margin-top: -17rem; 
+  }
+}
+
+@media (min-width: $moderate-screen-size) {
+  .partner-content {
+    .partner-contact {
+      flex-basis: 40%;
+      width: 40%;
+    }
+    .partner-info {
+      flex-basis: 50%;
+      width: 50%;
+    }
+  }
 }
