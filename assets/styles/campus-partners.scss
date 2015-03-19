@@ -166,6 +166,7 @@
   .partner-content {
     .address, .phone, .email {
       width: 40rem; 
+      min-width: 40rem;
       font-size: 3rem;
     }
   }
