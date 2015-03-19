@@ -204,7 +204,8 @@ module.exports = function (grunt) {
         files: {
           'aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
           'aboutus/': [
-            '<%= config.views %>/plan-your-visit.hbs' 
+            '<%= config.views %>/plan-your-visit.hbs',
+            '<%= config.views %>/campus-partners.hbs'
           ]
         }
       }
