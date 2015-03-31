@@ -19,9 +19,25 @@
       "quote": "Laughing Over Lollipops"
     },
     {
-      "name": "Kayla Gomillion",
-      "position": "Graduate Student Assistant",
-      "email": "krg0002"
+      "name": "Torey Palmer",
+      "position": "Career Counselor",
+      "email": "palmemt",
+      "img": "torey.jpg",
+      "quote": "I am a ball of sunshine.",
+      "portfolio": "http://toreyp.weebly.com/"
+    },
+    {
+      "name": "Diane Thorne",
+      "position": "IT Specialist",
+      "email": "thornde",
+      "img": "diane.jpg"
+    },
+    {
+      "name": "Meaghan Weir",
+      "position": "Career Counselor",
+      "email": "meaghan",
+      "img": "meaghan.jpg",
+      "portfolio": "http://meaghanweir.wix.com/portfolio"
     }
   ]
 }
