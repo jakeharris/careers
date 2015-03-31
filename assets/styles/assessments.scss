@@ -1,0 +1,22 @@
+@import 'app';
+
+.content > h2,
+.content > p,
+.more-guidance-header,
+.more-guidance-body {
+  text-align: center;
+}
+
+.other-assessments {
+  display: flex;
+}
+
+.assessment {
+  flex-basis: 50%;
+  width: 50%;
+}
+
+.focus-description, .flat-btns {
+  flex-basis: 40%;
+  width: 40%;
+}
