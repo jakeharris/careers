@@ -3,15 +3,20 @@ title: Staff | Career Center
 name: staff
 ---
 
-{{#each staff.member}}
-<section class="content extra-content">
-  {{#if img}}
-  <img src="assets/images/staff/{{img}}">
-  {{/if}}
-  <div class="contact-card">
-    <h2>{{name}}</h2>
-    <h3>{{position}}</h3>
-    <h3><a href="mailto:{{email}}@auburn.edu">{{email}}@auburn.edu</a></h3>
-  </div>
-</section>
-{{/each}}
+<div class="staff-container">
+  {{#each staff.member}}
+  <section class="contact-card">
+    {{#if img}}
+    <img src="assets/images/staff/{{img}}">
+    {{/if}}
+    <div class="contact-info">
+      <h2>{{name}}</h2>
+      <h3>{{position}}</h3>
+      <h3><a href="mailto:{{email}}@auburn.edu">{{email}}@auburn.edu</a></h3>
+      {{#if quote}}
+      <p class="muted"><span class="big-quote">"</span>{{quote}}<span class="big-quote">"</span></p>
+      {{/if}}
+    </div>
+  </section>
+  {{/each}}
+</div>
