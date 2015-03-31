@@ -194,6 +194,16 @@ module.exports = function (grunt) {
             '<%= config.views %>/cmcd.hbs'
           ] 
         }
+      },
+      assessments: {
+        options: {
+          flatten: true,
+          layout: '<%= config.nosocial %>',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'assessments/index.html': ['<%= config.views %>/assessments.hbs']
+        }
       }
     },
 
