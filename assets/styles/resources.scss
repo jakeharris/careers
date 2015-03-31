@@ -14,7 +14,11 @@ header {
   box-shadow: 6px 6px 0 $box-shadow;
   text-align: center;
 
-  padding: 3rem;
+  padding: 0;
+  
+  img {
+    width: 100%; 
+  }
 
   & > h1 {
     font-family: $header-font-family;
@@ -178,8 +182,4 @@ header {
 }
 .tooltip--show {
   display: block;
-}
-
-.triangle {
-
 }
