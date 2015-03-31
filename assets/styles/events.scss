@@ -4,14 +4,15 @@ body.events {
   width: 100%;
   flex-basis: 100%;
   
-  
-  .preheader-navbar ul,
-  .header-navbar    ul,
-  footer            ul{
+  footer ul {
     display: block;
     max-height: none;
     height: auto;
     flex-flow: row;
+  }
+  
+  ul {
+    flex-direction: row; 
   }
   
   .events {
