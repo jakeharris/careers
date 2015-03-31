@@ -9,14 +9,49 @@
       "name": "Shari Black",
       "position": "Graduate Assistant",
       "email": "smb0059",
-      "img": "shari.jpg"
+      "img": "shari.jpg",
+      "portfolio": "http://smb0059.wix.com/shari-black"
     },
     {
       "name": "Addye Buckley-Burnell",
       "position": "AD, Career Development",
       "email": "addyebb",
       "img": "addye.jpg",
-      "quote": "Laughing Over Lollipops"
+      "quote": "Laughing Over Lollipops",
+      "portfolio": "http://addyebb.weebly.com/"
+    },
+    {
+      "name": "Kayla Gomillion",
+      "position": "Graduate Student Assistant",
+      "email": "krg0002"
+    },
+    {
+      "name": "Karla Kirkemo",
+      "position": "Administrative Support Associate",
+      "email": "kjk0018"
+    },
+    {
+      "name": "Sue Olson",
+      "position": "Administrative Support Associate",
+      "email": "pavelso"
+    },
+    {
+      "name": "Jay Skipworth",
+      "position": "AD, Employer Relations",
+      "email": "jbs0003",
+      "img": "jay.jpg"
+    },
+    {
+      "name": "Melvin K. Smith",
+      "position": "Special Events Coordinator",
+      "email": "mks",
+      "img": "melvin.jpg"
+    },
+    {
+      "name": "Alex Williamson",
+      "position": "Marketing &amp; Communications Specialist",
+      "email": "anw0040",
+      "quote": "Torey is such a jerk."
     },
     {
       "name": "Torey Palmer",
