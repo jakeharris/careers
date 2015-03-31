@@ -155,12 +155,21 @@ iframe {
 .map {
   max-height: none;
   margin-top: 0;
-  box-shadow: 6px 6px 0 $box-shadow;
+  box-shadow: 6px 0 0 $box-shadow;
   z-index: 1;
 }
 .directions-content {
   margin-top: 0;
   z-index: 2;
+  padding: 0;
+  box-shadow: 6px 6px 0 $box-shadow, 6px 0 0 $box-shadow;
+  
+  .flat-btn {
+    box-shadow: none;
+    margin: 0;
+    z-index: 100;
+    display: table;
+  }
 }
 .parking-content {
   display: flex;
