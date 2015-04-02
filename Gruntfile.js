@@ -204,6 +204,16 @@ module.exports = function (grunt) {
         files: {
           'assessments/index.html': ['<%= config.views %>/assessments.hbs']
         }
+      },
+      liason: {
+        options: {
+          flatten: true,
+          layout: '<%= config.nosocial %>',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'aboutus/liasons.html': ['<%= config.views %>/liaison-hours.hbs']
+        }
       }
     },
 
