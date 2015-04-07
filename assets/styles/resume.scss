@@ -1,0 +1,52 @@
+@import 'app';
+
+.note {
+  border-left: 3px solid $box-shadow;
+  padding-left: 3rem;
+  margin: 0;
+  color: $box-shadow;
+}
+
+.resume-checklist {
+  margin-left: 3rem;
+  li {
+    list-style: disc;
+    padding: 1rem 0;
+  }
+}
+
+.document-review {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  
+  .content {
+    flex-basis: 45%;
+    width: 45%;
+  }
+}
+
+.location, .hours {
+  display: flex;
+  flex-wrap: nowrap;
+  
+  padding-top: 2rem;
+}
+.place-address {
+  margin: 0;
+  padding-left: 5.6rem;
+}
+.place-icon, .times-icon {
+  font-size: 6rem;
+}
+
+.hours-content {
+  padding-left: 3rem;
+}
+.hours-content h2 {
+  margin-top: 0;
+}
+
+.flat-btn {
+  margin-top: 3rem;
+}

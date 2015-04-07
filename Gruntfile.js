@@ -214,6 +214,16 @@ module.exports = function (grunt) {
         files: {
           'aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs']
         }
+      },
+      resume: {
+        options: {
+          flatten: true,
+          layout: '<%= config.nosocial %>',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'resume/index.html': ['<%= config.views %>/resume.hbs']
+        }
       }
     },
 
