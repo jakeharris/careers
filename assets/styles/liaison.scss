@@ -113,3 +113,23 @@
     border-color: $thisisburntorange;
   }
 }
+.liaison-information {
+  display: flex;
+  justify-content: space-between;
+}
+ 
+.liaison-info-column {
+  flex-basis: 33%;
+  width: 33%;
+  
+  margin: 0 2rem;
+  
+  h2 {
+    font-size: 4rem;
+  }
+  p {
+    font-family: $header-font-family; 
+    font-size: 2.5rem;
+    color: $box-shadow;
+  }
+}
