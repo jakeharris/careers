@@ -212,7 +212,7 @@ module.exports = function (grunt) {
           partials: '<%= config.partials %>'
         },
         files: {
-          'aboutus/liasons.html': ['<%= config.views %>/liaison-hours.hbs']
+          'aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs']
         }
       }
     },
