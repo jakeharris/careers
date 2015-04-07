@@ -7,6 +7,18 @@
   color: $box-shadow;
 }
 
+.resume-banner {
+  text-align: center;
+  h2 {
+    font-size: 8rem; 
+    color: $thisislightorange;
+  }
+  p {
+    font-size: 3rem;
+    font-family: $header-font-family;
+  }
+}
+
 .resume-checklist {
   margin-left: 3rem;
   li {
