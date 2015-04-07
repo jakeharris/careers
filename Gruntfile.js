@@ -224,6 +224,17 @@ module.exports = function (grunt) {
         files: {
           'resume/index.html': ['<%= config.views %>/resume.hbs']
         }
+      },
+      presentations: {
+        options: {
+          flatten: true,
+          layout: '<%= config.nosocial %>',
+          partials: '<%= config.partials %>',
+          data: '<%= config.assets %>/data/presentation-fields.json'
+        },
+        files: {
+          'faculty/presentations.html': ['<%= config.views %>/presentations.hbs']
+        }
       }
     },
 
