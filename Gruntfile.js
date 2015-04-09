@@ -233,7 +233,8 @@ module.exports = function (grunt) {
           data: '<%= config.assets %>/data/presentation-fields.json'
         },
         files: {
-          'faculty/presentations.html': ['<%= config.views %>/presentations.hbs']
+          'faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
+          'faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs']
         }
       }
     },
