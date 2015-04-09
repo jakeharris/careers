@@ -64,6 +64,18 @@ input[type="radio"] + .icon-check:before {
 input[type="radio"]:checked + .icon-check:before {
   color: #87e571;
 }
+.form-control,
+.input-group-addon {
+  border-radius: 0;
+}
+#time-start {
+  border-right: 0;
+}
+#time-end {
+  border-left: 0;
+}
+
+
 
 .date-logistics-container {
   display: flex;

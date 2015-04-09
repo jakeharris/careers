@@ -2,196 +2,196 @@
 title: Presentation Request Submitted | Career Center
 name: presentations
 ---
+<section class="content">  
+  <p>
+    <?php
+      if ($topic == "select") {
+        echo "You did not specify a topic. <br />";
+        echo "Please go back and select a topic so your request can be submitted.\n\n";
+        exit;
+      }
 
-<p>
-  <?php
-    if ($topic == "select") {
-      echo "<center>You did not specify a topic.<br>";
-      echo "Please go back and select a topic so your request can be submitted.</center>\n\n";
-      exit;
-    }
-	  
-    if ($type == "select") {
-      echo "<center>You did not specify a program type.<br>";
-      echo "Please go back and select a program type so your request can be submitted.</center>\n\n";
-      exit;
-    }
-	  
-    if ($date == "") {
-      echo "<center>You did not specify a date.<br>";
-      echo "Please go back and enter a date so your request can be submitted.</center>\n\n";
-      exit;
-    }			
-    if ($start_time == "") {
-      echo "<center>You did not specify a start time.<br>";
-      echo "Please go back and enter a start time so your request can be submitted.</center>\n\n";
-      exit;
-    }			
+      if ($type == "select") {
+        echo "<center>You did not specify a program type.<br>";
+        echo "Please go back and select a program type so your request can be submitted.</center>\n\n";
+        exit;
+      }
 
-    if ($end_time == "") {
-      echo "<center>You did not specify an end time.<br>";
-      echo "Please go back and enter an end time so your request can be submitted.</center>\n\n";
-      exit;
-    }
-    if ($location == "") {
-      echo "<center>You did not give a location.<br>";
-      echo "Please go back and enter a location so your request can be submitted.</center>\n\n";
-      exit;
-    }			
-	if ($contact == "") {
-      echo "<center>You did not give a contact name.<br>";
-      echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
-      exit;
-    }						
-	if ($email == "") {
-      echo "<center>You did not give an email.<br>";
-      echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
-      exit;
-    }
-	if ($office == "") {
-      echo "<center>You did not give an office phone number.<br>";
-      echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
-      exit;
-    }	
-    if ($cell == "") {
-      echo "<center>You did not give a cell phone number.<br>";
-      echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
-      exit;
-    }
-    ?>
+      if ($date == "") {
+        echo "<center>You did not specify a date.<br>";
+        echo "Please go back and enter a date so your request can be submitted.</center>\n\n";
+        exit;
+      }			
+      if ($start_time == "") {
+        echo "<center>You did not specify a start time.<br>";
+        echo "Please go back and enter a start time so your request can be submitted.</center>\n\n";
+        exit;
+      }			
 
-  <?php 
-    if (isset($_POST['date']))
-      $date = strip_tags(trim($_POST['date']), ENT_NOQUOTES);
-    if (isset($_POST['start_time']))
-      $start_time = strip_tags(trim($_POST['start_time']), ENT_NOQUOTES);
-    if (isset($_POST['end_time']))
-      $end_time = strip_tags(trim($_POST['end_time']), ENT_NOQUOTES);
-    if (isset($_POST['course']))
-      $course = strip_tags(trim($_POST['course']), ENT_NOQUOTES);
-    if (isset($_POST['section']))
-      $section = strip_tags(trim($_POST['section']), ENT_NOQUOTES );
-    if (isset($_POST['attendance']))
-      $attendance = strip_tags(trim ($_POST['attendance']), ENT_NOQUOTES );
-    if (isset($_POST['organization']))
-      $organization = strip_tags(trim ($_POST['organization']), ENT_NOQUOTES);
-    if (isset($_POST['location']))
-      $location = strip_tags(trim($_POST['location']), ENT_NOQUOTES);
-    if (isset($_POST['description']))
-      $description = strip_tags(trim($_POST['description']), ENT_NOQUOTES);
-    if (isset($_POST['contact']))
-      $contact = strip_tags(trim($_POST['contact']), ENT_NOQUOTES);
-    if (isset($_POST['email']))
-      $email = strip_tags(trim($_POST['email']), ENT_NOQUOTES);
-    if (isset($_POST['office']))
-      $office = strip_tags(trim($_POST['office']), ENT_NOQUOTES);
-    if (isset($_POST['cell']))
-      $cell = strip_tags(trim($_POST['cell']), ENT_NOQUOTES);
-    if (isset($_POST['secondary']))
-      $secondary = strip_tags(trim($_POST['secondary']), ENT_NOQUOTES);
-    if (isset($_POST['secondary-email']))
-      $secondary_email = strip_tags(trim($_POST['secondary-email']), ENT_NOQUOTES );
-    if (isset($_POST['secondary-office']))
-      $secondary_office = strip_tags(trim($_POST['secondary-office']), ENT_NOQUOTES);
-    if (isset($_POST['secondary-cell']))
-      $secondary_cell = strip_tags(trim($_POST['secondary-cell']), ENT_NOQUOTES);
-    ?>
+      if ($end_time == "") {
+        echo "<center>You did not specify an end time.<br>";
+        echo "Please go back and enter an end time so your request can be submitted.</center>\n\n";
+        exit;
+      }
+      if ($location == "") {
+        echo "<center>You did not give a location.<br>";
+        echo "Please go back and enter a location so your request can be submitted.</center>\n\n";
+        exit;
+      }			
+      if ($contact == "") {
+        echo "<center>You did not give a contact name.<br>";
+        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
+        exit;
+      }						
+      if ($email == "") {
+        echo "<center>You did not give an email.<br>";
+        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
+        exit;
+      }
+      if ($office == "") {
+        echo "<center>You did not give an office phone number.<br>";
+        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
+        exit;
+      }	
+      if ($cell == "") {
+        echo "<center>You did not give a cell phone number.<br>";
+        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
+        exit;
+      }
+      ?>
+    <?php 
+      if (isset($_POST['date']))
+        $date = strip_tags(trim($_POST['date']), ENT_NOQUOTES);
+      if (isset($_POST['start_time']))
+        $start_time = strip_tags(trim($_POST['start_time']), ENT_NOQUOTES);
+      if (isset($_POST['end_time']))
+        $end_time = strip_tags(trim($_POST['end_time']), ENT_NOQUOTES);
+      if (isset($_POST['course']))
+        $course = strip_tags(trim($_POST['course']), ENT_NOQUOTES);
+      if (isset($_POST['section']))
+        $section = strip_tags(trim($_POST['section']), ENT_NOQUOTES );
+      if (isset($_POST['attendance']))
+        $attendance = strip_tags(trim ($_POST['attendance']), ENT_NOQUOTES );
+      if (isset($_POST['organization']))
+        $organization = strip_tags(trim ($_POST['organization']), ENT_NOQUOTES);
+      if (isset($_POST['location']))
+        $location = strip_tags(trim($_POST['location']), ENT_NOQUOTES);
+      if (isset($_POST['description']))
+        $description = strip_tags(trim($_POST['description']), ENT_NOQUOTES);
+      if (isset($_POST['contact']))
+        $contact = strip_tags(trim($_POST['contact']), ENT_NOQUOTES);
+      if (isset($_POST['email']))
+        $email = strip_tags(trim($_POST['email']), ENT_NOQUOTES);
+      if (isset($_POST['office']))
+        $office = strip_tags(trim($_POST['office']), ENT_NOQUOTES);
+      if (isset($_POST['cell']))
+        $cell = strip_tags(trim($_POST['cell']), ENT_NOQUOTES);
+      if (isset($_POST['secondary']))
+        $secondary = strip_tags(trim($_POST['secondary']), ENT_NOQUOTES);
+      if (isset($_POST['secondary-email']))
+        $secondary_email = strip_tags(trim($_POST['secondary-email']), ENT_NOQUOTES );
+      if (isset($_POST['secondary-office']))
+        $secondary_office = strip_tags(trim($_POST['secondary-office']), ENT_NOQUOTES);
+      if (isset($_POST['secondary-cell']))
+        $secondary_cell = strip_tags(trim($_POST['secondary-cell']), ENT_NOQUOTES);
+      ?>
+    <?php
 
-  <?php
+      /* recipient */
+      $to = $email;
 
-    /* recipient */
-    $to = "milieu@auburn.edu";
+      //subject
+      $subject = "AU Career Center Presentation Request";
 
-    //subject
-    $subject = "AU Career Center Presentation Request";
+      //message
 
-    //message
+      $message=
 
-    $message=
-
-    "<b>The following information has been submitted for a presentation. If you are not contacted by someone in the Career Center office within 2 business days, please call 334.844.4744 to confirm your request.</b>
-    <p>
-    <b>Topic Requested/Title:</b> $topic<br>
-    <b>Program Type:</b> $type<br>
-    <b>Date:</b> $date<br>
-    <b>Day of the week:</b> $day<br>
-    <b>Start time:</b> $start_time<br>
-    <b>End time:</b> $end_time<br>
-    <b>Location:</b> $location<br>
-    <b>Description:</b> $description<br>
-    <b>Organization/Course # - Section #:</b> $course | Section $section <br>
-    <b>Expected Attendance:</b> $attendance <br>
-    <b>Contact:</b> $contact<br>
-    <b>Email:</b> $pemail<br>
-    <b>Phone:</b> $poffice<br>
-    <b>Cell:</b> $pcell<br>
-    <b>Secondary Contact:</b> $secondary<br>
-    <b>Email:</b> $semail<br>
-    <b>Phone:</b> $soffice<br>
-    <b>Cell:</b> $scell<br>
-
+      "<p>The following information has been submitted for a presentation. If you are not contacted by someone in the Career Center office within 2 business days, please call 334.844.4744 to confirm your request.</p>
+      <br /><br />
+      <p>
+      <b>Topic Requested/Title:</b> $topic<br>
+      <b>Program Type:</b> $type<br>
+      <b>Date:</b> $date<br>
+      <b>Day of the week:</b> $day<br>
+      <b>Start time:</b> $start_time<br>
+      <b>End time:</b> $end_time<br>
+      <b>Location:</b> $location<br>
+      <b>Description:</b> $description<br>
+      <b>Organization/Course # - Section #:</b> $course | Section $section <br>
+      <b>Expected Attendance:</b> $attendance <br>
+      <b>Contact:</b> $contact<br>
+      <b>Email:</b> $pemail<br>
+      <b>Phone:</b> $poffice<br>
+      <b>Cell:</b> $pcell<br>
+      <b>Secondary Contact:</b> $secondary<br>
+      <b>Email:</b> $semail<br>
+      <b>Phone:</b> $soffice<br>
+      <b>Cell:</b> $scell<br>
 
 
-    ";
 
-    // To send HTML mail, the Content-type header must be set
-    $headers  = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+      ";
 
-    // Additional headers
-    $headers .= 'From: AU Career Center <careers@auburn.edu>' . "\r\n";
+      // To send HTML mail, the Content-type header must be set
+      $headers  = 'MIME-Version: 1.0' . "\r\n";
+      $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-
-    mail($to, $subject, $message, $headers);
+      // Additional headers
+      $headers .= 'From: AU Career Center <careers@auburn.edu>' . "\r\n";
 
 
-   ?>
-       
-       
-  <?php
+      mail($to, $subject, $message, $headers);
 
-    /* recipient */
-    $to = "milieu@javakat.io";
 
-    //subject
-    $subject = "Career Center Presentation Request Form";
+     ?>
 
-    //message
 
-    $message=
+    <?php
 
-    "<center><b>Career Center Presentation Request Form</b></center>
-    <p>
-    <b>Topic Requested/Title:</b> $topic<br>
-    <b>Program Type:</b> $type<br>
-    <b>Date:</b> $date<br>
-    <b>Day of the week:</b> $day<br>
-    <b>Start time:</b> $start_time<br>
-    <b>End time:</b> $end_time<br>
-    <b>Location:</b> $location<br>
-    <b>Internet:</b> $internet<br>
-    <b>Description:</b> $description<br>
-    <b>Organization/Course # - Section #:</b> $course | Section $section <br>
-    <b>Expected Attendance:</b> $attendance <br>
-    <b>Contact:</b> $contact<br>
-    <b>Email:</b> $email<br>
-    <b>Phone:</b> $office<br>
-    <b>Cell:</b> $cell<br>
-    <b>Secondary Contact:</b> $secondary<br>
-    <b>Email:</b> $secondary_email<br>
-    <b>Phone:</b> $secondary_office<br>
-    <b>Cell:</b> $secondary_cell<br>";
+      /* recipient */
+      $to = "milieu@javakat.io";
 
-    // To send HTML mail, the Content-type header must be set
-    $headers  = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+      //subject
+      $subject = "Career Center Presentation Request Form";
 
-    // Additional headers
-    $headers .= 'From: Career Services <careers@auburn.edu>' . "\r\n";
+      //message
 
-    mail($to, $subject, $message, $headers);
-   ?>       
-              
-</p>
-<p>Your request for a presentation has been submitted.</p>
-<p>You will be contacted to confirm your request and to learn more about the presenation. </p>
+      $message=
+
+      "<center><b>Career Center Presentation Request Form</b></center>
+      <p>
+      <b>Topic Requested/Title:</b> $topic<br>
+      <b>Program Type:</b> $type<br>
+      <b>Date:</b> $date<br>
+      <b>Day of the week:</b> $day<br>
+      <b>Start time:</b> $start_time<br>
+      <b>End time:</b> $end_time<br>
+      <b>Location:</b> $location<br>
+      <b>Internet:</b> $internet<br>
+      <b>Description:</b> $description<br>
+      <b>Organization/Course # - Section #:</b> $course | Section $section <br>
+      <b>Expected Attendance:</b> $attendance <br>
+      <b>Contact:</b> $contact<br>
+      <b>Email:</b> $email<br>
+      <b>Phone:</b> $office<br>
+      <b>Cell:</b> $cell<br>
+      <b>Secondary Contact:</b> $secondary<br>
+      <b>Email:</b> $secondary_email<br>
+      <b>Phone:</b> $secondary_office<br>
+      <b>Cell:</b> $secondary_cell<br>";
+
+      // To send HTML mail, the Content-type header must be set
+      $headers  = 'MIME-Version: 1.0' . "\r\n";
+      $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+      // Additional headers
+      $headers .= 'From: Career Services <careers@auburn.edu>' . "\r\n";
+
+      mail($to, $subject, $message, $headers);
+     ?>       
+
+  </p>
+  <p>Your request for a presentation has been submitted.</p>
+  <p>You will be contacted to confirm your request and to learn more about the presenation. </p>
+</section>
