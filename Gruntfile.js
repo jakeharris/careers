@@ -228,7 +228,7 @@ module.exports = function (grunt) {
       presentations: {
         options: {
           flatten: true,
-          layout: '<%= config.nosocial %>',
+          layout: '<%= config.views %>/layouts/datepicker.hbs',
           partials: '<%= config.partials %>',
           data: '<%= config.assets %>/data/presentation-fields.json'
         },

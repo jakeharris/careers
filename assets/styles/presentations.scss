@@ -1,13 +1,27 @@
 @import 'app';
 
+.topics > h2,
+.logistics > h2,
+.description > h2,
+.contacts > h2 {
+  text-align: center;
+  font-size: 6rem;
+  color: $thisislightorange;
+}
+.topics > p {
+  text-align: center;
+}
+
 .topic-groups {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 1300px;
 }
 
 .topic-group {
   padding: 3rem;
-  flex-basis: 50%;
   width: 50%;
 }
 
@@ -17,11 +31,12 @@
 }
 
 .topic {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   box-shadow: 6px 6px 0 $box-shadow;
   margin: 1rem 0;
-  background-color: $thisislightblue;
-  color: white;
+  background-color: white;
+  border: 1px solid $box-shadow;
+  color: $thisisdarkblue;
 }
 label {
   font-weight: normal;
@@ -30,6 +45,7 @@ label {
   cursor: pointer;
   padding: 1rem;
   display: inline-block;
+  margin: 0;
 }
 input[type="radio"] {
   display: none;
@@ -47,6 +63,30 @@ input[type="radio"] + .icon-check:before {
 }
 input[type="radio"]:checked + .icon-check:before {
   color: #87e571;
+}
+
+.date-logistics-container {
+  display: flex;
+}
+.date-container {
+  flex-basis: 33%;
+  width: 33%;
+  margin-right: 3rem;
+}
+.logistics-container {
+  flex-basis: 66%;
+  width: 66%;
+  
+  display: flex;
+}
+.for-whom {
+  flex-basis: 50%;
+  width: 50%;
+  margin-right: 3rem;
+}
+.date, .time {
+  width: 20rem;
+  margin: 1rem 0;
 }
 
 .progress-wrapper {
