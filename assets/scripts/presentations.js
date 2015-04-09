@@ -1,6 +1,6 @@
 $(function () {
   
-  $('#presentations input[type=submit]').on('click', function () {
+  $('#presentations input').on('change', function () {
     
     var incompleteFields = []
     
@@ -36,9 +36,25 @@ $(function () {
     
     if(incompleteFields.length > 0) {
       console.log(incompleteFields)
+      $('#presentations .progress-wrapper input')[0].disabled = 'disabled'
+      console.log($('#presentations .progress-wrapper input')[0])
       return false
     }
-    else return true
+    else
+      $('#presentations .progress-wrapper input')[0].disabled = ''
   })
+  
+  $('#presentations input[name="for-whom"]').on('change', function () {
+    if($('#presentations input[name="for-whom"]:checked').val() == 'organization') {
+      $('.organization-details').show()
+      $('.class-details').hide()
+    }
+    else {
+      $('.organization-details').hide()
+      $('.class-details').show()
+    }
+  })
+  
+  $('.class-details').hide()
   
 })
