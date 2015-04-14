@@ -191,8 +191,9 @@ module.exports = function (grunt) {
             '<%= config.views %>/eid.hbs',
             '<%= config.views %>/iptjf.hbs',
             '<%= config.views %>/tech.hbs',
-            '<%= config.views %>/cmcd.hbs'
-          ] 
+            '<%= config.views %>/cmcd.hbs',
+            '<%= config.views %>/your-major.hbs'
+          ]
         }
       },
       assessments: {
