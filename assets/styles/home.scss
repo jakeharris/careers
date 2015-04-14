@@ -63,8 +63,7 @@ iframe {
 }
 
 .login-wrap {
-  width: 40rem;
-  margin-left: -20rem;
+  margin: 7rem 0 0 14%;
 }
 .login-wrap::before {
   z-index: 0;
@@ -252,6 +251,7 @@ iframe {
     padding: 1.2rem 0;
   }
 }
+
 
 @media (min-width: $social-shrink-size) {
   .banner {

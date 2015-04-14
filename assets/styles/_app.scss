@@ -34,6 +34,7 @@
 
 .flex, .centered, .login {
   display: -ms-flexbox;
+  display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -305,14 +306,7 @@ h3,.h3-a {
   }
 }
 .login-wrap {
-  position: absolute;
-  display: block;
-  top: 50%;
-  margin-left: -15rem;
-  margin-top: -13.5rem;
-  height: 20rem;
-  left: 50%;
-  width: 30rem;
+
 }
 
 .login-wrap::before, .block-bg, .blanker-wrap::before {
