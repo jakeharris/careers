@@ -3,23 +3,30 @@ title: Staff | Career Center
 name: staff
 ---
 
-<div class="staff-container">
-  {{#each staff.member}}
-  <section class="contact-card">
-    {{#if img}}
-    <img src="assets/images/staff/{{img}}">
-    {{/if}}
-    <div class="contact-info">
-      <h2>{{name}}</h2>
-      <h3>{{position}}</h3>
-      <h3><a href="mailto:{{email}}@auburn.edu">{{email}}@auburn.edu</a></h3>
-      {{#if quote}}
-      <p class="muted"><span class="big-quote">"</span>{{quote}}<span class="big-quote">"</span></p>
-      {{/if}}
-    </div>
-    {{#if portfolio}}
-    <a class="flat-btn" href="{{ portfolio }}">Learn More</a>
-    {{/if}}
-  </section>
-  {{/each}}
-</div>
+{{#each staff.category}}
+  <div class="content">
+    <h2>{{this}}</h2>
+  </div>
+  <div class="staff-container">
+    {{#each ../staff.member}}
+      {{#is category ../this}}
+        <section class="contact-card">
+          {{#if img}}
+          <img src="assets/images/staff/{{img}}">
+          {{/if}}
+          <div class="contact-info">
+            <h2>{{name}}</h2>
+            <h3>{{position}}</h3>
+            <h3><a href="mailto:{{email}}@auburn.edu">{{email}}@auburn.edu</a></h3>
+            {{#if quote}}
+            <p class="muted"><span class="big-quote">"</span>{{quote}}<span class="big-quote">"</span></p>
+            {{/if}}
+          </div>
+          {{#if portfolio}}
+          <a class="flat-btn" href="{{ portfolio }}">Learn More</a>
+          {{/if}}
+        </section>
+      {{/is}}
+    {{/each}}
+  </div>
+{{/each}}

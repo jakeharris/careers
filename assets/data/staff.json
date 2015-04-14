@@ -1,78 +1,111 @@
 {
+  "category": [
+    "Director",
+    "Career Development",
+    "Employer Relations",
+    "Operations"
+  ],
   "member": [
     {
       "name": "Nancy Bernard",
       "position": "Director",
-      "email": "nmb"
-    },
-    {
-      "name": "Shari Black",
-      "position": "Graduate Assistant",
-      "email": "smb0059",
-      "img": "shari.jpg",
-      "portfolio": "http://smb0059.wix.com/shari-black"
+      "email": "nmb",
+      "category": "Director"
     },
     {
       "name": "Addye Buckley-Burnell",
       "position": "AD, Career Development",
       "email": "addyebb",
       "img": "addye.jpg",
-      "quote": "Laughing Over Lollipops",
-      "portfolio": "http://addyebb.weebly.com/"
+      "portfolio": "http://addyebb.weebly.com/",
+      "category": "Career Development"
     },
     {
-      "name": "Kayla Gomillion",
-      "position": "Graduate Student Assistant",
-      "email": "krg0002"
-    },
-    {
-      "name": "Karla Kirkemo",
-      "position": "Administrative Support Associate",
-      "email": "kjk0018"
-    },
-    {
-      "name": "Sue Olson",
-      "position": "Administrative Support Associate",
-      "email": "pavelso"
-    },
-    {
-      "name": "Jay Skipworth",
-      "position": "AD, Employer Relations",
-      "email": "jbs0003",
-      "img": "jay.jpg"
-    },
-    {
-      "name": "Melvin K. Smith",
-      "position": "Special Events Coordinator",
-      "email": "mks",
-      "img": "melvin.jpg"
-    },
-    {
-      "name": "Alex Williamson",
-      "position": "Marketing &amp; Communications Specialist",
-      "email": "anw0040",
-      "quote": "Torey is such a jerk."
+      "name": "Kyle Nixon",
+      "position": "Career Counselor",
+      "email": "kcn0007",
+      "category": "Career Development"
     },
     {
       "name": "Torey Palmer",
       "position": "Career Counselor",
       "email": "palmemt",
       "img": "torey.jpg",
-      "quote": "I am a ball of sunshine.",
-      "portfolio": "http://toreyp.weebly.com/"
-    },
-    {
-      "name": "Diane Thorne",
-      "position": "IT Specialist",
-      "email": "thornde",
-      "img": "diane.jpg"
+      "portfolio": "http://toreyp.weebly.com/",
+      "category": "Career Development"
     },
     {
       "name": "Meaghan Weir",
       "position": "Career Counselor",
       "email": "meaghan",
       "img": "meaghan.jpg",
-      "portfolio": "http://meaghanweir.wix.com/portfolio"
+      "portfolio": "http://meaghanweir.wix.com/portfolio",
+      "category": "Career Development"
+    },
+    {
+      "name": "Shari Black",
+      "position": "Graduate Assistant",
+      "email": "smb0059",
+      "img": "shari.jpg",
+      "portfolio": "http://smb0059.wix.com/shari-black",
+      "category": "Career Development"
+    },
+    {
+      "name": "Kayla Gomillion",
+      "position": "Graduate Assistant",
+      "email": "krg0002",
+      "category": "Career Development"
+    },
+    {
+      "name": "Wade Manora",
+      "position": "Graduate Assistant",
+      "email": "wzm0004",
+      "category": "Career Development"
+    },
+    {
+      "name": "Kristine Adams",
+      "position": "Graduate Assistant",
+      "email": "kma0020",
+      "category": "Career Development"
+    },
+    {
+      "name": "Jay Skipworth",
+      "position": "AD, Employer Relations",
+      "email": "jbs0003",
+      "img": "jay.jpg",
+      "category": "Employer Relations"
+    },
+    {
+      "name": "Melvin K. Smith",
+      "position": "Special Events Coordinator",
+      "email": "mks",
+      "img": "melvin.jpg",
+      "category": "Employer Relations"
+    },
+    {
+      "name": "Diane Thorne",
+      "position": "IT Specialist",
+      "email": "thornde",
+      "img": "diane.jpg",
+      "category": "Employer Relations"
+    },
+    {
+      "name": "Karla Kirkemo",
+      "position": "Administrative Support Associate",
+      "email": "kjk0018",
+      "category": "Operations"
+    },
+    {
+      "name": "Sue Olson",
+      "position": "Administrative Support Associate",
+      "email": "pavelso",
+      "category": "Operations"
+    },
+    {
+      "name": "Alex Williamson",
+      "position": "Marketing & Communications Specialist",
+      "email": "anw0040",
+      "category": "Operations"
     }
   ]
 }
