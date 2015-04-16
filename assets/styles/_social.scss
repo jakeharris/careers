@@ -15,6 +15,9 @@
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  
+  background: $thisislightblue;
+  box-shadow: 6px 6px 0 $box-shadow;
 
   .social-icon {
     height: 4rem;
@@ -78,8 +81,8 @@
     width: 13.3rem;
     
     .social-icon {
-      flex-basis: 49%;
-      width: 49%;
+      flex-basis: 50%;
+      width: 50%;
       height: 6rem;
       font-size: 4rem;
       
