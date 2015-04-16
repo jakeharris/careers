@@ -1,6 +1,6 @@
 $(function () {
   
-  $('#presentations input').on('change', function () {
+  $('#presentations input').on('change keyup', function () {
     
     var incompleteFields = []
     
@@ -35,13 +35,12 @@ $(function () {
     if($('input[name="cell"]').val() === '') incompleteFields.push('cell')
     
     if(incompleteFields.length > 0) {
-      console.log(incompleteFields)
-      $('#presentations .progress-wrapper input')[0].disabled = 'disabled'
-      console.log($('#presentations .progress-wrapper input')[0])
+      console.log($('#presentations input[type="submit"]')[0])
+      $('#presentations input[type="submit"]')[0].disabled = 'disabled'
       return false
     }
     else
-      $('#presentations .progress-wrapper input')[0].disabled = ''
+      $('#presentations input[type="submit"]')[0].disabled = ''
   })
   
   $('#presentations input[name="for-whom"]').on('change', function () {
@@ -55,6 +54,16 @@ $(function () {
     }
   })
   
+  $('#presentations input[name="topic"]').on('change', function () {
+    $('html, body').animate({
+        scrollTop: $($(".logistics")[0]).offset().top - 60
+    }, 1000);
+  })
+  
   $('.class-details').hide()
   
+  $('.add-secondary').on('click', function () {
+    $('.add-secondary').hide()
+    $('.secondary').show()
+  })
 })
