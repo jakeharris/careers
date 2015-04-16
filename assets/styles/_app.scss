@@ -32,7 +32,7 @@
   margin-left: 0; margin-right: 0;
 }
 
-.flex, .centered, .login {
+.flex, .centered {
   display: -ms-flexbox;
   display: -webkit-box;
   display: -webkit-flex;
@@ -90,8 +90,9 @@ address {
 
 body {
   background: #f4f4f4;
-  font-family: "Source Sans Pro";
-  font-size: 16px;
+  font-family: $body-font-family;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 ul {
@@ -293,16 +294,25 @@ h3,.h3-a {
 }
 
 .login {
-  background: #f1f1f1;
+  padding: 5rem;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-  height: 280px;
+  flex-basis: 100%;
+  width: 100%;
+  
+  h2, p {
+    text-align: center; 
+  }
+  p {
+    font-size: 16px; 
+  }
 }
 
 @media (min-width: 768px) {
   .login {
     height: auto;
+    flex-basis: 50%;
+    width: 50%;
   }
 }
 .login-wrap {
@@ -388,7 +398,7 @@ h3,.h3-a {
 }
 
 .event-date-day {
-  font-size: 6rem;
+  font-size: 5rem;
   margin-top: -1.8rem;
 }
 
@@ -406,7 +416,7 @@ h3,.h3-a {
 
 @media (min-width: 1105px) {
   .event-date {
-    margin-right: 1.8rem;
+    margin-right: 3rem;
   }
 }
 @media (max-width: 480px) {
@@ -444,6 +454,7 @@ h3,.h3-a {
 
 .login-description {
   text-align: center;
+  font-size: 16px;
 }
 
 .btn-md {
@@ -599,6 +610,22 @@ h3,.h3-a {
   font-size: 1.4rem;
 }
 
+.carousel {
+  height: 368px;
+  flex-basis: 100%;
+  width: 100%;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .carousel {
+    flex-basis: 50%;
+    width: 50%;
+  }
+}
+
 #cc-carousel.carousel > .carousel-indicators {
   bottom: 10px;
   left: 50%;
@@ -622,5 +649,8 @@ img {
     & > .row {
       padding-bottom: 0;
     }
+  }
+  &.content--no-padding {
+    padding: 0; 
   }
 }
