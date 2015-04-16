@@ -108,7 +108,7 @@ name: presentations
         <p>
           The following information has been submitted for a presentation. 
           If you are not contacted by someone in the Career Center office 
-          within 2 business days, please call <a href="tel:3348444744">334.844.4744</a> to confirm your 
+          within 2 business days, please call <a href=tel:3348444744>334.844.4744</a> to confirm your 
           request.
         </p>
         <br />
@@ -135,15 +135,15 @@ name: presentations
       "<h1>Details</h1>
       <b>Expected Attendance:</b> $attendance <br>
       <b>Contact:</b> $contact<br>
-      <b>Email:</b> <a href="mailto:$email">$email</a><br>
-      <b>Phone:</b> <a href="tel:$office">$office</a><br>
-      <b>Cell:</b> <a href="tel:$cell">$cell</a><br>";
+      <b>Email:</b> <a href=mailto:$email>$email</a><br>
+      <b>Phone:</b> <a href=tel:$office>$office</a><br>
+      <b>Cell:</b> <a href=tel:$cell>$cell</a><br>";
 
       if($secondary != "") {
         $message .= "<b>Secondary Contact:</b> $secondary<br>
-                    <b>Email:</b> <a href="mailto:$secondary_email">$secondary_email</a><br>
-                    <b>Phone:</b> <a href="tel:$secondary_office">$secondary_office</a><br>
-                    <b>Cell:</b> <a href="tel:$secondary_cell">$secondary_cell</a><br>";
+                    <b>Email:</b> <a href=mailto:$secondary_email>$secondary_email</a><br>
+                    <b>Phone:</b> <a href=tel:$secondary_office>$secondary_office</a><br>
+                    <b>Cell:</b> <a href=tel:$secondary_cell>$secondary_cell</a><br>";
       }
 
       // To send HTML mail, the Content-type header must be set
