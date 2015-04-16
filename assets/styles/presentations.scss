@@ -100,7 +100,9 @@ input[type="radio"]:checked + .icon-check:before {
   width: 20rem;
   margin: 1rem 0;
 }
-
+.location-container .input-group {
+  margin-bottom: 3rem;
+}
 .contacts .flex {
   justify-content: flex-start;
 }
