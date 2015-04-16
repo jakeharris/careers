@@ -11,12 +11,6 @@ name: presentations
         exit;
       }
 
-      if ($type == "select") {
-        echo "<center>You did not specify a program type.<br>";
-        echo "Please go back and select a program type so your request can be submitted.</center>\n\n";
-        exit;
-      }
-
       if ($date == "") {
         echo "<center>You did not specify a date.<br>";
         echo "Please go back and enter a date so your request can be submitted.</center>\n\n";
@@ -99,39 +93,58 @@ name: presentations
 
       /* recipient */
       $to = $email;
+      $toaucc = "milieu@javakat.io";
 
       //subject
       $subject = "AU Career Center Presentation Request";
 
+      //day
+      $day = DateTime::createFromFormat("d/m/Y", $date);
+      $day = $day->getTimestamp();
+      $day = date("l", $day);
+
+      //preface for client
+      $preface = "
+        <p>
+          The following information has been submitted for a presentation. 
+          If you are not contacted by someone in the Career Center office 
+          within 2 business days, please call <a href="tel:3348444744">334.844.4744</a> to confirm your 
+          request.
+        </p>
+        <br />
+        <br />
+      ";
+
+      //organization or class/section
+      $oocs = "";
+      if($course != "") {
+        $oocs = "$course | Section $section";
+      } else $oocs = "$organization";
+
       //message
+      $message =
 
-      $message=
+      "<h1>$topic</h1>
+      <h3 style=color:#999>$oocs</h3>
+      <h3 style=color:#999>$day, $date</h3>
+      <h3 style=color:#999>$start_time - $end_time</h3>
+      <h3 style=color:#999>$location</h3><br />
+      <p>$description</p>";
 
-      "<p>The following information has been submitted for a presentation. If you are not contacted by someone in the Career Center office within 2 business days, please call 334.844.4744 to confirm your request.</p>
-      <br /><br />
-      <p>
-      <b>Topic Requested/Title:</b> $topic<br>
-      <b>Program Type:</b> $type<br>
-      <b>Date:</b> $date<br>
-      <b>Day of the week:</b> $day<br>
-      <b>Start time:</b> $start_time<br>
-      <b>End time:</b> $end_time<br>
-      <b>Location:</b> $location<br>
-      <b>Description:</b> $description<br>
-      <b>Organization/Course # - Section #:</b> $course | Section $section <br>
+      $message .= 
+      "<h1>Details</h1>
       <b>Expected Attendance:</b> $attendance <br>
       <b>Contact:</b> $contact<br>
-      <b>Email:</b> $pemail<br>
-      <b>Phone:</b> $poffice<br>
-      <b>Cell:</b> $pcell<br>
-      <b>Secondary Contact:</b> $secondary<br>
-      <b>Email:</b> $semail<br>
-      <b>Phone:</b> $soffice<br>
-      <b>Cell:</b> $scell<br>
+      <b>Email:</b> <a href="mailto:$email">$email</a><br>
+      <b>Phone:</b> <a href="tel:$office">$office</a><br>
+      <b>Cell:</b> <a href="tel:$cell">$cell</a><br>";
 
-
-
-      ";
+      if($secondary != "") {
+        $message .= "<b>Secondary Contact:</b> $secondary<br>
+                    <b>Email:</b> <a href="mailto:$secondary_email">$secondary_email</a><br>
+                    <b>Phone:</b> <a href="tel:$secondary_office">$secondary_office</a><br>
+                    <b>Cell:</b> <a href="tel:$secondary_cell">$secondary_cell</a><br>";
+      }
 
       // To send HTML mail, the Content-type header must be set
       $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -141,55 +154,10 @@ name: presentations
       $headers .= 'From: AU Career Center <careers@auburn.edu>' . "\r\n";
 
 
-      mail($to, $subject, $message, $headers);
-
+      mail($to, $subject, $preface . $message, $headers);
+      mail($toaucc, $subject, $message, $headers);
 
      ?>
-
-
-    <?php
-
-      /* recipient */
-      $to = "milieu@javakat.io";
-
-      //subject
-      $subject = "Career Center Presentation Request Form";
-
-      //message
-
-      $message=
-
-      "<center><b>Career Center Presentation Request Form</b></center>
-      <p>
-      <b>Topic Requested/Title:</b> $topic<br>
-      <b>Program Type:</b> $type<br>
-      <b>Date:</b> $date<br>
-      <b>Day of the week:</b> $day<br>
-      <b>Start time:</b> $start_time<br>
-      <b>End time:</b> $end_time<br>
-      <b>Location:</b> $location<br>
-      <b>Internet:</b> $internet<br>
-      <b>Description:</b> $description<br>
-      <b>Organization/Course # - Section #:</b> $course | Section $section <br>
-      <b>Expected Attendance:</b> $attendance <br>
-      <b>Contact:</b> $contact<br>
-      <b>Email:</b> $email<br>
-      <b>Phone:</b> $office<br>
-      <b>Cell:</b> $cell<br>
-      <b>Secondary Contact:</b> $secondary<br>
-      <b>Email:</b> $secondary_email<br>
-      <b>Phone:</b> $secondary_office<br>
-      <b>Cell:</b> $secondary_cell<br>";
-
-      // To send HTML mail, the Content-type header must be set
-      $headers  = 'MIME-Version: 1.0' . "\r\n";
-      $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
-      // Additional headers
-      $headers .= 'From: Career Services <careers@auburn.edu>' . "\r\n";
-
-      mail($to, $subject, $message, $headers);
-     ?>       
 
   </p>
   <p>Your request for a presentation has been submitted.</p>
