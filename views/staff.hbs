@@ -11,9 +11,21 @@ name: staff
     {{#each ../staff.member}}
       {{#is category ../this}}
         <section class="contact-card">
-          {{#if img}}
-          <img src="assets/images/staff/{{img}}">
-          {{/if}}
+          <div class="img-liaison-container">
+            {{#if img}}
+            <img src="assets/images/staff/{{img}}">
+            {{/if}}
+            {{#if liaison}}
+            <div class="overlay">
+              <h2>{{name}} is a liaison for...</h2>
+              <ul>
+                {{#each liaison}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            {{/if}}
+          </div>
           <div class="contact-info">
             <h2>{{name}}</h2>
             <h3>{{position}}</h3>

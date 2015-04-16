@@ -18,13 +18,24 @@
       "email": "addyebb",
       "img": "addye.jpg",
       "portfolio": "http://addyebb.weebly.com/",
-      "category": "Career Development"
+      "category": "Career Development",
+      "liaison": [
+        "College of Liberal Arts",
+        "College of Human Sciences",
+        "Interdisciplinary Studies",
+        "Auburn Global & International Programs"
+      ]
     },
     {
       "name": "Kyle Nixon",
       "position": "Career Counselor",
       "email": "kcn0007",
-      "category": "Career Development"
+      "category": "Career Development",
+      "liaison": [
+        "School of Forestry and Wildlife Sciences",
+        "College of Agriculture",
+        "College of Education"
+      ]
     },
     {
       "name": "Torey Palmer",
@@ -32,7 +43,13 @@
       "email": "palmemt",
       "img": "torey.jpg",
       "portfolio": "http://toreyp.weebly.com/",
-      "category": "Career Development"
+      "category": "Career Development",
+      "liaison": [
+        "College of Sciences and Mathematics",
+        "College of Veterinary Medicine",
+        "School of Nursing",
+        "Harrison School of Pharmacy"
+      ]
     },
     {
       "name": "Meaghan Weir",
@@ -40,7 +57,13 @@
       "email": "meaghan",
       "img": "meaghan.jpg",
       "portfolio": "http://meaghanweir.wix.com/portfolio",
-      "category": "Career Development"
+      "category": "Career Development",
+      "liaison": [
+        "Samuel Ginn College of Engineering",
+        "College of Architecture, Design, and Construction",
+        "Honors College",
+        "Auburn on the Hill & Experiential Learning"
+      ]
     },
     {
       "name": "Shari Black",
@@ -73,7 +96,10 @@
       "position": "AD, Employer Relations",
       "email": "jbs0003",
       "img": "jay.jpg",
-      "category": "Employer Relations"
+      "category": "Employer Relations",
+      "liaison": [
+        "Raymond J. Harbert College of Business"
+      ]
     },
     {
       "name": "Melvin K. Smith",
