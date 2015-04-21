@@ -20,17 +20,25 @@ iframe {
   color: white;
 }
 
+.jobs .events {
+  width: 100%;
+  flex-basis: 100%;
+  padding: 5rem;
+}
+
 .jobs .events ul {
   height: auto;
   max-height: none;
   
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding-top: 0.5rem;
 }
 
 .jobs .event {
   flex-basis: 100%;
   width: 100%;
+  
+  min-height: 0;
 }
 
 .jobs .blanker-wrap:before {
@@ -38,7 +46,13 @@ iframe {
 }
 
 .features {
-    display: none;
+  display: none;
+}
+
+.feature {
+  flex-basis: 33%;
+  width: 33%;
+  margin-bottom: 3rem;
 }
 
 .buttons {
@@ -64,6 +78,11 @@ iframe {
   flex-basis: 45%;
   width: 45%;
 }
+.flat-btn--auto {
+  flex-basis: auto;
+  width: auto;
+  padding: 1.2rem 3rem;
+}
 .flat-btn--white {
   background: white;
   color: $thisislightblue;
@@ -87,16 +106,21 @@ iframe {
 }
 
 @media (min-width: 768px){
-    .features {
-        display: block;
-        position: relative;
-        background: white;
-        padding: 0 2rem;
-        padding-bottom: 2rem;
+  .features {
+      display: block;
+      position: relative;
+      background: white;
+      padding: 0 2rem;
+      padding-bottom: 2rem;
 
-        border: none;
-        border-top: none;
-    }
+      border: none;
+      border-top: none;
+  }
+  .jobs .events {
+    width: 50%;
+    flex-basis: 50%;
+    padding-top: 5rem;
+  }
 }
 
 .features-header {
@@ -107,7 +131,7 @@ iframe {
 }
 
 .feature-icon {
-    background: #aaa;
+    background: $box-shadow;
     border-radius: 50%;
     height: 12rem;
     width: 12rem;
@@ -225,6 +249,13 @@ iframe {
 .widget iframe {
     margin-top: 10px;
     margin-left: 1px;
+}
+
+@media(min-width: $medium-screen-size) {
+  .feature {
+    flex-basis: 16%;
+    width: 16%;
+  }
 }
 
 @media(min-width: 1024px) {
