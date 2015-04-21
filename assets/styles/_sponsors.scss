@@ -23,17 +23,15 @@
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    -webkit-justify-content: space-between;
-        -ms-justify-content: space-between;
-            justify-content: space-between;
+    -webkit-justify-content: space-around;
+        -ms-justify-content: space-around;
+            justify-content: space-around;
 }
 
 .sponsor {
     background: white;
     width: 16rem;
     height: 9.29rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
     margin-bottom: 7rem;
     overflow: hidden;
     align-content: center;
@@ -50,6 +48,7 @@
 .sponsor img {
     max-width: 15rem;
     max-height: 9.29rem;
+    height: auto;
 }
 
 /* Thanks to demosthenes.info! */
@@ -66,4 +65,16 @@ img.desaturate:hover {
 .sponsor .grayscale.grayscale-fade {
   transition: filter 0.2s;
   -webkit-transition: -webkit-filter 0.2s;
+}
+
+@media (min-width: $small-screen-size) {
+  .sponsor {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .sponsors-content {
+    -webkit-justify-content: space-between;
+        -ms-justify-content: space-between;
+            justify-content: space-between;
+  }
 }
