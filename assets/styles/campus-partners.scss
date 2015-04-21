@@ -111,6 +111,13 @@
       display: inline-block; 
       word-wrap: break-word;
     }
+    .muted {
+      font-size: 0.8em;
+      color: $box-shadow;
+      padding-top: 0;
+      margin-top: 0;
+      display: block;
+    }
   }
 
   .address, .phone, .email {
@@ -192,7 +199,6 @@
     margin-top: -17rem; 
   }
 }
-
 @media (min-width: $moderate-screen-size) {
   .partner-content {
     .partner-contact {
