@@ -92,7 +92,7 @@ iframe {
 .place-icon,
 .times-icon,
 .appointments-icon {
-  font-size: 6rem;
+  font-size: 4.5rem;
   color: #496e9c;
   width: 18%;
   text-align: center;
@@ -204,6 +204,11 @@ iframe {
   .flat-btn {
     height: auto;
     padding: 1.2rem 0;
+  }
+  .place-icon,
+  .times-icon,
+  .appointments-icon {
+    font-size: 6rem;
   }
 }
 
