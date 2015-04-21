@@ -22,7 +22,7 @@ home.config(function($interpolateProvider) {
 
 home.controller('calendar-ctrl', function ($scope, $http) {
   'use strict';
-  $http.get('/events.json')
+  $http.get('/career/events.json')
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
       return (!isOver(el.date)) && (getRelativeMonth(el.date['numerical-month']) <= 6)
