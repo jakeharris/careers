@@ -614,8 +614,13 @@ h3,.h3-a {
   flex-basis: 100%;
   width: 100%;
   overflow: hidden;
+  max-height: 335px;
   img {
     height: 100%;
+  }
+  & > #cym > img {
+    width: 100%;
+    height: 115%;
   }
 }
 
@@ -628,7 +633,6 @@ h3,.h3-a {
 
 @media (min-width: 768px) {
   .carousel {
-    height: 368px;
     flex-basis: 50%;
     width: 50%;
     height: auto;
