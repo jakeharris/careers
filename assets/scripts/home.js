@@ -119,9 +119,10 @@ home.controller('blogger-ctrl', function ($scope, $http) {
     for(var post in posts) {
       var d = new Date(posts[post].published.$t.split('+0000').join(''))
       posts[post].date = '' + d.toDateString().substr(0, d.toDateString().length - 5)
+      console.log(posts[post])
       $scope.blog.posts[post] = { 
         "title": posts[post].title.$t,
-        "url":   posts[post].link[4].href, // 4 is the "alternate" URL, which is more human-readable and branded as ours
+        "url":   posts[post].link[posts[post].link.length - 1].href, // last element is the "alternate" URL, which is more human-readable and branded as ours
         "date":  posts[post].date
       }
     }
