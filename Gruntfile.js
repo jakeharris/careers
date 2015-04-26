@@ -43,7 +43,7 @@
 
 module.exports = function (grunt) {
   'use strict';
-  
+
   // # time-grunt
   // Times how long tasks take. Handy for identifying bottlenecks.
   require('time-grunt')(grunt);
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
   // # jit-grunt
   // Load grunt plugins without using a .loadNpmTasks block at the end of the Gruntfile.
   require('jit-grunt')(grunt, {
-    useminPrepare: 'grunt-usemin' 
+    useminPrepare: 'grunt-usemin'
   });
 
   grunt.initConfig({
@@ -80,12 +80,12 @@ module.exports = function (grunt) {
     // ## concurrent
     //    Runs specified tasks in parallel to speed up builds.
 
-    
+
     /*                 */
     /*      TASKS      */
     /*                 */
-    
-    
+
+
     // # watch
     // Watch for changes in the specified files and run the
     // associated tasks.
@@ -175,7 +175,7 @@ module.exports = function (grunt) {
         },
         files: {
           './index.html':    ['<%= config.views %>/home.hbs'],
-          'jobs/index.html': ['<%= config.views %>/jobs.hbs'] 
+          'jobs/index.html': ['<%= config.views %>/jobs.hbs']
         }
       },
       events: {
@@ -237,6 +237,16 @@ module.exports = function (grunt) {
           'faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
           'faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs']
         }
+      },
+      pathways: {
+        options: {
+          flatten: true,
+          layout: '<%= config.nosocial %>',
+          partials: '<%= config.partials %>'
+        },
+        files: {
+          'pathways/index.html': ['<%= config.views %>/pathways.hbs']
+        }
       }
     },
 
@@ -251,7 +261,7 @@ module.exports = function (grunt) {
       },
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
     },
-    
+
     // ## autoprefixer
     //    Automagically adds vendor-prefixed rules to match non-prefixed rules
     //    we use that we might've forgotten about!
@@ -269,11 +279,11 @@ module.exports = function (grunt) {
         src: ['<%= config.assets %>/styles/{,*/}*.css']
       }
     },
-    
+
     // ## *-min
     // (htmlmin, cssmin, imagemin, svgmin, uglify)
     // Minify our files.
-    
+
     // ### cssmin
     // Minify our CSS.
 /*    cssmin: {
@@ -287,13 +297,13 @@ module.exports = function (grunt) {
         }]
       }
     },*/
-    
+
     // ### uglify
     // Minify our JS.
 /*    uglify: {
       generated: {
         options: {
-          sourceMap: true 
+          sourceMap: true
         },
         files: [{
           expand: true,
@@ -304,7 +314,7 @@ module.exports = function (grunt) {
         }]
       }
     },*/
-    
+
     // ## filerev
     // Rename files to bust browser caches.
     filerev: {
@@ -317,8 +327,8 @@ module.exports = function (grunt) {
         dest: '<%= config.assets %>/scripts'
       }
     },
-  
-    
+
+
     // ## usemin
     // Change blocks of local CSS and JS references
     // into singular, cache-busting downloads n
@@ -329,28 +339,28 @@ module.exports = function (grunt) {
     }
 
   });
-  
+
   // # grunt validate
   // Validate project files, checking for syntax errors.
   // If we had test code, it would go here.
   grunt.registerTask('validate', [
-    'jshint' 
+    'jshint'
   ]);
-  
+
   // # grunt compile
   // Compile the project. Generate CSS and HTML from Sass and Handlebars.
   grunt.registerTask('compile', [
     'sass',
     'assemble'
   ]);
-  
+
   // # grunt enhance
   // Improve upon the compiled project. Minify files, cache bust, and autoprefix.
   grunt.registerTask('enhance', [
     //'autoprefixer'
     /* usemin here */
   ]);
-  
+
   // # grunt build
   // Build the project. Don't serve it. Crafted from scratch.
   grunt.registerTask('build', [
@@ -359,7 +369,7 @@ module.exports = function (grunt) {
     'compile',
     'enhance'
   ]);
-  
+
 
   // # grunt auto
   // Build the project, then wait for updates and rebuild selectively.
