@@ -17,15 +17,9 @@
 
 .sponsors-content {
     padding-top: 5rem;
-    display: -webkit-flex;
-    display:     -ms-flexbox;
-    display:         flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    -webkit-justify-content: space-around;
-        -ms-justify-content: space-around;
-            justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .sponsor {

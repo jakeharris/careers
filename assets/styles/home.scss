@@ -30,15 +30,9 @@ iframe {
 
 .buttons {
   position: relative;
-  display: -webkit-flex;
-  display:     -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-      -ms-justify-content: space-between;
-          justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .flat-btn {

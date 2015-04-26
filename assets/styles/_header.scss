@@ -172,12 +172,8 @@ nav.header {
 
   
   ul {
-    display: -webkit-flex;
-    display:     -ms-flexbox;
     display: flex;
-    -webkit-justify-content: space-around;
-        -ms-justify-content: space-around;
-            justify-content: space-around;
+    justify-content: space-around;
     
     
     position:relative;
@@ -386,9 +382,7 @@ ul li  {
       display: block;
       left: 0;
       ul {
-        display: -webkit-flex;
-        display:     -ms-flexbox;
-        display:         flex;
+        display: flex;
         width: 90vw;
         padding-left: 15px;
         padding-right: 15px;
