@@ -669,5 +669,6 @@ img {
   }
   &.content--no-padding {
     padding: 0; 
+    flex-wrap: nowrap;
   }
 }
