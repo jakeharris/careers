@@ -1,6 +1,6 @@
 {
   "category": [
-    "Director",
+    "Administration Team",
     "Career Development",
     "Employer Relations",
     "Operations"
@@ -10,7 +10,31 @@
       "name": "Nancy Bernard",
       "position": "Director",
       "email": "nmb",
-      "category": "Director"
+      "category": "Administration Team"
+    },
+    {
+      "name": "Addye Buckley-Burnell",
+      "position": "AD, Career Development",
+      "email": "addyebb",
+      "img": "addye.jpg",
+      "portfolio": "http://addyebb.weebly.com/",
+      "category": "Administration Team",
+      "liaison": [
+        "College of Liberal Arts",
+        "College of Human Sciences",
+        "Interdisciplinary Studies",
+        "Auburn Global & International Programs"
+      ]
+    },
+    {
+      "name": "Jay Skipworth",
+      "position": "AD, Employer Relations",
+      "email": "jbs0003",
+      "img": "jay.jpg",
+      "category": "Administration Team",
+      "liaison": [
+        "Raymond J. Harbert College of Business"
+      ]
     },
     {
       "name": "Addye Buckley-Burnell",
