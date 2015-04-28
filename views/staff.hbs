@@ -17,6 +17,8 @@ name: staff
             {{/if}}
             {{#if liaison}}
             <div class="overlay">
+            </div>
+            <div class="overlay-text">
               <h2>Liaison to</h2>
               <ul>
                 {{#each liaison}}
@@ -29,7 +31,7 @@ name: staff
           <div class="contact-info">
             <h2>{{name}}</h2>
             <h3>{{position}}</h3>
-            <h3><a href="mailto:{{email}}@auburn.edu">{{email}}@auburn.edu</a></h3>
+            <h3><a class="email" href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>
             {{#if quote}}
             <p class="muted"><span class="big-quote">"</span>{{quote}}<span class="big-quote">"</span></p>
             {{/if}}
