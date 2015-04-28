@@ -116,6 +116,7 @@ iframe {
       border: none;
       border-top: none;
   }
+  .jobs .login,
   .jobs .events {
     width: 50%;
     flex-basis: 50%;
@@ -192,9 +193,11 @@ iframe {
 
 
 .resources {
-    height: 100%;
-    border-top: none;
-    border-bottom: none;
+  height: 100%;
+  border-top: none;
+  border-bottom: none;
+  
+  justify-content: space-between;
 }
 
 .resources .row {
@@ -215,6 +218,8 @@ iframe {
     max-width: 50%;
     margin-right: -3px;
     margin-left: 0;
+  
+  background: #ddd;
 }
 
 /*.resource-button.resource-button--yellow {
