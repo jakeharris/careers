@@ -14,54 +14,60 @@
   },
   "college": [
     {
-      "name": "business",
-      "fullname": "Harbert College of Business",
-      "img": "harbert-college-business-banner.jpg"
-    },
-    {
       "name": "liberal-arts",
       "fullname": "College of Liberal Arts",
-      "img": "college-liberal-arts-banner.jpg"
+      "img": "college-liberal-arts-banner",
+      "pathways": [
+        {
+          "name": "Anthropology",
+          "link": "anthropology"
+        }
+      ]
     },
     {
       "name": "agriculture",
       "fullname": "College of Agriculture",
-      "img": "college-agriculture-banner.jpg"
+      "img": "college-agriculture-banner"
+    },
+    {
+      "name": "business",
+      "fullname": "Harbert College of Business",
+      "img": "harbert-college-business-banner"
     },
     {
       "name": "architecture",
       "fullname": "College of Architecture, Design, & Construction",
-      "img": "college-architecture-banner.jpg"
+      "img": "college-architecture-banner"
     },
     {
       "name": "education",
       "fullname": "College of Education",
-      "img": "college-education-banner.jpg"
+      "img": "college-education-banner"
     },
     {
       "name": "engineering",
       "fullname": "Ginn College of Engineering",
-      "img": "ginn-college-engineering-banner.jpg"
+      "img": "ginn-college-engineering-banner"
     },
     {
       "name": "forestry-wildlife-sciences",
       "fullname": "School of Forestry and Wildlife Sciences",
-      "img": "school-forestry-wildlife-sciences-banner.jpg"
+      "img": "school-forestry-wildlife-sciences-banner"
     },
     {
       "name": "human-sciences",
       "fullname": "College of Human Sciences",
-      "img": "college-human-sciences-banner.jpg"
+      "img": "college-human-sciences-banner"
     },
     {
       "name": "cosam",
       "fullname": "College of Science and Mathematics",
-      "img": "college-science-mathematics-banner.jpg"
+      "img": "college-science-mathematics-banner"
     },
     {
       "name": "interdepartmental-interdisciplinary",
       "fullname": "Interdepartmental & Interdisciplinary Curricula",
-      "img": "interdepartmental-banner.jpg"
+      "img": "interdepartmental-banner"
     }
   ]
 }
