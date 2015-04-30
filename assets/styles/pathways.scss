@@ -19,6 +19,26 @@
   width: 40%;
 }
 
+.accordion-header {
+  font-size: 3rem;
+  padding: 3rem 0;
+  
+  i:before {
+    text-align: center;
+    display: block;
+    padding: 1rem 0;
+    font-size: 4rem;
+    @extend .icon;
+    @extend .icon-chevron-up;
+  }
+  &.collapsed {
+    i:before {
+      text-align: center;
+      @extend .icon-chevron-down; 
+    }
+  }
+}
+
 .college-content {
   padding: 0;
   & > h2 {
