@@ -1,0 +1,25 @@
+{
+  "__college_notes": "Each college MUST have a name, full name, and image (img). Each MAY not have a pathways object, but if it does, it MUST contain a complete pathway object.",
+  "__pathway_notes": "Each pathway MUST have a name. Each MAY not have a link.",
+  "college": [
+    {
+      "name": "business",
+      "fullname": "Harbert College of Business",
+      "img": "campus-partners/auburn-harbert-college-business-banner.jpg",
+      "pathways": [
+        {
+          "name": "Management and Information Specialist",
+          "link": "http://auburn.edu/"
+        },
+        {
+          "name": "Business"
+        }
+      ]
+    },
+    {
+      "name": "liberal-arts",
+      "fullname": "College of Liberal Arts",
+      "img": "campus-partners/auburn-harbert-college-business-banner.jpg"
+    }
+  ]
+}
