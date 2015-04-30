@@ -247,7 +247,6 @@ module.exports = function (grunt) {
         },
         files: {
           'pathways/index.html': ['<%= config.views %>/pathways.hbs']
->>>>>>> origin/accessories
         }
       },
       aboutUs: {
