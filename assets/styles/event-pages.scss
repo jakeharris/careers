@@ -12,11 +12,17 @@
   overflow: hidden;
   margin-top: 3rem;
   
+  height: 60rem;
+  
   & > img {
     width: 100%;
     
     &.iptjf {
       height:60rem; 
+    }
+    &.cym {
+      margin-top: -3rem;
+      height: auto; 
     }
   }
 }

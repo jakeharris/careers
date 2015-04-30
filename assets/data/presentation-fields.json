@@ -1,0 +1,53 @@
+{
+  "topic-groups": [
+    {
+      "name": "Career Center Services",
+      "topics": [
+        "Career Center Overview"
+      ]
+    },
+    {
+      "name": "Choosing a Major & Career",
+      "topics": [
+        "Choosing a Major",
+        "Strong Interest Inventory",
+        "TypeFocus"
+      ]
+    },
+    {
+      "name": "Graduate School Preparation",
+      "topics": [
+        "Researching & Applying to Graduate Programs"
+      ]
+    },
+    {
+      "name": "Job & Internship Search",
+      "topics": [
+        "Effective Job Search Strategies",
+        "Landing an Internship",
+        "Demonstration of Tiger Recruiting Link",
+        "Successful Interviewing Techniques",
+        "Successful Networking",
+        "Navigating a Career Fair"
+      ]
+    },
+    {
+      "name": "Marketing Yourself",
+      "topics": [
+        "Writing a Winning Resume/Cover Letter",
+        "Building an Effective Career Portfolio",
+        "Your Professional Brand",
+        "Making the Most of Your Internship Experience",
+        "Negotiating Offers"
+      ]
+    },
+    {
+      "name": "Preparing for the Professional World",
+      "topics": [
+        "Transition from College to Career/First Year on the Job",
+        "Business & Professional Etiquette",
+        "Dining Etiquette"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+---
+title: Request a Presentation | Career Center
+name: presentations
+---
+
+<div class="presentations-banner content">
+  <h2>Request a Presentation</h2>
+</div>
+
+<form id="presentations" name="presentations" method="post" action="faculty/submission.php">
+  <div class="topics content extra-content">
+    <h2>Presentation Topic</h2>
+    <p>
+      Choose any <strong>one</strong> of the following topics:
+    </p>
+    <div class="topic-groups">
+    {{#each presentation-fields.topic-groups}}
+      <fieldset class="topic-group">
+        <h3 class="topic-group-name">{{ name }}</h3>
+        {{#each topics}}
+        <div class="topic">
+          <input type="radio" name="topic" value="{{ this }}" id="{{ this }}">
+          <span class="icon-check"></span>
+          <label for="{{ this }}">{{ this }}</label>
+        </div>
+        {{/each}}
+      </fieldset>
+    {{/each}}
+    </div>
+  </div>
+  <div class="content extra-content logistics">
+    <h2>Logistics</h2>
+    <div class="date-logistics-container">
+      <div class="date-container">
+        <h2>Date and Time</h2>
+        <div id="date" class="input-group date">
+          <input type="text" class="form-control" name="date"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div>
+        <div class="bootstrap-timepicker input-group time">
+          <input id="time-start" type="text" class="form-control" name="start time">
+          <span class="input-group-addon">to</span>
+          <input id="time-end"   type="text" class="form-control" name="end time">
+        </div>
+      </div>
+      <script type="text/javascript">
+        $('#date').datepicker({
+          daysOfWeekDisabled: '0,6',
+          todayHighlight: true
+        });
+        $('#time-start,#time-end').timepicker({
+          minuteStep: 5,
+          showInputs: false,
+          disableFocus: true
+        });
+      </script>
+      <div class="logistics-container">
+        <div class="for-whom">
+          <h2>On Behalf Of an...</h2>
+          <div class="topic">
+            <input type="radio" name="for-whom" value="organization" id="organization" checked>
+            <span class="icon-check"></span>
+            <label for="organization">Organization</label>
+          </div>
+          <div class="topic">
+            <input type="radio" name="for-whom" value="class" id="class">
+            <span class="icon-check"></span>
+            <label for="class">Class</label>
+          </div>
+          <div class="organization-details">
+            Organization <input type="text" name="organization" placeholder="ACM" class="form-control">
+          </div>
+          <div class="class-details">
+            <div class="input-group">
+              Course <input type="text" name="course"  placeholder="HONR 1017" class="form-control">
+            </div>
+            <div class="input-group">
+              Section <input type="text" name="section" placeholder="008" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="location-container">
+          <h2>Location Details</h2>
+          <div class="input-group">
+            <input type="text" name="location" placeholder="Shelby Center 108" class="form-control"><span class="input-group-addon"><i class="icon-map-marker"></i></span>
+          </div>
+          <div class="input-group">
+            Computer and internet access available <input type="checkbox" name="internet" class="form-control">
+          </div>
+          <div class="input-group">
+            Expected attendance <input type="number" name="attendance" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="description content extra-content">
+    <h2>Presentation Description</h2>
+    <textarea class="form-control" name="description" placeholder="Type your description here..."></textarea>
+  </div>
+  
+  <div class="contacts content extra-content">
+    <h2>Contact Information</h2>
+    <div class="flex">
+      <div class="primary">
+        <h2>Primary Contact</h2>
+        <div class="input-group">
+          Name<input type="text" name="contact" placeholder="Meaghan Weir" class="form-control">
+        </div>
+        <div class="input-group">
+          Email<input type="email" name="email" placeholder="xxx####@auburn.edu" class="form-control">
+        </div>
+        <div class="input-group">
+          Office Phone<input type="tel" name="office" placeholder="(334) 844-####" class="form-control">
+        </div>
+        <div class="input-group">
+          Cell Phone<input type="tel" name="cell" placeholder="(334) 867-5309" class="form-control">
+        </div>
+      </div>
+      <div class="add-secondary">
+        <h3>Add a Secondary Contact</h3>
+        <i class="icon-plus"></i>
+      </div>
+      <div class="secondary">
+        <h2>Secondary Contact</h2>
+        <div class="input-group">
+          Name<input type="text" name="secondary-contact" placeholder="Meaghan Weir" class="form-control">
+        </div>
+        <div class="input-group">
+          Email<input type="email" name="secondary-email" placeholder="xxx####@auburn.edu" class="form-control">
+        </div>
+        <div class="input-group">
+          Office Phone<input type="tel" name="secondary-office" placeholder="(334) 844-####" class="form-control">
+        </div>
+        <div class="input-group">
+          Cell Phone<input type="tel" name="secondary-cell" placeholder="(334) 867-5309" class="form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="submit" value="Submit Request" class="flat-btn" disabled="disabled">
+</form>
