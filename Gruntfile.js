@@ -91,7 +91,7 @@ module.exports = function (grunt) {
     // associated tasks.
     watch: {
       assemble: {
-        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}'],
+        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/staff.json'],
         tasks: ['assemble'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
@@ -193,6 +193,22 @@ module.exports = function (grunt) {
             '<%= config.views %>/tech.hbs',
             '<%= config.views %>/cmcd.hbs'
           ] 
+        }
+      },
+      aboutUs: {
+        options:  {
+          flatten: true,
+          layout: '<%= config.nosocial %>',
+          partials: '<%= config.partials %>',
+          data: '<%= config.assets %>/data/staff.json'
+        },
+        files: {
+          'aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
+          'aboutus/': [
+            '<%= config.views %>/plan-your-visit.hbs',
+            '<%= config.views %>/campus-partners.hbs',
+            '<%= config.views %>/staff.hbs'
+          ]
         }
       }
     },
