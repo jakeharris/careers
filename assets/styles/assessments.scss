@@ -1,9 +1,8 @@
 @import 'app';
 
 .content > h2,
-.content > p,
-.more-guidance-header,
-.more-guidance-body {
+.hero > p,
+.more-guidance-header {
   text-align: center;
 }
 
@@ -34,4 +33,20 @@
 
 .more-guidance-body.more-guidance-body {
   text-align: left;
+  a {
+    font-family: $header-font-family; 
+  }
+}
+
+.more-guidance-descriptions {
+  padding-top: 3rem;
+  p {
+    flex-basis: 45%;
+    width: 45%;
+
+    a {
+      font-family: $header-font-family;
+      color: #999;
+    }
+  }
 }
