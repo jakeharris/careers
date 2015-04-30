@@ -2,11 +2,15 @@
 
 .hero {
   margin-top: 3rem;
+  img {
+    min-height: 220px; 
+  }
 }
 
 .colleges {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
@@ -29,7 +33,6 @@
   width: 100%;
   padding: 1.5rem 3rem;
   
-  font-family: $header-font-family;
   background: $thisislightblue;
   color: white;
   
@@ -69,4 +72,21 @@
     $bg-gray 10px,
     $bg-gray 20px
   );
+}
+
+/***************************/
+/* COLLEGE-SPECIFIC STYLES */
+/***************************/
+
+.agriculture {
+  margin-top: -5rem;
+}
+.education {
+  margin-top: -30rem;
+}
+.human-sciences {
+  margin-top: -7rem;
+}
+.interdepartmental-interdisciplinary {
+  margin-top: -5rem;
 }
