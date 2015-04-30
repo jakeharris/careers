@@ -1,1 +1,72 @@
 @import 'app';
+
+.hero {
+  margin-top: 3rem;
+}
+
+.colleges {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.college {
+  flex-basis: 40%;
+  width: 40%;
+}
+
+.college-content {
+  padding: 0;
+  & > h2 {
+    margin: 0;
+    padding: 3rem; 
+  }
+}
+
+.pathway {
+  display: block;
+  
+  width: 100%;
+  padding: 1.5rem 3rem;
+  
+  font-family: $header-font-family;
+  background: $thisislightblue;
+  color: white;
+  
+  &:hover {
+    background: $thisisdarkblue;
+    color: white;
+  }
+}
+
+/**********************/
+/* COMING SOON STYLES */
+/**********************/
+
+.content.coming-soon {
+  padding: 0;
+  text-align: center;
+  & > h2 {
+    margin: 0;
+    padding: 3rem;
+    color: $box-shadow;
+    background: repeating-linear-gradient(
+      -55deg,
+      white,
+      white 10px,
+      $bg-gray 10px,
+      $bg-gray 20px
+    );
+  }
+}
+
+.pathway.coming-soon {
+  color: $box-shadow;
+  background: repeating-linear-gradient(
+    -55deg,
+    white,
+    white 10px,
+    $bg-gray 10px,
+    $bg-gray 20px
+  );
+}

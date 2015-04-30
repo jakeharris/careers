@@ -3,11 +3,49 @@ name: pathways
 Title: Pathways | Career Center
 ---
 
-<section class="content extra-content">
+<section class="content extra-content pathways">
   <h2>Pathways</h2>
   <p>Need guidance on how to progress in your major? Find our Pathway guide under your college to see exactly what needs doing!</p>
 </section>
 
-<section class="content extra-content">
+
+<div class="colleges">
   
-</section>
+  {{#each pathways.college}}
+    <div class="college">
+      <div class="hero">
+        {{#if pathways }}
+          <img class="{{ name }}" src="assets/images/{{ img }}">
+          <div class="college-header hero-content">
+            <div class="overlay"></div>
+            <h2>{{ fullname }}</h2>
+          </div>
+        {{else}}
+          <img class="{{ name }} grayscale grayscale-fade" src="assets/images/{{ img }}">
+          <div class="college-header hero-content coming-soon">
+            <div class="overlay"></div>
+            <h2>{{ fullname }}</h2>
+          </div>
+        {{/if}}
+      </div>
+      {{#if pathways}}
+        <section class="content college-content">
+          <!--<h2>Major Pathways</h2>-->
+          {{#each pathways}}
+            {{#if link}}
+              <a class="pathway" href="{{ link }}">{{ name }}</a>
+            {{else}}
+              <a class="pathway coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+            {{/if}}
+          {{/each}}
+        </section>
+      {{else}}
+        <section class="content coming-soon">
+          <h2>Coming soon</h2>
+        </section>
+      {{/if}}
+    </div>
+    
+  
+  {{/each}}
+</div>

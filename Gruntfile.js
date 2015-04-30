@@ -92,7 +92,7 @@ module.exports = function (grunt) {
     // associated tasks.
     watch: {
       assemble: {
-        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/staff.json'],
+        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/staff.json', '<%= config.assets %>/data/pathways.json'],
         tasks: ['assemble'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
@@ -244,7 +244,8 @@ module.exports = function (grunt) {
         options: {
           flatten: true,
           layout: '<%= config.nosocial %>',
-          partials: '<%= config.partials %>'
+          partials: '<%= config.partials %>',
+          data: '<%= config.assets %>/data/pathways.json'
         },
         files: {
           'pathways/index.html': ['<%= config.views %>/pathways.hbs']
