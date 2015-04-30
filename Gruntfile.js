@@ -193,7 +193,8 @@ module.exports = function (grunt) {
             '<%= config.views %>/events-pages/eid.hbs',
             '<%= config.views %>/events-pages/iptjf.hbs',
             '<%= config.views %>/events-pages/tech.hbs',
-            '<%= config.views %>/events-pages/cmcd.hbs'
+            '<%= config.views %>/events-pages/cmcd.hbs',
+            '<%= config.views %>/events-pages/your-major.hbs'
           ] 
         }
       },
