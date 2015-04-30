@@ -32,7 +32,11 @@
   margin-left: 0; margin-right: 0;
 }
 
-.flex, .centered {
+.muted {
+  color: #999;
+}
+
+.flex, .centered, .login {
   display: -ms-flexbox;
   display: -webkit-box;
   display: -webkit-flex;

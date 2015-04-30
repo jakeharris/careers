@@ -1,0 +1,15 @@
+---
+layout: views/layouts/no-social.hbs
+name: resources
+path-to-root: ..
+hero-img: undergrad-students.png
+---
+
+<div class="hero row">
+  <img src="assets/images/resources/{{ hero-img }}">
+</div>
+
+<!-- Good place for a usemin block. Could turn this into resources.min.js. -->
+<script src="assets/scripts/tooltip.js"></script>
+
+{{> body}}
