@@ -79,11 +79,6 @@ address {
   //width: 100vw !important;
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 90vw !important;
-  }
-}
 .content-division {
   padding: 15px;
 }
@@ -156,36 +151,7 @@ h3,.h3-a {
   display: inline-block;
 }
 
-@media (min-width: 768px) {
-  .banner {
-    border-left: 1px solid #d7d7d7;
-    border-right: 1px solid #d7d7d7;
-    margin-top: 50px;
-  }
 
-  .banner .slider {
-    flex-basis: 50%;
-    width: 50%;
-  }
-
-  .banner .slider:nth-of-type(2) {
-    display: inline-block;
-    border-left: 1px solid #d7d7d7;
-  }
-}
-@media (min-width: 992px) {
-  .brow {
-    margin-top: 50px;
-  }
-
-  .banner {
-    margin-top: 0;
-  }
-
-  .banner .slider {
-    display: inline-block;
-  }
-}
 .blank {
   visibility: hidden;
 }
@@ -220,27 +186,7 @@ h3,.h3-a {
   background-color: #aaa;
 }
 
-@media (min-width: 768px) {
-  .banner-bottom {
-    border-top: none;
-  }
 
-  .banner-bottom .slider {
-    flex-basis: 50%;
-    width: 50%;
-  }
-}
-@media (min-width: 992px) {
-  .banner-bottom .slider {
-    flex-basis: 33.33333%;
-    width: 33.33333%;
-    height: 100%;
-  }
-
-  .banner-bottom .slider:nth-of-type(2) {
-    border-left: none;
-  }
-}
 
 .block {
   flex-basis: 100%;
@@ -248,18 +194,7 @@ h3,.h3-a {
   margin-bottom: 1.8rem;
 }
 
-@media (min-width: 768px) {
-  .block {
-    margin-bottom: 0;
-  }
-}
-@media (min-width: 992px) {
-  .block {
-    flex-basis: 31.93333%;
-    width: 31.93333%;
-    margin-bottom: 0;
-  }
-}
+
 .block {
   position: relative;
   padding: 5px;
@@ -273,22 +208,12 @@ h3,.h3-a {
   width: 100vw;
 }
 
-@media (min-width: 768px) {
-  .slider {
-    height: 26.92308vw;
-    width: 45vw;
-  }
-}
+
 .slider-mask {
   height: 59.82906vw;
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .slider-mask {
-    height: 26.92308vw;
-  }
-}
 /*ul*/
 .slider-list {
   margin: 0;
@@ -303,6 +228,10 @@ h3,.h3-a {
   flex-basis: 100%;
   width: 100%;
   
+  div {
+    width: 100%;
+  }
+  
   h2, p {
     text-align: center; 
   }
@@ -311,13 +240,7 @@ h3,.h3-a {
   }
 }
 
-@media (min-width: 768px) {
-  .login {
-    height: auto;
-    flex-basis: 50%;
-    width: 50%;
-  }
-}
+
 .login-wrap {
 
 }
@@ -332,19 +255,7 @@ h3,.h3-a {
   right: 2rem;
 }
 
-@media (min-width: 480px) {
-  .login-wrap {
-    margin-left: -17rem;
-    width: 34rem;
-  }
-}
-@media (min-width: 992px) {
-  .login-wrap {
-    margin-left: -20rem;
-    margin-top: -12rem;
-    width: 40rem;
-  }
-}
+
 .login-wrap::before {
   font-family: 'icomoon';
   content: '\f14e';
@@ -354,8 +265,9 @@ h3,.h3-a {
 }
 
 .events {
-  flex-basis: 66%;
-  width: 66%;
+  flex-basis: 100%;
+  width: 100%;
+  flex-basis: wrap;
 }
 
 .events ul {
@@ -371,9 +283,9 @@ h3,.h3-a {
 .event {
   min-height: 14rem;
   max-height: 14rem;
-  flex-basis: 50%;
-  width: 50%;
   margin: 0.4rem 0;
+  width: 100%;
+  flex-basis: 100%;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
@@ -417,24 +329,6 @@ h3,.h3-a {
   font-size: 2rem;
 }
 
-@media (min-width: 1105px) {
-  .event-date {
-    margin-right: 3rem;
-  }
-}
-@media (max-width: 480px) {
-  .events {
-    flex-basis: 100%;
-    width: 100%;
-    flex-basis: wrap;
-  }
-  .event {
-    width: 100%;
-    flex-basis: 100%;
-    
-  }
-}
-
 .trl {
   position: relative;
   z-index: 1000000;
@@ -444,11 +338,7 @@ h3,.h3-a {
   content: 'TRL';
 }
 
-@media (min-width: 992px) {
-  .trl::before {
-    content: 'Tiger Recruiting Link';
-  }
-}
+
 .login-username,
 .login-password {
   margin-bottom: 1.6rem;
@@ -536,42 +426,7 @@ h3,.h3-a {
   width: 30rem;
 }
 
-@media (min-width: $tiny-screen-size) {
-  .blanker-wrap {
-    margin-left: -17rem;
-    width: 34rem;
-  }
-  .flat-btn {
-    font-size: 1.8rem;
-    padding: 2.3rem 0; 
-  }
-}
-@media (min-width: $small-screen-size) {
-  .flat-btn {
-    font-size: 1.8rem;
-    padding: 2.1rem; 
-  }
-}
 
-@media (min-width: 992px) {
-  .blanker-wrap {
-    margin-left: -20rem;
-    margin-top: -15.2rem;
-    width: 40rem;
-  }
-}
-@media (min-width: $moderate-screen-size) {
-  .flat-btn {
-    font-size: 2.5rem;
-    padding: 1.6rem 0;   
-  }
-}
-@media (min-width: 1300px) {
-  .flat-btn {
-    font-size: 3rem; 
-    padding: 1.2rem 0;
-  }
-}
 
 .blanker-wrap::before {
   font-family: 'icomoon';
@@ -594,17 +449,7 @@ h3,.h3-a {
   margin-bottom: 0;
 }
 
-@media (min-width: 768px) {
-  .between {
-    width: 50%;
-  }
-}
-@media (min-width: 992px) {
-  .between {
-    width: 22%;
-    margin-bottom: 0;
-  }
-}
+
 .between img {
   display: block;
   margin: 0 auto;
@@ -635,17 +480,7 @@ h3,.h3-a {
 
 
 
-@media (min-width: 768px) {
-  .carousel {
-    flex-basis: 50%;
-    width: 50%;
-    height: auto;
-  }
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-    width: auto;
-  }
-}
+
 
 #cc-carousel.carousel > .carousel-indicators {
   bottom: 10px;
@@ -673,7 +508,6 @@ img {
   }
   &.content--no-padding {
     padding: 0; 
-    flex-wrap: nowrap;
   }
 }
 .hero {
@@ -752,5 +586,160 @@ img {
       right: auto;
       left: 0; 
     }
+  }
+}
+
+.login, .carousel {
+  width: 100%;
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width: $tiny-screen-size) {
+  .login-wrap {
+    margin-left: -17rem;
+    width: 34rem;
+  }  
+  .events {
+    flex-basis: 66%;
+    width: 66%;
+  }
+  .event { 
+    flex-basis: 50%;
+    width: 50%;
+  }
+  .blanker-wrap {
+    margin-left: -17rem;
+    width: 34rem;
+  }
+  .flat-btn {
+    font-size: 1.8rem;
+    padding: 2.3rem 0; 
+  }
+  .trl::before {
+    content: 'Tiger Recruiting Link'; 
+  }
+}
+@media (min-width: $small-screen-size) {
+  .container {
+    width: 90vw !important;
+  }
+  .banner {
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+    margin-top: 50px;
+  }
+
+  .banner .slider {
+    flex-basis: 50%;
+    width: 50%;
+  }
+
+  .banner .slider:nth-of-type(2) {
+    display: inline-block;
+    border-left: 1px solid #d7d7d7;
+  }
+  .banner-bottom {
+    border-top: none;
+  }
+
+  .banner-bottom .slider {
+    flex-basis: 50%;
+    width: 50%;
+  }
+  .block {
+    margin-bottom: 0;
+  }
+  .slider {
+    height: 26.92308vw;
+    width: 45vw;
+  }
+  .slider-mask {
+    height: 26.92308vw;
+  }
+  .login {
+    height: auto;
+  }
+  .flat-btn {
+    font-size: 1.8rem;
+    padding: 2.1rem; 
+  }
+  .between {
+    width: 50%;
+  }
+  .carousel {
+    height: auto;
+  }
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: auto;
+  }
+}
+@media (min-width: $medium-screen-size) {
+  .brow {
+    margin-top: 50px;
+  }
+
+  .banner {
+    margin-top: 0;
+  }
+
+  .banner .slider {
+    display: inline-block;
+  }
+  .banner-bottom .slider {
+    flex-basis: 33.33333%;
+    width: 33.33333%;
+    height: 100%;
+  }
+
+  .banner-bottom .slider:nth-of-type(2) {
+    border-left: none;
+  }
+  .block {
+    flex-basis: 31.93333%;
+    width: 31.93333%;
+    margin-bottom: 0;
+  }
+  .login-wrap {
+    margin-left: -20rem;
+    margin-top: -12rem;
+    width: 40rem;
+  }
+  .blanker-wrap {
+    margin-left: -20rem;
+    margin-top: -15.2rem;
+    width: 40rem;
+  }
+  .between {
+    width: 22%;
+    margin-bottom: 0;
+  }
+  .login, .carousel {
+    width: 50%;
+    flex-basis: 50%;
+  }
+  .trl::before {
+    content: 'TRL'; 
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .trl::before {
+    content: 'Tiger Recruiting Link';
+  }
+  .flat-btn {
+    font-size: 2.5rem;
+    padding: 1.6rem 0;   
+  }
+  .event-date {
+    margin-right: 3rem;
+  }
+}
+@media (min-width: $social-shrink-size) {
+  .flat-btn {
+    font-size: 3rem; 
+    padding: 1.2rem 0;
   }
 }
