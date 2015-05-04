@@ -11,6 +11,7 @@
 .contact-card {
   flex-basis: 20%;
   width: 20%;
+  height: 753px;
   
   display: inline-block;
   
@@ -20,6 +21,8 @@
   padding: 0;
   margin: 0 1.5rem;
   margin-bottom: 3rem;
+  
+  position: relative;
   
   .img-liaison-container {
     position: relative;
@@ -73,6 +76,10 @@
   
   .contact-info {
     padding: 3rem; 
+  }
+  .contact-more {
+    position: absolute;
+    bottom: 0;
   }
 }
 
