@@ -26,6 +26,10 @@
   
   .img-liaison-container {
     position: relative;
+    
+    overflow: hidden;
+    width: 234px;
+    height: 389px;
   }
   
   img {
@@ -103,4 +107,18 @@
   @extend .icon-envelope;
   font-family: "icomoon";
   padding-right: 1rem;
+}
+
+
+/****************************/
+/* INDIVIDUAL PICTURE EDITS */
+/****************************/
+.contact-card img.kyle,
+.contact-card img.kayla,
+.contact-card img.kristine,
+.contact-card img.wade,
+.contact-card img.sue,
+.contact-card img.alex {
+  width: 500px;
+  margin-left: -130px;
 }
