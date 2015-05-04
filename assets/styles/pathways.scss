@@ -1,7 +1,15 @@
 @import 'app';
 
+.pathways-content {
+  text-align: center;
+  & > h2 {
+    font-size: 8rem;
+    padding-top: 2rem;
+  }
+}
+
 .hero {
-  margin-top: 3rem;
+  margin: 0;
   img {
     min-height: 220px; 
   }
@@ -15,8 +23,9 @@
 }
 
 .college {
-  flex-basis: 40%;
-  width: 40%;
+  width: 80%;
+  margin-top: 3rem;
+  box-shadow: 6px 6px 0 $box-shadow;
 }
 
 .accordion-header {
@@ -26,7 +35,7 @@
   i:before {
     text-align: center;
     display: block;
-    padding: 1rem 0;
+    padding: 2.6rem 0;
     font-size: 4rem;
     @extend .icon;
     @extend .icon-chevron-up;
@@ -97,7 +106,9 @@
 /***************************/
 /* COLLEGE-SPECIFIC STYLES */
 /***************************/
-
+.liberal-arts {
+  margin-top: -8rem;
+}
 .agriculture {
   margin-top: -5rem;
 }
@@ -109,4 +120,17 @@
 }
 .interdepartmental-interdisciplinary {
   margin-top: -5rem;
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+@media (min-width: $medium-screen-size) {
+  .college {
+    width: 40%;
+    flex-basis: 40%;
+  }
+  .liberal-arts {
+    margin-top: 0; 
+  }
 }
