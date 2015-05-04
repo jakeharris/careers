@@ -356,7 +356,7 @@ ul li  {
   .preheader {
     h1 {
       width: auto;
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
   nav.postheader {
@@ -372,6 +372,9 @@ ul li  {
 @media (min-width: $small-screen-size) {
   .preheader {
     width: 90vw !important; 
+    h1 { 
+      font-size: 5rem;
+    }
   }
   nav.header { 
     .nav-controller {
