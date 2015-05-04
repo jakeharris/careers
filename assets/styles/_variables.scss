@@ -29,7 +29,7 @@ $social-shrink-size: 1440px;
   background-color: $color;
   
   width: $width;
-  height: ($height / 2);
+  height: ceil($height / 2);
   
   position: relative;
   
