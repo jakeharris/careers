@@ -18,6 +18,7 @@ header {
   
   img {
     width: 100%; 
+    margin-top: -2rem;
   }
 
   & > h1 {
@@ -183,4 +184,16 @@ header {
 }
 .tooltip--show {
   display: block;
+}
+
+.cam {
+  width: 100%;
+  display: block;
+  margin-top: 3rem;
+  img {
+    width: 100%; 
+  }
+  &:hover {
+    background: $charcoal; 
+  }
 }
