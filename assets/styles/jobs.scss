@@ -101,28 +101,17 @@ iframe {
   z-index: 101;
 }
 
-.resource-buttons img {
-  height: auto;
-}
-
-@media (min-width: 768px){
-  .features {
-      display: block;
-      position: relative;
-      background: white;
-      padding: 0 2rem;
-      padding-bottom: 2rem;
-
-      border: none;
-      border-top: none;
-  }
-  .jobs .login,
-  .jobs .events {
-    width: 50%;
-    flex-basis: 50%;
-    padding-top: 5rem;
+.resource-buttons {
+  width: 100%;
+  flex-basis: 100%;
+  margin-left: -1px;
+  cursor: pointer;
+  img {
+    height: auto;
   }
 }
+
+
 
 .features-header {
     width: 100%;
@@ -192,12 +181,13 @@ iframe {
 }
 
 
-.resources {
+.resources.resources.resources {
   height: 100%;
   border-top: none;
   border-bottom: none;
   
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .resources .row {
@@ -206,25 +196,18 @@ iframe {
     width: 100%;
 }
 
-.resource-buttons {
-    flex-basis: 66.9%;
-    width: 66.9%;
-    margin-left: -1px;
-    cursor: pointer;
-}
 
 .resource-button {
-    align-content: center;
-    max-width: 50%;
-    margin-right: -3px;
-    margin-left: 0;
+  align-content: center;
+  max-width: 50%;
+  margin-right: -3px;
+  margin-left: 0;
   
   background: #ddd;
 }
-
-/*.resource-button.resource-button--yellow {
-    background:#aaa;   
-}*/
+img.resource-button {
+  width: 100%;
+}
 
 .resource-button.resource-button--yellow:hover {
     background:#c90;
@@ -243,11 +226,11 @@ iframe {
 }
 
 .widget {
-    flex-basis: 33%;
-    width: 33%;
-    max-height: 520px;
-    height: 280px;
-    padding-left: 1px;
+    flex-basis: 100%;
+    width: 100%;
+    max-height: 600px;
+    height: 600px;
+    padding: 3rem;
     box-sizing: border-box;
 }
 
@@ -256,6 +239,32 @@ iframe {
     margin-left: 1px;
 }
 
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media(min-width: $small-screen-size) {
+  .features {
+      display: block;
+      position: relative;
+      background: white;
+      padding: 0 2rem;
+      padding-bottom: 2rem;
+
+      border: none;
+      border-top: none;
+  }
+  .jobs .login,
+  .jobs .events {
+    width: 50%;
+    flex-basis: 50%;
+    padding-top: 5rem;
+  }
+  .widget iframe {
+      margin-top: 0;
+      margin-left: 0;
+  }
+}
 @media(min-width: $medium-screen-size) {
   .feature {
     flex-basis: 16%;
@@ -263,22 +272,26 @@ iframe {
   }
 }
 
-@media(min-width: 1024px) {
-    .widget {
-        height: 400px;   
-    }
-    .widget iframe {
-        margin-top: 0;
-        margin-left: 0;
-    }
+@media(min-width: $moderate-screen-size) {
+  .resource-buttons {
+    flex-basis: 66.9%;
+    width: 66.9%; 
+  }
+  .widget {
+    flex-basis: 33%;
+    width: 33%;
+    padding: 0;
+    padding-left: 1px;
+    height: 500px;
+  }
 }
 
-@media(min-width: 1335px) {
-    .widget {
-        height: 520px;
-    }
-    .widget iframe {
-        margin-top: 10px;
-        margin-left: 2px;
-    }
+@media(min-width: $social-shrink-size) {
+  .widget {
+    height: 520px; 
+  }
+  .widget iframe {
+      margin-top: 10px;
+      margin-left: 2px;
+  }
 }
