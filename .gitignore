@@ -13,6 +13,7 @@ events.json
 */*.html
 *.html
 assets/styles/*.cs*
+assets/images/staff/big/*
 npm-debug.log
 jobs/assets/images/sponsors/tech-eng/quincy-compressor.jpg
 jobs/assets/images/sponsors/tech-eng/shaw.jpg
