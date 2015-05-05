@@ -118,11 +118,6 @@
       "img": "college-agriculture-banner"
     },
     {
-      "name": "business",
-      "fullname": "Harbert College of Business",
-      "img": "harbert-college-business-banner"
-    },
-    {
       "name": "architecture",
       "fullname": "College of Architecture, Design, & Construction",
       "img": "college-architecture-banner"
@@ -151,11 +146,6 @@
       "name": "cosam",
       "fullname": "College of Science and Mathematics",
       "img": "college-science-mathematics-banner"
-    },
-    {
-      "name": "interdepartmental-interdisciplinary",
-      "fullname": "Interdepartmental & Interdisciplinary Curricula",
-      "img": "interdepartmental-banner"
     }
   ]
 }

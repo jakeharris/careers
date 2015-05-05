@@ -3,7 +3,7 @@
 .pathways-content {
   text-align: center;
   & > h2 {
-    font-size: 8rem;
+    font-size: 6rem;
     padding-top: 2rem;
   }
 }
@@ -13,6 +13,10 @@
   img {
     min-height: 220px; 
   }
+}
+
+.hero .hero-content h2 {
+  font-size: 3.5rem;
 }
 
 .colleges {
@@ -125,6 +129,15 @@
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
+@media (min-width: $tiny-screen-size) {
+  .pathways-content > h2 {
+    font-size: 8rem; 
+  }
+  .hero .hero-content h2 {
+    font-size: 4rem;
+  }
+}
+
 @media (min-width: $medium-screen-size) {
   .college {
     width: 40%;
