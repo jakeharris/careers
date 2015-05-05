@@ -1,5 +1,12 @@
 @import 'app';
 
+.presentations-banner {
+  text-align: center;
+  h2 {
+    font-size: 8rem;
+  }
+}
+
 .topics > h2,
 .logistics > h2,
 .description > h2,
@@ -17,12 +24,10 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
-  height: 1300px;
 }
 
 .topic-group {
   padding: 3rem;
-  width: 50%;
 }
 
 .topic-group-name {
@@ -40,7 +45,6 @@
 }
 label {
   font-weight: normal;
-  font-family: $header-font-family;
   font-size: 2rem;
   cursor: pointer;
   padding: 1rem;
@@ -64,6 +68,10 @@ input[type="radio"] + .icon-check:before {
 input[type="radio"]:checked + .icon-check:before {
   color: #87e571;
 }
+input[type="checkbox"].form-control {
+  border: none;
+  box-shadow: none;
+}
 .form-control,
 .input-group-addon {
   border-radius: 0;
@@ -79,39 +87,44 @@ input[type="radio"]:checked + .icon-check:before {
 
 .date-logistics-container {
   display: flex;
+  flex-wrap: wrap;
 }
 .date-container {
-  flex-basis: 33%;
-  width: 33%;
-  margin-right: 3rem;
+  width: 100%;
+  flex-basis: 100%;
+  margin: 0 auto;
 }
 .logistics-container {
-  flex-basis: 66%;
-  width: 66%;
-  
   display: flex;
+  flex-wrap: wrap;
+  
+  width: 100%;
+  flex-basis: 100%;
 }
 .for-whom {
-  flex-basis: 50%;
-  width: 50%;
-  margin-right: 3rem;
+  flex-basis: 100%;
+  width: 100%;
 }
 .date, .time {
   width: 20rem;
   margin: 1rem 0;
 }
-.location-container .input-group {
-  margin-bottom: 3rem;
+.location-container {
+  flex-basis: 100%;
+  width: 100%;
+  .input-group {
+    margin-bottom: 3rem;
+  }
 }
 .contacts .flex {
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .primary,
 .add-secondary,
 .secondary {
-  flex-basis: 30%;
-  width: 30%;
+  flex-basis: 100%;
+  width: 100%;
 }
 
 .add-secondary {
@@ -153,7 +166,76 @@ input[type="radio"]:checked + .icon-check:before {
 #presentations input[type="submit"] {
   margin-top: -3rem;
 }
-#presentations input[type="submit"][disabled=""] {
-  background: $bg-gray;
+#presentations input[type="submit"][disabled=""],
+#presentations input[type="submit"][disabled="disabled"]{
   color: $box-shadow;
+  
+  background: repeating-linear-gradient(
+      -55deg,
+      white,
+      white 10px,
+      $bg-gray 10px,
+      $bg-gray 20px
+    );
+}
+
+
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width: $tiny-screen-size) {}
+@media (min-width: $small-screen-size) {
+  .for-whom,
+  .location-container {
+    width: 40%;
+    flex-basis: 40%;
+  }
+  .for-whom {
+    margin-right: 3rem; 
+  }
+  .logistics-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .primary,
+  .add-secondary,
+  .secondary {
+    width: 45%;
+    flex-basis: 45%;
+  }
+}
+@media (min-width: $medium-screen-size) {}
+@media (min-width: $moderate-screen-size) {
+  .date-container {
+    width: 30%;
+    flex-basis: 30%;
+    
+    margin: 0;
+  }
+  .logistics-container {
+    width: 61%;
+    flex-basis: 61%;
+  }
+  .date-logistics-container {
+    justify-content: space-between;
+  }
+  .contacts .flex {
+    justify-content: space-around;
+  }
+  .primary, 
+  .add-secondary,
+  .secondary {    
+    width: 30%;
+    flex-basis: 30%;
+  }
+}
+@media (min-width: $social-shrink-size) {
+   .topic-groups {
+    height: 1300px;
+  }
+  .topic-group {
+    width: 50%; 
+  } 
 }
