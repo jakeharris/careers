@@ -77,6 +77,14 @@ path-to-root: ../
         label: '' 
       });
     </script>
+    <script>
+      $(function() {
+        $('.hover, .tooltip').bind('touchstart touchend', function(e) {
+          e.preventDefault()
+          $(this).toggleClass('hover_effect')
+        })
+      })
+    </script>
   </body>
   <script type="text/javascript">
     var _gaq = _gaq || [];

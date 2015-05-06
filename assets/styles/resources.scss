@@ -176,15 +176,15 @@ header {
 }
 
 .tooltip {
+  @extend .hover;
   display: none;
 
-  padding: 2rem;
+  padding: 1rem;
   width: 100%;
 
   //overwriting Bootstrap's styles
   position: inherit;
   z-index: 1;
-  font-size: 1.4rem;
   opacity: 1;
 
   & > h2 {
@@ -192,6 +192,7 @@ header {
     text-align: center;
     margin-left: 2rem;
     margin-right: 2rem;
+    font-size: 2.5rem;
   }
 }
 .tooltip--show {
@@ -214,6 +215,14 @@ header {
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
+@media (min-width: $tiny-screen-size) {
+  .tooltip {
+    padding: 2rem;
+    & > h2 {
+      font-size: 29px; 
+    }
+  }
+}
 @media (min-width: $small-screen-size) {
   .hero .img-replace {
     font-size: 8rem; 
