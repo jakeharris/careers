@@ -29,6 +29,11 @@ body.events {
     max-height: none;
     margin: 3rem 0; 
     z-index: 2;
+    
+    flex-basis: 100%;
+    width: 100%;
+    
+    display: inline-flex;
   }
 }
 
@@ -52,4 +57,11 @@ body.events {
   top: 0;
   
   z-index: 1;
+}
+
+@media (min-width: $small-screen-size) {
+  body.events .event {
+    flex-basis: 50%;
+    width: 50%; 
+  }
 }
