@@ -17,8 +17,14 @@ header {
   padding: 0;
   
   img {
-    width: 100%; 
-    margin-top: -2rem;
+    display: none;
+  }
+  .img-replace {
+    display: block;
+    text-align: center;
+    font-size: 6rem;
+    padding: 0 3rem;
+    vertical-align: middle;
   }
 
   & > h1 {
@@ -35,9 +41,11 @@ header {
   width: 100%;
   padding: 3rem;
   display: flex;
+  display: -webkit-box;
+  flex-direction: column-reverse;
   & > div {
-    flex-basis: 50%;
-    width: 50%;
+    width: 100%;
+    padding-bottom: 3rem;
   }
 
   &:nth-of-type(odd) > .links {
@@ -51,12 +59,10 @@ header {
   &:nth-of-type(2n) {
     background: white;
     box-shadow: 6px 6px 0 $box-shadow;
-    flex-direction: row-reverse;
   }
 
   & .link-wedges,
   & .tooltips {
-    max-width: 75%;
     max-height: 6rem;
     display: flex;
 
@@ -70,8 +76,10 @@ header {
     & > .wedge {
       min-height: 4rem;
       max-height: 6rem;
+      display: inline-block;
       flex-basis: 100%;
       width: 100%;
+      -ms-flex: 1;
 
       counter-increment: i;
 
@@ -157,6 +165,10 @@ header {
   }
 }
 
+.full-content {
+  display: none;
+}
+
 .step .tooltips {
   margin-top: 3rem;
   max-height: none;
@@ -195,5 +207,49 @@ header {
   }
   &:hover {
     background: $thisislightorange; 
+  }
+}
+
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+@media (min-width: $small-screen-size) {
+  .hero .img-replace {
+    font-size: 8rem; 
+  }
+}
+@media (min-width: $medium-screen-size) {
+  .hero {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: -1.5rem;
+    }
+    .img-replace {
+      display: none; 
+    }
+  }
+  
+  .step {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    & > div {
+      flex-basis: 50%;
+      width: 50%;
+      padding-top: 0;
+    }
+    &:nth-of-type(2n) {
+      flex-direction: row-reverse;
+    }
+    & .link-wedges,
+    & .tooltips {
+      max-width: 75%;
+    }
+  }
+  
+  .full-content {
+    display: inline; 
   }
 }
