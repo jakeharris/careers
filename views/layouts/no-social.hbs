@@ -79,7 +79,7 @@ path-to-root: ../
     </script>
     <script>
       $(function() {
-        $('.hover, .tooltip').bind('touchstart touchend', function(e) {
+        $('.hover').bind('touchstart touchend', function(e) {
           e.preventDefault()
           $(this).toggleClass('hover_effect')
         })
