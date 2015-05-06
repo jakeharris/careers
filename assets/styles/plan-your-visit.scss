@@ -94,17 +94,8 @@ iframe {
   
   img {
     width: 100%;
-    
     position: relative;
-    
     z-index: 1;
-    
-    &.auhcc {
-      top: -13rem; 
-    }
-    &.clarion {
-      top: -23rem; 
-    }
   }
   .hero-content {
     position: absolute;
@@ -139,9 +130,10 @@ iframe {
       z-index: 3;
       
       position: absolute;
-      top: 65%;
+      bottom: 0;
       right: 0;
-      padding-right: 3rem;
+      text-align: center;
+      padding-right: 1rem;
       font-size: 4rem;
     }
     
@@ -174,13 +166,14 @@ iframe {
 .parking-content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   .flat-btns {
-    flex-basis: 33%;
-    width: 33%;
+    flex-basis: 100%;
+    width: 100%;
   }
   .parking-instructions {
-    flex-basis: 40%;
-    width: 40%;
+    flex-basis: 100%;
+    width: 100%;
   }
 }
 .first-lodging {
@@ -190,15 +183,16 @@ iframe {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   
   .location-contact {
-    flex-basis: 40%;
-    width: 40%; 
+    flex-basis: 100%;
+    width: 100%; 
   }
   
   .address, .phone {
     font-family: $header-font-family;
-    font-size: 3rem;
+    font-size: 2.3rem;
     
     a {
       margin-left: 1.5rem;
@@ -206,24 +200,16 @@ iframe {
     }
   }
 
-  .phone {
-    margin-top: 1rem;
-    position: relative;
-    a {
-      position: absolute;
-      top: 1.5rem;
-    }
-  }
+
   
   .address:before, .phone:before {
     @extend [class^="icon-"], [class*=" icon-"];
   
-    display: inline;
+    display: inline-block;
     margin: 0 auto;
 
-    font-size: 8rem;  
+    font-size: 6rem;  
     color: $box-shadow;
-     
   }
   .address:before {
     @extend .icon-map-marker;
@@ -232,9 +218,13 @@ iframe {
     @extend .icon-phone; 
   }
   
-  .location-info {
-    flex-basis: 50%;
-    width: 50%;
+  .location-info,
+  .location-contact {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 3rem; 
+    flex-basis: 100%;
+    width: 100%;
   }
 }
 
@@ -242,9 +232,60 @@ iframe {
   margin-top: -3rem;
 }
 
-.hilton {
-  margin-top: -15rem;
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+@media (min-width: $tiny-screen-size) { 
+  .location-info,
+  .location-contact {
+    flex-basis: 80%;
+    width: 80%;
+  }
 }
-.holiday {
-  margin-top: -20rem;
+@media (min-width: $small-screen-size) {
+  .location-content {
+    .address:before, .phone:before {
+      display: inline-block;
+    }
+    .phone {
+      margin-top: 1rem;
+      position: relative;
+      a {
+        position: absolute;
+        top: 1.5rem;
+      }
+    }
+  }
+}
+@media (min-width: $medium-screen-size) {
+  .parking-content {
+    .parking-instructions {
+      flex-basis: 40%;
+      width: 40%;
+    }
+    .flat-btns {
+      flex-basis: 33%;
+      width: 33%;
+    }
+  }
+  .location-content {
+    .location-contact {
+      flex-basis: 40%;
+      width: 40%;
+    }
+    .location-info {
+      flex-basis: 50%;
+      width: 50%;
+      padding-top: 0;
+    }
+  }
+  .hero {
+    img.auhcc {
+      top: -13rem; 
+    }
+    .hero-content h2 {
+      text-align: right; 
+    }
+  }
 }
