@@ -29,13 +29,18 @@
 }
 
 .document-review {
+  display: -webkit-box;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  
   margin-top: 3rem;
   
   .content {
-    flex-basis: 45%;
-    width: 45%;
+    flex-basis: 100%;
+    width: 100%;
+    
+    margin-top: 3rem;
   }
 }
 
@@ -62,4 +67,15 @@
 
 .flat-btn {
   margin-top: 3rem;
+}
+
+@media (min-width: $medium-screen-size) {
+  .document-review {
+    .content {
+      flex-basis: 45%;
+      width: 45%;
+      
+      margin-top: 0;
+    }
+  }
 }
