@@ -109,12 +109,10 @@ analytics-token: UA-12338791-1
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
     <script>
       $(function() {
-        $('.hover').bind('touchstart touchend', function(e) {
+        $('.hover').bind('touchstart', function(e) {
           e.preventDefault()
-          $(this).toggleClass('hover_effect')
+          $(this).toggleClass('hover--active')
         })
-        
-  
       })
     </script>
   </body>

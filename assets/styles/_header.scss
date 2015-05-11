@@ -71,7 +71,8 @@ nav.header {
   z-index: 1000000000000000000000;
   
   .nav-home { 
-    &:first-of-type:hover {
+    &:first-of-type:hover,
+    &:first-of-type.hover--active {
        background: white;
     }
     
@@ -113,7 +114,8 @@ nav.header {
       li {
         display: block;
         width: 100%; 
-        &:hover {
+        &:hover,
+        &.hover--active {
           box-shadow: 0 6px 0 #ccc; 
           z-index: 2;
           ul {
@@ -126,7 +128,8 @@ nav.header {
         width: 80%;
         margin-left: 10%;
         margin-right: 10%;
-        li:hover {
+        li:hover,
+        li.hover--active {
           box-shadow: none; 
         }
       }
@@ -159,7 +162,8 @@ nav.header {
   &.bordered {
     box-shadow: 6px 6px 0 #ccc;
     
-    .nav-home:first-of-type:hover {
+    .nav-home:first-of-type:hover,
+    .nav-home:first-of-type.hover--active {
        background: white;
     }
   }
@@ -226,7 +230,8 @@ nav.header {
         }
       }
       
-      &:hover {
+      &:hover,
+      &.hover--active {
         background: white;
         color: $thisislightblue;
         
@@ -235,7 +240,8 @@ nav.header {
         }
       }
       
-      &:hover > ul {
+      &:hover > ul,
+      &.hover--active > ul {
         left: 0; 
         width: 600%;
         list-style:none;
@@ -256,12 +262,14 @@ nav.header {
         }
       }
       
-      &:hover:last-of-type > ul {
+      &:hover:last-of-type > ul,
+      &.hover--active:last-of-type > ul {
         left: -500%; 
       }
 
       
-      &:hover a:first-child:nth-last-child(2):before {
+      &:hover a:first-child:nth-last-child(2):before,
+      &.hover--active a:first-child:nth-last-child(2):before {
         content: ""; 
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
@@ -433,7 +441,8 @@ ul li  {
       margin-top: -17px;
       padding-top: 1rem;
     }
-    .nav-home:first-of-type:hover {
+    .nav-home:first-of-type:hover,
+    .nav-home:first-of-type.hover--active {
       background: $thisislightblue;
     }
   }

@@ -14,13 +14,13 @@
     </div>
     <div class="nav-wrapper">
       <ul>
-        <li>
+        <li id="students" class="hover">
           <a href="students/">Students</a>
           <ul>
-            <li><a href="students/">Undergraduate</a></li>
-            <li><a href="students/graduate.html">Graduate</a></li>
-            <li><a href="students/alumni.html">Alumni</a></li>
-            <li><a href="students/prospective.html">Prospective</a></li>
+            <li data-menu="students"><a href="students/">Undergraduate</a></li>
+            <li data-menu="students"><a href="students/graduate.html">Graduate</a></li>
+            <li data-menu="students"><a href="students/alumni.html">Alumni</a></li>
+            <li data-menu="students"><a href="students/prospective.html">Prospective</a></li>
           </ul>
         </li>
         <li>
@@ -32,14 +32,16 @@
         <li>
           <a href="http://hire.auburn.edu">Employers</a>
         </li>
-        <li><a href="events/">Events</a></li>
         <li>
+          <a href="events/">Events</a>
+        </li>
+        <li id="about-us" class="hover">
           <a href="aboutus/">About Us</a>
           <ul>
-            <li><a href="aboutus/">Office Info</a></li>
-            <li><a href="aboutus/staff.html">Staff</a></li>
-            <li><a href="aboutus/plan-your-visit.html">Plan Your Visit</a></li>
-            <li><a href="aboutus/campus-partners.html">Campus Partners</a></li>
+            <li data-menu="about-us"><a href="aboutus/">Office Info</a></li>
+            <li data-menu="about-us"><a href="aboutus/staff.html">Staff</a></li>
+            <li data-menu="about-us"><a href="aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+            <li data-menu="about-us"><a href="aboutus/campus-partners.html">Campus Partners</a></li>
           </ul>
         </li>
       </ul>
@@ -118,5 +120,33 @@
       navWrapper.classList.remove('mobile-nav--active')
   })
   
-  var submenus = document.getElementById('nav').children[1].getElementsByTagName('')
+  var submenus = document.getElementById('nav').getElementsByClassName('hover')
+  function touchHandler(e) {
+    
+    e.preventDefault()
+    
+    console.log(this.classList)
+    
+    if(this.classList.contains('hover')) {
+      if(this.classList.contains('hover--active')) {
+        this.classList.add('hover--active')
+      }
+    }
+    else if(!this.classList.contains('hover')) {
+
+      console.log('no hover')
+      console.log(this)
+      var menu = this.parentElement.parentElement
+
+      if(menu.classList.contains('hover--active')) e.target.click()
+    }
+  }
+  for(var i = 0; i < submenus.length; i++) {
+    submenus[i].addEventListener('touchstart', touchHandler, true)
+    
+    for(var j = 0; j < submenus[i].children[1].children.length; j++) {
+      submenus[i].children[1].children[j].addEventListener('touchstart', touchHandler, true) 
+    }
+  }
+  
 </script>
