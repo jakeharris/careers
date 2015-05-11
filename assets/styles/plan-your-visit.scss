@@ -61,7 +61,7 @@
     }
     h3 {
       font-family: $header-font-family;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       padding: 0;
       margin: 0;
     }
@@ -213,6 +213,7 @@ iframe {
   }
   .address:before {
     @extend .icon-map-marker;
+    padding-right: 1.3rem;
   }
   .phone:before {
     @extend .icon-phone; 
@@ -256,6 +257,9 @@ iframe {
         top: 1.5rem;
       }
     }
+  }
+  .content-nav .options h3 {
+    font-size: 3.5rem;
   }
 }
 @media (min-width: $medium-screen-size) {
