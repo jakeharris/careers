@@ -310,7 +310,6 @@ h3,.h3-a {
 
 .event-date,
 .event-details {
-  display: inline-block;
   vertical-align: top;
 }
 
@@ -331,6 +330,7 @@ h3,.h3-a {
   width: 82%;
   line-height: 160%;
   font-size: 1.7rem;
+  display: inline-block;
 }
 
 .event-details-name {
