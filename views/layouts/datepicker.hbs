@@ -75,6 +75,14 @@ path-to-root: ..
         label: '' 
       });
     </script>
+    <script>
+      $(function() {
+        $('.hover').bind('touchstart', function(e) {
+          e.preventDefault()
+          $(this).toggleClass('hover--active')
+        })
+      })
+    </script>
   </body>
   <script type="text/javascript">
     var _gaq = _gaq || [];
