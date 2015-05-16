@@ -122,13 +122,8 @@ iframe {
 }
 
 .tweets ul {
-  display: -webkit-flex;
-  display:     -ms-flexbox;
-  display:         flex;
-  flex-direction: column;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .tweet {
