@@ -28,6 +28,18 @@
   }
 }
 
+.resume--disabled {
+  color: #ccc;
+  background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
+  background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
+}
+
+.resume-disabled {
+  font-family: $header-font-family;
+  font-size: 3rem;
+  background: transparent;
+}
+
 .document-review {
   display: -webkit-box;
   display: flex;
