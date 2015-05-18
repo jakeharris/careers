@@ -14,6 +14,15 @@
     </div>
     <div class="nav-wrapper">
       <ul>
+        <li id="about-us" class="hover about-us about-us--mobile">
+          <a href="aboutus/">About Us</a>
+          <ul>
+            <li data-menu="about-us"><a href="aboutus/">Office Info</a></li>
+            <li data-menu="about-us"><a href="aboutus/staff.html">Staff</a></li>
+            <li data-menu="about-us"><a href="aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+            <li data-menu="about-us"><a href="aboutus/campus-partners.html">Campus Partners</a></li>
+          </ul>
+        </li>
         <li id="students" class="hover">
           <a href="students/">Students</a>
           <ul>
@@ -35,7 +44,7 @@
         <li>
           <a href="events/">Events</a>
         </li>
-        <li id="about-us" class="hover">
+        <li class="about-us">
           <a href="aboutus/">About Us</a>
           <ul>
             <li data-menu="about-us"><a href="aboutus/">Office Info</a></li>
@@ -107,6 +116,10 @@
      
     if(hamburger === undefined) hamburger = document.getElementById('hamburger')
     if(hamburger === undefined) return
+    
+    if (hamburger.classList.contains('nav-controller--active'))
+      hamburger.classList.remove('nav-controller--active')
+    else hamburger.classList.add('nav-controller--active')
     
     if(navWrapper.classList.contains('mobile-nav--active'))
       navWrapper.classList.remove('mobile-nav--active')

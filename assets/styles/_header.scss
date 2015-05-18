@@ -97,6 +97,13 @@ nav.header {
       
       background-color: $thisislightblue;
     }
+    
+    .about-us {
+      display: block; 
+    }
+    .about-us--mobile {
+      display: none; 
+    }
   }
   
   .nav-wrapper.mobile-nav--active {
@@ -106,6 +113,13 @@ nav.header {
     top: 0;
     width: 100%;
     z-index: 2;
+    
+    .about-us {
+      display: none; 
+    }
+    .about-us--mobile {
+      display: block; 
+    }
     
     ul {
       display: block;
@@ -123,6 +137,9 @@ nav.header {
           }
         }
       }
+      li:nth-last-of-type(2) {
+        box-shadow: 0 6px 0 #ccc; 
+      }
       
       ul {
         width: 80%;
@@ -139,7 +156,7 @@ nav.header {
   .nav-controller {
     display: block;
     position: absolute;
-    top: 30%;
+    top: 0%;
     right: 0;
     height: 60px;
     width: 60px;
@@ -153,8 +170,13 @@ nav.header {
     color: white;
     z-index: 3;
     
-    &:hover {
+    &:hover,
+    &.nav-controller--active:hover {
       background: white;
+      color: $thisislightblue;
+    }
+    &.nav-controller--active {
+      background: $thisisiceblue;
       color: $thisislightblue;
     }
   }
