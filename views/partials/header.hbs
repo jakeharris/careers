@@ -85,9 +85,18 @@
     if(postheader === undefined) postheader = document.getElementById('postheader')
     if(postheader === undefined) return  
     
-    if(!nav.classList.contains('fixed')) {
+    
+    if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
       nav.classList.add('fixed') 
-    }
+      postheader.classList.add('absolute')
+    } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed') && window.innerWidth >= 768) {
+      nav.classList.remove('fixed')
+      postheader.classList.remove('absolute')
+    } else if (preheader.getBoundingClientRect().bottom <= 0 && nav.children[0].getBoundingClientRect().top <= 0 && !nav.classList.contains('fixed')) {
+      nav.classList.add('fixed') 
+    } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed')) {
+      nav.classList.remove('fixed') 
+    } 
     
     if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth >= 768) { 
       nav.classList.add('bordered')
@@ -97,6 +106,11 @@
       nav.classList.add('bordered') 
     } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('bordered') && window.innerWidth < 768) {
       nav.classList.remove('bordered') 
+    }
+    
+    
+    if(nav.children[1].classList.contains('mobile-nav--active') && !nav.classList.contains('fixed')) {
+      nav.classList.add('fixed'); 
     }
   }
 </script>
