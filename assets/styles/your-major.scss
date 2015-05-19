@@ -49,17 +49,46 @@
   display: flex;
   align-content: flex-start;
   justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .topic {
-  width: 40%;
-  flex-basis: 40%;
-  margin-right: 3rem;
+  flex-basis: 100%;
+  width: 100%;
   h2 {
-    margin-bottom: 3rem; 
+    margin: 3rem 0;
   }
-  ul li {
-    list-style: disc; 
-    padding: 1rem 0;
+  ul {
+    li {
+      list-style: none; 
+      padding: 1rem 0;
+      margin-left: 3rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.your-major .hero {
+  width: 100%;
+}
+.your-major .blurb {
+  flex-basis: 100%;
+  width: 100%;
+}
+
+@media (min-width: $small-screen-size) {
+  .your-major .blurb {
+    flex-basis: 33%;
+    width: 33%;
+  }
+  .topic {
+    width: 40%;
+    flex-basis: 40%;
+    margin-right: 3rem; 
+  }
+  .content .buttons {
+    flex-basis: 40%;
+    width: 40%;
   }
 }

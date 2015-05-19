@@ -12,20 +12,10 @@
   overflow: hidden;
   margin-top: 3rem;
   
-  height: 45rem;
   max-height: none;
   
   & > img {
     width: 100%;
-    height: 45rem;
-    
-    &.iptjf {
-      height:60rem; 
-    }
-    &.cym {
-      margin-top: -3rem;
-      height: auto; 
-    }
   }
 }
 
@@ -48,15 +38,7 @@
     width: 100%;
   }
   
-  @media (min-width: $small-screen-size) {
-    .row {
-      flex-wrap: nowrap; 
-    }
-    .buttons {
-      flex-basis: 40%;
-      width: 40%;
-    }
-  }
+
   
   & > .row {
     
@@ -78,13 +60,6 @@
       flex-basis: 100%;
       width: 100%;
     }
-  }
-  
-  @media (min-width: 768px) {
-    .row > p.blurb {
-      flex-basis: 33%;
-      width: 33%;
-    } 
   }
   
   & > .schedule {
@@ -134,11 +109,10 @@
   }
   
   & > .attributes {
-    display: -webkit-flex;
-    display:     -ms-flexbox;
-    display:         flex;
-    -webkit-justify-content: space-around;
-            justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
     width: 100%;
     
     border-top: 1px solid $border;
@@ -148,9 +122,9 @@
       
       flex-basis: 33%;
       width: 33%;
-      
-      
-      
+      min-width: 200px;
+      margin-bottom: 3rem;
+
       & > a.icon:hover {
         background: $thisislightblue;
       }
@@ -170,15 +144,15 @@
         
         &.dress {
           padding-left: 1.9rem;
-          padding-top: 1.4rem;
+          padding-top: 1.8rem;
         }
         &.format {
           padding-left: 2rem;
-          padding-top: 1rem;
+          padding-top: 1.4rem;
         }
         &.majors {
           padding-left: 1.2rem;
-          padding-top: 1.3rem;
+          padding-top: 1.8rem;
         }
         &.population {
           padding-left: 1.8rem;
@@ -194,28 +168,6 @@
         text-align: center;
         font-family: $header-font-family;
         font-size: 3rem;
-      }
-      @media (max-width: 768px) {
-        .details {
-          font-size: 2rem; 
-        }
-      }
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .attributes {
-      flex-wrap: wrap;
-      .attribute {
-        flex-basis: 100%;
-        width: 100%;
-        & > .details {
-          padding-top: 1rem;
-          padding-bottom: 3rem;
-        }
-        &:last-of-type > .details {
-           padding-bottom: 0;
-        }
       }
     }
   }
@@ -263,3 +215,62 @@
   max-width: 14rem;
 }
 
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width: $small-screen-size) {
+
+  .content > .row > p.blurb {
+    flex-basis: 33%;
+    width: 33%;
+  } 
+  .row {
+    flex-wrap: nowrap; 
+  }
+  .details {
+    font-size: 2rem; 
+  }
+  .attributes {
+    .attribute {
+      flex-basis: 100%;
+      width: 100%;
+      & > .details {
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+      }
+      &:last-of-type > .details {
+         padding-bottom: 0;
+      }
+    }
+  }
+  .content .buttons {
+    flex-basis: 40%;
+    width: 40%;
+  }
+}
+
+@media (min-width: $medium-screen-size) {
+  .hero {
+    height: 45rem;
+    & > img {
+      height: 45rem;
+      &.iptjf {
+        height:60rem; 
+      }
+      &.cym {
+        margin-top: -3rem;
+        height: auto; 
+      }
+    }
+  }
+  .your-major .hero {
+    height: 60rem; 
+  }
+  .attributes .attribute .details {
+    padding-bottom: 0; 
+  }
+  .content > .attributes > .attribute {
+    margin-bottom: 0; 
+  }
+}
