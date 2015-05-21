@@ -1,0 +1,276 @@
+@import 'app';
+@import 'sponsors';
+
+.hero {
+  width: 100%;
+  text-align: center;
+  
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  
+  overflow: hidden;
+  margin-top: 3rem;
+  
+  max-height: none;
+  
+  & > img {
+    width: 100%;
+  }
+}
+
+.content {
+  background: white;
+  
+  padding: 5rem;
+  box-shadow: 6px 6px 0 #ccc;
+  
+  &.extra-content {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    & > .row {
+      padding-bottom: 0;
+    }
+  }
+  
+  .buttons {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  
+
+  
+  & > .row {
+    
+    display: -webkit-flex;
+    display:     -ms-flexbox;
+    display:         flex;
+    -webkit-justify-content: space-around;
+            justify-content: space-around;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    
+    padding-bottom: 5rem;
+    
+    & > p.blurb {
+      text-align: center;
+
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+  
+  & > .schedule {
+    display: flex;
+    width: 100%;
+    flex-basis: 100%;
+    flex-direction: column;
+    
+    border-top: 1px solid #ccc;
+    padding: 5rem 0;
+    
+    & > .activity {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-basis: 100%;
+      padding-top: 3rem;
+      
+      &:first-of-type {
+        padding-top: 0; 
+      }
+      
+      & > .name {
+        width: 50%;
+        flex-basis: 50%;
+        text-align: right;
+        padding-right: 0.5rem;
+        
+        font-family: $header-font-family;
+        font-size: 3rem;
+        color: $thisislightblue;
+      }
+      & > .duration {
+        width: 49%;
+        flex-basis: 49%;
+        text-align: left;
+        padding-left: 0.5rem;
+        
+        font-family: $header-font-family;
+        font-size: 3rem;
+        & > .meridiem {
+          font-size: 2rem;
+          color: #aaa;
+        }
+      }
+    }
+  }
+  
+  & > .attributes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    width: 100%;
+    
+    border-top: 1px solid $border;
+    padding-top: 5rem;
+    
+    & > .attribute {
+      
+      flex-basis: 33%;
+      width: 33%;
+      min-width: 200px;
+      margin-bottom: 3rem;
+
+      & > a.icon:hover {
+        background: $thisislightblue;
+      }
+      
+      & > .icon {
+        background: #ccc;
+        color: white;
+        border-radius: 10rem 10rem;
+        font-size: 6rem;
+        width: 10rem;
+        height: 10rem;
+        
+        display: block;
+        
+        margin-left: auto;
+        margin-right: auto;
+        
+        &.dress {
+          padding-left: 1.9rem;
+          padding-top: 1.8rem;
+        }
+        &.format {
+          padding-left: 2rem;
+          padding-top: 1.4rem;
+        }
+        &.majors {
+          padding-left: 1.2rem;
+          padding-top: 1.8rem;
+        }
+        &.population {
+          padding-left: 1.8rem;
+          padding-top: 1.5rem;
+        }
+        &.jobs {
+          padding-left: 2rem;
+          padding-top: 1rem;
+        }
+      }
+      & > .details {
+        padding-top: 3rem;
+        text-align: center;
+        font-family: $header-font-family;
+        font-size: 3rem;
+      }
+    }
+  }
+  
+  & > .attendants {
+    padding: 5rem 0; 
+    vertical-align: middle;
+    
+    & > h2 {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-bottom: 5rem;
+    }
+    
+    & > .attendant-list {
+      display: flex;
+      & > li {
+        flex-basis: 33%;
+        width: 33%;
+        
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.sponsors-header {
+  border-top: none;
+  padding-bottom: 3.3rem;
+  margin-bottom: 0;
+}
+
+.sponsors-content {
+  padding-top: 0;
+}
+
+.sponsor {
+  margin-bottom: 0;
+  width: 16rem;
+  margin-top: 7rem;
+}
+
+#sponsor-adtran > img {
+  max-width: 14rem;
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width: $small-screen-size) {
+
+  .content > .row > p.blurb {
+    flex-basis: 33%;
+    width: 33%;
+  } 
+  .row {
+    flex-wrap: nowrap; 
+  }
+  .details {
+    font-size: 2rem; 
+  }
+  .attributes {
+    .attribute {
+      flex-basis: 100%;
+      width: 100%;
+      & > .details {
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+      }
+      &:last-of-type > .details {
+         padding-bottom: 0;
+      }
+    }
+  }
+  .content .buttons {
+    flex-basis: 40%;
+    width: 40%;
+  }
+}
+
+@media (min-width: $medium-screen-size) {
+  .hero {
+    height: 45rem;
+    & > img {
+      height: 45rem;
+      &.iptjf {
+        height:60rem; 
+      }
+      &.cym {
+        margin-top: -3rem;
+        height: auto; 
+      }
+    }
+  }
+  .your-major .hero {
+    height: 60rem; 
+  }
+  .attributes .attribute .details {
+    padding-bottom: 0; 
+  }
+  .content > .attributes > .attribute {
+    margin-bottom: 0; 
+  }
+}

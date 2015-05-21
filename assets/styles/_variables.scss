@@ -1,0 +1,54 @@
+/* Colors */
+$border: #d7d7d7;
+$bg-gray: #f4f4f4;
+$charcoal: #333;
+$box-shadow: #ccc;
+$thisisdarkblue: #03244d;
+$thisislightblue: #496e9c;
+$thisisiceblue: #e4eeff;
+$thisisburntorange: #dd550c;
+$thisislightorange: #f68026;
+
+/* Typefaces */
+$header-font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-font-family: "Source Sans Pro", serif;
+$icon-font-family: icomoon;
+
+$tiny-screen-size: 480px;
+$small-screen-size: 768px;
+$medium-screen-size: 992px;
+$moderate-screen-size: 1105px;
+$social-shrink-size: 1440px;
+
+@mixin hex($width, $color) {
+  $height: $width * (78/104);
+  
+  
+  /* A good standard is 104w x 120h. */
+  /* We want wider than that, though */
+  background-color: $color;
+  
+  width: $width;
+  height: ceil($height / 2);
+  
+  position: relative;
+  
+  &:before {
+    content: "";
+    width: 0; height: 0;
+    border-bottom: ($height / 4) solid $color;
+    border-left: ($width / 2) solid transparent;
+    border-right: ($width / 2) solid transparent;
+    position: absolute;
+    top: (-1 * $height / 4);
+  }
+  &:after {
+    content: "";
+    width: 0; height: 0;
+    border-top: ($height / 4) solid $color;
+    border-left: ($width / 2) solid transparent;
+    border-right: ($width / 2) solid transparent;
+    position: absolute;
+    bottom: (-1 * $height / 4);
+  }
+}

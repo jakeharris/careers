@@ -1,0 +1,241 @@
+@import 'app';
+
+.presentations-banner {
+  text-align: center;
+  h2 {
+    font-size: 8rem;
+  }
+}
+
+.topics > h2,
+.logistics > h2,
+.description > h2,
+.contacts > h2 {
+  text-align: center;
+  font-size: 6rem;
+  color: $thisislightorange;
+}
+.topics > p {
+  text-align: center;
+}
+
+.topic-groups {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.topic-group {
+  padding: 3rem;
+}
+
+.topic-group-name {
+  font-family: $header-font-family;
+  font-size: 2.7rem;
+}
+
+.topic {
+  padding: 0.5rem 1rem;
+  box-shadow: 6px 6px 0 $box-shadow;
+  margin: 1rem 0;
+  background-color: white;
+  border: 1px solid $box-shadow;
+  color: $thisisdarkblue;
+}
+label {
+  font-weight: normal;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+  display: inline-block;
+  margin: 0;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + .icon-check:before {
+  display: inline-block;
+  content: '\f00c';
+  
+  position: relative;
+  top: 5px;
+  
+  font-family: $icon-font-family;
+  font-size: 3rem;
+  color: $thisisdarkblue;
+}
+input[type="radio"]:checked + .icon-check:before {
+  color: #87e571;
+}
+input[type="checkbox"].form-control {
+  border: none;
+  box-shadow: none;
+}
+.form-control,
+.input-group-addon {
+  border-radius: 0;
+}
+#time-start {
+  border-right: 0;
+}
+#time-end {
+  border-left: 0;
+}
+
+
+
+.date-logistics-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.date-container {
+  width: 100%;
+  flex-basis: 100%;
+  margin: 0 auto;
+}
+.logistics-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+  width: 100%;
+  flex-basis: 100%;
+}
+.for-whom {
+  flex-basis: 100%;
+  width: 100%;
+}
+.date, .time {
+  width: 20rem;
+  margin: 1rem 0;
+}
+.location-container {
+  flex-basis: 100%;
+  width: 100%;
+  .input-group {
+    margin-bottom: 3rem;
+  }
+}
+.contacts .flex {
+  justify-content: space-between;
+}
+
+.primary,
+.add-secondary,
+.secondary {
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.add-secondary {
+  text-align: center;
+  height: 100%;
+  margin-top: 1rem;
+  padding: 8rem 0;
+  padding-bottom: 9rem;
+  border: 1px dashed $box-shadow;
+  cursor: pointer;
+  h3 {
+    font-family: $header-font-family; 
+    margin-bottom: 3rem;
+  }
+  .icon-plus {
+    color: white;
+    background: $thisisdarkblue;
+    font-size: 4rem;
+    padding: 2rem 2.4rem;
+    border-radius: 4.5rem;
+    margin-top: 8rem;
+  }
+  &:hover {
+    background: $thisisdarkblue;
+    h3 {
+      color: white;
+    }
+    border: 1px solid white;
+    .icon-plus {
+      color:$thisisdarkblue;
+      background: white;
+    }
+  }
+}
+
+.secondary {
+  display: none;
+}
+#presentations input[type="submit"] {
+  margin-top: -3rem;
+}
+#presentations input[type="submit"][disabled=""],
+#presentations input[type="submit"][disabled="disabled"]{
+  color: $box-shadow;
+  
+  background: repeating-linear-gradient(
+      -55deg,
+      white,
+      white 10px,
+      $bg-gray 10px,
+      $bg-gray 20px
+    );
+}
+
+
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width: $tiny-screen-size) {}
+@media (min-width: $small-screen-size) {
+  .for-whom,
+  .location-container {
+    width: 40%;
+    flex-basis: 40%;
+  }
+  .for-whom {
+    margin-right: 3rem; 
+  }
+  .logistics-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .primary,
+  .add-secondary,
+  .secondary {
+    width: 45%;
+    flex-basis: 45%;
+  }
+}
+@media (min-width: $medium-screen-size) {}
+@media (min-width: $moderate-screen-size) {
+  .date-container {
+    width: 30%;
+    flex-basis: 30%;
+    
+    margin: 0;
+  }
+  .logistics-container {
+    width: 61%;
+    flex-basis: 61%;
+  }
+  .date-logistics-container {
+    justify-content: space-between;
+  }
+  .contacts .flex {
+    justify-content: space-around;
+  }
+  .primary, 
+  .add-secondary,
+  .secondary {    
+    width: 30%;
+    flex-basis: 30%;
+  }
+}
+@media (min-width: $social-shrink-size) {
+   .topic-groups {
+    height: 1300px;
+  }
+  .topic-group {
+    width: 50%; 
+  } 
+}
