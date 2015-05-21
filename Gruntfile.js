@@ -76,6 +76,8 @@ module.exports = function (grunt) {
     // ## concat
     //    Concatenates multiple static assets into one file.
     //    Useful when pages load multiple disparate stylesheets or scripts.
+    //    Not as useful for us, because each page already loads only one stylesheet
+    //    from the server (all others come from external CDNs, if necessary).
     // ## wiredep
     //    Inject Bower components into our master page.
     // ## concurrent
@@ -133,14 +135,43 @@ module.exports = function (grunt) {
     // # clean
     // Empty out folders.
     clean: {
-      dist: {
+      styles: {
         files: [{
           dot: true,
           src: [
-            '.tmp',
-            'dist'
+            'assets/styles/*.css*'
           ]
         }]
+      },
+      scripts: {
+        files: [{
+          dot: true,
+          src: [
+            'assets/scripts/*.js*'
+          ]
+        }]
+      },
+      post: {
+        files: [{
+          dot: true,
+          src: [
+            'assets/styles/*.css*',
+            '!assets/styles/*.min.*.css',
+            'assets/scripts/*.js*',
+            '!assets/scripts/*.min.*.js'
+          ]
+        }]
+      }
+    },
+    
+    // # copy
+    // Move files around.
+    copy: {
+      components: {
+        cwd: 'assets/styles/',
+        src:  ['components/*.css*'],
+        dest: '.',
+        flatten: true
       }
     },
 
@@ -153,7 +184,7 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.assets %>/styles',
+          cwd: '<%= config.assets %>/styles/sass',
           src: ['*.{scss,sass}'],
           dest: '<%= config.assets %>/styles',
           ext: '.css'
@@ -331,12 +362,18 @@ module.exports = function (grunt) {
     },
 
     // ## *-min
-    // (htmlmin, cssmin, imagemin, svgmin, uglify)
+    // (usemin, htmlmin, cssmin, imagemin, svgmin, uglify)
     // Minify our files.
+    
+    // ### useminPrepare
+    // Prepare files for serving based on usemin blocks found in HTML.
+    useminPrepare: {
+      html: 'index.html'
+    },
 
     // ### cssmin
     // Minify our CSS.
-/*    cssmin: {
+    cssmin: {
       generated: {
         files: [{
           expand: true,
@@ -346,34 +383,34 @@ module.exports = function (grunt) {
           ext: '.min.css'
         }]
       }
-    },*/
+    },
 
     // ### uglify
     // Minify our JS.
-/*    uglify: {
+    uglify: {
       generated: {
         options: {
           sourceMap: true
         },
         files: [{
           expand: true,
-          cwd: '<%= config.assets %>/scripts',
+          cwd: '<%= config.assets %>/scripts/src',
           src: ['*.js', '!*.min.js'],
           dest: '<%= config.assets %>/scripts',
           ext: '.min.js'
         }]
       }
-    },*/
+    },
 
     // ## filerev
     // Rename files to bust browser caches.
     filerev: {
       css: {
-        src: 'dist/assets/styles/{,*/}*.min.css',
+        src: 'assets/styles/{,*/}*.min.css',
         dest: '<%= config.assets %>/styles'
       },
       js: {
-        src: 'dist/assets/scripts/{,*/}*.min.js' ,
+        src: 'assets/scripts/{,*/}*.min.js' ,
         dest: '<%= config.assets %>/scripts'
       }
     },
@@ -400,15 +437,21 @@ module.exports = function (grunt) {
   // # grunt compile
   // Compile the project. Generate CSS and HTML from Sass and Handlebars.
   grunt.registerTask('compile', [
+    'clean',
     'sass',
+    'autoprefixer',
     'assemble'
   ]);
 
   // # grunt enhance
-  // Improve upon the compiled project. Minify files, cache bust, and autoprefix.
+  // Improve upon the compiled project. Minify files, cache bust.
   grunt.registerTask('enhance', [
-    //'autoprefixer'
-    /* usemin here */
+    'useminPrepare',
+    'cssmin:generated',
+    'uglify:generated',
+    'filerev',
+    'usemin',
+    'clean:post',
   ]);
 
   // # grunt build
@@ -416,16 +459,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean',
     'validate',
-    'compile',
-    'enhance'
-  ]);
-
-
-  // # grunt auto
-  // Build the project, then wait for updates and rebuild selectively.
-  grunt.registerTask('auto', [
-    'build',
-    'watch'
+    'compile'
   ]);
 
   // # grunt (default)
@@ -438,6 +472,11 @@ module.exports = function (grunt) {
     'build',
     'connect:livereload',
     'watch'
+  ]);
+  
+  grunt.registerTask('deploy', [
+    'build',
+    'enhance'
   ]);
 
   /*grunt.registerTask('publish', 'commit work, push to github, and deploy on server; requires target [valid: dev, prod]', function (target) {

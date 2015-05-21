@@ -1,7 +1,0 @@
-AuthUserFile /export/vol2/httpd/htdocs/academic/provost/undergrad_studies/career/staffonly/.htpasswd
-AuthGroupFile /export/vol2/httpd/htdocs/academic/provost/undergrad_studies/career/staffonly/.htgroup
-AuthName ByPassword
-AuthType Basic
-<Limit GET>
-require group cdsstaff
-</Limit>
