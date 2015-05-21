@@ -439,13 +439,13 @@ module.exports = function (grunt) {
   grunt.registerTask('compile', [
     'clean',
     'sass',
+    'autoprefixer',
     'assemble'
   ]);
 
   // # grunt enhance
-  // Improve upon the compiled project. Minify files, cache bust, and autoprefix.
+  // Improve upon the compiled project. Minify files, cache bust.
   grunt.registerTask('enhance', [
-    'autoprefixer',
     'useminPrepare',
     'cssmin:generated',
     'uglify:generated',
@@ -459,16 +459,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean',
     'validate',
-    'compile',
-    'enhance'
-  ]);
-
-
-  // # grunt auto
-  // Build the project, then wait for updates and rebuild selectively.
-  grunt.registerTask('auto', [
-    'build',
-    'watch'
+    'compile'
   ]);
 
   // # grunt (default)
@@ -481,6 +472,11 @@ module.exports = function (grunt) {
     'build',
     'connect:livereload',
     'watch'
+  ]);
+  
+  grunt.registerTask('deploy', [
+    'build',
+    'enhance'
   ]);
 
   /*grunt.registerTask('publish', 'commit work, push to github, and deploy on server; requires target [valid: dev, prod]', function (target) {
