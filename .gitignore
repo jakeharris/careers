@@ -12,6 +12,7 @@ events.json
 .sass-cache/
 */*.html
 *.html
+dist/
 assets/styles/*.cs*
 assets/*/*.min.*
 assets/images/staff/big/*

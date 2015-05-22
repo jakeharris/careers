@@ -54,6 +54,36 @@ module.exports = function (grunt) {
     useminPrepare: 'grunt-usemin'
   });
 
+  var VIEW_MAPPING = {
+    './index.html':    ['<%= config.views %>/home.hbs'],
+    'jobs/index.html': ['<%= config.views %>/jobs.hbs'],
+    'events/index.html': ['<%= config.views %>/events.hbs'],
+    'students/events/': [
+      '<%= config.views %>/events-pages/am.hbs',
+      '<%= config.views %>/events-pages/eid.hbs',
+      '<%= config.views %>/events-pages/iptjf.hbs',
+      '<%= config.views %>/events-pages/tech.hbs',
+      '<%= config.views %>/events-pages/cmcd.hbs',
+      '<%= config.views %>/events-pages/your-major.hbs'
+    ],
+    'assessments/index.html': ['<%= config.views %>/assessments.hbs'],
+    'aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs'],
+    'resume/index.html': ['<%= config.views %>/resume.hbs'],
+    'pathways/index.html': ['<%= config.views %>/pathways.hbs'],
+    'aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
+    'aboutus/': [
+      '<%= config.views %>/plan-your-visit.hbs',
+      '<%= config.views %>/campus-partners.hbs',
+      '<%= config.views %>/staff.hbs'
+    ],
+    'faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
+    'faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs'],
+    'students/index.html': ['<%= config.views %>/students/current.hbs'],
+    'students/': ['<%= config.views %>/students/*.hbs'],
+    'parents/index.html': ['<%= config.views %>/families.hbs'],
+    'faculty/index.html': ['<%= config.views %>/faculty.hbs']
+  }
+  
   grunt.initConfig({
 
     // # Project settings
@@ -65,7 +95,7 @@ module.exports = function (grunt) {
       jobsmaster: 'views/layouts/jobs.hbs',
       nosocial: 'views/layouts/no-social.hbs',
       partials: 'views/partials/*.hbs',
-      dist: '.'
+      dist: 'dist'
     },
 
     // # Tasks I'd like to run, but I am not yet:
@@ -135,6 +165,11 @@ module.exports = function (grunt) {
     // # clean
     // Empty out folders.
     clean: {
+      dist: {
+        files: [{
+          src: ['dist/']
+        }]
+      },
       styles: {
         files: [{
           dot: true,
@@ -198,136 +233,19 @@ module.exports = function (grunt) {
     assemble: {
       options: {
         helpers: ['*-helper.js'],
-        prod: 'false'
+        prod: 'false',
+        layouts: '<%= config.layouts %>',
+        partials: '<%= config.partials %>',
+        data: '<%= config.assets %>/data/*',
+        flatten: true
       },
-      home: {
-        options: {
-          flatten: true,
-          layout: '<%= config.master %>',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          './index.html':    ['<%= config.views %>/home.hbs'],
-          'jobs/index.html': ['<%= config.views %>/jobs.hbs']
-        }
+      dev: {
+        files: VIEW_MAPPING
       },
-      events: {
-        options: {
-          flatten: true,
-          layout: '<%= config.nosocial %>',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          'events/index.html': ['<%= config.views %>/events.hbs'],
-          'students/events/': [
-            '<%= config.views %>/events-pages/am.hbs',
-            '<%= config.views %>/events-pages/eid.hbs',
-            '<%= config.views %>/events-pages/iptjf.hbs',
-            '<%= config.views %>/events-pages/tech.hbs',
-            '<%= config.views %>/events-pages/cmcd.hbs',
-            '<%= config.views %>/events-pages/your-major.hbs'
-          ] 
-        }
-      },
-      assessments: {
-        options: {
-          flatten: true,
-          layout: '<%= config.nosocial %>',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          'assessments/index.html': ['<%= config.views %>/assessments.hbs']
-        }
-      },
-      liason: {
-        options: {
-          flatten: true,
-          layout: '<%= config.nosocial %>',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          'aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs']
-        }
-      },
-      resume: {
-        options: {
-          flatten: true,
-          layout: '<%= config.nosocial %>',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          'resume/index.html': ['<%= config.views %>/resume.hbs']
-        }
-      },
-      presentations: {
-        options: {
-          flatten: true,
-          layout: '<%= config.views %>/layouts/datepicker.hbs',
-          partials: '<%= config.partials %>',
-          data: '<%= config.assets %>/data/presentation-fields.json'
-        },
-        files: {
-          'faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
-          'faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs']
-        }
-      },
-      pathways: {
-        options: {
-          flatten: true,
-          layout: '<%= config.nosocial %>',
-          partials: '<%= config.partials %>',
-          data: '<%= config.assets %>/data/pathways.json'
-        },
-        files: {
-          'pathways/index.html': ['<%= config.views %>/pathways.hbs']
-        }
-      },
-      aboutUs: {
-        options:  {
-          flatten: true,
-          layout: '<%= config.nosocial %>',
-          partials: '<%= config.partials %>',
-          data: '<%= config.assets %>/data/staff.json'
-        },
-        files: {
-          'aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
-          'aboutus/': [
-            '<%= config.views %>/plan-your-visit.hbs',
-            '<%= config.views %>/campus-partners.hbs',
-            '<%= config.views %>/staff.hbs'
-          ]
-        }
-      },
-      students: {
-        options:  {
-          flatten: true,
-          layout: '<%= config.layouts %>/resources.hbs',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          'students/index.html': ['<%= config.views %>/students/current.hbs'],
-          'students/': ['<%= config.views %>/students/*.hbs']
-        }
-      },
-      families: {
-        options:  {
-          flatten: true,
-          layout: '<%= config.layouts %>/resources.hbs',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          'parents/index.html': ['<%= config.views %>/families.hbs']
-        }
-      },
-      faculty: {
-        options:  {
-          flatten: true,
-          layout: '<%= config.layouts %>/resources.hbs',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          'faculty/index.html': ['<%= config.views %>/faculty.hbs']
-        }
+      prod: {
+        files: VIEW_MAPPING,
+        src: ['<%= config.views %>/{,*/}*.hbs', '!<%= config.views %>/layouts/*', '!<%= config.views %>/partials/*'],
+        dest: 'dist/'
       }
     },
 
@@ -368,7 +286,23 @@ module.exports = function (grunt) {
     // ### useminPrepare
     // Prepare files for serving based on usemin blocks found in HTML.
     useminPrepare: {
-      html: 'index.html'
+      html: [
+        'aboutus/*.html',
+        'assessments/index.html',
+        'events/index.html', 
+        'faculty/*.html',
+        'jobs/index.html',
+        'parents/index.html',
+        'pathways/index.html',
+        'resume/index.html',
+        'students/*.html',
+        'students/events/*.html',
+        'index.html'
+      ],
+      options: {
+        root: 'dist',
+        dest: 'dist'
+      }
     },
 
     // ### cssmin
@@ -379,7 +313,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= config.assets %>/styles',
           src: ['*.css', '!*.min.css'],
-          dest: '<%= config.assets %>/styles',
+          dest: '<%= config.dist %>/<%= config.assets %>/styles',
           ext: '.min.css'
         }]
       }
@@ -389,14 +323,11 @@ module.exports = function (grunt) {
     // Minify our JS.
     uglify: {
       generated: {
-        options: {
-          sourceMap: true
-        },
         files: [{
           expand: true,
           cwd: '<%= config.assets %>/scripts/src',
           src: ['*.js', '!*.min.js'],
-          dest: '<%= config.assets %>/scripts',
+          dest: '<%= config.dist %>/<%= config.assets %>/scripts',
           ext: '.min.js'
         }]
       }
@@ -406,12 +337,12 @@ module.exports = function (grunt) {
     // Rename files to bust browser caches.
     filerev: {
       css: {
-        src: 'assets/styles/{,*/}*.min.css',
-        dest: '<%= config.assets %>/styles'
+        src: '<%= config.dist %>/assets/styles/{,*/}*.min.css',
+        dest: '<%= config.dist %>/<%= config.assets %>/styles'
       },
       js: {
-        src: 'assets/scripts/{,*/}*.min.js' ,
-        dest: '<%= config.assets %>/scripts'
+        src: '<%= config.dist %>/assets/scripts/{,*/}*.min.js' ,
+        dest: '<%= config.dist %>/<%= config.assets %>/scripts'
       }
     },
 
@@ -421,8 +352,12 @@ module.exports = function (grunt) {
     // into singular, cache-busting downloads n
     // your production HTML!
     usemin: {
-      html: ['index.html', 'events/*.html', 'jobs/index.html'],
-      css: ['<%= config.assets %>/styles/*.css']
+      html: [
+        'dist/*.html'
+      ],
+      options: {
+        assetsDirs: ['<%= config.dist %>/<%= config.assets %>/styles/', '<%= config.dist %>/<%= config.assets %>/scripts/']
+      }
     }
 
   });
@@ -436,12 +371,18 @@ module.exports = function (grunt) {
 
   // # grunt compile
   // Compile the project. Generate CSS and HTML from Sass and Handlebars.
-  grunt.registerTask('compile', [
-    'clean',
-    'sass',
-    'autoprefixer',
-    'assemble'
-  ]);
+  grunt.registerTask('compile', 'Compile the project. Generate CSS and HTML from Sass and Handlebars.', function (target) {
+    if(target !== 'dev' && target !== 'prod') {
+      grunt.log.error('Invalid target `' + target + '`. [valid: dev, prod]');
+      return false;
+    }
+    grunt.task.run([
+      'clean',
+      'sass',
+      'autoprefixer',
+      'assemble:' + target
+    ]);
+  });
 
   // # grunt enhance
   // Improve upon the compiled project. Minify files, cache bust.
@@ -459,7 +400,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean',
     'validate',
-    'compile'
+    'compile:dev'
   ]);
 
   // # grunt (default)
@@ -475,7 +416,9 @@ module.exports = function (grunt) {
   ]);
   
   grunt.registerTask('deploy', [
-    'build',
+    'clean',
+    'validate',
+    'compile:prod',
     'enhance'
   ]);
 

@@ -24,7 +24,7 @@ path-to-root: ../
 
     <!-- Application CSS -->
     <!-- build:css assets/styles/{{ name }}.min.css -->
-      <link rel=stylesheet href="assets/styles/{{ name }}.css">
+      <link rel=stylesheet href="assets/styles/{{ type }}.css">
     <!-- endbuild -->
 
     <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
@@ -53,7 +53,7 @@ path-to-root: ../
     
     <!-- Application-specific CSS/JS -->
     <!-- build:js assets/scripts/{{ name }}.min.js -->
-      <script src="assets/scripts/{{ name }}.js"></script>
+      <script src="assets/scripts/{{ type }}.js"></script>
     <!-- endbuild -->
     <!-- This is a good time to use concat, but may not be enough on its own -->
     <script src="assets/scripts/amcf-app.js"></script>
