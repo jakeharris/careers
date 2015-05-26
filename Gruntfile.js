@@ -152,7 +152,7 @@ module.exports = function (grunt) {
     watch: {
       assemble: {
         files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/staff.json', '<%= config.assets %>/data/pathways.json'],
-        tasks: ['assemble'] //tasks: ['assemble', 'processhtml']
+        tasks: ['assemble:dev'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
         files: ['Gruntfile.js']
