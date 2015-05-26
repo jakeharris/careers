@@ -101,7 +101,7 @@ layout: datepicker.hbs
       $subject = "AU Career Center Presentation Request";
 
       //day
-      $day = DateTime::createFromFormat("d/m/Y", $date);
+      $day = DateTime::createFromFormat("m/d/Y", $date);
       $day = $day->getTimestamp();
       $day = date("l", $day);
 
