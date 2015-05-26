@@ -193,7 +193,10 @@ module.exports = function (grunt) {
             'assets/styles/*.css*',
             '!assets/styles/*.min.*.css',
             'assets/scripts/*.js*',
-            '!assets/scripts/*.min.*.js'
+            '!assets/scripts/*.min.*.js',
+            '.tmp',
+            'dist/assets/styles/*.css',
+            '!dist/assets/styles/*.min.*.css'
           ]
         }]
       }
@@ -300,37 +303,28 @@ module.exports = function (grunt) {
         'index.html'
       ],
       options: {
-        root: 'dist',
+        root: '.',
         dest: 'dist'
       }
     },
 
+    // ### concat
+    // Combines and moves around files. Relatively necessary for
+    // getting usemin to work properly.
+    concat: {
+      
+    },
+    
     // ### cssmin
     // Minify our CSS.
     cssmin: {
-      generated: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.assets %>/styles',
-          src: ['*.css', '!*.min.css'],
-          dest: '<%= config.dist %>/<%= config.assets %>/styles',
-          ext: '.min.css'
-        }]
-      }
+
     },
 
     // ### uglify
     // Minify our JS.
     uglify: {
-      generated: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.assets %>/scripts/src',
-          src: ['*.js', '!*.min.js'],
-          dest: '<%= config.dist %>/<%= config.assets %>/scripts',
-          ext: '.min.js'
-        }]
-      }
+
     },
 
     // ## filerev
@@ -352,12 +346,7 @@ module.exports = function (grunt) {
     // into singular, cache-busting downloads n
     // your production HTML!
     usemin: {
-      html: [
-        'dist/*.html'
-      ],
-      options: {
-        assetsDirs: ['<%= config.dist %>/<%= config.assets %>/styles/', '<%= config.dist %>/<%= config.assets %>/scripts/']
-      }
+      html: 'dist/*.html'
     }
 
   });
@@ -377,7 +366,6 @@ module.exports = function (grunt) {
       return false;
     }
     grunt.task.run([
-      'clean',
       'sass',
       'autoprefixer',
       'assemble:' + target
@@ -388,11 +376,12 @@ module.exports = function (grunt) {
   // Improve upon the compiled project. Minify files, cache bust.
   grunt.registerTask('enhance', [
     'useminPrepare',
+    'concat:generated',
     'cssmin:generated',
     'uglify:generated',
     'filerev',
     'usemin',
-    'clean:post',
+    'clean:post'
   ]);
 
   // # grunt build
