@@ -303,17 +303,7 @@ module.exports = function (grunt) {
     // Prepare files for serving based on usemin blocks found in HTML.
     useminPrepare: {
       html: [
-        'dist/aboutus/*.html',
-        'dist/assessments/index.html',
-        'dist/events/index.html', 
-        'dist/faculty/*.html',
-        'dist/jobs/index.html',
-        'dist/parents/index.html',
-        'dist/pathways/index.html',
-        'dist/resume/index.html',
-        'dist/students/*.html',
-        'dist/students/events/*.html',
-        'dist/index.html'
+        'dist/**/*.html'
       ],
       options: {
         root: '.',
@@ -359,7 +349,7 @@ module.exports = function (grunt) {
     // into singular, cache-busting downloads n
     // your production HTML!
     usemin: {
-      html: 'dist/{,*/}*.html',
+      html: 'dist/**/*.html',
       options: {
         assetsDirs: ['dist'] 
       }
