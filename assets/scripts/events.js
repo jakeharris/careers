@@ -1,12 +1,12 @@
-var events = angular.module('career-center-events', [])
+var events = angular.module('career-center-events', ['ngRoute'])
 
-events.config(function($interpolateProvider) {
+events.config(['$interpolateProvider', function($interpolateProvider) {
   'use strict';
   $interpolateProvider.startSymbol('[[')
   $interpolateProvider.endSymbol(']]')
-});
+}]);
 
-events.controller('month-ctrl', function ($scope, $http) {
+events.controller('month-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
   $http.get('http://auburn.edu/career/events.json')
   .then(function (res) {
@@ -38,9 +38,9 @@ events.controller('month-ctrl', function ($scope, $http) {
       return month + (12 - currentMonth)
     
   }
-})
+}])
 
-events.controller('calendar-ctrl', function ($scope, $http) {
+events.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
   $http.get('http://auburn.edu/career/events.json')
   .then(function (res) {
@@ -72,4 +72,4 @@ events.controller('calendar-ctrl', function ($scope, $http) {
       return month + (12 - currentMonth)
     
   }
-})
+}])
