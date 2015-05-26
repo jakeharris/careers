@@ -1,0 +1,151 @@
+{
+  "__college_notes": "Each college MUST have a name, full name, and image (img). Each MAY not have a pathways object, but if it does, it MUST contain a complete pathway object.",
+  "__pathway_notes": "Each pathway MUST have a name. Each MAY not have a link.",
+  "__empty_college": {
+    "name": "",
+    "fullname": "",
+    "img": "",
+    "pathways": [
+      {
+        "name": "",
+        "link": ""
+      }
+    ]
+  },
+  "college": [
+    {
+      "name": "liberal-arts",
+      "fullname": "College of Liberal Arts",
+      "img": "college-liberal-arts-banner",
+      "pathways": [
+        {
+          "name": "Anthropology",
+          "link": "anthropology"
+        },
+        {
+          "name": "Art",
+          "link": "art"
+        },
+        {
+          "name": "Art History",
+          "link": "art-history"
+        },
+        {
+          "name": "Communication",
+          "link": "communication"
+        },
+        {
+          "name": "Communication Disorders",
+          "link": "communication-disorders"
+        },
+        {
+          "name": "Economics",
+          "link": "economics"
+        },
+        {
+          "name": "English",
+          "link": "english"
+        },
+        {
+          "name": "French",
+          "link": "french"
+        },
+        {
+          "name": "German",
+          "link": "german"
+        },
+        {
+          "name": "Health Services Administration",
+          "link": "health-services-administration"
+        },
+        {
+          "name": "History",
+          "link": "history"
+        },
+        {
+          "name": "Journalism",
+          "link": "journalism"
+        },
+        {
+          "name": "Media Studies",
+          "link": "media-studies"
+        },
+        {
+          "name": "Music",
+          "link": "music"
+        },
+        {
+          "name": "Philosophy",
+          "link": "philosophy"
+        },
+        {
+          "name": "Political Science",
+          "link": "political-science"
+        },
+        {
+          "name": "Psychology",
+          "link": "psychology"
+        },
+        {
+          "name": "Public Relations",
+          "link": "public-relations"
+        },
+        {
+          "name": "Social Work",
+          "link": "social-work"
+        },
+        {
+          "name": "Sociology",
+          "link": "sociology"
+        },
+        {
+          "name": "Spanish",
+          "link": "spanish"
+        },
+        {
+          "name": "Studio Art",
+          "link": "studio-art"
+        },
+        {
+          "name": "Theatre",
+          "link": "theatre"
+        }
+      ]
+    },
+    {
+      "name": "agriculture",
+      "fullname": "College of Agriculture",
+      "img": "college-agriculture-banner"
+    },
+    {
+      "name": "architecture",
+      "fullname": "College of Architecture, Design, & Construction",
+      "img": "college-architecture-banner"
+    },
+    {
+      "name": "education",
+      "fullname": "College of Education",
+      "img": "college-education-banner"
+    },
+    {
+      "name": "engineering",
+      "fullname": "Ginn College of Engineering",
+      "img": "ginn-college-engineering-banner"
+    },
+    {
+      "name": "forestry-wildlife-sciences",
+      "fullname": "School of Forestry and Wildlife Sciences",
+      "img": "school-forestry-wildlife-sciences-banner"
+    },
+    {
+      "name": "human-sciences",
+      "fullname": "College of Human Sciences",
+      "img": "college-human-sciences-banner"
+    },
+    {
+      "name": "cosam",
+      "fullname": "College of Science and Mathematics",
+      "img": "college-science-mathematics-banner"
+    }
+  ]
+}

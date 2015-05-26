@@ -1,0 +1,94 @@
+@import 'app';
+
+.note {
+  border-left: 3px solid $box-shadow;
+  padding-left: 3rem;
+  margin: 0;
+  margin-top: 1rem;
+  color: $box-shadow;
+}
+
+.resume-banner {
+  text-align: center;
+  h2 {
+    font-size: 6rem; 
+    color: $thisislightorange;
+  }
+  p {
+    font-size: 3rem;
+    font-family: $header-font-family;
+  }
+}
+
+.resume-checklist {
+  margin-left: 3rem;
+  li {
+    list-style: disc;
+    padding: 1rem 0;
+  }
+}
+
+.resume--disabled {
+  color: #ccc;
+  background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
+  background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
+}
+
+.resume-disabled {
+  font-family: $header-font-family;
+  font-size: 3rem;
+  background: transparent;
+}
+
+.document-review {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  margin-top: 3rem;
+  
+  .content {
+    flex-basis: 100%;
+    width: 100%;
+    
+    margin-top: 3rem;
+    -ms-flex-negative: 1;
+  }
+}
+
+.location, .hours {
+  display: flex;
+  flex-wrap: nowrap;
+  
+  padding-top: 2rem;
+}
+.place-address {
+  margin: 0;
+  padding-left: 5.6rem;
+}
+.place-icon, .times-icon {
+  font-size: 6rem;
+}
+
+.hours-content {
+  padding-left: 3rem;
+}
+.hours-content h2 {
+  margin-top: 0;
+}
+
+.flat-btn {
+  margin-top: 3rem;
+}
+
+@media (min-width: $medium-screen-size) {
+  .document-review {
+    .content {
+      flex-basis: 40%;
+      width: 40%;
+      
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+---
+title: Presentation Request Submitted | Career Center
+name: presentation-submission
+type: presentations
+layout: datepicker.hbs
+---
+<section class="content">  
+  <p>
+    <?php
+      if ($topic == "select") {
+        echo "You did not specify a topic. <br />";
+        echo "Please go back and select a topic so your request can be submitted.\n\n";
+        exit;
+      }
+
+      if ($date == "") {
+        echo "<center>You did not specify a date.<br>";
+        echo "Please go back and enter a date so your request can be submitted.</center>\n\n";
+        exit;
+      }			
+      if ($start_time == "") {
+        echo "<center>You did not specify a start time.<br>";
+        echo "Please go back and enter a start time so your request can be submitted.</center>\n\n";
+        exit;
+      }			
+
+      if ($end_time == "") {
+        echo "<center>You did not specify an end time.<br>";
+        echo "Please go back and enter an end time so your request can be submitted.</center>\n\n";
+        exit;
+      }
+      if ($location == "") {
+        echo "<center>You did not give a location.<br>";
+        echo "Please go back and enter a location so your request can be submitted.</center>\n\n";
+        exit;
+      }			
+      if ($contact == "") {
+        echo "<center>You did not give a contact name.<br>";
+        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
+        exit;
+      }						
+      if ($email == "") {
+        echo "<center>You did not give an email.<br>";
+        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
+        exit;
+      }
+      if ($office == "") {
+        echo "<center>You did not give an office phone number.<br>";
+        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
+        exit;
+      }	
+      if ($cell == "") {
+        echo "<center>You did not give a cell phone number.<br>";
+        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
+        exit;
+      }
+      ?>
+    <?php 
+      if (isset($_POST['date']))
+        $date = strip_tags(trim($_POST['date']), ENT_NOQUOTES);
+      if (isset($_POST['start_time']))
+        $start_time = strip_tags(trim($_POST['start_time']), ENT_NOQUOTES);
+      if (isset($_POST['end_time']))
+        $end_time = strip_tags(trim($_POST['end_time']), ENT_NOQUOTES);
+      if (isset($_POST['course']))
+        $course = strip_tags(trim($_POST['course']), ENT_NOQUOTES);
+      if (isset($_POST['section']))
+        $section = strip_tags(trim($_POST['section']), ENT_NOQUOTES );
+      if (isset($_POST['attendance']))
+        $attendance = strip_tags(trim ($_POST['attendance']), ENT_NOQUOTES );
+      if (isset($_POST['organization']))
+        $organization = strip_tags(trim ($_POST['organization']), ENT_NOQUOTES);
+      if (isset($_POST['location']))
+        $location = strip_tags(trim($_POST['location']), ENT_NOQUOTES);
+      if (isset($_POST['description']))
+        $description = strip_tags(trim($_POST['description']), ENT_NOQUOTES);
+      if (isset($_POST['contact']))
+        $contact = strip_tags(trim($_POST['contact']), ENT_NOQUOTES);
+      if (isset($_POST['email']))
+        $email = strip_tags(trim($_POST['email']), ENT_NOQUOTES);
+      if (isset($_POST['office']))
+        $office = strip_tags(trim($_POST['office']), ENT_NOQUOTES);
+      if (isset($_POST['cell']))
+        $cell = strip_tags(trim($_POST['cell']), ENT_NOQUOTES);
+      if (isset($_POST['secondary']))
+        $secondary = strip_tags(trim($_POST['secondary']), ENT_NOQUOTES);
+      if (isset($_POST['secondary-email']))
+        $secondary_email = strip_tags(trim($_POST['secondary-email']), ENT_NOQUOTES );
+      if (isset($_POST['secondary-office']))
+        $secondary_office = strip_tags(trim($_POST['secondary-office']), ENT_NOQUOTES);
+      if (isset($_POST['secondary-cell']))
+        $secondary_cell = strip_tags(trim($_POST['secondary-cell']), ENT_NOQUOTES);
+      ?>
+    <?php
+
+      /* recipient */
+      $to = $email;
+      $toaucc = "addyebb@auburn.edu";
+
+      //subject
+      $subject = "AU Career Center Presentation Request";
+
+      //day
+      $day = DateTime::createFromFormat("d/m/Y", $date);
+      $day = $day->getTimestamp();
+      $day = date("l", $day);
+
+      //preface for client
+      $preface = "
+        <p>
+          The following information has been submitted for a presentation. 
+          If you are not contacted by someone in the Career Center office 
+          within 2 business days, please call <a href=tel:3348444744>334.844.4744</a> to confirm your 
+          request.
+        </p>
+        <br />
+        <br />
+      ";
+
+      //organization or class/section
+      $oocs = "";
+      if($course != "") {
+        $oocs = "$course | Section $section";
+      } else $oocs = "$organization";
+
+      //message
+      $message =
+
+      "<h1>$topic</h1>
+      <h3 style=color:#999>$oocs</h3>
+      <h3 style=color:#999>$day, $date</h3>
+      <h3 style=color:#999>$start_time - $end_time</h3>
+      <h3 style=color:#999>$location</h3><br />
+      <p>$description</p>";
+
+      $message .= 
+      "<h1>Details</h1>
+      <b>Expected Attendance:</b> $attendance <br>
+      <b>Contact:</b> $contact<br>
+      <b>Email:</b> <a href=mailto:$email>$email</a><br>
+      <b>Phone:</b> <a href=tel:$office>$office</a><br>
+      <b>Cell:</b> <a href=tel:$cell>$cell</a><br>";
+
+      if($secondary != "") {
+        $message .= "<b>Secondary Contact:</b> $secondary<br>
+                    <b>Email:</b> <a href=mailto:$secondary_email>$secondary_email</a><br>
+                    <b>Phone:</b> <a href=tel:$secondary_office>$secondary_office</a><br>
+                    <b>Cell:</b> <a href=tel:$secondary_cell>$secondary_cell</a><br>";
+      }
+
+      // To send HTML mail, the Content-type header must be set
+      $headers  = 'MIME-Version: 1.0' . "\r\n";
+      $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+      // Additional headers
+      $headers .= 'From: AU Career Center <careers@auburn.edu>' . "\r\n";
+
+
+      mail($to, $subject, $preface . $message, $headers);
+      mail($toaucc, $subject, $message, $headers);
+
+     ?>
+
+  </p>
+  <p>Your request for a presentation has been submitted.</p>
+  <p>You will be contacted to confirm your request and to learn more about the presenation. </p>
+</section>

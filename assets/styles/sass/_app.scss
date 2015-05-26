@@ -1,0 +1,775 @@
+/**
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any Css/Less files within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+ * can be referenced here using a relative path.
+ *
+ * It's not advisable to add code directly here, but if you do, it'll appear in whatever order it
+ * gets included (e.g. say you have require_tree . then the code will appear after all the directories
+ * but before any files alphabetically greater than 'application.css'
+ *
+ *= require_self
+ */
+
+@import 'variables';
+@import 'fonts';
+@import 'header';
+@import 'social';
+@import 'footer';
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.flex.start {
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.input-group-addon-md {
+    min-width: 44px;
+}
+
+.row {
+  margin-left: 0; margin-right: 0;
+}
+
+.muted {
+  color: #999;
+}
+
+.flex, .centered, .login {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-line-pack: end;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.flex-item {
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.centered {
+  text-align: center;
+  -ms-flex-line-pack: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+address {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px !important;
+  //width: 100vw !important;
+}
+
+.content-division {
+  padding: 15px;
+}
+
+.content-area {
+  margin-bottom: 0;
+}
+
+body {
+  background: #f4f4f4;
+  font-family: $body-font-family;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+a,
+a:hover,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f68026;
+}
+
+h2 {
+  color: #03244d;
+  font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 29px;
+}
+
+h3,.h3-a {
+  color: #03244d;
+  font-size: 2rem;
+  line-height: 160%;
+  margin-top: 0;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.banner {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2000;
+  border-top: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+  min-height: 36rem;
+}
+
+.banner .slider {
+  box-sizing: border-box;
+  display: none;
+  max-height: 360px;
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.banner .slider:nth-of-type(1) {
+  display: inline-block;
+}
+
+
+.blank {
+  visibility: hidden;
+}
+
+.banner-bottom {
+  box-sizing: border-box;
+  background: white;
+  border-top: 1px solid #d7d7d7;
+  overflow: hidden;
+}
+
+.banner-bottom .slider {
+  border: none;
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.banner-bottom .slider img {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-bottom .slider {
+  background-color: #d7d7d7;
+}
+
+.banner-bottom .slider:nth-of-type(3n+2) {
+  background-color: #777;
+}
+
+.banner-bottom .slider:nth-of-type(3n+3) {
+  background-color: #aaa;
+}
+
+
+
+.block {
+  flex-basis: 100%;
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
+
+
+.block {
+  position: relative;
+  padding: 5px;
+}
+
+.slider {
+  background: black;
+  height: 59.82906vw;
+  overflow: visible;
+  position: relative;
+  width: 100vw;
+}
+
+
+.slider-mask {
+  height: 59.82906vw;
+  overflow: hidden;
+}
+
+/*ul*/
+.slider-list {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.login {
+  padding: 5rem;
+  justify-content: center;
+  position: relative;
+  flex-basis: 100%;
+  width: 100%;
+  -ms-flex-negative: 1;
+  
+  & > div {
+    width: 100%;
+  }
+  
+  h2, p {
+    text-align: center; 
+  }
+  p {
+    font-size: 16px; 
+  }
+}
+
+
+.login-wrap {
+
+}
+
+.login-wrap::before, .block-bg, .blanker-wrap::before {
+  color: #85a2c6;
+  font-size: 12rem;
+  position: absolute;
+  z-index: 100;
+  opacity: .1;
+  top: 5px;
+  right: 2rem;
+}
+
+
+.login-wrap::before {
+  font-family: 'icomoon';
+  content: '\f14e';
+  margin-top: -9rem;
+  margin-right: -9rem;
+  font-size: 20rem;
+}
+
+.events {
+  flex-basis: 100%;
+  width: 100%;
+  flex-basis: wrap;
+}
+
+.events ul {
+  display: -webkit-flex;
+  display:     -ms-flexbox;
+  display:         flex;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.event {
+  min-height: 14rem;
+  max-height: 14rem;
+  margin: 0.4rem 0;
+  width: 100%;
+  flex-basis: 100%;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-line-pack: start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flex;
+  display: inline-flex;
+}
+
+.event-date,
+.event-details {
+  vertical-align: top;
+}
+
+.event-date {
+  color: #dd550c;
+  text-align: right;
+  margin-right: 2.1rem;
+  width: 15%;
+}
+
+.event-date-day {
+  font-size: 5rem;
+  margin-top: -1.8rem;
+}
+
+.event-details {
+  color: #747474;
+  width: 82%;
+  line-height: 160%;
+  font-size: 1.7rem;
+  display: inline-block;
+}
+
+.event-details-name {
+  color: #03244d;
+  font-size: 2rem;
+}
+
+.trl {
+  position: relative;
+  z-index: 1;
+}
+
+.trl::before {
+  content: 'TRL';
+}
+
+
+.login-username,
+.login-password {
+  margin-bottom: 1.6rem;
+  z-index: 1000000;
+}
+
+.login-description {
+  text-align: center;
+  font-size: 16px;
+}
+
+.btn-md {
+  color: #03244d;
+  height: 40px;
+  font-size: 16px;
+}
+
+.input-md {
+  height: 40px;
+  font-size: 16px;
+}
+
+.input-group-addon-md {
+  color: #03244d;
+  font-size: 24px;
+}
+
+.login-button--active {
+  color: white;
+  background: #03244d;
+}
+
+.login-button--active:hover {
+  background: #496e9c;
+  color: white;
+  border: 1px solid white;
+}
+
+.flex--login {
+  height: auto;
+}
+
+.flat-btn {
+  flex-basis: 100%;
+  width: 100%;
+
+  height: 7rem;
+  padding: 2.1rem 0;
+
+  margin: 1rem 0;
+
+  text-align: center;
+  vertical-align: middle;
+
+  display: inline-block;
+
+  background: $thisislightblue;
+  color: white;
+  font-family: $header-font-family;
+  font-size: 2rem;
+
+  border: none;
+  box-shadow: 6px 6px 0 #ccc;
+
+
+  &:hover {
+    background: $thisisiceblue;
+    color: $charcoal;
+  } 
+  
+  &.flat-btn--disabled {  
+    color: #ccc;
+    background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
+    background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
+  }
+}
+
+.disabled {
+  color: #ccc;
+  background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
+  background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
+}
+
+.flat-btn--white {
+  background: white;
+  color: $thisislightblue;
+  &:hover {
+    background: $thisisiceblue;
+  }
+}
+
+.blanker {
+  background: #f1f1f1;
+  overflow: hidden;
+}
+
+.blanker-wrap {
+  position: absolute;
+  display: block;
+  top: 50%;
+  margin-left: -15rem;
+  margin-top: -13.5rem;
+  height: 20rem;
+  left: 50%;
+  width: 30rem;
+}
+
+
+
+.blanker-wrap::before {
+  font-family: 'icomoon';
+  content: '\f073';
+  margin-top: -3.8rem;
+  margin-right: -6rem;
+  font-size: 16rem;
+}
+
+.between {
+  background: #f1f1f1;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 2px;
+  box-shadow: 0 0 3px black;
+  margin-bottom: 1em;
+}
+
+.between:last-of-type {
+  margin-bottom: 0;
+}
+
+
+.between img {
+  display: block;
+  margin: 0 auto;
+}
+
+.small-text {
+  font-size: 1.4rem;
+}
+
+.carousel {
+  flex-basis: 100%;
+  width: 100%;
+  overflow: hidden;
+  max-height: 335px;
+  img {
+    height: 100%;
+  }
+  & > #cym > img {
+    width: 100%;
+    height: 115%;
+  }
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+}
+
+
+
+
+
+#cc-carousel.carousel > .carousel-indicators {
+  bottom: 10px;
+  left: 50%;
+  text-align: center;
+  top:auto;
+}
+
+img {
+  height: 100%;
+}
+
+.content {
+  background: white;
+  
+  padding: 5rem;
+  box-shadow: 6px 6px 0 #ccc;
+  
+  &.extra-content {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    & > .row {
+      padding-bottom: 0;
+    }
+  }
+  &.content--no-padding {
+    padding: 0; 
+  }
+}
+.hero {
+  width: 100%;
+  text-align: center;
+  
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  
+  overflow: hidden;
+  margin-top: 3rem;
+  
+  max-height: 22rem;
+  min-height: 160px;
+  
+  position: relative;
+  
+  
+  img {
+    width: 100%;
+    
+    position: relative;
+    
+    z-index: 1;
+  }
+  .hero-content {
+    position: absolute;
+    top: 0;
+    
+    width: 100%;
+    height: 100%;
+   
+    .overlay {
+      position: relative;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      opacity: 0.7;
+      background-color: $charcoal;
+      
+      background: -moz-linear-gradient(top, rgba(51,51,51,0) 0%, rgba(51,51,51,0.52) 38%, rgba(51,51,51,1) 100%);
+      background: -webkit-gradient(top, bottom, color-stop(0%, rgba(51,51,51,0)), color-stop(38%, rgba(51,51,51,0.52)), color-stop(100%, rgba(51,51,51,1)));
+      background: -webkit-linear-gradient(top, rgba(51,51,51,0) 0%, rgba(51,51,51,0.52) 38%, rgba(51,51,51,1) 100%);
+      background: -o-linear-gradient(top, rgba(51,51,51,0) 0%, rgba(51,51,51,0.52) 38%, rgba(51,51,51,1) 100%);
+      background: -ms-linear-gradient(top, rgba(51,51,51,0) 0%, rgba(51,51,51,0.52) 38%, rgba(51,51,51,1) 100%);
+      background: linear-gradient(to bottom, rgba(51,51,51,0) 0%, rgba(51,51,51,0.52) 38%, rgba(51,51,51,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#333333', GradientType=1 );
+
+      z-index: 2;
+    }
+    
+    h2 {
+      color: white; 
+      z-index: 3;
+      
+      position: absolute;
+      bottom: 5%;
+      right: 0;
+      left: 0;
+      text-align: center;
+      font-size: 4rem;
+      padding: 0 2rem;
+    }
+    
+    .hero-content::nth-of-class(2n) h2 {
+      right: auto;
+      left: 0; 
+    }
+  }
+}
+
+.login, .carousel {
+  flex-basis: 100%;
+  width: 100%;
+}
+
+/*****************/
+/* MOBILE TRICKS */
+/*****************/
+.hover {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;  
+}
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width: $tiny-screen-size) {
+  .login-wrap {
+    margin-left: -17rem;
+    width: 34rem;
+  }  
+  .events {
+    flex-basis: 66%;
+    width: 66%;
+  }
+  .event { 
+    flex-basis: 50%;
+    width: 50%;
+  }
+  .blanker-wrap {
+    margin-left: -17rem;
+    width: 34rem;
+  }
+  .flat-btn {
+    font-size: 1.8rem;
+    padding: 2.3rem 0; 
+  }
+  .trl::before {
+    content: 'Tiger Recruiting Link'; 
+  }
+}
+@media (min-width: $small-screen-size) {
+  .container {
+    width: 90vw !important;
+  }
+  .banner {
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+    margin-top: 50px;
+  }
+
+  .banner .slider {
+    flex-basis: 50%;
+    width: 50%;
+  }
+
+  .banner .slider:nth-of-type(2) {
+    display: inline-block;
+    border-left: 1px solid #d7d7d7;
+  }
+  .banner-bottom {
+    border-top: none;
+  }
+
+  .banner-bottom .slider {
+    flex-basis: 50%;
+    width: 50%;
+  }
+  .block {
+    margin-bottom: 0;
+  }
+  .slider {
+    height: 26.92308vw;
+    width: 45vw;
+  }
+  .slider-mask {
+    height: 26.92308vw;
+  }
+  .login {
+    height: auto;
+  }
+  .flat-btn {
+    font-size: 1.8rem;
+    padding: 2.1rem; 
+  }
+  .between {
+    width: 50%;
+  }
+  .carousel {
+    height: auto;
+  }
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: auto;
+  }
+}
+@media (min-width: $medium-screen-size) {
+  .brow {
+    margin-top: 50px;
+  }
+
+  .banner {
+    margin-top: 0;
+  }
+
+  .banner .slider {
+    display: inline-block;
+  }
+  .banner-bottom .slider {
+    flex-basis: 33.33333%;
+    width: 33.33333%;
+    height: 100%;
+  }
+
+  .banner-bottom .slider:nth-of-type(2) {
+    border-left: none;
+  }
+  .block {
+    flex-basis: 31.93333%;
+    width: 31.93333%;
+    margin-bottom: 0;
+  }
+  .login-wrap {
+    margin-left: -20rem;
+    margin-top: -12rem;
+    width: 40rem;
+  }
+  .blanker-wrap {
+    margin-left: -20rem;
+    margin-top: -15.2rem;
+    width: 40rem;
+  }
+  .between {
+    width: 22%;
+    margin-bottom: 0;
+  }
+  .login, .carousel {
+    width: 50%;
+    flex-basis: 50%;
+  }
+  .trl::before {
+    content: 'TRL'; 
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .trl::before {
+    content: 'Tiger Recruiting Link';
+  }
+  .flat-btn {
+    font-size: 2.5rem;
+    padding: 1.6rem 0;   
+  }
+  .event-date {
+    margin-right: 3rem;
+  }
+}
+@media (min-width: $social-shrink-size) {
+  .flat-btn {
+    font-size: 3rem; 
+    padding: 1.2rem 0;
+  }
+}

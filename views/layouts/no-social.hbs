@@ -1,5 +1,5 @@
 ---
-path-to-root: ..
+path-to-root: ../
 ---
 
 <!doctype html>
@@ -12,6 +12,7 @@ path-to-root: ..
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <meta http-equiv="cache-control" content="no-cache" />
     <title>{{ title }}</title>
 
     <!-- Bootstrap & Core CSS -->
@@ -19,10 +20,11 @@ path-to-root: ..
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
 
     <!-- Application CSS -->
     <!-- build:css assets/styles/{{ name }}.min.css -->
-      <link rel=stylesheet href="assets/styles/{{ name }}.css">
+      <link rel=stylesheet href="assets/styles/{{ type }}.css">
     <!-- endbuild -->
 
     <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
@@ -51,10 +53,9 @@ path-to-root: ..
     
     <!-- Application-specific CSS/JS -->
     <!-- build:js assets/scripts/{{ name }}.min.js -->
-      <script src="assets/scripts/{{ name }}.js"></script>
+      <script src="assets/scripts/{{ type }}.js"></script>
+      <script src="assets/scripts/amcf-app.js"></script>
     <!-- endbuild -->
-    <!-- This is a good time to use concat, but may not be enough on its own -->
-    <script src="assets/scripts/amcf-app.js"></script>
     
   </head>
 
@@ -75,6 +76,14 @@ path-to-root: ..
       var nav = responsiveNav('.nav-collapse', {
         label: '' 
       });
+    </script>
+    <script>
+      $(function() {
+        $('.hover').bind('touchstart', function(e) {
+          e.preventDefault()
+          $(this).toggleClass('hover--active')
+        })
+      })
     </script>
   </body>
   <script type="text/javascript">

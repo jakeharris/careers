@@ -43,7 +43,7 @@
 
 module.exports = function (grunt) {
   'use strict';
-  
+
   // # time-grunt
   // Times how long tasks take. Handy for identifying bottlenecks.
   require('time-grunt')(grunt);
@@ -51,20 +51,79 @@ module.exports = function (grunt) {
   // # jit-grunt
   // Load grunt plugins without using a .loadNpmTasks block at the end of the Gruntfile.
   require('jit-grunt')(grunt, {
-    useminPrepare: 'grunt-usemin' 
+    useminPrepare: 'grunt-usemin'
   });
 
+  var VIEW_MAPPING = {
+    './index.html':    ['<%= config.views %>/home.hbs'],
+    'jobs/index.html': ['<%= config.views %>/jobs.hbs'],
+    'events/index.html': ['<%= config.views %>/events.hbs'],
+    'students/events/': [
+      '<%= config.views %>/events-pages/am.hbs',
+      '<%= config.views %>/events-pages/eid.hbs',
+      '<%= config.views %>/events-pages/iptjf.hbs',
+      '<%= config.views %>/events-pages/tech.hbs',
+      '<%= config.views %>/events-pages/cmcd.hbs',
+      '<%= config.views %>/events-pages/your-major.hbs'
+    ],
+    'assessments/index.html': ['<%= config.views %>/assessments.hbs'],
+    'aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs'],
+    'resume/index.html': ['<%= config.views %>/resume.hbs'],
+    'pathways/index.html': ['<%= config.views %>/pathways.hbs'],
+    'aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
+    'aboutus/': [
+      '<%= config.views %>/plan-your-visit.hbs',
+      '<%= config.views %>/campus-partners.hbs',
+      '<%= config.views %>/staff.hbs'
+    ],
+    'faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
+    'faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs'],
+    'students/index.html': ['<%= config.views %>/students/current.hbs'],
+    'students/': ['<%= config.views %>/students/*.hbs'],
+    'parents/index.html': ['<%= config.views %>/families.hbs'],
+    'faculty/index.html': ['<%= config.views %>/faculty.hbs']
+  },
+  VIEW_MAPPING_PROD = {
+    'dist/index.html':    ['<%= config.views %>/home.hbs'],
+    'dist/jobs/index.html': ['<%= config.views %>/jobs.hbs'],
+    'dist/events/index.html': ['<%= config.views %>/events.hbs'],
+    'dist/students/events/am.html': ['<%= config.views %>/events-pages/am.hbs'],
+    'dist/students/events/eid.html': ['<%= config.views %>/events-pages/eid.hbs'],
+    'dist/students/events/iptjf.html': ['<%= config.views %>/events-pages/iptjf.hbs'],
+    'dist/students/events/tech.html': ['<%= config.views %>/events-pages/tech.hbs'],
+    'dist/students/events/cmcd.html': ['<%= config.views %>/events-pages/cmcd.hbs'],
+    'dist/students/events/your-major.html': ['<%= config.views %>/events-pages/your-major.hbs'],
+    'dist/assessments/index.html': ['<%= config.views %>/assessments.hbs'],
+    'dist/aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs'],
+    'dist/resume/index.html': ['<%= config.views %>/resume.hbs'],
+    'dist/pathways/index.html': ['<%= config.views %>/pathways.hbs'],
+    'dist/aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
+    'dist/aboutus/plan-your-visit.html': ['<%= config.views %>/plan-your-visit.hbs'],
+    'dist/aboutus/campus-partners.html': ['<%= config.views %>/campus-partners.hbs'],
+    'dist/aboutus/staff.html': ['<%= config.views %>/staff.hbs'],
+    'dist/faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
+    'dist/faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs'],
+    'dist/students/index.html': ['<%= config.views %>/students/current.hbs'],
+    'dist/students/alumni.html': ['<%= config.views %>/students/alumni.hbs'],
+    'dist/students/current.html': ['<%= config.views %>/students/current.hbs'],
+    'dist/students/graduate.html': ['<%= config.views %>/students/graduate.hbs'],
+    'dist/students/prospective.html': ['<%= config.views %>/students/prospective.hbs'],
+    'dist/parents/index.html': ['<%= config.views %>/families.hbs'],
+    'dist/faculty/index.html': ['<%= config.views %>/faculty.hbs']  
+  }
+  
   grunt.initConfig({
 
     // # Project settings
     config: {
       assets: 'assets',
       views: 'views',
+      layouts: 'views/layouts',
       master: 'views/layouts/default.hbs',
       jobsmaster: 'views/layouts/jobs.hbs',
       nosocial: 'views/layouts/no-social.hbs',
       partials: 'views/partials/*.hbs',
-      dist: '.'
+      dist: 'dist'
     },
 
     // # Tasks I'd like to run, but I am not yet:
@@ -75,23 +134,25 @@ module.exports = function (grunt) {
     // ## concat
     //    Concatenates multiple static assets into one file.
     //    Useful when pages load multiple disparate stylesheets or scripts.
+    //    Not as useful for us, because each page already loads only one stylesheet
+    //    from the server (all others come from external CDNs, if necessary).
     // ## wiredep
     //    Inject Bower components into our master page.
     // ## concurrent
     //    Runs specified tasks in parallel to speed up builds.
 
-    
+
     /*                 */
     /*      TASKS      */
     /*                 */
-    
-    
+
+
     // # watch
     // Watch for changes in the specified files and run the
     // associated tasks.
     watch: {
       assemble: {
-        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}'],
+        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/staff.json', '<%= config.assets %>/data/pathways.json'],
         tasks: ['assemble'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
@@ -134,25 +195,51 @@ module.exports = function (grunt) {
     clean: {
       dist: {
         files: [{
+          src: ['dist/']
+        }]
+      },
+      styles: {
+        files: [{
           dot: true,
           src: [
-            '.tmp',
-            'dist'
+            'assets/styles/*.css*'
           ]
         }]
+      },
+      post: {
+        files: [{
+          dot: true,
+          src: [
+            'assets/styles/*.css*',
+            '!assets/styles/*.min.*.css',
+            '.tmp',
+            'dist/assets/styles/*.css',
+            '!dist/assets/styles/*.min.*.css',
+            'dist/assets/scripts/*.js',
+            '!dist/assets/scripts/*.min.*.js'
+          ]
+        }]
+      }
+    },
+    
+    // # copy
+    // Move files around.
+    copy: {
+      components: {
+        cwd: 'assets/styles/',
+        src:  ['components/*.css*'],
+        dest: '.',
+        flatten: true
       }
     },
 
     // # sass
     // Compiles Sass to CSS.
     sass: {
-      options: {
-        loadPath: 'bower_components'
-      },
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.assets %>/styles',
+          cwd: '<%= config.assets %>/styles/sass',
           src: ['*.{scss,sass}'],
           dest: '<%= config.assets %>/styles',
           ext: '.css'
@@ -165,19 +252,16 @@ module.exports = function (grunt) {
     // into servable HTML.
     assemble: {
       options: {
-        helpers: ['*-helper.js']
+        helpers: ['*-helper.js'],
+        prod: 'false',
+        layouts: '<%= config.layouts %>',
+        partials: '<%= config.partials %>',
+        data: '<%= config.assets %>/data/*'
       },
-      home: {
-        options: {
-          flatten: true,
-          layout: '<%= config.master %>',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          './index.html':    ['<%= config.views %>/home.hbs'],
-          'jobs/index.html': ['<%= config.views %>/jobs.hbs'] 
-        }
+      dev: {
+        files: VIEW_MAPPING
       },
+<<<<<<< HEAD
       events: {
         options: {
           flatten: true,
@@ -204,6 +288,10 @@ module.exports = function (grunt) {
         files: {
           'employers/index.html': ['<%= config.views %>/hire.hbs'] 
         }
+=======
+      prod: {
+        files: VIEW_MAPPING_PROD
+>>>>>>> origin/master
       }
     },
 
@@ -218,7 +306,7 @@ module.exports = function (grunt) {
       },
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
     },
-    
+
     // ## autoprefixer
     //    Automagically adds vendor-prefixed rules to match non-prefixed rules
     //    we use that we might've forgotten about!
@@ -236,103 +324,118 @@ module.exports = function (grunt) {
         src: ['<%= config.assets %>/styles/{,*/}*.css']
       }
     },
-    
+
     // ## *-min
-    // (htmlmin, cssmin, imagemin, svgmin, uglify)
+    // (usemin, htmlmin, cssmin, imagemin, svgmin, uglify)
     // Minify our files.
+    
+    // ### useminPrepare
+    // Prepare files for serving based on usemin blocks found in HTML.
+    useminPrepare: {
+      html: [
+        'dist/aboutus/*.html',
+        'dist/assessments/index.html',
+        'dist/events/index.html', 
+        'dist/faculty/*.html',
+        'dist/jobs/index.html',
+        'dist/parents/index.html',
+        'dist/pathways/index.html',
+        'dist/resume/index.html',
+        'dist/students/*.html',
+        'dist/students/events/*.html',
+        'dist/index.html'
+      ],
+      options: {
+        root: '.',
+        dest: 'dist'
+      }
+    },
+
+    // ### concat
+    // Combines and moves around files. Relatively necessary for
+    // getting usemin to work properly.
+    concat: {
+      
+    },
     
     // ### cssmin
     // Minify our CSS.
-/*    cssmin: {
-      generated: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.assets %>/styles',
-          src: ['*.css', '!*.min.css'],
-          dest: '<%= config.assets %>/styles',
-          ext: '.min.css'
-        }]
-      }
-    },*/
-    
+    cssmin: {
+
+    },
+
     // ### uglify
     // Minify our JS.
-/*    uglify: {
-      generated: {
-        options: {
-          sourceMap: true 
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= config.assets %>/scripts',
-          src: ['*.js', '!*.min.js'],
-          dest: '<%= config.assets %>/scripts',
-          ext: '.min.js'
-        }]
-      }
-    },*/
-    
+    uglify: {
+
+    },
+
     // ## filerev
     // Rename files to bust browser caches.
     filerev: {
       css: {
-        src: 'dist/assets/styles/{,*/}*.min.css',
-        dest: '<%= config.assets %>/styles'
+        src: '<%= config.dist %>/assets/styles/{,*/}*.min.css',
+        dest: '<%= config.dist %>/<%= config.assets %>/styles'
       },
       js: {
-        src: 'dist/assets/scripts/{,*/}*.min.js' ,
-        dest: '<%= config.assets %>/scripts'
+        src: '<%= config.dist %>/assets/scripts/{,*/}*.min.js' ,
+        dest: '<%= config.dist %>/<%= config.assets %>/scripts'
       }
     },
-  
-    
+
+
     // ## usemin
     // Change blocks of local CSS and JS references
     // into singular, cache-busting downloads n
     // your production HTML!
     usemin: {
-      html: ['index.html', 'events/*.html', 'jobs/index.html'],
-      css: ['<%= config.assets %>/styles/*.css']
+      html: 'dist/{,*/}*.html',
+      options: {
+        assetsDirs: ['dist'] 
+      }
     }
 
   });
-  
+
   // # grunt validate
   // Validate project files, checking for syntax errors.
   // If we had test code, it would go here.
   grunt.registerTask('validate', [
-    'jshint' 
+    'jshint'
   ]);
-  
+
   // # grunt compile
   // Compile the project. Generate CSS and HTML from Sass and Handlebars.
-  grunt.registerTask('compile', [
-    'sass',
-    'assemble'
-  ]);
-  
+  grunt.registerTask('compile', 'Compile the project. Generate CSS and HTML from Sass and Handlebars.', function (target) {
+    if(target !== 'dev' && target !== 'prod') {
+      grunt.log.error('Invalid target `' + target + '`. [valid: dev, prod]');
+      return false;
+    }
+    grunt.task.run([
+      'sass',
+      'autoprefixer',
+      'assemble:' + target
+    ]);
+  });
+
   // # grunt enhance
-  // Improve upon the compiled project. Minify files, cache bust, and autoprefix.
+  // Improve upon the compiled project. Minify files, cache bust.
   grunt.registerTask('enhance', [
-    //'autoprefixer'
-    /* usemin here */
+    'useminPrepare',
+    'concat:generated',
+    'cssmin:generated',
+    'uglify:generated',
+    'filerev',
+    'usemin',
+    'clean:post'
   ]);
-  
+
   // # grunt build
   // Build the project. Don't serve it. Crafted from scratch.
   grunt.registerTask('build', [
     'clean',
     'validate',
-    'compile',
-    'enhance'
-  ]);
-  
-
-  // # grunt auto
-  // Build the project, then wait for updates and rebuild selectively.
-  grunt.registerTask('auto', [
-    'build',
-    'watch'
+    'compile:dev'
   ]);
 
   // # grunt (default)
@@ -345,6 +448,13 @@ module.exports = function (grunt) {
     'build',
     'connect:livereload',
     'watch'
+  ]);
+  
+  grunt.registerTask('deploy', [
+    'clean',
+    'validate',
+    'compile:prod',
+    'enhance'
   ]);
 
   /*grunt.registerTask('publish', 'commit work, push to github, and deploy on server; requires target [valid: dev, prod]', function (target) {

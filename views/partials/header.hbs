@@ -2,9 +2,9 @@
 
   <div class="preheader" id="preheader">
     <div class="hexes">
-      <div class="hex"><a href="http://auburn.edu"><img src="http://auburn.edu/career/assets/images/AU-emblem.png"></a></div>
+      <div class="hex"><a href="http://auburn.edu"><img src="assets/images/AU-emblem.png"></a></div>
     </div>
-    <h1><a href="http://auburn.edu/career/">Career Center</a></h1>
+    <h1><a href=".">Career Center</a></h1>
   </div>
   
   
@@ -14,32 +14,44 @@
     </div>
     <div class="nav-wrapper">
       <ul>
-        <li>
-          <a href="http://www.auburn.edu/career/students/">Students</a>
+        <li id="about-us" class="hover about-us about-us--mobile">
+          <a href="aboutus/">About Us</a>
           <ul>
-            <li><a href="http://www.auburn.edu/career/students/">Undergraduate</a></li>
-            <!--<li><a href="#">Graduate</a></li>-->
-            <li><a href="http://www.auburn.edu/career/alumni/">Alumnus</a></li>
-            <li><a href="http://www.auburn.edu/career/futuretigers/">Prospective</a></li>
+            <li data-menu="about-us"><a href="aboutus/">Office Info</a></li>
+            <li data-menu="about-us"><a href="aboutus/staff.html">Staff</a></li>
+            <li data-menu="about-us"><a href="aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+            <li data-menu="about-us"><a href="aboutus/campus-partners.html">Campus Partners</a></li>
+          </ul>
+        </li>
+        <li id="students" class="hover">
+          <a href="students/">Students</a>
+          <ul>
+            <li data-menu="students"><a href="students/">Undergraduate</a></li>
+            <li data-menu="students"><a href="students/graduate.html">Graduate</a></li>
+            <li data-menu="students"><a href="students/alumni.html">Alumni</a></li>
+            <li data-menu="students"><a href="students/prospective.html">Prospective</a></li>
           </ul>
         </li>
         <li>
-          <a href="http://www.auburn.edu/career/parents/">Families</a>
+          <a href="parents/">Families</a>
         </li>
         <li>
-          <a href="http://www.auburn.edu/career/faculty/">Faculty</a>
+          <a href="faculty/">Faculty</a>
         </li>
         <li>
           <a href="http://hire.auburn.edu">Employers</a>
         </li>
-        <li><a href="http://auburn.edu/career/events/">Events</a></li>
         <li>
-          <a href="http://auburn.edu/career/aboutus/">About Us</a>
-          <!--<ul>
-            <li><a href="#">Office Info</a></li>
-            <li><a href="#">Staff</a></li>
-            <li><a href="#">Campus Partners</a></li>
-          </ul>-->
+          <a href="events/">Events</a>
+        </li>
+        <li class="about-us">
+          <a href="aboutus/">About Us</a>
+          <ul>
+            <li data-menu="about-us"><a href="aboutus/">Office Info</a></li>
+            <li data-menu="about-us"><a href="aboutus/staff.html">Staff</a></li>
+            <li data-menu="about-us"><a href="aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+            <li data-menu="about-us"><a href="aboutus/campus-partners.html">Campus Partners</a></li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -73,6 +85,7 @@
     if(postheader === undefined) postheader = document.getElementById('postheader')
     if(postheader === undefined) return  
     
+    
     if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
       nav.classList.add('fixed') 
       postheader.classList.add('absolute')
@@ -83,7 +96,7 @@
       nav.classList.add('fixed') 
     } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed')) {
       nav.classList.remove('fixed') 
-    }
+    } 
     
     if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth >= 768) { 
       nav.classList.add('bordered')
@@ -93,6 +106,11 @@
       nav.classList.add('bordered') 
     } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('bordered') && window.innerWidth < 768) {
       nav.classList.remove('bordered') 
+    }
+    
+    
+    if(nav.children[1].classList.contains('mobile-nav--active') && !nav.classList.contains('fixed')) {
+      nav.classList.add('fixed'); 
     }
   }
 </script>
@@ -104,6 +122,10 @@
      
     if(hamburger === undefined) hamburger = document.getElementById('hamburger')
     if(hamburger === undefined) return
+    
+    if (hamburger.classList.contains('nav-controller--active'))
+      hamburger.classList.remove('nav-controller--active')
+    else hamburger.classList.add('nav-controller--active')
     
     if(navWrapper.classList.contains('mobile-nav--active'))
       navWrapper.classList.remove('mobile-nav--active')
@@ -117,5 +139,33 @@
       navWrapper.classList.remove('mobile-nav--active')
   })
   
-  var submenus = document.getElementById('nav').children[1].getElementsByTagName('')
+  var submenus = document.getElementById('nav').getElementsByClassName('hover')
+  function touchHandler(e) {
+    
+    e.preventDefault()
+    
+    console.log(this.classList)
+    
+    if(this.classList.contains('hover')) {
+      if(this.classList.contains('hover--active')) {
+        this.classList.add('hover--active')
+      }
+    }
+    else if(!this.classList.contains('hover')) {
+
+      console.log('no hover')
+      console.log(this)
+      var menu = this.parentElement.parentElement
+
+      if(menu.classList.contains('hover--active')) e.target.click()
+    }
+  }
+  for(var i = 0; i < submenus.length; i++) {
+    submenus[i].addEventListener('touchstart', touchHandler, true)
+    
+    for(var j = 0; j < submenus[i].children[1].children.length; j++) {
+      submenus[i].children[1].children[j].addEventListener('touchstart', touchHandler, true) 
+    }
+  }
+  
 </script>
