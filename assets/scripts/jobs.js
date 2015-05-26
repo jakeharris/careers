@@ -1,13 +1,13 @@
 
-var home = angular.module('career-center-jobs', [])
+var home = angular.module('career-center-jobs', ['ngRoute'])
 
-home.config(function($interpolateProvider) {
+home.config(['$interpolateProvider', function($interpolateProvider) {
   'use strict';
   $interpolateProvider.startSymbol('[[')
   $interpolateProvider.endSymbol(']]')
-});
+}]);
 
-home.controller('calendar-ctrl', function ($scope, $http) {
+home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
   $http.get('http://auburn.edu/career/events.json')
   .then(function (res) {
@@ -44,4 +44,4 @@ home.controller('calendar-ctrl', function ($scope, $http) {
       if(date.day < currentDate.getDate())
         return true;
   }
-})
+}])

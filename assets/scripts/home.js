@@ -1,10 +1,10 @@
-var home = angular.module('career-center-home', [])
+var home = angular.module('career-center-home', ['ngRoute'])
 
-home.config(function($interpolateProvider) {
+home.config(['$interpolateProvider', function($interpolateProvider) {
   'use strict';
   $interpolateProvider.startSymbol('[[')
   $interpolateProvider.endSymbol(']]')
-});
+}]);
 
 /* NOTE:
  * This code is TECHNICALLY vulnerable to XSS. However,
@@ -20,8 +20,9 @@ home.config(function($interpolateProvider) {
  * should help you.
 */
 
-home.controller('calendar-ctrl', function ($scope, $http) {
+home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
+  console.log('is this thing even loading');
   $http.get('/career/events.json')
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
@@ -57,9 +58,9 @@ home.controller('calendar-ctrl', function ($scope, $http) {
       if(date.day < currentDate.getDate())
         return true;
   }
-})
+}])
 
-home.controller('twitter-ctrl', function ($scope, $http) {
+home.controller('twitter-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
   $http.get('/career/twitter.json')
   .then(function (res) {
@@ -106,9 +107,9 @@ home.controller('twitter-ctrl', function ($scope, $http) {
 
     return { text: m, url: link, date: d}
   }
-  })
+}])
 
-home.controller('blogger-ctrl', function ($scope, $http) {
+home.controller('blogger-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
   $http.get('/career/blog.json')
   .then(function (res) {
@@ -149,4 +150,5 @@ home.controller('blogger-ctrl', function ($scope, $http) {
 
     return m;
   }
-  })
+}])
+

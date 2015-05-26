@@ -58,31 +58,30 @@ module.exports = function (grunt) {
     './index.html':    ['<%= config.views %>/home.hbs'],
     'jobs/index.html': ['<%= config.views %>/jobs.hbs'],
     'events/index.html': ['<%= config.views %>/events.hbs'],
-    'students/events/': [
-      '<%= config.views %>/events-pages/am.hbs',
-      '<%= config.views %>/events-pages/eid.hbs',
-      '<%= config.views %>/events-pages/iptjf.hbs',
-      '<%= config.views %>/events-pages/tech.hbs',
-      '<%= config.views %>/events-pages/cmcd.hbs',
-      '<%= config.views %>/events-pages/your-major.hbs'
-    ],
+    'students/events/am.html': ['<%= config.views %>/events-pages/am.hbs'],
+    'students/events/eid.html': ['<%= config.views %>/events-pages/eid.hbs'],
+    'students/events/iptjf.html': ['<%= config.views %>/events-pages/iptjf.hbs'],
+    'students/events/tech.html': ['<%= config.views %>/events-pages/tech.hbs'],
+    'students/events/cmcd.html': ['<%= config.views %>/events-pages/cmcd.hbs'],
+    'students/events/your-major.html': ['<%= config.views %>/events-pages/your-major.hbs'],
     'assessments/index.html': ['<%= config.views %>/assessments.hbs'],
     'aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs'],
     'resume/index.html': ['<%= config.views %>/resume.hbs'],
     'pathways/index.html': ['<%= config.views %>/pathways.hbs'],
     'aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
-    'aboutus/': [
-      '<%= config.views %>/plan-your-visit.hbs',
-      '<%= config.views %>/campus-partners.hbs',
-      '<%= config.views %>/staff.hbs'
-    ],
+    'aboutus/plan-your-visit.html': ['<%= config.views %>/plan-your-visit.hbs'],
+    'aboutus/campus-partners.html': ['<%= config.views %>/campus-partners.hbs'],
+    'aboutus/staff.html': ['<%= config.views %>/staff.hbs'],
     'faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
     'faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs'],
     'students/index.html': ['<%= config.views %>/students/current.hbs'],
-    'students/': ['<%= config.views %>/students/*.hbs'],
+    'students/alumni.html': ['<%= config.views %>/students/alumni.hbs'],
+    'students/current.html': ['<%= config.views %>/students/current.hbs'],
+    'students/graduate.html': ['<%= config.views %>/students/graduate.hbs'],
+    'students/prospective.html': ['<%= config.views %>/students/prospective.hbs'],
     'parents/index.html': ['<%= config.views %>/families.hbs'],
     'faculty/index.html': ['<%= config.views %>/faculty.hbs'],
-    'employers/index.html': ['<%= config.views %>/hire.hbs']had
+    'employers/index.html': ['<%= config.views %>/hire.hbs']
   },
   VIEW_MAPPING_PROD = {
     'dist/index.html':    ['<%= config.views %>/home.hbs'],
@@ -154,7 +153,7 @@ module.exports = function (grunt) {
     watch: {
       assemble: {
         files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/staff.json', '<%= config.assets %>/data/pathways.json'],
-        tasks: ['assemble'] //tasks: ['assemble', 'processhtml']
+        tasks: ['assemble:dev'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -305,17 +304,7 @@ module.exports = function (grunt) {
     // Prepare files for serving based on usemin blocks found in HTML.
     useminPrepare: {
       html: [
-        'dist/aboutus/*.html',
-        'dist/assessments/index.html',
-        'dist/events/index.html', 
-        'dist/faculty/*.html',
-        'dist/jobs/index.html',
-        'dist/parents/index.html',
-        'dist/pathways/index.html',
-        'dist/resume/index.html',
-        'dist/students/*.html',
-        'dist/students/events/*.html',
-        'dist/index.html'
+        'dist/**/*.html'
       ],
       options: {
         root: '.',
@@ -361,7 +350,7 @@ module.exports = function (grunt) {
     // into singular, cache-busting downloads n
     // your production HTML!
     usemin: {
-      html: 'dist/{,*/}*.html',
+      html: 'dist/**/*.html',
       options: {
         assetsDirs: ['dist'] 
       }
