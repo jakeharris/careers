@@ -81,7 +81,8 @@ module.exports = function (grunt) {
     'students/index.html': ['<%= config.views %>/students/current.hbs'],
     'students/': ['<%= config.views %>/students/*.hbs'],
     'parents/index.html': ['<%= config.views %>/families.hbs'],
-    'faculty/index.html': ['<%= config.views %>/faculty.hbs']
+    'faculty/index.html': ['<%= config.views %>/faculty.hbs'],
+    'employers/index.html': ['<%= config.views %>/hire.hbs']had
   },
   VIEW_MAPPING_PROD = {
     'dist/index.html':    ['<%= config.views %>/home.hbs'],
@@ -261,37 +262,8 @@ module.exports = function (grunt) {
       dev: {
         files: VIEW_MAPPING
       },
-<<<<<<< HEAD
-      events: {
-        options: {
-          flatten: true,
-          layout: '<%= config.nosocial %>',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          'events/index.html': ['<%= config.views %>/events.hbs'],
-          'events/': [
-            '<%= config.views %>/am.hbs',
-            '<%= config.views %>/eid.hbs',
-            '<%= config.views %>/iptjf.hbs',
-            '<%= config.views %>/tech.hbs',
-            '<%= config.views %>/cmcd.hbs'
-          ] 
-        }
-      },
-      hire: {
-        options: {
-          flatten: true,
-          layout: '<%= config.master %>',
-          partials: '<%= config.partials %>'
-        },
-        files: {
-          'employers/index.html': ['<%= config.views %>/hire.hbs'] 
-        }
-=======
       prod: {
         files: VIEW_MAPPING_PROD
->>>>>>> origin/master
       }
     },
 
