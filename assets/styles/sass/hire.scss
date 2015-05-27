@@ -1,0 +1,132 @@
+@import 'app';
+
+.content {
+  margin-top: 3rem;
+}
+
+.login {
+  background: none repeat scroll 0% 0% white;
+  overflow: visible;
+  flex-basis: 45%;
+  width: 45%;
+  position: relative;
+  .login-wrapper {
+    z-index: 5;
+  }
+  height: 100%;
+}
+
+.student-employment {
+  padding: 5rem;
+  flex-basis: 45%;
+  width: 45%; 
+  position: relative;
+  .student-employment-wrapper {
+    z-index: 5; 
+  }
+}
+
+.login::before,
+.student-employment::before {
+  display: block;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+
+  font-family: $icon-font-family;
+  color: #85a2c6;
+  font-size: 20rem;
+  opacity: .1;
+}
+.login::before {
+  content: '\f14e';
+}
+.student-employment::before {
+  content: '\e603';
+  right: 3rem;
+}
+
+.buttons {
+  
+}
+
+.flat-btn {
+  font-size: 18px;
+  height: auto;
+  padding: 1.2rem 0.5rem;
+}
+.report-hiring {
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  width: 80%;
+  font-size: 24px;
+  display: block;
+}
+
+.events.events {
+  overflow: hidden;
+  position: relative;
+  flex-basis: 45%;
+  width: 45%;
+  height: 100%;
+  padding: 3rem;
+  h2 a::after {
+    font-family: $icon-font-family;
+    font-weight: 100;
+    content: '\f078';
+    position: absolute;
+    right: 3rem;
+  }
+  ul {
+    margin-top: 0;
+    position: relative;
+    top: 3rem;
+    height: 85vh;
+    width: 100%;
+    li {
+      flex-basis: 100%;
+      width: 100%; 
+    }
+  }
+}
+
+.services {
+  flex-basis: 45%;
+  width: 45%;
+}
+.services-wrapper {
+  padding: 5rem;
+  padding-bottom: 3rem;
+}
+.services-header {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.services-content {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.service {  
+  padding: 1rem;
+  width: 50%;
+  flex-basis: 50%;
+  font-family: $header-font-family;
+  font-size: 1.7rem;
+}
+
+.sponsorship-opportunities {
+  flex-basis: 45%;
+  width: 45%;
+  height: 100%;
+}
+// OVERWRITING BOOTSTRAP
+
+.row::before,
+.row::after {
+  display: block;
+  content: none;
+}

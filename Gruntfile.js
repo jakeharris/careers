@@ -80,7 +80,8 @@ module.exports = function (grunt) {
     'students/graduate.html': ['<%= config.views %>/students/graduate.hbs'],
     'students/prospective.html': ['<%= config.views %>/students/prospective.hbs'],
     'parents/index.html': ['<%= config.views %>/families.hbs'],
-    'faculty/index.html': ['<%= config.views %>/faculty.hbs']  
+    'faculty/index.html': ['<%= config.views %>/faculty.hbs'],
+    'employers/index.html': ['<%= config.views %>/hire.hbs']
   },
   VIEW_MAPPING_PROD = {
     'dist/index.html':    ['<%= config.views %>/home.hbs'],
@@ -108,7 +109,8 @@ module.exports = function (grunt) {
     'dist/students/graduate.html': ['<%= config.views %>/students/graduate.hbs'],
     'dist/students/prospective.html': ['<%= config.views %>/students/prospective.hbs'],
     'dist/parents/index.html': ['<%= config.views %>/families.hbs'],
-    'dist/faculty/index.html': ['<%= config.views %>/faculty.hbs']  
+    'dist/faculty/index.html': ['<%= config.views %>/faculty.hbs'] ,
+    'dist/employers/index.html': ['<%= config.views %>/hire.hbs'] 
   }
   
   grunt.initConfig({
