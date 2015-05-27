@@ -194,8 +194,6 @@ h3,.h3-a {
   background-color: #aaa;
 }
 
-
-
 .block {
   flex-basis: 100%;
   width: 100%;
@@ -492,7 +490,7 @@ h3,.h3-a {
   flex-basis: 100%;
   width: 100%;
   overflow: hidden;
-  max-height: 335px;
+  max-height: 340px;
   img {
     height: 100%;
   }
@@ -614,6 +612,27 @@ img {
 .login, .carousel {
   flex-basis: 100%;
   width: 100%;
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flat-btn {
+  font-size: 18px;
+  height: auto;
+  padding: 1.2rem 0.5rem;
+}
+.flat-btn--half {
+  box-sizing: border-box;
+  flex-basis: 45%;
+  width: 45%;
+}
+.flat-btn--white.flat-btn--half {
+  margin-right: 0; 
 }
 
 /*****************/

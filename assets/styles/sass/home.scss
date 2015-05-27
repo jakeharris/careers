@@ -32,27 +32,6 @@ iframe {
 }
 
 
-.buttons {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.flat-btn {
-  font-size: 18px;
-  height: auto;
-  padding: 1.2rem 0.5rem;
-}
-.flat-btn--half {
-  box-sizing: border-box;
-  flex-basis: 45%;
-  width: 45%;
-}
-.flat-btn--white.flat-btn--half {
-  margin-right: 0; 
-}
-
 .login-wrap {
   margin: 7rem 0 0 14%;
 }
@@ -190,6 +169,7 @@ iframe {
   .flat-btn {
     height: auto;
     padding: 1.2rem 0;
+    font-size: 1.8rem;
   }
   .place-icon,
   .times-icon,
@@ -206,6 +186,7 @@ iframe {
   .flat-btn {
     height: auto;
     padding: 1.2rem 0;
+    font-size: 1.8rem;
   }
 }
 
@@ -218,6 +199,7 @@ iframe {
   .flat-btn {
     height: auto;
     padding: 1.2rem 0.5rem; 
+    font-size: 1.8rem;
   }
   .home-content {
     flex-wrap: nowrap;
@@ -242,6 +224,7 @@ iframe {
   .flat-btn {
     height: auto; 
     padding: 1.2rem 0;
+    font-size: 2rem;
   }
 }
 

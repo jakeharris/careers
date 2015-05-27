@@ -8,58 +8,69 @@ analytics-token: UA-12338791-4
 path-to-root: ..
 ---
 
-<div class="content row flex">
-  <form class="login" method="post" action="https://auburn-csm.symplicity.com/employers/index.php">
-    <div class="login-wrap">
-      <h2 class="login-title">Sign in to <a href="http://hire.auburn.edu" class="trl"></a></h2>
-      <p class="login-description">Your link to meeting, training, and hiring students.</p>
-      <div class="input-group login-username">
-        <span class="input-group-addon input-group-addon-md"><i class="icon icon-user"></i></span>
-        <input type="text" name="username" class="form-control input-md" placeholder="Employer Username">
-      </div>
-      <div class="input-group login-password">
-        <span class="input-group-addon input-group-addon-md"><i class="icon icon-lock"></i></span>
-        <input type="password" name="password" class="form-control input-md" placeholder="Password">
-      </div>
-      <div class="flex flex--login">
-        <a href="http://hire.auburn.edu/tipsheets.html" class="btn btn-default btn-md login-button">View tips</a>
-        <button type="submit" class="btn btn-default btn-md login-button login-button--active">Sign in</button>
+<section class="row flex content content--no-padding">
+  <form class="login " method="post" action="https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents%2Flogin">
+    <div class="login-wrapper">
+      <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
+      <p class="">Your link to hard-working students and a campus that is not afraid.</p>
+      <div class="buttons">
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/sso/employers/">Sign in</a>
+        <a class="flat-btn flat-btn--half" href="http://auburn.edu/career/employers/policiesprocedures_emp.html">View policy</a>
+        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
       </div>
     </div>
   </form>
-  <div class="student-employment">
-    <h2>Student Employment</h2>
-    <p>Looking to hire Auburn students? We have a variety of programs for just that. Find out more below!</p>
-    <a class="flat-btn" href="#">Student Employment</a>
-    <a class="flat-btn flat-btn--white" href="#">Student Work Policies</a>
+  <div class="services">
+    <div class="services-wrapper">
+      <h2 class="services-header">
+        Our Services
+      </h2>
+      <ul class="services-content">
+        <li class="service"><a href="#">Job Postings</a></li>
+        <li class="service"><a href="#">On-Campus Interviewing</a></li>
+        <li class="service"><a href="#">Career Fairs</a></li>
+        <li class="service"><a href="#">Information Sessions</a></li>
+        <li class="service"><a href="#">Sponsorship Opportunities</a></li>
+        <li class="service"><a href="#">Student Employment</a></li>
+      </ul>
+    </div>
+    <a class="flat-btn report-hiring" href="#">Report Hiring</a>
   </div>
-</div>
+</section>
 
-<div class="content row extra-content">
-  <h2>
-    Other Resources
-  </h2>
-  <p>
-    Lorem ipsum, etc.
-  </p>
-</div>
-
-<div class="content row extra-content">
-  <div class="events" ng-controller="calendar-ctrl">
-    <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
-    <ul>
+<section class="row flex">
+  <div class="events content extra-content" ng-controller="calendar-ctrl">
+    <h2><a class="collapsed accordion-header" data-toggle="collapse" id="events-heading" href="#events-list" role="tab" aria-expanded="false" aria-controls="events-list">Upcoming Events</a></h2>
+    <ul style="height: 0px;" aria-expanded="false" id="events-list" class="panel-collapse collapse" role="tabpanel" aria-labelledby="events-list-heading">
       <li class="event" ng-repeat="event in events">
         <div class="event-date">
           <div class="event-date-month">[[ event.date['shortened-month'] ]]</div>
           <div class="event-date-day">[[ event.date['day'] ]]</div>
         </div>
         <div class="event-details">
-          <div class="event-details-name">[[ event.name ]]</div>
+          <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
+          <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
           <div class="event-details-location">[[ event.location ]]</div>
-          <div class="event-details-time">[[ event.date.time.start]] - [[ event.date.time.end ]]</div>
+          <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
+          <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
+          <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
         </div>
       </li>
     </ul>
-    <a class="btn btn-default btn-md login-button" href="http://www.auburn.edu/career/events/">More events</a>
+    <!--<a class="btn btn-default btn-md login-button" href="http://www.auburn.edu/career/events/">More events</a>-->
   </div>
-</div>
+  <div class="sponsorship-opportunities content content extra-content">
+    <div class="sponsorship-opportunities-wrapper">
+      <h2>Become a Sponsor</h2>
+      <p>In an ideal world, competent students would be immediately paired with the jobs they deserve. Help us get there.</p>
+      <div class="buttons">
+        <a class="flat-btn" href="#">Sponsor Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flex">
+  
+
+</section>
