@@ -2,12 +2,13 @@
 layout: no-social.hbs
 type: resources
 path-to-root: ../
-hero-img: undergrad-students.png
 hero-text: Undergraduate Students
 ---
 
 <div class="hero row">
+  {{#if hero-img}}
   <img src="assets/images/resources/{{ hero-img }}">
+  {{/if}}
   <h2 class="img-replace">{{ hero-text }}</h2>
 </div>
 
