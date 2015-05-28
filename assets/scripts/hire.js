@@ -20,6 +20,8 @@ home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
       if(aRelativeMonth == bRelativeMonth) return a.date.day - b.date.day
       return aRelativeMonth - bRelativeMonth
     })
+    $scope.firstEvent = $scope.events[0]
+    $scope.events.splice(0, 1)
   })
 
   var getRelativeMonth = function (month) {    

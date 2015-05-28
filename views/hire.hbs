@@ -39,8 +39,25 @@ path-to-root: ..
 </section>
 
 <section class="row flex">
-  <div class="events content extra-content" ng-controller="calendar-ctrl">
-    <h2><a class="collapsed accordion-header" data-toggle="collapse" id="events-heading" href="#events-list" role="tab" aria-expanded="false" aria-controls="events-list">Upcoming Events</a></h2>
+  <div class="events content extra-content content--no-padding" ng-controller="calendar-ctrl">
+    <div class="first-event-wrapper">
+      <h2>Upcoming Events</h2>
+      <div class="first-event event">
+        <div class="event-date">
+          <div class="event-date-month">[[ firstEvent.date['shortened-month'] ]]</div>
+          <div class="event-date-day">[[ firstEvent.date['day'] ]]</div>
+        </div>
+        <div class="event-details">
+          <a ng-if="firstEvent.url != ''" href="[[ firstEvent.url ]]" class="event-details-name" target="_blank">[[ firstEvent.name ]]</a>
+          <div ng-if="firstEvent.url == ''" class="event-details-name">[[ firstEvent.name ]]</div>
+          <div class="event-details-location">[[ firstEvent.location ]]</div>
+          <div ng-if="firstEvent.date.time != ''" class="event-details-time">[[ firstEvent.date.time.start ]] - [[ firstEvent.date.time.end ]]</div>
+          <div ng-if="firstEvent.date.time == '' && firstEvent.date.dates != ''" class="event-details-time">All day, continues until [[ firstEvent.date.dates.end ]]</div>
+          <div ng-if="firstEvent.date.time == '' && firstEvent.date.dates == ''" class="event-details-time">All day</div>
+        </div>
+      </div>
+    </div>
+    <a class="collapsed accordion-header flat-btn" data-toggle="collapse" id="more-events" href="#events-list" role="tab" aria-expanded="false" aria-controls="events-list"></a>
     <ul style="height: 0px;" aria-expanded="false" id="events-list" class="panel-collapse collapse" role="tabpanel" aria-labelledby="events-list-heading">
       <li class="event" ng-repeat="event in events">
         <div class="event-date">

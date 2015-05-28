@@ -23,7 +23,7 @@
             <li data-menu="about-us"><a href="aboutus/campus-partners.html">Campus Partners</a></li>
           </ul>
         </li>
-        <li id="student-employment" class="hover">
+        <li id="student-employment">
           <a href="employers/studentemployment/index.html">Student Employment</a>
         </li>
         <li>
@@ -157,3 +157,15 @@
   }
   
 </script>
+<style>
+  nav.header .nav-wrapper ul li,
+  nav.header .nav-wrapper.mobile-nav--active ul li {
+     width: 25%;
+  }
+  nav.header ul li.hover--active:last-of-type > ul, nav.header ul li:hover:last-of-type > ul {
+    left: -300%;
+  }
+  nav.header ul li.hover--active > ul, nav.header ul li:hover > ul {
+    width: 400%; 
+  }
+</style>
