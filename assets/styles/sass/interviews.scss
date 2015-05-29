@@ -1,0 +1,13 @@
+@import 'resume';
+
+
+.interview-banner {
+  @extend .resume-banner;
+}
+.interview-types {
+  @extend .document-review;
+  .mock p a {
+    font-family: $header-font-family;
+    font-size: 1.6rem;
+  }
+}
