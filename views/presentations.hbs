@@ -47,12 +47,23 @@ layout: datepicker.hbs
       </div>
       <script type="text/javascript">
         $('#date').datetimepicker({
+          defaultDate: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
           daysOfWeekDisabled: [0,6],
           format: 'MM/DD/YYYY'
         });
-        $('#time-start,#time-end').datetimepicker({
+        $('#time-start').datetimepicker({
+          defaultDate: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
           stepping: 5,
           format: 'LT'
+        });
+        $('#time-end').datetimepicker({
+          defaultDate: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000 + 60 * 60 * 1000),
+          stepping: 5,
+          format: 'LT',
+          minDate: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
+        })
+        $('#time-start').on('dp.change', function (e) {
+            $('#time-end').data("DateTimePicker").minDate(e.date);
         });
       </script>
       <div class="logistics-container">
