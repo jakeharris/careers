@@ -11,3 +11,15 @@
     font-size: 1.6rem;
   }
 }
+.online-interview-requirements-header {
+  font-family: $header-font-family;
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+.online-interview-requirements {
+  padding-bottom: 1rem;
+  li {
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+  }
+}
