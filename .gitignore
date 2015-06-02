@@ -1,25 +1,24 @@
-config.php
-twitter.php
-twitter.json
-dev/events.json
 bower_components/
 node_modules/
 node_modules/jshint/*
 node_modules/.bin/jshint*
 .jshintrc
-*/*/assets/images
-events.json
 .sass-cache/
-*/*.html
-*.html
 dist/
-assets/styles/*.cs*
-<<<<<<< HEAD
-=======
-assets/*/*.min.*
->>>>>>> origin/master
-assets/images/staff/big/*
 npm-debug.log
-jobs/assets/images/sponsors/tech-eng/quincy-compressor.jpg
-jobs/assets/images/sponsors/tech-eng/shaw.jpg
-jobs/assets/images/sponsors/tech-eng/uda.png
+
+
+assets/*/*.min.*
+*.png
+*.jpg
+*.gif
+*.ps
+*.eps
+*.bmp
+*.html
+config.php
+twitter.php
+twitter.json
+events.json
+dev/events.json
+assets/images/sponsors/sponsors that don't have icons on trl.md
