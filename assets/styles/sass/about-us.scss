@@ -2,13 +2,11 @@
 
 .mission,
 .services {
-  flex-basis: 30%;
-  width: 30%;
+  flex-basis: 100%;
+  width: 100%;
   margin-bottom: 3rem;
 }
 .services {
-  flex-basis: 65%;
-  width: 65%;
   padding-bottom: 2rem;
 }
 
@@ -23,8 +21,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   li {
-    flex-basis: 40%;
-    width: 40%;
+    flex-basis: 100%;
+    width: 100%;
     min-height: 3rem;
     font-family: $header-font-family;
     font-size: 2rem;
@@ -121,6 +119,20 @@ iframe {
     font-size: 8rem; 
     margin-right: 3rem;
     width: 5rem;
+  }
+}
+@media (min-width: $medium-screen-size) {
+  .mission {
+    flex-basis: 30%;
+    width: 30%;
+  }
+  .services {
+    flex-basis: 65%;
+    width: 65%;
+  }
+  .services-content li {
+    flex-basis: 40%;
+    width: 40%;
   }
 }
 @media (min-width: $moderate-screen-size) {
