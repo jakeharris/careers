@@ -1,11 +1,11 @@
 {
   "__college_notes": "Each college MUST have a name, full name, and image (img). Each MAY not have a pathways object, but if it does, it MUST contain a complete pathway object.",
-  "__pathway_notes": "Each pathway MUST have a name. Each MAY not have a link.",
+  "__major_notes": "Each pathway MUST have a name. Each MAY not have a link.",
   "__empty_college": {
     "name": "",
     "fullname": "",
     "img": "",
-    "pathways": [
+    "majors": [
       {
         "name": "",
         "link": ""
@@ -17,7 +17,7 @@
       "name": "liberal-arts",
       "fullname": "College of Liberal Arts",
       "img": "college-liberal-arts-banner",
-      "pathways": [
+      "majors": [
         {
           "name": "Anthropology",
           "link": "anthropology"
