@@ -14,12 +14,10 @@ events.json
 *.html
 dist/
 assets/styles/*.cs*
-<<<<<<< HEAD
-=======
 assets/*/*.min.*
->>>>>>> origin/master
 assets/images/staff/big/*
 npm-debug.log
 jobs/assets/images/sponsors/tech-eng/quincy-compressor.jpg
 jobs/assets/images/sponsors/tech-eng/shaw.jpg
 jobs/assets/images/sponsors/tech-eng/uda.png
+assets/images
