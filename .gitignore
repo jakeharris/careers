@@ -16,6 +16,8 @@ assets/*/*.min.*
 *.eps
 *.bmp
 *.html
+*.css
+*.css.map
 config.php
 twitter.php
 twitter.json
