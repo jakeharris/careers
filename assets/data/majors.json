@@ -1,6 +1,6 @@
 {
-  "__college_notes": "Each college MUST have a name, full name, and image (img). Each MAY not have a pathways object, but if it does, it MUST contain a complete pathway object.",
-  "__major_notes": "Each pathway MUST have a name. Each MAY not have a link.",
+  "__college_notes": "Each college MUST have a name, full name, and image (img). Each MAY not have a majors object, but if it does, it MUST contain a complete major object.",
+  "__major_notes": "Each major MUST have a name. Each MAY not have a link.",
   "__empty_college": {
     "name": "",
     "fullname": "",
