@@ -1,6 +1,6 @@
 @import 'app';
 
-.majors-content {
+.pathways-content {
   text-align: center;
   & > h2 {
     font-size: 5rem;
@@ -60,7 +60,7 @@
   }
 }
 
-.major {
+.pathway {
   display: block;
   
   width: 100%;
@@ -96,7 +96,7 @@
   }
 }
 
-.major.coming-soon {
+.pathway.coming-soon {
   color: $box-shadow;
   background: repeating-linear-gradient(
     -55deg,
@@ -136,7 +136,7 @@
 }
 
 @media (min-width: $small-screen-size) {
-  .majors-content > h2 {
+  .pathways-content > h2 {
     font-size: 8rem; 
   } 
 }

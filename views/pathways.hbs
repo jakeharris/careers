@@ -1,46 +1,46 @@
 ---
-name: majors
-type: majors
-Title: Majors at Auburn | Career Center
+name: pathways
+type: pathways
+Title: Pathways | Career Center
 layout: no-social.hbs
 ---
 
-<section class="content extra-content majors-content">
-  <h2>Majors at Auburn</h2>
-  <p>Need guidance on how to progress in your major? Find our guide under your college to get started now!</p>
+<section class="content extra-content pathways-content">
+  <h2>Pathways</h2>
+  <p>Need guidance on how to progress in your major? Find our Pathway guide under your college to get started now!</p>
 </section>
 
 
 <div class="colleges">
   
-  {{#each majors.college}}
+  {{#each pathways.college}}
     <div class="college">
       <div class="hero">
-        {{#if majors }}
-          <img class="{{ name }}" src="assets/images/majors/{{ img }}.jpg">
+        {{#if pathways }}
+          <img class="{{ name }}" src="assets/images/pathways/{{ img }}.jpg">
           <div class="college-header hero-content">
             <div class="overlay"></div>
             <h2>{{ fullname }}</h2>
           </div>
         {{else}}
-          <img class="{{ name }} grayscale grayscale-fade" src="assets/images/majors/{{ img }}.jpg">
+          <img class="{{ name }} grayscale grayscale-fade" src="assets/images/pathways/{{ img }}.jpg">
           <div class="college-header hero-content coming-soon">
             <div class="overlay"></div>
             <h2>{{ fullname }}</h2>
           </div>
         {{/if}}
       </div>
-      {{#if majors}}
+      {{#if pathways}}
         <section class="content college-content">
           <a class="collapsed accordion-header" data-toggle="collapse" id="{{ name }}-heading" href="#{{ name }}" role="tab" aria-expanded="false" aria-controls="{{ name }}">
             <i></i>
           </a>
           <div style="height: 0px;" aria-expanded="false" id="{{ name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ name }}-heading">
-            {{#each majors}}
+            {{#each pathways}}
               {{#if link}}
-                <a class="major" href="assets/images/majors/pdfs/{{ link }}.pdf">{{ name }}</a>
+                <a class="pathway" href="assets/images/pathways/pdfs/{{ link }}.pdf">{{ name }}</a>
               {{else}}
-                <a class="major coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+                <a class="pathway coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
               {{/if}}
             {{/each}}
           </div>
