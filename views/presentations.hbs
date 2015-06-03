@@ -36,6 +36,7 @@ layout: datepicker.hbs
     <div class="date-logistics-container">
       <div class="date-container">
         <h2>Date and Time</h2>
+        <p>Requests must be made no less than <strong>two weeks</strong> in advance.</p>
         <div class="input-group date">
           <input type="text" id="date" class="form-control" name="date"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
         </div>
@@ -47,12 +48,23 @@ layout: datepicker.hbs
       </div>
       <script type="text/javascript">
         $('#date').datetimepicker({
+          defaultDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000),
           daysOfWeekDisabled: [0,6],
           format: 'MM/DD/YYYY'
         });
-        $('#time-start,#time-end').datetimepicker({
+        $('#time-start').datetimepicker({
+          defaultDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000),
           stepping: 5,
           format: 'LT'
+        });
+        $('#time-end').datetimepicker({
+          defaultDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000 + 60 * 60 * 1000),
+          stepping: 5,
+          format: 'LT',
+          minDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000)
+        })
+        $('#time-start').on('dp.change', function (e) {
+            $('#time-end').data("DateTimePicker").minDate(e.date);
         });
       </script>
       <div class="logistics-container">
@@ -89,7 +101,7 @@ layout: datepicker.hbs
             Computer and internet access available <input type="checkbox" name="internet" class="form-control">
           </div>
           <div class="input-group">
-            Expected attendance <input type="number" name="attendance" class="form-control">
+            Expected attendance <input type="text" name="attendance" class="form-control" placeholder="e.g. 10-15">
           </div>
         </div>
       </div>

@@ -85,7 +85,7 @@ layout: default.hbs
          data-csm="auburn-csm.symplicity.com"
          data-id="cafc7f8b2e4d76da719080d5cc417823"
          data-size="auto"
-         data-css="https://auburn.edu/career/jobs/assets/stylesheets/widget.css"
+         data-css="https://www.auburn.edu/career/jobs/assets/stylesheets/widget.css"
          data-logo=""
          data-header-text="Part-Time Jobs"
          data-sort-by="posting_date"></div>
@@ -104,6 +104,11 @@ layout: default.hbs
         (document, "script", "symp_jobswidget_js")
       )
 
+    </script>
+    <script>
+      $(function () {
+        $($('iframe')[0]).attr('src', 'https://auburn-csm.symplicity.com/api/jobboard/cafc7f8b2e4d76da719080d5cc417823?size=auto&css=https%3A%2F%2Fwww.auburn.edu%2Fcareer%2Fjobs%2Fassets%2Fstylesheets%2Fwidget.css&logo=&header_text=Part-Time%20Jobs&sort_by=posting_date')
+      })
     </script>
   </div>
 </div>
