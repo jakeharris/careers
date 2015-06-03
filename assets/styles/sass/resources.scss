@@ -211,6 +211,20 @@ header {
   }
 }
 
+.big-header {
+  font-size: 7rem;
+  text-align: center;
+}
+.international-content,
+.veterans-content,
+.lgbt-content,
+.accessibility-content,
+.federal-content,
+.service-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 /*****************/
 /* MEDIA QUERIES */
