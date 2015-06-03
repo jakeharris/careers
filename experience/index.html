@@ -1,158 +1,395 @@
-<!DOCTYPE html>
-<html><!-- InstanceBegin template="/Templates/cds_layout1.dwt" codeOutsideHTMLIsLocked="false" -->
-<head>
-<title>Auburn University Career Center</title>
-<!--#include virtual="/template/includes/head.html" -->
-<!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-12338791-1']);
-  _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+<!doctype html>
+<html lang="en" ng-app="">
+  <head>
+    <base href="../">
+    <!-- Meta Data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <title>Experience | Career Center</title>
 
-</script>
-<style type="text/css">
-@import url("http://www.auburn.edu/template/styles/sidebar.css");
-</style>
-</head>
-<body>
-<div id="pageWrap"> 
-  <div id="headerWrap">
-    <div id="header">
-      <div id="logo">
-      	<a href="http://www.auburn.edu"><img src="http://www.auburn.edu/template/styles/images/headerLogo.png" alt="Auburn University Homepage" /></a>
-      </div>
-      <div id="headerTitle">
-        <div class="topLinks">
-          <a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a> | 
-          <a href="http://www.auburn.edu/map">Map</a> | 
-          <a href="http://www.auburn.edu/main/auweb_campus_directory.html" class="lastTopLink">People Finder</a>
-        </div>
-        <form action="http://search.auburn.edu" id="searchForm" method="get">
-          <div class="searchBox">
-            <input type="text" name="q" id="q" accesskey="q" size="28" tabindex="1" class="searchField" onfocus="if(this.value=='Search AU...'){this.value='';this.style.color='black'}" onblur="if(this.value=='')this.value='Search AU...';this.style.color='grey'" value="Search AU..." />
-            <input type="image" src="http://www.auburn.edu/template/styles/images/searchButton2.png" name="sa" accesskey="z" tabindex="2" alt="Search" value="Submit" class="searchButton" />
-          </div>
-          <input type="hidden" name="cx" value="006456623919840955604:pinevfah6qm" />
-          <input type="hidden" name="ie" value="utf-8" />
-          <label for="q" style=" position:absolute; left:-9999px; visibility:hidden;">Enter your search terms</label>
-        </form>
-        <div class="titleArea"><h4>Career Center</h4>
-        <!--span class="subHeading">Office of Undergraduate Studies</span--></div>
-      </div>
+    <!-- Bootstrap & Core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Application CSS -->
+    <!-- build:css assets/styles/experience.min.css -->
+      <link rel=stylesheet href="assets/styles/experience.css">
+    <!-- endbuild -->
+
+    <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
+    <!--[if lt IE 9]>
+<script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
+<script src="//cdn.auburn.edu/assets/js/respond.src.js"></script>
+<link href="//cdn.auburn.edu/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
+<link href="assets/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
+<script src="assets/js/respond.proxy.js"></script>
+<![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
+
+    <!-- Angular & Core JS -->
+    <script>
+      document.createElement('picture')
+    </script>
+    <script src="http://auburn.edu/career/assets/scripts/picturefill.min.js" async></script>
+    <!-- It would be awesome if I could only load angular based on whether the particular view had a controller -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    
+    <!-- Application-specific CSS/JS -->
+    <!-- build:js assets/scripts/experience.min.js -->
+      <script src="assets/scripts/experience.js"></script>
+      <script src="assets/scripts/amcf-app.js"></script>
+    <!-- endbuild -->
+    
+  </head>
+
+  <body class="experience">
+    <header role="banner">
+
+  <div class="preheader" id="preheader">
+    <div class="hexes">
+      <div class="hex"><a href="http://auburn.edu"><img src="assets/images/AU-emblem.png"></a></div>
     </div>
-		<table class="nav">
-      <tr>
-        <tr>
-        <td><a href="../students">Students</a></td>
-        <td><a href="http://hire.auburn.edu">Employers</a></td>
-        <td><a href="../alumni">Alumni</a></td>
-        <td><a href="../faculty">Faculty/Staff</a></td>
-        <td><a href="../parents">Parents</a></td>
-        <td><a href="../aboutus">About Us</a></td>
-      </tr>
-      </tr>
-    </table>
+    <h1><a href=".">Career Center</a></h1>
   </div>
-  <div id="contentArea">
-    <div class="contentDivision"> 
-      <p class="breadcrumb"> <!-- InstanceBeginEditable name="breadcrumb" --> <a href="../">Career Center</a> &gt; Experience<!-- InstanceEndEditable --> </p>
-			<!-- InstanceBeginEditable name="body" -->
-      <div style="width:100%; float:left;"><center>
-        <p><img src="images/experiencehome_header.jpg" width="675" height="150" alt="Experience is everything"></p>
-      </center>
-      </div>
-      <div style="width:100%; float:left;">
-      <div style="width:66%; float: left;">
-      <div style="width:48%; float:left; padding-right:10px;">
-        <h6>Experience</h6>
-        <ul>
-          <li><a href="../internships/index.html">Internship</a></li>
-          <li><a href="http://www.auburn.edu/co-op/" target="_blank">Cooperative Education</a></li>
-          <li><a href="international.html">International</a></li>
-          <li><a href="leadership.html">Leadership</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="service.html">Service</a></li>
-          <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/jobs/studentemployment.html" target="_blank">Part-time</a></li>
-        </ul>
-        </div>
-      <div style="width:47%; float:left; padding-right:10px;">
-        <h6>Resources</h6>
-        <ul>
-          <li><a href="contacts.html">Course Credit and  Departmental Contacts</a></li>
-          <li><a href="http://www.auburn.edu/career/events/" target="_blank">Career Events &amp; Workshops</a></li>
-          <li><a href="http://www.auburn.edu/career/resume/" target="_blank">Resume &amp; Cover Letter Writing</a></li>
-          <li><a href="https://fp.auburn.edu/writing/ePortfolios.aspx" target="_blank">ePortfolio Development</a></li>
-          <li><a href="http://www.auburn.edu/career/mock/" target="_blank">Interview Skills</a></li>
-          <li><a href="housing.html">Housing Information</a></li>
-        </ul>
-        </div>
-        <div style="width:100%; float:left;">
-        <center><iframe src="//player.vimeo.com/hubnut/user/aucareer/uploaded_videos?color=ffffff&amp;background=082b61&amp;slideshow=0&amp;video_title=1&amp;video_byline=1" width="400" height="250" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></center>
-        </div>
-        </div>
-      <div style="width:32%; float:left;">
-        <h6>My Experience...</h6>
-        <p><strong>Eddie's Experience</strong></p><center>
-          <p><a href="spotlight_5.html"><img src="images/spotlight_5.png" width="175" height="261" alt="Cameron Johnson"></a></p>
-          <p><a href="spotlight.html">See More Spotlights! </a></p>
-        </center></p>
-        <center><p>&nbsp;</p>
-        </center>
-      </div>
-      </div>
-      <!-- InstanceEndEditable -->
-      <p class="lastUpdated">Last Updated: <!-- InstanceBeginEditable name="lastUpdated" -->October 8, 2013<!-- InstanceEndEditable --> </p>
-    </div>
-    <div class="sidebar"> 
-      <p class="sidebarTitle">I NEED A ...</p>
-      <a href="http://www.auburn.edu/career/counselors">Career Counselor</a> <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/choose.html">Major/Career</a> <a href="http://www.auburn.edu/career/resume">Resume/Cover Letter</a> <a href="http://jobs.auburn.edu">Full-time job</a> <a href="http://jobs.auburn.edu">Part-time job</a> <a href="../experience">Experience</a><a href="http://www.auburn.edu/career/mock">Mock Interview</a><a href="http://www.auburn.edu/career/faculty/presentations.php">Presentation</a>
-      <div class="orangeDecorBar">&nbsp;</div>
-      <p class="sidebarTitle">POPULAR RESOURCES</p>
-      <a href="http://www.auburn.edu/career/assessments">Career Assessments</a> <a href="http://www.auburn.edu/career/trl">Tiger Recruiting Link</a><a href="http://www.auburn.edu/career/students/handbook.pdf" target="_blank">Career Center Handbook</a><a href="../webresources/index.html">Web Resources</a><a href="http://www.auburn.edu/career/tipsheets">Tip Sheets</a><a href="http://whatcanidowiththismajor.com/major/majors" target="_blank">What can I do with a major in?</a> <a href="http://www.auburn.edu/career/resources/careershift.html" target="_blank">CareerShift</a> <a href="http://www.auburn.edu/career/resources/interviewstream.html" target="_blank">InterviewStream</a> </div>
-  </div>
-<div id="footerWrap">
-    <div id="footer">
-    <div id="footSectionWrap">
-      <div class="footSection">
-        <ul>
-          <li><a href="http://www.auburn.edu/academicsupport" target="_blank">Academic Support Services</a></li>
-          <li>            <a href="http://www.auburn.edu/fye" target="_blank">First Year Experience </a></li>
-          <li><a href="http://business.auburn.edu/student-services/office-of-professional-career-development/" target="_blank">College of Business  OPCD</a></li>
-        </ul>
-      </div>
-      <div class="footSection"> 
-        <ul>
-          <li><a href="http://www.facebook.com/AUCareer" target="_blank"><br>
-            <img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/fb_template.png" alt="Facebook" width="32" height="32" border="0"></a> &nbsp;<a href="http://twitter.com/AUCareer"><img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/twitter_template.png" alt="Twitter" width="32" height="32" border="0"></a> &nbsp;<a href="http://www.linkedin.com/groups?about=&gid=1878262" target="_blank"><img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/li_template.png" alt="LinkedIn" width="32" height="32" border="0"></a>&nbsp;<a href="http://www.youtube.com/user/AUCDS/featured" target="_blank"><img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/yt_template.png" width="32" height="32" alt="You Tube"></a><a href="http://tigersprepare.blogspot.com/" target="_blank">&nbsp;<img src="http://www.auburn.edu/academic/provost/undergrad_studies/career/images/blog_template.png" alt="Blog" width="32" height="32" border="0"></a></li>
-        </ul>
-      </div>
-      <div class="footSection noBorder">
-        <ul>
-          <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/" target="_blank">Office of Undergraduate Studies</a></li>
-          <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html" target="_blank">Academic Advisors</a></li>
-          <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/" target="_blank">Majors/Academic Departments</a></li>
-        </ul>
-      </div>
-    </div>
-    </div>  
-    <div id="subfooter">
-      Career Center | Auburn University | Auburn, Alabama 36849 | (334) 844-4744  | 
-        <script type="text/javascript">emailE='auburn.edu'; emailE=('aucc' + '@' + emailE); document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");</script>
-      <br />
-      <a href="https://fp.auburn.edu/ocm/auweb_survey">Website Feedback</a> | <a href="http://www.auburn.edu/privacy">Privacy</a> | <a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; 
-      <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a>
-    </div>
-  </div>
-  <script type="text/javascript" src="http://www.auburn.edu/template/js/features.js"></script>
   
+  
+  <nav id="nav" class="header nav-collapse">
+    <div class="nav-controller" id="hamburger">
+      <i class="icon-navicon"></i>
+    </div>
+    <div class="nav-wrapper">
+      <ul>
+        <li id="about-us" class="hover about-us about-us--mobile">
+          <a href="aboutus/">About Us</a>
+          <ul>
+            <li data-menu="about-us"><a href="aboutus/">Office Info</a></li>
+            <li data-menu="about-us"><a href="aboutus/staff.html">Staff</a></li>
+            <li data-menu="about-us"><a href="aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+            <li data-menu="about-us"><a href="aboutus/campus-partners.html">Campus Partners</a></li>
+          </ul>
+        </li>
+        <li id="students" class="hover">
+          <a href="students/">Students</a>
+          <ul>
+            <li data-menu="students"><a href="students/">Undergraduate</a></li>
+            <li data-menu="students"><a href="students/graduate.html">Graduate</a></li>
+            <li data-menu="students"><a href="students/alumni.html">Alumni</a></li>
+            <li data-menu="students"><a href="students/prospective.html">Prospective</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="parents/">Families</a>
+        </li>
+        <li>
+          <a href="faculty/">Faculty</a>
+        </li>
+        <li>
+          <a href="employers/">Employers</a>
+        </li>
+        <li>
+          <a href="events/">Events</a>
+        </li>
+        <li class="about-us">
+          <a href="aboutus/">About Us</a>
+          <ul>
+            <li data-menu="about-us"><a href="aboutus/">Office Info</a></li>
+            <li data-menu="about-us"><a href="aboutus/staff.html">Staff</a></li>
+            <li data-menu="about-us"><a href="aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+            <li data-menu="about-us"><a href="aboutus/campus-partners.html">Campus Partners</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <nav class="postheader" id="postheader">
+    <ul>
+        <li><a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a></li>
+        <li><a href="http://www.auburn.edu/map">Map</a></li>
+        <li><a href="http://www.auburn.edu/main/auweb_campus_directory.html">People Finder</a></li>
+        <li><a href="http://auaccess.auburn.edu/">AU Access</a></li>
+        <li>
+            <form action="http://search.auburn.edu" method="get">
+                <input type="search" placeholder="Search Auburn" name="q">
+            </form>
+        </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Positioning the nav -->
+<script>
+  var preheader, nav, postheader;
+  window.onscroll = function () {
+    if(preheader === undefined) preheader = document.getElementById('preheader')
+    if(preheader === undefined) return
+    
+    if(nav === undefined) nav = document.getElementById('nav')
+    if(nav === undefined) return
+    
+    if(postheader === undefined) postheader = document.getElementById('postheader')
+    if(postheader === undefined) return  
+    
+    
+    if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
+      nav.classList.add('fixed') 
+      postheader.classList.add('absolute')
+    } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed') && window.innerWidth >= 768) {
+      nav.classList.remove('fixed')
+      postheader.classList.remove('absolute')
+    } else if (preheader.getBoundingClientRect().bottom <= 0 && nav.children[0].getBoundingClientRect().top <= 0 && !nav.classList.contains('fixed')) {
+      nav.classList.add('fixed') 
+    } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed')) {
+      nav.classList.remove('fixed') 
+    } 
+    
+    if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth >= 768) { 
+      nav.classList.add('bordered')
+    } else if (postheader.getBoundingClientRect().top > 0 + 30  && nav.classList.contains('bordered') && window.innerWidth >= 768) {
+      nav.classList.remove('bordered') 
+    } else if (nav.children[0].getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth < 768) {
+      nav.classList.add('bordered') 
+    } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('bordered') && window.innerWidth < 768) {
+      nav.classList.remove('bordered') 
+    }
+    
+    
+    if(nav.children[1].classList.contains('mobile-nav--active') && !nav.classList.contains('fixed')) {
+      nav.classList.add('fixed'); 
+    }
+  }
+</script>
+<!-- Mobile menu -->
+<script>
+  var hamburger = document.getElementById('hamburger')
+  hamburger.addEventListener('click', function () {
+    var navWrapper = document.getElementById('nav').children[1]
+     
+    if(hamburger === undefined) hamburger = document.getElementById('hamburger')
+    if(hamburger === undefined) return
+    
+    if (hamburger.classList.contains('nav-controller--active'))
+      hamburger.classList.remove('nav-controller--active')
+    else hamburger.classList.add('nav-controller--active')
+    
+    if(navWrapper.classList.contains('mobile-nav--active'))
+      navWrapper.classList.remove('mobile-nav--active')
+    else 
+      navWrapper.classList.add('mobile-nav--active')
+  })
+  window.addEventListener('resize', function () {
+    var navWrapper = document.getElementById('nav').children[1]
+    
+    if(window.innerWidth >= 768 && navWrapper.classList.contains('mobile-nav--active'))
+      navWrapper.classList.remove('mobile-nav--active')
+  })
+  
+  var submenus = document.getElementById('nav').getElementsByClassName('hover')
+  function touchHandler(e) {
+    
+    e.preventDefault()
+    
+    console.log(this.classList)
+    
+    if(this.classList.contains('hover')) {
+      if(this.classList.contains('hover--active')) {
+        this.classList.add('hover--active')
+      }
+    }
+    else if(!this.classList.contains('hover')) {
+
+      console.log('no hover')
+      console.log(this)
+      var menu = this.parentElement.parentElement
+
+      if(menu.classList.contains('hover--active')) e.target.click()
+    }
+  }
+  for(var i = 0; i < submenus.length; i++) {
+    submenus[i].addEventListener('touchstart', touchHandler, true)
+    
+    for(var j = 0; j < submenus[i].children[1].children.length; j++) {
+      submenus[i].children[1].children[j].addEventListener('touchstart', touchHandler, true) 
+    }
+  }
+  
+</script>
+    <div class="container">
+      
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+
+
+<script src="assets/scripts/Chart.min.js"></script>
+
+<div class="content extra-content contained experience">
+  <h2>Experience</h2>
 </div>
-</body>
-<!-- InstanceEnd --></html>
+
+<section class="zone">
+  <h2>Internships</h2>
+  <div class="zone-content">
+    <div class="card content zone-element content--no-padding">
+      <img src="http://i.ytimg.com/vi/prfuOLsX6OY/maxresdefault.jpg">
+    </div>
+    <div class="card content content--no-padding zone-element">
+      <div class="card-text card-text--padding">
+        <h2>Get one.</h2>
+        <p>
+          You may have picked up on the following recurring theme in your job search; 
+          to get a job you need experience and to get experience you need a job. So 
+          how do you get experience?
+        </p>
+        <p>
+          The answer is simple: Pursue an internship! 
+        </p>
+      </div>
+      <a class="flat-btn flat-btn--bottom" href="experience/faq.html">FAQ</a>
+    </div>
+    <div class="graph zone-element">
+      <canvas class="internships-graph" id="internships-graph"></canvas>
+      <p class="graph-description">
+        Employers want experience. Internships get you there.
+      </p>
+      <script>
+        var internDonut = new Chart(document.getElementById('internships-graph').getContext('2d')).Doughnut([
+          {
+            value: '51.7',
+            color: '#246',
+            highlight: '#357',
+            label: 'Interns who got immediate job offers'
+          },
+          {
+            value: '29.2',
+            color: '#46BFBD',
+            highlight: '#5AD3D1',
+            label: 'Non-interns who got immediate job offers'
+          },
+          {
+            value: '8.9',
+            color: '#496e9c',
+            highlight: '#597eaa',
+            label: 'Non-interns who did not get immediate job offers'
+          },          
+          {
+            value: '10.2',
+            color: '#333333',
+            highlight: '#444444',
+            label: 'Interns who did not get immediate job offers'
+          }
+        ], { segmentStrokeWidth: '4', percentageInnerCutout: 30 })
+      </script>
+    </div>
+  </div>
+</section>
+<section class="zone">
+  <h2>Leadership</h2>
+  <div class="zone-content">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+</section>
+<section class="zone">
+  <h2>Research</h2>
+  <div class="zone-content">
+    <div class="card"></div>
+  </div>
+</section>
+<section class="zone">
+  <h2>Service</h2>
+  <div class="zone-content">
+    <div class="card"></div>
+  </div>
+</section>
+      <div class="row footer-wrap hidden-print">
+  <footer>
+    <section>
+      <ul>
+        <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
+        <li><a href="http://www.auburn.edu/fye">First Year Experience</a></li>
+        <li><a href="http://harbert.auburn.edu/students/current/professional-and-career-development-resources/index.php">College of Business OPCD</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
+        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
+        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
+      </ul>
+    </section>
+  </footer>
+
+  <div class="subfooter" role="contentinfo">
+    <div>
+      <span>Auburn University</span>&sdot;
+      <span>Auburn, Alabama 36849</span>&sdot;
+      <span>(334) 844-4000</span>&sdot;
+      <span>
+        <script type="text/javascript">
+          emailE='auburn.edu';
+          emailE=('aucc' + '@' + emailE);
+          document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");
+        </script>
+      </span>
+    </div>
+
+    <div>
+      <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a></span>&sdot;
+      <span><a href="http://www.auburn.edu/privacy/">Privacy</a></span>&sdot;
+      <span><a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a></span>&sdot;
+      <span><a href="https://sites.auburn.edu/academic/provost/us/CareerCenter/SitePages/Home.aspx">Staff Intranet</a></span>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="to-top" style="display:none;"><a href="#top"></a></div>
+
+    <!-- jQuery, Bootstrap, and Default AU Code JavaScript --> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
+    <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
+    <script>
+      var nav = responsiveNav('.nav-collapse', {
+        label: '' 
+      });
+    </script>
+    <script>
+      $(function() {
+        $('.hover').bind('touchstart', function(e) {
+          e.preventDefault()
+          $(this).toggleClass('hover--active')
+        })
+      })
+    </script>
+  </body>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12338791-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</html>

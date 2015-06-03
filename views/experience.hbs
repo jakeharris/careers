@@ -1,0 +1,88 @@
+---
+layout: experience.hbs
+name: experience
+title: Experience | Career Center
+---
+
+<script src="assets/scripts/Chart.min.js"></script>
+
+<div class="content extra-content contained experience">
+  <h2>Experience</h2>
+</div>
+
+<section class="zone">
+  <h2>Internships</h2>
+  <div class="zone-content">
+    <div class="card content zone-element content--no-padding">
+      <img src="http://i.ytimg.com/vi/prfuOLsX6OY/maxresdefault.jpg">
+    </div>
+    <div class="card content content--no-padding zone-element">
+      <div class="card-text card-text--padding">
+        <h2>Get one.</h2>
+        <p>
+          You may have picked up on the following recurring theme in your job search; 
+          to get a job you need experience and to get experience you need a job. So 
+          how do you get experience?
+        </p>
+        <p>
+          The answer is simple: Pursue an internship! 
+        </p>
+      </div>
+      <a class="flat-btn flat-btn--bottom" href="experience/faq.html">FAQ</a>
+    </div>
+    <div class="graph zone-element">
+      <canvas class="internships-graph" id="internships-graph"></canvas>
+      <p class="graph-description">
+        Employers want experience. Internships get you there.
+      </p>
+      <script>
+        var internDonut = new Chart(document.getElementById('internships-graph').getContext('2d')).Doughnut([
+          {
+            value: '51.7',
+            color: '#246',
+            highlight: '#357',
+            label: 'Interns who got immediate job offers'
+          },
+          {
+            value: '29.2',
+            color: '#46BFBD',
+            highlight: '#5AD3D1',
+            label: 'Non-interns who got immediate job offers'
+          },
+          {
+            value: '8.9',
+            color: '#496e9c',
+            highlight: '#597eaa',
+            label: 'Non-interns who did not get immediate job offers'
+          },          
+          {
+            value: '10.2',
+            color: '#333333',
+            highlight: '#444444',
+            label: 'Interns who did not get immediate job offers'
+          }
+        ], { segmentStrokeWidth: '4', percentageInnerCutout: 30 })
+      </script>
+    </div>
+  </div>
+</section>
+<section class="zone">
+  <h2>Leadership</h2>
+  <div class="zone-content">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+</section>
+<section class="zone">
+  <h2>Research</h2>
+  <div class="zone-content">
+    <div class="card"></div>
+  </div>
+</section>
+<section class="zone">
+  <h2>Service</h2>
+  <div class="zone-content">
+    <div class="card"></div>
+  </div>
+</section>
