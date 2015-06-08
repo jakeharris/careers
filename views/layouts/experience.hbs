@@ -100,6 +100,7 @@ path-to-root: ../
 
       $(window).on('scroll', function (e){
         e.preventDefault()
+        e.stopPropagation()
         didScroll = true
         return false
       })
@@ -107,16 +108,13 @@ path-to-root: ../
       setInterval(function () {
         if(didScroll) {
           hasScrolled() 
-          didScroll = false
         }
-      }, timer*2.5)
+      }, timer)
 
       function hasScrolled() {
         var currentScrollTopPosition = $(this).scrollTop(),
             nearestZone = $(getNearestTop(selector)), // this should always grab the zone whose top is beneath the window's top
             targetZone = (nearestZone.offset().top - navBarHeight <= currentScrollTopPosition) ? nearestZone.next() : nearestZone
-
-        console.log('handling scroll event')
         
         // if scrolling down
         if(currentScrollTopPosition > lastScrollTop) {
@@ -124,17 +122,23 @@ path-to-root: ../
           console.log(targetZone)
           console.log()*/
           
-          $('html, body').animate({
+          $('html').animate({
             scrollTop: targetZone.offset().top - navBarHeight
-          }, timer)
+          }, timer, function () {
+            setInterval(function () { didScroll = false }, 50)
+            console.log('scroll down complete')
+          })
         } else {
           /*console.log('Scrolling up to: ')
           console.log(targetZone.prev())
           console.log()*/
           
-          $('html, body').animate({
+          $('html').animate({
             scrollTop: targetZone.prev().offset().top - navBarHeight
-          }, timer)
+          }, timer, function () {
+            setInterval(function () { didScroll = false }, 50)
+            console.log('scroll up complete')
+          })
         }
         lastScrollTop = currentScrollTopPosition
       }
