@@ -22,6 +22,10 @@
 .content {
   margin-bottom: 3rem; 
 }
+.content--no-card {
+  box-shadow: none;
+  background: transparent;
+}
 
 .zone {
   padding: 3rem 0;
@@ -37,6 +41,9 @@
 }
 .zone:nth-of-type(3n) {
   background: $thisislightorange;
+  p {
+    color: white; 
+  }
 }
 .zone:nth-of-type(3n + 1) {
   background: white;
@@ -46,16 +53,28 @@
 }
 .zone:nth-of-type(3n + 2) {
   background: $thisislightblue;
+  p {
+    color: white; 
+  }
 }
 .zone:last-of-type {
   box-shadow: 6px 6px 0 $box-shadow;
 }
+.zone-blurb {
+  margin: 0 auto;
+  width: 60%;
+  padding-bottom: 10rem;
+  font-size: 2rem;
+}
 .zone-content {
   display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
   .zone-element {
-    flex-basis: 30%;
-    width: 30%;
-    margin: 0 3rem;
+    flex-basis: 40%;
+    width: 40%;
+    margin: 0;
   }
 }
 .card {
@@ -65,12 +84,14 @@
   }
   .flat-btn--bottom {
     margin: 0; 
+    margin-top: 2rem;
   }
 }
 .card-text > h2 {
   font-size: 8rem;
   color: $thisisdarkblue;
   padding: 0;
+  text-align: left;
 }
 .card-text--padding {
   padding: 2rem 5rem;
