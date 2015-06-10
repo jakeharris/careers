@@ -91,7 +91,7 @@ path-to-root: ../
     <script>
       // Scroll tricks 
       var currentZone = 0,
-          selector = '.experience.content, .zone',
+          selector = 'header, .experience.content, .zone',
           scrollTo = $(selector),
           didScroll = false,
           lastScrollTop = 0,
@@ -105,12 +105,12 @@ path-to-root: ../
         return false
       })
 
-      setInterval(function () {
+      /*setInterval(function () {
         if(didScroll) {
           hasScrolled() 
         }
       }, timer)
-
+*/
       function hasScrolled() {
         var currentScrollTopPosition = $(this).scrollTop(),
             nearestZone = $(getNearestTop(selector)), // this should always grab the zone whose top is beneath the window's top

@@ -1,5 +1,13 @@
 @import 'app';
 
+html, body {
+  overflow-x: hidden;
+}
+
+header {
+  margin-bottom: 6px;
+}
+
 .container {
   width: 100% !important;
   max-width: none !important;
@@ -7,10 +15,55 @@
 }
 
 .contained,
+.buttons,
 .footer-wrap {
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
+}
+
+/* Thanks @keithclark! http://keithclark.co.uk/articles/pure-css-parallax-websites/ */
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  margin-right: -3rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.parallax-group {
+  position: relative;
+  height: 230px;
+  transform-style: preserve-3d;
+  margin-bottom: 200px;
+}
+.parallax-layer--base {
+  transform: translateZ(0);
+}
+.parallax-layer--back {
+  transform: translateZ(-1px) scale(2);
+}
+.handshake {
+  width: 100%;
+  height: auto;
+  overflow-y: hidden;
+  margin-top: -200px;
+  margin-left: -1rem;
+  opacity: 0.9;
+}
+
+.content.extra-content.contained {
+  margin-top: 2rem;
+}
+
+h2.header--white {
+  color: white;
 }
 
 .content > h2 {
@@ -39,21 +92,22 @@
     padding-bottom: 3rem;
   }
 }
-.zone:nth-of-type(3n) {
-  background: $thisislightorange;
-  p {
-    color: white; 
-  }
-}
-.zone:nth-of-type(3n + 1) {
+.zone:nth-of-type(4n),
+.zone:nth-of-type(4n + 2) {
   background: white;
-  h2 {
+  h2,p {
     color: $thisisdarkblue; 
   }
 }
-.zone:nth-of-type(3n + 2) {
+.zone:nth-of-type(4n + 1) {
   background: $thisislightblue;
-  p {
+  h2,p {
+    color: white; 
+  }
+}
+.zone:nth-of-type(4n + 3) {
+  background: $thisislightorange;
+  h2,p {
     color: white; 
   }
 }
@@ -63,9 +117,9 @@
 .zone-blurb {
   margin: 0 auto;
   width: 60%;
-  padding-bottom: 10rem;
-  font-size: 3rem;
-  line-height: 4.854rem;
+  padding-bottom: 5rem;
+  font-size: 2.4rem;
+  line-height: 3.8832rem;
 }
 .zone-content {
   display: flex;
