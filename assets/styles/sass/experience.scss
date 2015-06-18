@@ -37,9 +37,11 @@ h2 {
     height: 300px; 
     margin-bottom: 0;
   }
-  &.parallax-group--internship {
+  &.parallax-group--internship,
+  &.parallax-group--service,
+  &.parallax-group--international {
     height: 800px;
-  }
+  } 
 }
 .parallax-layer {
   position: absolute;
