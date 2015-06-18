@@ -2,5 +2,22 @@
 layout: no-social.hbs
 title: Internships | Career Center
 name: internships
+type: internships
 ---
 
+<section class="content extra-content hero">
+  <h2>Internships</h2>
+  <div class="buttons"></div>
+</section>
+
+<section class="faq content extra-content">
+  <h2>Frequently Asked Questions</h2>
+  {{#each internships.question}}
+    <a class="collapsed accordion-header" data-toggle="collapse" id="{{ id }}-heading" href="#{{ id }}" role="tab" aria-expanded="false" aria-controls="{{ id }}">
+      {{ question }}
+    </a>
+    <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ id }}-heading">
+      {{ answer }}
+    </div>
+  {{/each}}
+</section>

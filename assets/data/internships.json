@@ -1,0 +1,19 @@
+{
+  "question": [
+    {
+      "id": "what-is-an-internship",
+      "question": "What is an internship?",
+      "answer": "thing"
+    },
+    {
+      "id": "what-are-the-benefits-of-completing-an-internship",
+      "question": "What are the benefits of completing an internship?",
+      "answer": "thing"
+    },
+    {
+      "id": "how-do-i-find-an-internship",
+      "question": "How do I find an internship?",
+      "answer": "thing"
+    }
+  ]
+}
