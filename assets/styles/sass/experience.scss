@@ -64,7 +64,7 @@ h2 {
   background: $charcoal;
   height: 800px;
   position: absolute;
-  top: 0;
+  top: -400px;
   img {
     min-width: 1700px;
     width: 100%;
@@ -80,31 +80,26 @@ h2 {
     }
   }
   &.coop {
-    top: 330px;
     img {
       margin-top: -150px;
     }
   }
   &.leadership {
-    top: 80px;
     img {
-      margin-top: -30px;
+      margin-top: -130px;
     }
   }
   &.research {
-    top: 180px;
     img {
       
     }
   }
   &.service {
-    top: 200px; 
     img {
-      margin-top: -100px;
+      margin-top: -140px;
     }
   }
   &.international {
-    top: 200px;
     img {
       margin-top: -200px;
     }
