@@ -23,3 +23,25 @@
     padding-bottom: 1rem;
   }
 }
+.desktop-hide {
+  display: block;
+}
+.desktop-show {
+  display: none;
+}
+.phone-address {
+  display: inline-block;
+  padding-left: 3rem;
+  
+  position: relative;
+  top: -1.8rem;
+}
+
+@media (min-width: 768px) {
+  .desktop-hide {
+    display: none; 
+  }
+  .desktop-show {
+    display: block; 
+  }
+}
