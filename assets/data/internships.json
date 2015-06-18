@@ -3,12 +3,30 @@
     {
       "id": "what-is-an-internship",
       "question": "What is an internship?",
-      "answer": "thing"
+      "answer": "An internship is a professional development opportunity that integrates practical career related experience with postsecondary education in a structured, supervised work environment.",
+      "sidelist": {
+        "items": [
+          "May be paid",
+          "Typically one semester long",
+          "May count as class credit (consult your academic or faculty advisor for approval)",
+          "Available year-round"
+        ]
+      }
     },
     {
       "id": "what-are-the-benefits-of-completing-an-internship",
       "question": "What are the benefits of completing an internship?",
-      "answer": "thing"
+      "answer": "Degree related work experience makes you more marketable as a job candidate and allows you to gain greater understanding of your career field. Employers feel more confident when hiring candidates who have interned in their field, because they know the individual understands the positives and negatives of the position in advance.",
+      "sidelist": {
+        "items": [
+          "Enhancing your resume",
+          "Building your professional network",
+          "Learning more about your chosen industry or field",
+          "Becoming more knowledgeable about general work functions",
+          "Investigating organizational culture",
+          "Developing transferable skills such as effective communication, time management, report writing, and customer service"
+        ]
+      }
     },
     {
       "id": "how-do-i-find-an-internship",
