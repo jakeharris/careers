@@ -82,38 +82,40 @@ module.exports = function (grunt) {
     'parents/index.html': ['<%= config.views %>/families.hbs'],
     'faculty/index.html': ['<%= config.views %>/faculty.hbs'],
     'employers/index.html': ['<%= config.views %>/hire.hbs'],
-    'experience/index.html': ['<%= config.views %>/experience.hbs']
+    'experience/index.html': ['<%= config.views %>/experience.hbs'],
+    'experience/internships.html': ['<%= config.views %>/internships.hbs']
   },
-  VIEW_MAPPING_PROD = {
-    'dist/index.html':    ['<%= config.views %>/home.hbs'],
-    'dist/jobs/index.html': ['<%= config.views %>/jobs.hbs'],
-    'dist/events/index.html': ['<%= config.views %>/events.hbs'],
-    'dist/students/events/am.html': ['<%= config.views %>/events-pages/am.hbs'],
-    'dist/students/events/eid.html': ['<%= config.views %>/events-pages/eid.hbs'],
-    'dist/students/events/iptjf.html': ['<%= config.views %>/events-pages/iptjf.hbs'],
-    'dist/students/events/tech.html': ['<%= config.views %>/events-pages/tech.hbs'],
-    'dist/students/events/cmcd.html': ['<%= config.views %>/events-pages/cmcd.hbs'],
-    'dist/students/events/your-major.html': ['<%= config.views %>/events-pages/your-major.hbs'],
-    'dist/assessments/index.html': ['<%= config.views %>/assessments.hbs'],
-    'dist/aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs'],
-    'dist/resume/index.html': ['<%= config.views %>/resume.hbs'],
-    'dist/pathways/index.html': ['<%= config.views %>/pathways.hbs'],
-    'dist/aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
-    'dist/aboutus/plan-your-visit.html': ['<%= config.views %>/plan-your-visit.hbs'],
-    'dist/aboutus/campus-partners.html': ['<%= config.views %>/campus-partners.hbs'],
-    'dist/aboutus/staff.html': ['<%= config.views %>/staff.hbs'],
-    'dist/faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
-    'dist/faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs'],
-    'dist/students/index.html': ['<%= config.views %>/students/current.hbs'],
-    'dist/students/alumni.html': ['<%= config.views %>/students/alumni.hbs'],
-    'dist/students/current.html': ['<%= config.views %>/students/current.hbs'],
-    'dist/students/graduate.html': ['<%= config.views %>/students/graduate.hbs'],
-    'dist/students/prospective.html': ['<%= config.views %>/students/prospective.hbs'],
-    'dist/parents/index.html': ['<%= config.views %>/families.hbs'],
-    'dist/faculty/index.html': ['<%= config.views %>/faculty.hbs'] ,
-    'dist/employers/index.html': ['<%= config.views %>/hire.hbs'],
-    'dist/experience/index.html': ['<%= config.views %>/experience.hbs']
-  }
+    VIEW_MAPPING_PROD = {
+      'dist/index.html':    ['<%= config.views %>/home.hbs'],
+      'dist/jobs/index.html': ['<%= config.views %>/jobs.hbs'],
+      'dist/events/index.html': ['<%= config.views %>/events.hbs'],
+      'dist/students/events/am.html': ['<%= config.views %>/events-pages/am.hbs'],
+      'dist/students/events/eid.html': ['<%= config.views %>/events-pages/eid.hbs'],
+      'dist/students/events/iptjf.html': ['<%= config.views %>/events-pages/iptjf.hbs'],
+      'dist/students/events/tech.html': ['<%= config.views %>/events-pages/tech.hbs'],
+      'dist/students/events/cmcd.html': ['<%= config.views %>/events-pages/cmcd.hbs'],
+      'dist/students/events/your-major.html': ['<%= config.views %>/events-pages/your-major.hbs'],
+      'dist/assessments/index.html': ['<%= config.views %>/assessments.hbs'],
+      'dist/aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs'],
+      'dist/resume/index.html': ['<%= config.views %>/resume.hbs'],
+      'dist/pathways/index.html': ['<%= config.views %>/pathways.hbs'],
+      'dist/aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
+      'dist/aboutus/plan-your-visit.html': ['<%= config.views %>/plan-your-visit.hbs'],
+      'dist/aboutus/campus-partners.html': ['<%= config.views %>/campus-partners.hbs'],
+      'dist/aboutus/staff.html': ['<%= config.views %>/staff.hbs'],
+      'dist/faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
+      'dist/faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs'],
+      'dist/students/index.html': ['<%= config.views %>/students/current.hbs'],
+      'dist/students/alumni.html': ['<%= config.views %>/students/alumni.hbs'],
+      'dist/students/current.html': ['<%= config.views %>/students/current.hbs'],
+      'dist/students/graduate.html': ['<%= config.views %>/students/graduate.hbs'],
+      'dist/students/prospective.html': ['<%= config.views %>/students/prospective.hbs'],
+      'dist/parents/index.html': ['<%= config.views %>/families.hbs'],
+      'dist/faculty/index.html': ['<%= config.views %>/faculty.hbs'],
+      'dist/employers/index.html': ['<%= config.views %>/hire.hbs'],
+      'dist/experience/index.html': ['<%= config.views %>/experience.hbs'],
+      'dist/experience/internships.html': ['<%= config.views %>/internships.hbs']
+    };
   
   grunt.initConfig({
 
@@ -342,7 +344,7 @@ module.exports = function (grunt) {
         dest: '<%= config.dist %>/<%= config.assets %>/styles'
       },
       js: {
-        src: '<%= config.dist %>/assets/scripts/{,*/}*.min.js' ,
+        src: '<%= config.dist %>/assets/scripts/{,*/}*.min.js',
         dest: '<%= config.dist %>/<%= config.assets %>/scripts'
       }
     },
@@ -355,7 +357,7 @@ module.exports = function (grunt) {
     usemin: {
       html: 'dist/**/*.html',
       options: {
-        assetsDirs: ['dist'] 
+        assetsDirs: ['dist']
       }
     }
 
@@ -371,7 +373,7 @@ module.exports = function (grunt) {
   // # grunt compile
   // Compile the project. Generate CSS and HTML from Sass and Handlebars.
   grunt.registerTask('compile', 'Compile the project. Generate CSS and HTML from Sass and Handlebars.', function (target) {
-    if(target !== 'dev' && target !== 'prod') {
+    if (target !== 'dev' && target !== 'prod') {
       grunt.log.error('Invalid target `' + target + '`. [valid: dev, prod]');
       return false;
     }
@@ -434,4 +436,4 @@ module.exports = function (grunt) {
       //'ftp-deploy:' + target
     ])
   });*/
-}
+};
