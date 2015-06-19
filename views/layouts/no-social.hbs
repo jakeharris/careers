@@ -73,6 +73,25 @@ path-to-root: ../
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
     <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
+    {{#is name "internships"}}
+      <script>
+        $(function () {
+          $('.faq-checklist-item').each(function (i, e) {
+            $($($(this).children('.switch')[0]).children('input')[0]).on('change', function () {
+              var conditionalResults = $(this).parent().siblings('.if-yes, .if-no')
+              console.log(conditionalResults)
+              if(this.checked) {
+                $(conditionalResults[0]).show()
+                $(conditionalResults[1]).hide()
+              } else {
+                $(conditionalResults[0]).hide()
+                $(conditionalResults[1]).show()
+              }
+            })
+          })
+        })
+      </script>
+    {{/is}}
     <script>
       var nav = responsiveNav('.nav-collapse', {
         label: '' 
