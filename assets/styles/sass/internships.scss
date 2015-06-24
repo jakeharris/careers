@@ -123,3 +123,7 @@ input.radio:checked + label {
     width: 45%;
   }
 }
+.note {
+  @extend .muted;
+  width: 50%;
+}
