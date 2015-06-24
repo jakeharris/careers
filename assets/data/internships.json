@@ -68,7 +68,7 @@
           {
             "id": "report-placement",
             "condition": "Want to help future students get connected? Or would you like to brag about your internship placement?",
-            "if-yes": "here at the Career Center, and then you're done!",
+            "if-yes": "to the Career Center, and then you're done!",
             "if-yes-button": {
               "text": "Report your placement",
               "url": ""
