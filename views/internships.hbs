@@ -11,7 +11,10 @@ type: internships
 
 <section class="resources content extra-content">
   <h2>Resources</h2>
-  <div class="buttons"></div>
+  <div class="buttons">
+    <a href="experience/contacts.html" class="flat-btn flat-btn--half">Department Contacts</a>
+    <a href="experience/housing.html" class="flat-btn flat-btn--half">Housing</a>
+  </div>
 </section>
 
 <section class="faq content extra-content">
@@ -68,11 +71,21 @@ type: internships
             {{/each}}
           </ol>
         </div>
+    </div>
+    {{else}} {{#if resources}}
+      <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-answer" role="tabpanel" aria-labelledby="{{ id }}-heading">
+        <p>{{answer}}</p>
+        <p class="muted"><strong>Note: </strong> {{note}}</p>
+        <ul class="faq-resources">
+          {{#each resources}}
+            <li><a class="flat-btn {{#if external}}flat-btn--white{{/if}}" href="{{ url }}">{{text}}</a></li>
+          {{/each}}
+        </ul>
       </div>
     {{else}}
       <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-answer" role="tabpanel" aria-labelledby="{{ id }}-heading">
         {{ answer }}
       </div>
-    {{/if}}{{/if}}
+    {{/if}}{{/if}}{{/if}}
   {{/each}}
 </section>

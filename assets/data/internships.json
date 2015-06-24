@@ -32,9 +32,10 @@
       "id": "how-do-i-find-an-internship",
       "question": "How do I find an internship?",
       "answer": "The short answer: start early, and get in touch.",
+      "note": "Connecting and interviewing with employers requires a TRL login. If you don't already have one, you'll be instructed to create one once you're there. Just use your Auburn credentials!",
       "resources": [
         {
-          "text": "Connect with Mentoring Employers",
+          "text": "Connect with Employers",
           "url": "http://jobs.auburn.edu/"
         },
         {
@@ -42,8 +43,13 @@
           "url": "http://auburn.edu/career/events"
         },
         {
+          "text": "Interview On-Campus",
+          "url": "http://jobs.auburn.edu/"
+        },
+        {
           "text": "Discover External Internships",
-          "url": "http://www.internships.com/"
+          "url": "http://www.internmatch.com/",
+          "external": "true"
         }
       ]
     },

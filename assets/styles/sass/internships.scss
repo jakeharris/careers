@@ -108,6 +108,18 @@ input.radio:checked + label {
   background-color: $thisislightblue;
   color: white;
 }
-.if-yes-button {
-  
+
+
+.faq-resources {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  li {
+    display: inline-flex;
+    flex-basis: 45%;
+    width: 45%;
+  }
 }
