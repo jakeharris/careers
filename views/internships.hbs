@@ -39,24 +39,28 @@ type: internships
           {{ answer }}
         </div>
         <div class="faq-checklist-container">
-          <ol class="faq-checklist">
+          <ul class="faq-checklist">
             {{#each checklist.items}}
-              <li class="faq-checklist-item">
+              <li class="faq-checklist-item hidden">
                 <h4 class="condition">{{ condition }}</h4>
                 <div class="switch">
-                  <input id="{{id}}" class="cmn-toggle cmn-toggle-yes-no" type="checkbox" {{#unless if-no}} disabled="disabled" checked="checked"{{/unless}}>
-                  <label for="{{id}}" {{#if if-no}} data-on="Yes" {{else}} data-on="Of course!" {{/if}} data-off="No"></label>
+                  <input id="{{ id }}-yes" name="{{ id }}" class="radio" type="radio" {{#unless if-no}} disabled="disabled" checked="checked"{{/unless}}>
+                  <label for="{{ id }}-yes" class="if-yes-label {{#if if-no}}half-label{{else}}disabled-label{{/if}}">{{#if if-no}}Yes{{else}}Of course you do!{{/if}}</label>
+                  {{#if if-no}}
+                    <input id="{{ id }}-no" name="{{ id }}" class="radio" type="radio">
+                    <label for="{{ id }}-no" class="if-no-label half-label">No</label>
+                  {{/if}}
                 </div>
                 {{#if if-yes}}
-                  <div class="if-yes" data-for="{{id}}">
-                    {{ if-yes }}
+                  <div class="if-yes switch-result" data-for="{{id}}-yes" {{#unless if-yes-button}} style="display: none;" {{/unless}}>
                     {{#if if-yes-button}}
-                      <a href="{{if-yes-button.url}}">{{if-yes-button.text}}</a>
+                      <a class="if-yes-button" href="{{if-yes-button.url}}">{{if-yes-button.text}}</a>
                     {{/if}}
+                    {{ if-yes }}
                   </div>
                 {{/if}}
                 {{#if if-no}}
-                  <div class="if-no" data-for="{{id}}">
+                  <div class="if-no switch-result" data-for="{{id}}-no" style="display: none;">
                     {{ if-no }}
                   </div>
                 {{/if}}

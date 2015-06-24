@@ -62,15 +62,15 @@
           {
             "id": "scholarship",
             "condition": "Will you be interning during a semester in which you would ordinarily receive scholarship funding?",
-            "if-yes": "Get in touch with your scholarship provider or financial aid representative to delay your scholarships to a semester in which you'll be a full-time student, if necessary",
+            "if-yes": "Get in touch with your scholarship provider or financial aid representative to delay your scholarships to a semester in which you'll be a full-time student, if necessary.",
             "if-no": "You're done with that, then. Keep moving!"
           },
           {
             "id": "report-placement",
             "condition": "Want to help future students get connected? Or would you like to brag about your internship placement?",
-            "if-yes": "Report your placement here at the Career Center!",
+            "if-yes": "here at the Career Center, and then you're done!",
             "if-yes-button": {
-              "text": "Report Placement",
+              "text": "Report your placement",
               "url": ""
             }
           }

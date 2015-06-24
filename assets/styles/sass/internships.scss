@@ -2,7 +2,7 @@
 
 $thisislighterblue: #698ebc;
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: $header-font-family;
 }
 h1 {
@@ -16,9 +16,13 @@ h3 {
   font-size: 2.7rem;
   float: clear;
   color: $thisislightblue;
+  padding-bottom: 1rem;
   &:hover { 
     color: $thisislighterblue; 
   }
+}
+h4 {
+  font-size: 2.7rem;
 }
 
 .faq-header {
@@ -56,56 +60,54 @@ h3 {
   }
 }
 
-// Thanks @callmenick! http://callmenick.com/post/css-toggle-switch-examples
-.cmn-toggle {
+.faq-checklist-container {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+}
+.condition {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+.switch {
+  padding-bottom: 3rem;
+}
+.hidden {
+  display: none;
+}
+.switch-result {
+  min-height: 10rem;
+}
+.radio {
   position: absolute;
   margin-left: -9999px;
   visibility: hidden;
 }
-.cmn-toggle + label {
+.radio + label {
   display: block;
   position: relative;
   cursor: pointer;
   outline: none;
   user-select: none;
 }
-input.cmn-toggle-yes-no + label {
-  padding: 2px;
-  width: 24rem;
-  height: 8rem;
-}
-input.cmn-toggle-yes-no + label:before,
-input.cmn-toggle-yes-no + label:after {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  font-family: $header-font-family;
-  font-size: 4rem;
-  text-align: center;
-  line-height: 60px;
-  box-shadow: 6px 6px 0 $box-shadow;
-}
-input.cmn-toggle-yes-no + label:before {
+input.radio + label {
+  @extend .flat-btn;
+  margin-right: 3rem;
   background-color: white;
   color: $thisislightblue;
-  content: attr(data-off);
-  transition: transform 0.5s;
-  backface-visibility: hidden;
 }
-input.cmn-toggle-yes-no + label:after {
+input.radio + label.half-label {
+  @extend .flat-btn--half;
+}
+input.radio + label.disabled-label,
+input.radio:checked + label.disabled-label {
+  @extend .flat-btn--disabled;
+  color: $box-shadow;
+}
+input.radio:checked + label {
   background-color: $thisislightblue;
   color: white;
-  content: attr(data-on);
-  transition: transform 0.5s;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
 }
-input.cmn-toggle-yes-no:checked + label:before {
-  transform: rotateY(180deg);
-}
-input.cmn-toggle-yes-no:checked + label:after {
-  transform: rotateY(0);
+.if-yes-button {
+  
 }
