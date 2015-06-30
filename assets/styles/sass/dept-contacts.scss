@@ -3,3 +3,56 @@
 .dudley {
   margin-top: -300px;
 }
+
+.partner-content {
+  align-items: flex-start;
+}
+.dept-accordion {
+  box-shadow: 6px 6px 0 $box-shadow;
+}
+.accordion-header {
+  font-size: 3rem;
+  padding: 1rem 0;
+  z-index: 1;
+  
+  h2 {
+    display: block;
+    color: $thisislightblue;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding: 1.2rem 0;
+    &:hover {
+      color: $thisislightorange; 
+    }
+  }
+  i:before {
+    text-align: center;
+    display: inline-block;
+    padding: 0;
+    padding-left: 5rem;
+    font-size: 4rem;
+    @extend .icon;
+    @extend .icon-chevron-up;
+  }
+  &.collapsed {
+    i:before {
+      @extend .icon-chevron-down; 
+    }
+  }
+}
+
+.dept-contact {
+  display: block;
+  
+  width: 100%;
+  padding: 1.5rem 3rem;
+  
+  background: $thisislightblue;
+  color: white;
+  
+  &:hover {
+    background: $thisisdarkblue;
+    color: white;
+  }
+}
