@@ -31,7 +31,7 @@
     display: inline-block;
     padding: 0;
     padding-left: 5rem;
-    font-size: 4rem;
+    font-size: 3rem;
     @extend .icon;
     @extend .icon-chevron-up;
   }
@@ -51,8 +51,16 @@
   background: $thisislightblue;
   color: white;
   
+  .muted {
+    display: none;
+  }
   &:hover {
     background: $thisisdarkblue;
     color: white;
+  }
+  &:hover .muted {
+    display: inline-block;
+    color: #aaa;
+    padding-left: 1rem; 
   }
 }
