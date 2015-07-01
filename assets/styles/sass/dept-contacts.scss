@@ -6,11 +6,11 @@
 .dept-accordion {
   box-shadow: 6px 6px 0 $box-shadow;
 }
-.partner-contact p {
-  margin-bottom: 3rem;
-}
 .partner-info {
   padding-top: 3rem;
+  p {
+    margin-bottom: 3rem;
+  }
 }
 .accordion-header {
   font-size: 2.2rem;
