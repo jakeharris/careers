@@ -1,9 +1,5 @@
 @import 'campus-partners';
 
-.dudley {
-  margin-top: -300px;
-}
-
 .partner-content {
   align-items: flex-start;
 }
@@ -13,8 +9,11 @@
 .partner-contact p {
   margin-bottom: 3rem;
 }
+.partner-info {
+  padding-top: 3rem;
+}
 .accordion-header {
-  font-size: 3rem;
+  font-size: 2.2rem;
   padding: 1rem 0;
   z-index: 1;
   
@@ -26,13 +25,15 @@
     margin: 0;
     padding: 0;
     padding: 1.5rem 0;
+    font-size: 18px;
+    padding-bottom: 2rem;
   }
   i:before {
     text-align: center;
     display: inline-block;
     padding: 0;
     padding-left: 5rem;
-    font-size: 3rem;
+    font-size: 18px;
     @extend .icon;
     @extend .icon-chevron-up;
   }
@@ -72,26 +73,49 @@
   }
 }
 
-/*********************/
-/* Image positioning */
-/*********************/
-
-.haley {
-  margin-top: -200px;
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+@media (min-width: $medium-screen-size) {
+  .partner-info {
+    padding-top: 0; 
+  }
 }
+@media (min-width: $moderate-screen-size) {
+  .accordion-header {
+    h2 {
+      font-size: 3rem;
+      padding: 1.5rem 0;
+    }
+    i:before {
+      font-size: 3rem; 
+    }
+  }
+  /*********************/
+  /* IMAGE POSITIONING */
+  /*********************/
+  
+  .dudley {
+    margin-top: -300px;
+  }
 
-.fws {
-  margin-top: -120px;
-}
+  .haley {
+    margin-top: -200px;
+  }
 
-.humsci {
-  margin-top: -50px;
-}
+  .fws {
+    margin-top: -120px;
+  }
 
-.cola, .cosam {
-  margin-top: -50px;
-}
+  .humsci {
+    margin-top: -50px;
+  }
 
-.nursing {
-  margin-top: -380px;
+  .cola, .cosam {
+    margin-top: -50px;
+  }
+
+  .nursing {
+    margin-top: -380px;
+  }
 }
