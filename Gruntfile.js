@@ -84,7 +84,8 @@ module.exports = function (grunt) {
     'employers/index.html': ['<%= config.views %>/hire.hbs'],
     'experience/index.html': ['<%= config.views %>/experience.hbs'],
     'experience/internships.html': ['<%= config.views %>/internships.hbs'],
-    'experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs']
+    'experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
+    'experience/housing.html': ['<%= config.views %>/housing.hbs']
   },
     VIEW_MAPPING_PROD = {
       'dist/index.html':    ['<%= config.views %>/home.hbs'],
@@ -116,7 +117,8 @@ module.exports = function (grunt) {
       'dist/employers/index.html': ['<%= config.views %>/hire.hbs'],
       'dist/experience/index.html': ['<%= config.views %>/experience.hbs'],
       'dist/experience/internships.html': ['<%= config.views %>/internships.hbs'],
-      'dist/experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs']
+      'dist/experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
+      'dist/experience/housing.html': ['<%= config.views %>/housing.hbs']
     };
   
   grunt.initConfig({

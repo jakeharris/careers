@@ -1,0 +1,21 @@
+@import 'pathways';
+
+.regions {
+  @extend .colleges;
+}
+
+.region {
+  @extend .college;
+}
+
+.region-content {
+  padding: 0;
+}
+
+.listing {
+  @extend .pathway;
+}
+
+.muted {
+  display: block;
+}

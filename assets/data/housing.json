@@ -1,0 +1,191 @@
+{
+  "__region_notes": "Each region MUST have a name, full name, and image (img). Each MAY not have a listings object, but if it does, it MUST contain a complete listing object.",
+  "__pathway_notes": "Each listing MUST have a name, location, and link.",
+  "__empty_region": {
+    "name": "",
+    "fullname": "",
+    "img": "",
+    "listings": [
+      {
+        "name": "",
+        "location": "",
+        "link": ""
+      }
+    ]
+  },
+  "region": [
+    {
+      "name": "s",
+      "fullname": "South",
+      "img": "south",
+      "listings": [
+        {
+          "name": "Georgia Tech",
+          "location": "Atlanta, GA",
+          "link": "http://www.conference.gatech.edu/internlodging/index.cfm"
+        },
+        {
+          "name": "Emory University",
+          "location": "Atlanta, GA",
+          "link": "http://www.emory.edu/sihp/"
+        },
+        {
+          "name": "University of Central Florida",
+          "location": "Orlando, FL",
+          "link": "http://www.housing.ucf.edu/conferences/intern/"
+        },
+        {
+          "name": "UNC Charlotte",
+          "location": "Charlotte, NC",
+          "link": "http://housing.uncc.edu/conference-services/welcome"
+        },
+        {
+          "name": "Queens University of Charlotte",
+          "location": "Charlotte, NC",
+          "link": "http://www.queens.edu/About-Queens/Facility-Rentals/Summer-Intern-Housing.html"
+        },
+        {
+          "name": "Vanderbilt University",
+          "location": "Nashville, TN",
+          "link": "http://www.vanderbilt.edu/conferences/intern-housing/"
+        }
+      ]
+    },
+    {
+      "name": "w",
+      "fullname": "West",
+      "img": "west",
+      "listings": [
+        {
+          "name": "UC Irvine",
+          "location": "Los Angelos, CA",
+          "link": "http://www.housing.uci.edu/summer/"
+        },
+        {
+          "name": "Seattle University",
+          "location": "Seattle, WA",
+          "link": "http://www.seattleu.edu/housing/applying/summer/"
+        }
+      ]
+    },
+    {
+      "name": "mw",
+      "fullname": "Midwest",
+      "img": "midwest",
+      "listings": [
+        {
+          "name": "University of Illinois at Chicago",
+          "location": "Chicago, IL",
+          "link": "http://www.housing.uic.edu/intern/index.php"
+        },
+        {
+          "name": "Grand View University Summer Program",
+          "location": "Des Moines, IO",
+          "link": "http://www.desmoinesmetro.com/regional-workforce/job-support-services/interns/default.asp"
+        },
+        {
+          "name": "Xavier University",
+          "location": "Cincinnati, OH",
+          "link": "http://www.xavier.edu/summer-conference/Summer-Internships.cfm"
+        }
+      ]
+    },
+    {
+      "name": "ne",
+      "fullname": "Northeast",
+      "img": "northeast",
+      "listings": [
+        {
+          "name": "Georgetown University",
+          "location": "Washington, D.C.",
+          "link": "http://housing.georgetown.edu/summer/index.cfm"
+        },
+        {
+          "name": "Georgetown Law Center",
+          "location": "Washington, D.C.",
+          "link": "http://www.law.georgetown.edu/campus-life/housing-residence-life/summer-housing/index.cfm"
+        },
+        {
+          "name": "George Washington University",
+          "location": "Washington, D.C.",
+          "link": "http://gwired.gwu.edu/gwhousing/?url=gwhousing"
+        },
+        {
+          "name": "The International Student House",
+          "location": "Washington, D.C.",
+          "link": "http://www.ishdc.org/"
+        },
+        {
+          "name": "Thompson-Markwood Hall",
+          "location": "Washington, D.C.",
+          "link": "http://www.ywch.org/"
+        },
+        {
+          "name": "Washington Intern Student Housing",
+          "location": "Washington, D.C.",
+          "link": "http://www.internsdc.com"
+        },
+        {
+          "name": "Partnership for Public Service",
+          "location": "Washington, D.C.",
+          "link": "http://makingthedifference.org/federalinternships/dchousingguide.shtml"
+        },
+        {
+          "name": "Columbia University",
+          "location": "New York City, NY",
+          "link": "http://housingservices.columbia.edu/content/summer-residents"
+        },
+        {
+          "name": "Educational Housing Services",
+          "location": "New York City, NY",
+          "link": "http://www.studenthousing.org"
+        },
+        {
+          "name": "NYC Intern",
+          "location": "New York City, NY",
+          "link": "http://www.nycintern.org/"
+        },
+        {
+          "name": "NYU Summer Housing",
+          "location": "New York City, NY",
+          "link": "http://www.nyu.edu/summer/housing/"
+        },
+        {
+          "name": "NYU Polytechnic",
+          "location": "New York City, NY",
+          "link": "http://www.poly.edu/life/campus/summer"
+        },
+        {
+          "name": "Drexel University",
+          "location": "Philadelphia, PA",
+          "link": "http://drexel.edu/dbs/eventConference/conferenceCenter/SummerInternHousingProgram/"
+        },
+        {
+          "name": "University of Pennsylvania",
+          "location": "Philadelphia, PA",
+          "link": "http://www.destinationpenn.com/housing/intern_housing.asp"
+        },
+        {
+          "name": "Villanova University",
+          "location": "Philadelphia, PA",
+          "link": "http://www1.villanova.edu/villanova/services/conferenceservices/internhousing.html"
+        },
+        {
+          "name": "Boston University",
+          "location": "Boston, MA",
+          "link": "http://www.bu.edu/housing/summer/internship/"
+        },
+        {
+          "name": "Northeastern University",
+          "location": "Boston, MA",
+          "link": "http://www.northeastern.edu/conferences/intern/index.html"
+        },
+        {
+          "name": "Suffolk University",
+          "location": "Boston, MA",
+          "link": "http://www2.suffolk.edu/offices/33815.html"
+        }
+      ]
+    }
+  ]
+}
