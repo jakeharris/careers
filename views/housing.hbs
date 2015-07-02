@@ -16,15 +16,11 @@ layout: no-social.hbs
     <div class="region">
       <div class="hero">
         {{#if listings}}
-          <img class="{{ name }}" src="assets/images/regions/{{ img }}.jpg">
           <div class="region-header hero-content">
-            <div class="overlay"></div>
             <h2>{{ fullname }}</h2>
           </div>
         {{else}}
-          <img class="{{ name }} grayscale grayscale-fade" src="assets/images/regions/{{ img }}.jpg">
           <div class="region-header hero-content coming-soon">
-            <div class="overlay"></div>
             <h2>{{ fullname }}</h2>
           </div>
         {{/if}}

@@ -19,3 +19,68 @@
 .muted {
   display: block;
 }
+
+.region-header {
+  background: $thisislightblue;
+  color: white;
+}
+
+.region:nth-of-type(4n) {
+  .region-header {
+    background: $bg-gray;
+    h2 {color: $charcoal;}
+  }
+  .listing {
+    background: $bg-gray;
+    color: $charcoal;
+  }
+  .listing:hover {
+    background: $box-shadow;
+    color: $charcoal;
+  }
+}
+.region:nth-of-type(4n + 1) {
+  .region-header {
+    background: $thisislightblue;
+    h2 {color: white;}
+  }
+  .listing {
+    background: $thisislightblue;
+    color: white;
+  }
+  .listing:hover {
+    background: $thisisdarkblue;
+    color: white;
+  }
+}
+.region:nth-of-type(4n + 2) {
+  .region-header {
+    background: $thisislightorange;
+    h2 {color: white;}
+  }
+  .listing {
+    background: $thisislightorange;
+    color: white;
+    .muted {
+      color: $charcoal; 
+    }
+  }
+  .listing:hover {
+    background: $thisisburntorange;
+    color: white;
+  }
+}
+.region:nth-of-type(4n + 3) {
+  .region-header {
+    background: $charcoal;
+    h2 {color: white;}
+  }
+  .listing {
+    background: $charcoal;
+    color: white;
+  }
+  .listing:hover {
+    background: black;
+    color: white;
+  }
+}
