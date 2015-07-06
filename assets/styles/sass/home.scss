@@ -159,6 +159,11 @@ iframe {
   margin: 0;
 }
 
+.carousel-control.left,
+.carousel-control.right {
+  background: none;
+}
+
 /*
    *************************
    ***** MEDIA QUERIES ***** 
