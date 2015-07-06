@@ -103,7 +103,6 @@ h2 {
 }
 
 .zone {
-  padding: 0 20%;
   padding-bottom: 5rem;
   width: 100%;
   box-shadow: 6px 6px 0 $box-shadow;
@@ -143,7 +142,7 @@ h2 {
 .zone-content {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 3rem; 
   .zone-element {
@@ -154,8 +153,23 @@ h2 {
 }
 .zone-blurb {
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
   padding-bottom: 5rem;
   font-size: 2.4rem;
   line-height: 3.8832rem;
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width: $small-screen-size) {
+  .zone-content, .zone-blurb {
+    width: 65%; 
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .zone-content, .zone-blurb {
+    width: 45%; 
+  }
 }
