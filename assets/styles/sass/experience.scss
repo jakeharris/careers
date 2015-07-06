@@ -1,5 +1,21 @@
 @import 'app';
 
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin:0;
+  padding:0;
+  perspective: 1px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden; 
+}
+
 header {
   margin-bottom: 6px;
 }
@@ -10,114 +26,91 @@ header {
   padding: 0;
 }
 
-.experience-banner {
+.experience-header {
   width: 100%;
-  height: 10rem;
   text-align: center;
   padding: 1rem 0;
+  padding-bottom: 5rem;
 }
 
 h2 {
   margin: 0;
 }
 
-/* Thanks @keithclark! http://keithclark.co.uk/articles/pure-css-parallax-websites/ */
-.parallax {
-  perspective: 10px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.parallax-group {
+.slide {
   position: relative;
-  height: 600px; /* max-height of the text area */
-  transform-style: preserve-3d;
-  margin-bottom: 300px;
-  &.parallax-group--experience {
-    height: 300px; 
-    margin-bottom: 0;
-  }
-  &.parallax-group--internship,
-  &.parallax-group--service,
-  &.parallax-group--international {
-    height: 800px;
-  } 
-}
-.parallax-layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.parallax-layer--base {
-  transform: translateZ(0);
-}
-.parallax-layer--back {
-  transform: translateZ(-4px) scale(1.4);
-  position: relative;
-}
-.parallax-layer--deeper {
-  transform: translateZ(-5px) scale(6);
-}
-.parallax-layer--back-image {
-  width: 100%;
+  padding: 0;
+  padding-top: 30vh;
+  width: 100vw;
+  box-sizing: border-box;
+  transform-style: inherit;
   overflow: hidden;
-  background: $charcoal;
-  height: 800px;
+}
+.slide:before {
+  content: "";
   position: absolute;
-  top: -400px;
-  img {
-    min-width: 1700px;
-    width: 100%;
-    height: auto;
-    opacity: 0.7;
-    background-color: $charcoal;
-    display: inline-block;
-  }
-  &.banner-img {
-    top: -150px;
-    img {
-      margin-top: -220px;
-    }
-  }
-  &.coop {
-    img {
-      margin-top: -150px;
-    }
-  }
-  &.leadership {
-    img {
-      margin-top: -130px;
-    }
-  }
-  &.research {
-    img {
-      
-    }
-  }
-  &.service {
-    img {
-      margin-top: -140px;
-    }
-  }
-  &.international {
-    img {
-      margin-top: -200px;
-    }
-  }
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+.slide, .slide:before {
+  background: 50% 50% / cover;
+}
+.slide#experience {
+  min-height: 30vh;
+  padding: 5vh 0;
+}
+.slide#internships {
+  padding-top: 0;
+}
+
+#experience {
+  background-image: url("../images/experience/experience.jpg");
+  background-position-y: 0vh;
+  background-attachment: fixed;  
+}
+.slide:before {
+  top: -12vh;
+  z-index: -1;
+}
+#coops:before {
+  background-image: url("../images/experience/coop.jpg");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
+}
+#leadership:before {
+  background-image: url("../images/experience/leadership.jpg");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
+}
+#research:before {
+  background-image: url("../images/experience/research.jpg");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
+}
+#service:before {
+  background-image: url("../images/experience/service.jpg");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
+}
+#international:before {
+  background-image: url("../images/experience/international.png");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
 }
 
 .zone {
-  padding: 3rem 30rem;
+  padding: 0 20%;
   padding-bottom: 5rem;
   width: 100%;
-  height: auto;
   box-shadow: 6px 6px 0 $box-shadow;
   background: white;
 }
 .zone > h2,
-.experience-banner > h2 {
+.experience-header > h2 {
   padding-top: 5rem;
   color: white; 
   font-size: 10rem;
@@ -125,23 +118,23 @@ h2 {
   padding-bottom: 3rem;
   font-family: $header-font-family;
 }
-.experience-banner > h2 {
+.experience-header > h2 {
   padding-top: 8.7rem;
 }
-.parallax-group:nth-of-type(4n + 1) .zone,
-.parallax-group:nth-of-type(4n + 3) .zone {
+.slide:nth-of-type(4n + 1) .zone,
+.slide:nth-of-type(4n + 3) .zone {
   background: white;
   h2,p {
     color: $thisisdarkblue; 
   }
 }
-.parallax-group:nth-of-type(4n + 2) .zone {
+.slide:nth-of-type(4n + 2) .zone {
   background: $thisislightblue;
   h2,p {
     color: white; 
   }
 }
-.parallax-group:nth-of-type(4n) .zone {
+.slide:nth-of-type(4n) .zone {
   background: $thisislightorange;
   h2,p {
     color: white; 
