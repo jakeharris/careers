@@ -1,0 +1,91 @@
+---
+layout: no-social.hbs
+title: Internships | Career Center
+name: internships
+type: internships
+---
+
+<section class="content extra-content hero">
+  <h1>Internships</h1>
+</section>
+
+<section class="resources content extra-content">
+  <h2>Resources</h2>
+  <div class="buttons">
+    <a href="experience/dept-contacts.html" class="flat-btn flat-btn--half">Department Contacts</a>
+    <a href="experience/housing.html" class="flat-btn flat-btn--half">Housing</a>
+  </div>
+</section>
+
+<section class="faq content extra-content">
+  <h2 class="faq-header">Frequently Asked Questions</h2>
+  {{#each internships.question}}
+    <a class="collapsed accordion-header" data-toggle="collapse" id="{{ id }}-heading" href="#{{ id }}" role="tab" aria-expanded="false" aria-controls="{{ id }}">
+      <h3>{{ question }}</h3>
+    </a>
+    {{#if sidelist}}
+      <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-question-contents" role="tabpanel" aria-labelledby="{{ id }}-heading">
+        <div class="faq-answer faq-answer--with-sidelist">
+          {{ answer }}
+        </div>
+        <div class="faq-sidelist-container">
+          <ul class="faq-sidelist">
+          {{#each sidelist.items}} 
+            <li class="faq-sidelist-item"> {{ this }}</li>
+          {{/each}}
+          </ul>
+        </div>
+      </div>
+    {{else}} {{#if checklist}}
+      <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-question-contents" role="tabpanel" aria-labelledby="{{ id }}-heading">
+        <div class="faq-answer faq-answer--with-checklist">
+          {{ answer }}
+        </div>
+        <div class="faq-checklist-container">
+          <ul class="faq-checklist">
+            {{#each checklist.items}}
+              <li class="faq-checklist-item hidden">
+                <h4 class="condition">{{ condition }}</h4>
+                <div class="switch">
+                  <input id="{{ id }}-yes" name="{{ id }}" class="radio" type="radio" {{#unless if-no}} disabled="disabled" checked="checked"{{/unless}}>
+                  <label for="{{ id }}-yes" class="if-yes-label {{#if if-no}}half-label{{else}}disabled-label{{/if}}">{{#if if-no}}Yes{{else}}Of course you do!{{/if}}</label>
+                  {{#if if-no}}
+                    <input id="{{ id }}-no" name="{{ id }}" class="radio" type="radio">
+                    <label for="{{ id }}-no" class="if-no-label half-label">No</label>
+                  {{/if}}
+                </div>
+                {{#if if-yes}}
+                  <div class="if-yes switch-result" data-for="{{id}}-yes" {{#unless if-yes-button}} style="display: none;" {{/unless}}>
+                    {{#if if-yes-button}}
+                      <a class="if-yes-button" href="{{if-yes-button.url}}">{{if-yes-button.text}}</a>
+                    {{/if}}
+                    {{ if-yes }}
+                  </div>
+                {{/if}}
+                {{#if if-no}}
+                  <div class="if-no switch-result" data-for="{{id}}-no" style="display: none;">
+                    {{ if-no }}
+                  </div>
+                {{/if}}
+              </li>
+            {{/each}}
+          </ol>
+        </div>
+    </div>
+    {{else}} {{#if resources}}
+      <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-answer" role="tabpanel" aria-labelledby="{{ id }}-heading">
+        <p>{{answer}}</p>
+        <p class="note"><strong>Note: </strong> {{note}}</p>
+        <ul class="faq-resources">
+          {{#each resources}}
+            <li><a class="flat-btn {{#if external}}flat-btn--white{{/if}}" href="{{ url }}">{{text}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    {{else}}
+      <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-answer" role="tabpanel" aria-labelledby="{{ id }}-heading">
+        {{ answer }}
+      </div>
+    {{/if}}{{/if}}{{/if}}
+  {{/each}}
+</section>
