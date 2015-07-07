@@ -1,0 +1,55 @@
+---
+title: Sample Documents | Career Center
+name: sample-docs
+type: sample-docs
+layout: no-social.hbs
+path-to-root: ../../
+---
+
+<section class="content extra-content pathways-content">
+  <h2>Sample Docs</h2>
+  <p>Nuanced professional document examples to help you model the problem of writing your own.</p>
+</section>
+
+<div class="colleges">
+  
+  {{#each docs.college}}
+    <div class="college">
+      <div class="hero {{#unless img}}hero--color{{/unless}}">
+        {{#if docs }}
+          {{#if img }}<img class="{{ name }}" src="assets/images/pathways/{{ img }}.jpg">{{/if}}
+          <div class="college-header hero-content">
+            {{#if img}}<div class="overlay"></div>{{/if}}
+            <h2>{{ fullname }}</h2>
+          </div>
+        {{else}}
+          <img class="{{ name }} grayscale grayscale-fade" src="assets/images/pathways/{{ img }}.jpg">
+          <div class="college-header hero-content coming-soon">
+            <div class="overlay"></div>
+            <h2>{{ fullname }}</h2>
+          </div>
+        {{/if}}
+      </div>
+      {{#if docs}}
+        <section class="content college-content">
+          <a class="collapsed accordion-header" data-toggle="collapse" id="{{ name }}-heading" href="#{{ name }}" role="tab" aria-expanded="false" aria-controls="{{ name }}">
+            <i></i>
+          </a>
+          <div style="height: 0px;" aria-expanded="false" id="{{ name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ name }}-heading">
+            {{#each docs}}
+              {{#if link}}
+                <a class="doc" href="resume/samples/sample_{{ link }}.pdf">{{ name }}</a>
+              {{else}}
+                <a class="doc coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+              {{/if}}
+            {{/each}}
+          </div>
+        </section>
+      {{else}}
+        <section class="content coming-soon">
+          <h2>Coming soon</h2>
+        </section>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>
