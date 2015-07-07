@@ -37,6 +37,10 @@ header {
   }
 }
 
+.links {
+  padding-top: 3rem;
+}
+
 .step {
   width: 100%;
   padding: 3rem;
@@ -273,7 +277,6 @@ header {
     & > div {
       flex-basis: 50%;
       width: 50%;
-      padding-top: 0;
     }
     &:nth-of-type(2n) {
       flex-direction: row-reverse;
