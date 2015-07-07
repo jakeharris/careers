@@ -1,0 +1,170 @@
+{
+  "__college_notes": "Each college MUST have a name, full name, and image (img). Each MAY not have a docs object, but if it does, it MUST contain a complete doc object.",
+  "__docs_notes": "Each doc MUST have a name. Each MAY not have a link.",
+  "__empty_college": {
+    "name": "",
+    "fullname": "",
+    "img": "",
+    "docs": [
+      {
+        "name": "",
+        "link": ""
+      }
+    ]
+  },
+  "college": [
+    {
+      "name": "general-use",
+      "fullname": "General Use",
+      "docs": [
+        {
+          "name": "First Year Student Resume",
+          "link": "firstyearstudent"
+        },
+        {
+          "name": "Cover Letter, Sarah Smith",
+          "link": "CoverLetter1"
+        },
+        {
+          "name": "Cover Letter, Mary Thomas Wattson",
+          "link": "CoverLetter2"
+        }
+      ]
+    },
+    {
+      "name": "agriculture",
+      "fullname": "College of Agriculture",
+      "img": "college-agriculture-banner"
+    },
+    {
+      "name": "architecture",
+      "fullname": "College of Architecture, Design, & Construction",
+      "img": "college-architecture-banner",
+      "docs": [
+        {
+          "name": "Building Science",
+          "link": "buildingscience"
+        }
+      ]
+    },
+    {
+      "name": "education",
+      "fullname": "College of Education",
+      "img": "college-education-banner",
+      "docs": [
+        {
+          "name": "Early Childhood Education",
+          "link": "earlychildeducation"
+        },
+        {
+          "name": "Exercise Science",
+          "link": "exercisescience"
+        }
+      ] 
+    },
+    {
+      "name": "engineering",
+      "fullname": "Ginn College of Engineering",
+      "img": "ginn-college-engineering-banner",
+      "docs": [
+        {
+          "name": "Electrical Engineering",
+          "link": "electricaleng"
+        },
+        {
+          "name": "Mechanical Engineering",
+          "link": "mechanicaleng"
+        }
+      ] 
+    },
+    {
+      "name": "forestry-wildlife-sciences",
+      "fullname": "School of Forestry and Wildlife Sciences",
+      "img": "school-forestry-wildlife-sciences-banner"
+    },
+    {
+      "name": "graduate-school",
+      "fullname": "Graduate School",
+      "docs": [
+        {
+          "name": "Counseling Psychology Graduate Student",
+          "link": "gradcounseling"
+        },
+        {
+          "name": "Mechanical Engineering Graduate Student",
+          "link": "gradmecheng"
+        }
+      ] 
+    },
+    {
+      "name": "human-sciences",
+      "fullname": "College of Human Sciences",
+      "img": "college-human-sciences-banner",
+      "docs": [
+        {
+          "name": "Human Development and Family Studies",
+          "link": "hdfs"
+        },
+        {
+          "name": "Nutrition",
+          "link": "nutrition"
+        }
+      ] 
+    },
+    {
+      "name": "liberal-arts",
+      "fullname": "College of Liberal Arts",
+      "img": "college-liberal-arts-banner",
+      "docs": [
+        {
+          "name": "English",
+          "link": "english"
+        },
+        {
+          "name": "Public Relations",
+          "link": "publicrelations"
+        },
+        {
+          "name": "Social Work",
+          "link": "socialwork"
+        }
+      ]
+    },
+    {
+      "name": "nursing",
+      "fullname": "School of Nursing",
+      "docs": [
+        {
+          "name": "Nursing",
+          "link": "nursing"
+        }
+      ]
+    },
+    {
+      "name": "cosam",
+      "fullname": "College of Science and Mathematics",
+      "img": "college-science-mathematics-banner",
+      "docs": [
+        {
+          "name": "Biomedical Science (Not for med school)",
+          "link": "biomedscinotmed"
+        },
+        {
+          "name": "Microbiology",
+          "link": "microbiology"
+        }
+      ]
+    },
+    {
+      "name": "interdisciplinary",
+      "fullname": "Interdisciplinary Studies",
+      "img": "interdepartmental-banner",
+      "docs": [
+        {
+          "name": "Interdisciplinary Studies",
+          "link": "idsc"
+        }
+      ]
+    }
+  ]
+}

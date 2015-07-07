@@ -1,0 +1,10 @@
+@import 'pathways';
+
+.doc {
+  @extend .pathway;
+}
+
+.hero--color {
+  background: $thisislightblue;
+  min-height: 220px;
+}
