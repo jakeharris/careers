@@ -41,7 +41,6 @@ header {
   width: 100%;
   padding: 3rem;
   display: flex;
-  display: -webkit-box;
   flex-direction: column-reverse;
   
   & > div {
@@ -92,6 +91,7 @@ header {
       -ms-flex: 1;
 
       counter-increment: i;
+      line-height: 1.42;
 
       // ===== Icon stuff =====
       &:before {
