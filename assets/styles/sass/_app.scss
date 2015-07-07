@@ -25,7 +25,9 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
+p, div {
+  line-height: 1.618;
+}
 .flex.start {
     display: flex;
     align-content: flex-start;
