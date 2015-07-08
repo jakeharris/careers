@@ -30,11 +30,6 @@
           "link": "http://www.emory.edu/sihp/"
         },
         {
-          "name": "University of Central Florida",
-          "location": "Orlando, FL",
-          "link": "http://www.housing.ucf.edu/conferences/intern/"
-        },
-        {
           "name": "UNC Charlotte",
           "location": "Charlotte, NC",
           "link": "http://housing.uncc.edu/conference-services/welcome"
@@ -48,6 +43,11 @@
           "name": "Vanderbilt University",
           "location": "Nashville, TN",
           "link": "http://www.vanderbilt.edu/conferences/intern-housing/"
+        },
+        {
+          "name": "University of Central Florida",
+          "location": "Orlando, FL",
+          "link": "http://www.housing.ucf.edu/conferences/intern/"
         }
       ]
     },
@@ -79,14 +79,14 @@
           "link": "http://www.housing.uic.edu/intern/index.php"
         },
         {
-          "name": "Grand View University Summer Program",
-          "location": "Des Moines, IO",
-          "link": "http://www.desmoinesmetro.com/regional-workforce/job-support-services/interns/default.asp"
-        },
-        {
           "name": "Xavier University",
           "location": "Cincinnati, OH",
           "link": "http://www.xavier.edu/summer-conference/Summer-Internships.cfm"
+        },
+        {
+          "name": "Grand View University Summer Program",
+          "location": "Des Moines, IO",
+          "link": "http://www.desmoinesmetro.com/regional-workforce/job-support-services/interns/default.asp"
         }
       ]
     },
@@ -96,39 +96,19 @@
       "img": "northeast",
       "listings": [
         {
-          "name": "Georgetown University",
-          "location": "Washington, D.C.",
-          "link": "http://housing.georgetown.edu/summer/index.cfm"
+          "name": "Boston University",
+          "location": "Boston, MA",
+          "link": "http://www.bu.edu/housing/summer/internship/"
         },
         {
-          "name": "Georgetown Law Center",
-          "location": "Washington, D.C.",
-          "link": "http://www.law.georgetown.edu/campus-life/housing-residence-life/summer-housing/index.cfm"
+          "name": "Northeastern University",
+          "location": "Boston, MA",
+          "link": "http://www.northeastern.edu/conferences/intern/index.html"
         },
         {
-          "name": "George Washington University",
-          "location": "Washington, D.C.",
-          "link": "http://gwired.gwu.edu/gwhousing/?url=gwhousing"
-        },
-        {
-          "name": "The International Student House",
-          "location": "Washington, D.C.",
-          "link": "http://www.ishdc.org/"
-        },
-        {
-          "name": "Thompson-Markwood Hall",
-          "location": "Washington, D.C.",
-          "link": "http://www.ywch.org/"
-        },
-        {
-          "name": "Washington Intern Student Housing",
-          "location": "Washington, D.C.",
-          "link": "http://www.internsdc.com"
-        },
-        {
-          "name": "Partnership for Public Service",
-          "location": "Washington, D.C.",
-          "link": "http://makingthedifference.org/federalinternships/dchousingguide.shtml"
+          "name": "Suffolk University",
+          "location": "Boston, MA",
+          "link": "http://www2.suffolk.edu/offices/33815.html"
         },
         {
           "name": "Columbia University",
@@ -171,19 +151,39 @@
           "link": "http://www1.villanova.edu/villanova/services/conferenceservices/internhousing.html"
         },
         {
-          "name": "Boston University",
-          "location": "Boston, MA",
-          "link": "http://www.bu.edu/housing/summer/internship/"
+          "name": "Georgetown University",
+          "location": "Washington, D.C.",
+          "link": "http://housing.georgetown.edu/summer/index.cfm"
         },
         {
-          "name": "Northeastern University",
-          "location": "Boston, MA",
-          "link": "http://www.northeastern.edu/conferences/intern/index.html"
+          "name": "Georgetown Law Center",
+          "location": "Washington, D.C.",
+          "link": "http://www.law.georgetown.edu/campus-life/housing-residence-life/summer-housing/index.cfm"
         },
         {
-          "name": "Suffolk University",
-          "location": "Boston, MA",
-          "link": "http://www2.suffolk.edu/offices/33815.html"
+          "name": "George Washington University",
+          "location": "Washington, D.C.",
+          "link": "http://gwired.gwu.edu/gwhousing/?url=gwhousing"
+        },
+        {
+          "name": "The International Student House",
+          "location": "Washington, D.C.",
+          "link": "http://www.ishdc.org/"
+        },
+        {
+          "name": "Thompson-Markwood Hall",
+          "location": "Washington, D.C.",
+          "link": "http://www.ywch.org/"
+        },
+        {
+          "name": "Washington Intern Student Housing",
+          "location": "Washington, D.C.",
+          "link": "http://www.internsdc.com"
+        },
+        {
+          "name": "Partnership for Public Service",
+          "location": "Washington, D.C.",
+          "link": "http://makingthedifference.org/federalinternships/dchousingguide.shtml"
         }
       ]
     }
