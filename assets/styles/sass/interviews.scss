@@ -50,11 +50,28 @@
   top: -1.8rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $small-screen-size) {
   .desktop-hide {
     display: none; 
   }
   .desktop-show {
     display: block; 
+  }
+}
+
+@media (min-width: $medium-screen-size) {
+  .document-review {
+    .content {
+      flex-basis: 48%;
+      width: 48%;
+      
+      margin-top: 0;
+      
+      #tips {
+        position: relative;
+        top: 21px;
+        margin-bottom: 0;
+      }
+    }
   }
 }
