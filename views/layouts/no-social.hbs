@@ -55,7 +55,7 @@ path-to-root: ../
     <!-- Application-specific CSS/JS -->
     <!-- build:js assets/scripts/{{ name }}.min.js -->
       <script src="assets/scripts/{{ type }}.js"></script>
-      <script src="assets/scripts/amcf-app.js"></script>
+      {{#is type "event-pages"}}<script src="assets/scripts/amcf-app.js"></script>{{/is}}
     <!-- endbuild -->
     
   </head>
@@ -98,11 +98,6 @@ path-to-root: ../
         })
       </script>
     {{/is}}
-    <script>
-      var nav = responsiveNav('.nav-collapse', {
-        label: '' 
-      });
-    </script>
     <script>
       $(function() {
         $('.hover').bind('touchstart', function(e) {
