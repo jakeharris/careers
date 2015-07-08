@@ -29,7 +29,7 @@
     {
       "name": "Jay Skipworth",
       "position": "AD, Employer Relations",
-      "email": "jbs0003",
+      "email": "skipworth",
       "img": "jay",
       "category": "Administration Team",
       "liaison": [
@@ -48,19 +48,6 @@
         "College of Human Sciences",
         "Interdisciplinary Studies",
         "Auburn Global & International Programs"
-      ]
-    },
-    {
-      "name": "Kyle Nixon",
-      "position": "Career Counselor",
-      "email": "kcn0007",
-      "img": "kyle",
-      "portfolio": "http://kylecnixon.wix.com/portfolio",
-      "category": "Career Development",
-      "liaison": [
-        "School of Forestry and Wildlife Sciences",
-        "College of Agriculture",
-        "College of Education"
       ]
     },
     {
@@ -100,13 +87,6 @@
       "category": "Career Development"
     },
     {
-      "name": "Kayla Gomillion",
-      "position": "Graduate Assistant",
-      "email": "krg0002",
-      "img": "kayla",
-      "category": "Career Development"
-    },
-    {
       "name": "Wade Manora",
       "position": "Graduate Assistant",
       "email": "wzm0004",
@@ -114,16 +94,9 @@
       "category": "Career Development"
     },
     {
-      "name": "Kristine Adams",
-      "position": "Graduate Assistant",
-      "email": "kma0020",
-      "img": "kristine",
-      "category": "Career Development"
-    },
-    {
       "name": "Jay Skipworth",
       "position": "AD, Employer Relations",
-      "email": "jbs0003",
+      "email": "skipworth",
       "img": "jay",
       "category": "Employer Relations",
       "liaison": [
@@ -135,6 +108,13 @@
       "position": "Special Events Coordinator",
       "email": "mks",
       "img": "melvin",
+      "category": "Employer Relations"
+    },
+    {
+      "name": "Lauren Hobbs",
+      "position": "Student Employment Coordinator",
+      "email": "hobbs",
+      "img": "lauren",
       "category": "Employer Relations"
     },
     {
@@ -154,7 +134,7 @@
     {
       "name": "Sue Olson",
       "position": "Administrative Support Associate",
-      "email": "pavelso",
+      "email": "olson",
       "img": "sue",
       "category": "Operations"
     },
