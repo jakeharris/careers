@@ -152,3 +152,15 @@ home.controller('blogger-ctrl', ['$scope', '$http', function ($scope, $http) {
   }
 }])
 
+home.controller('hours-ctrl', ['$scope', '$http', function ($scope, $http) {
+  'use strict';
+  $http.get('/career/hours.json')
+  .then(function (res) {
+    $scope.days = res.data.days
+    $scope.times = res.data.times
+    if(res.data.hasOwnProperty('holiday'))
+      $scope.holiday = res.data.holiday
+  })
+  
+}])
+
