@@ -16,17 +16,18 @@
     {
       "name": "general-use",
       "fullname": "General Use",
+      "img": "samford-banner",
       "docs": [
         {
           "name": "First Year Student Resume",
           "link": "firstyearstudent"
         },
         {
-          "name": "Cover Letter, Sarah Smith",
+          "name": "Cover Letter #1",
           "link": "CoverLetter1"
         },
         {
-          "name": "Cover Letter, Mary Thomas Wattson",
+          "name": "Cover Letter #2",
           "link": "CoverLetter2"
         }
       ]
@@ -85,6 +86,7 @@
     {
       "name": "graduate-school",
       "fullname": "Graduate School",
+      "img": "hargis-banner",
       "docs": [
         {
           "name": "Counseling Psychology Graduate Student",
@@ -133,6 +135,7 @@
     {
       "name": "nursing",
       "fullname": "School of Nursing",
+      "img": "nursing-banner",
       "docs": [
         {
           "name": "Nursing",
