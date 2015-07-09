@@ -31,7 +31,7 @@
     {
       "id": "how-do-i-find-an-internship",
       "question": "How do I find an internship?",
-      "answer": "The short answer: start early, and get in touch.",
+      "answer": "Begin your search three to four months in advance of your desired start date.",
       "note": "Connecting and interviewing with employers requires a TRL login. If you don't already have one, you'll be instructed to create one once you're there. Just use your Auburn credentials!",
       "resources": [
         {
@@ -62,19 +62,19 @@
           {
             "id": "academic-credit",
             "condition": "Will you be receiving academic credit for your internship?",
-            "if-yes": "Consult with your faculty advisor or academic unit to ensure what you're responsible for. Keep in mind: each academic unit on campus handles credit for internships individually.",
-            "if-no": "Don't worry about it! Move on to the next step."
+            "if-yes": "Consult with your faculty advisor or academic unit to determine credit requirements. Each academic unit on campus handles credit for internships individually. Visit the Departmental Contacts link for contact information by major.",
+            "if-no": "If you are completing your internship during the summer semester and are not receiving course credit, in most cases, you do not have to consult with the university or complete any forms."
           },
           {
             "id": "scholarship",
             "condition": "Will you be interning during a semester in which you would ordinarily receive scholarship funding?",
             "if-yes": "Get in touch with your scholarship provider or financial aid representative to delay your scholarships to a semester in which you'll be a full-time student, if necessary.",
-            "if-no": "You're done with that, then. Keep moving!"
+            "if-no": "Continue."
           },
           {
             "id": "report-placement",
-            "condition": "Want to help future students get connected? Or would you like to brag about your internship placement?",
-            "if-yes": "to the Career Center, and then you're done!",
+            "condition": "Share your success by reporting your placement.",
+            "if-yes": "",
             "if-yes-button": {
               "text": "Report your placement",
               "url": ""
