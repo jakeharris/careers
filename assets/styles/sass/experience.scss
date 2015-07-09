@@ -1,0 +1,193 @@
+@import 'app';
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin:0;
+  padding:0;
+  perspective: 1px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden; 
+  background: $charcoal;
+}
+
+header {
+  margin-bottom: 6px;
+}
+
+.container {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0;
+}
+
+.experience-header {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  padding-bottom: 5rem;
+  p {
+    width: 45%;
+    color: white;
+    margin: 0 auto;
+    opacity: 1;
+  }
+}
+
+h2 {
+  margin: 0;
+}
+
+.slide {
+  position: relative;
+  padding: 0;
+  padding-top: 30vh;
+  width: 100vw;
+  box-sizing: border-box;
+  transform-style: inherit;
+  overflow: hidden;
+}
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+.slide, .slide:before {
+  background: 50% 50% / cover;
+}
+.slide#experience {
+  min-height: 30vh;
+  padding: 5vh 0;
+}
+.slide#internships {
+  padding-top: 0;
+}
+
+#experience > .experience-bg {
+  background: 50% 50% / cover;
+  background-image: url("../images/experience/experience.jpg");
+  background-position-y: 0vh;
+  background-attachment: fixed;  
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: -1;
+}
+#experience > .experience-header {
+  z-index: 2;
+  opacity: 1;
+}
+.slide:before {
+  top: -12vh;
+  z-index: -1;
+}
+#coops:before {
+  background-image: url("../images/experience/coop.jpg");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
+}
+#leadership:before {
+  background-image: url("../images/experience/leadership.jpg");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
+}
+#research:before {
+  background-image: url("../images/experience/research.jpg");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
+}
+#service:before {
+  background-image: url("../images/experience/service.jpg");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
+}
+#international:before {
+  background-image: url("../images/experience/international.png");
+  background-attachment: fixed;
+  top: 0;
+  transform: none;
+}
+
+.zone {
+  padding-bottom: 5rem;
+  width: 100%;
+  box-shadow: 6px 6px 0 $box-shadow;
+  background: white;
+}
+.zone > h2,
+.experience-header > h2 {
+  padding-top: 5rem;
+  color: white; 
+  font-size: 10rem;
+  text-align: center;
+  padding-bottom: 3rem;
+  font-family: $header-font-family;
+}
+.experience-header > h2 {
+  padding-top: 8.7rem;
+}
+.slide:nth-of-type(4n + 1) .zone,
+.slide:nth-of-type(4n + 3) .zone {
+  background: white;
+  h2,p {
+    color: $thisisdarkblue; 
+  }
+}
+.slide:nth-of-type(4n + 2) .zone {
+  background: $thisislightblue;
+  h2,p {
+    color: white; 
+  }
+}
+.slide:nth-of-type(4n) .zone {
+  background: $thisislightorange;
+  h2,p {
+    color: white; 
+  }
+}
+.zone-content {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 3rem; 
+  .zone-element {
+    flex-basis: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+.zone-blurb {
+  margin: 0 auto;
+  width: 80%;
+  padding-bottom: 5rem;
+  font-size: 2.4rem;
+  line-height: 3.8832rem;
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width: $small-screen-size) {
+  .zone-content, .zone-blurb {
+    width: 65%; 
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .zone-content, .zone-blurb {
+    width: 45%; 
+  }
+}

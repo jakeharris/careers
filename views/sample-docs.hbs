@@ -1,31 +1,31 @@
 ---
-name: pathways
-type: pathways
-title: Pathways | Career Center
+title: Sample Documents | Career Center
+name: sample-docs
+type: sample-docs
 layout: no-social.hbs
+path-to-root: ../../
 ---
 
-<div class="extras">
-  <div class="buttons">
-    <a class="flat-btn flat-btn--half flat-btn--white" href="http://bulletin.auburn.edu/undergraduate/majors/">Majors &amp; Minors</a>
-    <a class="flat-btn flat-btn--half" href="experience">Gain Experience</a>
-  </div>
-</div>
-
 <section class="content extra-content pathways-content">
-  <h2>Pathways</h2>
-  <p>Comprehensive guides for each major to enhance your academic experience and support your career preparation.</p>
+  <h2>Sample Docs</h2>
+  <p>
+    The resume samples provided are to be used as a guide when composing 
+    your own resume and should not be copied in their entirety. There is 
+    no one right way to write a resume or format the page. Choose a 
+    resume format that represents your skills and experience in the most 
+    positive and professional way.
+  </p>
 </section>
 
 <div class="colleges">
   
-  {{#each pathways.college}}
+  {{#each docs.college}}
     <div class="college">
-      <div class="hero">
-        {{#if pathways }}
-          <img class="{{ name }}" src="assets/images/pathways/{{ img }}.jpg">
+      <div class="hero {{#unless img}}hero--color{{/unless}}">
+        {{#if docs }}
+          {{#if img }}<img class="{{ name }}" src="assets/images/pathways/{{ img }}.jpg">{{/if}}
           <div class="college-header hero-content">
-            <div class="overlay"></div>
+            {{#if img}}<div class="overlay"></div>{{/if}}
             <h2>{{ fullname }}</h2>
           </div>
         {{else}}
@@ -36,17 +36,17 @@ layout: no-social.hbs
           </div>
         {{/if}}
       </div>
-      {{#if pathways}}
+      {{#if docs}}
         <section class="content college-content">
           <a class="collapsed accordion-header" data-toggle="collapse" id="{{ name }}-heading" href="#{{ name }}" role="tab" aria-expanded="false" aria-controls="{{ name }}">
             <i></i>
           </a>
           <div style="height: 0px;" aria-expanded="false" id="{{ name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ name }}-heading">
-            {{#each pathways}}
+            {{#each docs}}
               {{#if link}}
-                <a class="pathway" href="assets/images/pathways/pdfs/{{ link }}.pdf">{{ name }}</a>
+                <a class="doc" href="resume/samples/sample_{{ link }}.pdf">{{ name }}</a>
               {{else}}
-                <a class="pathway coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+                <a class="doc coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
               {{/if}}
             {{/each}}
           </div>

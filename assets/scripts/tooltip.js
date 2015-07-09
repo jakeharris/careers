@@ -30,5 +30,10 @@
         $('[data-for=' + $(this).data('tooltip') + ']').addClass('tooltip--show')
       }
     })
+    tooltips.each(function (i) {
+      console.log('tooltip: \n' + $(this))
+      console.log('wedge: \n' + $(this).parent().siblings('.link-wedges').children('[data-tooltip=' + $(this).data('for') + ']'))
+      $(this).attr('href', $(this).parent().siblings('.link-wedges').children('[data-tooltip=' + $(this).data('for') + ']').attr('href'))
+    })
   })
 })()

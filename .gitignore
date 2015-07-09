@@ -24,3 +24,6 @@ twitter.json
 events.json
 dev/events.json
 assets/images/sponsors/sponsors that don't have icons on trl.md
+*.nef
+
+*.html

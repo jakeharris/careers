@@ -37,12 +37,16 @@ header {
   }
 }
 
+.links {
+  padding-top: 3rem;
+}
+
 .step {
   width: 100%;
   padding: 3rem;
   display: flex;
-  display: -webkit-box;
   flex-direction: column-reverse;
+  
   & > div {
     width: 100%;
     padding-bottom: 3rem;
@@ -52,9 +56,18 @@ header {
     margin-right: 3rem;
   }
 
-  & > div:nth-of-type(2) > h2::before {
-    counter-increment: c;
-    //content: counter(c) '. ';
+  & > div:nth-of-type(2) {
+    & > h2 {
+      font-size: 4rem;
+      padding-top: 1rem;
+      margin-bottom: 3rem;
+    }
+    & > h2::before {
+      counter-increment: c;
+    }
+    p {
+      line-height: 1.618; 
+    }
   }
   &:nth-of-type(2n) {
     background: white;
@@ -82,6 +95,7 @@ header {
       -ms-flex: 1;
 
       counter-increment: i;
+      line-height: 1.42;
 
       // ===== Icon stuff =====
       &:before {
@@ -181,6 +195,8 @@ header {
 
   padding: 1rem;
   width: 100%;
+  
+  cursor: pointer;
 
   //overwriting Bootstrap's styles
   position: inherit;
@@ -211,6 +227,20 @@ header {
   }
 }
 
+.big-header {
+  font-size: 7rem;
+  text-align: center;
+}
+.international-content,
+.veterans-content,
+.lgbt-content,
+.accessibility-content,
+.federal-content,
+.service-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 /*****************/
 /* MEDIA QUERIES */
@@ -236,7 +266,7 @@ header {
       height: auto;
       margin-top: -1.5rem;
     }
-    .img-replace {
+    img + .img-replace {
       display: none; 
     }
   }
@@ -247,7 +277,6 @@ header {
     & > div {
       flex-basis: 50%;
       width: 50%;
-      padding-top: 0;
     }
     &:nth-of-type(2n) {
       flex-direction: row-reverse;

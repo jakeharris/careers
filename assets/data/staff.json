@@ -29,7 +29,7 @@
     {
       "name": "Jay Skipworth",
       "position": "AD, Employer Relations",
-      "email": "jbs0003",
+      "email": "skipworth",
       "img": "jay",
       "category": "Administration Team",
       "liaison": [
@@ -96,7 +96,7 @@
     {
       "name": "Jay Skipworth",
       "position": "AD, Employer Relations",
-      "email": "jbs0003",
+      "email": "skipworth",
       "img": "jay",
       "category": "Employer Relations",
       "liaison": [
@@ -108,6 +108,13 @@
       "position": "Special Events Coordinator",
       "email": "mks",
       "img": "melvin",
+      "category": "Employer Relations"
+    },
+    {
+      "name": "Lauren Hobbs",
+      "position": "Student Employment Coordinator",
+      "email": "hobbs",
+      "img": "lauren",
       "category": "Employer Relations"
     },
     {
@@ -127,7 +134,7 @@
     {
       "name": "Sue Olson",
       "position": "Administrative Support Associate",
-      "email": "pavelso",
+      "email": "olson",
       "img": "sue",
       "category": "Operations"
     },

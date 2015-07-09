@@ -1,0 +1,121 @@
+@import 'campus-partners';
+
+.partner-content {
+  align-items: flex-start;
+}
+.dept-accordion {
+  box-shadow: 6px 6px 0 $box-shadow;
+}
+.partner-info {
+  padding-top: 3rem;
+  p {
+    margin-bottom: 3rem;
+  }
+}
+.accordion-header {
+  font-size: 2.2rem;
+  padding: 1rem 0;
+  z-index: 1;
+  
+  h2 {
+    display: block;
+    color: white;
+    background: $thisisdarkblue;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding: 1.5rem 0;
+    font-size: 18px;
+    padding-bottom: 2rem;
+  }
+  i:before {
+    text-align: center;
+    display: inline-block;
+    padding: 0;
+    padding-left: 5rem;
+    font-size: 18px;
+    @extend .icon;
+    @extend .icon-chevron-up;
+  }
+  &.collapsed {
+    h2 {
+      background: $thisislightblue;
+      &:hover {
+        background: $thisisdarkblue;
+      }
+    }
+    i:before {
+      @extend .icon-chevron-down; 
+    }
+  }
+}
+
+.dept-contact {
+  display: block;
+  
+  width: 100%;
+  padding: 1.5rem 3rem;
+  
+  background: $thisislightblue;
+  color: white;
+  
+  .muted {
+    display: none;
+  }
+  &:hover {
+    background: $thisisdarkblue;
+    color: white;
+  }
+  &:hover .muted {
+    display: inline-block;
+    color: #aaa;
+    padding-left: 1rem; 
+  }
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+@media (min-width: $medium-screen-size) {
+  .partner-info {
+    padding-top: 0; 
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .accordion-header {
+    h2 {
+      font-size: 3rem;
+      padding: 19px 0;
+    }
+    i:before {
+      font-size: 3rem; 
+    }
+  }
+  /*********************/
+  /* IMAGE POSITIONING */
+  /*********************/
+  
+  .dudley {
+    margin-top: -300px;
+  }
+
+  .haley {
+    margin-top: -200px;
+  }
+
+  .fws {
+    margin-top: -120px;
+  }
+
+  .humsci {
+    margin-top: -50px;
+  }
+
+  .cola, .cosam {
+    margin-top: -50px;
+  }
+
+  .nursing {
+    margin-top: -380px;
+  }
+}
