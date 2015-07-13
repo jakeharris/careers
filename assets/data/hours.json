@@ -1,0 +1,22 @@
+{
+  "__help": "",
+  "types": {
+    "office": [
+      {
+        "startDay": "Mon",
+        "endDay": "Fri",
+        "startTime": "7:45am",
+        "endTime": "4:45pm"
+      }
+    ],
+    "walk-in": [
+      {
+        "startDay": "Mon",
+        "endDay": "Fri",
+        "startTime": "12n",
+        "endTime": "4pm"
+      }
+    ]
+  },
+  "holiday": ""
+}
