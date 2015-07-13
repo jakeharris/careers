@@ -1,6 +1,6 @@
 var home = angular.module('career-center-home', ['ngRoute'])
 
-home.config(['$interpolateProvider', function($interpolateProvider) {
+home.config(['$interpolateProvider', function ($interpolateProvider) {
   'use strict';
   $interpolateProvider.startSymbol('[[')
   $interpolateProvider.endSymbol(']]')
@@ -22,7 +22,6 @@ home.config(['$interpolateProvider', function($interpolateProvider) {
 
 home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
-  console.log('is this thing even loading');
   $http.get('/career/events.json')
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
@@ -154,13 +153,14 @@ home.controller('blogger-ctrl', ['$scope', '$http', function ($scope, $http) {
 
 home.controller('hours-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
-  $http.get('/career/hours.json')
+  $http.get('/assets/data/hours.json')
   .then(function (res) {
-    $scope.days = res.data.days
-    $scope.times = res.data.times
     if(res.data.hasOwnProperty('holiday'))
       $scope.holiday = res.data.holiday
+    if(res.data.hasOwnProperty('types')) {
+      $scope.office = res.data.types.office
+      $scope.walkIn = res.data.types.walkIn
+    }
   })
-  
 }])
 

@@ -9,7 +9,7 @@
         "endTime": "4:45pm"
       }
     ],
-    "walk-in": [
+    "walkIn": [
       {
         "startDay": "Mon",
         "endDay": "Fri",
@@ -17,6 +17,5 @@
         "endTime": "4pm"
       }
     ]
-  },
-  "holiday": ""
+  }
 }

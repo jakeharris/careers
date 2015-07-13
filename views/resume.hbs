@@ -3,6 +3,7 @@ title: Resumes and Cover Letters | Career Center
 name: resume
 type: resume
 layout: no-social.hbs
+ng-app: career-center-resume
 ---
 
 <section class="content resume-banner">
@@ -11,18 +12,21 @@ layout: no-social.hbs
 </section>
 
 <div class="document-review">
-  <section class="content">
+  <section class="content" ng-controller="hours-ctrl">
     <h2>Professional Document Review</h2>
     <p>
       Come to the Career Center during <a href="aboutus/#walk-ins">walk-in hours
       </a> to have your documents reviewed by a Peer Career Advisor. Be 
       sure to have your documents printed before you come to the office.
     </p>
-    <div class="hours">
+    <div class="hours" ng-if="walkIn">
       <i class="fa icon-clock-o times-icon"></i>
       <div class="hours-content">
         <h2>Walk-ins:</h2>
-        <p><strong>Mon - Fri</strong> | 12:00n - 4pm</p>
+        <p ng-repeat="hours in walkIn">
+          <span ng-if="hours.startDay"><strong>[[ hours.startDay ]] - [[ hours.endDay ]]</strong> |</span> [[ hours.startTime ]] - [[ hours.endTime ]]
+        </p>
+        <p ng-if="holiday" class="muted">[[ holiday ]]</p>
       </div>
     </div>
     <div class="location">
