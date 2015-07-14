@@ -47,18 +47,17 @@ type: internships
               <li class="faq-checklist-item hidden">
                 <h4 class="condition">{{ condition }}</h4>
                 <div class="switch">
-                  <input id="{{ id }}-yes" name="{{ id }}" class="radio" type="radio" {{#unless if-no}} disabled="disabled" checked="checked"{{/unless}}>
-                  <label for="{{ id }}-yes" class="if-yes-label {{#if if-no}}half-label{{else}}disabled-label{{/if}}">{{#if if-no}}Yes{{else}}Of course you do!{{/if}}</label>
                   {{#if if-no}}
+                    <input id="{{ id }}-yes" name="{{ id }}" class="radio" type="radio">
+                    <label for="{{ id }}-yes" class="if-yes-label half-label">Yes</label>
                     <input id="{{ id }}-no" name="{{ id }}" class="radio" type="radio">
                     <label for="{{ id }}-no" class="if-no-label half-label">No</label>
+                  {{else}}
+                    <a class="flat-btn" href="{{if-yes-button.url}}">{{if-yes-button.text}}</a>
                   {{/if}}
                 </div>
                 {{#if if-yes}}
                   <div class="if-yes switch-result" data-for="{{id}}-yes" {{#unless if-yes-button}} style="display: none;" {{/unless}}>
-                    {{#if if-yes-button}}
-                      <a class="if-yes-button" href="{{if-yes-button.url}}">{{if-yes-button.text}}</a>
-                    {{/if}}
                     {{ if-yes }}
                   </div>
                 {{/if}}
