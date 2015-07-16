@@ -75,6 +75,14 @@
   width: 100%;
 }
 
+.content > .attributes {
+  flex-wrap: wrap;
+  & > .attribute {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
 @media (min-width: $small-screen-size) {
   .your-major .blurb {
     flex-basis: 33%;
@@ -88,5 +96,12 @@
   .content .buttons {
     flex-basis: 40%;
     width: 40%;
+  }
+  .content > .attributes {
+    flex-wrap: nowrap;
+    & > .attribute {
+      flex-basis: 33%;
+      width: 33%;
+    }
   }
 }
