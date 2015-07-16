@@ -3,13 +3,13 @@
 html {
   height: 100%;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
   margin:0;
   padding:0;
   perspective: 1px;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   height: 100%;
   overflow-y: scroll;
@@ -47,77 +47,60 @@ h2 {
 .slide {
   position: relative;
   padding: 0;
-  padding-top: 30vh;
   width: 100vw;
   box-sizing: border-box;
   transform-style: inherit;
   overflow: hidden;
-}
-.slide:before {
-  content: "";
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-}
-.slide, .slide:before {
   background: 50% 50% / cover;
 }
-.slide#experience {
-  min-height: 30vh;
+#experience {
   padding: 5vh 0;
 }
-.slide#internships {
+#internships {
   padding-top: 0;
-}
-
-#experience > .experience-bg {
-  background: 50% 50% / cover;
-  background-image: url("../images/experience/experience.jpg");
-  background-position-y: 0vh;
-  background-attachment: fixed;  
-  opacity: 0.7;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  z-index: -1;
 }
 #experience > .experience-header {
   z-index: 2;
   opacity: 1;
 }
+#experience > .experience-bg,
 .slide:before {
-  top: -12vh;
   z-index: -1;
+  height: 100%;
+  width: 100%;
+  content: "";
+  position: absolute;
+  top: -12vh; right: 0; bottom: 0; left: 0;
+  background: 50% 50% / cover;
+  background-attachment: fixed;
+  transform: none;
+}
+.slide:before {
+  display: none;
+}
+#experience > .experience-bg {
+  background-image: url("../images/experience/experience.jpg");
+  background-position-y: 0vh;
+  top: 0;
+  opacity: 0.7;
 }
 #coops:before {
   background-image: url("../images/experience/coop.jpg");
-  background-attachment: fixed;
-  top: 0;
-  transform: none;
 }
 #leadership:before {
+  background-position: -35vw -7.5vh;
   background-image: url("../images/experience/leadership.jpg");
-  background-attachment: fixed;
-  top: 0;
-  transform: none;
 }
 #research:before {
   background-image: url("../images/experience/research.jpg");
-  background-attachment: fixed;
-  top: 0;
-  transform: none;
 }
 #service:before {
+  background-position-y: -10vh;
   background-image: url("../images/experience/service.jpg");
-  background-attachment: fixed;
-  top: 0;
-  transform: none;
 }
 #international:before {
+  background-position-y: -10vh;
   background-image: url("../images/experience/international.png");
-  background-attachment: fixed;
-  top: 0;
-  transform: none;
 }
 
 .zone {
@@ -130,7 +113,7 @@ h2 {
 .experience-header > h2 {
   padding-top: 5rem;
   color: white; 
-  font-size: 10rem;
+  font-size: 5rem;
   text-align: center;
   padding-bottom: 3rem;
   font-family: $header-font-family;
@@ -173,21 +156,90 @@ h2 {
   margin: 0 auto;
   width: 80%;
   padding-bottom: 5rem;
-  font-size: 2.4rem;
-  line-height: 3.8832rem;
+  line-height: 2;
 }
+.zone-blurb {
+  display: none;
+}
+
+
 
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
 
 @media (min-width: $small-screen-size) {
+  #experience {
+    min-height: 30vh;
+  }
+  .slide {
+    padding-top: 40vh;
+  }
+  .slide:before {
+    display: block; 
+  }
+  
+  #coops:before,
+  #leadership:before,
+  #research:before,
+  #service:before,
+  #international:before {
+    background-position: 0;
+  }
+  
+  
   .zone-content, .zone-blurb {
     width: 65%; 
+    font-size: 2.4rem;
+    line-height: 3.8832rem;
+  }
+  .zone-blurb {
+    display: block; 
   }
 }
 @media (min-width: $moderate-screen-size) {
   .zone-content, .zone-blurb {
     width: 45%; 
+  }
+  .zone > h2,
+  .experience-header > h2 {
+    font-size: 10rem;
+  }
+  .slide:before {
+    background-position: 0; 
+  }
+}
+
+// IOS TARGETTING, SINCE PARALLAX SCROLLING FAILS ON
+// IOS DEVICES
+// (big thanks to Stephen Gilbert at stephen.io for these queries!)
+
+// iPad, portrait and landscape
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px),
+// iPhone 6, portrait and landscape
+only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px),
+// iPhone 6 Plus, portrait and landscape
+only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px),
+// iPhone 5 and 5s, portrait and landscape 
+only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {
+  #experience > .experience-bg {
+    background-attachment: scroll; 
+    background-position: 0;
+    transform: translate3d(0, 0, 0);
+    overflow-scrolling: touch;
+  }
+  .slide {
+    padding-top: 0; 
+  }
+  .slide:before {
+    display: none;
   }
 }
