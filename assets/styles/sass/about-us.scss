@@ -1,5 +1,11 @@
 @import 'app';
 
+.quick-about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .mission,
 .services {
   flex-basis: 100%;
@@ -122,6 +128,9 @@ iframe {
   }
 }
 @media (min-width: $medium-screen-size) {
+  .quick-about {
+    flex-wrap: nowrap; 
+  }
   .mission {
     flex-basis: 30%;
     width: 30%;
