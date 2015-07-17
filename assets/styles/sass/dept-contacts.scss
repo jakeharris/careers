@@ -13,21 +13,12 @@
   }
 }
 .accordion-header {
-  font-size: 2.2rem;
-  padding: 1rem 0;
   z-index: 1;
+  @extend .flat-btn; 
+  margin: 0;
+  box-shadow: none;
+  background: $thisisdarkblue;
   
-  h2 {
-    display: block;
-    color: white;
-    background: $thisisdarkblue;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    padding: 1.5rem 0;
-    font-size: 18px;
-    padding-bottom: 2rem;
-  }
   i:before {
     text-align: center;
     display: inline-block;
@@ -38,15 +29,14 @@
     @extend .icon-chevron-up;
   }
   &.collapsed {
-    h2 {
-      background: $thisislightblue;
-      &:hover {
-        background: $thisisdarkblue;
-      }
-    }
+    background: $thisislightblue;
     i:before {
       @extend .icon-chevron-down; 
     }
+  }
+  &:hover {
+    background: $thisisdarkblue;
+    color: white;
   }
 }
 
@@ -73,22 +63,57 @@
   }
 }
 
+.desktop-show {
+  display: none;
+}
+
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
+@media (min-width: $small-screen-size) {
+  .partner-content {
+    .partner-contact {
+      flex-basis: 100%;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    .partner-info {
+      flex-basis: 100%;
+      width: 100%;
+    }
+    .address, .phone, .email {
+      width: 100%;
+      min-width: 40rem;
+    }
+  }
+}
+
 @media (min-width: $medium-screen-size) {
   .partner-info {
     padding-top: 0; 
+  }
+  .desktop-show {
+    display: inline; 
   }
 }
 @media (min-width: $moderate-screen-size) {
   .accordion-header {
     h2 {
-      font-size: 3rem;
-      padding: 19px 0;
+      font-size: 2.5rem;
+      padding: 1.6rem 0;
     }
     i:before {
-      font-size: 3rem; 
+      font-size: 2.5rem; 
+    }
+  }
+  .partner-content {
+    .partner-contact {
+      width: 40%;
+      flex-basis: 40%;
+    }
+    .partner-info {
+      width: 55%;
+      flex-basis: 55%;
     }
   }
   /*********************/

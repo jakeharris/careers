@@ -3,7 +3,7 @@
 .campus-content {
   text-align: center;
   h2 {
-    font-size: 5rem; 
+    font-size: 4rem; 
   }
 }
 .partner-content {
@@ -27,11 +27,10 @@
     font-family: $header-font-family;
     font-size: 2rem;
     
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
     
     a {
-      margin-left: 6.6rem;
+      margin-left: 3.6rem;
       display: inline-block; 
       word-wrap: break-word;
     }
@@ -48,21 +47,18 @@
     position: relative;
     a {
       position: absolute;
-      top: 2.5rem;
     }
   }
   
   .phone, .email {
     margin-top: 1rem;
     a {
-      margin-left: 5.1rem;
-      top: 1.5rem;
+      margin-left: 3.6rem;
     }
   }
   .email {
     margin-top: -1rem;
     a {
-      top: 2rem;
       margin-left: 3.6rem;
     }
   }
@@ -70,11 +66,11 @@
   .address:before, .phone:before, .email:before {
     @extend [class^="icon-"], [class*=" icon-"];
   
-    display: inline;
-    margin: 0 auto;
+    display: inline-block;
 
-    font-size: 8rem;  
+    font-size: 4rem;  
     color: $box-shadow;
+    width: 2rem;
   }
   .address:before {
     @extend .icon-map-marker;
@@ -88,6 +84,10 @@
 }
 .ginn {
   margin-top: -7rem;
+}
+.harbert {
+  width: auto;
+  min-height: 220px;
 }
 
 /* *************** 
@@ -119,9 +119,32 @@
   .ginn {
     margin-top: -17rem; 
   }
+  .harbert {
+    height: auto; 
+    width: 100%;
+  }
 }
 @media (min-width: $moderate-screen-size) {
+  .campus-content h2 {
+    font-size: 5rem; 
+  }
   .partner-content {
+    .address:before, .phone:before, .email:before {
+      font-size: 8rem;
+      width: 4rem;
+    }
+    .address, .phone, .email {
+      margin-left: 6.6rem; 
+    }
+    .address a {
+      top: 2.5rem; 
+    }
+    .phone a {
+      top: 1.5rem; 
+    }
+    .email a {
+      top: 2rem; 
+    }
     .partner-contact {
       flex-basis: 40%;
       width: 40%;
