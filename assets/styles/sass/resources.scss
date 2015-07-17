@@ -252,10 +252,15 @@ header {
 }
 @media (min-width: $small-screen-size) {
   .hero .img-replace {
-    font-size: 8rem; 
+    font-size: 5rem; 
   }
   .tooltip > h2 {
     font-size: 29px; 
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .hero .img-replace {
+    font-size: 8rem; 
   }
 }
 @media (min-width: $medium-screen-size) {
