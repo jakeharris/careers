@@ -8,10 +8,21 @@
   background: $thisislightblue;
   min-height: 220px;
 }
-
-.general-use {
-  margin-top: -12rem;
+.blurb {
+  display: none;
 }
-.graduate-school {
-  margin-top: -5rem;
+
+@media (min-width: $tiny-screen-size) {
+  .graduate-school {
+    margin-top: -5rem;
+  }
+  .general-use {
+    margin-top: -12rem;
+  }
+}
+
+@media (min-width: $small-screen-size) {
+  .blurb {
+    display: block; 
+  }
 }
