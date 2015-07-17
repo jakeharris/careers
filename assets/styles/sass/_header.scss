@@ -14,7 +14,7 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   
-  height: 13rem;
+  height: 11rem;
   
   position: relative;
   
@@ -36,7 +36,6 @@ header {
   }
   h1 {
     width: 50%;
-    padding-top: 2rem; 
     padding-bottom: 2rem;
     margin-bottom: 0;
     font-family: $header-font-family;
@@ -66,7 +65,7 @@ nav.header {
   background: $thisislightblue;
   
   font-family: $header-font-family;
-  font-size: 20px;
+  font-size: 14px;
   
   z-index: 1000000000000000000000;
   
@@ -96,6 +95,10 @@ nav.header {
       margin-right: auto;
       
       background-color: $thisislightblue;
+      
+      & > li > a {
+        padding-top: 4px; 
+      }
     }
     
     .about-us {
@@ -113,6 +116,8 @@ nav.header {
     top: 0;
     width: 100%;
     z-index: 2;
+    
+    font-size: 20px;
     
     .about-us {
       display: none; 
@@ -361,7 +366,7 @@ nav.postheader {
     box-shadow: none;
     border: none;
     padding: 0.25rem 0;
-    width: 6rem;
+    width: 4rem;
     
     background: $thisisdarkblue;
     color: white;
@@ -389,7 +394,6 @@ ul li  {
   .preheader {
     h1 {
       width: auto;
-      font-size: 4rem;
       padding-right: 6rem;
     }
   }
@@ -403,11 +407,18 @@ ul li  {
     }
   }
 }
+@media (min-width: $tiny-screen-size + 90px) {
+  .preheader {
+    height: 8rem; 
+  }
+}
 @media (min-width: $small-screen-size) {
   .preheader {
-    width: 90vw !important; 
+    width: 90vw !important;
+    height: 13rem;  
     h1 { 
       font-size: 5rem;
+      padding-top: 2rem; 
     }
   }
   nav.header { 
@@ -443,11 +454,15 @@ ul li  {
     ul {
       font-size: 14px;
     }
+    padding: 1px 1rem;
   }
 }
 @media (min-width: $moderate-screen-size) {
   nav.header {
     font-size: 22px;
+    .nav-wrapper > ul > li > a {
+      padding-top: 0; 
+    }
   }
 }
 @media (min-width: $social-shrink-size) {
