@@ -1,4 +1,5 @@
 @import 'app';
+@import 'sponsors';
 
 .content {
   margin-top: 3rem;
@@ -71,13 +72,38 @@
   flex-basis: 45%;
   width: 45%;
   height: 100%;
-  padding: 3rem;
   h2 a::after {
     font-family: $icon-font-family;
     font-weight: 100;
     content: '\f078';
     position: absolute;
     right: 3rem;
+  }
+  .first-event-wrapper {
+    padding: 1.5rem 5rem 0; 
+  }
+  .first-event {
+    flex-basis: 100%;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1.4rem;
+    min-height: 0;
+  }
+  .flat-btn {
+    margin: 0;
+    margin-top: 1rem;
+    box-shadow: none;
+  }
+  .flat-btn:link,
+  .flat-btn:visited,
+  .flat-btn:active {
+    color: white; 
+  }
+  .flat-btn:hover {
+    color: $thisisdarkblue; 
+  }
+  .flat-btn.accordion-header.collapsed {
+    box-shadow: 6px 6px 0 $box-shadow;
   }
   ul {
     margin-top: 0;
@@ -88,8 +114,17 @@
     li {
       flex-basis: 100%;
       width: 100%; 
+      padding: 0 3rem;
     }
   }
+}
+#more-events::before {
+  font-family: $icon-font-family;
+  content: '\f077';
+  text-align: center;
+}
+#more-events.collapsed::before {
+  content: '\f078';
 }
 
 .services {
@@ -123,6 +158,7 @@
   width: 45%;
   height: 100%;
 }
+
 // OVERWRITING BOOTSTRAP
 
 .row::before,
