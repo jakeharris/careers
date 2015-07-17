@@ -22,7 +22,7 @@ header {
   .img-replace {
     display: block;
     text-align: center;
-    font-size: 6rem;
+    font-size: 5rem;
     padding: 3rem;
     vertical-align: middle;
   }
@@ -208,7 +208,7 @@ header {
     text-align: center;
     margin-left: 2rem;
     margin-right: 2rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }
 .tooltip--show {
@@ -248,14 +248,14 @@ header {
 @media (min-width: $tiny-screen-size) {
   .tooltip {
     padding: 2rem;
-    & > h2 {
-      font-size: 29px; 
-    }
   }
 }
 @media (min-width: $small-screen-size) {
   .hero .img-replace {
     font-size: 8rem; 
+  }
+  .tooltip > h2 {
+    font-size: 29px; 
   }
 }
 @media (min-width: $medium-screen-size) {
