@@ -14,6 +14,9 @@
   .login-wrapper {
     z-index: 5;
   }
+  .login-blurb {
+    font-size: 1.8rem; 
+  }
   height: 100%;
 }
 
@@ -59,10 +62,9 @@
   padding: 1.2rem 0.5rem;
 }
 .report-hiring {
-  margin: 0 auto;
-  margin-bottom: 3rem;
-  width: 80%;
-  font-size: 24px;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
   display: block;
 }
 
@@ -128,8 +130,9 @@
 }
 
 .services {
-  flex-basis: 45%;
-  width: 45%;
+  flex-basis: 50%;
+  width: 50%;
+  position: relative;
 }
 .services-wrapper {
   padding: 5rem;
