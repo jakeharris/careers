@@ -7,27 +7,21 @@ node_modules/.bin/jshint*
 dist/
 npm-debug.log
 
-
-assets/*/*.min.*
 *.png
 *.jpg
 *.gif
 *.ps
 *.eps
+*.nef
+*.pdf
 *.bmp
 *.html
 *.css
 *.css.map
+assets/*/*.min.*
 config.php
 twitter.php
 twitter.json
 events.json
 dev/events.json
 assets/images/sponsors/sponsors that don't have icons on trl.md
-*.nef
-
-*.html
-
-*.pdf
-
-*.jpg
