@@ -29,13 +29,23 @@
         {
           "name": "Cover Letter #2",
           "link": "CoverLetter2"
+        },
+        {
+          "name": "International Student Sample",
+          "link": "international"
         }
       ]
     },
     {
       "name": "agriculture",
       "fullname": "College of Agriculture",
-      "img": "college-agriculture-banner"
+      "img": "college-agriculture-banner",
+      "docs": [
+        {
+          "name": "Agricultural Communications",
+          "link": "agcommunications"
+        }
+      ]
     },
     {
       "name": "architecture",
@@ -45,6 +55,17 @@
         {
           "name": "Building Science",
           "link": "buildingscience"
+        }
+      ]
+    },
+    {
+      "name": "business",
+      "fullname":"Harbert College of Business",
+      "img": "harbert-college-business-banner",
+      "docs": [
+        {
+          "name": "Supply Chain Management",
+          "link": "supplychainmngmt"
         }
       ]
     },
@@ -81,7 +102,13 @@
     {
       "name": "forestry-wildlife-sciences",
       "fullname": "School of Forestry and Wildlife Sciences",
-      "img": "school-forestry-wildlife-sciences-banner"
+      "img": "school-forestry-wildlife-sciences-banner",
+      "docs": [
+        {
+          "name": "Natural Resources Management",
+          "link": "naturalresourcesmngmt"
+        }
+      ]
     },
     {
       "name": "graduate-school",
@@ -89,12 +116,16 @@
       "img": "hargis-banner",
       "docs": [
         {
-          "name": "Counseling Psychology Graduate Student",
+          "name": "Counseling Psychology",
           "link": "gradcounseling"
         },
         {
-          "name": "Mechanical Engineering Graduate Student",
+          "name": "Mechanical Engineering",
           "link": "gradmecheng"
+        },
+        {
+          "name": "Physical Activity and Health",
+          "link": "physicalactivity"
         }
       ] 
     },
