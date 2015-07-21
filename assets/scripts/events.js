@@ -1,4 +1,5 @@
-var events = angular.module('career-center-events', ['ngRoute'])
+var events = angular.module('career-center-events', ['ngRoute']),
+    employerMode = (window.location.href.indexOf('employers') != -1)
 
 events.config(['$interpolateProvider', function($interpolateProvider) {
   'use strict';
@@ -8,11 +9,21 @@ events.config(['$interpolateProvider', function($interpolateProvider) {
 
 events.controller('month-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
+  
   $http.get('http://auburn.edu/career/events.json')
   .then(function (res) {
+    
     $scope.events = res.data.filter(function (el) {
-      return !('external-event' in el) && (getRelativeMonth(el.date['numerical-month']) <= 0)
+      if(employerMode) {
+        return ('employer-event' in el) && (getRelativeMonth(el.date['numerical-month']) <= 0)
+      }
+      else
+        return (getRelativeMonth(el.date['numerical-month']) <= 0)
     }).sort(byRelativeImmediacy).slice(0, 6)
+    
+    for(var ev in $scope.events) 
+      if(employerMode && ('employer-event' in ev))
+        ev.url = ev['employer-event'].url
   })
   
   var byRelativeImmediacy = function(a, b) {
@@ -45,8 +56,18 @@ events.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) 
   $http.get('http://auburn.edu/career/events.json')
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
-      return !('external-event' in el) && (getRelativeMonth(el.date['numerical-month']) > 0 && getRelativeMonth(el.date['numerical-month']) <= 6)
+      if(employerMode) 
+        return ('employer-event' in el) && (getRelativeMonth(el.date['numerical-month']) > 0 && getRelativeMonth(el.date['numerical-month']) <= 6)
+      else
+        return (getRelativeMonth(el.date['numerical-month']) > 0 && getRelativeMonth(el.date['numerical-month']) <= 6)
     }).sort(byRelativeImmediacy)
+    
+    
+    for(var ev in $scope.events) 
+      if(employerMode && ('employer-event' in $scope.events[ev])) {
+        console.log($scope.events[ev])
+        $scope.events[ev].url = $scope.events[ev]['employer-event'].url
+      }
   })
   
   var byRelativeImmediacy = function(a, b) {
