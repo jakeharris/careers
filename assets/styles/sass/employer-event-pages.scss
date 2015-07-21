@@ -1,0 +1,229 @@
+@import 'event-pages';
+
+// OVERRIDES
+.content > .row {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+// SPECIFICS
+.brief, .actions {
+  width: 40%;
+  flex-basis: 40%;
+  padding: 0;
+}
+.brief {
+  width: 50%;
+  flex-basis: 50%;
+}
+
+.brief {
+  padding-top: 1rem;
+  p, div {
+    padding-bottom: 3rem; 
+  }
+}
+.price:before, .price {
+  font-family: $header-font-family;
+  font-size: 3rem;
+}
+.price:before {
+  color: $charcoal;
+  content: 'Price';
+  padding-right: 1rem;
+}
+.price {
+  color: $box-shadow;
+}
+
+.contact {
+  max-height: 30rem;
+  padding-bottom: 3rem;
+  .contact-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  img {
+    flex-basis: 25%;
+    width: 25%;
+    
+    padding-top: 70px;
+    margin-top: -70px;
+    
+    border-radius: 50%;
+  }
+  .contact-info {
+    flex-basis: 65%;
+    width: 65%;
+  }
+  h3 {
+    font-family: $header-font-family;
+    font-size: 3rem;
+    
+    padding-bottom: 3rem;
+  }
+  .address, .phone, .email, .name {
+    font-family: $header-font-family;
+    font-size: 2rem;
+    
+    margin: 0;
+    padding-bottom: 0;
+    
+    a {
+      display: inline-block; 
+      word-wrap: break-word;
+      margin-left: 3.6rem;
+    }
+    .muted {
+      font-size: 0.8em;
+      color: $box-shadow;
+      padding-top: 0;
+      margin-top: 0;
+      display: block;
+    }
+  }
+
+  .address, .phone, .email, .name {
+    position: relative;
+    a {
+      position: absolute;
+    }
+  }
+  
+  .phone, .email {
+    margin-top: 1rem;
+  }
+  .email {
+    margin-top: -1rem;
+  }
+  
+  .address:before, .phone:before, .email:before {
+    @extend [class^="icon-"], [class*=" icon-"];
+  
+    display: inline-block;
+
+    font-size: 4rem;  
+    color: $box-shadow;
+    width: 2rem;
+  }
+  .address:before {
+    @extend .icon-map-marker;
+  }
+  .phone:before {
+    @extend .icon-phone; 
+  }
+  .email:before {
+    @extend .icon-comments-o; 
+  }
+  .name {
+    color: $box-shadow; 
+  }
+}
+
+.tipsheet {
+  @extend .content;
+  padding: 0;
+  border: 1px solid $box-shadow;
+  .tipsheet-wrapper {
+    padding: 5rem;
+    padding-bottom: 3rem;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    li {
+      color: $box-shadow;
+      
+      width: 45%;
+      flex-basis: 45%;
+    }
+  }
+  .flat-btn {
+    margin-bottom: 0; 
+  }
+}
+.accordion-header {
+  font-family: $header-font-family;
+  font-size: 3rem;
+  padding: 3rem 0;
+  
+  i:before {
+    text-align: center;
+    display: inline-block;
+    padding: 2.6rem;
+    font-size: 4rem;
+    @extend .icon;
+    @extend .icon-chevron-up;
+  }
+  &.collapsed {
+    i:before {
+      text-align: center;
+      @extend .icon-chevron-down; 
+    }
+  }
+}
+
+.cancellation-container {
+  padding-bottom: 2rem;
+}
+.cancellation-policy {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cancellation-policy-brief {
+  width: 40%;
+  flex-basis: 40%;
+  p {
+    font-family: $header-font-family;
+    font-size: 3rem;
+  }
+  ul {
+    font-size: 2rem;
+    li {
+      padding-bottom: 2rem; 
+    }
+  }
+}
+.contacts {
+  width: 50%;
+  flex-basis: 50%;
+}
+
+@media (min-width: $tiny-screen-size) {
+  .contact {
+    .address, .phone, .email, .name {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (min-width: $small-screen-size) {
+  .contact {
+    .address, .phone, .email, .name {
+      width: 100%;
+      min-width: 40rem;
+    }
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .contact {
+    .address:before, .phone:before, .email:before {
+      font-size: 6rem;
+      width: 4rem;
+    }
+    .address a {
+      top: 2.5rem; 
+    }
+    .phone a {
+      top: 1.5rem; 
+    }
+    .email a {
+      top: 2rem; 
+    }
+  }
+}
