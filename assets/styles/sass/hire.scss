@@ -1,6 +1,18 @@
 @import 'app';
 @import 'sponsors';
 
+
+/*****************/
+/* NAV OVERRIDES */
+/*****************/
+#student-employment ul {
+  margin-left: -100%;
+}
+
+/****************/
+/*    BASICS    */
+/****************/
+
 .content {
   margin-top: 3rem;
 }
