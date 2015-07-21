@@ -169,11 +169,12 @@ module.exports = function (grunt) {
     // associated tasks.
     watch: {
       assemble: {
-        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/staff.json', '<%= config.assets %>/data/pathways.json'],
+        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml,json}'],
         tasks: ['assemble:dev'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
-        files: ['Gruntfile.js']
+        files: ['Gruntfile.js'],
+        tasks: ['default']
       },
       sass: {
         files: ['<%= config.assets %>/styles/{,*/}*.{scss,sass}'],
