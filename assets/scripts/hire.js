@@ -9,7 +9,7 @@ home.config(['$interpolateProvider', function($interpolateProvider) {
 
 home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
-  $http.get('/career/events.json')
+  $http.get('http://auburn.edu/career/events.json')
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
       return (!isOver(el.date)) && (getRelativeMonth(el.date['numerical-month']) <= 6)
@@ -20,8 +20,7 @@ home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
       if(aRelativeMonth == bRelativeMonth) return a.date.day - b.date.day
       return aRelativeMonth - bRelativeMonth
     })
-    $scope.firstEvent = $scope.events[0]
-    $scope.events.splice(0, 1)
+    $scope.firstEvents = $scope.events.splice(0, 3)
   })
 
   var getRelativeMonth = function (month) {    
