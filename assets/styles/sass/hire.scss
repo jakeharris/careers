@@ -59,9 +59,7 @@
   right: 3rem;
 }
 
-.buttons {
-  
-}
+
 
 .flat-btn {
   font-size: 18px;
@@ -116,14 +114,18 @@
   }
   ul {
     margin-top: 0;
-    position: relative;
-    top: 3rem;
-    height: 85vh;
     width: 100%;
     li {
       flex-basis: 100%;
       width: 100%; 
-      padding: 0 3rem;
+      padding: 0 5rem; 
+      padding-bottom: 3rem;
+      &:first-of-type {
+        padding-top: 3rem; 
+      }
+      &.event > .event-details {
+        width: auto; 
+      }
     }
   }
 }
@@ -152,6 +154,7 @@
 .services-content {
   display: flex;
   margin: 0 auto;
+  padding-top: 2rem;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -165,6 +168,95 @@
 }
 .service:nth-of-type(2n) {
   text-align: right;
+}
+
+.contacts {
+  width: 50%;
+  flex-basis: 50%;
+  height: 100%;
+  .contact {
+    padding-bottom: 5rem;
+  }
+}
+.contact {  
+  .contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  img {
+    flex-basis: 25%;
+    width: 25%;
+    
+    border-radius: 50%;
+    box-sizing: padding-box;
+  }
+  .contact-info {
+    flex-basis: 65%;
+    width: 65%;
+  }
+  h3 {
+    font-family: $header-font-family;
+    font-size: 2rem;
+    
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .muted {
+      display: block;
+      color: $box-shadow;
+    }
+  }
+  .address, .phone, .email, .name {
+    position: relative;
+    
+    font-family: $header-font-family;
+    font-size: 2rem;
+    
+    margin: 0;
+    padding-bottom: 0;
+    
+    a {
+      display: inline-block; 
+      word-wrap: break-word;
+      margin-left: 3.6rem;
+      position: absolute;
+    }
+    .muted {
+      font-size: 0.8em;
+      color: $box-shadow;
+      padding-top: 0;
+      margin-top: 0;
+      display: block;
+    }
+  }
+  .phone, .email {
+    margin-top: 1rem;
+  }
+  .email {
+    margin-top: -1rem;
+  }
+  
+  .address:before, .phone:before, .email:before {
+    @extend [class^="icon-"], [class*=" icon-"];
+  
+    display: inline-block;
+
+    font-size: 4rem;  
+    color: $box-shadow;
+    width: 2rem;
+  }
+  .address:before {
+    @extend .icon-map-marker;
+  }
+  .phone:before {
+    @extend .icon-phone; 
+  }
+  .email:before {
+    @extend .icon-comments-o; 
+  }
+  .name {
+    color: $box-shadow; 
+  }
 }
 
 .sponsorship-opportunities {
