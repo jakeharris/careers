@@ -15,9 +15,12 @@
 .login {
   background: none repeat scroll 0% 0% white;
   overflow: visible;
-  flex-basis: 40%;
-  width: 40%;
+  flex-basis: 33%;
+  width: 33%;
   position: relative;
+  .trl {
+    display: block; 
+  }
   .login-wrapper {
     z-index: 5;
   }
@@ -42,8 +45,8 @@
 }
 
 .services {
-  flex-basis: 55%;
-  width: 55%;
+  flex-basis: 63%;
+  width: 63%;
   position: relative;
 }
 .services-wrapper {
@@ -88,6 +91,7 @@
 .upcoming-event {
   flex-basis: 63%;
   width: 63%;
+  height: 100%;
   img {
     height: 100%;
     width: 100%;
