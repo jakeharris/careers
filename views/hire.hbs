@@ -15,7 +15,7 @@ path-to-root: ..
       <p class="login-blurb">Your link to hard-working students and a campus that is not afraid.</p>
       <div class="buttons">
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/">Sign in</a>
-        <a class="flat-btn" href="">Register</a>
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=2">Register</a>
         <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/employers/policiesprocedures_emp.html">View policies</a>
         <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
       </div>
@@ -40,25 +40,68 @@ path-to-root: ..
 </section>
 
 <section class="row flex">
-  <div class="events content extra-content content--no-padding" ng-controller="calendar-ctrl">
-    <div class="first-event-wrapper">
-      <h2>Upcoming Events</h2>
-      <div class="first-event event">
-        <div class="event-date">
-          <div class="event-date-month">[[ firstEvent.date['shortened-month'] ]]</div>
-          <div class="event-date-day">[[ firstEvent.date['day'] ]]</div>
+  <div class="contacts content extra-content">
+    <h2>Recruiting Contacts</h2>
+    <p>All email addresses listed here end in "@auburn.edu".</p>
+    <div class="contacts-container">
+      <div class="contact">
+        <h3>All Majors <span class="muted">Career Center</span></h3>
+        <div class="contact-details">
+          <img src="assets/images/staff/jay.jpg">
+          <div class="contact-info">
+            <p class="name">Jay Skipworth</p>
+            <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
+            <p class="email"><a href="mailto:skipworth@auburn.edu">skipworth</a></p>
+          </div>
         </div>
-        <div class="event-details">
-          <a ng-if="firstEvent.url != ''" href="[[ firstEvent.url ]]" class="event-details-name" target="_blank">[[ firstEvent.name ]]</a>
-          <div ng-if="firstEvent.url == ''" class="event-details-name">[[ firstEvent.name ]]</div>
-          <div class="event-details-location">[[ firstEvent.location ]]</div>
-          <div ng-if="firstEvent.date.time != ''" class="event-details-time">[[ firstEvent.date.time.start ]] - [[ firstEvent.date.time.end ]]</div>
-          <div ng-if="firstEvent.date.time == '' && firstEvent.date.dates != ''" class="event-details-time">All day, continues until [[ firstEvent.date.dates.end ]]</div>
-          <div ng-if="firstEvent.date.time == '' && firstEvent.date.dates == ''" class="event-details-time">All day</div>
+      </div>
+      <div class="contact">
+        <h3>Business Majors <span class="muted">Harbert College of Business</span></h3>
+        <div class="contact-details">
+          <img src="assets/images/staff/melvin.jpg">
+          <div class="contact-info">
+            <p class="name">Mike Stover</p>
+            <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
+            <p class="email"><a href="mailto:mstover@auburn.edu">mstover</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="contact">
+        <h3>Agricultural Majors <span class="muted">College of Agriculture</span></h3>
+        <div class="contact-details">
+          <img src="assets/images/staff/torey.jpg">
+          <div class="contact-info">
+            <p class="name">Bernie Shucks</p>
+            <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
+            <p class="email"><a href="mailto:shucks@auburn.edu">shucks</a></p>
+          </div>
         </div>
       </div>
     </div>
-    <a class="collapsed accordion-header flat-btn" data-toggle="collapse" id="more-events" href="#events-list" role="tab" aria-expanded="false" aria-controls="events-list"></a>
+  </div>
+</section>
+
+<section class="row flex" ng-controller="calendar-ctrl">
+  <a class="upcoming-event content extra-content content--no-padding" href="[[ firstEvents[0].url ]]"><img src="[[ img ]]"></img></a>
+  <div class="events content extra-content content--no-padding">
+    <div class="first-event-wrapper">
+      <h2>Upcoming Events</h2>
+      <div class="first-event event" ng-repeat="event in firstEvents">
+        <div class="event-date">
+          <div class="event-date-month">[[ event.date['shortened-month'] ]]</div>
+          <div class="event-date-day">[[ event.date['day'] ]]</div>
+        </div>
+        <div class="event-details">
+          <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
+          <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
+          <div class="event-details-location">[[ event.location ]]</div>
+          <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
+          <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
+          <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
+        </div>
+      </div>
+    </div>
+    <a ng-if="events.length > 0" class="collapsed accordion-header flat-btn" data-toggle="collapse" id="more-events" href="#events-list" role="tab" aria-expanded="false" aria-controls="events-list"></a>
     <ul style="height: 0px;" aria-expanded="false" id="events-list" class="panel-collapse collapse" role="tabpanel" aria-labelledby="events-list-heading">
       <li class="event" ng-repeat="event in events">
         <div class="event-date">
@@ -76,15 +119,6 @@ path-to-root: ..
       </li>
     </ul>
     <!--<a class="btn btn-default btn-md login-button" href="http://www.auburn.edu/career/events/">More events</a>-->
-  </div>
-  <div class="sponsorship-opportunities content content extra-content">
-    <div class="sponsorship-opportunities-wrapper">
-      <h2>Become a Sponsor</h2>
-      <p>In an ideal world, competent students would be immediately paired with the jobs they deserve. Help us get there.</p>
-      <div class="buttons">
-        <a class="flat-btn" href="#">Sponsor Us</a>
-      </div>
-    </div>
   </div>
 </section>
 

@@ -2,12 +2,7 @@
 @import 'sponsors';
 
 
-/*****************/
-/* NAV OVERRIDES */
-/*****************/
-#student-employment ul {
-  margin-left: -100%;
-}
+
 
 /****************/
 /*    BASICS    */
@@ -20,9 +15,12 @@
 .login {
   background: none repeat scroll 0% 0% white;
   overflow: visible;
-  flex-basis: 45%;
-  width: 45%;
+  flex-basis: 33%;
+  width: 33%;
   position: relative;
+  .trl {
+    display: block; 
+  }
   .login-wrapper {
     z-index: 5;
   }
@@ -31,19 +29,7 @@
   }
   height: 100%;
 }
-
-.student-employment {
-  padding: 5rem;
-  flex-basis: 45%;
-  width: 45%; 
-  position: relative;
-  .student-employment-wrapper {
-    z-index: 5; 
-  }
-}
-
-.login::before,
-.student-employment::before {
+.login::before {
   display: block;
 
   position: absolute;
@@ -52,20 +38,42 @@
   z-index: 0;
 
   font-family: $icon-font-family;
+  content: '\f14e';
   color: #85a2c6;
   font-size: 20rem;
   opacity: .1;
 }
-.login::before {
-  content: '\f14e';
-}
-.student-employment::before {
-  content: '\e603';
-  right: 3rem;
-}
 
-.buttons {
-  
+.services {
+  flex-basis: 63%;
+  width: 63%;
+  position: relative;
+}
+.services-wrapper {
+  padding: 5rem;
+  padding-bottom: 3rem;
+}
+.services-header {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.services-content {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.service {  
+  padding: 1rem;
+  width: 50%;
+  flex-basis: 50%;
+  font-family: $header-font-family;
+  font-size: 2rem;
+  text-align: left;
+}
+.service:nth-of-type(2n) {
+  text-align: right;
 }
 
 .flat-btn {
@@ -80,11 +88,20 @@
   display: block;
 }
 
+.upcoming-event {
+  flex-basis: 63%;
+  width: 63%;
+  height: 100%;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
 .events.events {
   overflow: hidden;
   position: relative;
-  flex-basis: 45%;
-  width: 45%;
+  flex-basis: 33%;
+  width: 33%;
   height: 100%;
   h2 a::after {
     font-family: $icon-font-family;
@@ -121,14 +138,18 @@
   }
   ul {
     margin-top: 0;
-    position: relative;
-    top: 3rem;
-    height: 85vh;
     width: 100%;
     li {
       flex-basis: 100%;
       width: 100%; 
-      padding: 0 3rem;
+      padding: 0 5rem; 
+      padding-bottom: 3rem;
+      &:first-of-type {
+        padding-top: 3rem; 
+      }
+      &.event > .event-details {
+        width: auto; 
+      }
     }
   }
 }
@@ -141,31 +162,99 @@
   content: '\f078';
 }
 
-.services {
-  flex-basis: 50%;
-  width: 50%;
-  position: relative;
+
+.contacts {
+  width: 100%;
+  flex-basis: 100%;
+  height: 100%;
+  .contacts-container {
+    display: flex;
+    justify-content: space-between; 
+  }
+  .contact {
+    width: 30%;
+    flex-basis: 30%;
+  }
 }
-.services-wrapper {
-  padding: 5rem;
-  padding-bottom: 3rem;
-}
-.services-header {
-  text-align: center;
-  padding-bottom: 1rem;
-}
-.services-content {
-  display: flex;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.service {  
-  padding: 1rem;
-  width: 50%;
-  flex-basis: 50%;
-  font-family: $header-font-family;
-  font-size: 1.7rem;
+.contact {  
+  .contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  img {
+    flex-basis: 25%;
+    width: 25%;
+    
+    border-radius: 50%;
+    box-sizing: padding-box;
+  }
+  .contact-info {
+    flex-basis: 65%;
+    width: 65%;
+  }
+  h3 {
+    font-family: $header-font-family;
+    font-size: 2rem;
+    
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .muted {
+      display: block;
+      color: $box-shadow;
+    }
+  }
+  .address, .phone, .email, .name {
+    position: relative;
+    
+    font-family: $header-font-family;
+    font-size: 2rem;
+    
+    margin: 0;
+    padding-bottom: 0;
+    
+    a {
+      display: inline-block; 
+      word-wrap: break-word;
+      margin-left: 3.6rem;
+      position: absolute;
+    }
+    .muted {
+      font-size: 0.8em;
+      color: $box-shadow;
+      padding-top: 0;
+      margin-top: 0;
+      display: block;
+    }
+  }
+  .phone, .email {
+    margin-top: 1rem;
+  }
+  .email {
+    margin-top: -1rem;
+  }
+  
+  .address:before, .phone:before, .email:before {
+    @extend [class^="icon-"], [class*=" icon-"];
+  
+    display: inline-block;
+
+    font-size: 4rem;  
+    color: $box-shadow;
+    width: 2rem;
+  }
+  .address:before {
+    @extend .icon-map-marker;
+  }
+  .phone:before {
+    @extend .icon-phone; 
+  }
+  .email:before {
+    @extend .icon-comments-o; 
+  }
+  .name {
+    color: $box-shadow; 
+  }
 }
 
 .sponsorship-opportunities {

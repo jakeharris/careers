@@ -9,10 +9,10 @@ home.config(['$interpolateProvider', function($interpolateProvider) {
 
 home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
-  $http.get('/career/events.json')
+  $http.get('http://auburn.edu/career/events.json')
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
-      return (!isOver(el.date)) && (getRelativeMonth(el.date['numerical-month']) <= 6)
+      return (!isOver(el.date)) && (el.hasOwnProperty('employer-event')) && (getRelativeMonth(el.date['numerical-month']) <= 6)
     }).sort(function (a, b) {
       var aRelativeMonth = getRelativeMonth(a.date['numerical-month']),
           bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
@@ -20,8 +20,12 @@ home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
       if(aRelativeMonth == bRelativeMonth) return a.date.day - b.date.day
       return aRelativeMonth - bRelativeMonth
     })
-    $scope.firstEvent = $scope.events[0]
-    $scope.events.splice(0, 1)
+    for(var e in $scope.events) {
+      if($scope.img === undefined) 
+        $scope.img = '../assets/images/events/' + $scope.events[e]['employer-event'].name + '-slide.png'
+      $scope.events[e].url = 'employers/events/' + $scope.events[e]['employer-event'].name + '.html'
+    }
+    $scope.firstEvents = $scope.events.splice(0, 3)
   })
 
   var getRelativeMonth = function (month) {    

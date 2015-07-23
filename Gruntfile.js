@@ -86,6 +86,8 @@ module.exports = function (grunt) {
     'parents/index.html': ['<%= config.views %>/families.hbs'],
     'faculty/index.html': ['<%= config.views %>/faculty.hbs'],
     'employers/index.html': ['<%= config.views %>/hire.hbs'],
+    'employers/events/index.html': ['<%= config.views %>/employer-events/events.hbs'],
+    'employers/events/tech.html': ['<%= config.views %>/employer-events/tech.hbs'],
     'experience/index.html': ['<%= config.views %>/experience.hbs'],
     'experience/internships.html': ['<%= config.views %>/internships.hbs'],
     'experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
@@ -121,8 +123,10 @@ module.exports = function (grunt) {
     'dist/students/prospective.html': ['<%= config.views %>/students/prospective.hbs'],
     'dist/students/specialized.html': ['<%= config.views %>/students/specialized.hbs'],
     'dist/parents/index.html': ['<%= config.views %>/families.hbs'],
-    'dist/faculty/index.html': ['<%= config.views %>/faculty.hbs'] ,
-    'dist/employers/index.html': ['<%= config.views %>/hire.hbs'] ,
+    'dist/faculty/index.html': ['<%= config.views %>/faculty.hbs'],
+    'dist/employers/index.html': ['<%= config.views %>/hire.hbs'],
+    'dist/employers/events/index.html': ['<%= config.views %>/employer-events/events.hbs'],
+    'dist/employers/events/tech.html': ['<%= config.views %>/employer-events/tech.hbs'],
     'dist/experience/index.html': ['<%= config.views %>/experience.hbs'],
     'dist/experience/internships.html': ['<%= config.views %>/internships.hbs'],
     'dist/experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
@@ -168,12 +172,16 @@ module.exports = function (grunt) {
     // Watch for changes in the specified files and run the
     // associated tasks.
     watch: {
+      options: {
+        forever: false
+      },
       assemble: {
-        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/staff.json', '<%= config.assets %>/data/pathways.json'],
+        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml,json}'],
         tasks: ['assemble:dev'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
-        files: ['Gruntfile.js']
+        files: ['Gruntfile.js'],
+        tasks: ['default']
       },
       sass: {
         files: ['<%= config.assets %>/styles/{,*/}*.{scss,sass}'],
