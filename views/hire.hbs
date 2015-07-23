@@ -81,8 +81,9 @@ path-to-root: ..
   </div>
 </section>
 
-<section class="row flex">
-  <div class="events content extra-content content--no-padding" ng-controller="calendar-ctrl">
+<section class="row flex" ng-controller="calendar-ctrl">
+  <a class="upcoming-event content extra-content content--no-padding" href="[[ firstEvents[0].url ]]"><img src="[[ img ]]"></img></a>
+  <div class="events content extra-content content--no-padding">
     <div class="first-event-wrapper">
       <h2>Upcoming Events</h2>
       <div class="first-event event" ng-repeat="event in firstEvents">
