@@ -170,7 +170,7 @@ layout: default.hbs
       <ul ng-controller="blogger-ctrl">
         <li class="blog-post" ng-repeat="post in blog.posts">
           <h3><a class="h3-a post-title" href="[[ post.url ]]">[[ post.title ]]</a></h3>
-          <div class="post-details">[[ post.date ]]</div>
+          <div class="post-details"><a class="tweet-date" href="[[post.author.url ]]">posted by [[ post.author.name ]]</a></div>
         </li>
       </ul>
       <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>

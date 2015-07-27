@@ -22,7 +22,11 @@ home.config(['$interpolateProvider', function ($interpolateProvider) {
 
 home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
-  $http.get('/career/events.json')
+  
+  var eventsFile = (window.location.href.indexOf('localhost') != -1) ? 
+                    'http://auburn.edu/career/events.json' : '/career/events.json'
+  
+  $http.get(eventsFile)
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
       return (!isOver(el.date)) && (getRelativeMonth(el.date['numerical-month']) <= 6)
@@ -61,7 +65,11 @@ home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
 
 home.controller('twitter-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
-  $http.get('/career/twitter.json')
+  
+  var tweetsFile = (window.location.href.indexOf('localhost') != -1) ? 
+                    'http://auburn.edu/career/twitter.json' : '/career/twitter.json'
+  
+  $http.get(tweetsFile)
   .then(function (res) {
     var tweets = res.data
     for(var t in tweets) {
@@ -80,13 +88,13 @@ home.controller('twitter-ctrl', ['$scope', '$http', function ($scope, $http) {
 
     if (tweet.entities.hasOwnProperty('urls') && tweet.entities.urls.length > 0)
       link = tweet.entities.urls[0].url
-      else if (tweet.entities.hasOwnProperty('media') && tweet.entities.media.length > 0)
-        link = tweet.entities.media[0].expanded_url
-        else if (/(http:\/\/\S*){1}?/.test(m)) {
-          //yes I could write this in fewer lines but I'm trying to help you read it
-          var match = /(http:\/\/\S*){1}?/.exec(m)
-          link = match[0]  
-        }
+    else if (tweet.entities.hasOwnProperty('media') && tweet.entities.media.length > 0)
+      link = tweet.entities.media[0].expanded_url
+    else if (/(http:\/\/\S*){1}?/.test(m)) {
+      //yes I could write this in fewer lines but I'm trying to help you read it
+      var match = /(http:\/\/\S*){1}?/.exec(m)
+      link = match[0]  
+    }
     else link = ''
 
     if(link !== '' && ~m.indexOf(link)) {
@@ -94,12 +102,13 @@ home.controller('twitter-ctrl', ['$scope', '$http', function ($scope, $http) {
     }
     while(~m.indexOf('&amp;'))
       m = m.replace('&amp;', '&')
-      if(~m.indexOf('RT'))
-        while(/(http:\/\/\S*){1}?/.test(m))
-          m = m.replace(/(http:\/\/\S*){1}?/.exec(m)[0], '')
-          for(var u in mentions) {
+      
+    if(~m.indexOf('RT'))
+      while(/(http:\/\/\S*){1}?/.test(m))
+        m = m.replace(/(http:\/\/\S*){1}?/.exec(m)[0], '')
+        for(var u in mentions) {
 
-          }
+        }
 
 
     d = '' + d.toDateString().substr(0, d.toDateString().length - 5)
@@ -110,19 +119,46 @@ home.controller('twitter-ctrl', ['$scope', '$http', function ($scope, $http) {
 
 home.controller('blogger-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
-  $http.get('/career/blog.json')
+  
+  var blogFile = (window.location.href.indexOf('localhost') != -1) ? 
+                    'http://auburn.edu/career/blog.json' : '/career/blog.json'
+  
+  $http.get(blogFile)
   .then(function (res) {
     var posts = (res.data.feed.entry)
         $scope.blog = { }
         $scope.blog.posts = [ ]
     
     for(var post in posts) {
-      var d = new Date(posts[post].published.$t.split('+0000').join(''))
+      var d = new Date(posts[post].published.$t.split('+0000').join('')),
+          author = posts[post].author[0].name.$t,
+          authorURL
+      
       posts[post].date = '' + d.toDateString().substr(0, d.toDateString().length - 5)
+      
+      if(author.indexOf(' ') != -1)
+        author = author.substr(0, author.indexOf(' '))
+        
+      switch(author) {
+        case 'Addye':
+          authorURL = 'http://addyebb.weebly.com/'
+          break
+        case 'Meaghan':
+          authorURL = 'http://meaghanweir.wix.com/careercoach'
+          break
+        default:
+          authorURL = ''
+          break
+      }
+        
+        
       $scope.blog.posts[post] = { 
         "title": posts[post].title.$t,
         "url":   posts[post].link[posts[post].link.length - 1].href, // last element is the "alternate" URL, which is more human-readable and branded as ours
-        "date":  posts[post].date
+        "author": {
+          "name": author,
+          "url": authorURL
+        }
       }
     }
   })
@@ -153,7 +189,11 @@ home.controller('blogger-ctrl', ['$scope', '$http', function ($scope, $http) {
 
 home.controller('hours-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
-  $http.get('/career/hours.json')
+  
+  var hoursFile = (window.location.href.indexOf('localhost') != -1) ? 
+                    'http://auburn.edu/career/hours.json' : '/career/hours.json'
+  
+  $http.get(hoursFile)
   .then(function (res) {
     if(res.data.hasOwnProperty('holiday'))
       $scope.holiday = res.data.holiday
