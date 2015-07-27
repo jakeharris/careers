@@ -49,13 +49,36 @@
   width: 63%;
   position: relative;
 }
+.services-background {
+  height: 100%;
+  width: 100%;
+  background: url('../images/services-banner.png') 100% 100% no-repeat;
+  background-position: 0 -1rem;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
+}
+.services-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  background: $thisisdarkblue;
+  opacity: 0.2;
+  z-index: 2;
+}
 .services-wrapper {
   padding: 5rem;
   padding-bottom: 3rem;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 3;
 }
 .services-header {
   text-align: center;
   padding-bottom: 1rem;
+  color: white;
 }
 .services-content {
   display: flex;
@@ -64,6 +87,11 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.services-header,
+.services-content {
+  z-index: 6;
+  position: relative;
+}
 .service {  
   padding: 1rem;
   width: 50%;
@@ -71,6 +99,12 @@
   font-family: $header-font-family;
   font-size: 2rem;
   text-align: left;
+  & > a {
+    color: $box-shadow;
+  }
+  & > a:hover {
+    color: $thisisiceblue; 
+  }
 }
 .service:nth-of-type(2n) {
   text-align: right;
@@ -82,9 +116,11 @@
   padding: 1.2rem 0.5rem;
 }
 .report-hiring {
+  @extend .flat-btn--white;
   position: absolute;
   bottom: 0;
   margin: 0;
+  z-index: 3;
   display: block;
 }
 
