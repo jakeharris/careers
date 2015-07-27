@@ -6,6 +6,9 @@
   justify-content: space-between;
 }
 
+.muted {
+  color: $box-shadow;
+}
 
 // SPECIFICS
 .brief, .actions {
@@ -123,6 +126,7 @@
   padding: 0;
   margin-top: 1rem;
   border: 1px solid $box-shadow;
+  color: #999;
   .tipsheet-wrapper {
     padding: 5rem;
     padding-bottom: 3rem;
@@ -132,8 +136,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 2rem;
     li {
-      color: $box-shadow;
+      color: $charcoal;
       
       width: 45%;
       flex-basis: 45%;
@@ -143,6 +148,25 @@
     margin-bottom: 0; 
   }
 }
+
+.content > .attributes > .attribute > a.icon:hover {
+  background: $box-shadow;
+}
+
+.icon-comment-o:before {
+  position: relative;
+  top: 3px;
+}
+.icon-star-full:before {
+  position: relative;
+  left: 1px;
+}
+.icon-spoon-knife:before {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
 .accordion-header {
   font-family: $header-font-family;
   font-size: 3rem;
