@@ -115,7 +115,89 @@
     {
       "name": "agriculture",
       "fullname": "College of Agriculture",
-      "img": "college-agriculture-banner"
+      "img": "college-agriculture-banner",
+      "pathways": [
+        {
+          "name": "Agricultural Communications",
+          "link": "agricultural-communications"
+        },
+        {
+          "name": "Agricultural Economics & Business",
+          "link": "agricultural-economics-and-business"
+        },
+        {
+          "name": "Agronomy: Production",
+          "link": "agronomy-production"
+        },
+        {
+          "name": "Agronomy: Science",
+          "link": "agronomy-science"
+        },
+        {
+          "name": "Agronomy: Soil, Water, & Land Use",
+          "link": "agronomy-soil-water-land-use"
+        },
+        {
+          "name": "Agronomy: Turfgrass Management",
+          "link": "agronomy-turfgrass-management"
+        },
+        {
+          "name": "Animal Sciences: Equine",
+          "link": "animal-sciences-equine"
+        },
+        {
+          "name": "Animal Sciences: Muscle Foods",
+          "link": "animal-sciences-muscle-foods"
+        },
+        {
+          "name": "Animal Sciences: Pre-Veterinary Medicine",
+          "link": "animal-sciences-pre-vet"
+        },
+        {
+          "name": "Animal Sciences: Production Management",
+          "link": "animal-sciences-production-management"
+        },
+        {
+          "name": "Environmental Science",
+          "link": "environmental-science"
+        },
+        {
+          "name": "Fisheries & Allied Aquaculture",
+          "link": "fisheries-and-allied-aquaculture"
+        },
+        {
+          "name": "Fisheries: Pre-Professional",
+          "link": "fisheries-pre-professional"
+        },
+        {
+          "name": "Food Science",
+          "link": "food-science"
+        },
+        {
+          "name": "Horticulture: Fruit & Vegetable",
+          "link": "horticulture-fruit-and-vegetable"
+        },
+        {
+          "name": "Horticulture: Nursery & Greenhouse Science",
+          "link": "horticulture-nursery-and-greenhouse-science"
+        },
+        {
+          "name": "Horticulture: Landscape",
+          "link": "horticulture-landscape"
+        },
+        {
+          "name": "Horticulture: Pre-Landscape Architecture",
+          "link": "horticulture-pre-landscape-architecture"
+        },
+        {
+          "name": "Poultry Pre-Veterinary Medicine",
+          "link": "poultry-pre-veterinary-medicine"
+        },
+        {
+          "name": "Poultry Production",
+          "link": "poultry-production"
+        }
+      ]
     },
     {
       "name": "architecture",
