@@ -225,6 +225,11 @@
       "img": "college-human-sciences-banner"
     },
     {
+      "name": "nursing",
+      "fullname": "School of Nursing",
+      "img": "nursing-banner"
+    },
+    {
       "name": "cosam",
       "fullname": "College of Science and Mathematics",
       "img": "college-science-mathematics-banner"
