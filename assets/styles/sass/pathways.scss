@@ -43,7 +43,8 @@
   
   i:before {
     text-align: center;
-    display: block;
+    display: inline-block;
+    width: 100%;
     padding: 2.6rem 0;
     font-size: 4rem;
     @extend .icon;
@@ -147,6 +148,7 @@
   .college {
     width: 40%;
     flex-basis: 40%;
+    max-width: 40%;
   }
   /***************************/
   /* COLLEGE-SPECIFIC STYLES */
