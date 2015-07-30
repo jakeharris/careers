@@ -29,6 +29,7 @@ home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
   $http.get(eventsFile)
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
+      if('__HOW-TO' in el) return false
       return (!isOver(el.date)) && (getRelativeMonth(el.date['numerical-month']) <= 6)
     }).sort(function (a, b) {
       var aRelativeMonth = getRelativeMonth(a.date['numerical-month']),

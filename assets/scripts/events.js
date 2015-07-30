@@ -14,6 +14,7 @@ events.controller('month-ctrl', ['$scope', '$http', function ($scope, $http) {
   .then(function (res) {
     
     $scope.events = res.data.filter(function (el) {
+      if('__HOW-TO' in el) return false
       if(employerMode) {
         return ('employer-event' in el) && (getRelativeMonth(el.date['numerical-month']) <= 0)
       }
@@ -58,6 +59,7 @@ events.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) 
   $http.get('http://auburn.edu/career/events.json')
   .then(function (res) {
     $scope.events = res.data.filter(function (el) {
+      if('__HOW-TO' in el) return false
       if(employerMode) 
         return ('employer-event' in el) && (getRelativeMonth(el.date['numerical-month']) > 0 && getRelativeMonth(el.date['numerical-month']) <= 6)
       else
