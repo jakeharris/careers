@@ -50,6 +50,9 @@
   position: relative;
   padding: 5rem;
   min-height: 400px;
+  p {
+    padding: 1rem 0; 
+  }
 }
 .services {
   flex-basis: 63%;
@@ -154,7 +157,7 @@
     right: 3rem;
   }
   .first-event-wrapper {
-    padding: 1.5rem 5rem 0; 
+    padding: 1.5rem 5rem 3rem; 
   }
   .first-event {
     flex-basis: 100%;
@@ -213,10 +216,11 @@
   .contacts-container {
     display: flex;
     justify-content: space-between; 
+    padding-top: 4.1rem;
   }
   .contact {
-    width: 50%;
-    flex-basis: 50%;
+    width: 45%;
+    flex-basis: 45%;
   }
 }
 .contact {  

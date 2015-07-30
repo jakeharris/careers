@@ -11,6 +11,16 @@ path-to-root: ..
 <section class="row flex">
   <div class="welcome content extra-content">
     <h2>This is Recruiting.</h2>
+    <p>
+      Auburn University is one of the premier engineering universities of the Southeast. 
+      Connect with us at the AU Career Center, and put 30,000 quality candidates at 
+      your fingertips.
+    </p>
+    <p>
+      The services listed to the right are just some of the myriad ways we can help you
+      hire not just new graduates, but people we believe in &mdash; people <em>you</em>
+      can believe in.
+    </p>
   </div>
   <div class="services content extra-content content--no-padding">
     <div class="services-background"></div>
@@ -21,10 +31,10 @@ path-to-root: ..
       </h2>
       <ul class="services-content">
         <li class="service"><a href="#">Job Postings</a></li>
-        <li class="service"><a href="#">Career Fairs</a></li>
+        <li class="service"><a href="employers/events/">Career Events</a></li>
         <li class="service"><a href="#">Student Employment</a></li>
         <li class="service"><a href="#">On-Campus Interviewing</a></li>
-        <li class="service"><a href="#">Sponsorship Opportunities</a></li>
+        <li class="service"><a href="#">Internship Opportunities</a></li>
         <li class="service"><a href="#">Information Sessions</a></li>
       </ul>
     </div>
@@ -76,7 +86,6 @@ path-to-root: ..
 </section>
 
 <section class="row flex" ng-controller="calendar-ctrl">
-  <a class="upcoming-event content extra-content content--no-padding" href="[[ firstEvents[0].url ]]"><img src="[[ img ]]"></img></a>
   <div class="events content extra-content content--no-padding">
     <div class="first-event-wrapper">
       <h2>Upcoming Events</h2>
@@ -112,8 +121,8 @@ path-to-root: ..
         </div>
       </li>
     </ul>
-    <!--<a class="btn btn-default btn-md login-button" href="http://www.auburn.edu/career/events/">More events</a>-->
   </div>
+  <a class="upcoming-event content extra-content content--no-padding" href="[[ firstEvents[0].url ]]"><img src="[[ img ]]"></img></a>
 </section>
 
 <section class="row sponsors content extra-content">
