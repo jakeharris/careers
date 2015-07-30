@@ -61,6 +61,11 @@ body.events {
   z-index: 1;
 }
 
+.event-details-tip-sheet,
+.event-details-registration {
+  display: block;
+}
+
 @media (min-width: $small-screen-size) {
   body.events .event {
     flex-basis: 50%;
