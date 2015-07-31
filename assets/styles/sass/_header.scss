@@ -169,7 +169,7 @@ nav.header {
     height: 44px;
     width: 44px;
     box-sizing: border-box;
-    padding: 1.2rem 1.8rem;
+    padding: 1.2rem 1.6rem;
     background: white;
     box-shadow: 6px 6px 0 #ccc;
     cursor: pointer;
@@ -409,20 +409,6 @@ ul li  {
     }
     input[type="search"] {
       width: 11rem; 
-    }
-  }
-}
-@media (min-width: $tiny-screen-size + 90px) {
-  .preheader {
-    height: 8rem; 
-  }
-  nav.header {
-    .nav-controller {
-      height: 60px;
-      width: 60px;
-      padding: 1.5rem;
-      padding-left: 22px;
-      padding-top: 16px; 
     }
   }
 }
