@@ -21,13 +21,10 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   
-  height: 11rem;
-  
   position: relative;
   
-  .hexes {
-    height: 125px;
-  }
+  height: 6rem;
+  
   .hex {
     z-index: 2;
     
@@ -42,15 +39,14 @@ header {
     }
   }
   h1 {
-    width: 50%;
-    padding-bottom: 2rem;
+    width: 65%;
     margin-bottom: 0;
     font-family: $header-font-family;
     font-size: 3rem;
     text-align: right;
     position: absolute;
     top: 0;
-    right: 15px;
+    right: 0;
     a {
       color: white;
       &:hover {
@@ -168,13 +164,12 @@ nav.header {
   .nav-controller {
     display: block;
     position: absolute;
-    top: 0%;
+    top: 90px;
     right: 0;
-    height: 60px;
-    width: 60px;
-    padding: 1.5rem;
-    padding-left: 22px;
-    padding-top: 16px;
+    height: 44px;
+    width: 44px;
+    box-sizing: border-box;
+    padding: 1.2rem 1.6rem;
     background: white;
     box-shadow: 6px 6px 0 #ccc;
     cursor: pointer;
@@ -205,6 +200,10 @@ nav.header {
   &.fixed {
     position: fixed;
     top: 0; 
+    
+    .nav-controller {
+      top: 0; 
+    }
   }
   
 
@@ -387,7 +386,7 @@ nav.postheader {
 }
 
 .hex {
-  @include hex(166px, white);
+  @include hex(82px, white);
 }
 
 
@@ -401,7 +400,6 @@ ul li  {
   .preheader {
     h1 {
       width: auto;
-      padding-right: 6rem;
     }
   }
   nav.postheader {
@@ -414,11 +412,6 @@ ul li  {
     }
   }
 }
-@media (min-width: $tiny-screen-size + 90px) {
-  .preheader {
-    height: 8rem; 
-  }
-}
 @media (min-width: $small-screen-size) {
   .preheader {
     width: 90vw !important;
@@ -426,6 +419,7 @@ ul li  {
     h1 { 
       font-size: 5rem;
       padding-top: 2rem; 
+      right: 15px;
     }
   }
   nav.header { 
@@ -462,6 +456,10 @@ ul li  {
       font-size: 14px;
     }
     padding: 1px 1rem;
+  }
+  
+  .hex {
+    @include hex(166px, white);
   }
 }
 @media (min-width: $moderate-screen-size) {

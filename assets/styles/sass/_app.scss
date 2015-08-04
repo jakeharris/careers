@@ -500,6 +500,8 @@ h3,.h3-a {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   width: 100%;
+  min-height: 40rem;
+  max-height: 40rem;
 }
 
 
