@@ -91,7 +91,8 @@ layout: default.hbs
       <div class="times">
         <i class="fa icon-clock-o times-icon"></i>
         <div class="times-address" ng-controller="hours-ctrl">
-          <p ng-if="holiday">[[ holiday ]]</p>
+          
+          <p class="emphasized" ng-if="holiday">[[ holiday ]]</p>
           <div ng-if="office">
             <h6>Hours</h6>
             <p ng-repeat="hours in office">
