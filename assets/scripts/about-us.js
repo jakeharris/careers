@@ -8,7 +8,11 @@ home.config(['$interpolateProvider', function ($interpolateProvider) {
 
 home.controller('hours-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
-  $http.get('/career/hours.json')
+  
+  var hoursFile = (window.location.href.indexOf('localhost') != -1) ? 
+                    'http://auburn.edu/career/hours.json' : '/career/hours.json'
+  
+  $http.get(hoursFile)
   .then(function (res) {
     if(res.data.hasOwnProperty('holiday'))
       $scope.holiday = res.data.holiday
