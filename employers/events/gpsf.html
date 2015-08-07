@@ -1,137 +1,484 @@
-<!DOCTYPE html>
-<html><!-- InstanceBegin template="/Templates/jobs.dwt" codeOutsideHTMLIsLocked="false" -->
-<head>
-<title>hire.auburn.edu - Auburn University</title>
-<link rel="stylesheet" href="http://www.auburn.edu/template/styles/main.css" media="screen" type="text/css">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-h2 {
-	font-size: 2em;
-}
-</style>
-</head>
-<body>
-<div id="pageWrap"> 
-  <div id="headerWrap">
-    <div id="header">
-      <div id="logo">
-      	<a href="http://www.auburn.edu"><img src="http://www.auburn.edu/template/styles/images/headerLogo.png" alt="Auburn University Homepage" /></a>
+
+
+<!doctype html>
+<html lang="en" ng-app="none">
+  <head>
+    <base href="../../">
+    <!-- Meta Data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <title>Graduate &amp; Professional School Fair</title>
+
+    <!-- Bootstrap & Core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Application CSS -->
+    <!-- build:css assets/styles/emp-gpsf.min.css -->
+      <link rel=stylesheet href="assets/styles/employer-event-pages.css">
+    <!-- endbuild -->
+
+    <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
+    <!--[if lt IE 9]>
+<script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
+<script src="//cdn.auburn.edu/assets/js/respond.src.js"></script>
+<link href="//cdn.auburn.edu/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
+<link href="assets/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
+<script src="assets/js/respond.proxy.js"></script>
+<![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
+
+    <!-- Angular & Core JS -->
+    <script>
+      document.createElement('picture')
+    </script>
+    <script src="http://auburn.edu/career/assets/scripts/picturefill.min.js" async></script>
+    <!-- It would be awesome if I could only load angular based on whether the particular view had a controller -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    
+    <!-- Application-specific CSS/JS -->
+    <!-- build:js assets/scripts/emp-gpsf.min.js -->
+      <script src="assets/scripts/employer-event-pages.js"></script>
+    <!-- endbuild -->
+    
+  </head>
+
+  <body class="emp-gpsf">
+    <header role="banner">
+    
+      <div class="preheader" id="preheader">
+        <div class="hexes">
+          <div class="hex"><a href="http://auburn.edu"><img src="assets/images/AU-emblem.png"></a></div>
+        </div>
+        <h1><a href="./employers">Career Center</a></h1>
       </div>
-      <div id="headerTitle">
-        <div class="topLinks">
-          <a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a> | 
-          <a href="http://www.auburn.edu/map">Map</a> | 
-          <a href="http://www.auburn.edu/main/auweb_campus_directory.html" class="lastTopLink">People Finder</a>
+      
+      
+      <nav id="nav" class="header nav-collapse">
+        <div class="nav-controller" id="hamburger">
+          <i class="icon-navicon"></i>
         </div>
-        <form action="http://search.auburn.edu" id="searchForm" method="get">
-          <div class="searchBox">
-            <input type="text" name="q" id="q" accesskey="q" size="28" tabindex="1" class="searchField" onFocus="if(this.value=='Search AU...'){this.value='';this.style.color='black'}" onBlur="if(this.value=='')this.value='Search AU...';this.style.color='grey'" value="Search AU..." />
-            <input type="image" src="http://www.auburn.edu/template/styles/images/searchButton2.png" name="sa" accesskey="z" tabindex="2" alt="Search" value="Submit" class="searchButton" />
-          </div>
-          <input type="hidden" name="cx" value="006456623919840955604:pinevfah6qm" />
-          <input type="hidden" name="ie" value="utf-8" />
-          <label for="q" style=" position:absolute; left:-9999px; visibility:hidden;">Enter your search terms</label>
-        </form>
-        <div class="titleArea"><!-- InstanceBeginEditable name="unitTitle" -->Tiger Recruiting Link<!-- InstanceEndEditable --></div>
-      </div>
-    </div>
-		<table class="nav">
-      <tr>
-        <td><a href="http://www.auburn.edu/career">Career Center HOME</a></td>
-        <td><a href="http://business.auburn.edu/OPCD/" target="_blank">College of Business OPCD</a></td>
-        </tr>
-    </table>
-  </div>
-  <div id="contentArea">
-    <div class="contentDivision"> 
-      <p class="breadcrumb"><!-- InstanceBeginEditable name="breadcrumb" --><a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/employers/index.html">hire.auburn.edu</a> &gt; <a href="index.html">Career Events</a> &gt; Graduate and Professional School Fair<!-- InstanceEndEditable --> </p>
-			<!-- InstanceBeginEditable name="body" -->
-      <h1>Graduate and Professional School Fair</h1>
-      <div style="width:20%; height:500px; float:left; padding-right:20px; padding-top:20px"> 
-        <div style="width:100%; float:left;">
-        <p align=center><a href="gpsfdetails.html"><img src="../../buttons/buttons_jpegs/events_details.jpg" alt="Expo Details" width="160" height="55" border="0"></a>        
-        <p align=center><a href="gpsftravel.html"><img src="../../buttons/buttons_jpegs/events_eventtravel.jpg" width="160" height="55" alt="Expo Travel &amp; Hotel"></a></p>
-        <div style="float:left;">
-          <p align=center><img src="../../buttons/buttons_jpegs/adobe.jpg" alt="" name="pdf" width="75" height="75"></p>
+        <div class="nav-wrapper">
+          <ul>
+            <li id="about-us" class="hover about-us about-us--mobile">
+              <a href="employers/aboutus/">About Us</a>
+              <ul>
+                <li data-menu="about-us"><a href="employers/aboutus/">Office Info</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/staff.html">Staff</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/campus-partners.html">Campus Partners</a></li>
+              </ul>
+            </li>
+            <li class="recruiting">
+              <a href="employers/ocr.html">Recruiting</a>
+              <ul>
+                <li data-menu="recruiting"><a href="#">Job Postings</a></li>
+                <li data-menu="recruiting"><a href="events">Career Events</a></li>
+                <li data-menu="recruiting"><a href="#">On-Campus Interviewing</a></li>
+              </ul>
+            </li>
+            <li id="student-employment">
+              <a href="employers/studentemployment/index.html">Part-Time Employment</a>
+              <ul>
+                <li data-menu="student-employment"><a href="#">On-Campus</a></li>
+                <li data-menu="student-employment"><a href="#">Off-Campus</a></li>
+                <li data-menu="student-employment"><a href="#">Student Employment Awards</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="employers/events/">Events</a>
+            </li>
+            <li class="about-us">
+              <a href="employers/aboutus/">About Us</a>
+              <ul>
+                <li data-menu="about-us"><a href="employers/aboutus/">Office Info</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/staff.html">Staff</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/campus-partners.html">Campus Partners</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-        <div style="float:left; padding-top:30px;">
-          <center>
-            <a href="tips_fa12_gpsf.pdf">Print the Event Tip Sheet </a>
-          </center>
-        </div>
-<p align=center>&nbsp;</p>
-        </div>
-        <div style="width:100%; float:left;">
-        <h6>Graduate &amp; Professional</h6>
-        <p align=center><img src="../../buttons/buttons_jpegs/events_register_gpsf.jpg" width="160" height="55" alt="Register Now"></p>
-        <p align=center><img src="../../buttons/buttons_jpegs/events_attendees.jpg" width="160" height="55" alt="See Who's Attending"> </p>
-        </p></div>
-      </div>
-      <div style="width:48%; float:left; padding-left:20px;">
-        <p class="blue"><strong>Wednesday, October 3, 2012<br>
-          10:00 AM - 1:00 PM<br>
-        Auburn University Student Center | 2nd Floor</strong></p>
-        <h6 class="blue">Event Description</h6>
-        <p>The Graduate and Professional School Fair is an event for students   interested in graduate studies and professional school. Graduate school representatives from colleges and universities around the country will be present to discuss opportunities with Auburn students. Sponsored by the Alabama Connection Team</p>
-        <h6>Representative Information</h6>
-        <p><a href="gpsfdetails.html">Graduate and Professional School Fair Details</a></p>
-        <p>Information included in this section:</p>
+      </nav>
+      
+      <nav class="postheader" id="postheader">
         <ul>
-          <li>Event Schedule</li>
-          <li>Registration Fee</li>
-          <li>Setup and Equipment Information</li>
-          <div class="orangeDecorBar">&nbsp;</div>
+            <li><a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a></li>
+            <li><a href="http://www.auburn.edu/map">Map</a></li>
+            <li><a href="http://www.auburn.edu/main/auweb_campus_directory.html">People Finder</a></li>
+            <li><a href="http://auaccess.auburn.edu/">AU Access</a></li>
+            <li>
+                <form action="http://search.auburn.edu" method="get">
+                    <input type="search" placeholder="Search Auburn" name="q">
+                </form>
+            </li>
         </ul>
-        <p><a href="gpsftravel.html">Travel &amp; Hotel Information</a></p>
-        <p>Information included in this section:</p>
-        <ul>
-          <li>Accommodations</li>
-          <li>Transportation and Parking</li>
-          <li>Directions</li>
-        </ul>
-        </div>
-      <div style="width:25%; float:left;">
-        <h6>Need a place to stay?</h6>
-        <p align=center>We highly recommend <br>
-          The Hotel at Auburn 
-          University<br>
-          and Dixon Conference Center<br>
-          1-800-228-2876</p>
-        <p align=center><a href="https://reservations.ihotelier.com/crs/g_reservation.cfm?groupID=570037&hotelID=6493" target="_blank"><img src="../../buttons/buttons_jpegs/button_auhcc.jpg" alt="" name="auhccbutton" width="150" height="150"></a></p>
-        <p align=center>Government Rate available. Deadline: 9/3/2012</p>
-      </div>
-      <!-- InstanceEndEditable -->
-      <p class="lastUpdated">Last Updated: <!-- InstanceBeginEditable name="lastUpdated" -->Apr 18, 2012<!-- InstanceEndEditable --> </p>
-    </div>
-  </div>
-  <div id="contentArea_bottom"></div>
-  <div id="footerWrap">
-    <div id="footer">
-    <div id="footSectionWrap">
-      <div class="footSection">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
-      <div class="footSection"> 
-        <ul>
-          <li><a href="http://www.facebook.com/home.php#/pages/Auburn-AL/AU-Career-Development-Services/114131891055?ref=nf"><br>
-            <img src="../../images/icofacebook.png" alt="Facebook" width="25" height="25" border="0"></a> &nbsp;<a href="http://twitter.com/#!/AUCareer"><img src="file:///M|/SITEREDO/buttons/icotwitter.png" alt="Twitter" width="25" height="25" border="0"></a> &nbsp;<a href="http://www.linkedin.com/groups?about=&gid=1878262" target="_blank"><img src="file:///M|/SITEREDO/buttons/icolinked.png" alt="LinkedIn" width="25" height="25" border="0"></a> <a href="http://tigersprepare.blogspot.com/" target="_blank">&nbsp;<img src="file:///M|/SITEREDO/buttons/icoblog.png" alt="Blog" width="25" height="25" border="0"></a></li>
-        </ul></div><div class="footSection noBorder">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
-    </div>
-    </div>  
-    <div id="subfooter">
-      Auburn University Career Center | Auburn, Alabama 36849 | (334) 844-4744  | <script type="text/javascript">emailE='auburn.edu'; emailE=('employs' + '@' + emailE); document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");</script>
-      employs@auburn.edu<br />
-      <a href="https://fp.auburn.edu/ocm/auweb_survey">Website Feedback</a> | <a href="http://www.auburn.edu/privacy">Privacy</a> | <a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; 
-      <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a>
-    </div>
-  </div>
-  <!--#include virtual="/template/includes/gatc.html" --> 
+      </nav>
+    </header>
+    
+    <!-- Positioning the nav -->
+    <script>
+      var preheader, nav, postheader;
+      window.onscroll = function () {
+        if(preheader === undefined) preheader = document.getElementById('preheader')
+        if(preheader === undefined) return
+        
+        if(nav === undefined) nav = document.getElementById('nav')
+        if(nav === undefined) return
+        
+        if(postheader === undefined) postheader = document.getElementById('postheader')
+        if(postheader === undefined) return  
+        
+        
+        if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
+          nav.classList.add('fixed') 
+          postheader.classList.add('absolute')
+        } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed') && window.innerWidth >= 768) {
+          nav.classList.remove('fixed')
+          postheader.classList.remove('absolute')
+        } else if (preheader.getBoundingClientRect().bottom <= 0 && nav.children[0].getBoundingClientRect().top <= 0 && !nav.classList.contains('fixed')) {
+          nav.classList.add('fixed') 
+        } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed')) {
+          nav.classList.remove('fixed') 
+        } 
+        
+        if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth >= 768) { 
+          nav.classList.add('bordered')
+        } else if (postheader.getBoundingClientRect().top > 0 + 30  && nav.classList.contains('bordered') && window.innerWidth >= 768) {
+          nav.classList.remove('bordered') 
+        } else if (nav.children[0].getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth < 768) {
+          nav.classList.add('bordered') 
+        } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('bordered') && window.innerWidth < 768) {
+          nav.classList.remove('bordered') 
+        }
+        
+        
+        if(nav.children[1].classList.contains('mobile-nav--active') && !nav.classList.contains('fixed')) {
+          nav.classList.add('fixed'); 
+        }
+      }
+    </script>
+    <!-- Mobile menu -->
+    <script>
+      var hamburger = document.getElementById('hamburger')
+      hamburger.addEventListener('click', function () {
+        var navWrapper = document.getElementById('nav').children[1]
+         
+        if(hamburger === undefined) hamburger = document.getElementById('hamburger')
+        if(hamburger === undefined) return
+        
+        if (hamburger.classList.contains('nav-controller--active'))
+          hamburger.classList.remove('nav-controller--active')
+        else hamburger.classList.add('nav-controller--active')
+        
+        if(navWrapper.classList.contains('mobile-nav--active'))
+          navWrapper.classList.remove('mobile-nav--active')
+        else 
+          navWrapper.classList.add('mobile-nav--active')
+      })
+      window.addEventListener('resize', function () {
+        var navWrapper = document.getElementById('nav').children[1]
+        
+        if(window.innerWidth >= 768 && navWrapper.classList.contains('mobile-nav--active'))
+          navWrapper.classList.remove('mobile-nav--active')
+      })
+      
+      var submenus = document.getElementById('nav').getElementsByClassName('hover')
+      function touchHandler(e) {
+        
+        e.preventDefault()
+        
+        console.log(this.classList)
+        
+        if(this.classList.contains('hover')) {
+          if(this.classList.contains('hover--active')) {
+            this.classList.add('hover--active')
+          }
+        }
+        else if(!this.classList.contains('hover')) {
+    
+          console.log('no hover')
+          console.log(this)
+          var menu = this.parentElement.parentElement
+    
+          if(menu.classList.contains('hover--active')) e.target.click()
+        }
+      }
+      for(var i = 0; i < submenus.length; i++) {
+        submenus[i].addEventListener('touchstart', touchHandler, true)
+        
+        for(var j = 0; j < submenus[i].children[1].children.length; j++) {
+          submenus[i].children[1].children[j].addEventListener('touchstart', touchHandler, true) 
+        }
+      }
+      
+    </script>
+    <style>
+      nav.header .nav-wrapper ul li,
+      nav.header .nav-wrapper.mobile-nav--active ul li {
+         width: 25%;
+      }
+      nav.header ul li.hover--active:last-of-type > ul, nav.header ul li:hover:last-of-type > ul {
+        left: -300%;
+      }
+      nav.header ul li.hover--active > ul, nav.header ul li:hover > ul {
+        width: 400%; 
+      }
+    </style>    <div class="container">
+      
+<!-- Banner image -->
+<div class="hero">
+  <img src="assets/images/events/GPSF_Webpage(F15).png"></img>
 </div>
-</body>
-<!-- InstanceEnd --></html>
+
+<div class="content">
+  <div class="row">
+    <div class="brief">
+      <p class="blurb">Speak with students interested in furthering their education at your institution.</p>
+      <div class="contact">
+        <h3>Point of Contact</h3>
+        <div class="contact-details">
+          <img src="assets/images/staff/melvin.jpg">
+          <div class="contact-info">
+            <p class="name">Melvin K. Smith</p>
+            <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
+            <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="flat-btn" href="http://www.alabamaconnection.org/">Register</a>
+      <div class="tipsheet">
+        <div class="tipsheet-wrapper">
+          <p>Download the tipsheet for detailed information about:</p>
+          <ul>
+            <li>Payment</li>
+            <li>Shipping</li>
+            <li>Space &amp; Equipment</li>
+            <li>Display Guidelines</li>
+          </ul>
+        </div>
+        <a class="flat-btn" href="employers/events/Tips_EID(F15).pdf">Download Tip Sheet</a>
+      </div>
+      <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=fe70cd4cb4d0b5f21c4591e7d76d32c7#/events/dd4b0f5ae7e282997e50fde9c271eeca/employers">View Attending Employers</a>
+    </div>
+  </div>
+  
+  <!-- Icons -->
+  <div class="attributes">
+    <div class="attribute">
+      <a class="icon format" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-title="<h2>Interview Day <span class='muted'>Wed, Sept 30</span></h2>" data-content="<p>When you check in on Tuesday, we'll give you a <strong>scheduling sheet.</strong> Use it to schedule interviews with students for the following day.</p><p>Interviews will occur at the <strong>Hotel at Auburn University and Dixon Conference Center.</strong></p><h2 class='muted'>8am - 4:30pm</h2><p>Lunch will not be provided.</p>">
+        <i class="icon-comments-o"></i>
+      </a>
+      <div class="details">Next-day Interviews</div>
+    </div>
+    <div class="attribute">
+      <a class="icon dress" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" title="<h2>Early Bird Pricing <span class='muted'>$200</span></h2>" data-content="<p>If you register before September 18, you save $100 on your registration fee (per table)!</p>">
+        <i class="icon-star-full"></i>
+      </a>
+      <div class="details">
+        Early Bird Pricing
+      </div>
+    </div>
+    <div class="attribute">
+      <a class="icon population">
+        <i class="icon-spoon-knife"></i>
+        <span class="tooltip"></span>
+      </a>
+      <div class="details">Dinner Provided</div>
+    </div>
+  </div>
+</div>
+
+<div class="content extra-content content--no-padding accordion-container">
+  <div class="cancellation-accordion accordion">
+    <a class="collapsed accordion-header" data-toggle="collapse" id="cancellation-heading" href="#cancellation" role="tab" aria-expanded="false" aria-controls="cancellation">
+      Cancellation Policy<i></i>
+    </a>
+    <div style="height: 0px;" aria-expanded="false" id="cancellation" class="panel-collapse collapse" role="tabpanel" aria-labelledby="cancellation-heading">
+      <div class="cancellation-policy">
+        <div class="cancellation-policy-brief">
+          <p>In brief:</p>
+          <ul>
+            <li>No refunds for cancellations after Friday, September 18, 2015</li>
+            <li>One half of the registration fee ($100.00 for Early Bird registrants) is charged for all cancellations prior to the deadline date whether the registration fee is paid in advance or not</li>
+            <li>If your organization is registered for the event and no one shows up, your organization is expected to pay the balance due</li>
+            <li>Registration fees cannot be applied to future events</li>
+          </ul>
+        </div>
+        <div class="contacts">
+          <div class="contact">
+            <h3>To cancel, contact</h3>
+            <div class="contact-details">
+              <img src="assets/images/staff/diane.jpg">
+              <div class="contact-info">
+                <p class="name">Diane Thorne</p>
+                <p class="phone"><a href="tel:(334) 844-3862">(334) 844-3862</a></p>
+                <p class="email"><a href="mailto:thornde@auburn.edu">thornde@auburn.edu</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="contact">
+            <h3>Direct all other inquiries to</h3>
+            <div class="contact-details">
+              <img src="assets/images/staff/melvin.jpg">
+              <div class="contact-info">
+                <p class="name">Melvin K. Smith</p>
+                <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
+                <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="flat-btn" href="http://www.auburn.edu/academic/provost/undergrad_studies/career/employers/events/Tips_CEET(F15).pdf">View Detailed Cancellation Policy</a>
+    </div>
+  </div>
+</div>
+
+<div class="content extra-content content--no-padding accordion-container">
+  <div class="parking-accordion accordion">
+    <a class="collapsed accordion-header" data-toggle="collapse" id="parking-heading" href="#parking" role="tab" aria-expanded="false" aria-controls="parking">
+      Parking<i></i>
+    </a>
+    <div style="height: 0px;" aria-expanded="false" id="parking" class="panel-collapse collapse" role="tabpanel" aria-labelledby="parking-heading">
+      <div class="parking-information">
+        <a href="http://auburn.edu/map?id=75"><img src="assets/images/events/parking/hotel.png"></a>
+        <div class="hotel-parking">
+          <div class="parking-instruction">
+            <h2>Hotel Parking</h2>
+            <p>
+              Parking for representatives is available at The Hotel at Auburn 
+              University and Dixon Conference Center (HAUDCC). It is on a first 
+              come first serve basis. It is very limited! Upon your arrival, please 
+              inform the parking security attendant that you are participating in 
+              the Career Expo.
+            </p>
+            <p class="muted">
+              If required, a parking pass will be emailed one week prior to 
+              the event.
+            </p>
+          </div>
+          <div class="parking-instruction">
+            <h2>Samford Avenue Parking</h2>
+            <p>
+              Additional parking spaces are in the parking lot at the intersection 
+              of College Street and Samford Avenue. Look for Auburn University 
+              Special Events Parking banners displayed in the lot.
+            </p>
+            <p>
+              You may use the 
+              <a href="http://auburn.transloc.com/?route=8001752">
+                East Parking-AU Hotel Tiger Transit
+              </a> 
+              to get from the 
+              parking lot (College Street and Samford Avenue) to the HAUDCC, or
+              you may choose to walk (approximately 2 blocks).
+            </p>
+          </div>
+          <div class="parking-instruction">
+            <h2>Don't Park at the Cambridge</h2>
+            <p>
+              Avoid parking in The Cambridge at Auburn’s parking area adjacent to 
+              the Hotel’s parking lot. The area is marked and is on the corner of 
+              College Street and Thach Avenue.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a class="flat-btn accommodations" href="aboutus/plan-your-visit.html#Lodging">Accommodations</a>
+
+
+      <div class="row footer-wrap hidden-print">
+        <footer>
+          <section>
+            <ul>
+              <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
+              <li><a href="http://www.auburn.edu/fye">First Year Experience</a></li>
+              <li><a href="http://harbert.auburn.edu/students/current/professional-and-career-development-resources/index.php">College of Business OPCD</a></li>
+            </ul>
+          </section>
+      
+          <section>
+            <ul>
+              <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
+              <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
+              <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
+            </ul>
+          </section>
+        </footer>
+      
+        <div class="subfooter" role="contentinfo">
+          <div>
+            <span>Auburn University</span>&sdot;
+            <span>Auburn, Alabama 36849</span>&sdot;
+            <span>(334) 844-4744</span>&sdot;
+            <span>
+              <script type="text/javascript">
+                emailE='auburn.edu';
+                emailE=('aucc' + '@' + emailE);
+                document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");
+              </script>
+            </span>
+          </div>
+      
+          <div>
+            <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a></span>&sdot;
+            <span><a href="http://www.auburn.edu/privacy/">Privacy</a></span>&sdot;
+            <span><a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a></span>&sdot;
+            <span><a href="https://sites.auburn.edu/academic/provost/us/CareerCenter/SitePages/Home.aspx">Staff Intranet</a></span>
+          </div>
+        </div>
+      </div>    </div>
+
+    <div class="to-top" style="display:none;"><a href="#top"></a></div>
+
+    <!-- jQuery, Bootstrap, and Default AU Code JavaScript --> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
+    <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
+    <script>
+      $(function() {
+        $('.hover').bind('touchstart', function(e) {
+          e.preventDefault()
+          $(this).toggleClass('hover--active')
+        })
+      })
+      
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="popover"]').popover()
+      })
+    </script>
+  </body>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12338791-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</html>
