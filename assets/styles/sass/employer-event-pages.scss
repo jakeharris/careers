@@ -19,9 +19,6 @@
 .brief {
   width: 50%;
   flex-basis: 50%;
-}
-
-.brief {
   padding-top: 1rem;
   .blurb {
     width: 80%; 
@@ -33,6 +30,7 @@
     padding-bottom: 1rem; 
   }
 }
+
 .price:before, .price {
   font-family: $header-font-family;
   font-size: 3rem;
@@ -149,8 +147,14 @@
   }
 }
 
+.content > .attributes > .attribute .popover {
+  min-width: 400px;
+  width: 400px;
+}
+
 .content > .attributes > .attribute > a.icon:hover {
-  background: $box-shadow;
+  cursor: pointer;
+  position: relative;
 }
 
 .icon-comment-o:before {

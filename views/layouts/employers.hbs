@@ -79,6 +79,11 @@ path-to-root: ../
           $(this).toggleClass('hover--active')
         })
       })
+      
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="popover"]').popover()
+      })
     </script>
   </body>
   <script type="text/javascript">
