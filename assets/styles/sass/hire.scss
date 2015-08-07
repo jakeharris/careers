@@ -63,7 +63,7 @@
   height: 100%;
   width: 100%;
   background: url('../images/services-banner.png') 100% 100% no-repeat;
-  background-position: 0 -1rem;
+  background-position: 0 0rem;
   position: absolute;
   top: 0; left: 0;
   z-index: 1;
@@ -219,8 +219,8 @@
     padding-top: 4.1rem;
   }
   .contact {
-    width: 45%;
-    flex-basis: 45%;
+    width: 48%;
+    flex-basis: 48%;
   }
 }
 .contact {  
