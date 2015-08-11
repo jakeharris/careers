@@ -98,6 +98,36 @@ path-to-root: ../
         })
       </script>
     {{/is}}
+    {{#is name "resume"}}
+      <script type="text/javascript">
+        $(function() {
+          var eresume = $('.eresume'),
+              inputs  = eresume.children('input'),
+              submit  = eresume.children('button[type="submit"]')
+
+          inputs.on('change', function () {
+
+            // if any of them aren't complete/checked, fail
+            if (    eresume.children('#name')[0].value.length < 1
+                ||  eresume.children('#job' )[0].value.length < 1
+                ||  eresume.children('#resume')[0].files.length < 1
+                || !$(eresume.children('.good-resume')[0]).children('#good-resume')[0].checked
+                || !eresume.children('#privacy')[0].checked)
+            {  
+              submit.prop('disabled', true)
+              if(!submit.hasClass('flat-btn--disabled'))
+                submit.addClass('flat-btn--disabled')
+            }
+            
+            // otherwise, allow submission
+            else {
+              submit.prop('disabled', false)
+              submit.removeClass('flat-btn--disabled')
+            }
+          }).bind(this)
+        })
+      </script>
+    {{/is}}
     <script>
       $(function() {
         $('.hover').bind('touchstart', function(e) {

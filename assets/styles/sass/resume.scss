@@ -33,7 +33,6 @@
   background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
   background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
 }
-
 .resume-disabled {
   font-family: $header-font-family;
   font-size: 3rem;
@@ -51,6 +50,7 @@
   .content {
     flex-basis: 100%;
     width: 100%;
+    height: 100%;
     
     margin-top: 3rem;
     -ms-flex-negative: 1;
@@ -80,6 +80,56 @@
 
 .flat-btn {
   margin-top: 3rem;
+}
+
+// eResume stuff
+
+label[for="submitting"] {
+  cursor: pointer;
+  margin-bottom: 5rem;
+}
+input#submitting {
+  display: none;
+}
+.eresume {
+  margin-top: 5rem;
+  max-height: 0rem;
+  overflow-x: visible !important;
+  overflow-y: hidden;
+  transition: 1s ease-in-out max-height;
+  
+  label {
+    font-weight: normal;
+    width: 83%;
+  }
+  label[for="name"] {
+    margin-top: 3rem; 
+  }
+  label[for="name"],
+  label[for="job"] {
+    display: block; 
+    font-family: $header-font-family;
+    font-size: 2rem;
+  }
+  input {
+    margin-bottom: 3rem;
+    width: auto;
+  }
+  input#job {
+    width: 30rem; 
+  }
+  input[type="checkbox"] {
+    margin-right: 3rem; 
+  }
+  input#good-resume {
+    display: inline-block; 
+  }
+  label[for="good-resume"] {
+    display: inline-block; 
+  }
+}
+input#submitting:checked + .eresume {
+  max-height: 1000rem;
 }
 
 @media (min-width: $medium-screen-size) {
