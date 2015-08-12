@@ -83,23 +83,27 @@
 }
 
 // eResume stuff
-
-label[for="submitting"] {
-  cursor: pointer;
-  margin-bottom: 5rem;
-}
 input#submitting {
   display: none;
 }
+label[for="submitting"] {
+  cursor: pointer;
+}
+input#submitting:checked + label {
+  margin-bottom: 5rem; 
+}
 .eresume {
   max-height: 0rem;
-  overflow-x: visible !important;
   overflow-y: hidden;
-  transition: 1s ease-in-out max-height;
+  transition: 0.2s ease-in-out max-height;
+  
+  h2, input, label {
+    margin-left: 3rem; 
+  }
   
   label {
     font-weight: normal;
-    width: 83%;
+    width: 72%;
   }
   label[for="name"] {
     margin-top: 3rem; 
@@ -110,6 +114,9 @@ input#submitting {
     font-family: $header-font-family;
     font-size: 2rem;
   }
+  input[type="text"] {
+    padding: 0.5rem; 
+  }
   input {
     margin-bottom: 3rem;
     width: auto;
@@ -118,7 +125,12 @@ input#submitting {
     width: 30rem; 
   }
   input[type="checkbox"] {
-    margin-right: 3rem; 
+    margin-right: 2rem; 
+  }
+  input#good-resume,
+  input#privacy {
+    position: relative;
+    top: -2.5rem;
   }
   input#good-resume {
     display: inline-block; 
@@ -126,9 +138,25 @@ input#submitting {
   label[for="good-resume"] {
     display: inline-block; 
   }
+  label[for="good-resume"],
+  label[for="privacy"] {
+    margin-left: 0; 
+  }
 }
-input#submitting:checked + .eresume {
-  max-height: 1000rem;
+.eresume-btn {
+  max-height: 0rem;
+  overflow-y: hidden;
+  padding: 0; margin: 0;
+  width: calc(100% - 3rem);
+  transition: 0.2s ease-in-out max-height;
+}
+input#submitting:checked ~ .eresume {
+  max-height: 80rem;
+}
+input#submitting:checked ~ .eresume-btn {
+  max-height: 80rem;
+  padding: 1.2rem 0;
+  margin-left: 3rem;
 }
 
 @media (min-width: $medium-screen-size) {
