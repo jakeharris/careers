@@ -97,7 +97,7 @@ input#submitting:checked + label {
   overflow-y: hidden;
   transition: 0.2s ease-in-out max-height;
   
-  h2, input, label {
+  h2, input, textarea, label {
     margin-left: 3rem; 
   }
   
@@ -109,19 +109,24 @@ input#submitting:checked + label {
     margin-top: 3rem; 
   }
   label[for="name"],
-  label[for="job"] {
+  label[for="job"],
+  label[for="description"] {
     display: block; 
     font-family: $header-font-family;
     font-size: 2rem;
   }
-  input[type="text"] {
+  input[type="text"],
+  textarea {
     padding: 0.5rem; 
   }
-  input {
+  input, textarea {
     margin-bottom: 3rem;
     width: auto;
   }
-  input#job {
+  textarea {
+    border-color: rgb(204, 204, 204);
+  }
+  input#job, textarea#description {
     width: 30rem; 
   }
   input[type="checkbox"] {

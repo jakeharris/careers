@@ -13,7 +13,9 @@ layout: no-social.hbs
     $from        = "eResume Automail Service";
     $fromAddress = "eResume@auburn.edu";
     $subject     = "[eResume] " . $_POST["name"];
-    $mainMessage = "Name:<br />" . $_REQUEST["name"] . "<br /><br />Desired employed role or job:<br />" . $_REQUEST["job"];
+    if(!$_POST["description"]) $description = "<None supplied.>";
+    else $description = $_POST["description"];
+    $mainMessage = "Name:<br />" . $_POST["name"] . "<br /><br />Desired employed role or job:<br />" . $_POST["job"] . "<br /><br />Job description:<br />" . $description;
     $headers     = "From: " . $from . " <" . $fromAddress . ">";
 
     // File settings
