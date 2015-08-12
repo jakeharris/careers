@@ -131,11 +131,9 @@ input#submitting:checked + label {
   }
   input[type="checkbox"] {
     margin-right: 2rem; 
-  }
-  input#good-resume,
-  input#privacy {
+    vertical-align: top;
     position: relative;
-    top: -2.5rem;
+    top: 0.2rem;
   }
   input#good-resume {
     display: inline-block; 
@@ -162,6 +160,7 @@ input#submitting:checked ~ .eresume-btn {
   max-height: 80rem;
   padding: 1.2rem 0;
   margin-left: 3rem;
+  margin-top: 3rem;
 }
 
 @media (min-width: $medium-screen-size) {
