@@ -1,0 +1,90 @@
+---
+title: eResume Submitted | Career Center
+name: eresume-submission
+type: resume
+layout: no-social.hbs
+---
+<section class="content resume-banner">  
+  <?php
+    // Email settings
+    $target      = "Career Center Counselors";
+    $email       = "aucc@auburn.edu";
+    $to          = $target . " <" . $email . ">";
+    $from        = "eResume Automail Service";
+    $fromAddress = "eResume@auburn.edu";
+    $subject     = "[eResume] " . $_POST["name"];
+    if(!$_POST["description"]) $description = "<None supplied.>";
+    else $description = $_POST["description"];
+    $mainMessage = "Name:<br />" . $_POST["name"] . "<br /><br />Desired employed role or job:<br />" . $_POST["job"] . "<br /><br />Job description:<br />" . $description;
+    $headers     = "From: " . $from . " <" . $fromAddress . ">";
+
+    // File settings
+    $MAX_FILE_SIZE = 1024 * 100; // 100 MB expressed as KB
+    $ALLOWED_EXTENSIONS = array('doc', 'docx', 'pdf');
+    $UPLOAD_DIR = 'tmp/';
+
+    // File validation
+    $filename =
+        basename($_FILES['resume']['name']);
+    $filetype =
+        substr($filename,
+          strrpos($filename, '.') + 1);
+    $filesize =
+        $_FILES['resume']['size'] / 1024;   //size in KBs
+
+    if($filesize > $MAX_FILE_SIZE) {
+      $errors .= '<br /><br /> Size of uploaded file must be smaller than ' . $MAX_FILE_SIZE . 'KB.';
+    }
+    for($i = 0; $i < sizeof($ALLOWED_EXTENSIONS); $i++) {
+      if(strcasecmp($ALLOWED_EXTENSIONS[$i], $filetype) == 0) {
+        $allowedtype = true;
+      }
+    }
+    if(!$allowedtype) {
+      $errors .= '<br />Invalid file type. Accepted file types are: <br /> <ul><li>' 
+              . implode('</li><li>', $ALLOWED_EXTENSIONS)
+              . '</li></ul>';
+    }
+
+    $filepath = $UPLOAD_DIR . $filename;
+    move_uploaded_file($_FILES['resume']['tmp_name'], $filepath);
+
+    $file = fopen($filepath, 'rb'); 
+    $data = fread($file, filesize($filepath)); 
+    fclose($file); 
+    $semi_rand = md5(time()); 
+    $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
+    $headers .= "\nMIME-Version: 1.0\n" 
+              . "Content-Type: multipart/mixed;\n" 
+              . " boundary=\"{$mime_boundary}\""; 
+    $msg = "This is a multi-part message in MIME format.\n\n"
+          . "--{$mime_boundary}\n" 
+          . "Content-Type:text/html; charset=\"iso-8859-1\"\n" 
+          . "Content-Transfer-Encoding: 7bit\n\n" 
+          . $mainMessage . "\n\n"; 
+    $data = chunk_split(base64_encode($data)); 
+    $msg .= "--{$mime_boundary}\n" 
+          . "Content-Type: {$filetype};\n" 
+          . " name=\"{$filename}\"\n" 
+          . "Content-Transfer-Encoding: base64\n\n" 
+          . $data . "\n\n" 
+          . "--{$mime_boundary}--\n";   
+    $ok = (strlen($errors) < 1 and mail($to, $subject, $msg, $headers));
+  ?>
+  <h2><?php if($ok) echo "Success."; else echo "Something went wrong." ?></h2>
+  <p>
+    <?php
+      // Send the email
+      if($ok) {
+          echo "Your eResume has been submitted.";
+      }
+      else {
+          echo "There was an error submitting your eResume. See below.";
+          echo $errors;
+      }
+      if(file_exists($filename)) unlink($filename);
+    ?>
+
+  </p>
+  <a href="resume" class="flat-btn">Return to the Resume Page</a>
+</section>
