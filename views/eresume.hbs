@@ -7,60 +7,80 @@ layout: no-social.hbs
 <section class="content">  
   <p>
     <?php
-      // Settings
-      $target      = "Torey Palmer
-      $email       = "palmemt@auburn.edu";
-      $to          = "$target <$email>";
+
+      // Email settings
+      $target      = "Jake";
+      $email       = "milieu@javakat.io";
+      $to          = $target . " <" . $email . ">";
       $from        = "eResume Automail Service";
-      $subject     = "[eResume] $name";
-      $mainMessage = "NAME:\n$name\n\nLOOKING TO FILL ROLE:\n$job";
+      $fromAddress = "eResume@auburn.edu";
+      $subject     = "[eResume] " . $_POST["name"];
+      $mainMessage = "NAME:<br />" . $_REQUEST["name"] . "<br /><br />LOOKING TO FILL ROLE:<br />" . $_REQUEST["job"];
+      $headers     = "From: " . $from . " <" . $fromAddress . ">";
 
-      // Input validation
+      // File settings
+      $MAX_FILE_SIZE = 1024; // KB
+      $ALLOWED_EXTENSIONS = array('doc', 'docx', 'pdf');
+      $UPLOAD_DIR = 'tmp/';
+
+      // File validation
+      $filename =
+          basename($_FILES['resume']['name']);
+      $filetype =
+          substr($filename,
+            strrpos($filename, '.') + 1);
+      $filesize =
+          $_FILES['resume']['size'] / 1024;   //size in KBs
       
+      if($filesize > $MAX_FILE_SIZE) {
+        $errors .= '\n Size of uploaded file must be smaller than $MAX_FILE_SIZE KB.';
+      }
+      for($i = 0; $i < sizeof($ALLOWED_EXTENSIONS); $i++) {
+        if(strcasecmp($ALLOWED_EXTENSIONS[$i], $filetype) == 0) {
+          $allowedtype = true;
+        }
+      }
+      if(!$allowedtype) {
+        $errors .= '\n Invalid file type. Accepted file types are: ' 
+                . implode('\n\t', $ALLOWED_EXTENSIONS);
+      }
+      
+      $filename = $UPLOAD_DIR . $filename;
+      move_uploaded_file($_FILES['resume']['tmp_name'], $filename);
 
-      $headers = "From: $from";
-
-      // File
-      $file = fopen($fileatt, 'rb');
-      $data = fread($file, filesize($fileatt));
-      fclose($file);
-
-      // This attaches the file
-      $semi_rand     = md5(time());
-      $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
-      $headers      .= "\nMIME-Version: 1.0\n" .
-      "Content-Type: multipart/mixed;\n" .
-      " boundary=\"{$mime_boundary}\"";
-      $message = "This is a multi-part message in MIME format.\n\n" .
-      "-{$mime_boundary}\n" .
-      "Content-Type: text/plain; charset=\"iso-8859-1\n" .
-      "Content-Transfer-Encoding: 7bit\n\n" .
-      $mainMessage  . "\n\n";
-
-      $data = chunk_split(base64_encode($data));
-      $message .= "--{$mime_boundary}\n" .
-      "Content-Type: {$fileatttype};\n" .
-      " name=\"{$fileattname}\"\n" .
-      "Content-Disposition: attachment;\n" .
-      " filename=\"{$fileattname}\"\n" .
-      "Content-Transfer-Encoding: base64\n\n" .
-      $data . "\n\n" .
-      "-{$mime_boundary}-\n";
+      $file = fopen($filename, 'rb'); 
+      $data = fread($file, filesize($filename)); 
+      fclose($file); 
+      $semi_rand = md5(time()); 
+      $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
+      $headers .= "\nMIME-Version: 1.0\n" 
+                . "Content-Type: multipart/mixed;\n" 
+                . " boundary=\"{$mime_boundary}\""; 
+      $msg = "This is a multi-part message in MIME format.\n\n"
+            . "--{$mime_boundary}\n" 
+            . "Content-Type:text/html; charset=\"iso-8859-1\"\n" 
+            . "Content-Transfer-Encoding: 7bit\n\n" 
+            . $mainMessage . "\n\n"; 
+      $data = chunk_split(base64_encode($data)); 
+      $msg .= "--{$mime_boundary}\n" 
+            . "Content-Type: {$filetype};\n" 
+            . " name=\"{$filename}\"\n" 
+            . "Content-Transfer-Encoding: base64\n\n" 
+            . $data . "\n\n" 
+            . "--{$mime_boundary}--\n";   
+      $ok = mail($to, $subject, $msg, $headers);
 
       // Send the email
-      if(mail($to, $subject, $message, $headers)) {
-
+      if($ok) {
           echo "The email was sent.";
-
       }
       else {
-
           echo "There was an error sending the mail.";
-
+          echo $errors;
       }
+      unlink($filename);
     ?>
 
   </p>
-  <p>Your request for a presentation has been submitted.</p>
-  <p>You will be contacted to confirm your request and to learn more about the presenation. </p>
+  <p>Your eResume has been submitted.</p>
 </section>
