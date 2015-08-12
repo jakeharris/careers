@@ -9,17 +9,17 @@ layout: no-social.hbs
     <?php
 
       // Email settings
-      $target      = "Jake";
-      $email       = "milieu@javakat.io";
+      $target      = "Career Center Counselors";
+      $email       = "aucc@auburn.edu";
       $to          = $target . " <" . $email . ">";
       $from        = "eResume Automail Service";
       $fromAddress = "eResume@auburn.edu";
       $subject     = "[eResume] " . $_POST["name"];
-      $mainMessage = "NAME:<br />" . $_REQUEST["name"] . "<br /><br />LOOKING TO FILL ROLE:<br />" . $_REQUEST["job"];
+      $mainMessage = "Name:<br />" . $_REQUEST["name"] . "<br /><br />Desired employed role or job:<br />" . $_REQUEST["job"];
       $headers     = "From: " . $from . " <" . $fromAddress . ">";
 
       // File settings
-      $MAX_FILE_SIZE = 1024; // KB
+      $MAX_FILE_SIZE = 1024 * 100; // 100 MB expressed as KB
       $ALLOWED_EXTENSIONS = array('doc', 'docx', 'pdf');
       $UPLOAD_DIR = 'tmp/';
 
@@ -33,7 +33,7 @@ layout: no-social.hbs
           $_FILES['resume']['size'] / 1024;   //size in KBs
       
       if($filesize > $MAX_FILE_SIZE) {
-        $errors .= '\n Size of uploaded file must be smaller than $MAX_FILE_SIZE KB.';
+        $errors .= '<br /><br /> Size of uploaded file must be smaller than ' . $MAX_FILE_SIZE . 'KB.';
       }
       for($i = 0; $i < sizeof($ALLOWED_EXTENSIONS); $i++) {
         if(strcasecmp($ALLOWED_EXTENSIONS[$i], $filetype) == 0) {
@@ -41,15 +41,16 @@ layout: no-social.hbs
         }
       }
       if(!$allowedtype) {
-        $errors .= '\n Invalid file type. Accepted file types are: ' 
-                . implode('\n\t', $ALLOWED_EXTENSIONS);
+        $errors .= '<br />Invalid file type. Accepted file types are: <br /> <ul><li>' 
+                . implode('</li><li>', $ALLOWED_EXTENSIONS)
+                . '</li></ul>';
       }
       
-      $filename = $UPLOAD_DIR . $filename;
+      $filepath = $UPLOAD_DIR . $filename;
       move_uploaded_file($_FILES['resume']['tmp_name'], $filename);
 
-      $file = fopen($filename, 'rb'); 
-      $data = fread($file, filesize($filename)); 
+      $file = fopen($filepath, 'rb'); 
+      $data = fread($file, filesize($filepath)); 
       fclose($file); 
       $semi_rand = md5(time()); 
       $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
@@ -68,19 +69,18 @@ layout: no-social.hbs
             . "Content-Transfer-Encoding: base64\n\n" 
             . $data . "\n\n" 
             . "--{$mime_boundary}--\n";   
-      $ok = mail($to, $subject, $msg, $headers);
+      $ok = (strlen($errors) < 1 and mail($to, $subject, $msg, $headers));
 
       // Send the email
       if($ok) {
-          echo "The email was sent.";
+          echo "Your eResume has been submitted.";
       }
       else {
-          echo "There was an error sending the mail.";
+          echo "There was an error submitting your eResume. See below.";
           echo $errors;
       }
       unlink($filename);
     ?>
 
   </p>
-  <p>Your eResume has been submitted.</p>
 </section>
