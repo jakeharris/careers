@@ -194,7 +194,7 @@ module.exports = function (grunt) {
         forever: false
       },
       assemble: {
-        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml,json}'],
+        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/{,*/}*.json'],
         tasks: ['assemble:dev'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
