@@ -4,58 +4,58 @@ name: presentation-submission
 type: presentations
 layout: datepicker.hbs
 ---
-<section class="content">  
-  <p>
+<section class="content presentation-submission-banner">  
+  <h2>    
     <?php
+      $errors = '<p>Here are the details:</p><ul>';
+      $ok = true;
       if ($topic == "select") {
-        echo "You did not specify a topic. <br />";
-        echo "Please go back and select a topic so your request can be submitted.\n\n";
-        exit;
+        $errors .= "<li>You did not specify a topic.</li>";
+        $ok = false;
       }
 
       if ($date == "") {
-        echo "<center>You did not specify a date.<br>";
-        echo "Please go back and enter a date so your request can be submitted.</center>\n\n";
-        exit;
+        $errors .= "<li>You did not specify a date.</li>";
+        $ok = false;
       }			
       if ($start_time == "") {
-        echo "<center>You did not specify a start time.<br>";
-        echo "Please go back and enter a start time so your request can be submitted.</center>\n\n";
-        exit;
+        $errors .= "<li>You did not specify a start time.</li>";
+        $ok = false;
       }			
 
       if ($end_time == "") {
-        echo "<center>You did not specify an end time.<br>";
-        echo "Please go back and enter an end time so your request can be submitted.</center>\n\n";
-        exit;
+        $errors .= "<li>You did not specify an end time.</li>";
+        $ok = false;
       }
       if ($location == "") {
-        echo "<center>You did not give a location.<br>";
-        echo "Please go back and enter a location so your request can be submitted.</center>\n\n";
-        exit;
+        $errors .= "<li>You did not give a location.</li>";
+        $ok = false;
       }			
       if ($contact == "") {
-        echo "<center>You did not give a contact name.<br>";
-        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
-        exit;
+        $errors .= "<li>You did not give a contact name.</li>";
+        $ok = false;
       }						
       if ($email == "") {
-        echo "<center>You did not give an email.<br>";
-        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
-        exit;
+        $errors .= "<li>You did not give an email.</li>";
+        $ok = false;
       }
-      if ($office == "") {
-        echo "<center>You did not give an office phone number.<br>";
-        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
-        exit;
-      }	
-      if ($cell == "") {
-        echo "<center>You did not give a cell phone number.<br>";
-        echo "Please go back and enter this information so your request can be submitted.</center>\n\n";
-        exit;
+      if (
+          ($office == "" || preg_match("/(((\+?1(-|\s){1})?\(?([2-9]{1}\d{2})?\)?(-|\s)?([2-9]{1}\d{2}))|4)?(-|\s)?([2-9]{1}\d{3})/", $office) !== 1)
+          && 
+          ($cell == "" || preg_match("/(((\+?1(-|\s){1})?\(?([2-9]{1}\d{2})?\)?(-|\s)?([2-9]{1}\d{2})))(-|\s)?([2-9]{1}\d{3})/", $cell) !== 1)
+      ) {
+        $errors .= "<li>You did not give a valid phone number.</li>";
+        $ok = false;
       }
-      ?>
-    <?php 
+      if($ok) echo "Success.";
+      else {
+        echo "Something went wrong.";
+        $errors .= "</ul>";
+      }
+    ?>
+  </h2>
+  <?php 
+    if($ok) {
       if (isset($_POST['date']))
         $date = strip_tags(trim($_POST['date']), ENT_NOQUOTES);
       if (isset($_POST['start_time']))
@@ -90,8 +90,11 @@ layout: datepicker.hbs
         $secondary_office = strip_tags(trim($_POST['secondary-office']), ENT_NOQUOTES);
       if (isset($_POST['secondary-cell']))
         $secondary_cell = strip_tags(trim($_POST['secondary-cell']), ENT_NOQUOTES);
-      ?>
-    <?php
+    }
+  ?>
+  <?php
+
+    if($ok) {
 
       /* recipient */
       $to = $email;
@@ -158,10 +161,18 @@ layout: datepicker.hbs
 
       mail($to, $subject, $preface . $message, $headers);
       mail($toaucc, $subject, $message, $headers);
+    }
+  ?>
 
-     ?>
-
-  </p>
-  <p>Your request for a presentation has been submitted.</p>
-  <p>You will be contacted to confirm your request and to learn more about the presenation. </p>
+  <?php
+    if($ok) {
+      echo  "<p>Your request for a presentation has been submitted.</p>"
+          . "<p>You will be contacted to confirm your request and to learn more about the presenation. </p>"
+          . "<a href='faculty' class='flat-btn'>Return to Faculty Resources</a>";
+    }
+    else {
+      $errors .= "<a href='faculty/presentations.html' class='flat-btn'>Try Again</a>";
+      echo $errors;
+    }
+  ?>
 </section>
