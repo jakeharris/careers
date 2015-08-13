@@ -7,6 +7,19 @@
   }
 }
 
+.presentation-submission-banner {
+  text-align: center;
+  h2 {
+    font-size: 6rem; 
+    color: $thisislightorange;
+  }
+  p:first-of-type {
+    font-size: 3rem;
+    font-family: $header-font-family;
+    margin-bottom: 5rem;
+  }
+}
+
 .topics > h2,
 .logistics > h2,
 .description > h2,
