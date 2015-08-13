@@ -31,11 +31,11 @@ $(function () {
     // Primary contact
     if($('input[name="contact"]').val() === '') incompleteFields.push('contact')
     if($('input[name="email"]').val() === '') incompleteFields.push('email')
-    if($('input[name="office"]').val() === '') incompleteFields.push('office')
-    if($('input[name="cell"]').val() === '') incompleteFields.push('cell')
+    if(($('input[name="office"]').val() === '' || !/(((\+?1(-|\s){1})?\(?([2-9]{1}\d{2})?\)?(-|\s)?([2-9]{1}\d{2}))|4)?(-|\s)?([2-9]{1}\d{3})/.test($('input[name="office"]').val()))
+    && ($('input[name="cell"]').val()   === '' || !/(((\+?1(-|\s){1})?\(?([2-9]{1}\d{2})?\)?(-|\s)?([2-9]{1}\d{2})))(-|\s)?([2-9]{1}\d{3})/   .test($('input[name="cell"]'  ).val())))
+      incompleteFields.push('phone')
     
     if(incompleteFields.length > 0) {
-      console.log($('#presentations input[type="submit"]')[0])
       $('#presentations input[type="submit"]')[0].disabled = 'disabled'
       return false
     }
