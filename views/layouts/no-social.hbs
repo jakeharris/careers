@@ -109,6 +109,7 @@ path-to-root: ../
 
             // if any of them aren't complete/checked, fail
             if (    eresume.children('#name')[0].value.length < 1
+                ||  eresume.children('#gid') [0].value.length < 7  //auburn gids are always of the form xxx#### or xxxxxxx
                 ||  eresume.children('#job' )[0].value.length < 1
                 ||  eresume.children('#resume')[0].files.length < 1
                 || !$(eresume.children('.good-resume')[0]).children('#good-resume')[0].checked

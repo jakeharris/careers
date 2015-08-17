@@ -15,7 +15,7 @@ layout: no-social.hbs
     $subject     = "[eResume] " . $_POST["name"];
     if(!$_POST["description"]) $description = "<None supplied.>";
     else $description = $_POST["description"];
-    $mainMessage = "Name:<br />" . $_POST["name"] . "<br /><br />Desired employed role or job:<br />" . $_POST["job"] . "<br /><br />Job description:<br />" . $description;
+    $mainMessage = "Name:<br />" . $_POST["name"] . "<br /><br />Auburn Username:<br /><a href=\"mailto:" . $_POST["gid"] . "\">" . $_POST["gid"] . "</a><br /><br />Desired employed role or job:<br />" . $_POST["job"] . "<br /><br />Job description:<br />" . $description;
     $headers     = "From: " . $from . " <" . $fromAddress . ">";
 
     // File settings
