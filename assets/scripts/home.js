@@ -63,7 +63,6 @@ home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
         return true;
   }
 }])
-
 home.controller('twitter-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
   
@@ -117,7 +116,6 @@ home.controller('twitter-ctrl', ['$scope', '$http', function ($scope, $http) {
     return { text: m, url: link, date: d}
   }
 }])
-
 home.controller('blogger-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
   
@@ -187,7 +185,6 @@ home.controller('blogger-ctrl', ['$scope', '$http', function ($scope, $http) {
     return m;
   }
 }])
-
 home.controller('hours-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
   
@@ -202,6 +199,27 @@ home.controller('hours-ctrl', ['$scope', '$http', function ($scope, $http) {
       $scope.office = res.data.types.office
       $scope.walkIn = res.data.types.walkIn
     }
+  })
+}])
+home.controller('sponsors-ctrl', ['$scope', '$http', function ($scope, $http) {
+  'use strict';
+  
+  var sponsorsFile = (window.location.href.indexOf('localhost') != -1) ? 
+                    'http://auburn.edu/career/sponsors.json' : '/career/sponsors.json'
+  
+  $http.get(sponsorsFile)
+  .then(function (res) {
+    $scope.sponsors = []
+    for(var s in res.data) {
+      // if it doesn't have a company, or the company field is blank, or if this is the example, skip it
+      if(!res.data[s].hasOwnProperty('company') || res.data[s].company === '' || res.data[s].hasOwnProperty('__example')) continue
+      else $scope.sponsors.push(res.data[s])
+    }
+    $scope.sponsors.sort(function(a, b){
+      if(a.company.toLowerCase() < b.company.toLowerCase()) return -1;
+      if(a.company.toLowerCase() > b.company.toLowerCase()) return 1;
+      return 0;
+    })
   })
 }])
 
