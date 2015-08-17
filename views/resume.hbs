@@ -57,13 +57,14 @@ ng-app: career-center-resume
     <ul class="resume-checklist">
       <li>No longer than two pages</li>
       <li>Document is only a resume or curriculum vita</li>
+      <li>Not a cover letter</li>
       <li>Not a class assignment</li>
       <li>Is .doc, .docx, or .pdf file format</li>
     </ul>
     <p>
       If you need assistance with other types of documents 
       (cover letter, personal statement, etc.) come in during 
-      walk-in hours.
+      <a href="aboutus/#walk-ins">walk-in hours</a>.
     </p>
     
     <input type="checkbox" id="submitting">
@@ -71,13 +72,16 @@ ng-app: career-center-resume
     
     <form id="eresume" name="eresume" class="eresume" method="post" enctype="multipart/form-data" action="resume/submission.php">
       <h2>Submit Your eResume</h2>
-      <label for="name">Name</label>
-      <input type="text" placeholder="Aubie Tigre" id="name" name="name">
+      <label class="text-label" for="name">Name</label>
+      <input type="text" placeholder="First and last, please!" id="name" name="name">
       
-      <label for="job">Desired Employed Role or Job</label>
+      <label class="text-label" for="gid">Auburn Username</label>
+      <input type="text" placeholder="e.g. jch0039" id="gid" name="gid">
+      
+      <label class="text-label" for="job">Desired Job Title</label>
       <input type="text" placeholder="Head of Marketing and Sales" id="job" name="job">
       
-      <label for="description">Job Description</label>
+      <label class="text-label" for="description">Job Description</label>
       <textarea placeholder="Responsibilities will include: SQL database management, scalable API development..." id="description" name="description"></textarea>
       
       <input type="file" placeholder="Your Resume" id="resume" name="resume">
