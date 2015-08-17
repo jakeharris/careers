@@ -96,13 +96,13 @@ layout: default.hbs
           <div ng-if="office">
             <h6>Hours</h6>
             <p ng-repeat="hours in office">
-              <span ng-if="[[ hours.startDay ]]">[[ hours.startDay ]]-[[ hours.endDay ]]</span> [[ hours.startTime ]]-[[ hours.endTime ]]
+              <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
             </p>
           </div>
           <div ng-if="walkIn">
             <h6>Walk-ins</h6>
             <p ng-repeat="hours in walkIn">
-              <span ng-if="[[ hours.startDay ]]">[[ hours.startDay ]]-[[ hours.endDay ]]</span> [[ hours.startTime ]]-[[ hours.endTime ]]
+              <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
             </p>
           </div>
           <p class="subtle">
