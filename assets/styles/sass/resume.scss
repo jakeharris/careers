@@ -108,9 +108,7 @@ input#submitting:checked + label {
   label[for="name"] {
     margin-top: 3rem; 
   }
-  label[for="name"],
-  label[for="job"],
-  label[for="description"] {
+  .text-label {
     display: block; 
     font-family: $header-font-family;
     font-size: 2rem;
@@ -154,7 +152,7 @@ input#submitting:checked + label {
   transition: 0.2s ease-in-out max-height;
 }
 input#submitting:checked ~ .eresume {
-  max-height: 80rem;
+  max-height: 120rem;
 }
 input#submitting:checked ~ .eresume-btn {
   max-height: 80rem;
