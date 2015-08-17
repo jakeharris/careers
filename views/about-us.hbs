@@ -42,7 +42,7 @@ layout: no-social.hbs
       <div ng-repeat="hours in office" class="information-important">
         <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
         <!-- OR -->
-        <h3 ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </h3></span> [[ hours.startTime ]]-[[ hours.endTime ]]
+        <h3><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span></h3> [[ hours.startTime ]]-[[ hours.endTime ]]
         <p>
           [[ hours.startTime ]] - [[ hours.endTime ]]
         </p>
@@ -68,7 +68,7 @@ layout: no-social.hbs
       <div ng-repeat="hours in walkIn">
         <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
         <!-- OR -->
-        <h3 ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </h3></span> [[ hours.startTime ]]-[[ hours.endTime ]]
+        <h3><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span></h3>
         <p>
           [[ hours.startTime ]] - [[ hours.endTime ]]
         </p>
