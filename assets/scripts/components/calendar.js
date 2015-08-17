@@ -1,8 +1,12 @@
 // Expects an HTTP JSON response object.
-function Calendar (res) {
+function Calendar (res, monthsOut, employerMode) {
   if(!res.data)
     throw new TypeError('Calendars expect HTTP JSON responses.')
-       
+  if(typeof monthsOut === 'undefined')
+    monthsOut = 6
+  if(typeof employerMode === 'undefined')
+    employerMode = false
+    
   var isOver = function (date) {
     var currentDate = new Date()
     if(date['numerical-month'] == (currentDate.getMonth() + 1))
@@ -23,15 +27,30 @@ function Calendar (res) {
     else
       return month + (12 - currentMonth)
   }
-  
-  this.events = res.data.filter(function (el) {
-    if('__HOW-TO' in el) return false
-    return (!isOver(el.date)) && (getRelativeMonth(el.date['numerical-month']) <= 6)
-  }).sort(function (a, b) {
+  var byRelativeImmediacy = function (a, b) { // sorting function
     var aRelativeMonth = getRelativeMonth(a.date['numerical-month']),
         bRelativeMonth = getRelativeMonth(b.date['numerical-month'])
 
     if(aRelativeMonth == bRelativeMonth) return a.date.day - b.date.day
     return aRelativeMonth - bRelativeMonth
-  })
+  }
+  
+  
+  this.events = res.data.filter(function (el) {
+    if('__HOW-TO' in el) return false
+    if(employerMode)
+      return ('employer-event' in el) && (getRelativeMonth(el.date['numerical-month']) <= monthsOut)
+    else
+      return (getRelativeMonth(el.date['numerical-month']) <= monthsOut)
+  }).sort(byRelativeImmediacy)
+
+  if(employerMode) {
+    this.events.forEach(function (event, index, events) {
+      if('employer-event' in event) {
+        if(this.img === undefined) 
+          this.img = '../assets/images/events/' + event['employer-event'].name + '-slide.png';
+        event.url = 'employers/events/' + event['employer-event'].name + '.html'
+      }
+    }.bind(this))
+  }
 }

@@ -3,5 +3,5 @@ function Hours (res) {
   
   if(res.data.holiday) this.holiday = res.data.holiday
   this.office = res.data.types.office
-  this.walkIn = res.data.types.walkins
+  this.walkIn = res.data.types.walkIn
 }

@@ -71,10 +71,8 @@ home.controller('hours-ctrl', ['$scope', '$http', function ($scope, $http) {
     hours = new Hours(res)
     if(hours.hasOwnProperty('holiday'))
       $scope.holiday = hours.holiday
-    if(hours.hasOwnProperty('types')) {
-      $scope.office = hours.office
-      $scope.walkIn = hours.walkIn
-    }
+    $scope.office = hours.office
+    $scope.walkIn = hours.walkIn
   })
 }])
 home.controller('sponsors-ctrl', ['$scope', '$http', function ($scope, $http) {
