@@ -9,16 +9,16 @@ home.config(['$interpolateProvider', function ($interpolateProvider) {
 home.controller('hours-ctrl', ['$scope', '$http', function ($scope, $http) {
   'use strict';
   
-  var hoursFile = (window.location.href.indexOf('localhost') != -1) ?
-                    'http://auburn.edu/career/hours.json' : '/career/hours.json'
+  var hoursFile = (window.location.href.indexOf('localhost') != -1) ? 
+                    'http://auburn.edu/career/hours.json' : '/career/hours.json',
+      hours
   
   $http.get(hoursFile)
   .then(function (res) {
-    if(res.data.hasOwnProperty('holiday'))
-      $scope.holiday = res.data.holiday
-    if(res.data.hasOwnProperty('types')) {
-      $scope.office = res.data.types.office
-      $scope.walkIn = res.data.types.walkIn
-    }
+    hours = new Hours(res)
+    if(hours.hasOwnProperty('holiday'))
+      $scope.holiday = hours.holiday
+    $scope.office = hours.office
+    $scope.walkIn = hours.walkIn
   })
 }])
