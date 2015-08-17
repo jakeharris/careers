@@ -24,7 +24,7 @@ ng-app: career-center-resume
       <div class="hours-content">
         <h2>Walk-ins:</h2>
         <p ng-repeat="hours in walkIn">
-          <span ng-if="hours.startDay"><strong>[[ hours.startDay ]] - [[ hours.endDay ]]</strong> |</span> [[ hours.startTime ]] - [[ hours.endTime ]]
+          <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
         </p>
         <p ng-if="holiday" class="muted">[[ holiday ]]</p>
       </div>

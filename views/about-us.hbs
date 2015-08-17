@@ -40,7 +40,9 @@ layout: no-social.hbs
     </address>
     <div ng-if="office" class="hours information-row-element">
       <div ng-repeat="hours in office" class="information-important">
-        <h3 ng-if="hours.startDay">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <!-- OR -->
+        <h3 ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </h3></span> [[ hours.startTime ]]-[[ hours.endTime ]]
         <p>
           [[ hours.startTime ]] - [[ hours.endTime ]]
         </p>
