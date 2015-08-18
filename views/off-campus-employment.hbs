@@ -1,0 +1,59 @@
+---
+ng-app: career-center-hire
+name: off-campus
+type: off-campus
+layout: employers.hbs
+title: Off-Campus Employment | Career Center
+analytics-token: UA-12338791-4
+path-to-root: ../../
+---
+
+<section class="hero content">
+  <h2>Off-Campus Employment</h2>
+</section>
+
+<section class="content extra-content flex content--no-padding">
+  <div class="recruiting-link padding">
+    <h2 class="trl"></h2>
+    <p>Stuff and lorem ipsum and lots of other decision-making words with phoenix plumes.</p>
+    <a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0" class="flat-btn flat-btn--half">Login</a>
+    <a href="https://auburn-csm.symplicity.com/employers/?signin_tab=2" class="flat-btn flat-btn--white flat-btn--half">Register</a>
+  </div>
+  <div class="quick-guide padding">
+    <h2><span class="trl"></span> Quickguide</h2>
+    <ol>
+      <li>Do</li>
+      <li>the</li>
+      <li>thing</li>
+      <li>dude</li>
+    </ol>
+  </div>
+</section>
+
+<section class="content extra-content content--no-padding">
+  <h2 class="padding">Report Placement</h2>
+  <div class="flex padding">
+    <p>Lorem ipsum cat and girl.</p>
+    <a href="" class="flat-btn">Report Placement</a>
+  </div>
+  <div class="flex row buttons--no-padding">
+    <a href="" class="flat-btn"                >How to...</a>
+    <a href="" class="flat-btn flat-btn--white">Review</a>
+    <a href="" class="flat-btn"                >Third Party</a>
+    <a href="" class="flat-btn flat-btn--white">Interview Tips</a>
+  </div>
+</section>
+
+<section class="content extra-content">
+  <h2 class="faq-header"></h2>
+  <div class="flex">
+    <a class="collapsed accordion-header" data-toggle="collapse" id="{{ id }}-heading" href="#{{ id }}" role="tab" aria-expanded="false" aria-controls="{{ id }}">
+      <h3>{{ question }}</h3>
+    </a>
+    <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-question-contents" role="tabpanel" aria-labelledby="{{ id }}-heading">
+      <div class="faq-answer">
+        {{ answer }}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,12 @@
+@import 'app';
+@import 'internships';
+
+.faq-header::before {
+  content: "FAQ";
+}
+
+@media (min-width: $medium-screen-size) {
+  .faq-header::before {
+    content: "Frequently Asked Questions"; 
+  }
+}
