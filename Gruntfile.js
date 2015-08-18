@@ -69,6 +69,7 @@ module.exports = function (grunt) {
     'aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs'],
     'resume/index.html': ['<%= config.views %>/resume.hbs'],
     'resume/samples/index.html': ['<%= config.views %>/sample-docs.hbs'],
+    'resume/submission.php': ['<%= config.views %>/eresume.hbs'],
     'interviews/index.html': ['<%= config.views %>/interviews.hbs'],
     'pathways/index.html': ['<%= config.views %>/pathways.hbs'],
     'aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
@@ -116,6 +117,7 @@ module.exports = function (grunt) {
     'dist/aboutus/liaisons.html': ['<%= config.views %>/liaison-hours.hbs'],
     'dist/resume/index.html': ['<%= config.views %>/resume.hbs'],
     'dist/resume/samples/index.html': ['<%= config.views %>/sample-docs.hbs'],
+    'dist/resume/submission.php': ['<%= config.views %>/eresume.hbs'],
     'dist/interviews/index.html': ['<%= config.views %>/interviews.hbs'],
     'dist/pathways/index.html': ['<%= config.views %>/pathways.hbs'],
     'dist/aboutus/index.html': ['<%= config.views %>/about-us.hbs'],
@@ -192,7 +194,7 @@ module.exports = function (grunt) {
         forever: false
       },
       assemble: {
-        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml,json}'],
+        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/{,*/}*.json'],
         tasks: ['assemble:dev'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {

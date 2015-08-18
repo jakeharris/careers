@@ -54,6 +54,9 @@ path-to-root: ../
     
     <!-- Application-specific CSS/JS -->
     <!-- build:js assets/scripts/{{ name }}.min.js -->
+      {{#each page.component}}
+        <script src="assets/scripts/components/{{ this }}.js"></script>
+      {{/each}}
       <script src="assets/scripts/{{ type }}.js"></script>
     <!-- endbuild -->
     

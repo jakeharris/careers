@@ -39,7 +39,9 @@ h6 {
   flex-wrap: wrap;
 }
 
-
+.login {
+  align-content: space-around;
+}
 .login-wrap {
   margin: 7rem 0 0 14%;
 }
@@ -94,6 +96,9 @@ h6 {
 .subtle,
 .times-address .subtle {
     color: #747474;
+}
+.emphasized {
+  color: $thisisburntorange;
 }
 
 .tweets {
@@ -192,9 +197,11 @@ h6 {
 }
 
 @media (min-width: $small-screen-size) {
-  .tweets,
-  .events ul {
+  .tweets {
     max-height: 55rem;
+  }
+  .events ul {
+    max-height: 45rem; 
   }
   .flat-btn {
     height: auto;
@@ -220,13 +227,17 @@ h6 {
 }
 
 @media (min-width: $moderate-screen-size) {
-  .tweets ul,
-  .events ul {
+  .tweets ul {
     height: 40rem;
     max-height: 45rem;
   }
   .tweet {
     width: 50%; 
+  }
+    
+  .events ul {
+    height: 45rem;
+    max-height: 45rem;
   }
   .event {
     width: 50%;
