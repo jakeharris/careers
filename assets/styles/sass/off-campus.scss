@@ -1,8 +1,71 @@
 @import 'app';
 @import 'internships';
 
+.faq-header {
+  padding-top: 3.5rem;
+}
 .faq-header::before {
   content: "FAQ";
+}
+.flex {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.flex-quarter {
+  flex-basis: 25%;
+  width: 25%;
+  
+  display: inline-block;
+}
+.flat-btn.flex-half {
+  @extend .flex-half;
+  height: 100%;
+}
+.buttons--no-padding {
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap;
+  .flat-btn {
+    margin: 0; 
+  }
+}
+
+h3 {
+  color: $thisisdarkblue;
+}
+h3:hover {
+  color: $thisisdarkblue;
+  cursor: default;
+}
+ol {
+  padding: 0;
+  margin: 0;
+}
+.faq .faq-question {
+  padding: 1rem 0;
+  font-size: 2.2rem;
+  position: relative;
+  .icon-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 0.9rem;
+  }
+}
+
+.accordion-header .faq-question .icon-arrow:before {
+  @extend .icon-chevron-up:before;
+}
+.accordion-header.collapsed .faq-question .icon-arrow:before {
+  @extend .icon-chevron-down:before;
+}
+
+.content--no-padding > h3 {
+  padding: 5rem;
+  padding-bottom: 0;
+}
+.content--no-padding > h3 + div.padding {
+  padding: 5rem;
+  padding-top: 0;
 }
 
 @media (min-width: $medium-screen-size) {

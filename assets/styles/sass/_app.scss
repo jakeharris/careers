@@ -68,6 +68,13 @@ p, div {
   width: 100%;
 }
 
+.flex-half {
+  flex-basis: 45%;
+  width: 45%;
+  
+  display: inline-block;
+}
+
 .centered {
   text-align: center;
   -ms-flex-line-pack: center;
