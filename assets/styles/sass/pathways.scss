@@ -81,6 +81,12 @@
   }
 }
 
+a.pathway[href$=".pdf"] {
+  &::after {
+    content: none;
+  }
+}
+
 .extras {
   padding: 0;
 }

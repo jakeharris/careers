@@ -46,6 +46,10 @@ p, div {
   color: #999;
 }
 
+a[href$=".pdf"]::after {
+  content: ' (pdf)';
+}
+
 .flex, .centered, .login {
   display: -ms-flexbox;
   display: -webkit-box;

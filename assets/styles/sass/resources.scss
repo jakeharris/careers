@@ -211,6 +211,14 @@ header {
     font-size: 2.2rem;
   }
 }
+a.tooltip[href$=".pdf"] {
+  &::after {
+    content: none;
+  }
+  h2::after {
+    content: ' (pdf)';
+  }
+}
 .tooltip--show {
   display: block;
 }
