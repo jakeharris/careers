@@ -1,15 +1,15 @@
 ---
 ng-app: career-center-hire
-name: off-campus
+name: on-campus
 type: student-employment
 layout: employers.hbs
-title: Off-Campus Employment | Career Center
+title: On-Campus Employment | Career Center
 analytics-token: UA-12338791-4
 path-to-root: ../../
 ---
 
 <section class="hero content">
-  <h2>Off-Campus Employment</h2>
+  <h2>On-Campus Employment</h2>
 </section>
 
 <section class="flex">
@@ -67,9 +67,10 @@ path-to-root: ../../
   </div>
 </section>
 
+<!-- Change this into a How to Hire guide (complete with arrows and icons per step)!-->
 <section class="content extra-content content--no-padding">
   <div class="flex padding">
-    <div class="flex-half">
+    <div class="flex-third">
       <h3>Report Placement</h3>
       <p>
         The Student Employment office is supported by the Job 
@@ -81,7 +82,7 @@ path-to-root: ../../
       <p class="survey-length">Estimated length: 4 minutes</p>
       <a href="https://auburn.qualtrics.com/jfe/form/SV_5zkiOXqLCMt6J8h" class="flat-btn">Take Survey</a>
     </div>
-    <div class="flex-half contact">
+    <div class="flex-two-thirds contact">
       <h3>Point of Contact</h3>
       <div class="contact-details">
         <img src="assets/images/staff/jay.jpg">
@@ -96,29 +97,11 @@ path-to-root: ../../
 </section>
 
 <section class="content extra-content content--no-padding">
-  <h3 class="how-to-header">How To and Other Necessities</h3>
+  <h3 class="how-to-header">Necessary Docs</h3>
   <div class="flex buttons--no-padding">
     <a href="" class="flat-btn                 flex-quarter">Post a Job</a>
     <a href="" class="flat-btn flat-btn--white flex-quarter">Review Apps on TRL</a>
     <a href="" class="flat-btn                 flex-quarter">Third Party Policy</a>
     <a href="" class="flat-btn flat-btn--white flex-quarter">Interview Tips</a>
   </div>
-</section>
-
-<section class="content extra-content">
-  <h3 class="faq-header"></h3>
-  {{#each off-campus-faq.question }}
-  <div class="faq">
-    <a class="collapsed accordion-header" data-toggle="collapse" id="{{ id }}-heading" href="#{{ id }}" role="tab" aria-expanded="false" aria-controls="{{ id }}">
-      <h4 class="faq-question">{{ question }} <i class="icon-arrow"></i></h4>
-    </a>
-    <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-question-contents" role="tabpanel" aria-labelledby="{{ id }}-heading">
-      <div class="faq-answer">
-        {{#each answer}}
-          <p>{{ this }}</p>
-        {{/each}}
-      </div>
-    </div>
-  </div>
-  {{/each}}
 </section>
