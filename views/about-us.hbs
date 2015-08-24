@@ -44,7 +44,7 @@ component:
       <div ng-repeat="hours in office" class="information-important">
         <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
         <!-- OR -->
-        <h3><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span></h3> [[ hours.startTime ]]-[[ hours.endTime ]]
+        <h3><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span></h3> 
         <p>
           [[ hours.startTime ]] - [[ hours.endTime ]]
         </p>
