@@ -18,11 +18,11 @@
   display: inline-block;
 }
 .flex-third {
-  flex-basis: 33%;
-  width: 33%;
+  flex-basis: 34%;
+  width: 34%;
   
   display: inline-block;
-  padding: 0 3rem;
+  padding: 1.2rem 0;
   &:first-of-type {
     padding-left: 0; 
   }
@@ -160,8 +160,8 @@ h3:hover {
 
   & > .attribute {
 
-    flex-basis: 33%;
-    width: 33%;
+    flex-basis: 100%;
+    width: 100%;
     min-width: 200px;
     margin-bottom: 3rem;
 
@@ -252,6 +252,12 @@ ol {
   text-align: center;
 }
 
+@media (min-width: $small-screen-size) {
+  .attributes > .attribute {
+    flex-basis: 33%;
+    width: 33%;
+  }
+}
 @media (min-width: $medium-screen-size) {
   .faq-header::before {
     content: "Frequently Asked Questions"; 
