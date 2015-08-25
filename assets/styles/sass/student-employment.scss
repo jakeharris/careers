@@ -139,6 +139,7 @@ h3:hover {
   cursor: default;
 }
 .quick-guide {
+  display: none;
   flex-basis: 33%;
   width: 33%;
   
@@ -200,8 +201,8 @@ ol {
   margin: 0;
 }
 .recruiting-link {
-  flex-basis: 66%;
-  width: 66%;
+  flex-basis: 100%;
+  width: 100%;
   
   h3, p:first-of-type {
     text-align: center;
@@ -252,6 +253,17 @@ ol {
   text-align: center;
 }
 
+.content--report .flex-half {
+  flex-basis: 100%;
+  width: 100%;
+  &:last-of-type {
+    padding-top: 5rem; 
+  }
+}
+.at-auburn {
+  display: none;
+}
+
 .guide {
   display: flex;
   justify-content: space-around;
@@ -260,6 +272,8 @@ ol {
   width: 100%;
 
   padding-top: 3rem;
+  
+  counter-reset: step;
 }
 
 .guide-step {
@@ -270,6 +284,26 @@ ol {
   padding: 5rem;
   
   position: relative;
+  counter-increment: step;
+  
+  & > .icon {
+    &::after {
+      font-family: $header-font-family;
+      content: counter(step);
+      position: relative;
+      top: 1.8rem;
+      left: 3.4rem;
+      &:hover {
+        color: white; 
+      }
+    }
+  }
+  &:first-of-type > .icon::after {
+    left: 3.8rem;
+  }
+  &:nth-of-type(4) > .icon::after {
+    left: 3.1rem; 
+  }
   
   & > .details {
     padding-top: 3rem;
@@ -293,10 +327,25 @@ ol {
     border: none;
   }
 }
-
+.interdigitator {
+  display: flex;
+  flex-wrap: wrap;
+  
+  .content--guide {
+    flex-basis: 100%;
+    width: 100%;
+    order: 2; 
+  }
+  .content--tips {
+    flex-basis: 100%;
+    width: 100%;
+    order: 1;
+  }
+}
 
 a.icon:hover {
   background: $thisislightblue;
+  color: white;
 }
 .icon {
   background: #ccc;
@@ -310,6 +359,7 @@ a.icon:hover {
 
   margin-left: auto;
   margin-right: auto;
+  
 }
 .icon.calendar {
   padding-left: 2.2rem;
@@ -322,12 +372,21 @@ a.icon:hover {
     flex-basis: 33.33333%;
     width: 33.33333%;
   }
+  .at-auburn {
+    display: inline; 
+  }
 }
-@media (min-width: $medium-screen-size) {
+@media (min-width: $moderate-screen-size) {
   .faq-header::before {
     content: "Frequently Asked Questions"; 
   }
-  
+  .recruiting-link {
+    flex-basis: 66%;
+    width: 66%;
+  }
+  .quick-guide {
+    display: block; 
+  }
   .guide-step {
     $steps: 6;
     
@@ -350,11 +409,7 @@ a.icon:hover {
     &:nth-of-type(#{$steps})::after {
       @include arrow(left, 30px, $bg-gray); 
     }
-    &:nth-of-type(#{($steps / 2) + 1})::after {
-      border: none;
-      content: none;
-    }
-    @for $step from ($steps / 2) + 2 through $steps {
+    @for $step from ($steps / 2) + 1 through $steps {
       &:nth-of-type(#{$step})::after {
         $color: white;
         @if $step % 2 == 0 {
@@ -363,6 +418,25 @@ a.icon:hover {
         @include arrow(left, 30px, $color);
       }
     }
+    $counter: ($steps / 2 + 1);
+    @for $step from $steps through ($steps / 2 + 1) {
+      &:nth-of-type(#{$step}) {
+        order: $counter;
+      }
+      $counter: $counter + 1;
+    }
+  }
+  .interdigitator {
+    .content--guide {
+      order: 1;
+    }
+    .content--tips {
+      order: 2; 
+    }
+  }
+  .content--report .flex-half {
+    flex-basis: 45%;
+    width: 45%;
   }
 }
 
