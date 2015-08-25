@@ -74,5 +74,15 @@
     "company": "Exxon",
     "logo": "exxon.png",
     "url": "http://www.exxonmobil.com/careers"
+  },
+  {
+    "company": "Honda Manufacturing",
+    "logo": "honda.jpg",
+    "url": "http://www.hondaalabama.com"
+  },
+  {
+    "company": "Voith",
+    "logo": "voith.jpg",
+    "url": "http://www.voith.com"
   }
 ]
