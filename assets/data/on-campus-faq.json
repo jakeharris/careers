@@ -1,20 +1,37 @@
 {
   "question": [
     {
-      "id": "difference",
-      "question": "What is the difference between On-Campus Recruiting (OCR) and Non-OCR?",
-      "answer": [
-        "OCR describes jobs where employers visit campus to interview applicants in the AU Career Center or Office of Professional and Career Development offices. OCR postings will either be Pre-Select (the employer screens resumes and invites select applicants to interview) or Open (the employer does not screen applicants- qualified candidates can sign up for interviews without an invitation).",
-        "Non-OCR jobs are those that will not have interviews conducted on Auburn’s campus. Employers will contact candidates to set up interviews (phone or in person)."
-       ]
-    },
-    {
       "id": "eligibility",
       "question": "What are the eligibility requirements for student employment?",
       "answer": [
-        "There are no enrollment requirements in order for students to work in off-campus positions. Students may work as many or as few hours as desired in off-campus positions. However, the Auburn University Career Center recommends that undergraduate students do not exceed 20 hour per week, especially when taking a full (14-17 hour) course load.",
-        "Students should meet with the hiring manager/potential supervisor prior to accepting any position to discuss expectations regarding course load, work hours and scheduling during finals and breaks to ensure that they are able to maintain good academic standing while pursuing part-time employment."
+        "The student must be enrolled in 1 or more semester hour(s) OR not enrolled for the current semester but must have been enrolled the previous semester and must be enrolling the following semester.",
+        "E.g. a student enrolled in spring and registered for the following fall can work over the summer while unenrolled."
        ]
+    },
+    {
+      "id": "hour-guidelines--undergraduate",
+      "question": "What are the rules concerning hours for undergraduate students?",
+      "answer": [
+        "Up to 20 hours per week (.50 FTE) while enrolled for all campus jobs combined."
+      ]
+    },
+    {
+      "id": "hour-guidelines--graduate",
+      "question": "What are the rules concerning hours for graduate students?",
+      "answer": [
+        "Graduate students may hold multiple assistantships (assistantships and/or hourly employment) from one or more units on campus, but together the cumulative appointment should be 0.25, 0.33, or 0.50 FTE and cannot add up to more than a 0.50 FTE (20 hours per week) appointment. This allows the students the time needed to devote to their academic programs.",
+        "An exception is automatically allowed in the special case of a graduate assistant assigned to teach one four credit course and one three/four credit course. In such cases, appointments will be made at .58/.67 FTE respectively. Concerning other exceptions, see the graduate assistant handbook." 
+      ]
+    },
+    {
+      "id": "hiring-status",
+      "question": "How do I determine a student's hiring status?",
+      "answer": [
+        "Review the PEAEMPL screen in Banner Admin. Type in the Banner ID# and click “Next Block.” Review the Employee Status and note the status. It should state “Active” or “Terminated.” Review the Home Department, Check Distribution, and District or Division. Does this have information in it? Review the Last Work Date and note if it is blank or filled in.",
+        "If the Home Department, Check Distribution, and District or Division are entered, and the Last Work Date is blank, the student is Active.",
+        "The number of hours the student can work will need to be determined",
+        "Complete an ePAF through Banner to add the new job."
+      ]
     },
     {
       "id": "holidays",
@@ -39,14 +56,14 @@
       "answer": [
         "Yes. Students do not want to apply for a job unless they know how much it will pay. If rate of pay depends on qualifications, a base rate or range of rates can be posted."
        ]
-    } ,
+    },
     {
       "id": "majors",
       "question": "Can a specific academic major be listed as a requirement in the TRL job posting?",
       "answer": [
         "Unless there is a genuine reason that an applicant be in a specific course of study, it is not recommended that employers list Major as a requirement. Course of study alone does not indicate ability."
        ]
-    } ,
+    },
     {
       "id": "interviews",
       "question": "Is it necessary to interview student employees?",
