@@ -220,22 +220,22 @@ ol {
     }
   }
 }
-.faq .faq-question {
-  padding: 1rem 0;
-  font-size: 2.2rem;
-  position: relative;
-  .icon-arrow {
-    position: absolute;
-    right: 1rem;
-    top: 0.9rem;
+.faq .panel.panel-default {
+  border-radius: 0; 
+  border: none;
+  background: $bg-gray;
+  margin-top: 2rem;
+  box-shadow: 6px 6px 0 $box-shadow;
+  .panel-body {
+    background: white;
+    border: none;
   }
 }
-
-.accordion-header .faq-question .icon-arrow:before {
-  @extend .icon-chevron-up:before;
-}
-.accordion-header.collapsed .faq-question .icon-arrow:before {
-  @extend .icon-chevron-down:before;
+.faq .faq-question {
+  padding: 0.5rem;
+  font-size: 1.7rem;
+  position: relative;
+  line-height: 1.618;
 }
 
 .content--no-padding > h3 {
@@ -449,6 +449,9 @@ a.icon:hover {
   .content--report .flex-half {
     flex-basis: 45%;
     width: 45%;
+  }
+  .content--tips .flat-btn {
+    font-size: 2.5rem; 
   }
 }
 
