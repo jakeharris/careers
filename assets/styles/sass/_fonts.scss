@@ -15,14 +15,14 @@
   font-style: normal;
 }
 @font-face {
-    font-family: 'icomoon';
-    src:url('../fonts/icomoon.eot?-e9s38z');
-    src:url('../fonts/icomoon.eot?#iefix-e9s38z') format('embedded-opentype'),
-        url('../fonts/icomoon.woff?-e9s38z') format('woff'),
-        url('../fonts/icomoon.ttf?-e9s38z') format('truetype'),
-        url('../fonts/icomoon.svg?-e9s38z#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-q75sjq');
+	src:url('../fonts/icomoon.eot?#iefix-q75sjq') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?-q75sjq') format('truetype'),
+		url('../fonts/icomoon.woff?-q75sjq') format('woff'),
+		url('../fonts/icomoon.svg?-q75sjq#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"], .icon {
@@ -39,6 +39,24 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-law:before {
+	content: "\e608";
+}
+.icon-lab:before {
+	content: "\e605";
+}
+.icon-coin-dollar:before {
+	content: "\e609";
+}
+.icon-spoon-knife:before {
+	content: "\e606";
+}
+.icon-star-full:before {
+	content: "\e607";
+}
+.icon-file-pdf:before {
+	content: "\e60a";
+}
 .icon-tack:before {
     content: "\e600";
 }
