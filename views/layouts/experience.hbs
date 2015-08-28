@@ -45,19 +45,22 @@ path-to-root: ../
     <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
 
     <!-- Angular & Core JS -->
-    <script>
-      document.createElement('picture')
-    </script>
-    <script src="http://auburn.edu/career/assets/scripts/picturefill.min.js" async></script>
-    <!-- It would be awesome if I could only load angular based on whether the particular view had a controller -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    {{#if page.component }}
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" defer></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js" defer></script>
+    {{/if}}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" defer></script> 
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" defer></script> 
+    <script src="//cdn.auburn.edu/assets/js/default.min.js" defer></script>
     
     <!-- Application-specific CSS/JS -->
     <!-- build:js assets/scripts/{{ name }}.min.js -->
-      <script src="assets/scripts/{{ type }}.js"></script>
-      <script src="assets/scripts/amcf-app.js"></script>
+      <script src="assets/scripts/components/touch-handler.js" defer></script>
+      <script src="assets/scripts/components/experience.js" defer></script>
+      {{#each page.component}}
+        <script src="assets/scripts/components/{{ this }}.js" defer></script>
+      {{/each}}
+      <script src="assets/scripts/{{ type }}.js" defer></script>
     <!-- endbuild -->
     
   </head>
@@ -70,94 +73,6 @@ path-to-root: ../
 
     <div class="to-top" style="display:none;"><a href="#top"></a></div>
 
-    <!-- jQuery, Bootstrap, and Default AU Code JavaScript --> 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
-    <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
-    <script>
-      var nav = responsiveNav('.nav-collapse', {
-        label: '' 
-      });
-    </script>
-    <script>
-      $(function() {
-        $('.hover').bind('touchstart', function(e) {
-          e.preventDefault()
-          $(this).toggleClass('hover--active')
-        })
-      })
-    </script>
-    <script>
-      // Scroll tricks 
-      var currentZone = 0,
-          selector = 'header, .experience.content, .zone',
-          scrollTo = $(selector),
-          didScroll = false,
-          lastScrollTop = 0,
-          navBarHeight = 60,
-          timer = 250
-
-      $(window).on('scroll', function (e){
-        e.preventDefault()
-        e.stopPropagation()
-        didScroll = true
-        return false
-      })
-
-      /*setInterval(function () {
-        if(didScroll) {
-          hasScrolled() 
-        }
-      }, timer)
-*/
-      function hasScrolled() {
-        var currentScrollTopPosition = $(this).scrollTop(),
-            nearestZone = $(getNearestTop(selector)), // this should always grab the zone whose top is beneath the window's top
-            targetZone = (nearestZone.offset().top - navBarHeight <= currentScrollTopPosition) ? nearestZone.next() : nearestZone
-        
-        // if scrolling down
-        if(currentScrollTopPosition > lastScrollTop) {
-          /*console.log('Scrolling down to: ')
-          console.log(targetZone)
-          console.log()*/
-          
-          $('html').animate({
-            scrollTop: targetZone.offset().top - navBarHeight
-          }, timer, function () {
-            setInterval(function () { didScroll = false }, 50)
-            console.log('scroll down complete')
-          })
-        } else {
-          /*console.log('Scrolling up to: ')
-          console.log(targetZone.prev())
-          console.log()*/
-          
-          $('html').animate({
-            scrollTop: targetZone.prev().offset().top - navBarHeight
-          }, timer, function () {
-            setInterval(function () { didScroll = false }, 50)
-            console.log('scroll up complete')
-          })
-        }
-        lastScrollTop = currentScrollTopPosition
-      }
-
-      function getNearestTop(selector) {
-        var el, 
-            top, 
-            min = Number.MAX_VALUE, 
-            els = ($ && selector) ? $(selector) : document.getElementsByTagName(selector)
-
-        for (var i = 0; i < els.length; i++) {
-          top = Math.abs(els[i].getBoundingClientRect().top)
-          if (top < min) {
-              min = top
-              el = els[i]
-          }
-        } 
-        return el
-      }
-    </script>
   </body>
   <script type="text/javascript">
     var _gaq = _gaq || [];

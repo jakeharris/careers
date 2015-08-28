@@ -3,6 +3,8 @@ layout: no-social.hbs
 type: resources
 path-to-root: ../
 hero-text: Undergraduate Students
+component:
+- tooltip
 ---
 
 <div class="hero row">
@@ -12,7 +14,5 @@ hero-text: Undergraduate Students
   <h2 class="img-replace">{{ hero-text }}</h2>
 </div>
 
-<!-- Good place for a usemin block. Could turn this into resources.min.js. -->
-<script src="assets/scripts/tooltip.js"></script>
 
 {{> body}}
