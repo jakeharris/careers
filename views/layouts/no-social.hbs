@@ -44,20 +44,21 @@ path-to-root: ../
     <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
 
     <!-- Angular & Core JS -->
-    <script>
-      document.createElement('picture')
-    </script>
-    <script src="http://auburn.edu/career/assets/scripts/picturefill.min.js" async></script>
-    <!-- It would be awesome if I could only load angular based on whether the particular view had a controller -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    {{#if component }}
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" defer></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js" defer></script>
+    {{/if}}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" defer></script> 
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" defer></script> 
+    <script src="//cdn.auburn.edu/assets/js/default.min.js" defer></script>
     
     <!-- Application-specific CSS/JS -->
     <!-- build:js assets/scripts/{{ name }}.min.js -->
-      {{#each page.component}}
-        <script src="assets/scripts/components/{{ this }}.js"></script>
+      <script src="assets/scripts/components/touch-start.js" defer></script>
+      {{#each component}}
+        <script src="assets/scripts/components/{{ this }}.js" defer></script>
       {{/each}}
-      <script src="assets/scripts/{{ type }}.js"></script>
+      <script src="assets/scripts/{{ type }}.js" defer></script>
     <!-- endbuild -->
     
   </head>
@@ -70,75 +71,6 @@ path-to-root: ../
     </div>
 
     <div class="to-top" style="display:none;"><a href="#top"></a></div>
-
-    <!-- jQuery, Bootstrap, and Default AU Code JavaScript --> 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> 
-    <script src="//cdn.auburn.edu/assets/js/default.min.js"></script>
-    {{#is name "internships"}}
-      <script>
-        $(function () {
-          var items = $('.faq-checklist-item')
-          
-          $(items[0]).removeClass('hidden')
-          items.each(function (i, e) {
-            $($(this).children('.switch')[0]).children('input').on('change', function () {
-              var conditionalResults = $(this).parent().siblings('.switch-result')
-                
-              console.log(this)
-              if(this.checked && $(this).attr('id').indexOf('-yes') !== -1) {
-                $(conditionalResults[0]).show()
-                $(conditionalResults[1]).hide()
-              } else {
-                $(conditionalResults[0]).hide()
-                $(conditionalResults[1]).show()
-              }
-              if($(items[i+1]).hasClass('hidden'))
-                $(items[i+1]).removeClass('hidden')
-            })
-          })
-        })
-      </script>
-    {{/is}}
-    {{#is name "resume"}}
-      <script type="text/javascript">
-        $(function() {
-          var eresume = $('.eresume'),
-              inputs  = eresume.children('input'),
-              submit  = $('.eresume-btn')
-
-          inputs.on('change', function () {
-
-            // if any of them aren't complete/checked, fail
-            if (    eresume.children('#name')[0].value.length < 1
-                ||  eresume.children('#gid') [0].value.length < 7  //auburn gids are always of the form xxx#### or xxxxxxx
-                ||  eresume.children('#job' )[0].value.length < 1
-                ||  eresume.children('#resume')[0].files.length < 1
-                || !$(eresume.children('.good-resume')[0]).children('#good-resume')[0].checked
-                || !eresume.children('#privacy')[0].checked)
-            {  
-              submit.prop('disabled', true)
-              if(!submit.hasClass('flat-btn--disabled'))
-                submit.addClass('flat-btn--disabled')
-            }
-            
-            // otherwise, allow submission
-            else {
-              submit.prop('disabled', false)
-              submit.removeClass('flat-btn--disabled')
-            }
-          }).bind(this)
-        })
-      </script>
-    {{/is}}
-    <script>
-      $(function() {
-        $('.hover').bind('touchstart', function(e) {
-          e.preventDefault()
-          $(this).toggleClass('hover--active')
-        })
-      })
-    </script>
   </body>
   <script type="text/javascript">
     var _gaq = _gaq || [];
