@@ -38,7 +38,7 @@
     width: 100%;
   }
   
-
+  
   
   & > .row {
     
@@ -191,8 +191,16 @@
     }
   }
 }
-  
 
+
+.deadline-header,
+.awards-ceremony-header {
+  color: $box-shadow;
+}
+.deadline,
+.awards-ceremony {
+  color: $thisisdarkblue;
+}
 
 .sponsors-header {
   border-top: none;
