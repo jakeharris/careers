@@ -31,8 +31,6 @@
     "*.html",
     "*.php",
     "*.htm",
-    "*.pdf",
-    "*.jpg",
     "*.css",
     "*.css.map"
   ]
