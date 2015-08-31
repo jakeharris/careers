@@ -9,7 +9,6 @@
     ".sass-cache",
     "assessments",
     "buttons",
-    "components",
     "dev",
     "employers",
     "events",
@@ -33,6 +32,8 @@
     "*.php",
     "*.htm",
     "*.pdf",
-    "*.jpg"
+    "*.jpg",
+    "*.css",
+    "*.css.map"
   ]
 }
