@@ -1,0 +1,38 @@
+{
+  "jwolfe.file-tree-exclude.list": [
+    "node_modules",
+    "bower_components",
+    ".git",
+    "dist",
+    "vendor",
+    "aboutus",
+    ".sass-cache",
+    "assessments",
+    "buttons",
+    "components",
+    "dev",
+    "employers",
+    "events",
+    "experience",
+    "faculty",
+    "internships",
+    "interviews",
+    "jobs",
+    "mock",
+    "parents",
+    "pathways",
+    "pca",
+    "resources",
+    "resume",
+    "templates",
+    "tipsheets",
+    "upay",
+    "webresources",
+    
+    "*.html",
+    "*.php",
+    "*.htm",
+    "*.pdf",
+    "*.jpg"
+  ]
+}
