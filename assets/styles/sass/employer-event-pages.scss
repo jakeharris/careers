@@ -5,7 +5,9 @@
   align-items: flex-start;
   justify-content: space-between;
 }
-
+.content > .row.row--no-padding {
+  padding-bottom: 0;
+}
 .muted {
   color: $box-shadow;
 }
@@ -169,6 +171,17 @@
   position: relative;
   top: 5px;
   left: 5px;
+}
+
+.checklist-header {
+  margin-top: 5rem;
+}
+.checklist {
+  margin-left: 0;
+  li {
+    list-style: none;
+    padding: 1rem 0;
+  }
 }
 
 .accordion-header {
