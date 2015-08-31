@@ -18,7 +18,25 @@
     width: 100%;
   }
 }
-
+.brief, .actions {
+  width: 40%;
+  flex-basis: 40%;
+  padding: 0;
+}
+.brief {
+  width: 50%;
+  flex-basis: 50%;
+  padding-top: 1rem;
+  .blurb {
+    width: 80%; 
+  }
+  p, div {
+    padding-bottom: 3rem; 
+  }
+  div:last-of-type {
+    padding-bottom: 1rem; 
+  }
+}
 .content {
   background: white;
   
@@ -220,6 +238,12 @@
 
 #sponsor-adtran > img {
   max-width: 14rem;
+}
+
+.icon-spoon-knife:before {
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
 
 /*****************/
