@@ -223,12 +223,15 @@ ol {
 .faq .panel.panel-default {
   border-radius: 0; 
   border: none;
-  background: $bg-gray;
   margin-top: 2rem;
   box-shadow: 6px 6px 0 $box-shadow;
   .panel-body {
     background: white;
     border: none;
+  }
+  .panel-heading {
+    background: $thisislightblue; 
+    color: white;
   }
 }
 .faq .faq-question {
@@ -236,6 +239,12 @@ ol {
   font-size: 1.7rem;
   position: relative;
   line-height: 1.618;
+  a::after {
+    @extend .icon-chevron-down:before; 
+    font-family: $icon-font-family;
+    position: absolute;
+    right: 1rem;
+  }
 }
 
 .content--no-padding > h3 {
