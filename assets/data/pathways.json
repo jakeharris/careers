@@ -200,21 +200,6 @@
       ]
     },
     {
-      "name": "architecture",
-      "fullname": "College of Architecture, Design, & Construction",
-      "img": "college-architecture-banner"
-    },
-    {
-      "name": "education",
-      "fullname": "College of Education",
-      "img": "college-education-banner"
-    },
-    {
-      "name": "engineering",
-      "fullname": "Ginn College of Engineering",
-      "img": "ginn-college-engineering-banner"
-    },
-    {
       "name": "forestry-wildlife-sciences",
       "fullname": "School of Forestry and Wildlife Sciences",
       "img": "school-forestry-wildlife-sciences-banner",
@@ -236,6 +221,21 @@
           "link": "forestry"
         }
       ]
+    },
+    {
+      "name": "architecture",
+      "fullname": "College of Architecture, Design, & Construction",
+      "img": "college-architecture-banner"
+    },
+    {
+      "name": "education",
+      "fullname": "College of Education",
+      "img": "college-education-banner"
+    },
+    {
+      "name": "engineering",
+      "fullname": "Ginn College of Engineering",
+      "img": "ginn-college-engineering-banner"
     },
     {
       "name": "human-sciences",
