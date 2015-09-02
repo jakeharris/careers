@@ -217,7 +217,25 @@
     {
       "name": "forestry-wildlife-sciences",
       "fullname": "School of Forestry and Wildlife Sciences",
-      "img": "school-forestry-wildlife-sciences-banner"
+      "img": "school-forestry-wildlife-sciences-banner",
+      "pathways": [
+        {
+          "name": "Wildlife: Pre-Veterinarian",
+          "link": "wildlife-pre-vet"
+        },
+        {
+          "name": "Wildlife: Ecology Management",
+          "link": "wildlife-ecology-mgmt"
+        },
+        {
+          "name": "Natural Resource Management",
+          "link": "natural-resource-mgmt"
+        },
+        {
+          "name": "Forestry",
+          "link": "forestry"
+        }
+      ]
     },
     {
       "name": "human-sciences",
