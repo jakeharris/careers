@@ -1,12 +1,32 @@
 @import 'app';
 @import 'internships';
 
-.faq-header {
-  padding-top: 3.5rem;
+.hero {
+  width: 100%;
+  background: white;
+  box-shadow: 6px 6px 0 $box-shadow;
+  text-align: center;
+
+  padding: 0;
+  
+  img {
+    display: none;
+  }
+  .img-replace {
+    display: block;
+    text-align: center;
+    font-size: 5rem;
+    padding: 3rem;
+    vertical-align: middle;
+    font-family: $header-font-family;
+  }
+
+  & > h1 {
+    color: $thisislightorange;
+    font-size: 12rem;
+  }
 }
-.faq-header::before {
-  content: "FAQ";
-}
+
 .flex {
   justify-content: space-between;
   align-items: flex-start;
@@ -220,6 +240,12 @@ ol {
     }
   }
 }
+.faq-header {
+  padding-top: 3.5rem;
+}
+.faq-header::before {
+  content: "FAQ";
+}
 .faq .panel.panel-default {
   border-radius: 0; 
   border: none;
@@ -261,7 +287,6 @@ ol {
   padding-bottom: 1.5rem;
   text-align: center;
 }
-
 .content--report .flex-half {
   flex-basis: 100%;
   width: 100%;
@@ -272,6 +297,7 @@ ol {
 .content--tips .buttons {
   align-items: stretch;
 }
+
 .at-auburn {
   display: none;
 }
@@ -287,7 +313,6 @@ ol {
   
   counter-reset: step;
 }
-
 .guide-step {
   flex-basis: 100%;
   width: 100%;
@@ -389,6 +414,9 @@ a.icon:hover {
 }
 
 @media (min-width: $small-screen-size) {
+  .hero .img-replace {
+    font-size: 5rem; 
+  }
   .attributes > .attribute {
     flex-basis: 33.33333%;
     width: 33.33333%;
@@ -398,6 +426,9 @@ a.icon:hover {
   }
 }
 @media (min-width: $moderate-screen-size) {
+  .hero .img-replace {
+    font-size: 8rem; 
+  }
   .faq-header::before {
     content: "Frequently Asked Questions"; 
   }
