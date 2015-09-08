@@ -18,7 +18,25 @@
     width: 100%;
   }
 }
-
+.brief, .actions {
+  width: 40%;
+  flex-basis: 40%;
+  padding: 0;
+}
+.brief {
+  width: 50%;
+  flex-basis: 50%;
+  padding-top: 1rem;
+  .blurb {
+    width: 80%; 
+  }
+  p, div {
+    padding-bottom: 3rem; 
+  }
+  div:last-of-type {
+    padding-bottom: 1rem; 
+  }
+}
 .content {
   background: white;
   
@@ -38,7 +56,7 @@
     width: 100%;
   }
   
-
+  
   
   & > .row {
     
@@ -102,71 +120,6 @@
       }
     }
   }
-  
-  & > .attributes {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    
-    width: 100%;
-    
-    border-top: 1px solid $border;
-    padding-top: 5rem;
-    
-    & > .attribute {
-      
-      flex-basis: 33%;
-      width: 33%;
-      min-width: 200px;
-      margin-bottom: 3rem;
-
-      & > a.icon:hover {
-        background: $thisislightblue;
-      }
-      
-      & > .icon {
-        background: #ccc;
-        color: white;
-        border-radius: 10rem 10rem;
-        font-size: 6rem;
-        width: 10rem;
-        height: 10rem;
-        
-        display: block;
-        
-        margin-left: auto;
-        margin-right: auto;
-        
-        &.dress {
-          padding-left: 1.9rem;
-          padding-top: 1.8rem;
-        }
-        &.format {
-          padding-left: 2rem;
-          padding-top: 1.4rem;
-        }
-        &.majors {
-          padding-left: 1.2rem;
-          padding-top: 1.8rem;
-        }
-        &.population {
-          padding-left: 1.8rem;
-          padding-top: 1.5rem;
-        }
-        &.jobs {
-          padding-left: 2rem;
-          padding-top: 1rem;
-        }
-      }
-      & > .details {
-        padding-top: 3rem;
-        text-align: center;
-        font-family: $header-font-family;
-        font-size: 3rem;
-      }
-    }
-  }
-  
   & > .attendants {
     padding: 5rem 0; 
     vertical-align: middle;
@@ -189,6 +142,83 @@
     }
   }
 }
+.attributes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  border-top: 1px solid $border;
+  padding-top: 5rem;
+
+  & > .attribute {
+
+    flex-basis: 100%;
+    width: 100%;
+    min-width: 200px;
+    margin-bottom: 3rem;
+
+    & > a[href$=".pdf"]::after {
+      content: none; 
+    }
+    
+    & > a.icon:hover {
+      background: $thisislightblue;
+    }
+
+    & > .icon {
+      background: #ccc;
+      color: white;
+      border-radius: 10rem 10rem;
+      font-size: 6rem;
+      width: 10rem;
+      height: 10rem;
+
+      display: block;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      &.dress {
+        padding-left: 1.9rem;
+        padding-top: 1.8rem;
+      }
+      &.format {
+        padding-left: 2rem;
+        padding-top: 1.4rem;
+      }
+      &.majors {
+        padding-left: 1.2rem;
+        padding-top: 1.8rem;
+      }
+      &.population {
+        padding-left: 1.8rem;
+        padding-top: 1.5rem;
+      }
+      &.jobs {
+        padding-left: 2rem;
+        padding-top: 1rem;
+      }
+    }
+    & > .details {
+      padding-top: 3rem;
+      text-align: center;
+      font-family: $header-font-family;
+      font-size: 3rem;
+    }
+  }
+}
+
+
+.deadline-header,
+.awards-ceremony-header {
+  color: $box-shadow;
+}
+.deadline,
+.awards-ceremony {
+  color: $thisisdarkblue;
+}
 
 .sponsors-header {
   border-top: none;
@@ -210,6 +240,12 @@
   max-width: 14rem;
 }
 
+.icon-spoon-knife:before {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
@@ -228,8 +264,8 @@
   }
   .attributes {
     .attribute {
-      flex-basis: 100%;
-      width: 100%;
+      flex-basis: 33%;
+      width: 33%;
       & > .details {
         padding-top: 1rem;
         padding-bottom: 3rem;

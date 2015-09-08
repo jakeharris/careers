@@ -1,0 +1,114 @@
+{
+  "question": [
+    {
+      "id": "eligibility",
+      "question": "What are the eligibility requirements for student employment?",
+      "answer": [
+        "The student must be enrolled in 1 or more semester hour(s) OR not enrolled for the current semester but must have been enrolled the previous semester and must be enrolling the following semester.",
+        "E.g. a student enrolled in spring and registered for the following fall can work over the summer while unenrolled."
+       ]
+    },
+    {
+      "id": "hour-guidelines--undergraduate",
+      "question": "What are the rules concerning hours for undergraduate students?",
+      "answer": [
+        "Up to 20 hours per week (.50 FTE) while enrolled for all campus jobs combined."
+      ]
+    },
+    {
+      "id": "hour-guidelines--graduate",
+      "question": "What are the rules concerning hours for graduate students?",
+      "answer": [
+        "Graduate students may hold multiple assistantships (assistantships and/or hourly employment) from one or more units on campus, but together the cumulative appointment should be 0.25, 0.33, or 0.50 FTE and cannot add up to more than a 0.50 FTE (20 hours per week) appointment. This allows the students the time needed to devote to their academic programs.",
+        "An exception is automatically allowed in the special case of a graduate assistant assigned to teach one four credit course and one three/four credit course. In such cases, appointments will be made at .58/.67 FTE respectively. Concerning other exceptions, see the graduate assistant handbook." 
+      ]
+    },
+    {
+      "id": "hiring-status",
+      "question": "How do I determine a student's hiring status?",
+      "answer": [
+        "Review the PEAEMPL screen in Banner Admin. Type in the Banner ID# and click “Next Block.” Review the Employee Status and note the status. It should state “Active” or “Terminated.” Review the Home Department, Check Distribution, and District or Division. Does this have information in it? Review the Last Work Date and note if it is blank or filled in.",
+        "If the Home Department, Check Distribution, and District or Division are entered, and the Last Work Date is blank, the student is Active. The number of hours the student can work will need to be determined. Completing an ePAF form through Banner will add the new job.",
+        "Otherwise, the student will be treated as a new hire (even if s/he is of Terminated status). They will need to fill out all of the necessary paperwork to work on-campus. This paperwork should be sent to the Human Resources department, which is off-campus, at 1550 East Glenn Avenue."
+      ]
+    },
+    {
+      "id": "determining-jobs-and-work-hours",
+      "question": "When determining work hours, how do I know if my student employee holds other jobs on campus?",
+      "answer": [
+        "View the NBIJLST screen in Banner Admin to see a list of the student’s current positions. (Note: Current jobs will have a Begin Date entered and the End Date field will be blank). Double click on the Position box and the NBAJOBS screen will open. Click “Next Block” to see the Job FTE for that position. Be sure to write this number down.",
+        "If the student holds multiple current positions, go back to NBIJLST and repeat these instructions. You will need to add all of the FTEs to determine if the student can work an additional position.",
+        "When you have determined the student’s current FTE, you will need to subtract the current FTE from .50 to get the number of hours the student can work in your position."
+      ]
+    },
+    {
+      "id": "masters-graduates",
+      "question": "Can graduates who plan to start a master’s program be employed as a student employee?",
+      "answer": ["Recent graduates who wish to work before the start of a new/graduate degree program must be hired as a TES (Temporary Employment Services) employee, unless enrolled in summer courses."]
+    },
+    {
+      "id": "international",
+      "question": "How do I hire an international student?",
+      "answer": ["The employer should send the student to OIE (Office of International Education; located in Hargis Hall). OIE will verify the number of hours the student can work. Student Employment does not have a say so in the number of hours. This depends on their visa status."]
+    },
+    {
+      "id": "incomings",
+      "question": "When can an incoming, new student start working?",
+      "answer": ["Five business days before the first day of classes (as a training period only). Regular work schedule begins on the first day of classes. Prior to this time, incoming students who work on-campus must be employed through TES."]
+    },
+    {
+      "id": "previous-employee-inactive",
+      "question": "Does a previously University-employed student employee with an Inactive Banner HR status need to fill out paperwork?",
+      "answer": ["Yes. A student who was previously employed by the University but is currently inactive in Banner HR is classified as a Re-Hire Separated and will need to fill out all paperwork, as though they had never been employed by the University."]
+    },
+    {
+      "id": "wages",
+      "question": "What is the recommended salary for student employees?",
+      "answer": [
+        "Basic: $7.25 to $12.00. Minimum or no skills, limited responsibilities, limited to no previous experience.",
+        "Intermediate: up to $18.00. Some special training required, may be of a complex or difficult nature.",
+        "Advanced: up to $25.00. Special skill(s) acquired through prior experience, through course work, or both required.",
+        "Project Based: determined per position.",
+        "Pre-Professional: up to $25.00. Positions for pre-veterinary and pre-pharmacy students who perform highly specialized task.",
+        "Pay increases are an excellent way to recognize students for merit, number of hours worked and seniority, and are often given on a semester or annual basis."
+       ]
+    },
+    {
+      "id": "post-wages",
+      "question": "Must a rate of pay be posted in the TRL job posting?",
+      "answer": [
+        "Yes. Students do not want to apply for a job unless they know how much it will pay. If rate of pay depends on qualifications, a base rate or range of rates can be posted."
+       ]
+    },
+    {
+      "id": "holidays",
+      "question": "What is the procedure regarding university holidays and student employees?",
+      "answer": [
+        "On-Campus hourly student employees should be given time off for university holidays, even when the university may be open for business. However, should the employer need student workers during holiday periods (i.e. spring break, breaks between semesters) he or she should work this out with the student at the beginning of employment.",  
+        "See the Graduate Assistant Handbook for more information on assistants."
+      ]
+    },
+    {
+      "id": "breaks",
+      "question": "Should student workers receive breaks during the workday?",
+      "answer": [
+        "Fifteen minute breaks are normally allowed with the approval of the supervisor for each four-hour period worked consecutively. Saving breaks for time off at a later date is not allowed. Breaks are not allowed during the last hour of a shift.",
+        "When working 6 consecutive hours or more, the employee must take a lunch/dinner break of at least one-half hour. Remember to note the time leaving the return time from lunch/dinner on the time sheet. Lunch/dinner is not considered a paid break."
+      ]
+    },
+    {
+      "id": "majors",
+      "question": "Can a specific academic major be listed as a requirement in the TRL job posting?",
+      "answer": [
+        "Unless there is a genuine reason that an applicant be in a specific course of study, it is not recommended that employers list Major as a requirement. Course of study alone does not indicate ability."
+       ]
+    },
+    {
+      "id": "interviews",
+      "question": "Is it necessary to interview student employees?",
+      "answer": [
+        "It is recommended that employers interview applicants before extending an offer for employment. In taking the time to make a more informed decision, employers will keep employees longer and find a better return in their investment."
+       ]
+    }    
+  ]
+}

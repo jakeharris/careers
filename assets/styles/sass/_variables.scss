@@ -52,3 +52,51 @@ $social-shrink-size: 1440px;
     bottom: (-1 * $height / 4);
   }
 }
+@mixin arrow($direction, $height, $color) {
+  content: ' ';
+  height: 0; width: 0;
+  
+  display: block;
+  margin: 0 auto;
+  
+  position: absolute;
+  z-index: 2;
+  
+  @if $direction == left {
+    border-bottom: $height solid transparent;
+    border-top:    $height solid transparent;
+    border-left:   0;
+    border-right:  $height solid $color;
+    bottom: auto;
+    right: auto;
+    left: -$height;
+    top: calc(50% - #{$height});
+  } @else if $direction == up {
+    border-bottom: $height solid $color;
+    border-top:    0;
+    border-left:   $height solid transparent;
+    border-right:  $height solid transparent;
+    bottom: auto;
+    right: auto;
+    top: -$height;
+    left: calc(50% - #{$height});
+  } @else if $direction == right {
+    border-bottom: $height solid transparent;
+    border-top:    $height solid transparent;
+    border-left:   $height solid $color;
+    border-right:  0;
+    bottom: auto;
+    left: auto;
+    right: -$height;
+    top: calc(50% - #{$height});
+  } @else if $direction == down {
+    border-bottom: 0;
+    border-top:    $height solid $color;
+    border-left:   $height solid transparent;
+    border-right:  $height solid transparent;
+    top: auto;
+    right: auto;
+    bottom: -$height;
+    left: calc(50% - #{$height});
+  } 
+}

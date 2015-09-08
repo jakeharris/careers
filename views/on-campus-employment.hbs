@@ -1,0 +1,135 @@
+---
+ng-app: career-center-hire
+name: on-campus
+type: student-employment
+layout: employers.hbs
+title: On-Campus Employment | Career Center
+analytics-token: UA-12338791-4
+path-to-root: ../../
+---
+
+<section class="hero content">
+  <h2>On-Campus Employment</h2>
+</section>
+
+<section class="flex">
+  <div class="content extra-content flex-half recruiting-link">
+    <h3 class="trl"></h3>
+    <p>
+      Your source for student recruitment.
+    </p>
+    <div class="attributes">
+      <div class="attribute">
+        <a class="icon post">
+          <i></i>
+        </a>
+        <div class="details">
+          Post positions for free
+        </div>
+      </div>
+      <div class="attribute">
+        <a class="icon law">
+          <i></i>
+        </a>
+        <div class="details">
+          Comply with equal opportunity laws
+        </div>
+      </div>
+      <div class="attribute">
+        <a class="icon calendar">
+          <i class="icon-calendar"></i>
+        </a>
+        <div class="details">
+          Register for Career Center events
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0" class="flat-btn flat-btn--half">Login</a>
+      <a href="https://auburn-csm.symplicity.com/employers/?signin_tab=2" class="flat-btn flat-btn--white flat-btn--half">Register</a>
+    </div>
+  </div>
+  <div class="flex-half quick-guide padding">
+    <h4>Create an account</h4>
+    <ol>
+      <li><a href="https://auburn-csm.symplicity.com/employers/?signin_tab=2">Create a new employer account.</a></li>
+      <li>Fill out your contact information.</li>
+      <li>Under Services, choose Job Postings.</li>
+      <li>Submit.</li>
+      <li>Wait for the Career Center to approve your registration.</li>
+    </ol>
+    <h4>Post jobs</h4>
+    <ol>
+      <li><a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0">Log in.</a><br/><span class="muted">Username: your email address<br/>Password: will be emailed to you</span></li>
+      <li>Navigate to the Jobs tab and click "Add New."</li>
+      <li>Fill out your job posting.</li>
+    </ol>
+  </div>
+</section>
+
+<div class="interdigitator">
+  <section class="content extra-content content--no-padding content--guide">
+    <h3 class="how-to-header padding">How to Hire</h3>
+    <ul class="guide">
+      <li class="guide-step">
+        <a class="icon"></a>
+        <div class="details">Post positions on <a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0">TRL</a></div>
+      </li>
+      <li class="guide-step">
+        <a class="icon"></a>
+        <div class="details">Interview applicants and select your student worker(s)</div>
+      </li>
+      <li class="guide-step">
+        <a class="icon"></a>
+        <div class="details">Determine student enrollment</div>
+      </li>
+      <li class="guide-step">
+        <a class="icon"></a>
+        <div class="details">Determine hiring status (active, new-hire, terminated)</div>
+      </li>
+      <li class="guide-step">
+        <a class="icon"></a>
+        <div class="details">Determine the number of hours the student can work</div>
+      </li>
+      <li class="guide-step">
+        <a class="icon"></a>
+        <div class="details">Complete and submit appropriate paperwork to HR</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="content extra-content content--no-padding content--tips">
+    <h3 class="how-to-header">Tips and Advice</h3>
+    <div class="flex buttons buttons--no-padding">
+      <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/4"  class="flat-btn                 flex-quarter">Interviewing</a>
+      <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/6"  class="flat-btn flat-btn--white flex-quarter">Classify a Student</a>
+      <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/6"  class="flat-btn                 flex-quarter">Hiring</a>
+      <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/10" class="flat-btn flat-btn--white flex-quarter">Paperwork</a>
+    </div>
+  </section>
+</div>
+
+<section class="content extra-content">
+  <h3 class="faq-header"></h3>
+  
+  <div class="panel-group faq" id="faq" role="tablist" aria-multiselectable="true">
+    {{#each on-campus-faq.question }}
+    <div class="panel panel-default">
+      <div class="panel-heading accordion-header" role="tab" id="{{ id }}-heading">
+        <h4 class="panel-title faq-question">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ id }}" aria-expanded="false" aria-controls="{{ id }}">
+            {{ question }}
+          </a>
+        </h4>
+      </div>
+      <div id="{{ id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ id }}-heading">
+        <div class="panel-body faq-answer">
+          {{#each answer}}
+            <p>{{ this }}</p>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
