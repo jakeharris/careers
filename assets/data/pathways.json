@@ -200,6 +200,29 @@
       ]
     },
     {
+      "name": "forestry-wildlife-sciences",
+      "fullname": "School of Forestry and Wildlife Sciences",
+      "img": "school-forestry-wildlife-sciences-banner",
+      "pathways": [
+        {
+          "name": "Wildlife: Pre-Veterinarian",
+          "link": "wildlife-pre-vet"
+        },
+        {
+          "name": "Wildlife: Ecology Management",
+          "link": "wildlife-ecology-mgmt"
+        },
+        {
+          "name": "Natural Resource Management",
+          "link": "natural-resource-mgmt"
+        },
+        {
+          "name": "Forestry",
+          "link": "forestry"
+        }
+      ]
+    },
+    {
       "name": "architecture",
       "fullname": "College of Architecture, Design, & Construction",
       "img": "college-architecture-banner"
@@ -213,11 +236,6 @@
       "name": "engineering",
       "fullname": "Ginn College of Engineering",
       "img": "ginn-college-engineering-banner"
-    },
-    {
-      "name": "forestry-wildlife-sciences",
-      "fullname": "School of Forestry and Wildlife Sciences",
-      "img": "school-forestry-wildlife-sciences-banner"
     },
     {
       "name": "human-sciences",
