@@ -3,4 +3,4 @@ $(function() {
     e.preventDefault()
     $(this).toggleClass('hover--active')
   })
-})
+});
