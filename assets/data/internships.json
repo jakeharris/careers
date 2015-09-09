@@ -32,11 +32,11 @@
       "id": "how-do-i-find-an-internship",
       "question": "How do I find an internship?",
       "answer": "Begin your search three to four months in advance of your desired start date.",
-      "note": "Connecting and interviewing with employers requires a TRL login. If you don't already have one, you'll be instructed to create one once you're there. Just use your Auburn credentials!",
+      "note": "Connect with employers and interview on-campus by creating or logging in to your TRL account. Be sure to use your Auburn credentials when accessing TRL.",
       "resources": [
         {
           "text": "Connect with Employers",
-          "url": "http://jobs.auburn.edu/"
+          "url": "https://auburn-csm.symplicity.com/sso/students/"
         },
         {
           "text": "Attend Career Fairs & Events",
@@ -44,7 +44,7 @@
         },
         {
           "text": "Interview On-Campus",
-          "url": "http://jobs.auburn.edu/"
+          "url": "https://auburn-csm.symplicity.com/sso/students/"
         },
         {
           "text": "Discover External Internships",
