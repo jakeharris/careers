@@ -5,8 +5,10 @@ type: staff
 layout: no-social.hbs
 ---
 
+<div class="content content--no-padding"><a href="aboutus/staff.html" class="flat-btn flat-btn--white">Back to Full-time Staff</a></div>
+
 {{#each student-workers.category}}
-  <div class="content">
+  <div class="content extra-content">
     <h2>{{this}}</h2>
   </div>
   <div class="staff-container">
@@ -32,8 +34,8 @@ layout: no-social.hbs
           </div>
           <div class="contact-info">
             <h2>{{firstName}}</br>{{lastName}}</h2>
-            <h3>{{position}}</h3>
-            <h3><a class="email" href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>
+            {{#if position}}<h3>{{position}}</h3>{{/if}}
+            {{#if email}}<h3><a class="email" href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>{{/if}}
             {{#if quote}}
             <p class="muted"><span class="big-quote">"</span>{{quote}}<span class="big-quote">"</span></p>
             {{/if}}
