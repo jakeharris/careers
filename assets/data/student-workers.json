@@ -6,132 +6,101 @@
   ],
   "member": [
     {
-      "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
-      "position": "AD, Career Development",
-      "email": "addyebb",
-      "img": "addye",
-      "portfolio": "http://addyebb.weebly.com/",
-      "category": "Peer Event Planners",
-      "liaison": [
-        "College of Liberal Arts",
-        "College of Human Sciences",
-        "Interdisciplinary Studies",
-        "Auburn Global & International Programs"
-      ]
+      "name": "Brandon Teal",
+      "firstName": "Brandon",
+      "lastName": "Teal",
+      "category": "Peer Career Advisors"
     },
     {
-      "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
-      "position": "AD, Career Development",
-      "email": "addyebb",
-      "img": "addye",
-      "portfolio": "http://addyebb.weebly.com/",
-      "category": "Peer Event Planners",
-      "liaison": [
-        "College of Liberal Arts",
-        "College of Human Sciences",
-        "Interdisciplinary Studies",
-        "Auburn Global & International Programs"
-      ]
+      "name": "Amanda Woodson",
+      "firstName": "Amanda",
+      "lastName": "Woodson",
+      "category": "Peer Career Advisors"
     },
     {
-      "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
-      "position": "AD, Career Development",
-      "email": "addyebb",
-      "img": "addye",
-      "portfolio": "http://addyebb.weebly.com/",
-      "category": "Career Development",
-      "liaison": [
-        "College of Liberal Arts",
-        "College of Human Sciences",
-        "Interdisciplinary Studies",
-        "Auburn Global & International Programs"
-      ]
+      "name": "Will Stout",
+      "firstName": "Will",
+      "lastName": "Stout",
+      "category": "Peer Career Advisors"
     },
     {
-      "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
-      "position": "AD, Career Development",
-      "email": "addyebb",
-      "img": "addye",
-      "portfolio": "http://addyebb.weebly.com/",
-      "category": "Career Development",
-      "liaison": [
-        "College of Liberal Arts",
-        "College of Human Sciences",
-        "Interdisciplinary Studies",
-        "Auburn Global & International Programs"
-      ]
+      "firstName": "Kirsten",
+      "lastName": "Failings",
+      "category": "Peer Career Advisors"
     },
     {
-      "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
-      "position": "AD, Career Development",
-      "email": "addyebb",
-      "img": "addye",
-      "portfolio": "http://addyebb.weebly.com/",
-      "category": "Career Development",
-      "liaison": [
-        "College of Liberal Arts",
-        "College of Human Sciences",
-        "Interdisciplinary Studies",
-        "Auburn Global & International Programs"
-      ]
+      "firstName": "Matthew",
+      "lastName": "Stinson",
+      "category": "Peer Career Advisors"
     },
     {
-      "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
-      "position": "AD, Career Development",
-      "email": "addyebb",
-      "img": "addye",
-      "portfolio": "http://addyebb.weebly.com/",
-      "category": "Career Development",
-      "liaison": [
-        "College of Liberal Arts",
-        "College of Human Sciences",
-        "Interdisciplinary Studies",
-        "Auburn Global & International Programs"
-      ]
+      "firstName": "Anna Claire",
+      "lastName": "Peaden",
+      "category": "Peer Career Advisors"
     },
     {
-      "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
-      "position": "AD, Career Development",
-      "email": "addyebb",
-      "img": "addye",
-      "portfolio": "http://addyebb.weebly.com/",
-      "category": "Career Development",
-      "liaison": [
-        "College of Liberal Arts",
-        "College of Human Sciences",
-        "Interdisciplinary Studies",
-        "Auburn Global & International Programs"
-      ]
+      "firstName": "Ali",
+      "lastName": "Zakutney",
+      "category": "Peer Career Advisors"
     },
     {
-      "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
-      "position": "AD, Career Development",
-      "email": "addyebb",
-      "img": "addye",
-      "portfolio": "http://addyebb.weebly.com/",
-      "category": "Career Development",
-      "liaison": [
-        "College of Liberal Arts",
-        "College of Human Sciences",
-        "Interdisciplinary Studies",
-        "Auburn Global & International Programs"
-      ]
+      "firstName": "Shelby",
+      "lastName": "Smith",
+      "category": "Peer Career Advisors"
+    },
+    {
+      "firstName": "Ben",
+      "lastName": "Ford",
+      "category": "Peer Event Planners"
+    },
+    {
+      "firstName": "Drew",
+      "lastName": "Tewell",
+      "category": "Peer Event Planners"
+    },
+    {
+      "firstName": "Josh",
+      "lastName": "Booker",
+      "category": "Peer Event Planners"
+    },
+    {
+      "firstName": "Ricky",
+      "lastName": "Campbell",
+      "category": "Peer Event Planners"
+    },
+    {
+      "firstName": "James",
+      "lastName": "Bowen",
+      "category": "Peer Event Planners"
+    },
+    {
+      "firstName": "Leo",
+      "lastName": "Lagunas",
+      "category": "Peer Event Planners"
+    },
+    {
+      "firstName": "Jake",
+      "lastName": "Harris",
+      "position": "Web Designer and Developer",
+      "category": "Operations"
+    },
+    {
+      "firstName": "Natasha",
+      "lastName": "Walker",
+      "position": "Marketing and Video Ops",
+      "category": "Operations"
+    },
+    {
+      "firstName": "Allie",
+      "lastName": "Britton",
+      "position": "Student Assistant, Employer Relations",
+      "category": "Operations"
+    },
+    {
+      "firstName": "Taylor",
+      "lastName": "Adams",
+      "position": "Student Assistant, Employer Relations",
+      "category": "Operations"
     }
   ]
 }
