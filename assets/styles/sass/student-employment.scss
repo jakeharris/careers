@@ -258,18 +258,30 @@ ol {
   .panel-heading {
     background: $thisislightblue; 
     color: white;
+    padding: 0;
+  }
+  .panel-heading:hover {
+    background: $thisisdarkblue;
+    color: white;
   }
 }
 .faq .faq-question {
-  padding: 0.5rem;
+  font-family: $body-font-family;
   font-size: 1.7rem;
   position: relative;
   line-height: 1.618;
+  height: 100%;
+  a {
+    padding: 1.5rem; 
+  }
   a::after {
     @extend .icon-chevron-down:before; 
     font-family: $icon-font-family;
     position: absolute;
     right: 1rem;
+  }
+  a:hover {
+    color: white; 
   }
 }
 
