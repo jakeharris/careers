@@ -25,6 +25,9 @@
     color: $thisislightorange;
     font-size: 12rem;
   }
+  & > h2 {
+    padding: 3rem;
+  }
 }
 
 .flex {
@@ -254,6 +257,10 @@ ol {
   .panel-body {
     background: white;
     border: none;
+    max-width: 600px;
+    p {
+      padding: 1rem 0; 
+    }
   }
   .panel-heading {
     background: $thisislightblue; 
@@ -273,6 +280,7 @@ ol {
   height: 100%;
   a {
     padding: 1.5rem; 
+    display: inline-block;
   }
   a::after {
     @extend .icon-chevron-down:before; 
@@ -435,6 +443,9 @@ a.icon:hover {
   }
   .at-auburn {
     display: inline; 
+  }
+  .content--tips .buttons {
+    align-items: flex-start; 
   }
 }
 @media (min-width: $moderate-screen-size) {
