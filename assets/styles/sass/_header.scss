@@ -110,6 +110,10 @@ nav.header {
     .about-us--mobile {
       display: none; 
     }
+    
+    & ul li ul li {
+      padding: 3rem 0;
+    }
   }
   
   .nav-wrapper.mobile-nav--active {
