@@ -60,7 +60,7 @@ footer {
         flex-basis: 80%;
         color: inherit;
         
-        &:hover {
+        &:hover, &:active, &:focus {
           color: $thisislightorange; 
         }
       }
