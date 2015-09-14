@@ -4,10 +4,6 @@ footer {
   width: 100%;
   min-height: 50vh;
   background-color: $thisislightblue;
-  background-image: url('../images/footer-bg.png');
-  background-repeat: no-repeat; 
-  background-size: 100% auto;
-  background-origin: content-box;
   
   margin-top: 3rem;
   
@@ -94,7 +90,7 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     background: none;
-    background-color: transparent;
+    background-color: inherit;
     color: inherit;
 
     padding: 10rem 5rem;
