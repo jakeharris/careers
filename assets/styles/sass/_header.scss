@@ -112,7 +112,21 @@ nav.header {
     }
     
     & ul li ul li {
-      padding: 3rem 0;
+      padding: 0;
+      padding-top: 1rem;
+      &:after {
+        content: ' ';
+        display: block;
+        width: 100%;
+
+        background-color: $thisislightblue;
+        padding: 0;
+        margin-top: 1rem;
+        padding-top: 6rem;
+      }
+      &:hover:after {
+        background-color: $thisislightorange;
+      }
     }
   }
   
@@ -439,8 +453,8 @@ ul li  {
         width: 90vw;
         padding-left: 15px;
         padding-right: 15px;
-        li {
-          width: 16.6667%;
+        li ul {
+          padding: 0; 
         }
       }
     }
