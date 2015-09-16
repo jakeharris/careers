@@ -4,17 +4,6 @@ footer {
   width: 100%;
   min-height: 50vh;
   background-color: $thisislightblue;
-  background: 
-    linear-gradient(
-      rgba(73, 110, 156, 0.9),
-      rgba(73, 110, 156, 0.9)
-    ),
-    url(../images/footer-bg.png) no-repeat center center fixed,
-    linear-gradient(
-      rgba(73, 110, 156, 1),
-      rgba(73, 110, 156, 1)
-    );
-  background-size: cover;
   
   margin-top: 3rem;
   
@@ -121,7 +110,7 @@ footer {
       flex-basis: 100%;
       display: block;
       
-      margin-top: 10rem;
+      padding-top: 25vh;
       
       font-family: $body-font-family;
       font-size: 2rem;
