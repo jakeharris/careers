@@ -7,7 +7,7 @@
   box-shadow: 6px 6px 0 $box-shadow;
   text-align: center;
 
-  padding: 0;
+  padding: 5rem;
   
   img {
     display: none;
@@ -58,9 +58,23 @@
   padding-left: 3rem;
 }
 .contact {
+  & > p {
+    padding-bottom: 3rem; 
+  }
   .contact-details {
     display: flex;
-    justify-content: space-between;
+    .contact-info {
+      flex-basis: 70%; 
+      
+      padding-left: 3rem;
+    }
+  }
+  &.content .contact-details {
+    display: block;
+    .contact-info {
+      width: 100%;
+      padding: 0;
+    }
   }
   img {
     flex-basis: 25%;
@@ -69,15 +83,18 @@
     border-radius: 50%;
     box-sizing: padding-box;
   }
-  .contact-info {
-    flex-basis: 65%;
-    width: 65%;
+  &.content img {
+    width: 35%; 
+    
+    margin-bottom: 3rem;
   }
   h3 {
     font-family: $header-font-family;
     font-size: 3rem;
-    
-    padding-bottom: 3rem;
+  }
+  &.content .name {
+    display: inline-block; 
+    padding-left: 1rem;
   }
   .address, .phone, .email, .name {
     position: relative;
@@ -160,8 +177,11 @@ h3:hover {
 }
 .quick-guide {
   display: none;
-  flex-basis: 33%;
-  width: 33%;
+  justify-content: space-around;
+  flex-basis: 100%;
+  width: 100%;
+  
+  padding: 0 5rem;
   
   h4 {
     padding-top: 3rem;
@@ -240,6 +260,10 @@ ol {
     }
   }
 }
+.welcome {
+  flex-basis: 100%;
+  width: 100%;
+}
 .faq-header {
   padding-top: 3.5rem;
 }
@@ -248,17 +272,24 @@ ol {
 }
 .faq .panel.panel-default {
   border-radius: 0; 
-  border: none;
+  border: 1px solid $box-shadow;
   margin-top: 2rem;
   box-shadow: 6px 6px 0 $box-shadow;
   .panel-body {
     background: white;
     border: none;
+    padding: 3rem;
+    p {
+      padding: 1.5rem 0;
+      max-width: 600px;
+    }
   }
   .panel-heading {
-    background: $thisislightblue; 
-    color: white;
+    background: white; 
+    color: $thisisdarkblue;
     padding: 0;
+    border-bottom: 1px solid $box-shadow;
+    border-radius: 0;
   }
   .panel-heading:hover {
     background: $thisisdarkblue;
@@ -272,13 +303,14 @@ ol {
   line-height: 1.618;
   height: 100%;
   a {
-    padding: 1.5rem; 
+    padding: 1.5rem 3rem; 
+    display: block;
   }
   a::after {
     @extend .icon-chevron-down:before; 
     font-family: $icon-font-family;
     position: absolute;
-    right: 1rem;
+    right: 3rem;
   }
   a:hover {
     color: white; 
@@ -376,21 +408,6 @@ ol {
     border: none;
   }
 }
-.interdigitator {
-  display: flex;
-  flex-wrap: wrap;
-  
-  .content--guide {
-    flex-basis: 100%;
-    width: 100%;
-    order: 2; 
-  }
-  .content--tips {
-    flex-basis: 100%;
-    width: 100%;
-    order: 1;
-  }
-}
 
 a.icon:hover {
   background: $thisislightblue;
@@ -433,9 +450,6 @@ a.icon:hover {
     flex-basis: 33.33333%;
     width: 33.33333%;
   }
-  .at-auburn {
-    display: inline; 
-  }
 }
 @media (min-width: $moderate-screen-size) {
   .hero .img-replace {
@@ -448,8 +462,12 @@ a.icon:hover {
     flex-basis: 66%;
     width: 66%;
   }
+  .welcome {
+    flex-basis: 30%;
+    width: 30%;
+  }
   .quick-guide {
-    display: block; 
+    display: flex;
   }
   .guide-step {
     $steps: 6;
