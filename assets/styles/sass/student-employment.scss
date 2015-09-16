@@ -25,6 +25,9 @@
     color: $thisislightorange;
     font-size: 12rem;
   }
+  & > h2 {
+    padding: 3rem;
+  }
 }
 
 .flex {
@@ -303,8 +306,13 @@ ol {
   line-height: 1.618;
   height: 100%;
   a {
+<<<<<<< HEAD
     padding: 1.5rem 3rem; 
     display: block;
+=======
+    padding: 1.5rem; 
+    display: inline-block;
+>>>>>>> 52c546a6d75973581bf8f58558b9ed9aa4b34c4a
   }
   a::after {
     @extend .icon-chevron-down:before; 
@@ -450,6 +458,15 @@ a.icon:hover {
     flex-basis: 33.33333%;
     width: 33.33333%;
   }
+<<<<<<< HEAD
+=======
+  .at-auburn {
+    display: inline; 
+  }
+  .content--tips .buttons {
+    align-items: flex-start; 
+  }
+>>>>>>> 52c546a6d75973581bf8f58558b9ed9aa4b34c4a
 }
 @media (min-width: $moderate-screen-size) {
   .hero .img-replace {
