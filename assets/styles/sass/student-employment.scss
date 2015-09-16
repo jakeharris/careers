@@ -61,9 +61,6 @@
   padding-left: 3rem;
 }
 .contact {
-  & > p {
-    padding-bottom: 3rem; 
-  }
   .contact-details {
     display: flex;
     .contact-info {
@@ -87,17 +84,15 @@
     box-sizing: padding-box;
   }
   &.content img {
-    width: 35%; 
+    width: 45%; 
+    display: block;
     
+    margin: 0 auto;    
     margin-bottom: 3rem;
   }
   h3 {
     font-family: $header-font-family;
     font-size: 3rem;
-  }
-  &.content .name {
-    display: inline-block; 
-    padding-left: 1rem;
   }
   .address, .phone, .email, .name {
     position: relative;
@@ -123,7 +118,7 @@
     }
   }
   .phone, .email {
-    margin-top: 1rem;
+    
   }
   .email {
     margin-top: -1rem;
@@ -180,11 +175,12 @@ h3:hover {
 }
 .quick-guide {
   display: none;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-basis: 100%;
   width: 100%;
   
   padding: 0 5rem;
+  padding-top: 3rem;
   
   h4 {
     padding-top: 3rem;
@@ -243,6 +239,7 @@ ol {
   padding: 0;
   margin: 0;
 }
+
 .recruiting-link {
   flex-basis: 100%;
   width: 100%;
@@ -266,6 +263,7 @@ ol {
 .welcome {
   flex-basis: 100%;
   width: 100%;
+  height: auto;
 }
 .faq-header {
   padding-top: 3.5rem;
@@ -306,13 +304,8 @@ ol {
   line-height: 1.618;
   height: 100%;
   a {
-<<<<<<< HEAD
     padding: 1.5rem 3rem; 
     display: block;
-=======
-    padding: 1.5rem; 
-    display: inline-block;
->>>>>>> 52c546a6d75973581bf8f58558b9ed9aa4b34c4a
   }
   a::after {
     @extend .icon-chevron-down:before; 
@@ -458,15 +451,12 @@ a.icon:hover {
     flex-basis: 33.33333%;
     width: 33.33333%;
   }
-<<<<<<< HEAD
-=======
   .at-auburn {
     display: inline; 
   }
   .content--tips .buttons {
     align-items: flex-start; 
   }
->>>>>>> 52c546a6d75973581bf8f58558b9ed9aa4b34c4a
 }
 @media (min-width: $moderate-screen-size) {
   .hero .img-replace {
@@ -485,6 +475,8 @@ a.icon:hover {
   }
   .quick-guide {
     display: flex;
+    flex-basis: 66%;
+    width: 66%;
   }
   .guide-step {
     $steps: 6;
