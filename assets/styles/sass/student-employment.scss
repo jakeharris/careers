@@ -254,6 +254,11 @@ ol {
   .panel-body {
     background: white;
     border: none;
+    padding: 3rem;
+    p {
+      padding: 1.5rem 0;
+      max-width: 600px;
+    }
   }
   .panel-heading {
     background: $thisislightblue; 
@@ -272,14 +277,14 @@ ol {
   line-height: 1.618;
   height: 100%;
   a {
-    padding: 1.5rem; 
+    padding: 1.5rem 3rem; 
     display: block;
   }
   a::after {
     @extend .icon-chevron-down:before; 
     font-family: $icon-font-family;
     position: absolute;
-    right: 1rem;
+    right: 3rem;
   }
   a:hover {
     color: white; 
