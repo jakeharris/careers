@@ -110,6 +110,7 @@ nav.header {
     .about-us--mobile {
       display: none; 
     }
+    
   }
   
   .nav-wrapper.mobile-nav--active {
@@ -435,8 +436,8 @@ ul li  {
         width: 90vw;
         padding-left: 15px;
         padding-right: 15px;
-        li {
-          width: 16.6667%;
+        li ul {
+          padding: 0; 
         }
       }
     }
