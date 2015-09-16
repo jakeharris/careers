@@ -182,11 +182,17 @@ h3:hover {
   padding: 0 5rem;
   padding-top: 3rem;
   
+  background-color: $bg-gray;
+  
+  .quick-guide--title {
+    padding: 10rem;
+    background-color: white;
+  }
   h4 {
     padding-top: 3rem;
   }
-  h4:first-of-type {
-    padding-top: 0;
+  ol {
+    padding: 0 1.6rem; 
   }
 }
 .attributes {
@@ -475,8 +481,6 @@ a.icon:hover {
   }
   .quick-guide {
     display: flex;
-    flex-basis: 66%;
-    width: 66%;
   }
   .guide-step {
     $steps: 6;
