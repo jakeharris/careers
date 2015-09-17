@@ -266,6 +266,31 @@ ol {
     }
   }
 }
+.content--no-padding .flat-btn {
+  box-shadow: none;
+  margin: 0;
+}
+.how-to-header + p {
+  text-align: center;
+}
+.popover {
+  min-width: 350px;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  
+  p {
+    margin: 0; padding: 0.5rem; 
+  }
+  p.muted {
+    margin: 0; padding: 0; 
+  }
+  ol li{
+    list-style: decimal;
+    list-style-position: inside;
+    padding: 1rem 0;
+  }
+}
 .welcome {
   flex-basis: 100%;
   width: 100%;
