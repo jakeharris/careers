@@ -51,6 +51,9 @@
   &:last-of-type {
     padding-right: 0; 
   }
+  &.report-placement {
+    padding-left: 5rem; 
+  }
 }
 .flex-two-thirds {
   flex-basis: 66%;
@@ -175,7 +178,7 @@ h3:hover {
 .quick-guide {
   display: none;
   
-  padding: 0 5rem;
+  padding: 0;
   padding-top: 3rem;
   
   background-color: $bg-gray;
@@ -188,7 +191,7 @@ h3:hover {
     width: 30%;
     &:last-of-type {
       padding-left: 5rem; 
-      h4:last-of-type {
+      h4:nth-of-type(2) {
         padding-top: 3rem;
       }
     }
@@ -353,6 +356,13 @@ ol {
   a:hover {
     color: white; 
   }
+}
+
+.report-placement {
+  padding: 5rem;
+}
+.flex-third.registration--starter {
+  padding-left: 5rem;
 }
 
 .content--no-padding > h3 {
