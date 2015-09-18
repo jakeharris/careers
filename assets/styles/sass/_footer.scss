@@ -27,10 +27,11 @@ footer {
     color: white;
     
     padding-bottom: 0.5rem;
+    padding-top: 3rem;
   }
   section {
-    width: 33%;
-    flex-basis: 33%;
+    width: 100%;
+    flex-basis: 100%;
     
     color: inherit;
   }
@@ -98,8 +99,8 @@ footer {
     
     z-index: 30;
 
-    padding: 10rem 5rem;
-    padding-bottom: 3rem;
+    padding: 3rem 5rem;
+    padding-top: 5rem;
 
     display: flex;
     justify-content: space-between;
@@ -118,5 +119,20 @@ footer {
         color: inherit; 
       }
     }
+  }
+}
+
+@media (min-width: $small-screen-size) {
+  footer section {
+    width: 33%;
+    flex-basis: 33%;
+    
+    color: inherit;
+  }
+  footer h6 {
+    padding-top: 0; 
+  }
+  footer .footer-wrap {
+    padding-top: 10rem; 
   }
 }
