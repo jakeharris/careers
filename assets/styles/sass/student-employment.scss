@@ -175,21 +175,22 @@ h3:hover {
 }
 .quick-guide {
   display: none;
-  justify-content: space-between;
-  flex-basis: 100%;
-  width: 100%;
   
   padding: 0 5rem;
   padding-top: 3rem;
   
   background-color: $bg-gray;
   
-  .quick-guide--title {
-    padding: 10rem;
-    background-color: white;
+  .flex {
+    justify-content: space-between;
+  }
+  .flex-third {
+    flex-basis: 30%; 
+    width: 30%;
   }
   h4 {
-    padding-top: 3rem;
+    color: $thisisdarkblue;
+    padding-top: 0;
   }
   ol {
     padding: 0 1.6rem; 
@@ -505,6 +506,9 @@ a.icon:hover {
     width: 30%;
   }
   .quick-guide {
+    display: block; 
+  }
+  .quick-guide .flex {
     display: flex;
   }
   .guide-step {
