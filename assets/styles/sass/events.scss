@@ -1,6 +1,6 @@
 @import 'app';
 
-body.events {
+body.events-page {
   width: 100%;
   flex-basis: 100%;
   
@@ -67,7 +67,7 @@ body.events {
 }
 
 @media (min-width: $small-screen-size) {
-  body.events .event {
+  body.events-page .event {
     flex-basis: 50%;
     width: 50%; 
   }
