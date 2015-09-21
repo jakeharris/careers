@@ -1,4 +1,3 @@
-@import 'app';
 @import 'internships';
 
 .hero {
@@ -25,6 +24,9 @@
     color: $thisislightorange;
     font-size: 12rem;
   }
+  & > h2 {
+    padding: 3rem;
+  }
 }
 
 .flex {
@@ -49,6 +51,9 @@
   &:last-of-type {
     padding-right: 0; 
   }
+  &.report-placement {
+    padding-left: 5rem; 
+  }
 }
 .flex-two-thirds {
   flex-basis: 66%;
@@ -60,7 +65,18 @@
 .contact {
   .contact-details {
     display: flex;
-    justify-content: space-between;
+    .contact-info {
+      flex-basis: 70%; 
+      
+      padding-left: 3rem;
+    }
+  }
+  &.content .contact-details {
+    display: block;
+    .contact-info {
+      width: 100%;
+      padding: 0;
+    }
   }
   img {
     flex-basis: 25%;
@@ -69,15 +85,16 @@
     border-radius: 50%;
     box-sizing: padding-box;
   }
-  .contact-info {
-    flex-basis: 65%;
-    width: 65%;
+  &.content img {
+    width: 45%; 
+    display: block;
+    
+    margin: 0 auto;    
+    margin-bottom: 3rem;
   }
   h3 {
     font-family: $header-font-family;
     font-size: 3rem;
-    
-    padding-bottom: 3rem;
   }
   .address, .phone, .email, .name {
     position: relative;
@@ -103,7 +120,7 @@
     }
   }
   .phone, .email {
-    margin-top: 1rem;
+    
   }
   .email {
     margin-top: -1rem;
@@ -160,14 +177,31 @@ h3:hover {
 }
 .quick-guide {
   display: none;
-  flex-basis: 33%;
-  width: 33%;
   
-  h4 {
-    padding-top: 3rem;
+  padding: 0;
+  padding-top: 3rem;
+  
+  background-color: $bg-gray;
+  
+  .flex {
+    justify-content: space-between;
   }
-  h4:first-of-type {
+  .flex-third {
+    flex-basis: 30%; 
+    width: 30%;
+    &:last-of-type {
+      padding-left: 5rem; 
+      h4:nth-of-type(2) {
+        padding-top: 3rem;
+      }
+    }
+  }
+  h4 {
+    color: $thisisdarkblue;
     padding-top: 0;
+  }
+  ol {
+    padding: 0 1.6rem; 
   }
 }
 .attributes {
@@ -220,6 +254,7 @@ ol {
   padding: 0;
   margin: 0;
 }
+
 .recruiting-link {
   flex-basis: 100%;
   width: 100%;
@@ -240,6 +275,36 @@ ol {
     }
   }
 }
+.content--no-padding .flat-btn {
+  box-shadow: none;
+  margin: 0;
+}
+.how-to-header + p {
+  text-align: center;
+}
+.popover {
+  min-width: 350px;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  
+  p {
+    margin: 0; padding: 0.5rem; 
+  }
+  p.muted {
+    margin: 0; padding: 0; 
+  }
+  ol li{
+    list-style: decimal;
+    list-style-position: inside;
+    padding: 1rem 0;
+  }
+}
+.welcome {
+  flex-basis: 100%;
+  width: 100%;
+  height: auto;
+}
 .faq-header {
   padding-top: 3.5rem;
 }
@@ -248,7 +313,7 @@ ol {
 }
 .faq .panel.panel-default {
   border-radius: 0; 
-  border: none;
+  border: 1px solid $box-shadow;
   margin-top: 2rem;
   box-shadow: 6px 6px 0 $box-shadow;
   .panel-body {
@@ -261,9 +326,11 @@ ol {
     }
   }
   .panel-heading {
-    background: $thisislightblue; 
-    color: white;
+    background: white; 
+    color: $thisisdarkblue;
     padding: 0;
+    border-bottom: 1px solid $box-shadow;
+    border-radius: 0;
   }
   .panel-heading:hover {
     background: $thisisdarkblue;
@@ -289,6 +356,14 @@ ol {
   a:hover {
     color: white; 
   }
+}
+
+.report-placement {
+  padding: 5rem;
+  padding-top: 1.5rem;
+}
+.flex-third.registration--starter {
+  padding-left: 5rem;
 }
 
 .content--no-padding > h3 {
@@ -348,6 +423,7 @@ ol {
       position: relative;
       top: 1.8rem;
       left: 3.4rem;
+      color: white;
       &:hover {
         color: white; 
       }
@@ -380,21 +456,6 @@ ol {
   &:last-of-type::after {
     content: none;
     border: none;
-  }
-}
-.interdigitator {
-  display: flex;
-  flex-wrap: wrap;
-  
-  .content--guide {
-    flex-basis: 100%;
-    width: 100%;
-    order: 2; 
-  }
-  .content--tips {
-    flex-basis: 100%;
-    width: 100%;
-    order: 1;
   }
 }
 
@@ -442,6 +503,9 @@ a.icon:hover {
   .at-auburn {
     display: inline; 
   }
+  .content--tips .buttons {
+    align-items: flex-start; 
+  }
 }
 @media (min-width: $moderate-screen-size) {
   .hero .img-replace {
@@ -454,8 +518,15 @@ a.icon:hover {
     flex-basis: 66%;
     width: 66%;
   }
+  .welcome {
+    flex-basis: 30%;
+    width: 30%;
+  }
   .quick-guide {
     display: block; 
+  }
+  .quick-guide .flex {
+    display: flex;
   }
   .guide-step {
     $steps: 6;
