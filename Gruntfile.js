@@ -171,7 +171,7 @@ module.exports = function (grunt) {
       master: 'views/layouts/default.hbs',
       jobsmaster: 'views/layouts/jobs.hbs',
       nosocial: 'views/layouts/no-social.hbs',
-      partials: 'views/partials/*.hbs',
+      partials: 'views/partials/{,*/}*.hbs',
       dist: 'dist'
     },
 
