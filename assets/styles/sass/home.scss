@@ -2,61 +2,19 @@
 @import 'sponsors';
 @import 'social';
 
-.place,
-.times, .appointments,
-.event {
-  @extend .flex;
+.hours, .events, .tweets, .blog {
+  position: relative;
 }
-
-.home .content-division {
-  border-left: none;
-  margin-left: 0px;
-}
-
-h6 {
-  font-family: $body-font-family;
-  font-size: 2rem;
-  font-weight: 700;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.home .container .content-area {
-  background: transparent;
-  border: none;
-}
-.home-content {
-  flex-wrap: wrap;
-}
-
-.login {
-  align-content: space-around;
-}
-.login-wrap {
-  margin: 7rem 0 0 14%;
-}
-.login-wrap::before {
-  z-index: 0;
-}
-.login-wrap .flat-btn {
-  z-index: 101;
-}
-
 .place,
 .times,
 .appointments {
   margin-bottom: 1.6rem;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -ms-flex-line-pack: start;
-  -webkit-align-content: flex-start;
-  align-content: flex-start;
-  -webkit-align-items: center;
   align-items: center;
-  -webkit-justify-content: flex-start;
   justify-content: flex-start;
   height:auto;
+  
+  @extend .flex;
 }
 
 .place-icon,
@@ -176,6 +134,9 @@ h6 {
   width: 100%;
   min-height: 40rem;
   max-height: 40rem;
+}
+.carousel-inner > .item:not(.active) img {
+  display: none;
 }
 #cc-carousel.carousel > .carousel-indicators {
   bottom: 10px;
