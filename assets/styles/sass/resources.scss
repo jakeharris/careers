@@ -8,35 +8,6 @@ header {
   margin-bottom: 6rem;
 }
 
-.hero {
-  width: 100%;
-  background: white;
-  box-shadow: 6px 6px 0 $box-shadow;
-  text-align: center;
-
-  padding: 0;
-  
-  img {
-    display: none;
-  }
-  .img-replace {
-    display: block;
-    text-align: center;
-    font-size: 5rem;
-    padding: 3rem;
-    vertical-align: middle;
-  }
-
-  & > h1 {
-    font-family: $header-font-family;
-    color: $thisislightorange;
-    font-size: 12rem;
-  }
-  & > h2 {
-    color: $thisislightorange;
-  }
-}
-
 .links {
   padding-top: 3rem;
 }
@@ -71,7 +42,7 @@ header {
   }
   &:nth-of-type(2n) {
     background: white;
-    box-shadow: 6px 6px 0 $box-shadow;
+    box-shadow: $box-shadow;
   }
 
   & .link-wedges,
@@ -83,7 +54,7 @@ header {
     margin-left: auto;
     margin-right: auto;
 
-    box-shadow: 6px 6px 0 $box-shadow;
+    box-shadow: $box-shadow;
     counter-reset: i;
 
     & > .wedge {
