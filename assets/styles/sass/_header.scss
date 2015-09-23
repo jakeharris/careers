@@ -364,6 +364,7 @@ nav.postheader {
     display: block;
     position: relative;
     text-align: right;
+    padding-top: 3px;
   }
   
   input[type="search"] {
@@ -374,6 +375,7 @@ nav.postheader {
     border: none;
     padding: 0.25rem 0;
     width: 4rem;
+    font-size: 1.3rem;
     
     background: $thisisdarkblue;
     color: white;
