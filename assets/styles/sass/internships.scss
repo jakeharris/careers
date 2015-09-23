@@ -103,7 +103,7 @@ input.radio + label.half-label {
 }
 input.radio + label.disabled-label,
 input.radio:checked + label.disabled-label {
-  @extend .flat-btn--disabled;
+  @extend .disabled;
   color: $box-shadow;
 }
 input.radio:checked + label {
