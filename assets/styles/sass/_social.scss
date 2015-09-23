@@ -17,7 +17,7 @@
           flex-wrap: wrap;
   
   background: $thisislightblue;
-  box-shadow: 6px 6px 0 $box-shadow;
+  box-shadow: $box-shadow;
 
   .social-icon {
     height: 4rem;
@@ -33,45 +33,37 @@
     box-sizing: border-box;
 
     color: white;
-    background: #496e9c;
+    background: $thisislightblue;
+    
     &:hover {
-      background: #f67d21;
+      background: $thisislightorange;
       color: white;
     }
-      &.icon-facebook {
-        padding-left: 1.5rem;
-      }
-      &.icon-twitter {
-        padding-left: 1.2rem; 
-      }
-      &.icon-linkedin {
-        padding-left: 1rem; 
-      }
-      &.icon-pinterest {
-        padding-left: 0.2rem; 
-      }
-      &.icon-vimeo-square {
-        padding-left: 0.3rem; 
-      }
-      &.fa-blogger {
-        background-size: 2.5rem !important; 
-      }
     
+    &.icon-facebook {
+      padding-left: 1.5rem;
+    }
+    &.icon-twitter {
+      padding-left: 1.2rem; 
+    }
+    &.icon-linkedin {
+      padding-left: 1rem; 
+    }
+    &.icon-pinterest {
+      padding-left: 0.2rem; 
+    }
+    &.icon-vimeo-square {
+      padding-left: 0.3rem; 
+    }
     &.fa-blogger {
-      background-image: url("../images/blogger-invert.svg") !important;
-      background-repeat: no-repeat !important;
-      background-position: center !important;
+      background-size: 2.5rem !important; 
     }
   }
 }
 
 @media (min-width: $small-screen-size) {
-  .social-nav {
-
-    
-    .social-icon {
-      display: inline-block; 
-    }
+  .social-nav .social-icon {
+    display: inline-block; 
   }
 }
 
