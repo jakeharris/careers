@@ -66,6 +66,10 @@ h1, h2, h3,
 h4, h5, h6 {
   color: $thisisdarkblue;
   font-family: $header-font-family;
+  
+  a {
+    color: $thisislightblue; 
+  }
 }
 h2 {
   font-size: 2.9rem;
