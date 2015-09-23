@@ -182,7 +182,7 @@ component:
       <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
       <ul ng-controller="blogger-ctrl">
         <li class="blog-post" ng-repeat="post in blog.posts">
-          <h3><a class="h3-a post-title" href="[[ post.url ]]">[[ post.title ]]</a></h3>
+          <h3><a class="blog-link post-title" href="[[ post.url ]]">[[ post.title ]]</a></h3>
           <div class="post-details"><a class="tweet-date" href="[[post.author.url ]]">posted by [[ post.author.name ]]</a></div>
         </li>
       </ul>
