@@ -1,11 +1,13 @@
 // Expects an HTTP JSON response object.
-function Calendar (res, monthsOut, employerMode) {
+function Calendar (res, monthsOut, employerMode, staticMode) {
   if(!res.data)
     throw new TypeError('Calendars expect HTTP JSON responses.')
   if(typeof monthsOut === 'undefined')
     monthsOut = 6
   if(typeof employerMode === 'undefined')
     employerMode = false
+  if(typeof staticMode === 'undefined')
+    staticMode = false
     
   var isOver = function (date) {
     var currentDate = new Date()
@@ -42,6 +44,12 @@ function Calendar (res, monthsOut, employerMode) {
       return ('employer-event' in el) && (getRelativeMonth(el.date['numerical-month']) <= monthsOut)
     else
       return (getRelativeMonth(el.date['numerical-month']) <= monthsOut)
+  }).filter(function (el) {
+    if('__HOW-TO' in el) return false
+    if(staticMode)
+      return true
+    else
+      return (!isOver(el.date))
   }).sort(byRelativeImmediacy)
 
   if(employerMode) {
