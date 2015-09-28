@@ -111,7 +111,7 @@ body > .container {
   box-shadow: $box-shadow;
   
   margin: 5rem 0;
-  
+  overflow: hidden;
 }
 
 // HERO ELEMENTS
@@ -222,35 +222,57 @@ body > .container {
 // FLEX ELEMENTS
 .flex {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-content: flex-end;
   justify-content: space-between;
   height: 100%;
 }
-.flex-item {
+.flex-item,
+.flex-half,
+.flex-third,
+.flex-two-thirds {
   flex-basis: 100%;
   width: 100%;
-}
-.flex-half {
-  flex-basis: 45%;
-  width: 45%;
   
-  display: inline-block;
+  padding-bottom: 3rem;
 }
-.flex-third {
-  flex-basis: 30%;
-  width: 30%;
+.flex-item::last-of-type,
+.flex-half::last-of-type,
+.flex-third::last-of-type,
+.flex-two-thirds::last-of-type {
+  padding-bottom: 0;
 }
-.flex-two-thirds {
-  flex-basis: 63%;
-  width: 63%;
+@media (min-width: $small-screen-width) {
+  .flex-half {
+    flex-basis: 45%;
+    width: 45%;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .flex {
+    flex-wrap: nowrap; 
+  }
+  .flex-third {
+    flex-basis: 30%;
+    width: 30%;
+    
+    padding-bottom: 0;
+  }
+  .flex-two-thirds {
+    flex-basis: 63%;
+    width: 63%;
+    
+    padding-bottomg: 0;
+  }
 }
 
 // BANNERS
 .banner {
   width: 100%;
+}
+@media (min-width: $medium-screen-width) {
   height: 400px;
-  
   overflow: hidden;
 }
 
@@ -276,7 +298,6 @@ body > .container {
   margin: auto;
   width: 100%;
 }
-
 // Ensure the watermark doesn't
 // overlap anything.
 .login .watermark::before {
@@ -290,6 +311,11 @@ body > .container {
 .login + * {
   z-index: 2;
 }
+@media (min-width: $small-screen-width) {
+  .login {
+    height: auto;
+  }
+}
 
 .trl {
   position: relative;
@@ -298,14 +324,23 @@ body > .container {
 .trl::before {
   content: 'TRL';
 }
-
-// CALENDARS
-.calendar {
-  flex-basis: 100%;
-  width: 100%;
-  flex-basis: wrap;
+@media (min-width: $tiny-screen-width) {
+  .trl::before {
+    content: 'Tiger Recruiting Link'; 
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .trl::before {
+    content: 'TRL'; 
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .trl::before {
+    content: 'Tiger Recruiting Link';
+  }
 }
 
+// CALENDARS
 .calendar ul {
   display: flex;
   flex-direction: column;
@@ -331,8 +366,8 @@ body > .container {
 .event-date {
   color: $thisisburntorange;
   text-align: right;
-  margin-right: 2.1rem;
-  width: 15%;
+  margin-right: 5rem;
+  width: 6%;
 }
 .event-date-day {
   font-size: 5rem;
@@ -348,6 +383,17 @@ body > .container {
 .event-details-name {
   color: $thisisdarkblue;
   font-size: 2rem;
+}
+@media (min-width: $tiny-screen-width) {
+  .event { 
+    flex-basis: 50%;
+    width: 50%;
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .event-date {
+    margin-right: 3rem;
+  }
 }
 
 // FLAT BUTTONS
@@ -378,7 +424,6 @@ body > .container {
     color: $charcoal;
   } 
 }
-
 .flat-btn--white {
   background: white;
   color: $thisislightblue;
@@ -387,9 +432,32 @@ body > .container {
   }
 }
 .flat-btn--half {
-  box-sizing: border-box;
   flex-basis: 45%;
   width: 45%;
+}
+@media (min-width: $tiny-screen-width) {
+  .flat-btn {
+    font-size: 1.8rem;
+    padding: 2.3rem 0; 
+  }
+}
+@media (min-width: $small-screen-width) {
+  .flat-btn {
+    font-size: 1.8rem;
+    padding: 2.1rem; 
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .flat-btn {
+    font-size: 2.5rem;
+    padding: 1.6rem 0;   
+  }
+}
+@media (min-width: $social-shrink-width) {
+  .flat-btn {
+    font-size: 3rem; 
+    padding: 1.2rem 0;
+  }
 }
 
 /*****************/
@@ -399,52 +467,9 @@ body > .container {
   -webkit-user-select: none;
   -webkit-touch-callout: none;  
 }
-/*****************/
-/* MEDIA QUERIES */
-/*****************/
 
-@media (min-width: $tiny-screen-size) {
-  .event { 
-    flex-basis: 50%;
-    width: 50%;
-  }
-  .flat-btn {
-    font-size: 1.8rem;
-    padding: 2.3rem 0; 
-  }
-  .trl::before {
-    content: 'Tiger Recruiting Link'; 
-  }
-}
-@media (min-width: $small-screen-size) {
-  .login {
-    height: auto;
-  }
-  .flat-btn {
-    font-size: 1.8rem;
-    padding: 2.1rem; 
-  }
-}
-@media (min-width: $medium-screen-size) {
-  .trl::before {
-    content: 'TRL'; 
-  }
-}
-@media (min-width: $moderate-screen-size) {
-  .trl::before {
-    content: 'Tiger Recruiting Link';
-  }
-  .flat-btn {
-    font-size: 2.5rem;
-    padding: 1.6rem 0;   
-  }
-  .event-date {
-    margin-right: 3rem;
-  }
-}
-@media (min-width: $social-shrink-size) {
-  .flat-btn {
-    font-size: 3rem; 
-    padding: 1.2rem 0;
-  }
-}
+
+
+
+
+
