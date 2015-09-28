@@ -327,12 +327,15 @@ ol {
       padding: 1.5rem 0;
       max-width: 600px;
     }
+    &:not(.collapsed) {
+      border-top: 1px solid $box-shadow; 
+    }
   }
   .panel-heading {
     background: white; 
     color: $thisisdarkblue;
     padding: 0;
-    border-bottom: 1px solid $box-shadow;
+    border-bottom: none;
     border-radius: 0;
   }
   .panel-heading:hover {
