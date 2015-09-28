@@ -2,7 +2,7 @@
 @import 'sponsors';
 @import 'social';
 
-.hours, .events, .tweets, .blog {
+.hours, .calendar, .tweets, .blog {
   position: relative;
 }
 .place,
@@ -98,27 +98,6 @@
 .blog-readmore {
   padding-top: 1rem;
 }
-.banner {
-  min-height: 0;
-  z-index: 1;
-}
-.events {
-  width: 100%;
-  flex-basis: 100%;
-}
-.events ul {
-  overflow: hidden;
-  margin-top: 2rem;
-}
-.event {
-  width: 100%;
-  flex-basis: auto;
-  height: auto;
-  max-height: none;
-  min-height: 0;
-  padding-bottom: 20px;
-  margin: 0;
-}
 
 // BOOTSTRAP CAROUSEL
 .carousel {
@@ -162,12 +141,7 @@
    *************************
 */
 
-@media (min-width: $tiny-screen-size) {
-  .flat-btn {
-    height: auto;
-    padding: 1.2rem 0;
-    font-size: 1.8rem;
-  }
+@media (min-width: $tiny-screen-width) {
   .place-icon,
   .times-icon,
   .appointments-icon {
@@ -175,13 +149,7 @@
   }
 }
 
-@media (min-width: $small-screen-size) {
-  .tweets {
-    max-height: 55rem;
-  }
-  .events ul {
-    max-height: 45rem; 
-  }
+@media (min-width: $small-screen-width) {
   .flat-btn {
     height: auto;
     padding: 1.2rem 0;
@@ -196,11 +164,17 @@
   }
 }
 
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .tweets,
   .events {
     width: 66%;
     flex-basis: 66%;
+  }
+  .tweets {
+    max-height: 55rem;
+  }
+  .calendar ul {
+    max-height: 45rem; 
   }
   .flat-btn {
     height: auto;
@@ -216,7 +190,7 @@
   }
 }
 
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .tweets ul {
     height: 40rem;
     max-height: 45rem;
@@ -225,7 +199,7 @@
     width: 50%; 
   }
     
-  .events ul {
+  .calendar ul {
     height: 45rem;
     max-height: 45rem;
   }
@@ -243,7 +217,7 @@
 }
 
 
-@media (min-width: $social-shrink-size) {
+@media (min-width: $social-shrink-width) {
   .banner {
     min-height: 36rem;
   }
