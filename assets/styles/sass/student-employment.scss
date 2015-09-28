@@ -311,6 +311,9 @@ ol {
 .faq-header::before {
   content: "FAQ";
 }
+.faq {
+  counter-reset: questionNumber;
+}
 .faq .panel.panel-default {
   border-radius: 0; 
   border: 1px solid $box-shadow;
@@ -346,6 +349,13 @@ ol {
   a {
     padding: 1.5rem 3rem; 
     display: block;
+  }
+  a::before {
+    font-family: $header-font-family;
+    counter-increment: questionNumber;
+    content: counter(questionNumber) " ";
+    font-size: 2rem;
+    padding-right: 3rem;
   }
   a::after {
     @extend .icon-chevron-down:before; 
