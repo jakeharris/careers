@@ -83,7 +83,7 @@
   }
 }
 
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .your-major .blurb {
     flex-basis: 33%;
     width: 33%;

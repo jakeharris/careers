@@ -18,11 +18,11 @@ $icon-font-family: icomoon;
 $border: 1px solid $border-color;
 $box-shadow: 6px 6px 0 $box-shadow-color;
 
-$tiny-screen-size: 480px;
-$small-screen-size: 768px;
-$medium-screen-size: 992px;
-$moderate-screen-size: 1105px;
-$social-shrink-size: 1440px;
+$tiny-screen-width: 480px;
+$small-screen-width: 768px;
+$medium-screen-width: 992px;
+$moderate-screen-width: 1105px;
+$social-shrink-width: 1440px;
 
 @mixin hex($width, $color) {
   $height: $width * (78/104);

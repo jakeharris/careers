@@ -121,7 +121,7 @@
 /* MEDIA QUERIES */
 /*****************/
 
-@media(min-width: $small-screen-size) {
+@media(min-width: $small-screen-width) {
   .contact-card {
     flex-basis: 20%;
     width: 20%;
@@ -131,7 +131,7 @@
   }
 }
 
-@media(min-width: $moderate-screen-size) {
+@media(min-width: $moderate-screen-width) {
   .contact-card {
     margin: 0 1.5rem;
     margin-bottom: 3rem;

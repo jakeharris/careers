@@ -70,7 +70,7 @@
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .partner-content {
     .partner-contact {
       flex-basis: 100%;
@@ -88,7 +88,7 @@
   }
 }
 
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .partner-info {
     padding-top: 0; 
   }
@@ -96,7 +96,7 @@
     display: inline; 
   }
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .accordion-header {
     h2 {
       font-size: 2.5rem;

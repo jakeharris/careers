@@ -250,7 +250,7 @@
 /* MEDIA QUERIES */
 /*****************/
 
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
 
   .content > .row > p.blurb {
     flex-basis: 33%;
@@ -281,7 +281,7 @@
   }
 }
 
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .hero {
     height: 45rem;
     & > img {

@@ -297,7 +297,7 @@
 }
 
 
-@media (min-width: $tiny-screen-size) {
+@media (min-width: $tiny-screen-width) {
   .contact {
     .address, .phone, .email, .name {
       font-size: 3rem;
@@ -305,14 +305,14 @@
   }
 }
 
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .contact {
     .address, .phone, .email, .name {
       width: 100%;
     }
   }
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .contact {
     .address:before, .phone:before, .email:before {
       font-size: 6rem;

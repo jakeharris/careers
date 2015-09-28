@@ -243,7 +243,7 @@ img.resource-button {
 /* MEDIA QUERIES */
 /*****************/
 
-@media(min-width: $small-screen-size) {
+@media(min-width: $small-screen-width) {
   .features {
       display: block;
       position: relative;
@@ -265,14 +265,14 @@ img.resource-button {
       margin-left: 0;
   }
 }
-@media(min-width: $medium-screen-size) {
+@media(min-width: $medium-screen-width) {
   .feature {
     flex-basis: 16%;
     width: 16%;
   }
 }
 
-@media(min-width: $moderate-screen-size) {
+@media(min-width: $moderate-screen-width) {
   .resource-buttons {
     flex-basis: 66.9%;
     width: 66.9%; 
@@ -286,7 +286,7 @@ img.resource-button {
   }
 }
 
-@media(min-width: $social-shrink-size) {
+@media(min-width: $social-shrink-width) {
   .widget {
     height: 520px; 
   }

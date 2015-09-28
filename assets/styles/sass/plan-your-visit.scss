@@ -237,14 +237,14 @@ iframe {
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
-@media (min-width: $tiny-screen-size) { 
+@media (min-width: $tiny-screen-width) { 
   .location-info,
   .location-contact {
     flex-basis: 80%;
     width: 80%;
   }
 }
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .location-content {
     .address:before, .phone:before {
       display: inline-block;
@@ -262,7 +262,7 @@ iframe {
     font-size: 3.5rem;
   }
 }
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .parking-content {
     .parking-instructions {
       flex-basis: 40%;

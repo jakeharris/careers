@@ -137,20 +137,20 @@ a.pathway[href$=".pdf"] {
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
-@media (min-width: $tiny-screen-size) {
+@media (min-width: $tiny-screen-width) {
   .hero .hero-content h2 {
     font-size: 4rem;
   }
 }
 
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .pathways-content > h2 {
     font-size: 8rem; 
     padding-top: 1rem;
   } 
 }
 
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .college {
     width: 40%;
     flex-basis: 40%;
@@ -175,7 +175,7 @@ a.pathway[href$=".pdf"] {
     margin-top: -5rem;
   }
 }
-@media (min-width: $social-shrink-size) {
+@media (min-width: $social-shrink-width) {
   .education {
     margin-top: -30rem; 
   }

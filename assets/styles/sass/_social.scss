@@ -61,13 +61,13 @@
   }
 }
 
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .social-nav .social-icon {
     display: inline-block; 
   }
 }
 
-@media (min-width: $social-shrink-size) {
+@media (min-width: $social-shrink-width) {
   .social-nav {
     width: 13.3rem;
     

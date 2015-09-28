@@ -56,7 +56,7 @@
   padding-top: 0;
 }
 
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .desktop-hide {
     display: none; 
   }
@@ -68,7 +68,7 @@
   }
 }
 
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .document-review {
     .content {
       flex-basis: 48%;

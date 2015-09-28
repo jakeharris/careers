@@ -399,7 +399,7 @@ ul li  {
 }
 
 /* Media queries */
-@media (min-width: $tiny-screen-size) {
+@media (min-width: $tiny-screen-width) {
   .preheader {
     h1 {
       width: auto;
@@ -415,7 +415,7 @@ ul li  {
     }
   }
 }
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .preheader {
     width: 90vw !important;
     height: 13rem;  
@@ -465,7 +465,7 @@ ul li  {
     @include hex(166px, white);
   }
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   nav.header {
     font-size: 22px;
     .nav-wrapper > ul > li > a {
@@ -473,7 +473,7 @@ ul li  {
     }
   }
 }
-@media (min-width: $social-shrink-size) {
+@media (min-width: $social-shrink-width) {
   nav.header {
     .nav-home .nav-home-content--bigger {
       display: inline-block; 

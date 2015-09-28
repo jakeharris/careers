@@ -60,7 +60,7 @@ img.desaturate:hover {
   -webkit-transition: -webkit-filter 0.2s;
 }
 
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .sponsor {
     margin-left: 4rem;
     margin-right: 4rem;

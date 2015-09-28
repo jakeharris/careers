@@ -93,14 +93,14 @@
 /* *************** 
     MEDIA QUERIES
    *************** */
-@media (min-width: $tiny-screen-size) {
+@media (min-width: $tiny-screen-width) {
   .partner-content {
     .address, .phone, .email {
       font-size: 3rem;
     }
   }
 }
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .partner-content {
     .partner-contact {
       flex-basis: 60%;
@@ -124,7 +124,7 @@
     width: 100%;
   }
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .campus-content h2 {
     font-size: 5rem; 
   }

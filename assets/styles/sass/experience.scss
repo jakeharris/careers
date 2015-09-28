@@ -168,7 +168,7 @@ h2 {
 /* MEDIA QUERIES */
 /*****************/
 
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   #experience {
     min-height: 30vh;
   }
@@ -197,7 +197,7 @@ h2 {
     display: block; 
   }
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .zone-content, .zone-blurb {
     width: 45%; 
   }

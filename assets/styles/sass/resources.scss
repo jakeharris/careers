@@ -224,12 +224,12 @@ a.tooltip[href$=".pdf"] {
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
-@media (min-width: $tiny-screen-size) {
+@media (min-width: $tiny-screen-width) {
   .tooltip {
     padding: 2rem;
   }
 }
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .hero .img-replace {
     font-size: 5rem; 
   }
@@ -237,12 +237,12 @@ a.tooltip[href$=".pdf"] {
     font-size: 29px; 
   }
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .hero .img-replace {
     font-size: 8rem; 
   }
 }
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .hero {
     img {
       display: block;

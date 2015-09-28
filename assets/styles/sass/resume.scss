@@ -161,7 +161,7 @@ input#submitting:checked ~ .eresume-btn {
   margin-top: 3rem;
 }
 
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .document-review {
     .content {
       flex-basis: 40%;

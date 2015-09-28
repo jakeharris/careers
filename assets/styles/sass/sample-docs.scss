@@ -12,7 +12,7 @@
   display: none;
 }
 
-@media (min-width: $tiny-screen-size) {
+@media (min-width: $tiny-screen-width) {
   .graduate-school {
     margin-top: -5rem;
   }
@@ -21,7 +21,7 @@
   }
 }
 
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .blurb {
     display: block; 
   }
