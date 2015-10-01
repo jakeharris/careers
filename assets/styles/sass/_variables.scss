@@ -24,6 +24,17 @@ $medium-screen-width: 992px;
 $moderate-screen-width: 1105px;
 $social-shrink-width: 1440px;
 
+/* Font sizes */
+$title-font-size: 5rem;
+$header-font-size: 2.9rem;
+$nav-font-size: 2.2rem;
+$button-font-size: 1.8rem;
+$body-font-size: 1.6rem;
+
+/* Common spacings */
+$content-division: 5rem;    // separates content conceptually
+$content-protection: 3rem;  // separates related content to make it easier to read
+
 @mixin hex($width, $color) {
   $height: $width * (78/104);
   
@@ -36,6 +47,7 @@ $social-shrink-width: 1440px;
   height: ceil($height / 2);
   
   position: relative;
+  z-index: 5;
   
   &:before {
     content: "";
@@ -45,6 +57,7 @@ $social-shrink-width: 1440px;
     border-right: ($width / 2) solid transparent;
     position: absolute;
     top: (-1 * $height / 4);
+    z-index: 1;
   }
   &:after {
     content: "";
@@ -54,6 +67,7 @@ $social-shrink-width: 1440px;
     border-right: ($width / 2) solid transparent;
     position: absolute;
     bottom: (-1 * $height / 4);
+    z-index: 1;
   }
 }
 @mixin arrow($direction, $height, $color) {

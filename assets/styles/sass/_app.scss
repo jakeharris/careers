@@ -27,22 +27,34 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-p, div {
-  line-height: 1.618;
-}
-
-a[href$=".pdf"]::after {
-  content: ' (pdf)';
-}
 body {
   background: #f4f4f4;
   font-family: $body-font-family;
   font-size: 1.6rem; 
 }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+p, div {
+  line-height: 1.618;
+}
+
+a { 
+  color: #496E9C;
+}
+a,
+a:hover {
+  outline: none;
+  text-decoration: none;
+}
+a:hover {
+  color: $thisislightorange;
+}
+a[href$=".pdf"]::after {
+  content: ' (pdf)';
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -53,15 +65,7 @@ ul {
     padding: 0;
   }
 }
-a,
-a:hover {
-  outline: none;
-  text-decoration: none;
-}
 
-a:hover {
-  color: $thisislightorange;
-}
 h1, h2, h3,
 h4, h5, h6 {
   color: $thisisdarkblue;
@@ -71,12 +75,16 @@ h4, h5, h6 {
     color: $thisislightblue; 
   }
 }
+h1 {
+  font-size: $title-font-size;
+}
 h2 {
-  font-size: 2.9rem;
+  font-size: $header-font-size;
 }
 h3 {
   font-size: 2rem;
 }
+
 img {
   height: 100%;
 }
@@ -110,7 +118,7 @@ body > .container {
   @extend .padded;
   box-shadow: $box-shadow;
   
-  margin: 5rem 0;
+  margin: $content-division 0;
   overflow: hidden;
 }
 
@@ -201,7 +209,7 @@ body > .container {
   background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
 }
 .padded {
-  padding: 5rem;
+  padding: $content-division;
 }
 .unpadded {
   padding: 0;
@@ -217,6 +225,8 @@ body > .container {
   opacity: .1;
   
   font-size: 13rem;
+  
+  display: none; //until I get other things working
 }
 
 // FLEX ELEMENTS
@@ -236,17 +246,16 @@ body > .container {
   
   padding-bottom: 3rem;
 }
-.flex-item::last-of-type,
-.flex-half::last-of-type,
-.flex-third::last-of-type,
-.flex-two-thirds::last-of-type {
+.flex-item:last-of-type,
+.flex-half:last-of-type,
+.flex-third:last-of-type,
+.flex-two-thirds:last-of-type {
   padding-bottom: 0;
 }
 @media (min-width: $small-screen-width) {
   .flex-half {
     flex-basis: 45%;
     width: 45%;
-    padding-bottom: 0;
   }
 }
 @media (min-width: $medium-screen-width) {
@@ -256,14 +265,10 @@ body > .container {
   .flex-third {
     flex-basis: 30%;
     width: 30%;
-    
-    padding-bottom: 0;
   }
   .flex-two-thirds {
     flex-basis: 63%;
     width: 63%;
-    
-    padding-bottomg: 0;
   }
 }
 
@@ -366,33 +371,26 @@ body > .container {
 .event-date {
   color: $thisisburntorange;
   text-align: right;
-  margin-right: 5rem;
-  width: 6%;
+  width: 18%;
 }
 .event-date-day {
-  font-size: 5rem;
+  font-size: $title-font-size;
   margin-top: -1.8rem;
 }
 .event-details {
   color: $thisisdarkgray;
-  width: 82%;
-  line-height: 160%;
-  font-size: 1.7rem;
+  font-size: $body-font-size;
   display: inline-block;
+  padding-left: $content-protection;
 }
 .event-details-name {
   color: $thisisdarkblue;
   font-size: 2rem;
 }
-@media (min-width: $tiny-screen-width) {
+@media (min-width: $medium-screen-width) {
   .event { 
-    flex-basis: 50%;
-    width: 50%;
-  }
-}
-@media (min-width: $moderate-screen-width) {
-  .event-date {
-    margin-right: 3rem;
+    flex-basis: 45%;
+    width: 45%;
   }
 }
 
@@ -404,6 +402,7 @@ body > .container {
   height: auto;
 
   margin: 1rem 0;
+  padding: 2rem 0; 
 
   text-align: center;
   vertical-align: middle;
@@ -413,10 +412,10 @@ body > .container {
   background: $thisislightblue;
   color: white;
   font-family: $header-font-family;
-  font-size: 1.8rem;
+  font-size: $button-font-size;
 
   border: none;
-  box-shadow: 6px 6px 0 #ccc;
+  box-shadow: $box-shadow;
 
 
   &:hover {
@@ -437,14 +436,12 @@ body > .container {
 }
 @media (min-width: $tiny-screen-width) {
   .flat-btn {
-    font-size: 1.8rem;
-    padding: 2.3rem 0; 
+    padding: 2.3rem 0;
   }
 }
 @media (min-width: $small-screen-width) {
   .flat-btn {
-    font-size: 1.8rem;
-    padding: 2.1rem; 
+    padding: 2.1rem 0; 
   }
 }
 @media (min-width: $moderate-screen-width) {
