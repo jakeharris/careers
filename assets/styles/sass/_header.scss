@@ -1,495 +1,93 @@
-@import 'variables';
-
-/*****************/
-/* NAV OVERRIDES */
-/*****************/
-#student-employment ul {
-  margin-left: -100%;
-}
-
+/* *************************************************** **
+**                      HEADER                         **
+**  (container for all navs, title link, auburn logo)  **
+** *************************************************** **/
 header {
-  width: 100%;
-  margin-bottom: 20px;
-  background: $thisisdarkblue;
+  background-color: $thisisdarkblue;
 }
 
-.preheader {
-  background: $thisisdarkblue;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+/* ************************************************ **
+**                    TITLE BAR                     **
+** (contains auburn logo, Career Center title link) **
+*************************************************** **/
+.title {
+  @extend .container;
+  @extend .flex;
   
-  position: relative;
-  
-  height: 6rem;
-  
-  .hex {
-    z-index: 2;
-    
-    position: relative;
-    cursor: pointer;
-    img {
-      position: absolute;
-      left: 27%;
-      max-width: 100%;
-      top: 5px;
-      z-index: 3;
-    }
-  }
-  h1 {
-    width: 65%;
-    margin-bottom: 0;
-    font-family: $header-font-family;
-    font-size: 3rem;
-    text-align: right;
-    position: absolute;
-    top: 0;
-    right: 0;
-    a {
-      color: white;
-      &:hover {
-        color: $thisislightorange; 
-      }
-    }
-  }
-}
-nav.header {
-  width: 100%; 
-  display: block;
-  
-  position: inherit;
-  top: 26rem;
-  
-  margin-left: auto;
-  margin-right: auto;
-  
-  background: $thisislightblue;
-  
-  font-family: $header-font-family;
-  font-size: 14px;
-  
-  z-index: 1000000000000000000000;
-  
-  .nav-home { 
-    &:first-of-type:hover,
-    &:first-of-type.hover--active {
-       background: white;
-    }
-    
-    .nav-home-content--smaller {
-      display: inline-block;
-    }
-    .nav-home-content--bigger {
-      display: none; 
-    }
-  }
-  
-  .nav-wrapper {
-    display: none;
-    position: relative; 
-    left: 100%;
-    background-color: $thisislightblue;
-    
-    & > ul {
-      max-width: 1200px; 
-      margin-left: auto;
-      margin-right: auto;
-      
-      background-color: $thisislightblue;
-      
-      & > li > a {
-        padding-top: 4px; 
-      }
-    }
-    
-    .about-us {
-      display: block; 
-    }
-    .about-us--mobile {
-      display: none; 
-    }
-    
-  }
-  
-  .nav-wrapper.mobile-nav--active {
-    display: inline-block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-    
-    font-size: 20px;
-    
-    .about-us {
-      display: none; 
-    }
-    .about-us--mobile {
-      display: block; 
-    }
-    
-    ul {
-      display: block;
-      width:100%;
-      
-      li {
-        display: block;
-        width: 100%; 
-        &:hover,
-        &.hover--active {
-          box-shadow: 0 6px 0 #ccc; 
-          z-index: 2;
-          ul {
-            left: 0 !important;
-          }
-        }
-      }
-      li:nth-last-of-type(2) {
-        box-shadow: 0 6px 0 #ccc; 
-      }
-      
-      ul {
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-        li:hover,
-        li.hover--active {
-          box-shadow: none; 
-        }
-      }
-    }
-  }
-  
-  .nav-controller {
-    display: block;
-    position: absolute;
-    top: 90px;
-    right: 0;
-    height: 44px;
-    width: 44px;
-    box-sizing: border-box;
-    padding: 1.2rem 1.6rem;
-    background: white;
-    box-shadow: 6px 6px 0 #ccc;
-    cursor: pointer;
-    background: $thisislightblue;
+  h1 a {
     color: white;
-    z-index: 3;
-    
-    &:hover,
-    &.nav-controller--active:hover {
-      background: white;
-      color: $thisislightblue;
-    }
-    &.nav-controller--active {
-      background: $thisisiceblue;
-      color: $thisislightblue;
+    &:hover {
+      color: $thisislightorange; 
     }
   }
+}
+.logo-ribbon {
+  display: block;
+  @include hex(82px, white);
   
-  &.bordered {
-    box-shadow: 6px 6px 0 #ccc;
-    
-    .nav-home:first-of-type:hover,
-    .nav-home:first-of-type.hover--active {
-       background: white;
-    }
-  }
-  
-  &.fixed {
-    position: fixed;
-    top: 0; 
-    
-    .nav-controller {
-      top: 0; 
-    }
-  }
-  
+  background-image: url('../images/AU-emblem.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
+/* Generally true in all site non-mobile navs: they're horizontal */
+nav ul li {
+  display: inline-block;
+}
+
+/* **************************************************************** **
+**                             MAIN NAV                             **
+** (contains navigation elements for Career Center pages, submenus) **
+** **************************************************************** **/
+nav.main {
+  display: none;
+}
+.nav-controller {
+  position: absolute;
+  top: 2rem;
+  right: 0;
   
+  cursor: pointer;
+  
+  &::before {
+    @extend .icon;
+    @extend .icon-navicon::before;
+    font-size: 2rem;
+  
+    padding: 2rem;
+    box-shadow: $box-shadow;
+    
+    background-color: $thisislightblue;
+    color: white;
+  }
+  
+  &:hover::before {
+    background-color: white;
+    color: $thisislightblue;
+  }
+}
+
+
+
+nav.auburn {
   ul {
     display: flex;
-    justify-content: space-around;
-    
-    
-    position:relative;
-    
-    height: 60px;
-    
-    /* Submenus, while hidden */
-    ul {
-      position: absolute;
-      left: -99999rem;
-      
-      white-space: nowrap;
-      
-      background: white;
-      box-shadow: 6px 6px 0px #ccc;
-      
-      height: auto;
-      z-index: 100000;
-      
-      margin-top: 1.25rem; /* slightly less than one to cover the box-shadow gap */
-      
-      list-style: none;  
-    }
-    
-    li {
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      padding: 1.3rem 1rem;
-      
-      position: relative;
-      cursor: pointer;
-      
-      background: $thisislightblue;
-      color: white;
-      
-      a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        color: white;  
-      }
-      
-      &.nav-home {
-        background: $thisisdarkblue;
-        color: white;
-        
-        a {
-          color: white;
-        }
-      }
-      
-      &:hover,
-      &.hover--active {
-        background: white;
-        color: $thisislightblue;
-        
-        a {
-          color: $thisislightblue; 
-        }
-      }
-      
-      &:hover > ul,
-      &.hover--active > ul {
-        left: 0; 
-        width: 600%;
-        list-style:none;
-      
-        
-        li {
-          color: $thisislightblue;
-          background: white;
-          a {
-            color: $thisislightblue; 
-          }
-          &:hover { 
-            color: $thisislightblue;
-            a {
-              color: $thisislightorange;
-            }
-          }
-        }
-      }
-      
-      &:hover:last-of-type > ul,
-      &.hover--active:last-of-type > ul {
-        left: -500%; 
-      }
-
-      
-      &:hover a:first-child:nth-last-child(2):before,
-      &.hover--active a:first-child:nth-last-child(2):before {
-        content: ""; 
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-        border-top: 12px solid transparent;
-        position: absolute;
-
-        left: 45%;
-        top: 6rem;
-
-        flex-basis: 0%;
-        width: 0%;
-        height: 0; 
-        z-index: 100000000;
-      }
-    }
+    justify-content: flex-end;
   }
-}
-nav.postheader {
-  width: 100%;
-  
-  display: block;
-  
-  top: 0;
-  
-  background: $thisisdarkblue;
-  
-  font-family: $body-font-family;
-  font-size: 1.3rem;
-  height: 3rem;
-  
-  box-shadow: 6px 6px 0 #ccc;
-  
-  ul {
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    
-    li {
-      display: inline-block; 
-      
-      padding-right: 8px;
-      
-      a {
-        color: white;
-        &:hover {
-          color: $thisislightorange; 
-        }
-      }
-
-    }
+  li {
+    padding: 0 ($content-protection / 4); 
+    font-size: $body-font-size;
   }
-  
-  & > ul {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    
-    display: block;
-    position: relative;
-    text-align: right;
-    padding-top: 3px;
-  }
-  
-  input[type="search"] {
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    box-shadow: none;
-    border: none;
-    padding: 0.25rem 0;
-    width: 4rem;
-    font-size: 1.3rem;
-    
-    background: $thisisdarkblue;
+  a {
     color: white;
-    
-    &::-webkit-input-placeholder,
-    &::-moz-placeholder,
-    &:-ms-placeholder{
-      color: $bg-gray; 
+    &:hover {
+      @extend a:hover;
     }
   }
-}
-
-.hex {
-  @include hex(82px, white);
-}
-
-
-/* Overrides */
-ul li  {
-  background: none;
-}
-
-/* Media queries */
-@media (min-width: $tiny-screen-width) {
-  .preheader {
-    h1 {
-      width: auto;
-    }
-  }
-  nav.postheader {
-    padding: 1px 1rem; 
-    ul li {
-      padding-right: 2rem;
-    }
-    input[type="search"] {
-      width: 11rem; 
-    }
-  }
-}
-@media (min-width: $small-screen-width) {
-  .preheader {
-    width: 90vw !important;
-    height: 13rem;  
-    h1 { 
-      font-size: 5rem;
-      padding-top: 2rem; 
-      right: 15px;
-    }
-  }
-  nav.header { 
-    .nav-controller {
-      display: none; 
-    }
-    .nav-wrapper,
-    .nav-wrapper.mobile-nav--active {
-      display: block;
-      left: 0;
-      ul {
-        display: flex;
-        width: 90vw;
-        padding-left: 15px;
-        padding-right: 15px;
-        li ul {
-          padding: 0; 
-        }
-      }
-    }
-    
-    ul ul {
-      margin-top: 1.3rem; 
-    }
-    
-  }
-  nav.postheader {
-    &.absolute {
-      position: relative;
-      top: 60px;
-      margin-bottom: 80px;
-    }
-    ul {
-      font-size: 14px;
-    }
-    padding: 1px 1rem;
-  }
-  
-  .hex {
-    @include hex(166px, white);
-  }
-}
-@media (min-width: $moderate-screen-width) {
-  nav.header {
-    font-size: 22px;
-    .nav-wrapper > ul > li > a {
-      padding-top: 0; 
-    }
-  }
-}
-@media (min-width: $social-shrink-width) {
-  nav.header {
-    .nav-home .nav-home-content--bigger {
-      display: inline-block; 
-    } 
-    .nav-home .nav-home-content--smaller {
-      display: none; 
-    }
-    .nav-home img {
-      max-width: 21rem;
-      height: 52px;
-      margin-top: -17px;
-      padding-top: 1rem;
-    }
-    .nav-home:first-of-type:hover,
-    .nav-home:first-of-type.hover--active {
-      background: $thisislightblue;
-    }
+  input {
+    border: none;
+    background: transparent;
+    color: white;
   }
 }
