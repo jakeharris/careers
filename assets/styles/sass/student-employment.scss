@@ -348,8 +348,9 @@ ol {
     display: block;
   }
   a::after {
-    @extend .icon-chevron-down:before; 
-    font-family: $icon-font-family;
+    @extend .icon;
+    @extend .icon-chevron-down::before; 
+    
     position: absolute;
     right: 3rem;
   }
