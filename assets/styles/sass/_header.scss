@@ -248,6 +248,8 @@ nav.header {
       background: $thisislightblue;
       color: white;
       
+      -ms-flex-negative: 1;
+      
       a {
         display: block;
         width: 100%;
@@ -437,6 +439,7 @@ ul li  {
         padding-left: 15px;
         padding-right: 15px;
         li ul {
+          -ms-flex: 0 1 auto;
           padding: 0; 
         }
       }
