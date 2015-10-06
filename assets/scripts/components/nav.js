@@ -1,7 +1,7 @@
 // Navigation aid
 $(function() {
   var clrTimeout = 0,
-      navWrapper = $('nav.header .nav-wrapper'),   // for determining if we're using the mobile nav
+      navWrapper = $('nav.main'),   // for determining if we're using the mobile nav
       onHoverStart = function(e) {
         e.preventDefault()
       
@@ -10,7 +10,7 @@ $(function() {
         //   hide all other submenus.
         //   then, count this submenu as active.
         if($(this).children('ul').length > 0) {
-          $('nav.header ul li').removeClass('hover--active')
+          $('nav.main ul li').removeClass('hover--active')
           $(this).addClass('hover--active') 
         }
         // otherwise, do nothing. don't clear the timeout, either.
@@ -26,7 +26,7 @@ $(function() {
         e.preventDefault()
         
         // if we're in the mobile menu, don't add the delay
-        if(navWrapper.hasClass('mobile-nav--active'))
+        if(navWrapper.hasClass('main--mobile'))
           $(this).removeClass('hover--active')
         else 
           clrTimeout = setTimeout(function () {
@@ -34,7 +34,7 @@ $(function() {
           }.bind(this), 500)
       };
   
-  $('nav.header ul li').hover(onHoverStart, onHoverEnd);
+  $('nav.main ul li').hover(onHoverStart, onHoverEnd);
 });
 
 // Positioning the nav 
@@ -82,11 +82,11 @@ $(function () {
 
 // Mobile menu
 $(function () {
-  $('#hamburger').on('click', function () {
-    var navWrapper = $('#nav .nav-wrapper')
+  $('.nav-controller').on('click', function () {
+    var navWrapper = $('nav.main')
     
     $(this).toggleClass('nav-controller--active')
-    navWrapper.toggleClass('mobile-nav--active')
+    navWrapper.toggleClass('main--mobile')
   });
   $(window).on('resize', function () {
     var navWrapper = $('#nav .nav-wrapper')
