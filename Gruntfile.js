@@ -213,7 +213,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= config.assets %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['sass', 'autoprefixer'] //tasks: ['sass', 'uncss', 'autoprefixer']
+        tasks: ['sass', 'autoprefixer'] // tasks: ['sass', 'uncss', 'autoprefixer']
       },
       js: {
         files: ['<%= config.assets %>/scripts/{,*/}*.js'],
@@ -345,7 +345,9 @@ module.exports = function (grunt) {
         browsers: '> 5%, ie >= 8'
       },
       all: {
-        src: ['<%= config.assets %>/styles/{,*/}*.css']
+        src: [
+          '  <%= config.assets %>/styles/{,*/}*.css', 
+          '! <%= config.assets %>/styles/components/*.css']
       }
     },
 
@@ -410,7 +412,7 @@ module.exports = function (grunt) {
     }
 
   });
-
+  
   // # grunt validate
   // Validate project files, checking for syntax errors.
   // If we had test code, it would go here.
@@ -471,6 +473,11 @@ module.exports = function (grunt) {
     'enhance'
   ]);
 
+  // # watch fixes
+  // Only recompile changed files. Should dramatically
+  // speed up Sass build times.
+
+  
   /*grunt.registerTask('publish', 'commit work, push to github, and deploy on server; requires target [valid: dev, prod]', function (target) {
     if (target !== 'dev' && target !== 'prod') {
       grunt.log.error('Invalid target `' + target + '`. [valid: dev, prod]');
