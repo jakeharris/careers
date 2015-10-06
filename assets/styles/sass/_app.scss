@@ -15,9 +15,6 @@
 @import 'reset';
 @import 'variables';
 @import 'fonts';
-@import 'header';
-@import 'footer';
-
 
 /********************
 **  BROWSER RESETS **
@@ -37,7 +34,7 @@ body {
 }
 
 p, div {
-  line-height: 1.618;
+  line-height: $line-height;
 }
 
 a { 
@@ -468,5 +465,9 @@ body > .container {
 
 
 
-
+/*******************/
+/* HEADER & FOOTER */
+/*******************/
+@import 'header';
+@import 'footer';
 
