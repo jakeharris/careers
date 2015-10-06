@@ -30,19 +30,34 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
 }
+@media (min-width: $moderate-screen-width) {
+  .logo-ribbon {
+    @include hex(120px, white); 
+  }
+}
 
 /* Generally true in all site non-mobile navs: they're horizontal */
 nav ul li {
   display: inline-block;
+  font-family: $header-font-family;
+  font-size: $nav-font-size;
+  text-align: center;
+  list-style: none !important;
+}
+nav ul {
+  @extend .container;
+}
+nav a {
+  color: white;
+  &:hover {
+    @extend a:hover;
+  } 
 }
 
 /* **************************************************************** **
 **                             MAIN NAV                             **
 ** (contains navigation elements for Career Center pages, submenus) **
 ** **************************************************************** **/
-nav.main {
-  display: none;
-}
 .nav-controller {
   position: absolute;
   top: 2rem;
@@ -51,6 +66,8 @@ nav.main {
   cursor: pointer;
   
   &::before {
+    display: block;
+  
     @extend .icon;
     @extend .icon-navicon::before;
     font-size: 2rem;
@@ -67,27 +84,136 @@ nav.main {
     color: $thisislightblue;
   }
 }
+nav.main {
+  display: none;
+  
+  margin-bottom: 6px;
+    
+  background-color: $thisislightblue;
+  
+  ul {
+    @extend .container;
+    
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  li {
+    min-width: 16%;
+    flex: 1;
+    
+    background-color: $thisislightblue;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: white; 
+    }
+  }
+  a {
+    display: inline-block;
+    width: 100%;
+    padding: ($content-protection / 2) 0;
+  }
+  a:hover, li:hover a {
+    color: $thisislightblue; 
+  }
+  
+  // submenus
+  ul li {
+    position: relative; 
+  }
+  ul li ul {
+    display: none;
+    
+    background-color: white;
+    color: $thisislightblue;
+    
+    box-shadow: $box-shadow;
+  }
+  ul li ul li { 
+    font-size: $nav-font-size * 0.7;
+    background-color: white;
+    color: $thisislightblue;
+    
+    a:hover, &:hover a {
+      color: $thisislightorange;
+    }
+  }
+  ul li:hover ul {
+    position: absolute;
+    
+    display: flex;
+    list-style: none;
+  }
+  .about-us ul {
+    margin-left: -500%; 
+  }
+}
 
+// if we've clicked the nav-controller button,
+// we should be at a mobile-ready resolution.
+// these are the styles that should be applied
+// when the user clicks it and requests the menu.
+nav.main--mobile {
+  display: block;
+  ul {
+    width: 100%;
+    max-width: none;
+    
+    flex-wrap: wrap;
+  }
+  li {
+    flex-basis: 100%; 
+  }
+}
 
+@media (min-width: $small-screen-width) {
+  nav.main {
+    display: block; 
+  }
+  nav.main--mobile {
+    ul {
+      width: 90vw;
+      max-width: 1200px;
+      
+      flex-wrap: nowrap;
+    }
+    li {
+      flex: 1; 
+    }
+  }
+  .nav-controller::before {
+    display: none; 
+  }
+}
+@media (min-width: $medium-screen-width) {
+  nav.main ul li ul li {
+    font-size: $nav-font-size; 
+  }
+}
 
-nav.auburn {
+/* ********************************************************** **
+**                        AUBURN NAV                          **
+** (contains navigation elements present on all Auburn pages) **
+** ********************************************************** **/
+nav.auburn { 
   ul {
     display: flex;
     justify-content: flex-end;
+    padding: 3px 0;
   }
   li {
     padding: 0 ($content-protection / 4); 
-    font-size: $body-font-size;
-  }
-  a {
-    color: white;
-    &:hover {
-      @extend a:hover;
-    }
+    font-size: $post-nav-font-size;
+    font-family: $body-font-family;
   }
   input {
+    -webkit-appearance: none;
     border: none;
-    background: transparent;
+    margin: 0; padding: 0;
+    margin-top: -3px;
+    background-color: transparent;
     color: white;
+    vertical-align: middle;
+    line-height: $line-height;
   }
 }
