@@ -7,7 +7,7 @@
   position: relative;
 }
 .carousel-inner {
-  height: 370px;
+  height: auto;
 }
 .carousel .item {
   
@@ -44,5 +44,21 @@
   }
   li.active {
     background-color: $box-shadow-color; 
+  }
+}
+@media (min-width: $small-screen-width) {
+  .carousel-container, .login {
+    flex-basis: 100%; 
+  }
+  .carousel-inner {
+    height: 370px; 
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .banner.flex {
+    flex-wrap: wrap; 
+  }
+  .carousel-container, .login {
+    flex-basis: 50%; 
   }
 }
