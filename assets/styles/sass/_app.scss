@@ -119,6 +119,25 @@ body > .container {
   overflow: hidden;
 }
 
+// COLORS, EMPHASIS, AND FUNCTION 
+.muted {
+  color: $box-shadow-color;
+}
+.disabled {
+  color: #ccc;
+  background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
+  background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
+}
+.padded {
+  padding: $content-division;
+}
+.protected {
+  padding: $content-protection;
+}
+.unpadded {
+  padding: 0;
+}
+
 // HERO ELEMENTS
 // (e.g. the Campus Partners page)
 .hero {
@@ -196,22 +215,6 @@ body > .container {
   flex-wrap: wrap;
 }
 
-// COLORS, EMPHASIS, AND FUNCTION
-.muted {
-  color: $box-shadow-color;
-}
-.disabled {
-  color: #ccc;
-  background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
-  background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
-}
-.padded {
-  padding: $content-division;
-}
-.unpadded {
-  padding: 0;
-}
-
 // WATERMARK ICONS
 .watermark::before {
   position: absolute;
@@ -240,19 +243,11 @@ body > .container {
 .flex-two-thirds {
   flex-basis: 100%;
   width: 100%;
-  
-  padding-bottom: 3rem;
-}
-.flex-item:last-of-type,
-.flex-half:last-of-type,
-.flex-third:last-of-type,
-.flex-two-thirds:last-of-type {
-  padding-bottom: 0;
 }
 @media (min-width: $small-screen-width) {
   .flex-half {
-    flex-basis: 45%;
-    width: 45%;
+    flex-basis: 50%;
+    width: 50%;
   }
 }
 @media (min-width: $medium-screen-width) {
@@ -281,11 +276,11 @@ body > .container {
 // TRL LOGIN
 .login {
   @extend .padded;
+  @extend .flex-half;
+  
   justify-content: center;
   align-self: center;
   position: relative;
-  flex-basis: 100%;
-  width: 100%;
   -ms-flex-negative: 1;
   
   h2, p {
@@ -443,13 +438,12 @@ body > .container {
 }
 @media (min-width: $moderate-screen-width) {
   .flat-btn {
-    font-size: 2.5rem;
+    font-size: $button-font-size * 1.2;
     padding: 1.6rem 0;   
   }
 }
 @media (min-width: $social-shrink-width) {
   .flat-btn {
-    font-size: 3rem; 
     padding: 1.2rem 0;
   }
 }
@@ -461,8 +455,6 @@ body > .container {
   -webkit-user-select: none;
   -webkit-touch-callout: none;  
 }
-
-
 
 
 /*******************/
