@@ -238,15 +238,6 @@ a.cam::after {
   content: none; 
 }
 
-.emphasized {
-  color: $thisislightorange;
-  
-  strong {
-    font-size: 100%;
-    color: $thisisburntorange;
-    font-family: $header-font-family;
-  }
-}
 
 .big-header {
   font-size: 7rem;

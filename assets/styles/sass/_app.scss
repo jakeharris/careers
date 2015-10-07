@@ -151,6 +151,15 @@ h3,.h3-a {
   margin-bottom: 5px;
 }
 
+.emphasized {
+  color: $thisislightorange;
+  
+  strong {
+    font-size: 100%;
+    color: $thisisburntorange;
+    font-family: $header-font-family;
+  }
+}
 .banner {
   box-sizing: border-box;
   position: relative;
