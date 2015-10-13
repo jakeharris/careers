@@ -4,3 +4,176 @@
 .region {
   height: 100%;
 }
+
+h2 {
+  font-size: 5rem;
+  text-align: center;
+}
+.auoth-content {
+  text-align: center;
+  h3 {
+    font-family: $header-font-family;
+    font-size: 3.5rem;
+    padding-bottom: 3rem;
+  }
+  h3, p, blockquote {
+    width: 60%;
+    margin: 0 auto;
+  }
+  blockquote + p {
+    padding-top: 3rem; 
+  }
+}
+
+.attributes {
+  display: flex;
+  justify-content: space-between;
+  
+  padding-top: 5rem;
+  
+  li {
+    flex-basis: 30%;
+    text-align: center;
+  }
+  li::before {
+    display: block;
+    content: 'f';
+    font-family: $icon-font-family;
+    font-size: 3.7rem;
+    
+    background-color: $box-shadow;
+    color: white;
+    width: 6rem; height: 6rem;
+    border-radius: 6rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+  li:hover::before {
+    background-color: $thisislightblue; 
+  }
+  .tie::before {
+    @extend .icon-tie:before; 
+  }
+  .law::before {
+    @extend .icon-law:before;
+  }
+  .briefcase::before {
+    @extend .icon-briefcase:before; 
+  }
+  .office::before {
+    @extend .icon-office:before; 
+    padding-left: 2px;
+  }
+  .star-full::before {
+    @extend .icon-star-full:before; 
+    padding-left: 1px;
+    padding-bottom: 3px;
+  }
+  .group::before {
+    @extend .icon-group:before; 
+  }
+  .audiotrack::before {
+    @extend .icon-audiotrack:before;
+  }
+  .baseball::before {
+    @extend .icon-baseball:before; 
+  }
+  .compass::before {
+    @extend .icon-compass:before;
+    padding-left: 6px;
+  }
+  .graduation-cap::before {
+    @extend .icon-graduation-cap:before; 
+  }
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact {
+  flex-basis: 45%;
+  .contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  img {
+    flex-basis: 25%;
+    width: 25%;
+    
+    border-radius: 50%;
+    box-sizing: padding-box;
+  }
+  .contact-info {
+    flex-basis: 65%;
+    width: 65%;
+  }
+  h3 {
+    font-family: $header-font-family;
+    font-size: 2rem;
+    
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .muted {
+      display: block;
+      color: $box-shadow;
+    }
+  }
+  .address, .phone, .email, .name {
+    position: relative;
+    
+    font-family: $header-font-family;
+    font-size: 2rem;
+    
+    margin: 0;
+    padding-bottom: 0;
+    
+    a {
+      display: inline-block; 
+      word-wrap: break-word;
+      margin-left: 3.6rem;
+      position: absolute;
+    }
+    .muted {
+      font-size: 0.8em;
+      color: $box-shadow;
+      padding-top: 0;
+      margin-top: 0;
+      display: block;
+    }
+  }
+  .phone, .email {
+    margin-top: 1rem;
+  }
+  .email {
+    margin-top: -1rem;
+  }
+  
+  .address:before, .phone:before, .email:before {
+    @extend [class^="icon-"], [class*=" icon-"];
+  
+    display: inline-block;
+
+    font-size: 4rem;  
+    color: $box-shadow;
+    width: 2rem;
+  }
+  .address:before {
+    @extend .icon-map-marker;
+  }
+  .phone:before {
+    @extend .icon-phone; 
+  }
+  .email:before {
+    @extend .icon-comments-o; 
+  }
+  .name {
+    color: $box-shadow; 
+  }
+}
+.contact + .flat-btn {
+  flex-basis: 45%;
+  height: auto;
+}
