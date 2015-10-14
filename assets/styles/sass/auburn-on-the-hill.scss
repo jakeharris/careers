@@ -177,3 +177,68 @@ h2 {
   flex-basis: 45%;
   height: auto;
 }
+
+.faq-header {
+  padding-top: 3.5rem;
+  text-align: center;
+}
+.faq {
+  counter-reset: questionNumber;
+  text-align: left;
+}
+.faq .panel.panel-default {
+  border-radius: 0; 
+  border: 1px solid $box-shadow;
+  margin-top: 2rem;
+  box-shadow: 6px 6px 0 $box-shadow;
+  .panel-body {
+    background: white;
+    border: none;
+    padding: 3rem;
+    p {
+      padding: 1.5rem 0;
+      max-width: 600px;
+    }
+    &:not(.collapsed) {
+      border-top: 1px solid $box-shadow; 
+    }
+  }
+  .panel-heading {
+    background: white; 
+    color: $thisisdarkblue;
+    padding: 0;
+    border-bottom: none;
+    border-radius: 0;
+  }
+  .panel-heading:hover {
+    background: $thisisdarkblue;
+    color: white;
+  }
+}
+.faq .faq-question {
+  font-family: $body-font-family;
+  font-size: 1.7rem;
+  position: relative;
+  line-height: 1.618;
+  height: 100%;
+  a {
+    padding: 1.5rem 3rem; 
+    display: block;
+  }
+  a::before {
+    font-family: $header-font-family;
+    counter-increment: questionNumber;
+    content: counter(questionNumber) " ";
+    font-size: 2rem;
+    padding-right: 3rem;
+  }
+  a::after {
+    @extend .icon-chevron-down:before; 
+    font-family: $icon-font-family;
+    position: absolute;
+    right: 3rem;
+  }
+  a:hover {
+    color: white; 
+  }
+}
