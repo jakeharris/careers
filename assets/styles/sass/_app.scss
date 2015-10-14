@@ -121,7 +121,7 @@ body > .container {
 
 // COLORS, EMPHASIS, AND FUNCTION 
 .muted {
-  color: $box-shadow-color;
+  color: $muted-text-color;
 }
 .disabled {
   color: #ccc;
@@ -216,6 +216,11 @@ body > .container {
 }
 
 // WATERMARK ICONS
+// Class for containers with watermarks
+.watermarked {
+  position: relative;
+}
+// Watermarks themselves
 .watermark::before {
   position: absolute;
   z-index: 1;
@@ -225,8 +230,6 @@ body > .container {
   opacity: .1;
   
   font-size: 13rem;
-  
-  display: none; //until I get other things working
 }
 
 // FLEX ELEMENTS
