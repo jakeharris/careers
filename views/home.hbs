@@ -87,24 +87,21 @@ component:
 </div>
 <div class="card" role="main">
   <div class="flex">
-    <div class="hours  flex-third">
+    <div class="about  flex-third">
       <h2><a href="http://www.auburn.edu/career/aboutus/">About Our Office</a></h2>
-      <div class="place">
-        <a href="http://auburn.edu/map/?id=76" class="place-icon">
-          <i class="icon-map-marker"></i>
-        </a>
-        <a href="http://auburn.edu/map/?id=76" class="place-address">
-          <address>
-            303 Mary Martin Hall<br>
-            Auburn, AL 36849
-          </address>
-        </a>
-      </div>
+      <a href="http://auburn.edu/map/?id=76" class="place">
+        <i class="about-icon icon-map-marker"></i>
+        <address>
+          303 Mary Martin Hall<br>
+          Auburn, AL 36849
+        </address>
+      </a>
       <div class="times">
-        <i class="fa icon-clock-o times-icon"></i>
-        <div class="times-address" ng-controller="hours-ctrl">
+        <i class="about-icon icon-clock-o"></i>
+        <div class="times-content" ng-controller="hours-ctrl">
           
           <p class="emphasized" ng-if="holiday">[[ holiday ]]</p>
+          
           <div ng-if="office">
             <h6>Hours</h6>
             <p ng-repeat="hours in office">
@@ -117,7 +114,7 @@ component:
               <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
             </p>
           </div>
-          <p class="subtle">
+          <p class="muted">
             Need assistance? Get started by coming in to the Career Center
             during walk-in hours for a brief 15 minute meeting. If 
             additional help is needed, an appointment can be made at that 
@@ -126,14 +123,12 @@ component:
         </div>
       </div>
       <div class="appointments">
-        <a href="tel:3348444744" class="appointments-icon">
-          <i class="fa icon-phone"></i>
-        </a>
+        <a href="tel:3348444744" class="about-icon icon-phone"></a>
         <div class="appointments-address">
           <p>
             To schedule an appointment, call <a href="tel:3348444744">(334) 844-4744.</a>
           </p>
-          <p class="subtle">
+          <p class="muted">
             Due to accessibility limitations of Martin
             Hall, please notify us when setting your
             appointment if accommodations are needed.

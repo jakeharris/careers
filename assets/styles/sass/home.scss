@@ -2,15 +2,17 @@
 @import 'social';
 @import 'sponsors';
 
+address {
+  display: block;
+  width: 100%;
+}
+
 // STYLING THE BOOTSTRAP CAROUSEL WITHOUT BOOTSTRAP
 .carousel {
   position: relative;
 }
 .carousel-inner {
   height: auto;
-}
-.carousel .item {
-  
 }
 .carousel .item img {
   width: 100%;
@@ -60,5 +62,58 @@
   }
   .carousel-container, .login {
     flex-basis: 50%; 
+  }
+}
+
+// ABOUT OUR OFFICE
+.about {
+  @extend .watermarked;
+}
+.about-icon {
+  display: block;
+  flex-basis: 20%;
+  width: 20%;
+  &::before {
+    font-size: 5rem; 
+    color: $thisislightblue;
+  }
+}
+a.about-icon:hover::before,
+a:hover .about-icon::before {
+  color: $thisislightorange;
+}
+.place, .times, .appointments {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-bottom: $content-protection;
+}
+
+// ABOUT OUR OFFICE -- hand-fixes
+.place {
+  padding-top: $content-protection;
+}
+.times {
+  padding-bottom: 0;
+}
+.times-content {
+  & > div, & > p {
+    padding-bottom: $content-protection; 
+  }
+}
+
+// TWEETS
+.tweets {
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  li {
+    flex-basis: 50%; 
+  }
+  .tweet-text {
+    
   }
 }
