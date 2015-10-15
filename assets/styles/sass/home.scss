@@ -95,25 +95,67 @@ a:hover .about-icon::before {
 }
 .times {
   padding-bottom: 0;
+  
+  .about-icon {
+    margin-right: 3.8rem; 
+  }
 }
 .times-content {
   & > div, & > p {
     padding-bottom: $content-protection; 
   }
 }
+.appointments {
+  .about-icon {
+    margin-right: 3.2rem; 
+  }
+}
+
+// CALENDAR
+.calendar {
+  @extend .watermarked;
+}
 
 // TWEETS
 .tweets {
+  @extend .watermarked;
   ul {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    height: 250px;
   }
   li {
-    flex-basis: 50%; 
-  }
-  .tweet-text {
-    
+    flex-basis: 45%; // describes height
+    width: 45%;
   }
 }
+.tweet-date {
+  display: block;
+  color: $muted-text-color;
+  text-decoration: none;
+  &:hover {
+    color: $muted-text-color;
+    text-decoration: underline;
+  }
+}
+.tweet-link {
+  color: $charcoal;
+}
+
+// BLOG POSTS
+.blog {
+  @extend .watermarked;
+  h3 {
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+  }
+}
+.blog-post {
+  padding-bottom: $content-protection / 2;
+}
+.blog-link {
+    color: $text-color; 
+  }
