@@ -23,6 +23,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  color: $text-color;
 }
 body {
   background: #f4f4f4;
@@ -38,7 +39,7 @@ p, div {
 }
 
 a { 
-  color: #496E9C;
+  color: $thisislightblue;
 }
 a,
 a:hover {
