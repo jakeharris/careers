@@ -1,6 +1,25 @@
 @import 'app';
 @import 'housing';
 
+.auoth-banner {
+  background: no-repeat top/100% url('../images/auoth-banner.png');
+  
+  h2 {
+    display: none;
+  }
+  h2, p {
+    color: white; 
+  }
+  .flat-btn {
+    box-shadow: none;
+    border: 3px solid $thisislightblue;
+    background: transparent;
+  }
+  .flat-btn--white {
+    border-color: white; 
+  }
+}
+
 .region {
   height: 100%;
 }
