@@ -17,7 +17,7 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
   }
   var getRelativeMonth = function (month) {
     var currentMonth = new Date().getMonth() + 1
-
+    
     // Examples:
     // month = 10, currentMonth = 11
     //   return 10 + (12 - 11) = 11
@@ -25,9 +25,9 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
     //   return 0
 
     if(month - currentMonth >= 0)
-      return month - currentMonth
+      return parseInt(month) - currentMonth
     else
-      return month + (12 - currentMonth)
+      return parseInt(month) + (12 - currentMonth)
   }
   var byRelativeImmediacy = function (a, b) { // sorting function
     var aRelativeMonth = getRelativeMonth(a.date['numerical-month']),
@@ -37,8 +37,8 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
     return aRelativeMonth - bRelativeMonth
   }
   
-  
   this.events = res.data.filter(function (el) {
+    
     if('__HOW-TO' in el) return false
     if(employerMode)
       return ('employer-event' in el) && (getRelativeMonth(el.date['numerical-month']) <= monthsOut)
