@@ -2,31 +2,48 @@
 @import 'housing';
 
 .auoth-banner {
-  background: no-repeat top/100% url('../images/auoth-banner.png');
-  
-  h2 {
-    display: none;
+  background: no-repeat url('../images/auoth-banner.png');
+  background-size: cover;
+  background-position: center center;
+  max-height: 239px;
+}
+@media (min-width: $tiny-screen-size) {
+  .auoth-banner {
+    min-height: 140px; 
   }
-  h2, p {
-    color: white; 
+}
+@media (min-width: $medium-screen-size) {
+  .auoth-banner {
+    min-height: 220px; 
   }
-  .flat-btn {
-    box-shadow: none;
-    border: 3px solid $thisislightblue;
-    background: transparent;
-  }
-  .flat-btn--white {
-    border-color: white; 
+}
+@media (min-width: $moderate-screen-size) {
+  .auoth-banner {
+    min-height: 239px;
   }
 }
 
-.region {
-  height: 100%;
+.intern-info {
+  flex-wrap: wrap;
+}
+.intern-region {
+  flex-basis: 100%;
+}
+@media (min-width: $small-screen-size) {
+  .intern-info {
+    flex-wrap: nowrap;
+  }
+  .intern-region {
+    flex-basis: 40%; 
+  }
 }
 
 h2 {
   font-size: 5rem;
   text-align: center;
+}
+.auoth-tagline {
+  padding-bottom: 3rem;
 }
 .auoth-content {
   text-align: center;
@@ -36,23 +53,40 @@ h2 {
     padding-bottom: 3rem;
   }
   h3, p, blockquote {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
+  }
+  p {
+    text-align: left; 
+  }
+  blockquote > p { 
+    text-align: right;
+    width: 100%;
+    padding-top: 1rem;
   }
   blockquote + p {
     padding-top: 3rem; 
   }
 }
+@media (min-width: $small-screen-size) {
+  .auoth-content {
+     h3, p, blockquote {
+       width: 50%;
+     }
+  }
+}
 
 .attributes {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   
   padding-top: 5rem;
   
   li {
-    flex-basis: 30%;
+    flex-basis: 100%;
     text-align: center;
+    padding-bottom: 3rem;
   }
   li::before {
     display: block;
@@ -105,14 +139,24 @@ h2 {
     @extend .icon-graduation-cap:before; 
   }
 }
+@media (min-width: $tiny-screen-size) {
+  .attributes {
+    flex-wrap: nowrap;
+    li {
+      flex-basis: 30%; 
+      padding-bottom: 0;
+    }
+  }
+}
 
 .contact-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .contact {
-  flex-basis: 45%;
+  flex-basis: 100%;
   .contact-details {
     display: flex;
     align-items: center;
@@ -193,8 +237,18 @@ h2 {
   }
 }
 .contact + .flat-btn {
-  flex-basis: 45%;
+  flex-basis: 100%;
   height: auto;
+  margin-top: -1rem;
+}
+@media (min-width: $medium-screen-size) {
+  .contact-content {
+    flex-wrap: nowrap;
+  }
+  .contact, .contact + .flat-btn {
+    flex-basis: 45%; 
+    margin-bottom: 0;
+  }
 }
 
 .faq-header {
