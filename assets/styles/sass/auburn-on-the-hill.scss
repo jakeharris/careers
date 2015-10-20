@@ -23,11 +23,16 @@
   }
 }
 
+.auoth-buttons {
+  padding-top: 3rem;
+}
+
 .intern-info {
   flex-wrap: wrap;
 }
 .intern-region {
   flex-basis: 100%;
+  height: 100%;
 }
 @media (min-width: $small-screen-size) {
   .intern-info {
@@ -160,7 +165,7 @@ h2 {
   .contact-details {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   img {
     flex-basis: 25%;
@@ -171,14 +176,10 @@ h2 {
   }
   .contact-info {
     flex-basis: 65%;
-    width: 65%;
+    
+    width: auto;
   }
   h3 {
-    font-family: $header-font-family;
-    font-size: 2rem;
-    
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     .muted {
       display: block;
       color: $box-shadow;
@@ -188,7 +189,9 @@ h2 {
     position: relative;
     
     font-family: $header-font-family;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    
+    width: 100%;
     
     margin: 0;
     padding-bottom: 0;
@@ -213,6 +216,21 @@ h2 {
   .email {
     margin-top: -1rem;
   }
+  @media (min-width: $tiny-screen-size) {
+    .address, .phone, .email, .name {
+      font-size: 2rem; 
+    }
+  }
+  @media (min-width: $small-screen-size) {
+    .address, .phone, .email, .name {
+      font-size: 2.2rem; 
+    } 
+  }
+  @media (min-width: $moderate-screen-size) {
+    .address, .phone, .email, .name {
+      font-size: 3rem; 
+    }
+  }
   
   .address:before, .phone:before, .email:before {
     @extend [class^="icon-"], [class*=" icon-"];
@@ -234,20 +252,6 @@ h2 {
   }
   .name {
     color: $box-shadow; 
-  }
-}
-.contact + .flat-btn {
-  flex-basis: 100%;
-  height: auto;
-  margin-top: -1rem;
-}
-@media (min-width: $medium-screen-size) {
-  .contact-content {
-    flex-wrap: nowrap;
-  }
-  .contact, .contact + .flat-btn {
-    flex-basis: 45%; 
-    margin-bottom: 0;
   }
 }
 
