@@ -2,12 +2,16 @@
 name: oth-about
 type: auburn-on-the-hill
 title: Auburn on the Hill | Career Center
-path-to-root: ../../career
+path-to-root: ../
 layout: default.hbs
 ---
 
 <section class="content">
   <h2>What is Auburn on the Hill?</h2>
+</section>
+<section class="flex auoth-buttons">
+  <a class="flat-btn flat-btn--half" href="auburn-on-the-hill/about.html#faq">Frequently Asked Questions</a>
+  <a class="flat-btn flat-btn--half flat-btn--white" href="auburn-on-the-hill">Back to Overview</a>
 </section>
 
 <section class="content extra-content auoth-content">
@@ -61,23 +65,21 @@ layout: default.hbs
   </ul>
 </section>
 <section class="contact-content">
-  <div class="contact flex-half content extra-content">
+  <div class="contact flex-half content extra-content auoth-content">
     <h3>
       Interested? 
-      <span class="muted">Contact Meaghan.</span>
     </h3>
     <div class="contact-details">
       <img src="assets/images/staff/meaghan.jpg">
       <div class="contact-info">
         <p class="name">Meaghan Weir</p>
         <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
-        <p class="email"><a href="mailto:meaghan@auburn.edu">meaghan</a></p>
+        <p class="email"><a href="mailto:meaghan@auburn.edu">meaghan@auburn.edu</a></p>
       </div>
     </div>
   </div>
-  <a class="flat-btn flat-btn--half" href="auburn-on-the-hill">Back to Overview</a>
 </section>
-<section class="faq content extra-content auoth-content">
+<section id="faq" class="faq content extra-content auoth-content">
   <h3 class="faq-header">Frequently Asked Questions</h3>
   <div class="panel-group faq" id="faq" role="tablist" aria-multiselectable="true">
     {{#each oth.question }}
