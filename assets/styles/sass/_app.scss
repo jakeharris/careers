@@ -442,6 +442,12 @@ h3,.h3-a {
     color: #ccc;
     background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
     background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
+    cursor: default;
+    &:hover {
+      color: #ccc;
+      background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
+      background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
+    }
   }
 }
 

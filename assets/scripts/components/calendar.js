@@ -40,6 +40,7 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
   this.events = res.data.filter(function (el) {
     
     if('__HOW-TO' in el) return false
+    
     if(employerMode)
       return ('employer-event' in el) && (getRelativeMonth(el.date['numerical-month']) <= monthsOut)
     else
