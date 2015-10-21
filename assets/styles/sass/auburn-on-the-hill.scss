@@ -168,11 +168,14 @@ h2 {
     justify-content: space-around;
   }
   img {
-    flex-basis: 25%;
-    width: 25%;
+    flex-basis: 15%;
+    width: 15%;
     
-    border-radius: 50%;
+    max-width: 300px;
+    
+    border-radius: 0;
     box-sizing: padding-box;
+    box-shadow: 6px 6px 0 $box-shadow;
   }
   .contact-info {
     flex-basis: 65%;
