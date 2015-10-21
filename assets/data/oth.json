@@ -26,7 +26,7 @@
       "link": "http://www.ishdc.org/"
     },
     {
-      "name": "Thompson-Markwood Hall",
+      "name": "Thompson-Markward Hall",
       "location": "Washington, D.C.",
       "link": "http://www.ywch.org/"
     },
@@ -34,67 +34,62 @@
       "name": "Washington Intern Student Housing",
       "location": "Washington, D.C.",
       "link": "http://www.internsdc.com"
-    },
-    {
-      "name": "Partnership for Public Service",
-      "location": "Washington, D.C.",
-      "link": "http://makingthedifference.org/federalinternships/dchousingguide.shtml"
     }
   ],
   "opportunity": [
     {
       "name": "Senator Richard Shelby",
-      "deadline": "February 6",
+      "deadline": "TBA",
       "requirements": "online application",
       "link": "http://shelby.senate.gov/public/index.cfm?p=internship-application"
     },
     {
       "name": "Senator Jeff Sessions",
-      "deadline": "February 27",
+      "deadline": "TBA",
       "requirements": "online application, resume and updated picture",
-      "link": "http://www.sessions.senate.gov/public/index.cfm?FuseAction=ConstituentServices.Internships"
+      "link": "http://www.sessions.senate.gov/public/index.cfm/internships"
     },
     {
       "name": "Representative Bradley Byrne",
-      "deadline": "January 30",
+      "deadline": "TBA",
       "requirements": "printed application (mail or fax)",
       "link": "http://byrne.house.gov/services/internships"
     },
     {
       "name": "Representative Martha Roby",
-      "deadline": "March 6",
+      "deadline": "TBA",
       "requirements": "online application",
       "link": "http://roby.house.gov/constituentservices/internships.htm"
     },
     {
       "name": "Representative Mike Rogers",
-      "deadline": "February 13",
+      "deadline": "TBA",
       "requirements": "resume, cover letter, and a writing sample (2-3 pages)",
       "link": "http://mikerogers.house.gov/constituent-services/internships"
     },
     {
       "name": "Representative Robert Aderholt",
-      "deadline": "February 13",
+      "deadline": "TBA",
       "requirements": "online application, cover letter, resume, letter of recommendation, and transcript",
       "link": "http://aderholt.house.gov/index.cfm?sectionid=36&sectiontree=3,36"
     },
     {
       "name": "Representative Mo Brooks",
-      "deadline": "Rolling basis",
+      "deadline": "TBA",
       "requirements": "resume, two or three writing samples (2-3 pages), and a list of references",
       "link": "http://brooks.house.gov/internships"
     },
     {
       "name": "Representative Gary Palmer",
-      "deadline": "February 28",
+      "deadline": "January 31",
       "requirements": "online application, resume, and cover letter",
       "link": "https://palmer.house.gov/services/internships"
     },
     {
       "name": "Representative Terri Sewell",
-      "deadline": "Rolling basis",
+      "deadline": "TBA",
       "requirements": "cover letter, resume, transcript, and brief writing sample",
-      "link": "http://sewell.house.gov/internship-opportunities/"
+      "link": "https://sewell.house.gov/services/internships"
     },
     {
       "name": "Non-Alabama student?",
@@ -106,7 +101,7 @@
     {
       "id": "cost",
       "question": "How much does it cost?",
-      "answer": "Most costs are associated with housing and transportation in Washington, D. C. Group housing discount rates may be available for those who are eligible. Costs for each item are contigent upon distance from the hill. Typically housing costs are higher closer to Capitol Hill, however, transportation costs increase with longer commutes."
+      "answer": "Most costs are associated with housing and transportation in Washington, D. C. Group housing discount rates may be available for those who are eligible. Costs for each item are contingent upon distance from the hill. Typically housing costs are higher closer to Capitol Hill, however, transportation costs increase with longer commutes."
     },
     {
       "id": "requirements",
@@ -116,12 +111,12 @@
     {
       "id": "non-congressional",
       "question": "What if I want to work in DC but don't want a congressional internship?",
-      "answer": "There are many federal agencies and non-profit organizations who offer internships in the DC area. Get in touch to find out more."
+      "answer": "There are many federal agencies and non-profit organizations who offer internships in the DC area. Contact the program coordinator for more information."
     },
     {
       "id": "pay",
       "question": "Are these paid internships?",
-      "answer": "As with most internships, some are paid, but many are not."
+      "answer": "Most congressional internships are unpaid; however a few offices will offer interns a small stipend."
     },
     {
       "id": "academic-credit",
