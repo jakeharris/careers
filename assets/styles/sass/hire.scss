@@ -58,8 +58,13 @@
 .services {
   flex-basis: 100%;
   position: relative;
-  height: auto;
+  height: 100%;
   padding: 3rem 0;
+  
+  min-height: 500px;
+  
+  background: url('../images/services-banner.png') center no-repeat;
+  background-size: cover;
 }
 @media (min-width: $moderate-screen-size) {
   .welcome-services {
@@ -79,8 +84,6 @@
 .services-background {
   height: 100%;
   width: 100%;
-  background: url('../images/services-banner.png') 100% 100% no-repeat;
-  background-position: 0 0rem;
   position: absolute;
   top: 0; left: 0;
   z-index: 1;
@@ -93,13 +96,14 @@
   background: $thisisdarkblue;
   opacity: 0.2;
   z-index: 2;
+  min-height: 500px;
 }
 .services-wrapper {
   padding: 5rem;
   padding-bottom: 3rem;
-  position: absolute;
+  position: relative;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
   z-index: 3;
 }
 .services-header {
@@ -110,7 +114,8 @@
 .services-content {
   display: flex;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -121,8 +126,7 @@
 }
 .service {  
   padding: 1rem;
-  width: 50%;
-  flex-basis: 50%;
+  flex-basis: 100%;
   font-family: $header-font-family;
   font-size: 2rem;
   text-align: left;
@@ -133,9 +137,15 @@
     color: $thisisiceblue; 
   }
 }
-.service:nth-of-type(2n) {
-  text-align: right;
+@media (min-width: $small-screen-size) {
+  .service {
+    flex-basis: 50%; 
+  }
+  .service:nth-of-type(2n) {
+    text-align: right;
+  }
 }
+
 
 .flat-btn {
   font-size: 18px;
@@ -151,9 +161,13 @@
   display: block;
 }
 
+.events-upcoming {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .upcoming-event {
-  flex-basis: 63%;
-  width: 63%;
+  flex-basis: 100%;
   height: 100%;
   img {
     height: 100%;
@@ -163,8 +177,7 @@
 .events.events {
   overflow: hidden;
   position: relative;
-  flex-basis: 33%;
-  width: 33%;
+  flex-basis: 100%;
   height: 100%;
   h2 a::after {
     font-family: $icon-font-family;
@@ -224,6 +237,14 @@
 #more-events.collapsed::before {
   content: '\f078';
 }
+@media (min-width: $medium-screen-size) {
+  .upcoming-event {
+    flex-basis: 63%; 
+  }
+  .events.events {
+    flex-basis: 33%; 
+  }
+}
 
 
 .contacts {
@@ -231,12 +252,12 @@
   height: 100%;
   .contacts-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between; 
     padding-top: 4.1rem;
   }
   .contact {
-    width: 48%;
-    flex-basis: 48%;
+    flex-basis: 100%;
   }
 }
 .contact {  
@@ -270,17 +291,19 @@
   .address, .phone, .email, .name {
     position: relative;
     
-    font-family: $header-font-family;
-    font-size: 2rem;
+    font-family: $body-font-family;
+    font-size: 1.2rem;
     
     margin: 0;
     padding-bottom: 0;
+    height: 100%;
     
     a {
-      display: inline-block; 
+      position: relative;
+      top: -1.5rem;
+      display: inline; 
       word-wrap: break-word;
       margin-left: 3.6rem;
-      position: absolute;
     }
     .muted {
       font-size: 0.8em;
@@ -295,6 +318,10 @@
   }
   .email {
     margin-top: -1rem;
+  }
+  .name {
+    font-family: $header-font-family;
+    font-size: 2rem;
   }
   
   .address:before, .phone:before, .email:before {
@@ -325,15 +352,42 @@
 .contacts-login {
   flex-wrap: wrap;
 }
+@media (min-width: $small-screen-size) {
+  .contact {
+    .phone, .email, .address, .name {
+      font-family: $header-font-family; 
+      font-size: 2rem;
+      a {
+        top: -1rem; 
+      }
+    }
+  }
+}
+@media (min-width: $small-screen-size + 100px) { 
+  .contacts .contact {
+    flex-basis: 50%;
+  }
+}
 @media (min-width: $moderate-screen-size) {
   .contacts {
     flex-basis: 63%; 
+    .contact {
+      flex-basis: 100%; 
+    }
   }
   .login {
     flex-basis: 30%;
   }
   .contacts-login {
     flex-wrap: nowrap; 
+  }
+}
+@media (min-width: $moderate-screen-size + 125px) {
+  .contacts {
+    flex-wrap: nowrap;
+    .contact {
+      flex-basis: 50%; 
+    }
   }
 }
 
