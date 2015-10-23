@@ -4,6 +4,7 @@
 .content > .row {
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .content > .row.row--no-padding {
   padding-bottom: 0;
@@ -11,16 +12,20 @@
 .muted {
   color: $box-shadow;
 }
+.hero .img {
+  display: none;
+}
+.hero .img-replace {
+  font-family: $header-font-family;
+}
 
 // SPECIFICS
 .brief, .actions {
-  width: 40%;
-  flex-basis: 40%;
+  flex-basis: 100%;
   padding: 0;
 }
 .brief {
-  width: 50%;
-  flex-basis: 50%;
+  flex-basis: 100%;
   padding-top: 1rem;
   .blurb {
     width: 80%; 
@@ -30,6 +35,14 @@
   }
   div:last-of-type {
     padding-bottom: 1rem; 
+  }
+}
+.actions {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  .flat-btn, .eligibility {
+    flex-basis: 100%; 
   }
 }
 
@@ -253,6 +266,7 @@
     }
   }
 }
+
 .contacts {
   width: 50%;
   flex-basis: 50%;
@@ -296,6 +310,10 @@
   margin-top: 5rem;
 }
 
+.desktop-only.desktop-only {
+  display: none;
+}
+
 
 @media (min-width: $tiny-screen-size) {
   .contact {
@@ -304,12 +322,24 @@
     }
   }
 }
-
 @media (min-width: $small-screen-size) {
   .contact {
     .address, .phone, .email, .name {
       width: 100%;
     }
+  }
+  .hero .img-replace {
+    font-size: 5rem;
+  }
+  .content > .row {
+    flex-wrap: nowrap;
+  }
+  .actions {
+    flex-basis: 40%; 
+    flex-direction: row; 
+  }
+  .brief {
+    flex-basis: 50%;
   }
 }
 @media (min-width: $moderate-screen-size) {
@@ -327,5 +357,21 @@
     .email a {
       top: 2rem; 
     }
+  }
+  .hero .img-replace {
+    font-size: 8rem; 
+  }
+}
+@media (min-width: $medium-screen-size) {
+  .hero {
+    .img {
+      display: block;
+    }
+    .img + .img-replace {
+      display: none; 
+    }
+  }
+  .desktop-only.desktop-only {
+    display: inline-block; 
   }
 }
