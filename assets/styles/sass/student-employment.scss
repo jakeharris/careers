@@ -356,6 +356,9 @@ ol {
   a {
     padding: 1.5rem 3rem; 
     display: block;
+    &:hover {
+      color: white;
+    }
   }
   a::before {
     font-family: $header-font-family;
@@ -369,9 +372,6 @@ ol {
     font-family: $icon-font-family;
     position: absolute;
     right: 3rem;
-  }
-  a:hover {
-    color: white; 
   }
 }
 

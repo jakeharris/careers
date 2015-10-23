@@ -130,6 +130,7 @@
   font-family: $header-font-family;
   font-size: 2rem;
   text-align: left;
+  display: inline-block;
   & > a {
     color: $box-shadow;
   }
@@ -139,7 +140,7 @@
 }
 @media (min-width: $small-screen-size) {
   .service {
-    flex-basis: 50%; 
+    flex-basis: 45%; 
   }
   .service:nth-of-type(2n) {
     text-align: right;
