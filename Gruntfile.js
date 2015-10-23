@@ -108,7 +108,9 @@ module.exports = function (grunt) {
     'experience/index.html': ['<%= config.views %>/experience.hbs'],
     'experience/internships.html': ['<%= config.views %>/internships.hbs'],
     'experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
-    'experience/housing.html': ['<%= config.views %>/housing.hbs']
+    'experience/housing.html': ['<%= config.views %>/housing.hbs'],
+    'auburn-on-the-hill/index.html': ['<%= config.views %>/auburn-on-the-hill/index.hbs'],
+    'auburn-on-the-hill/about.html': ['<%= config.views %>/auburn-on-the-hill/about.hbs']
   },
   VIEW_MAPPING_PROD = {
     'dist/index.html':    ['<%= config.views %>/home.hbs'],
@@ -164,7 +166,9 @@ module.exports = function (grunt) {
     'dist/experience/index.html': ['<%= config.views %>/experience.hbs'],
     'dist/experience/internships.html': ['<%= config.views %>/internships.hbs'],
     'dist/experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
-    'dist/experience/housing.html': ['<%= config.views %>/housing.hbs']
+    'dist/experience/housing.html': ['<%= config.views %>/housing.hbs'],
+    'dist/auburn-on-the-hill/index.html': ['<%= config.views %>/auburn-on-the-hill/index.hbs'],
+    'dist/auburn-on-the-hill/about.html': ['<%= config.views %>/auburn-on-the-hill/about.hbs']
   }
   
   grunt.initConfig({

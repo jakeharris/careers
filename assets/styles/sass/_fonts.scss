@@ -39,6 +39,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-audiotrack:before {
+	content: "\e801";
+}
+.icon-baseball:before {
+	content: "\e800";
+}
 .icon-circuit-board:before {
   content: '\e60c';
 }
