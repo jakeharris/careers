@@ -92,15 +92,15 @@ footer {
   }
   
   .footer-wrap {
-    max-width: 1200px;
+    width: 90vw;
+    max-width: 1200px; 
     margin: 0 auto;
     color: inherit;
     background: transparent;
     
     z-index: 30;
 
-    padding: 3rem 5rem;
-    padding-top: 5rem;
+    padding: 5rem 2rem;
 
     display: flex;
     justify-content: space-between;

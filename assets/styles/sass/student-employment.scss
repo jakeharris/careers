@@ -97,7 +97,7 @@
     position: relative;
     
     font-family: $header-font-family;
-    font-size: 2.5rem;
+    font-size: 2rem;
     
     margin: 0;
     padding-bottom: 1rem;
@@ -143,6 +143,13 @@
   }
   .name {
     color: $box-shadow; 
+  }
+}
+@media (min-width: $small-screen-size) {
+  .contact {
+    .address, .phone, .email, .name {
+      font-size: 2.5rem; 
+    }
   }
 }
 .flat-btn.flex-half {

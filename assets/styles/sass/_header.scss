@@ -6,6 +6,9 @@
 #student-employment ul {
   margin-left: -100%;
 }
+@media (min-width: $small-screen-width) {
+  margin-left: 0;
+}
 
 header {
   width: 100%;
