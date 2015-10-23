@@ -3,11 +3,11 @@
 /*****************/
 /* NAV OVERRIDES */
 /*****************/
-#student-employment ul {
-  margin-left: -100%;
-}
-@media (min-width: $small-screen-width) {
-  margin-left: 0;
+
+@media (min-width: $small-screen-size) {
+  #student-employment ul {
+    margin-left: -100%;
+  }
 }
 
 header {
