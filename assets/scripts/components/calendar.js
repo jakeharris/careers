@@ -57,15 +57,15 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
     this.events.forEach(function (event, index, events) {
       if('employer-event' in event) {
         if(this.img === undefined && event.abbrev !== '') 
-          this.img = '../assets/images/events/' + event.abbrev + '-slide.png'
-        if(event.abbrev === undefined && event.abbrev === '')
+          this.img = 'assets/images/events/' + event.abbrev + '-slide.png'
+        if(event.abbrev === undefined)
           event.url = event['employer-event'].registration
         else event.url = 'employers/events/' + event.abbrev + '.html'
       }
     }.bind(this))
   }
   else this.events.forEach(function (event, index, events) {
-    if(event.url === undefined && event.abbrev !== '')
+    if(event.abbrev !== undefined)
       event.url = 'students/events/' + event.abbrev + '.html'
   })
 }
