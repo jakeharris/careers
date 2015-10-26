@@ -4,7 +4,6 @@ title: About Our Office | Career Center
 name: employer-about-us
 type: employer-about-us
 layout: employers.hbs
-path-to-root: ../../
 component:
 - hours
 ---
@@ -43,7 +42,7 @@ component:
     </address>
     <div ng-if="office" class="hours information-row-element">
       <div ng-repeat="hours in office" class="information-important">
-        <h3 ng-if="hours.startDay">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
         <p>
           [[ hours.startTime ]] - [[ hours.endTime ]]
         </p>
@@ -67,7 +66,8 @@ component:
     <div ng-if="walkIn" class="information-row-element">
       <h2>Walk-in Hours</h2>
       <div ng-repeat="hours in walkIn">
-        <h3 ng-if="hours.startDay">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <h3 ng-if="hours.days"><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span></h3>
+        <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
         <p>
           [[ hours.startTime ]] - [[ hours.endTime ]]
         </p>
