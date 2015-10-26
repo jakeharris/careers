@@ -5,6 +5,7 @@
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
+  -ms-flex: 1 0 auto;
 }
 .content > .row.row--no-padding {
   padding-bottom: 0;

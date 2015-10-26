@@ -4,6 +4,7 @@
 
 
 
+
 /****************/
 /*    BASICS    */
 /****************/
@@ -16,7 +17,6 @@
   background: none repeat scroll 0% 0% white;
   overflow: visible;
   flex-basis: 33%;
-  width: 33%;
   position: relative;
   .trl {
     display: block; 
@@ -45,6 +45,8 @@
 }
 
 .flex.row {
+  display: -ms-flexbox;
+  display: flex;
   flex-basis: wrap;
 }
 .welcome {

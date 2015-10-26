@@ -1,5 +1,11 @@
 @import 'internships';
 
+.recruiting-link, .welcome,
+.flex-third, .guide-step {
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
 .hero {
   width: 100%;
   background: white;
@@ -152,6 +158,7 @@
     }
   }
 }
+
 .flat-btn.flex-half {
   @extend .flex-half;
   height: 100%;
@@ -434,13 +441,14 @@ ol {
   counter-increment: step;
   
   & > .icon {
+    color: white;
     &::after {
+      color: white;
       font-family: $header-font-family;
       content: counter(step);
       position: relative;
       top: 1.8rem;
       left: 3.4rem;
-      color: white;
       &:hover {
         color: white; 
       }
@@ -482,7 +490,6 @@ a.icon:hover {
 }
 .icon {
   background: #ccc;
-  color: white;
   border-radius: 10rem 10rem;
   font-size: 6rem;
   width: 10rem;
@@ -507,6 +514,11 @@ a.icon:hover {
   @extend .icon-law;
   padding-left: 2rem;
   padding-top: 2rem;
+}
+
+.guide-step > .icon,
+.faq-question:hover > a {
+  color: white !important;
 }
 
 @media (min-width: $small-screen-size) {
