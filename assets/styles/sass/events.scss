@@ -1,6 +1,6 @@
 @import 'app';
 
-body.events {
+body.events-page {
   width: 100%;
   flex-basis: 100%;
   
@@ -61,9 +61,18 @@ body.events {
   z-index: 1;
 }
 
+.event-details-tip-sheet,
+.event-details-registration {
+  display: block;
+}
+
 @media (min-width: $small-screen-size) {
-  body.events .event {
+  body.events-page .event {
     flex-basis: 50%;
     width: 50%; 
+  }
+  .events {
+    flex-basis: 100%;
+    width: 100%;
   }
 }

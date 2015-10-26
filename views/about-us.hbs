@@ -4,6 +4,8 @@ title: About Our Office | Career Center
 name: about-us
 type: about-us
 layout: no-social.hbs
+component:
+- hours
 ---
 
 <section class="quick-about">
@@ -19,11 +21,11 @@ layout: no-social.hbs
   <div class="content extra-content services">
     <h2 class="services-header">Services</h2>
     <ul class="services-content">
-      <li class="service"><a href="assessments/">Career Assessments</a></li>
+      <li class="service"><a href="assessments">Career Assessments</a></li>
       <li class="service"><a href="http://issuu.com/aucc/docs/ymg-color-issuu/1">Choosing Your Major</a>
-      <li class="service"><a href="students/events">Workshops &amp; Career Fairs</a></li>
-      <li class="service"><a href="resume/">Resume &amp; CV Review</a></li>
-      <li class="service"><a href="interviews/">Interview Prep</a></li>
+      <li class="service"><a href="events">Workshops &amp; Career Fairs</a></li>
+      <li class="service"><a href="resume">Resume &amp; CV Review</a></li>
+      <li class="service"><a href="interviews">Interview Prep</a></li>
       <li class="service"><a href="http://jobs.auburn.edu">Job &amp; Internship Listings</a></li>
       <li class="service"><a href="students/graduate.html">Graduate School Prep</a></li>
       <li class="service"><a href="students/alumni.html#develop-professionally">Professional Development</a></li>
@@ -40,7 +42,9 @@ layout: no-social.hbs
     </address>
     <div ng-if="office" class="hours information-row-element">
       <div ng-repeat="hours in office" class="information-important">
-        <h3 ng-if="hours.startDay">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <!-- OR -->
+        <h3><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span></h3> 
         <p>
           [[ hours.startTime ]] - [[ hours.endTime ]]
         </p>
@@ -64,11 +68,16 @@ layout: no-social.hbs
     <div ng-if="walkIn" class="information-row-element">
       <h2>Walk-in Hours</h2>
       <div ng-repeat="hours in walkIn">
-        <h3 ng-if="hours.startDay">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <!-- OR -->
+        <h3><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span></h3>
         <p>
           [[ hours.startTime ]] - [[ hours.endTime ]]
         </p>
       </div>
+      <p ng-if="holiday" class="emphasized">
+        [[ holiday ]]
+      </p>
     </div>
     <div class="information-row-element">
       <h2 id="walk-ins">Walk-in Policy</h2>

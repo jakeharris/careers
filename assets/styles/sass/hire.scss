@@ -1,6 +1,14 @@
 @import 'app';
 @import 'sponsors';
 
+
+
+
+
+/****************/
+/*    BASICS    */
+/****************/
+
 .content {
   margin-top: 3rem;
 }
@@ -8,27 +16,20 @@
 .login {
   background: none repeat scroll 0% 0% white;
   overflow: visible;
-  flex-basis: 45%;
-  width: 45%;
+  flex-basis: 33%;
   position: relative;
+  .trl {
+    display: block; 
+  }
   .login-wrapper {
     z-index: 5;
   }
+  .login-blurb {
+    font-size: 1.8rem; 
+  }
   height: 100%;
 }
-
-.student-employment {
-  padding: 5rem;
-  flex-basis: 45%;
-  width: 45%; 
-  position: relative;
-  .student-employment-wrapper {
-    z-index: 5; 
-  }
-}
-
-.login::before,
-.student-employment::before {
+.login::before {
   display: block;
 
   position: absolute;
@@ -37,21 +38,117 @@
   z-index: 0;
 
   font-family: $icon-font-family;
+  content: '\f14e';
   color: #85a2c6;
   font-size: 20rem;
   opacity: .1;
 }
-.login::before {
-  content: '\f14e';
+
+.flex.row {
+  display: -ms-flexbox;
+  display: flex;
+  flex-basis: wrap;
 }
-.student-employment::before {
-  content: '\e603';
-  right: 3rem;
+.welcome {
+  flex-basis: 100%;
+  position: relative;
+  padding: 5rem;
+  p {
+    padding: 1rem 0; 
+  }
+}
+.services {
+  flex-basis: 100%;
+  position: relative;
+  height: 100%;
+  padding: 3rem 0;
+  
+  min-height: 500px;
+  
+  background: url('../images/services-banner.png') center no-repeat;
+  background-size: cover;
+}
+@media (min-width: $moderate-screen-size) {
+  .welcome-services {
+    flex-wrap: nowrap; 
+  }
+  .welcome {
+    flex-basis: 30%; 
+    min-height: 400px;
+  }
+  .services {
+    flex-basis: 63%; 
+    display: block;
+  }
 }
 
-.buttons {
-  
+
+.services-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
 }
+.services-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  background: $thisisdarkblue;
+  opacity: 0.2;
+  z-index: 2;
+  min-height: 500px;
+}
+.services-wrapper {
+  padding: 5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 3;
+}
+.services-header {
+  text-align: center;
+  padding-bottom: 1rem;
+  color: white;
+}
+.services-content {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.services-header,
+.services-content {
+  z-index: 6;
+  position: relative;
+}
+.service {  
+  padding: 1rem;
+  flex-basis: 100%;
+  font-family: $header-font-family;
+  font-size: 2rem;
+  text-align: left;
+  display: inline-block;
+  & > a {
+    color: $box-shadow;
+  }
+  & > a:hover {
+    color: $thisisiceblue; 
+  }
+}
+@media (min-width: $small-screen-size) {
+  .service {
+    flex-basis: 45%; 
+  }
+  .service:nth-of-type(2n) {
+    text-align: right;
+  }
+}
+
 
 .flat-btn {
   font-size: 18px;
@@ -59,18 +156,31 @@
   padding: 1.2rem 0.5rem;
 }
 .report-hiring {
-  margin: 0 auto;
-  margin-bottom: 3rem;
-  width: 80%;
-  font-size: 24px;
+  @extend .flat-btn--white;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  z-index: 3;
   display: block;
 }
 
+.events-upcoming {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.upcoming-event {
+  flex-basis: 100%;
+  height: 100%;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
 .events.events {
   overflow: hidden;
   position: relative;
-  flex-basis: 45%;
-  width: 45%;
+  flex-basis: 100%;
   height: 100%;
   h2 a::after {
     font-family: $icon-font-family;
@@ -80,7 +190,7 @@
     right: 3rem;
   }
   .first-event-wrapper {
-    padding: 1.5rem 5rem 0; 
+    padding: 1.5rem 5rem 3rem; 
   }
   .first-event {
     flex-basis: 100%;
@@ -107,14 +217,18 @@
   }
   ul {
     margin-top: 0;
-    position: relative;
-    top: 3rem;
-    height: 85vh;
     width: 100%;
     li {
       flex-basis: 100%;
       width: 100%; 
-      padding: 0 3rem;
+      padding: 0 5rem; 
+      padding-bottom: 3rem;
+      &:first-of-type {
+        padding-top: 3rem; 
+      }
+      &.event > .event-details {
+        width: auto; 
+      }
     }
   }
 }
@@ -126,31 +240,158 @@
 #more-events.collapsed::before {
   content: '\f078';
 }
+@media (min-width: $medium-screen-size) {
+  .upcoming-event {
+    flex-basis: 63%; 
+  }
+  .events.events {
+    flex-basis: 33%; 
+  }
+}
 
-.services {
-  flex-basis: 45%;
-  width: 45%;
+
+.contacts {
+  flex-basis: 100%;
+  height: 100%;
+  .contacts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    padding-top: 4.1rem;
+  }
+  .contact {
+    flex-basis: 100%;
+  }
 }
-.services-wrapper {
-  padding: 5rem;
-  padding-bottom: 3rem;
+.contact {  
+  .contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  img {
+    flex-basis: 25%;
+    width: 25%;
+    
+    border-radius: 50%;
+    box-sizing: padding-box;
+  }
+  .contact-info {
+    flex-basis: 65%;
+    width: 65%;
+  }
+  h3 {
+    font-family: $header-font-family;
+    font-size: 2rem;
+    
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .muted {
+      display: block;
+      color: $box-shadow;
+    }
+  }
+  .address, .phone, .email, .name {
+    position: relative;
+    
+    font-family: $body-font-family;
+    font-size: 1.2rem;
+    
+    margin: 0;
+    padding-bottom: 0;
+    height: 100%;
+    
+    a {
+      position: relative;
+      top: -1.5rem;
+      display: inline; 
+      word-wrap: break-word;
+      margin-left: 3.6rem;
+    }
+    .muted {
+      font-size: 0.8em;
+      color: $box-shadow;
+      padding-top: 0;
+      margin-top: 0;
+      display: block;
+    }
+  }
+  .phone, .email {
+    margin-top: 1rem;
+  }
+  .email {
+    margin-top: -1rem;
+  }
+  .name {
+    font-family: $header-font-family;
+    font-size: 2rem;
+  }
+  
+  .address:before, .phone:before, .email:before {
+    @extend [class^="icon-"], [class*=" icon-"];
+  
+    display: inline-block;
+
+    font-size: 4rem;  
+    color: $box-shadow;
+    width: 2rem;
+  }
+  .address:before {
+    @extend .icon-map-marker;
+  }
+  .phone:before {
+    @extend .icon-phone; 
+  }
+  .email:before {
+    @extend .icon-comments-o; 
+  }
+  .name {
+    color: $box-shadow; 
+  }
 }
-.services-header {
-  text-align: center;
-  padding-bottom: 1rem;
+.login {
+  flex-basis: 100%;
 }
-.services-content {
-  display: flex;
-  margin: 0 auto;
+.contacts-login {
   flex-wrap: wrap;
-  justify-content: space-around;
 }
-.service {  
-  padding: 1rem;
-  width: 50%;
-  flex-basis: 50%;
-  font-family: $header-font-family;
-  font-size: 1.7rem;
+@media (min-width: $small-screen-size) {
+  .contact {
+    .phone, .email, .address, .name {
+      font-family: $header-font-family; 
+      font-size: 2rem;
+      a {
+        top: -1rem; 
+      }
+    }
+  }
+}
+@media (min-width: $small-screen-size + 100px) { 
+  .contacts .contact {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .contacts {
+    flex-basis: 63%; 
+    .contact {
+      flex-basis: 100%; 
+    }
+  }
+  .login {
+    flex-basis: 30%;
+  }
+  .contacts-login {
+    flex-wrap: nowrap; 
+  }
+}
+@media (min-width: $moderate-screen-size + 125px) {
+  .contacts {
+    flex-wrap: nowrap;
+    .contact {
+      flex-basis: 50%; 
+    }
+  }
 }
 
 .sponsorship-opportunities {

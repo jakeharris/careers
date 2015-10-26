@@ -1,5 +1,6 @@
 {
   "__help": "",
+  "holiday": "October 15-16th: The office will be closed for lunch.",
   "types": {
     "office": [
       {
@@ -11,9 +12,8 @@
     ],
     "walkIn": [
       {
-        "startDay": "Mon",
-        "endDay": "Fri",
-        "startTime": "12n",
+        "days": ["Mon-Fri"],
+        "startTime": "1pm",
         "endTime": "4pm"
       }
     ]

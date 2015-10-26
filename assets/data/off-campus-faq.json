@@ -1,0 +1,58 @@
+{
+  "question": [
+    {
+      "id": "difference",
+      "question": "What is the difference between On-Campus Recruiting (OCR) and Non-OCR?",
+      "answer": [
+        "OCR describes jobs where employers visit campus to interview applicants in the AU Career Center or Office of Professional and Career Development offices. OCR postings will either be Pre-Select (the employer screens resumes and invites select applicants to interview) or Open (the employer does not screen applicants- qualified candidates can sign up for interviews without an invitation).",
+        "Non-OCR jobs are those that will not have interviews conducted on Auburn’s campus. Employers will contact candidates to set up interviews (phone or in person)."
+       ]
+    },
+    {
+      "id": "eligibility",
+      "question": "What are the eligibility requirements for student employment?",
+      "answer": [
+        "There are no enrollment requirements in order for students to work in off-campus positions. Students may work as many or as few hours as desired in off-campus positions. However, the Auburn University Career Center recommends that undergraduate students do not exceed 20 hour per week, especially when taking a full (14-17 hour) course load.",
+        "Students should meet with the hiring manager/potential supervisor prior to accepting any position to discuss expectations regarding course load, work hours and scheduling during finals and breaks to ensure that they are able to maintain good academic standing while pursuing part-time employment."
+       ]
+    },
+    {
+      "id": "holidays",
+      "question": "What is the procedure regarding university holidays and student employees?",
+      "answer": ["Should you need your student workers during holiday periods (i.e. spring break, breaks between semesters) please work out these details with the student at the beginning of employment."]
+    },
+    {
+      "id": "wages",
+      "question": "What is the recommended salary for student employees?",
+      "answer": [
+        "Basic: $7.25 to $12.00. Minimum or no skills, limited responsibilities, limited to no previous experience.",
+        "Intermediate: up to $18.00. Some special training required, may be of a complex or difficult nature.",
+        "Advanced: up to $25.00. Special skill(s) acquired through prior experience, through course work, or both required.",
+        "Project Based: determined per position.",
+        "Pre-Professional: up to $25.00. Positions for pre-veterinary and pre-pharmacy students who perform highly specialized task.",
+        "Pay increases are an excellent way to recognize students for merit, number of hours worked and seniority, and are often given on a semester or annual basis."
+       ]
+    },
+    {
+      "id": "post-wages",
+      "question": "Must a rate of pay be posted in the TRL job posting?",
+      "answer": [
+        "Yes. Students do not want to apply for a job unless they know how much it will pay. If rate of pay depends on qualifications, a base rate or range of rates can be posted."
+       ]
+    } ,
+    {
+      "id": "majors",
+      "question": "Can a specific academic major be listed as a requirement in the TRL job posting?",
+      "answer": [
+        "Unless there is a genuine reason that an applicant be in a specific course of study, it is not recommended that employers list Major as a requirement. Course of study alone does not indicate ability."
+       ]
+    } ,
+    {
+      "id": "interviews",
+      "question": "Is it necessary to interview student employees?",
+      "answer": [
+        "It is recommended that employers interview applicants before extending an offer for employment. In taking the time to make a more informed decision, employers will keep employees longer and find a better return in their investment."
+       ]
+    }    
+  ]
+}

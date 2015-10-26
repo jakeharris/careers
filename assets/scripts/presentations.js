@@ -1,3 +1,4 @@
+// input validation
 $(function () {
   
   $('#presentations input').on('change keyup', function () {
@@ -31,11 +32,11 @@ $(function () {
     // Primary contact
     if($('input[name="contact"]').val() === '') incompleteFields.push('contact')
     if($('input[name="email"]').val() === '') incompleteFields.push('email')
-    if($('input[name="office"]').val() === '') incompleteFields.push('office')
-    if($('input[name="cell"]').val() === '') incompleteFields.push('cell')
+    if(($('input[name="office"]').val() === '' || !/(((\+?1(-|\s){1})?\(?([2-9]{1}\d{2})?\)?(-|\s)?([2-9]{1}\d{2}))|4)?(-|\s)?([2-9]{1}\d{3})/.test($('input[name="office"]').val()))
+    && ($('input[name="cell"]').val()   === '' || !/(((\+?1(-|\s){1})?\(?([2-9]{1}\d{2})?\)?(-|\s)?([2-9]{1}\d{2})))(-|\s)?([2-9]{1}\d{3})/   .test($('input[name="cell"]'  ).val())))
+      incompleteFields.push('phone')
     
     if(incompleteFields.length > 0) {
-      console.log($('#presentations input[type="submit"]')[0])
       $('#presentations input[type="submit"]')[0].disabled = 'disabled'
       return false
     }
@@ -66,4 +67,27 @@ $(function () {
     $('.add-secondary').hide()
     $('.secondary').show()
   })
-})
+});
+
+// datetimepicker stuff
+$(function () {
+  $('#date').datetimepicker({
+    defaultDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000),
+    daysOfWeekDisabled: [0,6],
+    format: 'MM/DD/YYYY'
+  })
+  $('#time-start').datetimepicker({
+    defaultDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000),
+    stepping: 5,
+    format: 'LT'
+  })
+  $('#time-end').datetimepicker({
+    defaultDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000 + 60 * 60 * 1000),
+    stepping: 5,
+    format: 'LT',
+    minDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000)
+  })
+  $('#time-start').on('dp.change', function (e) {
+      $('#time-end').data("DateTimePicker").minDate(e.date);
+  })
+});

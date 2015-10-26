@@ -1,9 +1,11 @@
 ---
 ng-app: career-center-events
-name: events
+name: events-page
 type: events
 title: Events | Career Center
 layout: no-social.hbs
+component:
+- calendar
 ---
 
 <div class="content extra-content events">
@@ -15,8 +17,7 @@ layout: no-social.hbs
         <div class="event-date-day">[[ event.date.day ]]</div>
       </div>
       <div class="event-details">
-        <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-        <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
+        <div class="event-details-name">[[ event.name ]]</div>
         <div class="event-details-location">[[ event.location ]]</div>
         <div class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
       </div>
@@ -33,8 +34,7 @@ layout: no-social.hbs
         <div class="event-date-day">[[ event.date.day ]]</div>
       </div>
       <div class="event-details">
-        <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-        <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
+        <div class="event-details-name">[[ event.name ]]</div>
         <div class="event-details-location">[[ event.location ]]</div>
         <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
         <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>

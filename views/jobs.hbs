@@ -3,9 +3,12 @@ ng-app: career-center-jobs
 title: Tiger Recruiting Link | Career Center
 name: jobs
 type: jobs
-path-to-root: http://auburn.edu/career/
+path-to-root: http://www.auburn.edu/career/
 analytics-token: UA-12338791-3
 layout: default.hbs
+component:
+- calendar
+- sponsors
 ---
 
 <div class="content extra-content flex content--no-padding">
@@ -16,12 +19,12 @@ layout: default.hbs
       <div class="buttons">
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/sso/students/">Current students sign in</a>
         <a class="flat-btn flat-btn--half" href="https://auburn-csm.symplicity.com/students/">Alumni sign in</a>
-        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
+        <a class="flat-btn flat-btn--half flat-btn--white" href="jobs/tipsheets.html">View tips</a>
       </div>
     </div>
   </form>
   <div class="events" ng-controller="calendar-ctrl">
-    <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
+    <h2><a href="events">Upcoming Events</a></h2>
     <ul>
       <li class="event" ng-repeat="event in events">
         <div class="event-date">
@@ -35,7 +38,7 @@ layout: default.hbs
         </div>
       </li>
     </ul>
-    <a class="flat-btn flat-btn--auto" href="http://www.auburn.edu/career/events/">More events</a>
+    <a class="flat-btn flat-btn--auto" href="events">More events</a>
   </div>
 </div>
 
@@ -72,12 +75,12 @@ layout: default.hbs
 <div class="row resources flex content extra-content content--no-padding">
   <div class="resource-buttons">
     <div>
-      <a href="http://www.issuu.com/aucc/docs/handbook_3.2_color_is"><img class="resource-button resource-button--blue" src="assets/images/handbook.png" /></a>
+      <a href="http://issuu.com/aucc/docs/jsg_f15_color/1"><img class="resource-button resource-button--blue" src="assets/images/handbook.png" /></a>
       <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/resume/index.html"><img class="resource-button resource-button--green" src="assets/images/resume-writing.png" /></a>
     </div>
     <div>
-      <a href="http://www.auburn.edu/career/experience/"><img class="resource-button resource-button--yellow" src="assets/images/gain-experience.png" /></a>
-      <a href="http://www.auburn.edu/career/mock/"><img class="resource-button resource-button--orange" src="assets/images/interview-prep.png" /></a>
+      <a href="experience"><img class="resource-button resource-button--yellow" src="assets/images/gain-experience.png" /></a>
+      <a href="interviews"><img class="resource-button resource-button--orange" src="assets/images/interview-prep.png" /></a>
     </div>
   </div>
   <div class="widget">
@@ -115,32 +118,12 @@ layout: default.hbs
 
 <div class="row sponsors content extra-content">
   <h2 class="sponsors-header">Sponsors</h2>
-  <div class="flex sponsors-content">
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.adtran.com/"><img src="assets/images/sponsors/tech-eng/adtran.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.ascendmaterials.com/"><img src="assets/images/sponsors/tech-eng/ascend.png" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.chevron.com/"><img src="assets/images/sponsors/tech-eng/chevron.gif" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.evonik.com/en/Pages/default.aspx"><img src="assets/images/sponsors/tech-eng/evonik.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://corporate.exxonmobil.com/"><img src="assets/images/sponsors/tech-eng/exxon-mobil.ps" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.gp.com/"><img src="assets/images/sponsors/tech-eng/georgia-pacific.eps" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://harris.com/"><img src="assets/images/sponsors/tech-eng/harris.eps" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.johnsoncontrols.com/"><img src="assets/images/sponsors/tech-eng/johnson-controls.bmp" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.milliken.com/en-us/Pages/default.aspx"><img src="assets/images/sponsors/tech-eng/milliken.png" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="https://www.neptunetg.com/home/"><img src="assets/images/sponsors/tech-eng/neptune.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.southerncompany.com/"><img src="assets/images/sponsors/tech-eng/southern-company.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.altec.com/"><img src="assets/images/sponsors/tech-eng/altec.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.amec.com/"><img src="assets/images/sponsors/tech-eng/amec.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.globaldenso.com/en/"><img src="assets/images/sponsors/tech-eng/denso.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.hondaalabama.com/"><img src="assets/images/sponsors/tech-eng/honda.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.michelinman.com/"><img src="assets/images/sponsors/tech-eng/michelin.gif" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.pandj.com/"><img src="assets/images/sponsors/tech-eng/phillips-and-jordan.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.saic.com/"><img src="assets/images/sponsors/tech-eng/saic.png" class="grayscale grayscale-fade"></img></a></div>
-
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.enterprise.com/"><img src="assets/images/sponsors/erac.JPG" class="grayscale grayscale-fade"></img></a></div>
-
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://coyote.com"><img src="assets/images/sponsors/all majors/coyote.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.sherwin-williams.com/"><img src="assets/images/sponsors/all majors/sherwin-williams.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="assets/images/sponsors/all majors/tower-loan.jpg" class="grayscale grayscale-fade"></img></a></div>
-    <div class="sponsor"><span class="vert-centerer"></span><a href="http://www.towerloan.com/"><img src="assets/images/sponsors/all majors/callidus-cloud.png" class="grayscale grayscale-fade"></img></a></div>
-
+  <div class="sponsors-content" ng-controller="sponsors-ctrl">
+    <div class="sponsor" ng-repeat="sponsor in sponsors">
+      <span class="vert-centerer"></span>
+      <a href="[[ sponsor.url ]]">
+        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade"></img>
+      </a>
+    </div>
   </div>
 </div>

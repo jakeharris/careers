@@ -5,6 +5,12 @@ type: home
 title: Career Center
 path-to-root: ./
 layout: default.hbs
+component:
+- calendar
+- twitter
+- blogger
+- hours
+- sponsors
 ---
 
 <div class="home-content content extra-content flex content--no-padding">
@@ -29,13 +35,20 @@ layout: default.hbs
         <li data-target="#cc-carousel" data-slide-to="3"></li>
         <li data-target="#cc-carousel" data-slide-to="4"></li>
         <li data-target="#cc-carousel" data-slide-to="5"></li>
-        <li data-target="#cc-carousel" data-slide-to="6"></li>
       </ol>
 
       <div class="carousel-inner">
         <div class="item active">
-          <a href="aboutus">
-            <img src="assets/images/walk-in-hours.png" alt="...">
+          <a href="https://vimeo.com/141061041">
+            <img src="assets/images/tip-of-the-week.png" alt="...">
+          </a>
+        </div>
+        <div class="item">
+          <img src="assets/images/wicked-walk-ins.png" alt="...">
+        </div>
+        <div class="item">
+          <a>
+            <img src="assets/images/go-government.png" alt="...">
           </a>
         </div>
         <div class="item">
@@ -44,23 +57,8 @@ layout: default.hbs
           </a>
         </div>
         <div class="item">
-          <a href="students/events/iptjf.html">
-            <img src="assets/images/events/IPTJF_Homepage(F15).png" alt="...">
-          </a>
-        </div>
-        <div class="item">
-          <a href="students/events/tech.html">
-            <img src="assets/images/events/ETCE_Homepage(F15).png" alt="...">
-          </a>
-        </div>
-        <div class="item">
-          <a href="students/events/gpsf.html">
-            <img src="assets/images/events/GPSF_Homepage(F15).png" alt="...">
-          </a>
-        </div>
-        <div class="item">
-          <a href="students/events/eid.html">
-            <img src="assets/images/events/EID_Homepage(F15).png" alt="...">
+          <a href="http://www.auburn.edu/academic/provost/finishin4/index.html">
+            <img src="assets/images/finish-in-four.jpg" alt="...">
           </a>
         </div>
         <div class="item">
@@ -91,17 +89,18 @@ layout: default.hbs
       <div class="times">
         <i class="fa icon-clock-o times-icon"></i>
         <div class="times-address" ng-controller="hours-ctrl">
-          <p ng-if="holiday">[[ holiday ]]</p>
+          
+          <p class="emphasized" ng-if="holiday">[[ holiday ]]</p>
           <div ng-if="office">
             <h6>Hours</h6>
             <p ng-repeat="hours in office">
-              <span ng-if="[[ hours.startDay ]]">[[ hours.startDay ]]-[[ hours.endDay ]]</span> [[ hours.startTime ]]-[[ hours.endTime ]]
+              <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
             </p>
           </div>
           <div ng-if="walkIn">
             <h6>Walk-ins</h6>
             <p ng-repeat="hours in walkIn">
-              <span ng-if="[[ hours.startDay ]]">[[ hours.startDay ]]-[[ hours.endDay ]]</span> [[ hours.startTime ]]-[[ hours.endTime ]]
+              <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
             </p>
           </div>
           <p class="subtle">
@@ -138,8 +137,7 @@ layout: default.hbs
             <div class="event-date-day">[[ event.date.day ]]</div>
           </div>
           <div class="event-details">
-            <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-            <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
+            <div class="event-details-name">[[ event.name ]]</div>
             <div class="event-details-location">[[ event.location ]]</div>
             <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
             <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
@@ -170,7 +168,7 @@ layout: default.hbs
       <ul ng-controller="blogger-ctrl">
         <li class="blog-post" ng-repeat="post in blog.posts">
           <h3><a class="h3-a post-title" href="[[ post.url ]]">[[ post.title ]]</a></h3>
-          <div class="post-details">[[ post.date ]]</div>
+          <div class="post-details"><a class="tweet-date" href="[[post.author.url ]]">posted by [[ post.author.name ]]</a></div>
         </li>
       </ul>
       <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
@@ -180,71 +178,11 @@ layout: default.hbs
 </div>
 <div class="row sponsors content extra-content">
   <h2 class="sponsors-header">Sponsors</h2>
-  <div class="sponsors-content">
-    <div class="sponsor">
+  <div class="sponsors-content" ng-controller="sponsors-ctrl">
+    <div class="sponsor" ng-repeat="sponsor in sponsors">
       <span class="vert-centerer"></span>
-      <a href="https://www.calliduscloud.com/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/callidus-cloud.png" class="grayscale grayscale-fade"></img>
-      </a>
-    </div>
-
-    <div class="sponsor">
-      <span class="vert-centerer"></span>
-      <a href="http://www.globaldenso.com/en/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/denso.jpg" class="grayscale grayscale-fade"></img>
-      </a>
-    </div>
-
-    <div class="sponsor">
-      <span class="vert-centerer"></span>
-      <a href="https://www.gp.com/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/georgia-pacific.eps" class="grayscale grayscale-fade"></img>
-      </a>
-    </div>
-
-    <div class="sponsor">
-      <span class="vert-centerer"></span>
-      <a href="http://www.hondaalabama.com/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/honda.jpg" class="grayscale grayscale-fade"></img>
-      </a>
-    </div>
-
-    <div class="sponsor">
-      <span class="vert-centerer"></span>
-      <a href="http://www.michelinman.com/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/michelin.gif" class="grayscale grayscale-fade"></img>
-      </a>
-    </div>
-
-    <div class="sponsor">
-      <span class="vert-centerer"></span>
-      <a href="https://www.neptunetg.com/home/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/neptune.jpg" class="grayscale grayscale-fade"></img>
-      </a>
-    </div>
-
-    <div class="sponsor">
-      <span class="vert-centerer"></span>
-      <a href="https://www.quincycompressor.com/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/quincy-compressor.jpg" class="grayscale grayscale-fade"></img>
-      </a>
-    </div>
-    <div class="sponsor">
-      <span class="vert-centerer"></span>
-      <a href="https://www.shawfloors.com/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/shaw.jpg" class="grayscale grayscale-fade"></img>
-      </a>
-    </div>
-    <div class="sponsor">
-      <span class="vert-centerer"></span>
-      <a href="https://www.udatechnologies.com/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/uda.png" class="grayscale grayscale-fade"></img>
-      </a>
-    </div>
-    <div class="sponsor">
-      <span class="vert-centerer"></span>
-      <a href="https://www.unum.com/">
-        <img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/unum.jpg" class="grayscale grayscale-fade"></img>
+      <a href="[[ sponsor.url ]]">
+        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade"></img>
       </a>
     </div>
   </div>
