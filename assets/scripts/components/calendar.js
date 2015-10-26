@@ -56,7 +56,7 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
   if(employerMode) {
     this.events.forEach(function (event, index, events) {
       if('employer-event' in event) {
-        if(this.img === undefined && event.abbrev !== '') 
+        if(this.img === undefined && event.abbrev !== undefined) 
           this.img = 'assets/images/events/' + event.abbrev + '-slide.png'
         if(event.abbrev === undefined)
           event.url = event['employer-event'].registration
