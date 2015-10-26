@@ -58,7 +58,7 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
       if('employer-event' in event) {
         if(this.img === undefined && event.abbrev !== '') 
           this.img = '../assets/images/events/' + event.abbrev + '-slide.png'
-        if(event['employer-event'].external === 'true')
+        if(event.abbrev === undefined && event.abbrev === '')
           event.url = event['employer-event'].registration
         else event.url = 'employers/events/' + event.abbrev + '.html'
       }
