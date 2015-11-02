@@ -1,0 +1,101 @@
+---
+name: oth-about
+type: auburn-on-the-hill
+title: Auburn on the Hill | Career Center
+path-to-root: ../
+layout: default.hbs
+---
+
+<section class="content">
+  <h2>What is Auburn on the Hill?</h2>
+</section>
+<section class="flex auoth-buttons">
+  <a class="flat-btn flat-btn--half" href="auburn-on-the-hill/about.html#faq">Frequently Asked Questions</a>
+  <a class="flat-btn flat-btn--half flat-btn--white" href="auburn-on-the-hill">Back to Overview</a>
+</section>
+
+<section class="content extra-content auoth-content">
+  <h3>Government.</h3>
+  <blockquote>
+    <em class="muted">
+      "I learned so much more about our government 
+      and how it works by being involved than I 
+      ever learned in a government class."
+    </em>
+    <p class="muted"><em>intern, summer 2012</em></p>
+  </blockquote>
+  <p>
+    Auburn on the Hill connects Auburn University 
+    students to prestigious congressional 
+    internship opportunities in Washington D.C. 
+  </p>
+  <ul class="attributes">
+    <li class="briefcase">Connect with the nation's leaders and their staffs</li>
+    <li class="law">Learn about government procedures</li>
+    <li class="tie">Get leadership training</li>
+  </ul>
+</section>
+<section class="content extra-content auoth-content">
+  <h3>Culture.</h3>
+  <p>
+    Beyond the amazing professional experience, 
+    you will meet people from around the world 
+    and enjoy the many opportunities 
+    available in our nation’s capitol.
+  </p>
+  <ul class="attributes">
+    <li class="office">Visit museums and cultural centers</li>
+    <li class="audiotrack">Go to a play or concert</li>
+    <li class="baseball">See major sporting events</li>
+  </ul>
+</section>
+<section class="content extra-content auoth-content">
+  <h3>You.</h3>
+  <p>
+    Most importantly, a congressional internship 
+    can enhance your resume, expand your 
+    horizons, and help you achieve your career 
+    goals.
+  </p>
+  <ul class="attributes">
+    <li class="compass">Explore career options</li>
+    <li class="graduation-cap">Enrich your education</li>
+    <li class="star-full">Pursue your dream</li>
+  </ul>
+</section>
+<section class="contact-content">
+  <div class="contact flex-half content extra-content auoth-content">
+    <h3>
+      Interested? 
+    </h3>
+    <div class="contact-details">
+      <img src="assets/images/staff/meaghan.jpg">
+      <div class="contact-info">
+        <p class="name">Meaghan Weir</p>
+        <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
+        <p class="email"><a href="mailto:meaghan@auburn.edu">meaghan@auburn.edu</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="faq" class="faq content extra-content auoth-content">
+  <h3 class="faq-header">Frequently Asked Questions</h3>
+  <div class="panel-group faq" id="faq" role="tablist" aria-multiselectable="true">
+    {{#each oth.question }}
+    <div class="panel panel-default">
+      <div class="panel-heading accordion-header" role="tab" id="{{ id }}-heading">
+        <h4 class="panel-title faq-question">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ id }}" aria-expanded="false" aria-controls="{{ id }}">
+            {{ question }}
+          </a>
+        </h4>
+      </div>
+      <div id="{{ id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ id }}-heading">
+        <div class="panel-body faq-answer">
+          {{ answer }}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>

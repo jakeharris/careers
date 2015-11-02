@@ -1,0 +1,69 @@
+---
+name: oth-home
+type: auburn-on-the-hill
+title: Auburn on the Hill | Career Center
+path-to-root: ../
+layout: default.hbs
+---
+<section class="content auoth-banner">
+</section>
+<section class="content auoth-content">
+  <p class="auoth-tagline">
+    Intern with Congress. Network with real politicians. Enhance
+    your resume.
+  </p>
+  <div class="buttons">
+    <a class="flat-btn flat-btn--half" href="auburn-on-the-hill/about.html">Learn More</a>
+    <a class="flat-btn flat-btn--half flat-btn--white" 
+       href="https://sites.auburn.edu/academic/provost/us/CareerCenter/oth/default.aspx">Current Intern Sign In</a>
+  </div>
+</section>
+
+<section class="flex intern-info">
+  <div class="intern-housing content content--no-padding intern-region region">
+    <div class="hero">
+      <div class="region-header hero-content">
+        <h2>Housing for Interns in Washington, D.C.</h2>
+      </div>
+    </div>
+    <section class="content region-content">
+      <a class="collapsed accordion-header" data-toggle="collapse" id="housing-heading" href="#housing" role="tab" aria-expanded="false" aria-controls="housing">
+        <i></i>
+      </a>
+      <div style="height: 0px;" aria-expanded="false" id="housing" class="panel-collapse collapse" role="tabpanel" aria-labelledby="housing-heading">
+        {{#each oth.housing}}
+          {{#if link}}
+            <a class="listing" href="{{ link }}">{{ name }}<span class="muted"> {{ location }}</span></a>
+          {{else}}
+            <a class="listing coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+          {{/if}}
+        {{/each}}
+      </div>
+    </section>
+  </div>
+  <div class="internship-opportunities content content--no-padding intern-region region">
+    <div class="hero">
+      <div class="region-header hero-content">
+        <h2>Internship Opportunities and Deadlines</h2>
+      </div>
+    </div>
+    <section class="content region-content">
+      <a class="collapsed accordion-header" data-toggle="collapse" id="opportunities-heading" href="#opportunities" role="tab" aria-expanded="false" aria-controls="opportunities">
+        <i></i>
+      </a>
+      <div style="height: 0px;" aria-expanded="false" id="opportunities" class="panel-collapse collapse" role="tabpanel" aria-labelledby="opportunities-heading">
+        {{#each oth.opportunity}}
+          {{#if link}}
+            <a class="listing" href="{{ link }}">
+              {{ name }}
+              <span class="muted"> {{ deadline }}</span>
+              {{#if requirements}}<span class="muted"> Requires {{ requirements }}</span>{{/if}}
+            </a>
+          {{else}}
+            <a class="listing coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+          {{/if}}
+        {{/each}}
+      </div>
+    </section>
+  </div>
+</section>

@@ -1,5 +1,11 @@
 @import 'internships';
 
+.recruiting-link, .welcome,
+.flex-third, .guide-step {
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
 .hero {
   width: 100%;
   background: white;
@@ -23,9 +29,6 @@
   & > h1 {
     color: $thisislightorange;
     font-size: 12rem;
-  }
-  & > h2 {
-    padding: 3rem;
   }
 }
 
@@ -100,7 +103,7 @@
     position: relative;
     
     font-family: $header-font-family;
-    font-size: 2.5rem;
+    font-size: 2rem;
     
     margin: 0;
     padding-bottom: 1rem;
@@ -148,6 +151,14 @@
     color: $box-shadow; 
   }
 }
+@media (min-width: $small-screen-size) {
+  .contact {
+    .address, .phone, .email, .name {
+      font-size: 2.5rem; 
+    }
+  }
+}
+
 .flat-btn.flex-half {
   @extend .flex-half;
   height: 100%;
@@ -311,6 +322,9 @@ ol {
 .faq-header::before {
   content: "FAQ";
 }
+.faq {
+  counter-reset: questionNumber;
+}
 .faq .panel.panel-default {
   border-radius: 0; 
   border: 1px solid $box-shadow;
@@ -324,12 +338,15 @@ ol {
       padding: 1.5rem 0;
       max-width: 600px;
     }
+    &:not(.collapsed) {
+      border-top: 1px solid $box-shadow; 
+    }
   }
   .panel-heading {
     background: white; 
     color: $thisisdarkblue;
     padding: 0;
-    border-bottom: 1px solid $box-shadow;
+    border-bottom: none;
     border-radius: 0;
   }
   .panel-heading:hover {
@@ -346,6 +363,16 @@ ol {
   a {
     padding: 1.5rem 3rem; 
     display: block;
+    &:hover {
+      color: white;
+    }
+  }
+  a::before {
+    font-family: $header-font-family;
+    counter-increment: questionNumber;
+    content: counter(questionNumber) " ";
+    font-size: 2rem;
+    padding-right: 3rem;
   }
   a::after {
     @extend .icon;
@@ -353,9 +380,6 @@ ol {
     
     position: absolute;
     right: 3rem;
-  }
-  a:hover {
-    color: white; 
   }
 }
 
@@ -418,13 +442,14 @@ ol {
   counter-increment: step;
   
   & > .icon {
+    color: white;
     &::after {
+      color: white;
       font-family: $header-font-family;
       content: counter(step);
       position: relative;
       top: 1.8rem;
       left: 3.4rem;
-      color: white;
       &:hover {
         color: white; 
       }
@@ -466,7 +491,6 @@ a.icon:hover {
 }
 .icon {
   background: #ccc;
-  color: white;
   border-radius: 10rem 10rem;
   font-size: 6rem;
   width: 10rem;
@@ -493,16 +517,22 @@ a.icon:hover {
   padding-top: 2rem;
 }
 
+<<<<<<< HEAD
 @media (min-width: $small-screen-width) {
+=======
+.guide-step > .icon,
+.faq-question:hover > a {
+  color: white !important;
+}
+
+@media (min-width: $small-screen-size) {
+>>>>>>> master
   .hero .img-replace {
     font-size: 5rem; 
   }
   .attributes > .attribute {
     flex-basis: 33.33333%;
     width: 33.33333%;
-  }
-  .at-auburn {
-    display: inline; 
   }
   .content--tips .buttons {
     align-items: flex-start; 
@@ -584,6 +614,5 @@ a.icon:hover {
     font-size: 2.5rem; 
   }
 }
-
 
 

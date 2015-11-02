@@ -4,7 +4,6 @@ name: employer-events
 type: events
 title: Events | Career Center
 layout: employers.hbs
-path-to-root: ../../
 component: 
 - calendar
 ---
@@ -24,9 +23,6 @@ component:
           <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
           <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
           <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
-          <a ng-if="event['employer-event'].registration != ''" class="event-details-registration" href="[[ event['employer-event'].registration ]]">Register</a>
-          <a ng-if="event['employer-event']['tip-sheet'] != ''" class="event-details-tip-sheet" href="[[ event['employer-event']['tip-sheet'] ]]">Download Tip Sheet</a>
-          <a ng-if="event['employer-event'].contact != ''" class="event-details-tip-sheet" href="mailto:[[ event['employer-event'].contact.email ]]">Contact Event Coordinator</a>
         </div>
       </li>
     </ul>
@@ -48,9 +44,6 @@ component:
         <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
         <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
         <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
-        <a ng-if="event['employer-event'].registration != ''" class="event-details-registration" href="[[ event['employer-event'].registration ]]">Register</a>
-        <a ng-if="event['employer-event']['tip-sheet'] != ''" class="event-details-tip-sheet" href="[[ event['employer-event']['tip-sheet'] ]]">Download Tip Sheet</a>
-        <a ng-if="event['employer-event'].contact != ''" class="event-details-tip-sheet" href="mailto:[[ event['employer-event'].contact ]]">Contact Event Coordinator</a>
       </div>
     </li>
   </ul>

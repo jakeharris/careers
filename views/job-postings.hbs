@@ -1,14 +1,12 @@
 ---
-ng-app: career-center-hire
-name: off-campus
+name: job-postings
 type: student-employment
 layout: employers.hbs
-title: Off-Campus Employment | Career Center
-analytics-token: UA-12338791-4
+title: On-Campus Interviewing | Career Center
 ---
 
 <section class="content hero">
-  <h2>Off-Campus Employment</h2>
+  <h2>Job Postings</h2>
 </section>
 
 <section class="flex">
@@ -52,11 +50,11 @@ analytics-token: UA-12338791-4
   <div class="content extra-content contact welcome">
     <h3>Point of Contact</h3>
     <div class="contact-details">
-      <img src="assets/images/staff/lauren.jpg">
+      <img src="assets/images/staff/jay.jpg">
       <div class="contact-info">
-        <p class="name">Lauren Hobbs</p>
-        <p class="phone"><a href="tel:(334) 844-3867">(334) 844-3867</a></p>
-        <p class="email"><a href="mailto:hobbs@auburn.edu">hobbs<span class="at-auburn">@auburn.edu</span></a></p>
+        <p class="name">Jay Skipworth</p>
+        <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
+        <p class="email"><a href="mailto:skipworth@auburn.edu">skipworth</a></p>
       </div>
     </div>
   </div>
@@ -105,30 +103,5 @@ analytics-token: UA-12338791-4
     <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/14" class="flat-btn flat-btn--white flex-quarter">Reviewing Applications</a>
     <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/14" class="flat-btn                 flex-quarter">Third Party Policy</a>
     <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/4"  class="flat-btn flat-btn--white flex-quarter">Interviewing</a>
-  </div>
-</section>
-
-<section class="content extra-content">
-  <h3 class="faq-header"></h3>
-  
-  <div class="panel-group faq" id="faq" role="tablist" aria-multiselectable="true">
-    {{#each off-campus-faq.question }}
-    <div class="panel panel-default">
-      <div class="panel-heading accordion-header" role="tab" id="{{ id }}-heading">
-        <h4 class="panel-title faq-question">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ id }}" aria-expanded="false" aria-controls="{{ id }}">
-            {{ question }}
-          </a>
-        </h4>
-      </div>
-      <div id="{{ id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ id }}-heading">
-        <div class="panel-body faq-answer">
-          {{#each answer}}
-            <p>{{ this }}</p>
-          {{/each}}
-        </div>
-      </div>
-    </div>
-    {{/each}}
   </div>
 </section>

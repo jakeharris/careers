@@ -1,267 +1,348 @@
-<!DOCTYPE html>
-<html><!-- InstanceBegin template="/Templates/jobs.dwt" codeOutsideHTMLIsLocked="false" -->
-<head>
-<title>hire.auburn.edu - Auburn University</title>
-<link rel="stylesheet" href="http://www.auburn.edu/template/styles/main.css" media="screen" type="text/css">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-h2 {
-	font-size: 2em;
-}
-</style>
-</head>
-<body>
-<div id="pageWrap"> 
-  <div id="headerWrap">
-    <div id="header">
-      <div id="logo">
-      	<a href="http://www.auburn.edu"><img src="http://www.auburn.edu/template/styles/images/headerLogo.png" alt="Auburn University Homepage" /></a>
-      </div>
-      <div id="headerTitle">
-        <div class="topLinks">
-          <a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a> | 
-          <a href="http://www.auburn.edu/map">Map</a> | 
-          <a href="http://www.auburn.edu/main/auweb_campus_directory.html" class="lastTopLink">People Finder</a>
-        </div>
-        <form action="http://search.auburn.edu" id="searchForm" method="get">
-          <div class="searchBox">
-            <input type="text" name="q" id="q" accesskey="q" size="28" tabindex="1" class="searchField" onfocus="if(this.value=='Search AU...'){this.value='';this.style.color='black'}" onblur="if(this.value=='')this.value='Search AU...';this.style.color='grey'" value="Search AU..." />
-            <input type="image" src="http://www.auburn.edu/template/styles/images/searchButton2.png" name="sa" accesskey="z" tabindex="2" alt="Search" value="Submit" class="searchButton" />
-          </div>
-          <input type="hidden" name="cx" value="006456623919840955604:pinevfah6qm" />
-          <input type="hidden" name="ie" value="utf-8" />
-          <label for="q" style=" position:absolute; left:-9999px; visibility:hidden;">Enter your search terms</label>
-        </form>
-        <div class="titleArea"><!-- InstanceBeginEditable name="unitTitle" -->Tiger Recruiting Link<!-- InstanceEndEditable --></div>
-      </div>
+
+
+<!doctype html>
+<html lang="en" ng-app="none">
+  <head>
+    <base href="../../">
+    <!-- Meta Data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <title>Communication and Media Career Day</title>
+
+    <!-- Bootstrap & Core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Application CSS -->
+    <!-- build:css assets/styles/emp-eid.min.css -->
+      <link rel=stylesheet href="assets/styles/employer-event-pages.css">
+    <!-- endbuild -->
+
+    <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
+    <!--[if lt IE 9]>
+<script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
+<script src="//cdn.auburn.edu/assets/js/respond.src.js"></script>
+<link href="//cdn.auburn.edu/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
+<link href="assets/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
+<script src="assets/js/respond.proxy.js"></script>
+<![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
+
+    <!-- Angular & Core JS -->
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" defer></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js" defer></script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" defer></script> 
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" defer></script> 
+    <script src="//cdn.auburn.edu/assets/js/default.min.js" defer></script>
+    
+    <!-- Application-specific CSS/JS -->
+    <!-- build:js assets/scripts/emp-eid.min.js -->
+      <script src="assets/scripts/components/nav.js" defer></script>
+      <script src="assets/scripts/components/touch-start.js" defer></script>
+      <script src="assets/scripts/components/popover.js" defer></script>
+      
+        <script src="assets/scripts/components/tooltip.js" defer></script>
+      
+      <script src="assets/scripts/employer-event-pages.js" defer></script>
+    <!-- endbuild -->
+    
+  </head>
+
+  <body class="emp-eid">
+    <header role="banner">
+
+  <div class="preheader" id="preheader">
+    <div class="hexes">
+      <div class="hex"><a href="http://auburn.edu"><img src="assets/images/AU-emblem.png"></a></div>
     </div>
-		<table class="nav">
-      <tr>
-        <td><a href="http://www.auburn.edu/career">Career Center HOME</a></td>
-        <td><a href="http://business.auburn.edu/student-services/office-of-professional-career-development/" target="_blank">College of Business OPCD</a></td>
-        </tr>
-    </table>
+    <h1><a href="./employers">Career Center</a></h1>
   </div>
-  <div id="contentArea">
-    <div class="contentDivision"> 
-      <p class="breadcrumb"><!-- InstanceBeginEditable name="breadcrumb" --><a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/employers/index.html">hire.auburn.edu</a> &gt; <a href="index.html">Career Events</a> &gt; Communications &amp; Marketing Career Day<!-- InstanceEndEditable --> </p>
-			<!-- InstanceBeginEditable name="body" -->
-      <h1>Communication &amp; Media Career Day</h1>
-      <div style="width:20%; height:650px; float:left; padding-right:10px; padding-top:20px">
-        <p align=center><a href="https://auburn-csm.symplicity.com/events/sp14cmcd" target="_blank"><img src="../../buttons/buttons_jpegs/events_register_isjf.jpg" alt="Register for EID" width="160" height="55"></a></p>
-<p align=center><a href="https://auburn-csm.symplicity.com/events/students.php?cf=sp14cmcd" target="_blank"><img src="../../buttons/buttons_jpegs/events_attendees.jpg" width="160" height="55" alt="See Who's Attending"></a></p>
-<p align=center><a href="cmcd.pdf" target="_blank"><img src="../../buttons/buttons_png/button_print_tipsheet.png" width="160" height="55"></a><br>
-      </p>
-        <p align=center>&nbsp;</p>
-      </div>
-      <div style="width:48%; float:left; padding-left:20px;">
-        <p class="blue"><strong>Wednesday, March 5, 2014<br>
-          9:00 AM - 3:00 PM<br>
-        Student Center Ballroom</strong></p>
-        <h6>Event Description</h6>
-        <p>The Communication &amp; Media Career Day will attract students who are interested in obtaining summer internships or full &amp; part-time summer employment to gain experience if their field of study. Participating employers can expect to meet students of all class levels majoring in Communication, Journalism, Public Relations, Radio, Television and Film, and Agricultural Communication.</p>
-        <h6>Employer Information</h6>
-        <p>Internship and Summer Job Fair Details</p>
-        <ul>
-          <li><a href="#fee">Registration Fee</a></li>
-          <li><a href="#w9">W-9 Form Information</a></li>
-          <li><a href="#schedule">Event Schedule</a><br>
-          </li>
-          <div class="orangeDecorBar">&nbsp;</div>
-        </ul>
-        <p>Internship and Summer Job Fair Policies</p>
-        <ul>
-          <li><a href="#cancel">Cancellation and No Show Policy</a></li>
-          <li><a href="#setup">Setup and Equipment Information</a></li>
-          <li><a href="#shipping">Shipping and Exhibitor Guidelines</a></li>
-          <div class="orangeDecorBar">&nbsp;</div>
-        </ul>
-        <p>Internship and Summer Job Fair Travel</p>
-        <ul>
-          <li><a href="#hotel">Accommodations</a></li>
-          <li><a href="trans">Transportation and Parking</a></li>
-          <li><a href="directions">Directions</a></li>
-        </ul>
-      </div>
-      <div style="width:25%; height:675px; float:left;">
-        <h6>Need a place to stay?</h6>
-        <p align=center>We highly recommend <br>
-          The Hotel at Auburn 
-        University<br>
-        and Dixon Conference Center<br>
-        1-800-228-2876</p>
-        <p align=center><a href="https://bookings.ihotelier.com/bookings.jsp?groupID=1140148&hotelID=6493" target="_blank"><img src="../../buttons/buttons_jpegs/button_auhcc.jpg" alt="" name="auhccbutton" width="150" height="150"></a></p>
-      </div>
-      <h3>Internship and Summer Job Fair Details</h3>
-      <p>&nbsp;</p>
-      <h6><a id="fee"></a>Registration Fee</h6>
-      <p><strong>EARLY BIRD REGISTRATION:</strong> A one hundred and fifty dollar ($150.00) Early Bird Registration Fee (by Friday, February 7) will include one 3 x 6 foot table and up to a two (2) representatives may attend.</p>
-      <p><strong>REGULAR REGISTRATION FEE: </strong>After Friday, February 7, a two hundred dollar ($200.00) Regular Registration Fee will include one 3 x 6 table and up to 2 representatives may attend.</p>
-      <p><strong><em>The total registration fee must be paid in full by Friday, January 21, 2014 to keep your reservation.</em></strong></p>
-      <p><span class="orange"><strong><a id="w9"></a>W-9 Form:</strong></span> If you need a completed and signed W-9 form before paying event fees, please contact Susan Salheiser at the contact information below. You may provide her with your organization's form or she can send you one from Auburn University.</p>
-      <p>Procurement &amp; Payment Services<br>
-        Attn: Susan Salheiser, Assistant II-Financial-Central<br>
-        311 Ingram Hall<br>
-        Auburn, AL 36849-5101<br>
-        Telephone: 334-844-3567, FAX: 334-844-4306, E-Mail: salhesu@auburn.edu</p>
-      <h6>Event Schedule</h6>
-      <p>Please arrive on time and be ready to see students 
-          at the start of the event (9:00 AM). If not present by 
-        9:30 AM, you will be considered a &ldquo;NO SHOW&rdquo;. Your space can then be assigned to another organization. </p>
-      <table width="70%" border="0" cellspacing="3" cellpadding="2">
-        <tr>
-          <td>7:30 AM-9:00 AM</td>
-          <td>Representative Breakfast, Registration and Space Setup</td>
-        </tr>
-        <tr>
-          <td>9:00 AM-10:00 AM</td>
-          <td>Student Registration, Student Browse and Schedule Interviews</td>
-        </tr>
-        <tr>
-          <td>10:00 AM-3:00 PM</td>
-          <td>Student Interviews</td>
-        </tr>
-        <tr>
-          <td>3:00 PM</td>
-          <td>Interviews End</td>
-        </tr>
-      </table>
-      <p>&nbsp;</p>
-      <p>Do not forget to schedule yourself a lunch break or any other breaks throughout the day as you may need. Please go to the Second Floor of the Student Center to Chick-fil-A and use the $10.00 meal card to purchase lunch.      </p>
-      <p>Please plan to stay until 3:00 PM. The time has 
-        been publicized and students expect company 
-      representatives to be available up until that time.</p>
-      <h3>Communication and Media Career Day Policies<br>
-        <br>
-      </h3>
-      <h6><a id="cancel"></a>Cancellation Policy</h6>
-      <p>There are no refunds for cancellations after Friday, February 21, 2014!  One half of the registration fee ($75.00 for Early Bird Registration* or $100 for Regular Registration) is charged for all cancellations prior to the deadline date whether the registration fee is paid in advance or not.  We would like for all participants in our programs (events) to pay the total registration fee in full by the deadline date to keep your reservation.  We understand that some might not be able to do this, so we are flexible in working with you.  Let us know in advance and we will be happy to accommodate you.  If your organization is registered for the event and no one shows up, your organization is expected to pay the balance due.  Failure to pay event fees will cause us to block your organization from utilizing any services available through our office until the matter is cleared.  Registration fees cannot be applied to future events. </p>
-      <p>Should you have to cancel, please call the Auburn University Career Center as soon as possible at (334) 844-3862 and ask to speak with Diane Thorne, Special Events Registration Manager.  An e-mail must be sent to Diane Thorne at thornde@auburn.edu explaining that you are officially canceling your organization's participation in the event.  Diane will send you an e-mail confirming your cancellation.  It is important to keep a copy of this communication as documentation for future reference. </p>
-      <p>Please understand that once you have registered and received a confirmation, you must abide by the CANCELLATION POLICY.  There are no exceptions!!  Any questions or concerns should be directed to Melvin K. Smith, Special Events Coordinator, (334) 844-4744 or mks@auburn.edu We appreciate your cooperation and support in our programs! </p>
-      <h6><a id="setup"></a>Setup and Equipment Details</h6>
-      <p>One 3x6 foot table and one chair will be provided per organization. Your display needs to fit within space provided!        *Electricity will be available! Please bring your own extension cords and power strips. </p>
-      <p><br>
-        <span class="orange"><strong>Display Guidelines</strong></span></p>
-      <p>Space is limited. No additional space can be provided.</p>
-      <p>Do not bring huge displays, furniture, or equipment.</p>
-      <p>Do not rearrange your table, occupy an adjacent vacant table or move to another location without approval from Melvin K.        Smith, Special Events Coordinator. Staff will be available to help you relocate and move your materials, if needed.</p>
-      <h3>Shipping and Exhibitors Guidelines</h3>
-      <p>&nbsp;</p>
-      <h6><a id="shipping"></a>Shipping to the Student Center</h6>
-      <p>Shipments of exhibit displays, materials or anything pertaining to the exhibit may be shipped no sooner than three (3) days        prior to function date. Accommodations for packages needing to arrive earlier must contact Melvin K. Smith, Special        Events Coordinator, (334) 844-4744 or mks@auburn.edu for approval! Storage space is very limited. We will do our very      best to work with you!</p>
-      <p>Please use our Preferred Carriers (Fedex and UPS) to ship materials! See the example of how each box or display        should be addressed for shipping to The Auburn University Student Center (AUSC). Your organization’s name is        required on the outside of all materials. Print off multiple pre-made labels) for your convenience (one (1) per box      or container to be shipped).</p>
-      <p>Make sure the representative(s) attending the event have ALL tracking numbers of packages that have        been shipped to HAUDCC prior to arriving at the event. We highly recommend you insure ALL of your      materials shipped!</p>
-      <p>On the day of the event, beginning at 8:00 am, representative(s) of your organization may go        to the Representative Registration Table in the Lobby outside of the 3rd Floor Ballroom of        the AUSC to pick-up your shipped materials. To receive the items from an Auburn        University Career Center staff member, a signature will be required from your      representative(s).</p>
-      <p><img src="/academic/provost/undergrad_studies/career/employers/events/shippinglabelcmcd.png" width="700" height="343"></p>
-      <h6>Shipping from the Student Center</h6>
-      <p>Patrons must make their own shipping arrangements, to include billing arrangements with the Preferred Carriers        (Fedex and UPS). The AUSC cannot provide billing arrangements, proper packing and labeling. The form must be filled      out completely with the organization’s account number!</p>
-      <p>After the Part Time Job Fair: ALL boxes must be appropriately labeled and taped! Please take packages to the        Representative Registration Table in the Lobby outside of the 3rd Floor Ballroom of the AUSC where a member of the        Auburn University Career Center will be available to check-in your materials for shipping out. AUSC will make one call to      each preferred carrier for pick-up!</p>
-      <p>Carriers used other than the Preferred Carriers (Fedex and UPS) should arrive by 1:00 pm no later than 2:00 pm to        pick-up materials at the Representative Registration Table in the Lobby outside of the 3rd Floor Ballroom of the AUSC the        day of the event. The representative(s) attending the event for the organization are responsible for making sure the      connection is made.</p>
-      <p>Auburn University will not hold packages awaiting pick-up. If the organization’s representative(s) do not attend the event,        the organization is responsible for making arrangements to get their packages.</p>
-      <h6>Exhibitors</h6>
-      <p>Decorations, signs, and posters must be coordinated with AUSC staff prior to displaying in the Student Center. No tacks,        nails, staples, tape or other fasteners are allowed. Exhibitors are liable for any defacement of the facility as a result of their      display!</p>
-      <p>The exhibitor is entirely responsible for the space leased by him/her and is responsible for keeping space free from any        conditions which would be dangerous to persons coming upon the premises.</p>
-      <p>The management of the AUSC reserves the right to restrict the operation of any exhibit, which in its opinion detracts        from the general character of the facility. This includes, but is not limited to, exhibits, which because of noise, flashing light,      methods of operation or display of unsuitable material are determined by management as objectionable.</p>
-      <p>The Auburn University Career Center and Student Center will not be responsible for any injury that may arise to        exhibitors or their employees or for loss of or any damage to any good from any course whatsoever while in transit to or      from or while in the AUSC.</p>
-      <p><strong><em>We request your full cooperation in observing these guidelines. Anything not included in the rules and regulation<br>
-      will be subject to the discretion of Auburn University management.</em></strong></p>
-      <h3>Communication &amp; Media Career Day Travel</h3>
-      <p>&nbsp;</p>
-      <h6><a id="hotel"></a>Accommodations</h6>
-                <center><a href="https://bookings.ihotelier.com/bookings.jsp?groupID=832606&hotelID=6493" target="_blank"><img src="../../buttons/buttons_jpegs/button_auhcc.jpg" alt="AUHCC" width="150" height="150" border="0"></a>
-        </center>
-        <center><a href="https://reservations.ihotelier.com/crs/g_reservation.cfm?groupID=570031&hotelID=6493" target="_blank">The Hotel at AU &amp; 
-                    Dixon Conference Center</a><br>
-334-821-8200 or 1-800-228-2876</center>
-        <p><br>
-      <p><br>
-        We highly recommend that you stay at The Hotel at Auburn 
-                      University and Dixon Conference Center and make your 
-                      reservations as soon as possible! Please inform them that you will 
-                      be attending the Internship and Summer Job Fair when 
-                      making reservations to get the $104.00 rate. (A block of rooms 
-        has been set aside but must be reserved at least ONE MONTH in advance for availability and rate.) <strong><span class="orange">**The special rate for this event is available until Friday, January 31, 2014.**</span></strong></p>
-        <p><strong>Government Rate:</strong> The Hotel at AU and Dixon Conference Center is pleased to offer a reduced rate for Federal Government employees and members of the military. Please call 334-821-8200 to make your reservation and request the per diem government rate of $77.00 with the Internship and Summer Job Fair. Be prepared to present a valid Federal or Military ID at check-in.</p>
-        <h6><a id="trans"></a>Transportation</h6>
-        <p><span class="orange"><strong>Car Rental:</strong></span> Enterprise Rent-A-Car 334-826-0227</p>
-        <p>The Hotel at AU &amp; Dixon Conference Center is within 5 minutes walking distance of the Auburn University campus and downtown Auburn shops and restaurants. </p>
-        <h6>Parking</h6>
-        <p>Please park in the Stadium Parking Deck (SPD) located at the end of Duncan Drive. The Parking Services          Department has agreed not to ticket the cars in the lot the entire day. Make sure you park between two (2)        white lines! Arrive EARLY because parking spaces fill quickly!        </p>
-        <p>You will receive a parking pass when you register for the event.</p>
-        <p><strong><em>-Our best recommendation is to take advantage of the parking we have available in the Stadium Parking Deck!</em></strong></p>
-        <p>The Parking Department is open 7:15 am until 4:15 pm, Monday through Friday, and can be contacted at 334-844-4143 with questions. Their office is in the South Quad Muli-Modal Parking Deck on the corner of Duncan and Lem Morrison Drive. </p>
-        <p>You must follow all parking rules and regulations set forth by the AU Parking Service. The Auburn University Career Center          cannot be responsible for tickets that are received while parked on campus, nor wheel-locks and towing fees as a result of      parking.</p>
-    <h6><a id="directions"></a>Directions</h6>
-          <p>**When making travel arrangements from Atlanta or Columbus, GA, please remember that Auburn University is located in the Central Time Zone whereas Georgia is in the Eastern Time Zone.</p>
-          <p class="orange"><strong>To Auburn From Montgomery on I-85 North: </strong></p>
-          <MENU>
-            <ul>
-              <li>Get off I-85 N at <strong>EXIT 51</strong> </li>
-              <li>Take a <strong>LEFT</strong> at the light onto S. College Street.</li>
-              <li>Stay on College Street for about <strong>4 miles</strong>. You will arrive at Thach Avenue and will see Samford Hall on   the left hand side of the street and the University Chapel on the right.</li>
-          </ul>
-          </MENU>
-          <p class="orange"><strong>To Auburn From Atlanta on I-85 South:</strong></p>
-          <MENU>
-            <ul>
-              <li>Get off I-85 S at <strong>EXIT 57</strong>. Follow road to the right. </li>
-              <li>At the second traffic light, take a <strong>LEFT</strong> onto Glenn Avenue.</li>
-              <li>Stay on Glenn Ave. for about <strong>4 miles</strong> </li>
-              <li>After you turn onto Glenn Avenue you will travel through six traffic lights.   The seventh light will be College Street. </li>
-              <li>Take a <strong>LEFT</strong> onto College Street </li>
-              <li>Travel to the next traffic light, Magnolia Avenue (you are now at Toomer's Corner) </li>
-              <li>As you cross the intersection, J&amp;M Bookstore will be on the left side of the   road, and Auburn University will be on the right. </li>
-            </ul>
-          </MENU>
-          <p class="orange"><strong>To Auburn from Birmingham on Highway US-280E: </strong></p>
-        <MENU>
-        <ul>
-              <li>Take a <strong>RIGHT</strong> off US-280E onto <strong>AL-147/College Street </strong> (there will be a Conoco   Service Station at the intersection) </li>
-              <li>Stay on AL-147 for <strong>4.8 miles</strong>. It is a straight shot to Auburn where AL-147   will turn into College Street. </li>
-              <li>After you cross the railroad tracks you will enter downtown Auburn. </li>
-              <li>The light following the tracks will be at Glenn Ave. Go through the   intersection. </li>
-              <li>The next intersection will be Magnolia Avenue (Toomer's Corner) </li>
-              <li>As you cross the intersection, J&amp;M Bookstore will be on the left side of the   road, and Auburn University will be on the right.</li>
-        </ul>
-        </MENU>
+  
+  
+  <nav id="nav" class="header nav-collapse">
+    <div class="nav-controller" id="hamburger">
+      <i class="icon-navicon"></i>
+    </div>
+    <div class="nav-wrapper">
+      <ul>
+        <li id="about-us" class="hover about-us about-us--mobile">
+          <a href="employers/aboutus/">About Us</a>
           <ul>
-            <div class="orangeDecorBar">&nbsp;
-        </div>
-            <p align=center><strong class="orange">Questions or concerns regarding the above information? Please contact:</strong><br>
-Melvin K. Smith, Special Events Coordinator<br>
-Auburn University, AL 36849-5139<br>
-334-844-4744 </p>
-      <!-- InstanceEndEditable -->
-      <p class="lastUpdated">Last Updated: <!-- InstanceBeginEditable name="lastUpdated" -->Nov 8, 2013<!-- InstanceEndEditable --> </p>
+            <li data-menu="about-us"><a href="employers/aboutus/">Office Info</a></li>
+            <li data-menu="about-us"><a href="employers/aboutus/staff.html">Staff</a></li>
+            <li data-menu="about-us"><a href="employers/aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+            <li data-menu="about-us"><a href="employers/aboutus/campus-partners.html">Campus Partners</a></li>
+          </ul>
+        </li>
+        <li class="recruiting">
+          <a>Recruiting</a>
+          <ul>
+            <li data-menu="recruiting"><a href="employers/job-postings.html">Job Postings</a></li>
+            <li data-menu="recruiting"><a href="employers/events">Career Events</a></li>
+            <li data-menu="recruiting"><a href="employers/oci.html">On-Campus Interviewing</a></li>
+          </ul>
+        </li>
+        <li id="student-employment">
+          <a>Part-Time Employment</a>
+          <ul>
+            <li data-menu="student-employment"><a href="employers/student-employment/on-campus.html">On-Campus</a></li>
+            <li data-menu="student-employment"><a href="employers/student-employment/off-campus.html">Off-Campus</a></li>
+            <li data-menu="student-employment"><a href="employers/events/seoty.html">Student Employment Awards</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="employers/events/">Events</a>
+        </li>
+        <li class="about-us">
+          <a href="employers/aboutus/">About Us</a>
+          <ul>
+            <li data-menu="about-us"><a href="employers/aboutus/">Office Info</a></li>
+            <li data-menu="about-us"><a href="employers/aboutus/staff.html">Staff</a></li>
+            <li data-menu="about-us"><a href="employers/aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+            <li data-menu="about-us"><a href="employers/aboutus/campus-partners.html">Campus Partners</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  </div>
-  <div id="contentArea_bottom"></div>
-  <div id="footerWrap">
-    <div id="footer">
-    <div id="footSectionWrap">
-      <div class="footSection">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
-      <div class="footSection"> 
-        <ul>
-          <li><a href="http://www.facebook.com/AUCareer" target="_blank"><br>
-            <img src="../../images/fb_template.png" alt="Facebook" width="32" height="32" border="0"></a> &nbsp;<a href="https://twitter.com/AUCareer" target="_blank"><img src="../../images/twitter_template.png" alt="Twitter" width="32" height="32" border="0"></a> &nbsp;<a href="http://www.linkedin.com/groups?about=&gid=1878262" target="_blank"><img src="../../images/li_template.png" alt="LinkedIn" width="32" height="32" border="0"></a> &nbsp;<a href="http://tigersprepare.blogspot.com/" target="_blank"><img src="../../images/blog_template.png" width="32" height="32" alt="Blog"></a></li>
-        </ul></div><div class="footSection noBorder">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
-    </div>
-    </div>  
-    <div id="subfooter">
-      Auburn University Career Center | Auburn, Alabama 36849 | (334) 844-4744  | <a href="mailto:cdsserv@auburn.edu">cdsserv@auburn.edu</a><br/>
-      <a href="https://fp.auburn.edu/ocm/auweb_survey">Website Feedback</a> | <a href="http://www.auburn.edu/privacy">Privacy</a> | <a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; 
-      <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a>
-    </div>
-  </div>
-  <!--#include virtual="/template/includes/gatc.html" --> 
+  </nav>
+  
+  <nav class="postheader" id="postheader">
+    <ul>
+        <li><a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a></li>
+        <li><a href="http://www.auburn.edu/map">Map</a></li>
+        <li><a href="http://www.auburn.edu/main/auweb_campus_directory.html">People Finder</a></li>
+        <li><a href="http://auaccess.auburn.edu/">AU Access</a></li>
+        <li>
+            <form action="http://search.auburn.edu" method="get">
+                <input type="search" placeholder="Search Auburn" name="q">
+            </form>
+        </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Positioning the nav -->
+<script>
+  var preheader, nav, postheader;
+  window.onscroll = function () {
+    if(preheader === undefined) preheader = document.getElementById('preheader')
+    if(preheader === undefined) return
+    
+    if(nav === undefined) nav = document.getElementById('nav')
+    if(nav === undefined) return
+    
+    if(postheader === undefined) postheader = document.getElementById('postheader')
+    if(postheader === undefined) return  
+    
+    
+    if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
+      nav.classList.add('fixed') 
+      postheader.classList.add('absolute')
+    } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed') && window.innerWidth >= 768) {
+      nav.classList.remove('fixed')
+      postheader.classList.remove('absolute')
+    } else if (preheader.getBoundingClientRect().bottom <= 0 && nav.children[0].getBoundingClientRect().top <= 0 && !nav.classList.contains('fixed')) {
+      nav.classList.add('fixed') 
+    } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed')) {
+      nav.classList.remove('fixed') 
+    } 
+    
+    if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth >= 768) { 
+      nav.classList.add('bordered')
+    } else if (postheader.getBoundingClientRect().top > 0 + 30  && nav.classList.contains('bordered') && window.innerWidth >= 768) {
+      nav.classList.remove('bordered') 
+    } else if (nav.children[0].getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth < 768) {
+      nav.classList.add('bordered') 
+    } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('bordered') && window.innerWidth < 768) {
+      nav.classList.remove('bordered') 
+    }
+    
+    
+    if(nav.children[1].classList.contains('mobile-nav--active') && !nav.classList.contains('fixed')) {
+      nav.classList.add('fixed'); 
+    }
+  }
+</script>
+<!-- Mobile menu -->
+<script>
+  var hamburger = document.getElementById('hamburger')
+  hamburger.addEventListener('click', function () {
+    var navWrapper = document.getElementById('nav').children[1]
+     
+    if(hamburger === undefined) hamburger = document.getElementById('hamburger')
+    if(hamburger === undefined) return
+    
+    if (hamburger.classList.contains('nav-controller--active'))
+      hamburger.classList.remove('nav-controller--active')
+    else hamburger.classList.add('nav-controller--active')
+    
+    if(navWrapper.classList.contains('mobile-nav--active'))
+      navWrapper.classList.remove('mobile-nav--active')
+    else 
+      navWrapper.classList.add('mobile-nav--active')
+  })
+  window.addEventListener('resize', function () {
+    var navWrapper = document.getElementById('nav').children[1]
+    
+    if(window.innerWidth >= 768 && navWrapper.classList.contains('mobile-nav--active'))
+      navWrapper.classList.remove('mobile-nav--active')
+  })
+  
+  var submenus = document.getElementById('nav').getElementsByClassName('hover')
+  function touchHandler(e) {
+    
+    e.preventDefault()
+    
+    console.log(this.classList)
+    
+    if(this.classList.contains('hover')) {
+      if(this.classList.contains('hover--active')) {
+        this.classList.add('hover--active')
+      }
+    }
+    else if(!this.classList.contains('hover')) {
+
+      console.log('no hover')
+      console.log(this)
+      var menu = this.parentElement.parentElement
+
+      if(menu.classList.contains('hover--active')) e.target.click()
+    }
+  }
+  for(var i = 0; i < submenus.length; i++) {
+    submenus[i].addEventListener('touchstart', touchHandler, true)
+    
+    for(var j = 0; j < submenus[i].children[1].children.length; j++) {
+      submenus[i].children[1].children[j].addEventListener('touchstart', touchHandler, true) 
+    }
+  }
+  
+</script>
+<style>
+  nav.header .nav-wrapper ul li,
+  nav.header .nav-wrapper.mobile-nav--active ul li {
+     width: 25%;
+  }
+  nav.header ul li.hover--active:last-of-type > ul, nav.header ul li:hover:last-of-type > ul {
+    left: -300%;
+  }
+  nav.header ul li.hover--active > ul, nav.header ul li:hover > ul {
+    width: 400%; 
+  }
+</style>
+    <div class="container">
+      
+<!-- Banner image -->
+<div class="hero">
+  <img src="assets/images/events/cmcd-banner.png"></img>
 </div>
-</body>
-<!-- InstanceEnd --></html>
+
+<div class="content">
+  <div class="row">
+    <div class="brief">
+      <p class="blurb">
+        Interested in recruiting students in Communication, Journalism, Public 
+        Relations, Radio, Television and Film, and/or Agricultural Communication? 
+        Come to Auburn to meet, network, and interview qualified students all in 
+        one day! 
+      </p>
+      <div class="contact">
+        <h3>Point of Contact</h3>
+        <div class="contact-details">
+          <img src="assets/images/staff/melvin.jpg">
+          <div class="contact-info">
+            <p class="name">Melvin K. Smith</p>
+            <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
+            <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="flat-btn flat-btn--disabled" disabled>Register (Coming Soon)</a>
+    </div>
+  </div>
+</div>
+    </div>
+    <footer>
+  <div class="footer-wrap">
+    <section>
+      <h6>Our Office</h6>
+      <address>
+        <ul>
+          <li>
+            <span class="address beforecon">
+              <a href="http://auburn.edu/map/?id=76">
+                303 Martin Hall
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="phone beforecon">
+              <a href="tel:(334) 844-4744">
+                (334) 844-4744
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="email beforecon">
+              <a href="aucc@auburn.edu">
+                aucc@auburn.edu
+              </a>
+            </span>       
+          </li>
+        </ul>
+      </address>
+    </section>
+    <section>
+      <h6>Tools</h6>
+      <ul>
+        <li><a href="events">Career Events</a></li>
+        <li><a href="pathways">Pathways: Major Guides</a></li>
+        <li><a href="resume">Resume Review</a></li>
+        <li><a href="https://jobs.auburn.edu">Tiger Recruiting Link</a></li>
+      </ul>
+    </section>
+    <section>
+      <h6>Beyond</h6>
+      <ul>
+        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
+        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
+        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
+        <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
+      </ul>
+    </section>
+    <p class="copyright">Copyright <a href="https://sites.auburn.edu/academic/provost/us/CareerCenter/SitePages/Home.aspx">Auburn University Career Center</a>, <script type="text/javascript">document.write(new Date().getFullYear())</script>.</p>
+  </div>
+</footer>
+
+
+    <div class="to-top" style="display:none;"><a href="#top"></a></div>
+  </body>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12338791-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</html>

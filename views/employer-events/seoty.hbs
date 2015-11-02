@@ -3,13 +3,12 @@ ng-app: none
 name: emp-seoty
 type: employer-event-pages
 title: Student Employment Awards | Career Center
-path-to-root: ../../
 layout: employers.hbs
 ---
 
 <!-- Banner image -->
 <div class="hero">
-  <img src="assets/images/events/SEOTY_Webpage(F15).png">
+  <img class="img" src="assets/images/events/SEOTY_Webpage(F15).png">
   <h1 class="img-replace">Student Employee of the Year Awards</h1>
 </div>
 
@@ -19,11 +18,11 @@ layout: employers.hbs
       <p class="blurb">
         Do you have exceptional student workers? Off-campus or on-campus -- nominate 
         outstanding student employees for Student Employee of the Year. 
-        The Career Center encourages Auburn University departments, colleges and offices as 
+        <span class="desktop-only">The Career Center encourages Auburn University departments, colleges and offices as 
         well as Auburn/Opelika area businesses to celebrate student employee contributions 
-        during National Student Employment Week, April 11 – 15, 2016.
+        during National Student Employment Week, April 11 – 15, 2016.</span>
       </p>
-      <p class="blurb">
+      <p class="blurb desktop-only">
         As a part of National Student Employment Week, on Monday, April 11, 2016, the Career 
         Center hosts the Student Employee of the Year Awards (SEOTY). Two students are 
         awarded for their efforts as an on-campus or off-campus student employee, and all 
@@ -33,18 +32,20 @@ layout: employers.hbs
       </p>
     </div>
     <div class="actions">
-      <a class="flat-btn" href="">Nominate a Student Worker</a>
-      <h2 class="checklist-header">
-        Eligibility
-      </h2>
-      <ul class="checklist">
-        <li>Must be a current Auburn University student in good academic standing</li>
-        <li>Must have worked at least 4 months between June 2015 and May 2016 (anticipated)</li>
-        <li>May be a work-study, graduate assistants, or co-op student</li>
-      </ul>
+      <a class="flat-btn flat-btn--disabled" disabled>Nominate a Student Worker</a>
+      <div class="eligibility">
+        <h2 class="checklist-header">
+          Eligibility
+        </h2>
+        <ul class="checklist">
+          <li>Must be a current Auburn University student in good academic standing</li>
+          <li>Must have worked at least 4 months between June 2015 and May 2016 (anticipated)</li>
+          <li>May be a work-study, graduate assistants, or co-op student</li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="dates flex flex--space-between row">
+  <div class="dates desktop-only flex flex--space-between row">
     <h2 class="awards-ceremony-header flex-third">Awards Ceremony <span class="awards-ceremony">Apr 11</span></h2>
     <h2 class="deadline-header flex-third">Nomination Deadline <span class="deadline">Feb 8</span></h2>
   </div>
@@ -52,7 +53,7 @@ layout: employers.hbs
 
 
 <div class="hero">
-  <img src="assets/images/events/SEOTY_officeDecorating.png">
+  <img class="img" src="assets/images/events/SEOTY_officeDecorating.png">
   <h1 class="img-replace">Office Decorating Contest</h1>
 </div>
 <section class="content">
@@ -67,8 +68,8 @@ layout: employers.hbs
       </p>
     </div>
     <div class="actions">
-      <a class="flat-btn" href="">Register</a>
-      <a class="flat-btn flat-btn--white" href="">View Guidelines</a>
+      <a class="flat-btn flat-btn--disabled" disabled>Register</a>
+      <a class="flat-btn flat-btn--white" href="assets/images/events/office-decorating.pdf">View Guidelines</a>
     </div>
   </div>
 </section>
