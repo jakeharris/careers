@@ -123,19 +123,19 @@ header {
 
         font-family: $body-font-family;
       }
-
-      &:nth-child(3n - 2) {
-        background: $thisisdarkblue;
-        color: white;
-      }
-      &:nth-child(3n - 1) {
-        background: $bg-gray;
-        color: $thisisdarkblue;
-      }
-      &:nth-child(3n) {
-        background: $thisislightblue;
-        color: white;
-      }
+//
+//      &:nth-child(3n - 2) {
+//        background: $thisisdarkblue;
+//        color: white;
+//      }
+//      &:nth-child(3n - 1) {
+//        background: $bg-gray;
+//        color: $thisisdarkblue;
+//      }
+//      &:nth-child(3n) {
+//        background: $thisislightblue;
+//        color: white;
+//      }
     }
     &:nth-child(3) {
       margin-top: 10rem;
