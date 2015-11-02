@@ -11,34 +11,19 @@
     "url": ""
   },
   {
-    "company": "Altec",
-    "logo": "altec.jpg",
-    "url": "http://altec.com"
-  },
-  {
-    "company": "UDA Technologies",
-    "logo": "uda.png",
-    "url": "http://uniteddesign.com"
-  },
-  {
-    "company": "Dillard's",
-    "logo": "dillards.jpg",
-    "url": "http://www.dillards.com"
-  },
-  {
     "company": "Denso",
     "logo": "denso.jpg",
-    "url": "http://www.densocorp-na.com"
+    "url": "http://www.densocorp-na.com/"
   },
   {
     "company": "Ascend Performance Materials",
     "logo": "ascend.png",
-    "url": "http://www.ascendmaterials.com"
+    "url": "http://www.ascendmaterials.com/"
   },
   {
     "company": "BTG",
     "logo": "btg.jpg",
-    "url": "http://www.btg.com"
+    "url": "http://www.btg.com/"
   },
   {
     "company": "CallidusCloud",
@@ -48,32 +33,32 @@
   {
     "company": "Equifax",
     "logo": "equifax.jpg",
-    "url": "http://www.equifax.com"
+    "url": "http://www.equifax.com/"
   },
   {
     "company": "GKN Aerospace",
     "logo": "gkn.jpg",
-    "url": "http://www.gkn.com"
+    "url": "http://www.gkn.com/"
   },
   {
     "company": "Intergraph",
     "logo": "intergraph.png",
-    "url": "http://www.intergraph.com"
+    "url": "http://www.intergraph.com/"
   },
   {
     "company": "Milliken & Company",
     "logo": "milliken.png",
-    "url": "http://www.milliken.com"
+    "url": "http://www.milliken.com/"
   },
   {
     "company": "Neptune Technology Group",
     "logo": "neptune.jpg",
-    "url": "http://www.neptunetg.com"
+    "url": "http://www.neptunetg.com/"
   },
   {
     "company": "SAIC",
     "logo": "saic.png",
-    "url": "http://www.saic.com"
+    "url": "http://www.saic.com/"
   },
   {
     "company": "Sherwin-Williams",

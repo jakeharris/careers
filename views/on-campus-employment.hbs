@@ -5,12 +5,21 @@ type: student-employment
 layout: employers.hbs
 title: On-Campus Employment | Career Center
 analytics-token: UA-12338791-4
+path-to-root: ../../
 component:
 - popover
 ---
 
-<section class="content hero">
+<section class="content">
   <h2>On-Campus Employment</h2>
+  <p>
+    Welcome! The Auburn University Career Center directs students to TRL to locate 
+    on-campus, part-time positions. To ensure compliance with equal opportunity 
+    laws, we ask on-campus employers to post positions on TRL for many students to 
+    view. Contact Lauren Hobbs if you need assistance using Tiger Recruiting Link 
+    (TRL) or have questions related to student employment. 
+    Your success is our success. 
+  </p>
 </section>
 
 <section class="flex">
@@ -102,52 +111,154 @@ component:
 
 <section class="content extra-content content--no-padding content--guide">
   <h3 class="how-to-header padding">How to Hire</h3>
-  <p>Click the numbers below for additional details.</p>
+  <p>Mouse over the numbers below for additional details.</p>
   <ul class="guide">
     <li class="guide-step">
       <a class="icon" 
          role="button" 
-         href="http://issuu.com/aucc/docs/studentemploymentpolicies/6"
+         tabindex="0" 
+         data-html="true" 
+         data-trigger="hover" 
+         data-placement="top" 
+         data-toggle="popover"  
+         data-content=
+         "<ol>
+            <li>Log in<p class='muted'>Username: your email address</p><p class='muted'>Password: will be emailed to you</p></li>
+            <li>Navigate to the Jobs tab and click &quot;Add New&quot;</li>
+            <li>Select &quot;Post to this school only&quot;</li>
+            <li>Complete job description and submit</li>
+          </ol>
+          <p class='muted'>To re-open an old posting, select “Show Archived” under the Copy Existing category.</p>"
          ></a>
       <div class="details">Post positions on <a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0">TRL</a></div>
     </li>
     <li class="guide-step">
       <a class="icon" 
          role="button" 
-         href="http://issuu.com/aucc/docs/studentemploymentpolicies/4"
+         tabindex="0" 
+         data-html="true" 
+         data-trigger="hover" 
+         data-placement="top" 
+         data-toggle="popover" 
+         data-content=
+         "<p>
+            It is recommended that employers interview applicants 
+            before extending an offer of employment. In taking the 
+            time to make a more informed decision, employers will 
+            keep employees longer and find a better return in their 
+            investment.
+          </p>"
          ></a>
       <div class="details">Interview applicants and select your student worker(s)</div>
     </li>
     <li class="guide-step">
       <a class="icon" 
          role="button" 
-         href="http://issuu.com/aucc/docs/studentemploymentpolicies/8"
+         tabindex="0" 
+         data-html="true" 
+         data-trigger="hover" 
+         data-placement="top" 
+         data-toggle="popover" 
+         data-content=
+         "<p>
+            See Tips & Advice section below for more details.
+          </p>
+          <ol>
+            <li>Login in to AU Access</li>
+            <li>Click on the Employee Services tab</li>
+            <li>Scroll down to the Student Schedule Quick Links</li>
+            <li>Click on “View/Print Student Schedules”</li>
+            <li>Select the term</li>
+            <li>Use the student’s banner ID to access schedule</li>
+          </ol>"
          ></a>
       <div class="details">Determine student enrollment</div>
     </li>
     <li class="guide-step">
       <a class="icon" 
          role="button" 
-         href="http://issuu.com/aucc/docs/studentemploymentpolicies/8"
+         tabindex="0" 
+         data-html="true" 
+         data-trigger="hover" 
+         data-placement="top" 
+         data-toggle="popover" 
+         data-content=
+         "<ol>
+            <li>Review the PEAEMPL screen in Banner Admin.</li>
+            <li>Type in the Banner ID# and click “Next Block.”</li>
+            <li>Review the Employee Status </li>
+            <li>Note the status; it should state “Active” or “Terminated.”</li>
+          </ol>
+          <h4>Active</h4>
+          <p>
+            The number of hours the student can work will need to be determined.
+            Complete an ePAF through Banner to add the new job.
+          </p>
+          <h4>Terminated or New Hire</h4>
+          <p>
+            The student will need to fill out all paperwork. 
+            Send all completed paperwork to Human Resources.
+          </p>"
          ></a>
       <div class="details">Determine hiring status (active, new-hire, terminated)</div>
     </li>
     <li class="guide-step">
       <a class="icon" 
          role="button" 
-         href="http://issuu.com/aucc/docs/studentemploymentpolicies/10"
+         tabindex="0" 
+         data-html="true" 
+         data-trigger="hover" 
+         data-placement="top" 
+         data-toggle="popover" 
+         data-content=
+         "<p>
+            See Tips and Advice below for more information.
+          </p>
+          <ol>
+            <li>
+              View the NBIJLST screen in Banner Admin 
+              <p class='muted'>
+                Current jobs will have a Begin Date entered and the End Date field will be blank.
+              </p>
+            </li>
+            <li>Double-click on the Position box and the NBAJOBS screen will open</li>
+            <li>Click “Next Block” to see the Job FTE for that position</li>
+            <li>If the student holds multiple current positions, go back to NBIJLST and repeat these instructions</li>
+            <li>Subtract the current FTE from .50 to get the number of hours the student can work in your position</li>
+          </ol>"
          ></a>
       <div class="details">Determine the number of hours the student can work</div>
     </li>
     <li class="guide-step">
       <a class="icon" 
          role="button" 
-         href="http://issuu.com/aucc/docs/studentemploymentpolicies/10"
+         tabindex="0" 
+         data-html="true" 
+         data-trigger="hover" 
+         data-placement="top" 
+         data-toggle="popover" 
+         data-content=
+         "<p>
+            See Tips and Advice section below for a list of required paperwork.
+          </p>
+          <p>
+            Send all completed paperwork to Human Resources – 1550 East Glenn Avenue
+          </p>"
          ></a>
       <div class="details">Complete and submit appropriate paperwork to HR</div>
     </li>
   </ul>
-  <a href="assets/images/student-employment-handbook.pdf" class="flat-btn">Supervisor Handbook</a>
+  <a href="#" class="flat-btn">Supervisor Handbook</a>
+</section>
+
+<section class="content extra-content content--no-padding content--tips">
+  <h3 class="how-to-header">Tips and Advice</h3>
+  <div class="flex buttons buttons--no-padding">
+    <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/4"  class="flat-btn                 flex-quarter">Interviewing</a>
+    <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/6"  class="flat-btn flat-btn--white flex-quarter">Classify a Student</a>
+    <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/6"  class="flat-btn                 flex-quarter">Hiring Process</a>
+    <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/10" class="flat-btn flat-btn--white flex-quarter">Paperwork Process</a>
+  </div>
 </section>
 
 <section class="content extra-content">

@@ -84,12 +84,7 @@ layout: no-social.hbs
       }
       if(file_exists($filename)) unlink($filename);
     ?>
+
   </p>
-  <?php
-    // Send the email
-    if($ok) {
-      echo "<p class='muted'>Due to the influx of eresume submissions before the upcoming career fair, it may take longer than a couple of business days for you to receive feedback. If you need immediate assistance, drop in during <a href='aboutus#walk-ins'>walk-in hours</a> to have your resume reviewed by a Peer Career Advisor.</p>";
-    }
-  ?>
   <a href="resume" class="flat-btn">Return to the Resume Page</a>
 </section>

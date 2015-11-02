@@ -34,16 +34,22 @@ component:
         <li data-target="#cc-carousel" data-slide-to="1"></li>
         <li data-target="#cc-carousel" data-slide-to="2"></li>
         <li data-target="#cc-carousel" data-slide-to="3"></li>
+        <li data-target="#cc-carousel" data-slide-to="4"></li>
+        <li data-target="#cc-carousel" data-slide-to="5"></li>
+        <li data-target="#cc-carousel" data-slide-to="6"></li>
+        <li data-target="#cc-carousel" data-slide-to="7"></li>
       </ol>
 
       <div class="carousel-inner">
         <div class="item active">
-          <a href="https://vimeo.com/141061041">
+          <a href="https://vimeo.com/aucareer">
             <img src="assets/images/tip-of-the-week.png" alt="...">
           </a>
         </div>
         <div class="item">
-          <img src="assets/images/wicked-walk-ins.png" alt="...">
+          <a>
+            <img src="assets/images/go-government.png" alt="...">
+          </a>
         </div>
         <div class="item">
           <a href="events">
@@ -53,6 +59,26 @@ component:
         <div class="item">
           <a href="http://www.auburn.edu/academic/provost/finishin4/index.html">
             <img src="assets/images/finish-in-four.jpg" alt="...">
+          </a>
+        </div>
+        <div class="item">
+          <a href="students/events/tech.html">
+            <img src="assets/images/events/ETCE_Homepage(F15).png" alt="...">
+          </a>
+        </div>
+        <div class="item">
+          <a href="students/events/gpsf.html">
+            <img src="assets/images/events/GPSF_Homepage(F15).png" alt="...">
+          </a>
+        </div>
+        <div class="item">
+          <a href="students/events/eid.html">
+            <img src="assets/images/events/EID_Homepage(F15).png" alt="...">
+          </a>
+        </div>
+        <div class="item">
+          <a href="students/events/am.html">
+            <img src="assets/images/events/AMCE_Homepage(F15).png" alt="...">
           </a>
         </div>
       </div>
@@ -120,7 +146,8 @@ component:
             <div class="event-date-day">[[ event.date.day ]]</div>
           </div>
           <div class="event-details">
-            <div class="event-details-name">[[ event.name ]]</div>
+            <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
+            <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
             <div class="event-details-location">[[ event.location ]]</div>
             <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
             <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
