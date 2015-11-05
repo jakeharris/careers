@@ -18,6 +18,7 @@ home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
     calendar = new Calendar(res, 12, true)
     $scope.firstEvents = calendar.events.slice(0, 3)
     $scope.img = calendar.img
+    $scope.url = calendar.url
     $scope.events = calendar.events.slice(3)
   })
 }])

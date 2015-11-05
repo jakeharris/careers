@@ -56,11 +56,14 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
   if(employerMode) {
     this.events.forEach(function (event, index, events) {
       if('employer-event' in event) {
-        if(this.img === undefined && event.abbrev !== undefined) 
-          this.img = 'assets/images/events/' + event.abbrev + '-slide.png'
         if(event.abbrev === undefined)
           event.url = event['employer-event'].registration
         else event.url = 'employers/events/' + event.abbrev + '.html'
+        
+        if(this.img === undefined && event.abbrev !== undefined) {
+          this.img = 'assets/images/events/' + event.abbrev + '-slide.png'
+          this.url = 'employers/events/' + event.abbrev + '.html'
+        }
       }
     }.bind(this))
   }
