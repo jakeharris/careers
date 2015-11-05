@@ -66,6 +66,11 @@ body.events-page {
   display: block;
 }
 
+body.employer-events .flex-half {
+  flex-basis: 50%;
+  width: 50%;
+}
+
 @media (min-width: $small-screen-size) {
   body.events-page .event {
     flex-basis: 50%;
