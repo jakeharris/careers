@@ -91,6 +91,20 @@
       ]
     },
     {
+      "name": "Dori Weldon",
+      "firstName": "Dori",
+      "lastName": "Weldon",
+      "position": "Career Counselor",
+      "email": "doriweldon",
+      "img": "dori",
+      "category": "Career Development",
+      "liaison": [
+        "College of Agriculture",
+        "College of Education",
+        "School of Forestry and Wildlife Sciences"
+      ]
+    },
+    {
       "name": "Shari Black",
       "firstName": "Shari",
       "lastName": "Black",
