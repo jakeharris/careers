@@ -1,10 +1,6 @@
 @import 'app';
 @import 'sponsors';
 
-
-
-
-
 /****************/
 /*    BASICS    */
 /****************/
@@ -12,11 +8,13 @@
 .content {
   margin-top: 3rem;
 }
-
+.padding {
+  padding: 0 5rem;
+}
 .login {
   background: none repeat scroll 0% 0% white;
   overflow: visible;
-  flex-basis: 33%;
+  flex-basis: 100%;
   position: relative;
   .trl {
     display: block; 
@@ -53,10 +51,38 @@
   flex-basis: 100%;
   position: relative;
   padding: 5rem;
+  padding-bottom: 1.5rem;
+  h2 {
+    padding-top: 1rem; 
+  }
+  blockquote {
+    border-left: 0;
+    &::before {
+      content: none;
+    }
+  }
   p {
-    padding: 1rem 0; 
+    padding: 1rem 5rem; 
+  }
+  .flat-btn {
+    margin-bottom: 0; 
+  }
+  height: 100%;
+}
+@media (min-width: $moderate-screen-size) {
+  .welcome-services {
+    flex-wrap: nowrap; 
+  }
+  .welcome {
+    flex-basis: 45%; 
+    min-height: 400px;
+  }
+  .login {
+    flex-basis: 45%;
   }
 }
+
+
 .services {
   flex-basis: 100%;
   position: relative;
@@ -68,21 +94,6 @@
   background: url('../images/services-banner.png') center no-repeat;
   background-size: cover;
 }
-@media (min-width: $moderate-screen-size) {
-  .welcome-services {
-    flex-wrap: nowrap; 
-  }
-  .welcome {
-    flex-basis: 30%; 
-    min-height: 400px;
-  }
-  .services {
-    flex-basis: 63%; 
-    display: block;
-  }
-}
-
-
 .services-background {
   height: 100%;
   width: 100%;
@@ -349,9 +360,6 @@
     color: $box-shadow; 
   }
 }
-.login {
-  flex-basis: 100%;
-}
 .contacts-login {
   flex-wrap: wrap;
 }
@@ -377,9 +385,6 @@
     .contact {
       flex-basis: 100%; 
     }
-  }
-  .login {
-    flex-basis: 30%;
   }
   .contacts-login {
     flex-wrap: nowrap; 
