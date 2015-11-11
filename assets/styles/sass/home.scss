@@ -128,7 +128,7 @@ a:hover .about-icon::before {
     height: 250px;
   }
   li {
-    flex-basis: 45%; // describes height
+    flex-grow: 1; // describes height
     width: 45%;
   }
 }
