@@ -10,25 +10,57 @@ component:
 - sponsors
 ---
 
-<section class="welcome-services row flex">
-  <div class="welcome content extra-content">
-    <h2>This is Recruiting.</h2>
-    <p>
-      Auburn University is one of the largest 
-      universities in the Southeast. Our students 
-      can choose from more than 140 degree options 
-      in 13 schools and colleges at the 
-      undergraduate, graduate and professional 
-      levels. Connect with us to put over 25,000 
-      quality candidates at your fingertips.
-    </p>
-    <p>
-      The menu of services listed are just some of 
-      the many ways the Auburn Career Center can 
-      help you achieve your hiring and recruiting 
-      goals.
-    </p>
+<section class="login-welcome row flex">
+  <div class="login content extra-content">
+    <div class="login-wrapper">
+      <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
+      <p class="login-blurb">Your link to Auburn students.</p>
+      <div class="buttons">
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=0">Sign in</a>
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=2">Register</a>
+        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/employers/policiesprocedures_emp.html">View policies</a>
+        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
+      </div>
+    </div>
   </div>
+  <div class="welcome content extra-content content--no-padding">
+    <h2 class="padding">This is Recruiting.</h2>
+    <blockquote class="padding">
+      Highly effective employers place their emphasis on long-term
+      objectives and building connections with students, faculty, 
+      and the career staff, rather than focusing on recruiting 
+      transactions. It is the Career Center's goal to develop and 
+      maintain strong relationships with employers, and we value 
+      the opportunity to assist you with your hiring needs.
+      <br/>
+      <br/>
+      Your success is our success. We look forward to helping you 
+      put a Tiger On Your Team.
+    </blockquote>
+    <p class="padding">
+      <a href="mailto:skipworth@auburn.edu">Jay Skipworth</a>, Assistant Director of Employer Relations
+    </p>
+    <a class="flat-btn" 
+       role="button" 
+       tabindex="0" 
+       data-toggle="popover" 
+       data-html="true" 
+       data-placement="top" 
+       data-trigger="click" 
+       data-title="Auburn University"
+       data-content="<ul>
+                      <li>One of the largest universities in the south</li>
+                      <li>Fall 2015 enrollment: 27,287</li>
+                      <li>140 degree options</li>
+                      <li>13 schools and colleges</li>
+                      <li>Undergraduate, graduate, and professional degree options</li>
+                     </ul>">
+      Learn about Auburn University
+    </a>
+  </div>
+</section>
+
+<section class="row flex">
   <div class="services content extra-content content--no-padding">
     <div class="services-wrapper">
       <div class="services-overlay"></div>
@@ -46,49 +78,6 @@ component:
     </div>
     <a class="flat-btn flat-btn--disabled report-hiring" href="" disabled="disabled">Report Hiring</a>
   </div>
-</section>
-
-<section class="contacts-login row flex">
-  <div class="contacts content extra-content">
-    <h2>Recruiting Contacts</h2>
-    <p>All email addresses listed here end in "@auburn.edu".</p>
-    <div class="contacts-container">
-      <div class="contact">
-        <h3>All Majors <span class="muted">Career Center</span></h3>
-        <div class="contact-details">
-          <img src="assets/images/staff/jay.jpg">
-          <div class="contact-info">
-            <p class="name">Jay Skipworth</p>
-            <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
-            <p class="email"><a href="mailto:skipworth@auburn.edu">skipworth</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="contact">
-        <h3>Business Majors <span class="muted">Harbert College of Business</span></h3>
-        <div class="contact-details">
-          <img src="assets/images/staff/mike.jpg">
-          <div class="contact-info">
-            <p class="name">Mike Stover</p>
-            <p class="phone"><a href="tel:(334) 844-7203">(334) 844-7203</a></p>
-            <p class="email"><a href="mailto:mike.stover@auburn.edu">mike.stover</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <form class="login content extra-content" method="post" action="https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents%2Flogin">
-    <div class="login-wrapper">
-      <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
-      <p class="login-blurb">Your link to Auburn students.</p>
-      <div class="buttons">
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=0">Sign in</a>
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=2">Register</a>
-        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/employers/policiesprocedures_emp.html">View policies</a>
-        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
-      </div>
-    </div>
-  </form>
 </section>
 
 <section class="events-upcoming row flex" ng-controller="calendar-ctrl">
@@ -128,7 +117,6 @@ component:
       </li>
     </ul>
   </div>
-  <a class="upcoming-event content extra-content content--no-padding" href="[[ url ]]"><img src="[[ img ]]"></img></a>
 </section>
 
 <section class="row sponsors content extra-content">
