@@ -413,6 +413,9 @@ ol {
 }
 .content--tips .buttons {
   align-items: stretch;
+  .flex-half {
+    flex-basis: 50%; 
+  }
 }
 
 .at-auburn {
@@ -529,6 +532,13 @@ a.icon:hover {
     flex-basis: 33.33333%;
     width: 33.33333%;
   }
+  #oci .attributes {
+    padding: 5rem 0;
+    & > .attribute {
+      flex-basis: 25%;
+      width: 25%;
+    }
+  }
   .content--tips .buttons {
     align-items: flex-start; 
   }
@@ -607,6 +617,18 @@ a.icon:hover {
   }
   .content--tips .flat-btn {
     font-size: 2.5rem; 
+  }
+}
+
+
+.restrictions {
+  width: 66%;
+  ul {
+    list-style: disc;
+    margin-left: 5rem;
+    li {
+      list-style: disc;
+    }
   }
 }
 
