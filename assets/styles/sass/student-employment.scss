@@ -266,6 +266,11 @@ ol {
   margin: 0;
 }
 
+.recruiting-welcome {
+  height: 550px;
+  padding-top: 1.5rem;
+  margin-top: 4rem;
+}
 .recruiting-link {
   flex-basis: 100%;
   width: 100%;
@@ -290,6 +295,9 @@ ol {
   box-shadow: none;
   margin: 0;
 }
+.flat-btn--bottom {
+  margin: 0;
+}
 .how-to-header + p {
   text-align: center;
 }
@@ -311,10 +319,13 @@ ol {
     padding: 1rem 0;
   }
 }
+.recruiting-link, .welcome {
+  height: 100%;
+  padding-top: 1.5rem;
+}
 .welcome {
   flex-basis: 100%;
   width: 100%;
-  height: auto;
 }
 .faq-header {
   padding-top: 3.5rem;
@@ -517,6 +528,16 @@ a.icon:hover {
   @extend .icon-law;
   padding-left: 2rem;
   padding-top: 2rem;
+}
+.job-postings .icon i {
+  &::before {
+    position: relative;
+    top: 1.8rem;
+    left: 2rem;
+  }
+  &.icon-graduation-cap::before {
+    left: 1.2rem; 
+  }
 }
 
 .guide-step > .icon,

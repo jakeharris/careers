@@ -34,9 +34,6 @@ layout: no-social.hbs
             <h2>{{firstName}}</br>{{lastName}}</h2>
             <h3>{{position}}</h3>
             <h3><a class="email" href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>
-            {{#if quote}}
-            <p class="muted"><span class="big-quote">"</span>{{quote}}<span class="big-quote">"</span></p>
-            {{/if}}
           </div>
           {{#if portfolio}}
           <a class="flat-btn contact-more" href="{{ portfolio }}">Learn More</a>
