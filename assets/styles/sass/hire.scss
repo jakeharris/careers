@@ -11,6 +11,15 @@
 .padding {
   padding: 0 5rem;
 }
+.login-welcome {
+  height: 484px;
+  padding-top: 1.5rem;
+}
+.login, .welcome {
+  height: 100%;
+  margin-top: 0;
+  padding-top: 1.5rem;
+}
 .login {
   background: none repeat scroll 0% 0% white;
   overflow: visible;
@@ -65,10 +74,11 @@
     padding: 1rem 5rem; 
   }
   .flat-btn {
+    position: absolute;
+    bottom: 0;
     margin-bottom: 0; 
     cursor: pointer; 
   }
-  height: 100%;
 }
 @media (min-width: $moderate-screen-size) {
   .welcome-services {
