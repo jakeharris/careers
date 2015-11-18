@@ -521,6 +521,16 @@ a.icon:hover {
   padding-left: 2rem;
   padding-top: 2rem;
 }
+.job-postings .icon i {
+  &::before {
+    position: relative;
+    top: 1.8rem;
+    left: 2rem;
+  }
+  &.icon-graduation-cap::before {
+    left: 1.2rem; 
+  }
+}
 
 .guide-step > .icon,
 .faq-question:hover > a {
