@@ -266,6 +266,11 @@ ol {
   margin: 0;
 }
 
+.recruiting-welcome {
+  height: 550px;
+  padding-top: 1.5rem;
+  margin-top: 4rem;
+}
 .recruiting-link {
   flex-basis: 100%;
   width: 100%;
@@ -314,10 +319,13 @@ ol {
     padding: 1rem 0;
   }
 }
+.recruiting-link, .welcome {
+  height: 100%;
+  padding-top: 1.5rem;
+}
 .welcome {
   flex-basis: 100%;
   width: 100%;
-  height: auto;
 }
 .faq-header {
   padding-top: 3.5rem;
