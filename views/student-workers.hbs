@@ -19,30 +19,13 @@ layout: no-social.hbs
             {{#if img}}
             <img class="{{img}}" src="assets/images/staff/{{img}}.jpg">
             {{/if}}
-            {{#if liaison}}
-            <div class="overlay">
-            </div>
-            <div class="overlay-text">
-              <h2>Liaison to</h2>
-              <ul>
-                {{#each liaison}}
-                <li>{{this}}</li>
-                {{/each}}
-              </ul>
-            </div>
-            {{/if}}
           </div>
           <div class="contact-info">
             <h2>{{firstName}}</br>{{lastName}}</h2>
             {{#if position}}<h3>{{position}}</h3>{{/if}}
-            {{#if email}}<h3><a class="email" href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>{{/if}}
-            {{#if quote}}
-            <p class="muted"><span class="big-quote">"</span>{{quote}}<span class="big-quote">"</span></p>
-            {{/if}}
+            {{#if major}}<h3>{{major}}</h3>{{/if}}
+            {{#if year}}<h3>{{year}}</h3>{{/if}}
           </div>
-          {{#if portfolio}}
-          <a class="flat-btn contact-more" href="{{ portfolio }}">Learn More</a>
-          {{/if}}
         </section>
       {{/is}}
     {{/each}}
