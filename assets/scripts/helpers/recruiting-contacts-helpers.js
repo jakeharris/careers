@@ -1,7 +1,11 @@
 module.exports.getFirstName = function (name) {
   var fullName = (name? name : this.name)
   
-  return fullName.split(' ')[0]
+  fullName = fullName.split(' ')
+  
+  return (fullName[0] === 'Dr.'? 
+          fullName[0].concat(' ', fullName[1])
+          : fullName[0])
 }
 module.exports.getLastName = function (name) {
   var fullName = (name? name : this.name)

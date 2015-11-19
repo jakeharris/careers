@@ -1,2 +1,32 @@
 @import 'staff';
 
+h3 {
+  font-family: $header-font-family;
+  font-size: 2.2rem;
+  margin-bottom: 0;
+}
+
+.major {
+  padding: 3rem;
+  background-color: $thisislightblue;
+  height: 166px;
+  h3 {
+    color: white; 
+  }
+}
+
+.contact-card .contact-info {
+  height: auto;
+}
+
+h4 a {
+  font-family: $body-font-family;
+}
+
+.phone:before {
+  @extend .icon-phone;
+  font-family: "icomoon";
+  padding-right: 1.2rem;
+  position: relative;
+  top: 3px;
+}
