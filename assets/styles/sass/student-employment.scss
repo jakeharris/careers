@@ -529,6 +529,28 @@ a.icon:hover {
   padding-left: 2rem;
   padding-top: 2rem;
 }
+#oci .icon {
+  padding-left: 2rem;
+  padding-top: 1.8rem;
+  & .icon-folder-download {
+    position: relative;
+    left: 1px;
+  }
+  & .icon-user-check {
+    position: relative;
+    left: 2px;
+    top: 2px;
+  }
+  & .icon-folder-open {
+    position: relative;
+    left: 3px;
+  }
+  & .icon-enter {
+    position: relative;
+    right: 6px;
+    top: 5px;
+  }
+}
 .job-postings .icon i {
   &::before {
     position: relative;
@@ -551,13 +573,11 @@ a.icon:hover {
   }
   .attributes > .attribute {
     flex-basis: 33.33333%;
-    width: 33.33333%;
   }
   #oci .attributes {
     padding: 5rem 0;
     & > .attribute {
-      flex-basis: 25%;
-      width: 25%;
+      flex-basis: 100%; 
     }
   }
   .content--tips .buttons {
@@ -640,7 +660,12 @@ a.icon:hover {
     font-size: 2.5rem; 
   }
 }
-
+@media (min-width: $social-shrink-size) {
+  #oci .attributes .attribute {
+    flex-basis: 25%;
+    width: 25%;
+  }
+}
 
 .restrictions {
   width: 66%;
