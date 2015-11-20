@@ -30,3 +30,20 @@ h4 a {
   position: relative;
   top: 3px;
 }
+
+.generic-person {
+  height: 100%;
+  width: 100%;
+  background-color: $thisislightorange;
+  border: none;
+  outline: none;
+  &:before {
+    color: white;
+    font-family: $icon-font-family;
+    @extend .icon-user;
+    font-size: 10rem;
+    position: relative;
+    left: calc(50% - 4rem);
+    top: calc(50% - 9rem);
+  }
+}

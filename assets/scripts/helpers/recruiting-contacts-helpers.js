@@ -15,7 +15,13 @@ module.exports.getLastName = function (name) {
 }
 module.exports.getImageName = function (name) {
   var fullName = (name? name : this.name)
-  var firstName = fullName.split(' ')[0].toLowerCase()
+  fullName = fullName.split(' ')
+  
+  var firstName = 
+      (fullName[0] === 'Dr.'? 
+          fullName[0].concat(' ', fullName[1])
+          : fullName[0])
+      .toLowerCase()
   
   return firstName
 }
