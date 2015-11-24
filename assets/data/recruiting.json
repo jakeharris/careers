@@ -1,12 +1,40 @@
 {
+  "__blank-contact": {
+    "major": "",
+    "name": "",
+    "phone": "",
+    "email": ""
+  },
   "contact": [
     {
-      "name": "Jay Skipworth",
       "major": "All Majors",
-      "address": "303 Mary Martin Hall",
-      "mapID": "76",
-      "phone": "3348444000",
+      "name": "Jay Skipworth",
+      "phone": "3348443864",
       "email": "skipworth"
+    },
+    {
+      "major": "Harbert College of Business",
+      "name": "Mike Stover",
+      "phone": "3348447296",
+      "email": "mike.stover"
+    },
+    {
+      "major": "MBA Program, Harbert College of Business",
+      "name": "Frank Oprandy",
+      "phone": "3348447203",
+      "email": "frank.oprandy"
+    },
+    {
+      "major": "McWhorter School of Building Science",
+      "name": "Cassandra Calloway",
+      "phone": "3348445314",
+      "email": "callocd"
+    },
+    {
+      "major": "Forestry and Wildlife Science",
+      "name": "Dr. Jodie Kenney",
+      "phone": "3348441050",
+      "email": "jrk0019"
     }
   ]
 }
