@@ -1,23 +1,6 @@
 @import 'app';
 @import 'sponsors';
-
-/**********/
-/* MIXINS */
-/**********/
-@mixin color-alternator () {
-  &:nth-of-type(3n - 2) {
-    background: $thisislightblue;
-    color: white;
-  }
-  &:nth-of-type(3n - 1) {
-    background: $thisisdarkblue;
-    color: white;
-  }
-  &:nth-child(3n) {   
-    background: $bg-gray;
-    color: $thisisdarkblue; 
-  }
-}
+@import 'employer-events';
 
 /****************/
 /*    BASICS    */
@@ -242,7 +225,9 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: nowrap;
+      padding-top: 1.5rem;
     }
     .employer-event-when,
     .employer-event-tags {
@@ -253,6 +238,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
+      align-items: center;
       .employer-event-tag {
         border: 1px solid;
         border-radius: 32px;
