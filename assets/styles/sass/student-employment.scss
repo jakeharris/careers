@@ -567,6 +567,10 @@ a.icon:hover {
   color: white !important;
 }
 
+.ocr-blurb {
+  width: 60%;
+}
+
 @media (min-width: $small-screen-size) {
   .hero .img-replace {
     font-size: 5rem; 
