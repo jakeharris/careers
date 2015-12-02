@@ -1,3 +1,5 @@
-$('img').error(function(){
-  $(this).replaceWith('<div class="generic-person"></div>')
+$(function () {
+  $('img').error(function () {
+    $(this).replaceWith('<div class="generic-person"></div>')
+  })
 })

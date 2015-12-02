@@ -47,3 +47,11 @@ h4 a {
     top: calc(50% - 9rem);
   }
 }
+
+
+@media(min-width: $moderate-screen-size) {
+  .contact-card {
+    margin: 0 3rem;
+    margin-bottom: 3rem;
+  }
+}

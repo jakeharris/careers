@@ -1,55 +1,31 @@
 ---
+path-to-root: ../../
 ng-app: career-center-events
 name: employer-events
-type: events
+type: employer-events
 title: Events | Career Center
 layout: employers.hbs
 component: 
 - calendar
 ---
-<div ng-controller="month-ctrl">
-  <div ng-if="events.length > 0" class="content extra-content events">
-    <h2>Career Events This Month</h2>
-    <ul ng-class="{'flex-row': events.length <= 2}">
-      <li class="event" ng-repeat="event in events">
-        <div class="event-date">
-          <div class="event-date-month">[[ event.date['shortened-month'] ]]</div>
-          <div class="event-date-day">[[ event.date.day ]]</div>
+<section class="employer-events-wrapper content extra-content content--no-padding row" ng-controller="calendar-ctrl">
+  <h2 class="employer-events-title">Event Registration</h2>
+  <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
+  <ul class="employer-events flex">
+    <li ng-if="events.length % 2 !== 0" class="employer-event employer-event--blurb">Click any event to get more information and register.</li>
+    <li class="employer-event" ng-repeat="event in events">
+      <a class="employer-event-link" href="[[ event.url ]]">
+        <h3>[[ event.name ]]</h3>
+        <div class="employer-event-details">
+          <div class="employer-event-when">
+            <div class="employer-event-date">[[ event.date.month ]] [[ event.date.day ]]</div>
+            <div class="employer-event-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
+          </div>
+          <div class="employer-event-tags">
+            <div class="employer-event-tag" ng-repeat="tag in event.tags">[[ tag ]]</div>
+          </div>
         </div>
-        <div class="event-details">
-          <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-          <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
-          <div class="event-details-location">[[ event.location ]]</div>
-          <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="content extra-content events">
-  <h2>Future Events</h2>
-  <div class="flex">
-    <ul ng-controller="calendar-ctrl" ng-class="{'flex-row': events.length <= 2}" class="flex-half">
-      <li class="event" ng-repeat="event in events">
-        <div class="event-date">
-          <div class="event-date-month">[[ event.date['shortened-month'] ]]</div>
-          <div class="event-date-day">[[ event.date.day ]]</div>
-        </div>
-        <div class="event-details">
-          <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-          <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
-          <div class="event-details-location">[[ event.location ]]</div>
-          <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
-        </div>
-      </li>
-    </ul>
-    <div class="events-note flex-half">
-      <h2>Building Science Career Expo Registration Opens</br><span class="muted">December 1</span></h2>
-    </div>
-  </div>
-</div>
+      </a>
+    </li>
+  </ul>
+</section>

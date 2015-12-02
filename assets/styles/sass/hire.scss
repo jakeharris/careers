@@ -1,5 +1,6 @@
 @import 'app';
 @import 'sponsors';
+@import 'employer-events';
 
 /****************/
 /*    BASICS    */
@@ -185,92 +186,6 @@
   z-index: 3;
   display: block;
 }
-
-.events-upcoming {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.upcoming-event {
-  flex-basis: 100%;
-  height: 100%;
-  img {
-    height: 100%;
-    width: 100%;
-  }
-}
-.events.events {
-  overflow: hidden;
-  position: relative;
-  flex-basis: 100%;
-  height: 100%;
-  h2 a::after {
-    font-family: $icon-font-family;
-    font-weight: 100;
-    content: '\f078';
-    position: absolute;
-    right: 3rem;
-  }
-  .first-event-wrapper {
-    padding: 1.5rem 5rem 3rem; 
-  }
-  .first-event {
-    flex-basis: 100%;
-    width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1.4rem;
-    min-height: 0;
-  }
-  .flat-btn {
-    margin: 0;
-    margin-top: 1rem;
-    box-shadow: none;
-  }
-  .flat-btn:link,
-  .flat-btn:visited,
-  .flat-btn:active {
-    color: white; 
-  }
-  .flat-btn:hover {
-    color: $thisisdarkblue; 
-  }
-  .flat-btn.accordion-header.collapsed {
-    box-shadow: 6px 6px 0 $box-shadow;
-  }
-  ul {
-    margin-top: 0;
-    width: 100%;
-    li {
-      flex-basis: 100%;
-      width: 100%; 
-      padding: 0 5rem; 
-      padding-bottom: 3rem;
-      &:first-of-type {
-        padding-top: 3rem; 
-      }
-      &.event > .event-details {
-        width: auto; 
-      }
-    }
-  }
-}
-#more-events::before {
-  font-family: $icon-font-family;
-  content: '\f077';
-  text-align: center;
-}
-#more-events.collapsed::before {
-  content: '\f078';
-}
-@media (min-width: $medium-screen-size) {
-  .upcoming-event {
-    flex-basis: 63%; 
-  }
-  .events.events {
-    flex-basis: 33%; 
-  }
-}
-
 
 .contacts {
   flex-basis: 100%;
