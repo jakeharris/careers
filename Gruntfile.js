@@ -305,7 +305,7 @@ module.exports = function (grunt) {
     // into servable HTML.
     assemble: {
       options: {
-        helpers: ['*-helper.js'],
+        helpers: ['<%= config.assets %>/scripts/helpers/{,/*}*.js'],
         prod: 'false',
         layouts: '<%= config.layouts %>',
         partials: '<%= config.partials %>',

@@ -16,18 +16,15 @@ layout: no-social.hbs
       {{#is category ../this}}
         <section class="contact-card">
           <div class="img-liaison-container">
-            {{#if img}}
-            <img class="{{img}}" src="assets/images/staff/{{img}}.jpg">
-            {{/if}}
+            <img src="assets/images/staff/student-workers/{{getImageName name}}.png">
           </div>
           <div class="contact-info">
-            <h2>{{firstName}}</br>{{lastName}}</h2>
+            <h2>{{getFirstName name}}</h2>
             {{#if position}}<h3>{{position}}</h3>{{/if}}
-            {{#if major}}<h3>{{major}}</h3>{{/if}}
-            {{#if year}}<h3>{{year}}</h3>{{/if}}
+            {{#if major}}<h3>{{#if year}}{{year}} in {{/if}}{{major}}</h3>{{/if}}
           </div>
         </section>
       {{/is}}
     {{/each}}
-  </div>
+</div>
 {{/each}}

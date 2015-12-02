@@ -1,106 +1,119 @@
 {
   "category": [
-    "Peer Event Planners",
     "Peer Career Advisors",
+    "Peer Event Planners",
     "Operations"
   ],
   "member": [
     {
       "name": "Brandon Teal",
-      "firstName": "Brandon",
-      "lastName": "Teal",
-      "category": "Peer Career Advisors"
+      "category": "Peer Career Advisors",
+      "major": "Electrical Engineering",
+      "year": "Senior"
     },
     {
       "name": "Amanda Woodson",
-      "firstName": "Amanda",
-      "lastName": "Woodson",
-      "category": "Peer Career Advisors"
+      "category": "Peer Career Advisors",
+      "major": "Communication Disorders; Spanish",
+      "year": "Senior"
     },
     {
       "name": "Will Stout",
-      "firstName": "Will",
-      "lastName": "Stout",
-      "category": "Peer Career Advisors"
+      "category": "Peer Career Advisors",
+      "major": "Industrial & Systems Engineering",
+      "year": "Senior"
     },
     {
-      "firstName": "Kirsten",
-      "lastName": "Failings",
-      "category": "Peer Career Advisors"
+      "name": "Kirsten Failings",
+      "category": "Peer Career Advisors",
+      "major": "Industrial & Systems Engineering",
+      "year": "Senior"
     },
     {
-      "firstName": "Matthew",
-      "lastName": "Stinson",
-      "category": "Peer Career Advisors"
+      "name": "Matthew Stinson",
+      "category": "Peer Career Advisors",
+      "major": "Food Science",
+      "year": "Freshman"
     },
     {
-      "firstName": "Anna Claire",
-      "lastName": "Peaden",
-      "category": "Peer Career Advisors"
+      "name": "Anna Claire Peaden",
+      "category": "Peer Career Advisors",
+      "major": "Literature",
+      "year": "Junior"
     },
     {
-      "firstName": "Ali",
-      "lastName": "Zakutney",
-      "category": "Peer Career Advisors"
+      "name": "Ali Zakutney",
+      "category": "Peer Career Advisors",
+      "major": "Biomedical Sciences",
+      "year": "Senior"
     },
     {
-      "firstName": "Shelby",
-      "lastName": "Smith",
-      "category": "Peer Career Advisors"
+      "name": "Shelby Smith",
+      "category": "Peer Career Advisors",
+      "major": "Nursing",
+      "year": "Sophomore"
     },
     {
-      "firstName": "Ben",
-      "lastName": "Ford",
-      "category": "Peer Event Planners"
+      "name": "Ben Ford",
+      "category": "Peer Event Planners",
+      "major": "Agriscience Education",
+      "year": "Senior"
     },
     {
-      "firstName": "Drew",
-      "lastName": "Tewell",
-      "category": "Peer Event Planners"
+      "name": "Drew Tewell",
+      "category": "Peer Event Planners",
+      "major": "Industrial & Systems Engineering",
+      "year": "Senior"
     },
     {
-      "firstName": "Josh",
-      "lastName": "Booker",
-      "category": "Peer Event Planners"
+      "name": "Josh Booker",
+      "category": "Peer Event Planners",
+      "major": "Industrial & Systems Engineering",
+      "year": "Senior"
     },
     {
-      "firstName": "Ricky",
-      "lastName": "Campbell",
-      "category": "Peer Event Planners"
+      "name": "Ricky Campbell",
+      "category": "Peer Event Planners",
+      "major": "Supply Chain Management",
+      "year": "Sophomore"
     },
     {
-      "firstName": "James",
-      "lastName": "Bowen",
-      "category": "Peer Event Planners"
+      "name": "James Bowen",
+      "category": "Peer Event Planners",
+      "major": "German: International Trade",
+      "year": "Sophomore"
     },
     {
-      "firstName": "Leo",
-      "lastName": "Lagunas",
-      "category": "Peer Event Planners"
+      "name": "Leo Lagunas",
+      "category": "Peer Event Planners",
+      "major": "Architecture",
+      "year": "Sophomore"
     },
     {
-      "firstName": "Jake",
-      "lastName": "Harris",
+      "name": "Jake Harris",
       "position": "Web Designer and Developer",
       "category": "Operations"
     },
     {
-      "firstName": "Natasha",
-      "lastName": "Walker",
+      "name": "Natasha Walker",
       "position": "Marketing and Video Ops",
-      "category": "Operations"
+      "category": "Operations",
+      "major": "Media Studies",
+      "year": "Senior"
     },
     {
-      "firstName": "Allie",
-      "lastName": "Britton",
+      "name": "Allie Britton",
       "position": "Student Assistant, Employer Relations",
-      "category": "Operations"
+      "category": "Operations",
+      "major": "Marketing",
+      "year": "Junior"
     },
     {
-      "firstName": "Taylor",
-      "lastName": "Adams",
+      "name": "Taylor Adams",
       "position": "Student Assistant, Employer Relations",
-      "category": "Operations"
+      "category": "Operations",
+      "major": "Public Relations",
+      "year": "Freshman"
     }
   ]
 }
