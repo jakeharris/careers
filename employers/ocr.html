@@ -1,128 +1,423 @@
-<!DOCTYPE html>
-<html><!-- InstanceBegin template="/Templates/jobs.dwt" codeOutsideHTMLIsLocked="false" -->
-<head>
-<title>hire.auburn.edu - Auburn University</title>
-<link rel="stylesheet" href="http://www.auburn.edu/template/styles/main.css" media="screen" type="text/css">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-h2 {
-	font-size: 2em;
-}
-</style>
-</head>
-<body>
-<div id="pageWrap"> 
-  <div id="headerWrap">
-    <div id="header">
-      <div id="logo">
-      	<a href="http://www.auburn.edu"><img src="http://www.auburn.edu/template/styles/images/headerLogo.png" alt="Auburn University Homepage" /></a>
-      </div>
-      <div id="headerTitle">
-        <div class="topLinks">
-          <a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a> | 
-          <a href="http://www.auburn.edu/map">Map</a> | 
-          <a href="http://www.auburn.edu/main/auweb_campus_directory.html" class="lastTopLink">People Finder</a>
+
+
+<!doctype html>
+<html lang="en" ng-app="career-center-hire">
+  <head>
+    <base href="../">
+    <!-- Meta Data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <title>On-Campus Recruiting | Career Center</title>
+
+    <!-- Bootstrap & Core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link href="//cdn.auburn.edu/assets/css/default.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Application CSS -->
+    <!-- build:css assets/styles/on-campus-recruiting.min.css -->
+      <link rel=stylesheet href="assets/styles/student-employment.css">
+    <!-- endbuild -->
+
+    <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
+    <!--[if lt IE 9]>
+<script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
+<script src="//cdn.auburn.edu/assets/js/respond.src.js"></script>
+<link href="//cdn.auburn.edu/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
+<link href="assets/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
+<script src="assets/js/respond.proxy.js"></script>
+<![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
+
+    <!-- Angular & Core JS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" defer></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js" defer></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" defer></script> 
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" defer></script> 
+    <script src="//cdn.auburn.edu/assets/js/default.min.js" defer></script>
+    
+    <!-- Application-specific CSS/JS -->
+    <!-- build:js assets/scripts/on-campus-recruiting.min.js -->
+      <script src="assets/scripts/components/nav.js" defer></script>
+      <script src="assets/scripts/components/touch-start.js" defer></script>
+      <script src="assets/scripts/components/popover.js" defer></script>
+        <script src="assets/scripts/components/tooltip.js" defer></script>
+      <script src="assets/scripts/student-employment.js" defer></script>
+    <!-- endbuild -->
+    
+  </head>
+
+  <body class="on-campus-recruiting">
+    <header role="banner">
+    
+      <div class="preheader" id="preheader">
+        <div class="hexes">
+          <div class="hex"><a href="http://auburn.edu"><img src="assets/images/AU-emblem.png"></a></div>
         </div>
-        <form action="http://search.auburn.edu" id="searchForm" method="get">
-          <div class="searchBox">
-            <input type="text" name="q" id="q" accesskey="q" size="28" tabindex="1" class="searchField" onfocus="if(this.value=='Search AU...'){this.value='';this.style.color='black'}" onblur="if(this.value=='')this.value='Search AU...';this.style.color='grey'" value="Search AU..." />
-            <input type="image" src="http://www.auburn.edu/template/styles/images/searchButton2.png" name="sa" accesskey="z" tabindex="2" alt="Search" value="Submit" class="searchButton" />
-          </div>
-          <input type="hidden" name="cx" value="006456623919840955604:pinevfah6qm" />
-          <input type="hidden" name="ie" value="utf-8" />
-          <label for="q" style=" position:absolute; left:-9999px; visibility:hidden;">Enter your search terms</label>
-        </form>
-        <div class="titleArea"><!-- InstanceBeginEditable name="unitTitle" -->Tiger Recruiting Link<!-- InstanceEndEditable --></div>
+        <h1><a href="./employers">Career Center</a></h1>
       </div>
-    </div>
-		<table class="nav">
-      <tr>
-        <td><a href="http://www.auburn.edu/career">Career Center HOME</a></td>
-        <td><a href="http://business.auburn.edu/student-services/office-of-professional-career-development/" target="_blank">College of Business OPCD</a></td>
-        </tr>
-    </table>
-  </div>
-  <div id="contentArea">
-    <div class="contentDivision"> 
-      <p class="breadcrumb"><!-- InstanceBeginEditable name="breadcrumb" --><a href="index.html">hire.auburn.edu</a> &gt; On-Campus Recruiting<!-- InstanceEndEditable --> </p>
-			<!-- InstanceBeginEditable name="body" -->
-      <h1>On-Campus Recruiting</h1>
-      <p>On-Campus Recruiting (OCR) offers employers the opportunity to identify, screen and interview upcoming graduates for positions within their organizations. Meet face to face with applicants in a professional environment and screen for second round site interviews. Utilize 11 private, comfortably furnished rooms with wireless internet access.<BR>
-        <BR>
-        The Auburn University Career Center uses an employer <strong>pre-screening system</strong> for scheduling campus interviews.   This system allows employers to select candidates to interview from resumes   submitted by interested students. If you prefer not to pre-screen resumes,   interviews will be scheduled through <strong>open sign up</strong> which allows qualified   students to sign-up for your interviews on a first-come, first-served basis.
-</p>
-      <div class="halves" style="float:left;">
-        <h5>Recruiting at Auburn</h5>
+      
+      
+      <nav id="nav" class="header nav-collapse">
+        <div class="nav-controller" id="hamburger">
+          <i class="icon-navicon"></i>
+        </div>
+        <div class="nav-wrapper">
+          <ul>
+            <li id="about-us" class="hover about-us about-us--mobile">
+              <a href="employers/aboutus/">About Us</a>
+              <ul>
+                <li data-menu="about-us"><a href="employers/aboutus/">Office Info</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/staff.html">Staff</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/campus-partners.html">Campus Partners</a></li>
+              </ul>
+            </li>
+            <li class="recruiting hover">
+              <a href="employers/ocr.html">Recruiting</a>
+              <ul>
+                <li data-menu="recruiting"><a href="employers/job-postings.html">Job Postings</a></li>
+                <li data-menu="recruiting"><a href="employers/events">Career Events</a></li>
+                <li data-menu="recruiting"><a href="employers/ocr.html#oci">On-Campus Interviewing</a></li>
+              </ul>
+            </li>
+            <li id="student-employment" class="student-employment hover">
+              <a>Part-Time Employment</a>
+              <ul>
+                <li data-menu="student-employment"><a href="employers/student-employment/on-campus.html">On-Campus</a></li>
+                <li data-menu="student-employment"><a href="employers/student-employment/off-campus.html">Off-Campus</a></li>
+                <li data-menu="student-employment"><a href="employers/events/seoty.html">Student Employment Awards</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="employers/events/">Events</a>
+            </li>
+            <li class="about-us">
+              <a href="employers/aboutus/">About Us</a>
+              <ul>
+                <li data-menu="about-us"><a href="employers/aboutus/">Office Info</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/staff.html">Staff</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+                <li data-menu="about-us"><a href="employers/aboutus/campus-partners.html">Campus Partners</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <nav class="postheader" id="postheader">
         <ul>
-          <li><a href="https://auburn-csm.symplicity.com/employers" target="_blank">Tiger Recruiting Link (TRL)</a></li>
-          <li><a href="trlocrprocess.pdf" target="_new">Auburn University Career Center OCR Process</a> (PDF)</li>
-          <li><a href="ocrcalendar.html">OCR Calendar</a></li>
-          <li><a href="tipsheets.html">Tip Sheets for TRL</a></li>
-          <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/resources/wrsalary.html">Salary Data</a></li>
-          <li><a href="visitinfo.html">Planning Your Visit</a></li>
-          <li><a href="http://www.justice.gov/crt/about/osc/htm/best_practices.php" target="_blank">Department of Justice Best Practices for Online Job Postings</a></li>
-          <p>&nbsp;</p>
-          <h5>Auburn Recruiting Policies</h5>
-          <li><a href="aucc_disclaimer.pdf" target="_blank">Auburn University Career Center Disclaimer </a>(PDF)</li>
-          <li><a href="http://www.auburn.edu/administration/aaeeo/policies/eeoc.policy.pdf" target="_blank">Auburn University AA/EEO Statement</a> (PDF)</li>
-          <li><a href="thirdpartyrecguide.pdf" target="_blank">Third Party Recruiting &amp; Network Marketing Policy (</a>PDF)</li>
-          <li><a href="http://www.naceweb.org/principles/principl.html" target="_blank">NACE Ethical Standards</a></li>
+            <li><a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a></li>
+            <li><a href="http://www.auburn.edu/map">Map</a></li>
+            <li><a href="http://www.auburn.edu/main/auweb_campus_directory.html">People Finder</a></li>
+            <li><a href="http://auaccess.auburn.edu/">AU Access</a></li>
+            <li>
+                <form action="http://search.auburn.edu" method="get">
+                    <input type="search" placeholder="Search Auburn" name="q">
+                </form>
+            </li>
         </ul>
-      </div>
-      <div class="halves" style="float:left;">
-        <h5>On-Campus Recruiting Locations</h5>
-        <p>OCR registration for all locations listed below can be <br>
-        completed in Tiger Recruiting Link</p>
-        <p><strong class="orange">Auburn University Career Center</strong><br>
-          Majors Recruited: All majors; Combination of business and other majors<br>
-          400 Mary Martin Hall<br>
-          Contact: Jay Skipworth; skipworth@auburn.edu<br>
-        </p>
-        <p><strong class="orange">College of Business Office of Professional and Career Development</strong><br>
-          Majors Recruiting: All business majors
-          <br>
-          101 Lowder Business Building<br>
-        Contact: Melanie Woods; woodsme@auburn.edu</p>
-        <p><strong class="orange">McWhorter School of Building Science</strong><br>
-          Majors Recruited: Building Science          majors<br>
-          118 M. Miller Gorrie Center<br>
-        Contact: Cassandra Calloway; callocd@auburn.edu<br>
-        </p>
-        <p>&nbsp;</p>
-      </div>
-<h5>&nbsp;</h5>
-	  <!-- InstanceEndEditable -->
-      <p class="lastUpdated">Last Updated: <!-- InstanceBeginEditable name="lastUpdated" -->June 9, 2011<!-- InstanceEndEditable --> </p>
+      </nav>
+    </header>
+    
+    <!-- Positioning the nav -->
+    <script>
+      var preheader, nav, postheader;
+      window.onscroll = function () {
+        if(preheader === undefined) preheader = document.getElementById('preheader')
+        if(preheader === undefined) return
+        
+        if(nav === undefined) nav = document.getElementById('nav')
+        if(nav === undefined) return
+        
+        if(postheader === undefined) postheader = document.getElementById('postheader')
+        if(postheader === undefined) return  
+        
+        
+        if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
+          nav.classList.add('fixed') 
+          postheader.classList.add('absolute')
+        } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed') && window.innerWidth >= 768) {
+          nav.classList.remove('fixed')
+          postheader.classList.remove('absolute')
+        } else if (preheader.getBoundingClientRect().bottom <= 0 && nav.children[0].getBoundingClientRect().top <= 0 && !nav.classList.contains('fixed')) {
+          nav.classList.add('fixed') 
+        } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed')) {
+          nav.classList.remove('fixed') 
+        } 
+        
+        if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth >= 768) { 
+          nav.classList.add('bordered')
+        } else if (postheader.getBoundingClientRect().top > 0 + 30  && nav.classList.contains('bordered') && window.innerWidth >= 768) {
+          nav.classList.remove('bordered') 
+        } else if (nav.children[0].getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth < 768) {
+          nav.classList.add('bordered') 
+        } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('bordered') && window.innerWidth < 768) {
+          nav.classList.remove('bordered') 
+        }
+        
+        
+        if(nav.children[1].classList.contains('mobile-nav--active') && !nav.classList.contains('fixed')) {
+          nav.classList.add('fixed'); 
+        }
+      }
+    </script>
+    <!-- Mobile menu -->
+    <script>
+      var hamburger = document.getElementById('hamburger')
+      hamburger.addEventListener('click', function () {
+        var navWrapper = document.getElementById('nav').children[1]
+         
+        if(hamburger === undefined) hamburger = document.getElementById('hamburger')
+        if(hamburger === undefined) return
+        
+        if (hamburger.classList.contains('nav-controller--active'))
+          hamburger.classList.remove('nav-controller--active')
+        else hamburger.classList.add('nav-controller--active')
+        
+        if(navWrapper.classList.contains('mobile-nav--active'))
+          navWrapper.classList.remove('mobile-nav--active')
+        else 
+          navWrapper.classList.add('mobile-nav--active')
+      })
+      window.addEventListener('resize', function () {
+        var navWrapper = document.getElementById('nav').children[1]
+        
+        if(window.innerWidth >= 768 && navWrapper.classList.contains('mobile-nav--active'))
+          navWrapper.classList.remove('mobile-nav--active')
+      })
+      
+      var submenus = document.getElementById('nav').getElementsByClassName('hover')
+      function touchHandler(e) {
+        
+        e.preventDefault()
+        
+        console.log(this.classList)
+        
+        if(this.classList.contains('hover')) {
+          if(this.classList.contains('hover--active')) {
+            this.classList.add('hover--active')
+          }
+        }
+        else if(!this.classList.contains('hover')) {
+    
+          console.log('no hover')
+          console.log(this)
+          var menu = this.parentElement.parentElement
+    
+          if(menu.classList.contains('hover--active')) e.target.click()
+        }
+      }
+      for(var i = 0; i < submenus.length; i++) {
+        submenus[i].addEventListener('touchstart', touchHandler, true)
+        
+        for(var j = 0; j < submenus[i].children[1].children.length; j++) {
+          submenus[i].children[1].children[j].addEventListener('touchstart', touchHandler, true) 
+        }
+      }
+      
+    </script>
+    <style>
+      @media (min-width: 768px) {
+        nav.header .nav-wrapper ul li,
+        nav.header .nav-wrapper.mobile-nav--active ul li {
+           width: 25%;
+        }
+      }
+      nav.header ul li.hover--active:last-of-type > ul, nav.header ul li:hover:last-of-type > ul {
+        left: -300%;
+      }
+      nav.header ul li.hover--active > ul, nav.header ul li:hover > ul {
+        width: 400%; 
+      }
+    </style>    <div class="container">
+      
+
+<section class="content extra-content">
+  <h2>On-Campus Recruiting</h2>
+  <p>
+    All offices use 
+    <a href="https://auburn-csm.symplicity.com/employers/?signin_tab=0">Tiger Recruiting Link</a> 
+    to manage employer and student interaction. This 
+    centralized system is the only place you need post 
+    positions, request information sessions, register 
+    for events, and schedule on-campus interviews.
+  </p>
+  <p>
+    For more information on our recruiting services, 
+    read below.
+  </p>
+</section>
+
+<section class="content extra-content" id="oci">
+  <h3>On-Campus Interviewing</h3>
+  <p>
+    On-campus interviewing (OCI) offers employers 
+    the opportunity to screen candidates for further 
+    consideration for positions within the 
+    organization. Employers may choose from several 
+    different recruiting models that offer varying 
+    degrees of control over who you will interview 
+    during your visit to Auburn.
+  </p>
+  <div class="attributes">
+    <div class="attribute">
+      <a class="icon format" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-content="<p>The employer screens resumes and invites select applicants to interview.</p>">
+        <i class="icon-comments-o"></i>
+      </a>
+      <div class="details">Pre-Select</div>
+    </div>
+    <div class="attribute">
+      <a class="icon format" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-content="<p>The employer screens resumes and invites select applicants to interview, and can also select alternate candidates who may sign up for interviews if any pre-selected candidates decline the interview invitation.</p>">
+        <i class="icon-comments-o"></i>
+      </a>
+      <div class="details">Pre-Select with Alternates</div>
+    </div>
+    <div class="attribute">
+      <a class="icon format" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-content="<p>The employer does not screen applicants. Qualified candidates sign up for interviews on a first come, first served basis without an invitation.</p>">
+        <i class="icon-comments-o"></i>
+      </a>
+      <div class="details">Open</div>
+    </div>
+    <div class="attribute">
+      <a class="icon format" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-content="<p>The employer is wholly responsible for building the interview schedule, contacting candidates, and providing the final schedule to the career center staff upon arrival. We will hold the room reservation for you.</p>">
+        <i class="icon-comments-o"></i>
+      </a>
+      <div class="details">Room Only</div>
     </div>
   </div>
-  <div id="contentArea_bottom"></div>
-  <div id="footerWrap">
-    <div id="footer">
-    <div id="footSectionWrap">
-      <div class="footSection">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
-      <div class="footSection"> 
-        <ul>
-          <li><a href="http://www.facebook.com/home.php#/pages/Auburn-AL/AU-Career-Development-Services/114131891055?ref=nf"><br>
-            <img src="../images/icofacebook.png" alt="Facebook" width="25" height="25" border="0"></a> &nbsp;<a href="http://twitter.com/#!/AUCareer"><img src="file:///M|/SITEREDO/buttons/icotwitter.png" alt="Twitter" width="25" height="25" border="0"></a> &nbsp;<a href="http://www.linkedin.com/groups?about=&gid=1878262" target="_blank"><img src="file:///M|/SITEREDO/buttons/icolinked.png" alt="LinkedIn" width="25" height="25" border="0"></a> <a href="http://tigersprepare.blogspot.com/" target="_blank">&nbsp;<img src="file:///M|/SITEREDO/buttons/icoblog.png" alt="Blog" width="25" height="25" border="0"></a></li>
-        </ul></div><div class="footSection noBorder">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
-    </div>
-    </div>  
-    <div id="subfooter">
-      Auburn University Career Center | Auburn, Alabama 36849 | (334) 844-4744  | <script type="text/javascript">emailE='auburn.edu'; emailE=('employs' + '@' + emailE); document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");</script>
-      employs@auburn.edu<br />
-      <a href="https://fp.auburn.edu/ocm/auweb_survey">Website Feedback</a> | <a href="http://www.auburn.edu/privacy">Privacy</a> | <a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; 
-      <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a>
+  <h3>Changing or Cancelling an Interviewing Schedule</h3>
+  <p>
+    Please contact the appropriate representative to 
+    make changes to your schedule. It is strongly 
+    recommended that all changes be made BEFORE deadlines 
+    in the schedule occur. If you need to cancel, please 
+    <a href="employers/aboutus/recruiting-contacts.html">
+      contact the appropriate recruiting contact
+    </a>
+    during office hours (7:45AM CT - 4:45PM CT).
+  </p>
+</section>
+
+<section class="flex">
+  <div class="flex-third">
+    <div class="content extra-content">
+      <h3>Recruiting Contacts</h3>
+      <a class="flat-btn" href="employers/aboutus/recruiting-contacts.html">Get in Touch</a>
     </div>
   </div>
-  <!--#include virtual="/template/includes/gatc.html" --> 
-</div>
-</body>
-<!-- InstanceEnd --></html>
+  <div class="flex-half content extra-content" id="info-sessions">
+    <h3>Information Sessions</h3>
+    <p>
+      During these sessions, employers make presentations on topics that 
+      include the organization's career opportunities, culture, and 
+      products or services. The Career Center or the Office of 
+      Professional and Career Development will publicize these sessions to
+      the appropriate audience based on the information provided in the 
+      Information Session request which can be filed through Tiger 
+      Recruiting Link. 
+    </p>
+    <p class="muted">Professional or "business casual" dress is 
+      appropriate, unless otherwise indicated in the publicity.</p>
+  </div>
+</section>
+
+<section class="content extra-content content--no-padding content--tips">
+  <h3 class="how-to-header">Common Resources</h3>
+  <div class="flex buttons buttons--no-padding">
+    <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/12" class="flat-btn                 flex-quarter">Posting a Job</a>
+    <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/14" class="flat-btn flat-btn--white flex-quarter">Reviewing Applications</a>
+    <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/14" class="flat-btn                 flex-quarter">Third Party Policy</a>
+    <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/4"  class="flat-btn flat-btn--white flex-quarter">Interviewing</a>
+  </div>
+</section>
+
+<section class="content extra-content content--no-padding content--tips">
+  <h3 class="how-to-header">Policies and NACE Guides</h3>
+  <div class="flex buttons buttons--no-padding">
+    <a href="http://auburn.edu/career/employers/aucc_disclaimer.pdf" class="flat-btn                 flex-quarter">TRL Disclaimer</a>
+    <a href="https://sites.auburn.edu/admin/universitypolicies/Policies/EqualEmploymentOpportunityPolicy.pdf" class="flat-btn flat-btn--white flex-quarter">EEO Policy</a>
+    <a href="http://www.naceweb.org/knowledge/principles-for-professional-practice.aspx#employment" class="flat-btn                 flex-quarter">NACE Employer's Guide</a>
+    <a href="http://www.naceweb.org/knowledge/principles-for-professional-practice.aspx#thirdparty"  class="flat-btn flat-btn--white flex-quarter">NACE Third Party Guide</a>
+  </div>
+</section>
+
+    </div>
+    <footer>
+      <div class="footer-wrap">
+        <section>
+          <h6>Our Office</h6>
+          <address>
+            <ul>
+              <li>
+                <span class="address beforecon">
+                  <a href="http://auburn.edu/map/?id=76">
+                    303 Martin Hall
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span class="phone beforecon">
+                  <a href="tel:(334) 844-4744">
+                    (334) 844-4744
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span class="email beforecon">
+                  <a href="aucc@auburn.edu">
+                    aucc@auburn.edu
+                  </a>
+                </span>       
+              </li>
+            </ul>
+          </address>
+        </section>
+        <section>
+          <h6>Tools</h6>
+          <ul>
+            <li><a href="events">Career Events</a></li>
+            <li><a href="pathways">Pathways: Major Guides</a></li>
+            <li><a href="resume">Resume Review</a></li>
+            <li><a href="http://jobs.auburn.edu">Tiger Recruiting Link</a></li>
+          </ul>
+        </section>
+        <section>
+          <h6>Beyond</h6>
+          <ul>
+            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
+            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
+            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
+            <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
+          </ul>
+        </section>
+        <p class="copyright">Copyright <a href="https://sites.auburn.edu/academic/provost/us/CareerCenter/SitePages/Home.aspx">Auburn University Career Center</a>, <script type="text/javascript">document.write(new Date().getFullYear())</script>.</p>
+      </div>
+    </footer>
+
+    <div class="to-top" style="display:none;"><a href="#top"></a></div>
+  </body>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12338791-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</html>

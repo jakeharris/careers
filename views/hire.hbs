@@ -1,94 +1,87 @@
 ---
+path-to-root: ../
 ng-app: career-center-hire
 name: hire
 type: hire
 layout: employers.hbs
 title: Employers | Career Center
 analytics-token: UA-12338791-4
-path-to-root: ..
 component:
 - calendar
 - sponsors
 ---
 
-<section class="row flex">
-  <div class="welcome content extra-content">
-    <h2>This is Recruiting.</h2>
-    <p>
-      Auburn University is one of the premier engineering universities of the Southeast. 
-      Connect with us at the AU Career Center, and put 30,000 quality candidates at 
-      your fingertips.
-    </p>
-    <p>
-      The services listed to the right are just some of the myriad ways we can help you
-      hire not just new graduates, but people we believe in &mdash; people <em>you</em>
-      can believe in.
-    </p>
-  </div>
-  <div class="services content extra-content content--no-padding">
-    <div class="services-background"></div>
-    <div class="services-wrapper">
-      <div class="services-overlay"></div>
-      <h2 class="services-header">
-        Our Services
-      </h2>
-      <ul class="services-content">
-        <li class="service"><a href="#">Job Postings</a></li>
-        <li class="service"><a href="employers/events/">Career Events</a></li>
-        <li class="service"><a href="#">Student Employment</a></li>
-        <li class="service"><a href="#">On-Campus Interviewing</a></li>
-        <li class="service"><a href="#">Internship Opportunities</a></li>
-        <li class="service"><a href="#">Information Sessions</a></li>
-      </ul>
-    </div>
-    <a class="flat-btn report-hiring" href="#">Report Hiring</a>
-  </div>
-</section>
-
-<section class="row flex">
-  <div class="contacts content extra-content">
-    <h2>Recruiting Contacts</h2>
-    <p>All email addresses listed here end in "@auburn.edu".</p>
-    <div class="contacts-container">
-      <div class="contact">
-        <h3>All Majors <span class="muted">Career Center</span></h3>
-        <div class="contact-details">
-          <img src="assets/images/staff/jay.jpg">
-          <div class="contact-info">
-            <p class="name">Jay Skipworth</p>
-            <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
-            <p class="email"><a href="mailto:skipworth@auburn.edu">skipworth</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="contact">
-        <h3>Business Majors <span class="muted">Harbert College of Business</span></h3>
-        <div class="contact-details">
-          <img src="assets/images/staff/melvin.jpg">
-          <div class="contact-info">
-            <p class="name">Mike Stover</p>
-            <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
-            <p class="email"><a href="mailto:mstover@auburn.edu">mstover</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <form class="login content extra-content" method="post" action="https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents%2Flogin">
+<section class="login-welcome row flex">
+  <div class="login content">
     <div class="login-wrapper">
       <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
       <p class="login-blurb">Your link to Auburn students.</p>
       <div class="buttons">
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/">Sign in</a>
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=0">Sign in</a>
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=2">Register</a>
         <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/employers/policiesprocedures_emp.html">View policies</a>
         <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
       </div>
     </div>
-  </form>
+  </div>
+  <div class="welcome content content--no-padding">
+    <h2 class="padding">This is Recruiting.</h2>
+    <blockquote class="padding">
+      Highly effective employers place their emphasis on long-term
+      objectives and building connections with students, faculty, 
+      and the career staff, rather than focusing on recruiting 
+      transactions. It is the Career Center's goal to develop and 
+      maintain strong relationships with employers, and we value 
+      the opportunity to assist you with your hiring needs.
+      <br/>
+      <br/>
+      Your success is our success. We look forward to helping you 
+      put a Tiger On Your Team.
+    </blockquote>
+    <p class="padding">
+      <a href="mailto:skipworth@auburn.edu">Jay Skipworth</a>, Assistant Director of Employer Relations
+    </p>
+    <a class="flat-btn" 
+       role="button" 
+       tabindex="0" 
+       data-toggle="popover" 
+       data-html="true" 
+       data-placement="top" 
+       data-trigger="click" 
+       data-title="Auburn University"
+       data-content="<ul>
+                      <li>One of the largest universities in the south</li>
+                      <li>Fall 2015 enrollment: 27,287</li>
+                      <li>140 degree options</li>
+                      <li>13 schools and colleges</li>
+                      <li>Undergraduate, graduate, and professional degree options</li>
+                     </ul>">
+      Learn about Auburn University
+    </a>
+  </div>
 </section>
 
-<section class="row flex" ng-controller="calendar-ctrl">
+<section class="row flex">
+  <div class="services content extra-content content--no-padding">
+    <div class="services-wrapper">
+      <div class="services-overlay"></div>
+      <h2 class="services-header">
+        Employer Services
+      </h2>
+      <ul class="services-content">
+        <li class="service"><a href="employers/job-postings.html">Job Postings</a></li>
+        <li class="service"><a href="employers/events/">Career Events</a></li>
+        <li class="service"><a href="employers/student-employment/on-campus.html">On-Campus Employment</a></li>
+        <li class="service"><a href="employers/oci.html">On-Campus Interviewing</a></li>
+        <li class="service"><a href="employers/student-employment/off-campus.html">Off-Campus Employment</a></li>
+        <li class="service"><a href="employers/oci.html#info-sessions">Information Sessions</a></li>
+      </ul>
+    </div>
+    <a class="flat-btn flat-btn--disabled report-hiring" href="" disabled="disabled">Report Hiring</a>
+  </div>
+</section>
+
+<section class="events-upcoming row flex" ng-controller="calendar-ctrl">
   <div class="events content extra-content content--no-padding">
     <div class="first-event-wrapper">
       <h2>Upcoming Events</h2>
@@ -125,7 +118,6 @@ component:
       </li>
     </ul>
   </div>
-  <a class="upcoming-event content extra-content content--no-padding" href="[[ firstEvents[0].url ]]"><img src="[[ img ]]"></img></a>
 </section>
 
 <section class="row sponsors content extra-content">

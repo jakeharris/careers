@@ -97,6 +97,7 @@ address {
 
 .container {
   max-width: 1200px !important;
+  padding-bottom: 3rem;
   //width: 100vw !important;
 }
 
@@ -151,6 +152,15 @@ h3,.h3-a {
   margin-bottom: 5px;
 }
 
+.emphasized {
+  color: $thisislightorange;
+  
+  strong {
+    font-size: 100%;
+    color: $thisisburntorange;
+    font-family: $header-font-family;
+  }
+}
 .banner {
   box-sizing: border-box;
   position: relative;
@@ -433,6 +443,12 @@ h3,.h3-a {
     color: #ccc;
     background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
     background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
+    cursor: default;
+    &:hover {
+      color: #ccc;
+      background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
+      background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
+    }
   }
 }
 

@@ -234,6 +234,10 @@ a.tooltip[href$=".pdf"] {
     background: $thisislightorange; 
   }
 }
+a.cam::after {
+  content: none; 
+}
+
 
 .big-header {
   font-size: 7rem;

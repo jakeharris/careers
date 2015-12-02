@@ -1,19 +1,21 @@
 ---
+path-to-root: ../../
 ng-app: career-center-hire
 name: on-campus
 type: student-employment
 layout: employers.hbs
 title: On-Campus Employment | Career Center
 analytics-token: UA-12338791-4
-path-to-root: ../../
+component:
+- tooltip
 ---
 
-<section class="hero content">
+<section class="content hero">
   <h2>On-Campus Employment</h2>
 </section>
 
 <section class="flex">
-  <div class="content extra-content flex-half recruiting-link">
+  <div class="content extra-content recruiting-link">
     <h3 class="trl"></h3>
     <p>
       Your source for student recruitment.
@@ -49,65 +51,105 @@ path-to-root: ../../
       <a href="https://auburn-csm.symplicity.com/employers/?signin_tab=2" class="flat-btn flat-btn--white flat-btn--half">Register</a>
     </div>
   </div>
-  <div class="flex-half quick-guide padding">
-    <h4>Create an account</h4>
-    <ol>
-      <li><a href="https://auburn-csm.symplicity.com/employers/?signin_tab=2">Create a new employer account.</a></li>
-      <li>Fill out your contact information.</li>
-      <li>Under Services, choose Job Postings.</li>
-      <li>Submit.</li>
-      <li>Wait for the Career Center to approve your registration.</li>
-    </ol>
-    <h4>Post jobs</h4>
-    <ol>
-      <li><a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0">Log in.</a><br/><span class="muted">Username: your email address<br/>Password: will be emailed to you</span></li>
-      <li>Navigate to the Jobs tab and click "Add New."</li>
-      <li>Fill out your job posting.</li>
-    </ol>
+  <div class="content extra-content contact welcome">
+    <h3>Point of Contact</h3>
+    <div class="contact-details">
+      <img src="assets/images/staff/lauren.jpg">
+      <div class="contact-info">
+        <p class="name">Lauren Hobbs</p>
+        <p class="phone"><a href="tel:(334) 844-3867">(334) 844-3867</a></p>
+        <p class="email"><a href="mailto:hobbs@auburn.edu">hobbs<span class="at-auburn">@auburn.edu</span></a></p>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="interdigitator">
-  <section class="content extra-content content--no-padding content--guide">
-    <h3 class="how-to-header padding">How to Hire</h3>
-    <ul class="guide">
-      <li class="guide-step">
-        <a class="icon"></a>
-        <div class="details">Post positions on <a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0">TRL</a></div>
-      </li>
-      <li class="guide-step">
-        <a class="icon"></a>
-        <div class="details">Interview applicants and select your student worker(s)</div>
-      </li>
-      <li class="guide-step">
-        <a class="icon"></a>
-        <div class="details">Determine student enrollment</div>
-      </li>
-      <li class="guide-step">
-        <a class="icon"></a>
-        <div class="details">Determine hiring status (active, new-hire, terminated)</div>
-      </li>
-      <li class="guide-step">
-        <a class="icon"></a>
-        <div class="details">Determine the number of hours the student can work</div>
-      </li>
-      <li class="guide-step">
-        <a class="icon"></a>
-        <div class="details">Complete and submit appropriate paperwork to HR</div>
-      </li>
-    </ul>
-  </section>
-
-  <section class="content extra-content content--no-padding content--tips">
-    <h3 class="how-to-header">Tips and Advice</h3>
-    <div class="flex buttons buttons--no-padding">
-      <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/4"  class="flat-btn                 flex-quarter">Interviewing</a>
-      <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/6"  class="flat-btn flat-btn--white flex-quarter">Classify a Student</a>
-      <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/6"  class="flat-btn                 flex-quarter">Hiring</a>
-      <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/10" class="flat-btn flat-btn--white flex-quarter">Paperwork</a>
+<section class="quick-guide"> 
+  <div class="flex">
+    <div class="flex-third registration--starter">
+      <h4>Registration</h4>
+      <ol>
+        <li><a href="https://auburn-csm.symplicity.com/employers/?signin_tab=2" target="_blank">Click here to create a new employer account.</a></li>
+        <li>Complete your company profile.</li>
+        <li>You may select “All Majors” under the Majors Recruited section.</li>
+        <li>Submit.</li>
+        <li>Allow at least one business day for the Career Center to verify your registration.</li>
+      </ol>
     </div>
-  </section>
-</div>
+    <div class="flex-third">
+      <h4>Post jobs</h4>
+      <ol>
+        <li><a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0">Click here to log in.</a><br/><span class="muted">Username: your email address<br/>Password: will be emailed to you</span></li>
+        <li>Navigate to the Jobs tab and click "Add New."</li>
+        <li>Select “Post to this school only.”</li>
+        <li>Complete job description and submit.<br /><span class="muted">To re-open an old posting, select “Show Archived” under the Copy Existing category.</span></li>
+      </ol>
+    </div>
+    <div class="flex-third">
+      <h4>Student eligibility requirements</h4>
+      <p>
+        To be hired as a student employee, the student must either 
+        presently enrolled in at least one semester hour, or have 
+        been enrolled last semester with plans to enroll next semester.
+      </p>
+      <h4>Guidelines for work hours</h4>
+      <p>
+        Up to 20 hours per week (0.50 FTE) while enrolled for
+        <strong>all campus jobs combined</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="content extra-content content--no-padding content--guide">
+  <h3 class="how-to-header padding">How to Hire</h3>
+  <p>Click the numbers below for additional details.</p>
+  <ul class="guide">
+    <li class="guide-step">
+      <a class="icon" 
+         role="button" 
+         href="http://issuu.com/aucc/docs/studentemploymentpolicies/6"
+         ></a>
+      <div class="details">Post positions on <a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0">TRL</a></div>
+    </li>
+    <li class="guide-step">
+      <a class="icon" 
+         role="button" 
+         href="http://issuu.com/aucc/docs/studentemploymentpolicies/4"
+         ></a>
+      <div class="details">Interview applicants and select your student worker(s)</div>
+    </li>
+    <li class="guide-step">
+      <a class="icon" 
+         role="button" 
+         href="http://issuu.com/aucc/docs/studentemploymentpolicies/8"
+         ></a>
+      <div class="details">Determine student enrollment</div>
+    </li>
+    <li class="guide-step">
+      <a class="icon" 
+         role="button" 
+         href="http://issuu.com/aucc/docs/studentemploymentpolicies/8"
+         ></a>
+      <div class="details">Determine hiring status (active, new-hire, terminated)</div>
+    </li>
+    <li class="guide-step">
+      <a class="icon" 
+         role="button" 
+         href="http://issuu.com/aucc/docs/studentemploymentpolicies/10"
+         ></a>
+      <div class="details">Determine the number of hours the student can work</div>
+    </li>
+    <li class="guide-step">
+      <a class="icon" 
+         role="button" 
+         href="http://issuu.com/aucc/docs/studentemploymentpolicies/10"
+         ></a>
+      <div class="details">Complete and submit appropriate paperwork to HR</div>
+    </li>
+  </ul>
+  <a href="assets/images/student-employment-handbook.pdf" class="flat-btn">Supervisor Handbook</a>
+</section>
 
 <section class="content extra-content">
   <h3 class="faq-header"></h3>

@@ -1,4 +1,4 @@
-var home = angular.module('career-center-home', ['ngRoute'])
+var home = angular.module('career-center-home', [])
 
 home.config(['$interpolateProvider', function ($interpolateProvider) {
   'use strict';

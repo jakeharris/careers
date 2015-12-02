@@ -3,8 +3,11 @@
 /*****************/
 /* NAV OVERRIDES */
 /*****************/
-#student-employment ul {
-  margin-left: -100%;
+
+@media (min-width: $small-screen-size) {
+  #student-employment ul {
+    margin-left: -100%;
+  }
 }
 
 header {
@@ -110,6 +113,7 @@ nav.header {
     .about-us--mobile {
       display: none; 
     }
+    
   }
   
   .nav-wrapper.mobile-nav--active {
@@ -246,6 +250,8 @@ nav.header {
       
       background: $thisislightblue;
       color: white;
+      
+      -ms-flex-negative: 1;
       
       a {
         display: block;
@@ -435,8 +441,9 @@ ul li  {
         width: 90vw;
         padding-left: 15px;
         padding-right: 15px;
-        li {
-          width: 16.6667%;
+        li ul {
+          -ms-flex: 0 1 auto;
+          padding: 0; 
         }
       }
     }

@@ -16,11 +16,11 @@
 }
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?-q75sjq');
-	src:url('../fonts/icomoon.eot?#iefix-q75sjq') format('embedded-opentype'),
-		url('../fonts/icomoon.ttf?-q75sjq') format('truetype'),
-		url('../fonts/icomoon.woff?-q75sjq') format('woff'),
-		url('../fonts/icomoon.svg?-q75sjq#icomoon') format('svg');
+	src:url('../fonts/icomoon.eot?6qu358');
+	src:url('../fonts/icomoon.eot?#iefix6qu358') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?6qu358') format('truetype'),
+		url('../fonts/icomoon.woff?6qu358') format('woff'),
+		url('../fonts/icomoon.svg?6qu358#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -38,7 +38,30 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-enter:before {
+	content: "\e903";
+}
+.icon-folder-open:before {
+	content: "\e900";
+}
+.icon-user-check:before {
+	content: "\e901";
+}
+.icon-folder-download:before {
+	content: "\e902";
+}
+.icon-audiotrack:before {
+	content: "\e801";
+}
+.icon-baseball:before {
+	content: "\e800";
+}
+.icon-circuit-board:before {
+  content: '\e60c';
+}
+.icon-automobile:before {
+    content: "\e60b";
+}
 .icon-law:before {
 	content: "\e608";
 }

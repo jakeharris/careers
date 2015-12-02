@@ -3,13 +3,12 @@ ng-app: none
 name: emp-seoty
 type: employer-event-pages
 title: Student Employment Awards | Career Center
-path-to-root: ../../
 layout: employers.hbs
 ---
 
 <!-- Banner image -->
 <div class="hero">
-  <img src="assets/images/events/SEOTY_Webpage(F15).png">
+  <img class="img" src="assets/images/events/SEOTY_Webpage(F15).png">
   <h1 class="img-replace">Student Employee of the Year Awards</h1>
 </div>
 
@@ -17,36 +16,44 @@ layout: employers.hbs
   <div class="row row--no-padding">
     <div class="brief">
       <p class="blurb">
-        Want to show your pride in the student workers you've hired? Off-campus or on-campus,
-        it doesn't matter -- nominate your student employees if you think they're a 
-        particularly excellent worker. They'll be doing the same of their supervisors.
+        Do you have exceptional student workers? Off-campus or on-campus -- nominate 
+        outstanding student employees for Student Employee of the Year. 
+        <span class="desktop-only">The Career Center encourages Auburn University departments, colleges and offices as 
+        well as Auburn/Opelika area businesses to celebrate student employee contributions 
+        during National Student Employment Week, April 11 – 15, 2016.</span>
       </p>
-      <p class="blurb">
-        All nominees will receive gifts of some sort, and the winners will get a little extra
-        to show them how much they mean to their employers. Let them know by nominating!
+      <p class="blurb desktop-only">
+        As a part of National Student Employment Week, on Monday, April 11, 2016, the Career 
+        Center hosts the Student Employee of the Year Awards (SEOTY). Two students are 
+        awarded for their efforts as an on-campus or off-campus student employee, and all 
+        nominees are recognized. Additionally, students submit nominations for Supervisor of
+        the Year. The award recipients will move on to represent Auburn University at 
+        regional and national levels of the National Student Employment Association awards.
       </p>
     </div>
     <div class="actions">
-      <a class="flat-btn" href="">Nominate a Student Worker</a>
-      <h2 class="checklist-header">
-        Eligibility
-      </h2>
-      <ul class="checklist">
-        <li>Must be a current Auburn University student in good academic standing enrolled for the Spring 2015 semester</li>
-        <li>Must have worked 3 months full-time or 6 months part-time between June 2014 and May 2015 (anticipated)</li>
-        <li>Must <strong>not</strong> be a graduate, research, or teaching assistant</li>
-      </ul>
+      <a class="flat-btn flat-btn--disabled" disabled>Nominate a Student Worker</a>
+      <div class="eligibility">
+        <h2 class="checklist-header">
+          Eligibility
+        </h2>
+        <ul class="checklist">
+          <li>Must be a current Auburn University student in good academic standing</li>
+          <li>Must have worked at least 4 months between June 2015 and May 2016 (anticipated)</li>
+          <li>May be a work-study, graduate assistants, or co-op student</li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="dates flex flex--space-between row">
-    <h2 class="awards-ceremony-header flex-third">Awards Ceremony <span class="awards-ceremony">Apr 12</span></h2>
-    <h2 class="deadline-header flex-third">Nomination Deadline <span class="deadline">Feb 12</span></h2>
+  <div class="dates desktop-only flex flex--space-between row">
+    <h2 class="awards-ceremony-header flex-third">Awards Ceremony <span class="awards-ceremony">Apr 11</span></h2>
+    <h2 class="deadline-header flex-third">Nomination Deadline <span class="deadline">Feb 8</span></h2>
   </div>
 </section>
 
 
 <div class="hero">
-  <img src="assets/images/events/SEOTY_officeDecorating.png">
+  <img class="img" src="assets/images/events/SEOTY_officeDecorating.png">
   <h1 class="img-replace">Office Decorating Contest</h1>
 </div>
 <section class="content">
@@ -61,7 +68,8 @@ layout: employers.hbs
       </p>
     </div>
     <div class="actions">
-      <a class="flat-btn" href="">Register</a>
+      <a class="flat-btn flat-btn--disabled" disabled>Register</a>
+      <a class="flat-btn flat-btn--white" href="assets/images/events/office-decorating.pdf">View Guidelines</a>
     </div>
   </div>
 </section>

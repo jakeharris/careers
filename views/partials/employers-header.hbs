@@ -20,19 +20,19 @@
             <li data-menu="about-us"><a href="employers/aboutus/">Office Info</a></li>
             <li data-menu="about-us"><a href="employers/aboutus/staff.html">Staff</a></li>
             <li data-menu="about-us"><a href="employers/aboutus/plan-your-visit.html">Plan Your Visit</a></li>
-            <li data-menu="about-us"><a href="employers/aboutus/campus-partners.html">Campus Partners</a></li>
+            <li data-menu="about-us"><a href="employers/aboutus/recruiting-contacts.html">Recruiting Contacts</a></li>
           </ul>
         </li>
-        <li class="recruiting">
-          <a href="employers/ocr.html">Recruiting</a>
+        <li class="recruiting hover">
+          <a>Recruiting</a>
           <ul>
-            <li data-menu="recruiting"><a href="#">Job Postings</a></li>
-            <li data-menu="recruiting"><a href="events">Career Events</a></li>
-            <li data-menu="recruiting"><a href="#">On-Campus Interviewing</a></li>
+            <li data-menu="recruiting"><a href="employers/job-postings.html">Job Postings</a></li>
+            <li data-menu="recruiting"><a href="employers/events">Career Events</a></li>
+            <li data-menu="recruiting"><a href="employers/ocr.html#oci">On-Campus Interviewing</a></li>
           </ul>
         </li>
-        <li id="student-employment">
-          <a href="employers/studentemployment/index.html">Part-Time Employment</a>
+        <li id="student-employment" class="student-employment hover">
+          <a>Part-Time Employment</a>
           <ul>
             <li data-menu="student-employment"><a href="employers/student-employment/on-campus.html">On-Campus</a></li>
             <li data-menu="student-employment"><a href="employers/student-employment/off-campus.html">Off-Campus</a></li>
@@ -48,7 +48,7 @@
             <li data-menu="about-us"><a href="employers/aboutus/">Office Info</a></li>
             <li data-menu="about-us"><a href="employers/aboutus/staff.html">Staff</a></li>
             <li data-menu="about-us"><a href="employers/aboutus/plan-your-visit.html">Plan Your Visit</a></li>
-            <li data-menu="about-us"><a href="employers/aboutus/campus-partners.html">Campus Partners</a></li>
+            <li data-menu="about-us"><a href="employers/aboutus/recruiting-contacts.html">Recruiting Contacts</a></li>
           </ul>
         </li>
       </ul>
@@ -168,9 +168,11 @@
   
 </script>
 <style>
-  nav.header .nav-wrapper ul li,
-  nav.header .nav-wrapper.mobile-nav--active ul li {
-     width: 25%;
+  @media (min-width: 768px) {
+    nav.header .nav-wrapper ul li,
+    nav.header .nav-wrapper.mobile-nav--active ul li {
+       width: 25%;
+    }
   }
   nav.header ul li.hover--active:last-of-type > ul, nav.header ul li:hover:last-of-type > ul {
     left: -300%;

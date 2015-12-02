@@ -1,3 +1,26 @@
 {
-  
+  "__help": "",
+  "holiday": "Closed Wed-Fri 11/25-27 for Thanksgiving.",
+  "types": {
+    "office": [
+      {
+        "startDay": "Mon",
+        "endDay": "Fri",
+        "startTime": "7:45am",
+        "endTime": "4:45pm"
+      }
+    ],
+    "walkIn": [
+      {
+        "days": ["Mon", "Thu", "Fri"],
+        "startTime": "12pm",
+        "endTime": "4pm"
+      },
+      {
+        "days": ["Tue", "Wed"],
+        "startTime": "9am",
+        "endTime": "4pm"
+      }
+    ]
+  }
 }

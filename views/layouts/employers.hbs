@@ -1,5 +1,7 @@
 ---
-path-to-root: ../
+path-to-root: http://auburn.edu/career/
+ng-app: career-center-hire
+analytics-token: UA-12338791-4
 ---
 
 <!doctype html>
@@ -54,6 +56,7 @@ path-to-root: ../
     
     <!-- Application-specific CSS/JS -->
     <!-- build:js assets/scripts/{{ name }}.min.js -->
+      <script src="assets/scripts/components/nav.js" defer></script>
       <script src="assets/scripts/components/touch-start.js" defer></script>
       <script src="assets/scripts/components/popover.js" defer></script>
       {{#each component}}
@@ -68,14 +71,14 @@ path-to-root: ../
     {{> employers-header }}
     <div class="container">
       {{  body   }}
-      {{> footer }}
     </div>
+    {{> footer }}
 
     <div class="to-top" style="display:none;"><a href="#top"></a></div>
   </body>
   <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-12338791-1']);
+    _gaq.push(['_setAccount', '{{ analytics-token }}']);
     _gaq.push(['_trackPageview']);
 
     (function() {
