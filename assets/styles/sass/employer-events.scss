@@ -4,11 +4,11 @@
 /* MIXINS */
 /**********/
 @mixin color-alternator () {
-  &:nth-of-type(3n - 2) {
+  &:nth-of-type(2n - 1) {
     background: $thisislightblue;
     color: white;
   }
-  &:nth-of-type(3n - 1) {
+  &:nth-of-type(2n) {
     background: $thisisdarkblue;
     color: white;
   }
@@ -17,7 +17,17 @@
     color: $thisisdarkblue; 
   }
 }
-
+@mixin checkerboard() {
+  & {
+    background: $thisislightblue;
+    color: white;
+  }
+  &:nth-of-type(4n),
+  &:nth-of-type(4n - 3) {
+    background: $thisisdarkblue;
+    color: white;
+  }
+}
 .employer-events-title, .employer-events-wrapper > p {
   padding: 5rem;
   text-align: center;
@@ -32,7 +42,7 @@
   .employer-event {
     flex-basis: 100%;
     padding: 3rem;
-    @include color-alternator;
+    @include checkerboard;
     transition: background-color 0.3s, color 0.1s;
     .employer-event-link {
       color: inherit;
@@ -84,6 +94,14 @@
         height: auto;
       }
     }
+  }
+  .employer-event.employer-event--blurb {
+    background-color: white;
+    color: $thisisdarkblue;
+    font-family: $header-font-family;
+    font-size: 3rem;
+    padding: 3rem 5rem;
+    text-align: center;
   }
 }
 @media (min-width: $medium-screen-size) {
