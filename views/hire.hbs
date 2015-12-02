@@ -83,7 +83,9 @@ component:
 
 <section class="employer-events-wrapper content extra-content content--no-padding row" ng-controller="calendar-ctrl">
   <h2 class="employer-events-title">Event Registration</h2>
+  <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
   <ul class="employer-events flex">
+    <li ng-if="events.length % 2 !== 0" class="employer-event employer-event--blurb">Click any event to get more information and register.</li>
     <li class="employer-event" ng-repeat="event in events">
       <a class="employer-event-link" href="[[ event.url ]]">
         <h3>[[ event.name ]]</h3>
