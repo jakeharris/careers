@@ -64,6 +64,16 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
           this.img = 'assets/images/events/' + event.abbrev + '-slide.png'
           this.url = 'employers/events/' + event.abbrev + '.html'
         }
+        
+        if(
+          event.cost !== undefined
+          && event.cost['early-bird-deadline']
+          && new Date(event.cost['early-bird-deadline']) >= new Date()
+        )
+          event.cost = event.cost['early-bird']
+          
+        else if (event.cost !== undefined) 
+          event.cost = event.cost.standard
       }
     }.bind(this))
   }

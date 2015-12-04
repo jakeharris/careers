@@ -21,8 +21,8 @@ component:
             <div class="employer-event-date">[[ event.date.month ]] [[ event.date.day ]]</div>
             <div class="employer-event-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
           </div>
-          <div class="employer-event-tags">
-            <div class="employer-event-tag" ng-repeat="tag in event.tags">[[ tag ]]</div>
+          <div class="employer-event-cost" ng-if="event.cost">
+            [[ event.cost ]]
           </div>
         </div>
       </a>
