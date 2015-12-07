@@ -316,6 +316,30 @@
 }
 
 
+.flat-btn--with-info {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-basis: 100%;
+  box-shadow: 6px 6px 0 $box-shadow;
+  .flat-btn {
+    flex-basis: 80%;
+    height: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+  .flat-btn--info {
+    flex-basis: 20%;
+    font-family: $header-font-family;
+    font-size: 3rem;
+    background-color: white;
+    color: $thisislightblue;
+    text-align: center;
+    padding: 1.2rem;
+    cursor: pointer;
+  }
+}
+
+
 @media (min-width: $tiny-screen-size) {
   .contact {
     .address, .phone, .email, .name {
