@@ -7,7 +7,6 @@ function Price (res) {
      var url = window.location.href.split('/')
      url = url[url.length - 1].split('.html')[0]
      
-     console.log(url)
      return url
   }()
   var event = res.data.filter(function (el) {
@@ -15,8 +14,6 @@ function Price (res) {
       return true
     return false
   })[0]
-  
-  console.log(event)
   
   this.earlyBird = event.cost['early-bird']
   this.earlyBirdDeadline = event.cost['early-bird-deadline']
