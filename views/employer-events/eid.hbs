@@ -31,7 +31,7 @@ component:
       </div>
     </div>
     <div class="actions">
-      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/eidsp16">Register ($[[ price.now ]])</a>
+      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/eidsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
       <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/eidsp16">
           Register ($[[ price.now ]])

@@ -1,10 +1,12 @@
 ---
 path-to-root: ../../
-ng-app: none
+ng-app: career-center-employer-events
 name: emp-cmcd
 type: employer-event-pages
 title: Communication and Media Career Day
 layout: employers.hbs
+component:
+- price
 ---
 <!-- Banner image -->
 <div class="hero">
@@ -12,7 +14,7 @@ layout: employers.hbs
        alt="Communication & Media Career Day. March 8, 2016, 8am-3pm, in the Student Center Ballroom."></img>
 </div>
 
-<div class="content">
+<div class="content" ng-controller="price-ctrl">
   <div class="row">
     <div class="brief">
       <p class="blurb">
@@ -34,7 +36,20 @@ layout: employers.hbs
       </div>
     </div>
     <div class="actions">
-      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">Register ($200)</a>
+      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+      <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">
+          Register ($[[ price.now ]])
+        </a>
+        <a class="flat-btn--info"
+           data-html="true" 
+           data-trigger="hover" 
+           data-placement="top" 
+           data-toggle="popover" 
+           data-title="<h2>Early Bird Pricing <span class='muted'>$150</span></h2>" 
+           data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
+          ?</a>
+      </div>
  <!--     
       <div class="tipsheet">
         <div class="tipsheet-wrapper">
@@ -62,7 +77,13 @@ layout: employers.hbs
       </div>
     </div>
     <div class="attribute">
-      <a class="icon dress" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" title="<h2>Early Bird Pricing <span class='muted'>$150</span></h2>" data-content="<p>If you register before February 26, you save $50 on your registration fee (per table)!</p>">
+      <!-- 
+        This SHOULD all be automated, but Angular and Popover weren't playing well 
+        (Popover reads everything before Angular gets a chance to set up and populate), 
+        and I couldn't get the cost in the title to render, so you'll need to keep this 
+        up to date manually.  
+      -->
+      <a class="icon dress" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" data-title="<h2>Early Bird Pricing <span class='muted'>$150</span></h2>" data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
         <i class="icon-star-full"></i>
       </a>
       <div class="details">

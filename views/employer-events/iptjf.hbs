@@ -1,10 +1,12 @@
 ---
 path-to-root: ../../
-ng-app: none
+ng-app: career-center-employer-events
 name: emp-iptjf
 type: employer-event-pages
 title: Internship and Part-Time Job Fair
 layout: employers.hbs
+component:
+- price
 ---
 <!-- Banner image -->
 <div class="hero">
@@ -12,7 +14,7 @@ layout: employers.hbs
        alt="Internship & Part-Time Job Fair. January 27, 2016, 10am-1pm, in the Student Center Ballroom."></img>
 </div>
 
-<div class="content">
+<div class="content" ng-controller="price-ctrl">
   <div class="row">
     <div class="brief">
       <p class="blurb">Attract qualified Auburn students and increase your company exposure on campus.</p>
@@ -30,7 +32,20 @@ layout: employers.hbs
       </div>
     </div>
     <div class="actions">
-      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/iptjfsp16">Register for Free</a>
+      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/iptjfsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+      <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/iptjfsp16">
+          Register ($[[ price.now ]])
+        </a>
+        <a class="flat-btn--info"
+           data-html="true" 
+           data-trigger="hover" 
+           data-placement="top" 
+           data-toggle="popover" 
+           data-title="<h2>Early Bird Pricing <span class='muted'>$200</span></h2>" 
+           data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
+          ?</a>
+      </div>
       <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=4a0e81fd40626dc0cf9fabd94d3673d0#/events/4a0e81fd40626dc0cf9fabd94d3673d0/employers">
         View Attending Employers
       </a>
