@@ -74,6 +74,9 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
           
         else if (event.cost !== undefined) 
           event.cost = event.cost.standard
+          
+        if(event.cost !== undefined && event.cost === '0')
+          event.cost = '0 (Free)'
       }
     }.bind(this))
   }
