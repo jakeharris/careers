@@ -58,6 +58,10 @@
     padding-left: 5rem; 
   }
 }
+.flex-half {
+  flex-basis: 100%;
+  max-width: none;
+}
 .flex-two-thirds {
   flex-basis: 66%;
   width: 66%;
@@ -157,8 +161,11 @@
       font-size: 2.5rem; 
     }
   }
+  .flex-half {
+    flex-basis: 45%;
+    max-width: 45%;
+  }
 }
-
 .flat-btn.flex-half {
   @extend .flex-half;
   height: 100%;
@@ -568,7 +575,12 @@ a.icon:hover {
 }
 
 .ocr-blurb {
-  width: 60%;
+  width: 100%;
+}
+@media (min-width: $medium-screen-size) {
+  .ocr-blurb {
+    width: 60%; 
+  }
 }
 
 @media (min-width: $small-screen-size) {

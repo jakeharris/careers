@@ -75,6 +75,7 @@ a[href$=".pdf"]::after {
 .flex-half {
   flex-basis: 45%;
   width: 45%;
+  max-width: 45%;
   
   display: inline-block;
 }
