@@ -13,13 +13,18 @@
   padding: 0 5rem;
 }
 .login-welcome {
-  height: 484px;
   padding-top: 1.5rem;
+}
+@media (min-width: $moderate-screen-size) {
+  .login-welcome {
+    height: 500px; 
+  }
 }
 .login, .welcome {
   height: 100%;
   margin-top: 0;
   padding-top: 1.5rem;
+  -ms-flex-negative: 1;
 }
 .login {
   background: none repeat scroll 0% 0% white;
@@ -27,6 +32,7 @@
   flex-basis: 100%;
   height: 100%;
   position: relative;
+  align-items: flex-start;
   .trl {
     display: block; 
   }
@@ -62,6 +68,7 @@
   position: relative;
   padding: 5rem;
   padding-bottom: 1.5rem;
+  margin-top: 3rem;
   h2 {
     padding-top: 1rem; 
   }
@@ -87,7 +94,7 @@
   }
   .welcome {
     flex-basis: 45%; 
-    min-height: 400px;
+    margin-top: 0;
   }
   .login {
     flex-basis: 45%;

@@ -22,10 +22,21 @@
     background: $thisislightblue;
     color: white;
   }
-  &:nth-of-type(4n),
-  &:nth-of-type(4n - 3) {
+  &:nth-of-type(2n) {
     background: $thisisdarkblue;
     color: white;
+  }
+  @media (min-width: $medium-screen-size) {
+    &,
+    &:nth-of-type(2n) {
+      background: $thisislightblue;
+      color: white;
+    }
+    &:nth-of-type(4n),
+    &:nth-of-type(4n - 3) {
+      background: $thisisdarkblue;
+      color: white;
+    }
   }
 }
 .employer-events-title, .employer-events-wrapper > p {
@@ -43,6 +54,7 @@
   width: 100%;
   margin-top: 0;
   .employer-event {
+    max-width: 50%;
     flex-basis: 100%;
     padding: 3rem;
     @include checkerboard;

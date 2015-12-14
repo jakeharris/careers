@@ -657,11 +657,15 @@ img {
 }
 .flat-btn--half {
   box-sizing: border-box;
-  flex-basis: 45%;
-  width: 45%;
+  flex-basis: 100%;
 }
 .flat-btn--white.flat-btn--half {
   margin-right: 0; 
+}
+@media (min-width: $tiny-screen-size) {
+  .flat-btn--half {
+    flex-basis: 45%;
+  }
 }
 
 /*****************/
