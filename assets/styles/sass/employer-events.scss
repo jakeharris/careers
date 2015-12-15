@@ -22,10 +22,21 @@
     background: $thisislightblue;
     color: white;
   }
-  &:nth-of-type(4n),
-  &:nth-of-type(4n - 3) {
+  &:nth-of-type(2n) {
     background: $thisisdarkblue;
     color: white;
+  }
+  @media (min-width: $medium-screen-size) {
+    &,
+    &:nth-of-type(2n) {
+      background: $thisislightblue;
+      color: white;
+    }
+    &:nth-of-type(4n),
+    &:nth-of-type(4n - 3) {
+      background: $thisisdarkblue;
+      color: white;
+    }
   }
 }
 .employer-events-title, .employer-events-wrapper > p {
@@ -98,6 +109,7 @@
 @media (min-width: $medium-screen-size) {
   .employer-events .employer-event {
     flex-basis: 50%; 
+    max-width: 50%;
   }
   .employer-events .employer-event--big {
     flex-basis: 100%;

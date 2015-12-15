@@ -43,8 +43,8 @@
   display: inline-block;
 }
 .flex-third {
-  flex-basis: 34%;
-  width: 34%;
+  flex-basis: 100%;
+  max-width: none;
   
   display: inline-block;
   padding: 1.2rem 0;
@@ -58,9 +58,13 @@
     padding-left: 5rem; 
   }
 }
+.flex-half {
+  flex-basis: 100%;
+  max-width: none;
+}
 .flex-two-thirds {
-  flex-basis: 66%;
-  width: 66%;
+  flex-basis: 100%;
+  max-width: none;
   
   display: inline-block;
   padding-left: 3rem;
@@ -157,8 +161,22 @@
       font-size: 2.5rem; 
     }
   }
+  .flex-half {
+    flex-basis: 45%;
+    max-width: 45%;
+  }
 }
-
+@media (min-width: $moderate-screen-size) {
+  
+  .flex-third {
+    flex-basis: 34%;
+    max-width: 34%;
+  }
+  .flex-two-thirds {
+    flex-basis: 66%;
+    max-width: 66%;
+  }
+}
 .flat-btn.flex-half {
   @extend .flex-half;
   height: 100%;
@@ -216,7 +234,7 @@ h3:hover {
   }
 }
 .attributes {
-  display: flex;
+  display: none;
   justify-content: space-around;
   flex-wrap: wrap;
 
@@ -267,7 +285,7 @@ ol {
 }
 
 .recruiting-welcome {
-  height: 550px;
+  min-height: 550px;
   padding-top: 1.5rem;
   margin-top: 4rem;
 }
@@ -319,13 +337,18 @@ ol {
     padding: 1rem 0;
   }
 }
-.recruiting-link, .welcome {
-  height: 100%;
-  padding-top: 1.5rem;
-}
 .welcome {
   flex-basis: 100%;
   width: 100%;
+  height: 100%;
+  padding: 3rem;
+  &.flex-third {
+    padding-right: 3rem; 
+  }
+}
+.recruiting-link, .welcome {
+  height: 100%;
+  padding-top: 1.5rem;
 }
 .faq-header {
   padding-top: 3.5rem;
@@ -425,7 +448,8 @@ ol {
 .content--tips .buttons {
   align-items: stretch;
   .flex-half {
-    flex-basis: 50%; 
+    flex-basis: 50%;
+    max-width: 50%;
   }
 }
 
@@ -568,15 +592,23 @@ a.icon:hover {
 }
 
 .ocr-blurb {
-  width: 60%;
+  width: 100%;
+}
+@media (min-width: $medium-screen-size) {
+  .ocr-blurb {
+    width: 60%; 
+  }
 }
 
 @media (min-width: $small-screen-size) {
   .hero .img-replace {
     font-size: 5rem; 
   }
-  .attributes > .attribute {
-    flex-basis: 33.33333%;
+  .attributes {
+    display: flex; 
+    & > .attribute {
+      flex-basis: 33.33333%;
+    }
   }
   #oci .attributes {
     padding: 5rem 0;
@@ -672,13 +704,18 @@ a.icon:hover {
 }
 
 .restrictions {
-  width: 66%;
+  width: 100%;
   ul {
     list-style: disc;
     margin-left: 5rem;
     li {
       list-style: disc;
     }
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .restrictions {
+    width: 66%; 
   }
 }
 
