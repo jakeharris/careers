@@ -17,7 +17,16 @@
   display: none;
 }
 .hero .img-replace {
-  font-family: $header-font-family;
+  h1, h2 {
+    font-family: $header-font-family;
+    font-size: 6rem;
+    color: $thisisdarkblue;
+  }
+  h2 {
+    font-size: 4rem;
+    color: $thisislightblue;
+    padding-bottom: 3rem;
+  }
 }
 
 // SPECIFICS
@@ -184,8 +193,20 @@
 }
 
 .content > .attributes > .attribute .popover {
-  min-width: 400px;
-  width: 400px;
+  min-width: 300px;
+  width: 300px;
+}
+.flat-btn--info .popover {
+  min-width: 200px;
+}
+@media (min-width: $medium-screen-size) {
+  .content > .attributes > .attribute .popover {
+    min-width: 400px;
+    width: 400px;
+  }
+  .flat-btn--info .popover {
+    min-width: 250px; 
+  }
 }
 
 .content > .attributes > .attribute > a.icon:hover {
@@ -234,7 +255,7 @@
 
 .accordion-header {
   font-family: $header-font-family;
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding: 3rem 0;
   
   i:before {
@@ -251,6 +272,11 @@
       text-align: center;
       @extend .icon-chevron-down; 
     }
+  }
+}
+@media (min-width: $tiny-screen-size) {
+  .accordion-header { 
+    font-size: 3rem; 
   }
 }
 
@@ -293,6 +319,11 @@
   flex-basis: 100%;
   .contact {
     padding-bottom: 5rem;
+    img {
+      flex-basis: 40%;
+      width: 40%;
+      margin: 0 auto;
+    }
   }
 }
 @media (min-width: $moderate-screen-size) {
@@ -306,6 +337,10 @@
   .contacts {
     flex-basis: 50%;
     width: 50%;
+    .contact img {
+      width: 100%;
+      margin: 0;
+    }
   }
 }
 
@@ -314,17 +349,18 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: flex-start;
-  a {
+  & > a {
+    display: block;
     width: 100%;
     flex-basis: 100%;
     height: 100%;
-    max-height: 90vh;
     img {
       width: 100%;
       height: 100%;
     }
   }
   .hotel-parking {
+    padding-right: 1rem;
     width: 100%;
     flex-basis: 100%;
     counter-reset: instruction;
@@ -373,8 +409,11 @@
   flex-wrap: nowrap;
   flex-basis: 100%;
   box-shadow: 6px 6px 0 $box-shadow;
+  height: 70px;
   .flat-btn {
     flex-basis: 80%;
+    width: 80%;
+    max-width: 80%;
     height: 100%;
     margin: 0;
     box-shadow: none;
@@ -387,6 +426,10 @@
     color: $thisislightblue;
     text-align: center;
     padding: 1.2rem;
+    height: 100%;
+    width: 100%;
+    min-width: 20%;
+    max-width: 20%;
     cursor: pointer;
   }
 }
@@ -398,15 +441,20 @@
       font-size: 3rem;
     }
   }
+  .hero {
+    .img {
+      display: block;
+    }
+    .img-replace {
+      display: none;
+    }
+  }
 }
 @media (min-width: $small-screen-size) {
   .contact {
     .address, .phone, .email, .name {
       width: 100%;
     }
-  }
-  .hero .img-replace {
-    font-size: 5rem;
   }
   .content > .row {
     flex-wrap: nowrap;
@@ -435,19 +483,8 @@
       top: 2rem; 
     }
   }
-  .hero .img-replace {
-    font-size: 8rem; 
-  }
 }
 @media (min-width: $medium-screen-size) {
-  .hero {
-    .img {
-      display: block;
-    }
-    .img + .img-replace {
-      display: none; 
-    }
-  }
   .desktop-only.desktop-only {
     display: inline-block; 
   }

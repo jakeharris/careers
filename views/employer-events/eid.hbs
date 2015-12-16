@@ -10,8 +10,13 @@ component:
 ---
 <!-- Banner image -->
 <div class="hero">
-  <img src="assets/images/events/eid-banner.png"
+  <img class="img"
+       src="assets/images/events/eid-banner.png"
        alt="Education Interview Day. Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom."></img>
+  <div class="img-replace">
+    <h1>Education Interview Day.</h1>
+    <h2>Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom.</h2>
+  </div>
 </div>
 
 <div class="content" ng-controller="price-ctrl">
@@ -50,7 +55,13 @@ component:
   </div>
   <div class="attributes">
     <div class="attribute">
-      <a class="icon parking" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" title="<h2>Priority Parking <p class='muted'>Stadium Parking Deck</p></h2>" data-content="<p>The last page of this event's tip sheet is a parking permit for the Stadium Parking Deck, only valid for the day of the event. Parking there is free and convenient, but limited, so plan to arrive early enough to snag a spot.</p>">
+      <a class="icon parking" 
+         data-html="true" 
+         data-trigger="hover" 
+         data-placement="top" 
+         data-toggle="popover" 
+         data-title="<h2>Priority Parking <p class='muted'>Stadium Parking Deck</p></h2>" 
+         data-content="<p>The last page of this event's tip sheet is a parking permit for the Stadium Parking Deck, only valid for the day of the event. Parking there is free and convenient, but limited, so plan to arrive early enough to snag a spot.</p>">
         <i class="icon-automobile"></i>
       </a>
       <div class="details">
@@ -64,7 +75,13 @@ component:
         and I couldn't get the cost in the title to render, so you'll need to keep this 
         up to date manually.  
       -->
-      <a class="icon dress" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" data-title="<h2>Early Bird Pricing</h2>" data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
+      <a class="icon dress" 
+         data-html="true" 
+         data-trigger="hover" 
+         data-placement="top" 
+         data-toggle="popover" 
+         data-title="<h2>Early Bird Pricing</h2>" 
+         data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
         <i class="icon-star-full"></i>
       </a>
       <div class="details">
