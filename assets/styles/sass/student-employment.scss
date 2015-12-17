@@ -308,7 +308,16 @@ ol {
       padding: 0.5rem 0; 
     }
   }
+  .attributes {
+    display: none; 
+  }
 }
+@media (min-width: $small-screen-size) {
+  .recruiting-link .attributes {
+    display: flex; 
+  }
+}
+
 .content--no-padding .flat-btn {
   box-shadow: none;
   margin: 0;
@@ -396,6 +405,7 @@ ol {
   height: 100%;
   a {
     padding: 1.5rem 3rem; 
+    padding-right: 5rem;
     display: block;
     &:hover {
       color: white;
@@ -407,12 +417,20 @@ ol {
     content: counter(questionNumber) " ";
     font-size: 2rem;
     padding-right: 3rem;
+    display: none;
   }
   a::after {
     @extend .icon-chevron-down:before; 
     font-family: $icon-font-family;
     position: absolute;
     right: 3rem;
+  }
+}
+@media (min-width: $small-screen-size) {
+  .faq .faq-question {
+    a::before, a::after {
+      display: inline-block;
+    }
   }
 }
 
@@ -447,9 +465,19 @@ ol {
 }
 .content--tips .buttons {
   align-items: stretch;
-  .flex-half {
-    flex-basis: 50%;
-    max-width: 50%;
+  flex-wrap: wrap;
+  .flat-btn {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: $moderate-screen-size + 50px) {
+  .content--tips .buttons {
+    flex-wrap: nowrap;
+    .flat-btn {
+      flex-basis: 25%;
+      width: 25%;
+    }
   }
 }
 
