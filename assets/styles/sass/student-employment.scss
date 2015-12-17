@@ -608,6 +608,9 @@ a.icon:hover {
     top: 5px;
   }
 }
+#oci .attributes {
+  display: flex;
+}
 .job-postings .icon i {
   &::before {
     position: relative;
