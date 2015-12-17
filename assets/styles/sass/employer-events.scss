@@ -55,6 +55,7 @@
   margin-top: 0;
   .employer-event {
     flex-basis: 100%;
+    max-width: 100%;
     padding: 3rem;
     @include checkerboard;
     transition: background-color 0.3s, color 0.1s;
