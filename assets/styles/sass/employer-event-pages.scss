@@ -423,7 +423,7 @@
     height: 100%;
     margin: 0;
     box-shadow: none;
-    padding: 2.3rem;
+    padding: 2rem;
   }
   .flat-btn--info {
     flex-basis: 20%;
@@ -474,6 +474,12 @@
     flex-basis: 50%;
   }
 }
+
+@media (min-width: $medium-screen-size) {
+  .desktop-only.desktop-only {
+    display: inline-block; 
+  }
+}
 @media (min-width: $moderate-screen-size) {
   .contact {
     .address:before, .phone:before, .email:before {
@@ -490,9 +496,12 @@
       top: 2rem; 
     }
   }
+  .flat-btn--with-info .flat-btn {
+    padding: 1.6rem 0;
+  }
 }
-@media (min-width: $medium-screen-size) {
-  .desktop-only.desktop-only {
-    display: inline-block; 
+@media (min-width: $social-shrink-size) {
+  .flat-btn {
+    padding: 1.2rem 0; 
   }
 }
