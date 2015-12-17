@@ -82,8 +82,6 @@
     padding: 1rem 5rem; 
   }
   .flat-btn {
-    position: absolute;
-    bottom: 0;
     margin-bottom: 0; 
     cursor: pointer; 
   }
@@ -98,6 +96,12 @@
   }
   .login {
     flex-basis: 45%;
+  }
+}
+@media (min-width: $moderate-screen-size + 30px) {
+  .welcome .flat-btn {
+    position: absolute;
+    bottom: 0;
   }
 }
 
