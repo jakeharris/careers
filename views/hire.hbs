@@ -1,4 +1,5 @@
 ---
+path-to-root: ../
 ng-app: career-center-hire
 name: hire
 type: hire
@@ -11,7 +12,7 @@ component:
 ---
 
 <section class="login-welcome row flex">
-  <div class="login content extra-content">
+  <div class="login content">
     <div class="login-wrapper">
       <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
       <p class="login-blurb">Your link to Auburn students.</p>
@@ -23,7 +24,7 @@ component:
       </div>
     </div>
   </div>
-  <div class="welcome content extra-content content--no-padding">
+  <div class="welcome content content--no-padding">
     <h2 class="padding">This is Recruiting.</h2>
     <blockquote class="padding">
       Highly effective employers place their emphasis on long-term
@@ -42,7 +43,7 @@ component:
     </p>
     <a class="flat-btn" 
        role="button" 
-       tabindex="0" 
+       tabindex="0"
        data-toggle="popover" 
        data-html="true" 
        data-placement="top" 
@@ -71,52 +72,35 @@ component:
         <li class="service"><a href="employers/job-postings.html">Job Postings</a></li>
         <li class="service"><a href="employers/events/">Career Events</a></li>
         <li class="service"><a href="employers/student-employment/on-campus.html">On-Campus Employment</a></li>
-        <li class="service"><a href="employers/oci.html">On-Campus Interviewing</a></li>
+        <li class="service"><a href="employers/ocr.html#oci">On-Campus Interviewing</a></li>
         <li class="service"><a href="employers/student-employment/off-campus.html">Off-Campus Employment</a></li>
-        <li class="service"><a href="employers/oci.html#info-sessions">Information Sessions</a></li>
+        <li class="service"><a href="employers/ocr.html#info-sessions">Information Sessions</a></li>
       </ul>
     </div>
     <a class="flat-btn flat-btn--disabled report-hiring" href="" disabled="disabled">Report Hiring</a>
   </div>
 </section>
 
-<section class="events-upcoming row flex" ng-controller="calendar-ctrl">
-  <div class="events content extra-content content--no-padding">
-    <div class="first-event-wrapper">
-      <h2>Upcoming Events</h2>
-      <div class="first-event event" ng-repeat="event in firstEvents">
-        <div class="event-date">
-          <div class="event-date-month">[[ event.date['shortened-month'] ]]</div>
-          <div class="event-date-day">[[ event.date['day'] ]]</div>
+<section class="employer-events-wrapper content extra-content content--no-padding row" ng-controller="calendar-ctrl">
+  <h2 class="employer-events-title">Event Registration</h2>
+  <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
+  <ul class="employer-events flex">
+    <li ng-if="events.length % 2 !== 0" class="employer-event employer-event--blurb">Click any event to get more information and register.</li>
+    <li class="employer-event" ng-repeat="event in events">
+      <a class="employer-event-link" href="[[ event.url ]]">
+        <h3>[[ event.name ]]</h3>
+        <div class="employer-event-details">
+          <div class="employer-event-when">
+            <div class="employer-event-date">[[ event.date.month ]] [[ event.date.day ]]</div>
+            <div class="employer-event-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
+          </div>
+          <div class="employer-event-cost" ng-if="event.cost">
+            $[[ event.cost ]]
+          </div>
         </div>
-        <div class="event-details">
-          <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-          <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
-          <div class="event-details-location">[[ event.location ]]</div>
-          <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
-        </div>
-      </div>
-    </div>
-    <a ng-if="events.length > 0" class="collapsed accordion-header flat-btn" data-toggle="collapse" id="more-events" href="#events-list" role="tab" aria-expanded="false" aria-controls="events-list"></a>
-    <ul style="height: 0px;" aria-expanded="false" id="events-list" class="panel-collapse collapse" role="tabpanel" aria-labelledby="events-list-heading">
-      <li class="event" ng-repeat="event in events">
-        <div class="event-date">
-          <div class="event-date-month">[[ event.date['shortened-month'] ]]</div>
-          <div class="event-date-day">[[ event.date['day'] ]]</div>
-        </div>
-        <div class="event-details">
-          <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-          <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
-          <div class="event-details-location">[[ event.location ]]</div>
-          <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
-        </div>
-      </li>
-    </ul>
-  </div>
+      </a>
+    </li>
+  </ul>
 </section>
 
 <section class="row sponsors content extra-content">

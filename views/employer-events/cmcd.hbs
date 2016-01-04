@@ -1,16 +1,25 @@
 ---
-ng-app: none
+path-to-root: ../../
+ng-app: career-center-employer-events
 name: emp-cmcd
 type: employer-event-pages
 title: Communication and Media Career Day
 layout: employers.hbs
+component:
+- price
 ---
 <!-- Banner image -->
 <div class="hero">
-  <img src="assets/images/events/cmcd-banner.png"></img>
+  <img class="img"
+       src="assets/images/events/cmcd-banner.png"
+       alt="Communication & Media Career Day. March 8, 2016, 8am-3pm, in the Student Center Ballroom."></img>
+  <div class="img-replace">
+    <h1>Comm & Media Career Day.</h1>
+    <h2>March 8, 2016, 8am-3pm, in the Student Center Ballroom.</h2>
+  </div>
 </div>
 
-<div class="content">
+<div class="content" ng-controller="price-ctrl">
   <div class="row">
     <div class="brief">
       <p class="blurb">
@@ -32,7 +41,20 @@ layout: employers.hbs
       </div>
     </div>
     <div class="actions">
-      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">Register ($200)</a>
+      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+      <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">
+          Register ($[[ price.now ]])
+        </a>
+        <a class="flat-btn--info"
+           data-html="true" 
+           data-trigger="hover" 
+           data-placement="top" 
+           data-toggle="popover" 
+           data-title="<h2>Early Bird Pricing</h2>" 
+           data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
+          ?</a>
+      </div>
  <!--     
       <div class="tipsheet">
         <div class="tipsheet-wrapper">
@@ -60,7 +82,13 @@ layout: employers.hbs
       </div>
     </div>
     <div class="attribute">
-      <a class="icon dress" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" title="<h2>Early Bird Pricing <span class='muted'>$150</span></h2>" data-content="<p>If you register before February 26, you save $50 on your registration fee (per table)!</p>">
+      <!-- 
+        This SHOULD all be automated, but Angular and Popover weren't playing well 
+        (Popover reads everything before Angular gets a chance to set up and populate), 
+        and I couldn't get the cost in the title to render, so you'll need to keep this 
+        up to date manually.  
+      -->
+      <a class="icon dress" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" data-title="<h2>Early Bird Pricing</h2>" data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
         <i class="icon-star-full"></i>
       </a>
       <div class="details">
@@ -118,7 +146,7 @@ layout: employers.hbs
           </div>
         </div>
       </div>
-      <a class="flat-btn" href="http://www.auburn.edu/academic/provost/undergrad_studies/career/employers/events/Tips_GPSF(F15).pdf">View Detailed Cancellation Policy</a>
+      <a class="flat-btn flat-btn--disabled" disabled>View Detailed Cancellation Policy</a>
     </div>
   </div>
 </div>
@@ -129,7 +157,7 @@ layout: employers.hbs
     </a>
     <div style="height: 0px;" aria-expanded="false" id="parking" class="panel-collapse collapse" role="tabpanel" aria-labelledby="parking-heading">
       <div class="parking-information">
-        <a href="http://auburn.edu/map?id=75"><img src="assets/images/events/parking/student-center.png"></a>
+        <a href="http://auburn.edu/map?id=304"><img src="assets/images/events/parking/student-center.png"></a>
         <div class="hotel-parking">
           <div class="parking-instruction">
             <h2>Stadium Parking Deck</h2>
@@ -142,7 +170,8 @@ layout: employers.hbs
             <p>
               A parking pass will be emailed one week prior to 
               the event, and is also available by printing the
-              last page of the <a href="employers/events/Tips_GPSF(F15).pdf">tip sheet</a>.
+              last page of the tip sheet.
+<!--              last page of the <a href="employers/events/Tips_GPSF(F15).pdf">tip sheet</a>.-->
             </p>
           </div>
           <div class="parking-instruction">

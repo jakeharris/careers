@@ -1,16 +1,25 @@
 ---
-ng-app: none
-name: emp-am
+path-to-root: ../../
+ng-app: career-center-employer-events
+name: emp-aucf
 type: employer-event-pages
 title: Auburn University Career Fair
 layout: employers.hbs
+component: 
+- price
 ---
 <!-- Banner image -->
 <div class="hero">
-  <img src="assets/images/events/aucf-banner.png"></img>
+  <img class="img"
+       src="assets/images/events/aucf-banner.png"
+       alt="Auburn University Career Fair. Wednesday, February 17, 2016, 3pm-7pm, at the Auburn Arena."></img>
+  <div class="img-replace">
+    <h1>Auburn University Career Fair.</h1>
+    <h2>Wednesday, February 17, 2016, 3pm-7pm, at the Auburn Arena.</h2>
+  </div>
 </div>
 
-<div class="content">
+<div class="content" ng-controller="price-ctrl">
   <div class="row">
     <div class="brief">
       <p class="blurb">Explore Auburn's diverse student body and network with students from all disciplines.</p>
@@ -27,7 +36,20 @@ layout: employers.hbs
       </div>
     </div>
     <div class="actions">
-      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/aucfsp16">Register</a>
+      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/stemsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+      <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/stemsp16">
+          Register ($[[ price.now ]])
+        </a>
+        <a class="flat-btn--info"
+           data-html="true" 
+           data-trigger="hover" 
+           data-placement="top" 
+           data-toggle="popover" 
+           data-title="<h2>Early Bird Pricing</h2>" 
+           data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
+          ?</a>
+      </div>
     </div>
   </div>
 </div>

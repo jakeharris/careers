@@ -1,16 +1,25 @@
 ---
-ng-app: none
+path-to-root: ../../
+ng-app: career-center-employer-events
 name: emp-tech
 type: employer-event-pages
 title: Engineering and Technical Career Expo
 layout: employers.hbs
+component:
+- price
 ---
 <!-- Banner image -->
 <div class="hero">
-  <img src="assets/images/events/stem-banner.png"></img>
+  <img class="img"
+       src="assets/images/events/stem-banner.png"
+       alt="STEM Career Expo. February 9, 2016, 3pm-7pm, at the AU Hotel."></img>
+  <div class="img-replace">
+    <h1>STEM Career Expo.</h1>
+    <h2>February 9, 2016, 3pm-7pm, at the AU Hotel.</h2>
+  </div>
 </div>
 
-<div class="content">
+<div class="content" ng-controller="price-ctrl">
   <div class="row">
     <div class="brief">
       <p class="blurb">
@@ -34,7 +43,20 @@ layout: employers.hbs
       </div>
     </div>
     <div class="actions">
-      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/stemsp16">Register ($600)</a>
+      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/stemsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+      <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/stemsp16">
+          Register ($[[ price.now ]])
+        </a>
+        <a class="flat-btn--info"
+           data-html="true" 
+           data-trigger="hover" 
+           data-placement="top" 
+           data-toggle="popover" 
+           data-title="<h2>Early Bird Pricing</h2>" 
+           data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
+          ?</a>
+      </div>
       <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=1282185d3bc076d8b8f3088c99f9ab0d#/events/1282185d3bc076d8b8f3088c99f9ab0d/employers">View Attending Employers</a>
     </div>
   </div>

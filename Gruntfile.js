@@ -78,6 +78,7 @@ module.exports = function (grunt) {
     'aboutus/plan-your-visit.html': ['<%= config.views %>/plan-your-visit.hbs'],
     'aboutus/campus-partners.html': ['<%= config.views %>/campus-partners.hbs'],
     'aboutus/staff.html': ['<%= config.views %>/staff.hbs'],
+    'aboutus/student-workers.html': ['<%= config.views %>/student-workers.hbs'],
     'faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
     'faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs'],
     'students/index.html': ['<%= config.views %>/students/current.hbs'],
@@ -137,6 +138,7 @@ module.exports = function (grunt) {
     'dist/aboutus/plan-your-visit.html': ['<%= config.views %>/plan-your-visit.hbs'],
     'dist/aboutus/campus-partners.html': ['<%= config.views %>/campus-partners.hbs'],
     'dist/aboutus/staff.html': ['<%= config.views %>/staff.hbs'],
+    'dist/aboutus/student-workers.html': ['<%= config.views %>/student-workers.hbs'],
     'dist/faculty/presentations.html': ['<%= config.views %>/presentations.hbs'],
     'dist/faculty/submission.php': ['<%= config.views %>/presentation-submission.hbs'],
     'dist/students/index.html': ['<%= config.views %>/students/current.hbs'],
@@ -317,7 +319,7 @@ module.exports = function (grunt) {
     // into servable HTML.
     assemble: {
       options: {
-        helpers: ['*-helper.js'],
+        helpers: ['<%= config.assets %>/scripts/helpers/{,/*}*.js'],
         prod: 'false',
         layouts: '<%= config.layouts %>',
         partials: '<%= config.partials %>',

@@ -2,10 +2,12 @@
 
 $thisislighterblue: #698ebc;
 
+
 h1, h2, h3, h4 {
   font-family: $header-font-family;
 }
-h1 {
+// Add container wrapper so as not to affect the nav
+.container h1 {
   font-size: 4rem;
   padding-top: 2rem;
 }

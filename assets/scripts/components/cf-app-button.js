@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
       {s:'Search Bot', r:/(nuhk|Googlebot|Yammybot|Openbot|Slurp|MSNBot|Ask Jeeves\/Teoma|ia_archiver)/}
   ];
   
-  var button = document.getElementById('download-btn');
-  var row = document.getElementById('download-row');
+  var button = document.getElementById('download-btn'),
+      link = document.getElementById('download-link');
 
   
   for (var id in clientStrings) {
@@ -68,10 +68,15 @@ document.addEventListener('DOMContentLoaded', function (e) {
           break;
   } 
 
+  var url = '';
+  
   if (os !== 'Android' && os !== 'iOS')
-    button.href = 'http://www.careerfairplus.com/';
+    url = 'http://www.careerfairplus.com/';
   else if (os === 'Android') 
-    button.href = 'https://play.google.com/store/apps/details?id=com.careerfairplus.au_al'
+    url = 'https://play.google.com/store/apps/details?id=com.careerfairplus.au_al';
   else
-    button.href = 'https://itunes.apple.com/us/app/auburn-career-fair-plus/id691680982?mt=8'
+    url = 'https://itunes.apple.com/us/app/auburn-career-fair-plus/id691680982?mt=8';
+    
+  if(button) button.href = url
+  if(link) link.href = url
 })
