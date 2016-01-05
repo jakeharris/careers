@@ -123,7 +123,7 @@
     color: $box-shadow; 
   }
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .contact {
     .contact-details {
       flex-wrap: nowrap;
@@ -177,7 +177,7 @@
 .flat-btn--info .popover {
   min-width: 200px;
 }
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .content > .attributes > .attribute .popover {
     min-width: 400px;
     width: 400px;
@@ -252,7 +252,7 @@
     }
   }
 }
-@media (min-width: $tiny-screen-size) {
+@media (min-width: $tiny-screen-width) {
   .accordion-header { 
     font-size: 3rem; 
   }
@@ -304,7 +304,7 @@
     }
   }
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .cancellation-policy {
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -361,7 +361,7 @@
     }
   }
 }
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .parking-information {
     flex-wrap: nowrap;
     a {

@@ -287,7 +287,7 @@ ol {
     display: none; 
   }
 }
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .recruiting-link .attributes {
     display: flex; 
   }
@@ -399,7 +399,7 @@ ol {
     color: white; 
   }
 }
-@media (min-width: $small-screen-size) {
+@media (min-width: $small-screen-width) {
   .faq .faq-question {
     a::before, a::after {
       display: inline-block;
@@ -444,7 +444,7 @@ ol {
     width: 100%;
   }
 }
-@media (min-width: $moderate-screen-size + 50px) {
+@media (min-width: $moderate-screen-width + 50px) {
   .content--tips .buttons {
     flex-wrap: nowrap;
     .flat-btn {
@@ -606,7 +606,7 @@ a.icon:hover {
 .ocr-blurb {
   width: 100%;
 }
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .ocr-blurb {
     width: 60%; 
   }
@@ -710,7 +710,7 @@ a.icon:hover {
     font-size: 2.5rem; 
   }
 }
-@media (min-width: $social-shrink-size) {
+@media (min-width: $social-shrink-width) {
   #oci .attributes .attribute {
     flex-basis: 25%;
     width: 25%;
@@ -727,7 +727,7 @@ a.icon:hover {
     }
   }
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .restrictions {
     width: 66%; 
   }
