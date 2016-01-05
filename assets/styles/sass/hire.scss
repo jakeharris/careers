@@ -1,7 +1,6 @@
 @import 'app';
 @import 'sponsors';
-
-
+@import 'employer-events';
 
 
 /****************/
@@ -11,23 +10,36 @@
 .content {
   margin-top: 3rem;
 }
-
+.padding {
+  padding: 0 5rem;
+}
+.login-welcome {
+  padding-top: 1.5rem;
+}
+@media (min-width: $moderate-screen-size) {
+  .login-welcome {
+    height: 500px; 
+  }
+}
+.login, .welcome {
+  height: 100%;
+  margin-top: 0;
+  padding-top: 1.5rem;
+  -ms-flex-negative: 1;
+}
 .login {
   background: none repeat scroll 0% 0% white;
   overflow: visible;
-  flex-basis: 33%;
-  width: 33%;
+  flex-basis: 100%;
+  height: 100%;
   position: relative;
+  align-items: flex-start;
   .trl {
     display: block; 
-  }
-  .login-wrapper {
-    z-index: 5;
   }
   .login-blurb {
     font-size: 1.8rem; 
   }
-  height: 100%;
 }
 .login::before {
   display: block;
@@ -49,11 +61,45 @@
   width: 30%;
   position: relative;
   padding: 5rem;
-  min-height: 400px;
+  padding-bottom: 1.5rem;
+  margin-top: 3rem;
+  h2 {
+    padding-top: 1rem; 
+  }
+  blockquote {
+    border-left: 0;
+    &::before {
+      content: none;
+    }
+  }
   p {
-    padding: 1rem 0; 
+    padding: 1rem 5rem; 
+  }
+  .flat-btn {
+    margin-bottom: 0; 
+    cursor: pointer; 
   }
 }
+@media (min-width: $moderate-screen-width) {
+  .welcome-services {
+    flex-wrap: nowrap; 
+  }
+  .welcome {
+    flex-basis: 45%; 
+    margin-top: 0;
+  }
+  .login {
+    flex-basis: 45%;
+  }
+}
+@media (min-width: $moderate-screen-width + 30px) {
+  .welcome .flat-btn {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+
 .services {
   flex-basis: 63%;
   width: 63%;
@@ -133,81 +179,6 @@
   z-index: 3;
   display: block;
 }
-
-.upcoming-event {
-  flex-basis: 63%;
-  width: 63%;
-  height: 100%;
-  img {
-    height: 100%;
-    width: 100%;
-  }
-}
-.events.events {
-  overflow: hidden;
-  position: relative;
-  flex-basis: 33%;
-  width: 33%;
-  height: 100%;
-  h2 a::after {
-    font-family: $icon-font-family;
-    font-weight: 100;
-    content: '\f078';
-    position: absolute;
-    right: 3rem;
-  }
-  .first-event-wrapper {
-    padding: 1.5rem 5rem 3rem; 
-  }
-  .first-event {
-    flex-basis: 100%;
-    width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1.4rem;
-    min-height: 0;
-  }
-  .flat-btn {
-    margin: 0;
-    margin-top: 1rem;
-    box-shadow: none;
-  }
-  .flat-btn:link,
-  .flat-btn:visited,
-  .flat-btn:active {
-    color: white; 
-  }
-  .flat-btn:hover {
-    color: $thisisdarkblue; 
-  }
-  .flat-btn.accordion-header.collapsed {
-    box-shadow: 6px 6px 0 $box-shadow;
-  }
-  ul {
-    margin-top: 0;
-    width: 100%;
-    li {
-      flex-basis: 100%;
-      width: 100%; 
-      padding: 0 5rem; 
-      padding-bottom: 3rem;
-      &:first-of-type {
-        padding-top: 3rem; 
-      }
-      &.event > .event-details {
-        width: auto; 
-      }
-    }
-  }
-}
-#more-events::before {
-  font-family: $icon-font-family;
-  content: '\f077';
-  text-align: center;
-}
-#more-events.collapsed::before {
-  content: '\f078';
-}
-
 
 .contacts {
   width: 63%;
@@ -303,6 +274,44 @@
     color: $box-shadow; 
   }
 }
+.contacts-login {
+  flex-wrap: wrap;
+}
+@media (min-width: $small-screen-width) {
+  .contact {
+    .phone, .email, .address, .name {
+      font-family: $header-font-family; 
+      font-size: 2rem;
+      a {
+        top: -1rem; 
+      }
+    }
+  }
+}
+@media (min-width: $small-screen-width + 100px) { 
+  .contacts .contact {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .contacts {
+    flex-basis: 63%; 
+    .contact {
+      flex-basis: 100%; 
+    }
+  }
+  .contacts-login {
+    flex-wrap: nowrap; 
+  }
+}
+@media (min-width: $moderate-screen-width + 125px) {
+  .contacts {
+    flex-wrap: nowrap;
+    .contact {
+      flex-basis: 50%; 
+    }
+  }
+}
 
 .sponsorship-opportunities {
   flex-basis: 45%;
@@ -316,4 +325,14 @@
 .row::after {
   display: block;
   content: none;
+}
+.popover-title {
+  font-family: $header-font-family;
+  font-size: 2.2rem;
+  padding: 2rem 1.5rem;
+}
+.popover-content ul {
+  li {
+    padding: 0.5rem 0; 
+  }
 }

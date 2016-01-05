@@ -55,9 +55,27 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
   if(employerMode) {
     this.events.forEach(function (event, index, events) {
       if('employer-event' in event) {
-        if(this.img === undefined) 
-          this.img = '../assets/images/events/' + event['employer-event'].name + '-slide.png';
-        event.url = 'employers/events/' + event['employer-event'].name + '.html'
+        if(event.abbrev === undefined)
+          event.url = event['employer-event'].registration
+        else event.url = 'employers/events/' + event.abbrev + '.html'
+        
+        if(this.img === undefined && event.abbrev !== undefined) {
+          this.img = 'assets/images/events/' + event.abbrev + '-slide.png'
+          this.url = 'employers/events/' + event.abbrev + '.html'
+        }
+        
+        if(
+          event.cost !== undefined
+          && event.cost['early-bird-deadline']
+          && new Date(event.cost['early-bird-deadline']) >= new Date()
+        )
+          event.cost = event.cost['early-bird']
+          
+        else if (event.cost !== undefined) 
+          event.cost = event.cost.standard
+          
+        if(event.cost !== undefined && event.cost === '0')
+          event.cost = '0 (Free)'
       }
     }.bind(this))
   }

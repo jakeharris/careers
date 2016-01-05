@@ -1,8 +1,8 @@
 ---
 ng-app: none
-name: tech
+name: stem
 type: event-pages
-title: Engineering and Technical Career Expo
+title: STEM Career Expo
 path-to-root: ../../
 layout: no-social.hbs
 component:
@@ -10,25 +10,37 @@ component:
 ---
 <!-- Banner image -->
 <div class="hero">
-  <img src="assets/images/events/ETCE_Webpage(F15).jpg"></img>
+  <img src="assets/images/events/{{name}}-banner.png"
+       alt="STEM Career Expo. February 9, 2016, 3pm-7pm, at the AU Hotel."></img>
 </div>
 
 <div class="content">
   <!-- Blurb -->
   <div class="row">
     <p class="blurb">
-      Come to the Engineering and Technical Career Expo to network with some of the most reputable companies in the industry!
+      Plan to attend the STEM Career Expo for Science, 
+      Technology, Engineering and Math majors to explore 
+      opportunities and network with some top companies 
+      in the industry!
       <br /><br />
-      Make best use of your time at the expo by reading over the list of companies <strong>beforehand</strong> and choosing which companies you want to talk to.  With over 100 employers in attendance, be sure to bring <strong>several copies of your résumé</strong>.
+      To learn more about the employers attending, 
+      <a id="download-link">download the AU Career Fair+ app.</a> Research the 
+      companies you would like to meet to learn about  
+      opportunities available.
+      <br /><br />
+      <strong>
+        Professional dress is required and be sure to 
+        bring plenty of copies of your résumé.
+      </strong>
     </p>
     <div class="buttons">
-      <a class="flat-btn attendants" href="https://auburn-csm.symplicity.com/events/index.php?id=fe70cd4cb4d0b5f21c4591e7d76d32c7#/events/5d618a9242bfd939f39bdc5d22cd1af7/employers">
+      <a class="flat-btn attendants" href="https://auburn-csm.symplicity.com/events/index.php?id=1282185d3bc076d8b8f3088c99f9ab0d#/events/1282185d3bc076d8b8f3088c99f9ab0d/employers">
         See Attending Employers
       </a>
-      <a class="flat-btn locations" href="assets/images/events/engineering.pdf">
+      <a class="flat-btn flat-btn--disabled locations" disabled>
         See Employer Locations On-Site
       </a>
-      <a class="flat-btn" id="download-btn">Download Our App</a>
+      <a class="flat-btn" id="download-btn">Download Career Fair+</a>
     </div>
   </div>
 
@@ -49,7 +61,7 @@ component:
       </p>
     </div>
     <div class="attribute">
-      <a class="icon population" href="https://auburn-csm.symplicity.com/events/students.php?cf=etcesp15">
+      <a class="icon population" href="https://auburn-csm.symplicity.com/events/students.php?cf=stemsp16">
         <i class="icon-group"></i>
       </a>
       <div class="details">High attendance</div>
@@ -57,71 +69,3 @@ component:
   </div>
 </div>
 
-<!-- Sponsors -->
-<div class="content extra-content">
-  <div class="sponsors">
-    <h2 class="sponsors-header">Star Sponsors</h2>
-    <div class="flex sponsors-content">
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="http://www.towerloan.com/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/callidus-cloud.png" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="http://www.globaldenso.com/en/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/denso.jpg" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="https://www.gp.com/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/georgia-pacific.eps" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="http://www.hondaalabama.com/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/honda.jpg" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="http://www.michelinman.com/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/michelin.gif" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="https://www.neptunetg.com/home/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/neptune.jpg" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="http://www.quincycompressor.com/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/quincy-compressor.jpg" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="http://shawfloors.com/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/shaw.jpg" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="http://www.udatechnologies.com/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/tech-eng/uda.png" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-      <div class="sponsor">
-        <span class="vert-centerer"></span>
-        <a href="https://www.unum.com/">
-          <img src="http://auburn.edu/career/jobs/assets/images/sponsors/all majors/unum.jpg" class="grayscale grayscale-fade"></img>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>

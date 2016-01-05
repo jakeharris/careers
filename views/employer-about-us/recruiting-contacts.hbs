@@ -1,0 +1,27 @@
+---
+path-to-root: ../../
+title: Recruiting Contacts | Career Center
+name: recruiting-contacts
+type: recruiting-contacts
+layout: employers.hbs
+---
+
+<section class="content campus-content">
+  <h2>Recruiting Contacts</h2>
+</section>
+
+<section class="staff-container">
+  {{#each recruiting.contact}}
+    <div class="contact-card">
+      <div class="major"><h3>{{major}}</h3></div>
+      <div class="img-liaison-container">
+        <img class="{{getImageName name}}" src="assets/images/staff/{{getImageName name}}.jpg">
+      </div>
+      <div class="contact-info">
+        <h3>{{getFirstName name}}<br/>{{getLastName name}}</h3>
+        <h4><a class="phone" href="tel:{{formatPhoneNumber phone}}">{{formatPhoneNumber phone}}</a></h4>
+        <h4><a class="email" href="mailto:{{email}}@auburn.edu">{{email}}</a></h4>
+      </div>
+    </div>
+  {{/each}}
+</section>

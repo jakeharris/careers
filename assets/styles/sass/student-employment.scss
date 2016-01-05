@@ -40,8 +40,8 @@
   display: inline-block;
 }
 .flex-third {
-  flex-basis: 34%;
-  width: 34%;
+  flex-basis: 100%;
+  max-width: none;
   
   display: inline-block;
   padding: 1.2rem 0;
@@ -55,9 +55,13 @@
     padding-left: 5rem; 
   }
 }
+.flex-half {
+  flex-basis: 100%;
+  max-width: none;
+}
 .flex-two-thirds {
-  flex-basis: 66%;
-  width: 66%;
+  flex-basis: 100%;
+  max-width: none;
   
   display: inline-block;
   padding-left: 3rem;
@@ -205,7 +209,7 @@ h3:hover {
   }
 }
 .attributes {
-  display: flex;
+  display: none;
   justify-content: space-around;
   flex-wrap: wrap;
 
@@ -255,6 +259,11 @@ ol {
   margin: 0;
 }
 
+.recruiting-welcome {
+  min-height: 550px;
+  padding-top: 1.5rem;
+  margin-top: 4rem;
+}
 .recruiting-link {
   flex-basis: 100%;
   width: 100%;
@@ -274,9 +283,21 @@ ol {
       padding: 0.5rem 0; 
     }
   }
+  .attributes {
+    display: none; 
+  }
 }
+@media (min-width: $small-screen-size) {
+  .recruiting-link .attributes {
+    display: flex; 
+  }
+}
+
 .content--no-padding .flat-btn {
   box-shadow: none;
+  margin: 0;
+}
+.flat-btn--bottom {
   margin: 0;
 }
 .how-to-header + p {
@@ -303,7 +324,15 @@ ol {
 .welcome {
   flex-basis: 100%;
   width: 100%;
-  height: auto;
+  height: 100%;
+  padding: 3rem;
+  &.flex-third {
+    padding-right: 3rem; 
+  }
+}
+.recruiting-link, .welcome {
+  height: 100%;
+  padding-top: 1.5rem;
 }
 .faq-header {
   padding-top: 3.5rem;
@@ -345,7 +374,19 @@ ol {
   height: 100%;
   a {
     padding: 1.5rem 3rem; 
+    padding-right: 5rem;
     display: block;
+    &:hover {
+      color: white;
+    }
+  }
+  a::before {
+    font-family: $header-font-family;
+    counter-increment: questionNumber;
+    content: counter(questionNumber) " ";
+    font-size: 2rem;
+    padding-right: 3rem;
+    display: none;
   }
   a::after {
     @extend .icon;
@@ -356,6 +397,13 @@ ol {
   }
   a:hover {
     color: white; 
+  }
+}
+@media (min-width: $small-screen-size) {
+  .faq .faq-question {
+    a::before, a::after {
+      display: inline-block;
+    }
   }
 }
 
@@ -390,6 +438,25 @@ ol {
 }
 .content--tips .buttons {
   align-items: stretch;
+  flex-wrap: wrap;
+  .flat-btn {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: $moderate-screen-size + 50px) {
+  .content--tips .buttons {
+    flex-wrap: nowrap;
+    .flat-btn {
+      flex-basis: 25%;
+      width: 25%;
+    }
+    .flat-btn.flex-half {
+      flex-basis: 50%;
+      width: 50%;
+      max-width: 50%;
+    }
+  }
 }
 
 .at-auburn {
@@ -492,14 +559,73 @@ a.icon:hover {
   padding-left: 2rem;
   padding-top: 2rem;
 }
+#oci {
+  max-width: 100%;
+}
+#oci .icon {
+  padding-left: 2rem;
+  padding-top: 1.8rem;
+  & .icon-folder-download {
+    position: relative;
+    left: 1px;
+  }
+  & .icon-user-check {
+    position: relative;
+    left: 2px;
+    top: 2px;
+  }
+  & .icon-folder-open {
+    position: relative;
+    left: 3px;
+  }
+  & .icon-enter {
+    position: relative;
+    right: 6px;
+    top: 5px;
+  }
+}
+#oci .attributes {
+  display: flex;
+}
+.job-postings .icon i {
+  &::before {
+    position: relative;
+    top: 1.8rem;
+    left: 2rem;
+  }
+  &.icon-graduation-cap::before {
+    left: 1.2rem; 
+  }
+}
 
+.guide-step > .icon,
+.faq-question:hover > a {
+  color: white !important;
+}
+
+.ocr-blurb {
+  width: 100%;
+}
+@media (min-width: $medium-screen-size) {
+  .ocr-blurb {
+    width: 60%; 
+  }
+}
 @media (min-width: $small-screen-width) {
   .hero .img-replace {
     font-size: 5rem; 
   }
-  .attributes > .attribute {
-    flex-basis: 33.33333%;
-    width: 33.33333%;
+  .attributes {
+    display: flex; 
+    & > .attribute {
+      flex-basis: 33.33333%;
+    }
+  }
+  #oci .attributes {
+    padding: 5rem 0;
+    & > .attribute {
+      flex-basis: 100%; 
+    }
   }
   .at-auburn {
     display: inline; 
@@ -582,6 +708,28 @@ a.icon:hover {
   }
   .content--tips .flat-btn {
     font-size: 2.5rem; 
+  }
+}
+@media (min-width: $social-shrink-size) {
+  #oci .attributes .attribute {
+    flex-basis: 25%;
+    width: 25%;
+  }
+}
+
+.restrictions {
+  width: 100%;
+  ul {
+    list-style: disc;
+    margin-left: 5rem;
+    li {
+      list-style: disc;
+    }
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .restrictions {
+    width: 66%; 
   }
 }
 

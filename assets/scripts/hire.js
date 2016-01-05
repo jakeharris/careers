@@ -15,9 +15,7 @@ home.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) {
   
   $http.get(eventsFile)
   .then(function (res) {
-    calendar = new Calendar(res, 6, true)
-    $scope.firstEvents = calendar.events.slice(0, 3)
-    $scope.img = calendar.img
+    calendar = new Calendar(res, 8, true)
     $scope.events = calendar.events
   })
 }])

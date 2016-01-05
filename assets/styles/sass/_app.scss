@@ -232,6 +232,11 @@ body > .container {
   
   font-size: 13rem;
 }
+@media (min-width: $tiny-screen-size) {
+  .flat-btn--half {
+    flex-basis: 45%;
+  }
+}
 
 // FLEX ELEMENTS
 .flex {

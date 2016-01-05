@@ -38,8 +38,25 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-.icon-circuit-board::before {
+.icon-enter:before {
+	content: "\e903";
+}
+.icon-folder-open:before {
+	content: "\e900";
+}
+.icon-user-check:before {
+	content: "\e901";
+}
+.icon-folder-download:before {
+	content: "\e902";
+}
+.icon-audiotrack:before {
+	content: "\e801";
+}
+.icon-baseball:before {
+	content: "\e800";
+}
+.icon-circuit-board:before {
   content: '\e60c';
 }
 .icon-automobile::before {

@@ -1,0 +1,119 @@
+{
+  "category": [
+    "Peer Career Advisors",
+    "Peer Event Planners",
+    "Operations"
+  ],
+  "member": [
+    {
+      "name": "Brandon Teal",
+      "category": "Peer Career Advisors",
+      "major": "Electrical Engineering",
+      "year": "Senior"
+    },
+    {
+      "name": "Amanda Woodson",
+      "category": "Peer Career Advisors",
+      "major": "Communication Disorders; Spanish",
+      "year": "Senior"
+    },
+    {
+      "name": "Will Stout",
+      "category": "Peer Career Advisors",
+      "major": "Industrial & Systems Engineering",
+      "year": "Senior"
+    },
+    {
+      "name": "Kirsten Failings",
+      "category": "Peer Career Advisors",
+      "major": "Industrial & Systems Engineering",
+      "year": "Senior"
+    },
+    {
+      "name": "Matthew Stinson",
+      "category": "Peer Career Advisors",
+      "major": "Food Science",
+      "year": "Freshman"
+    },
+    {
+      "name": "Anna Claire Peaden",
+      "category": "Peer Career Advisors",
+      "major": "Literature",
+      "year": "Junior"
+    },
+    {
+      "name": "Ali Zakutney",
+      "category": "Peer Career Advisors",
+      "major": "Biomedical Sciences",
+      "year": "Senior"
+    },
+    {
+      "name": "Shelby Smith",
+      "category": "Peer Career Advisors",
+      "major": "Nursing",
+      "year": "Sophomore"
+    },
+    {
+      "name": "Ben Ford",
+      "category": "Peer Event Planners",
+      "major": "Agriscience Education",
+      "year": "Senior"
+    },
+    {
+      "name": "Drew Tewell",
+      "category": "Peer Event Planners",
+      "major": "Industrial & Systems Engineering",
+      "year": "Senior"
+    },
+    {
+      "name": "Josh Booker",
+      "category": "Peer Event Planners",
+      "major": "Industrial & Systems Engineering",
+      "year": "Senior"
+    },
+    {
+      "name": "Ricky Campbell",
+      "category": "Peer Event Planners",
+      "major": "Supply Chain Management",
+      "year": "Sophomore"
+    },
+    {
+      "name": "James Bowen",
+      "category": "Peer Event Planners",
+      "major": "German: International Trade",
+      "year": "Sophomore"
+    },
+    {
+      "name": "Leo Lagunas",
+      "category": "Peer Event Planners",
+      "major": "Architecture",
+      "year": "Sophomore"
+    },
+    {
+      "name": "Jake Harris",
+      "position": "Web Designer and Developer",
+      "category": "Operations"
+    },
+    {
+      "name": "Natasha Walker",
+      "position": "Marketing and Video Ops",
+      "category": "Operations",
+      "major": "Media Studies",
+      "year": "Senior"
+    },
+    {
+      "name": "Allie Britton",
+      "position": "Student Assistant, Employer Relations",
+      "category": "Operations",
+      "major": "Marketing",
+      "year": "Junior"
+    },
+    {
+      "name": "Taylor Adams",
+      "position": "Student Assistant, Employer Relations",
+      "category": "Operations",
+      "major": "Accounting",
+      "year": "Junior"
+    }
+  ]
+}

@@ -34,8 +34,11 @@
   }
   
   img {
-    width: 234px;
-    height: 389px;
+    height: 100%;
+    min-width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .overlay,
@@ -107,14 +110,9 @@
   padding-right: 1rem;
 }
 
-
-/****************************/
-/* INDIVIDUAL PICTURE EDITS */
-/****************************/
-
-.contact-card img.wade {
-  width: 500px;
-  margin-left: -130px;
+.student-workers h3 {
+  font-family: $header-font-family;
+  color: $thisislightblue;
 }
 
 /*****************/

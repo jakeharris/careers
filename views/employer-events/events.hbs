@@ -1,22 +1,32 @@
 ---
+path-to-root: ../../
 ng-app: career-center-events
 name: employer-events
-type: events
+type: employer-events
 title: Events | Career Center
 layout: employers.hbs
 path-to-root: ../../
 component: 
 - calendar
 ---
-<div ng-controller="month-ctrl">
-  <div ng-if="events.length > 0" class="content extra-content events">
-    <h2>Career Events This Month</h2>
-    <ul ng-class="{'flex-row': events.length <= 2}">
-      <li class="event" ng-repeat="event in events">
-        <div class="event-date">
-          <div class="event-date-month">[[ event.date['shortened-month'] ]]</div>
-          <div class="event-date-day">[[ event.date.day ]]</div>
+<section class="employer-events-wrapper content extra-content content--no-padding row" ng-controller="calendar-ctrl">
+  <h2 class="employer-events-title">Event Registration</h2>
+  <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
+  <ul class="employer-events flex">
+    <li ng-if="events.length % 2 !== 0" class="employer-event employer-event--blurb">Click any event to get more information and register.</li>
+    <li class="employer-event" ng-repeat="event in events">
+      <a class="employer-event-link" href="[[ event.url ]]">
+        <h3>[[ event.name ]]</h3>
+        <div class="employer-event-details">
+          <div class="employer-event-when">
+            <div class="employer-event-date">[[ event.date.month ]] [[ event.date.day ]]</div>
+            <div class="employer-event-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
+          </div>
+          <div class="employer-event-cost" ng-if="event.cost">
+            $[[ event.cost ]]
+          </div>
         </div>
+<<<<<<< HEAD
         <div class="event-details">
           <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
           <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
@@ -52,6 +62,9 @@ component:
         <a ng-if="event['employer-event']['tip-sheet'] != ''" class="event-details-tip-sheet" href="[[ event['employer-event']['tip-sheet'] ]]">Download Tip Sheet</a>
         <a ng-if="event['employer-event'].contact != ''" class="event-details-tip-sheet" href="mailto:[[ event['employer-event'].contact ]]">Contact Event Coordinator</a>
       </div>
+=======
+      </a>
+>>>>>>> master
     </li>
   </ul>
-</div>
+</section>
