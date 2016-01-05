@@ -75,7 +75,7 @@ $(function () {
 
 
     if(nav.children[1].classList.contains('mobile-nav--active') && !nav.classList.contains('fixed')) {
-      nav.classList.add('fixed'); 
+      nav.classList.add('fixed')
     }
   })
 });
@@ -87,13 +87,13 @@ $(function () {
     
     $(this).toggleClass('nav-controller--active')
     navWrapper.toggleClass('main--mobile')
-  });
+  })
   $(window).on('resize', function () {
     var navWrapper = $('#nav .nav-wrapper')
     
     if(window.innerWidth >= 768 && navWrapper.classList.contains('mobile-nav--active'))
       navWrapper.remove('mobile-nav--active')
-  });
+  })
   $('.nav-wrapper > ul > li').on('touchstart', function (e) {
     e.preventDefault()
     
@@ -104,5 +104,5 @@ $(function () {
         $(this).addClass('hover--active')
         
     e.target.click()
-  });
-});
+  })
+})
