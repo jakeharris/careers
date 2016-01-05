@@ -7,13 +7,16 @@ address {
   width: 100%;
 }
 
+.card.banner {
+  height: 345px;
+}
+
 // STYLING THE BOOTSTRAP CAROUSEL WITHOUT BOOTSTRAP
 .carousel {
   position: relative;
 }
-.carousel-inner {
-  height: auto;
-}
+.carousel .item,
+.carousel .item a,
 .carousel .item img {
   width: 100%;
   height: 100%;
