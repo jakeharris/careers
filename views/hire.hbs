@@ -12,20 +12,6 @@ component:
 - sponsors
 ---
 
-<<<<<<< HEAD
-<section class="row flex">
-  <div class="welcome content extra-content">
-    <h2>This is Recruiting.</h2>
-    <p>
-      Auburn University is one of the premier engineering universities of the Southeast. 
-      Connect with us at the AU Career Center, and put 30,000 quality candidates at 
-      your fingertips.
-    </p>
-    <p>
-      The services listed to the right are just some of the myriad ways we can help you
-      hire not just new graduates, but people we believe in &mdash; people <em>you</em>
-      can believe in.
-=======
 <section class="login-welcome row flex">
   <div class="login content">
     <div class="login-wrapper">
@@ -55,7 +41,6 @@ component:
     </blockquote>
     <p class="padding">
       <a href="mailto:skipworth@auburn.edu">Jay Skipworth</a>, Assistant Director of Employer Relations
->>>>>>> master
     </p>
     <a class="flat-btn" 
        role="button" 
@@ -88,106 +73,16 @@ component:
       <ul class="services-content">
         <li class="service"><a href="#">Job Postings</a></li>
         <li class="service"><a href="employers/events/">Career Events</a></li>
-<<<<<<< HEAD
-        <li class="service"><a href="#">Student Employment</a></li>
-        <li class="service"><a href="#">On-Campus Interviewing</a></li>
-        <li class="service"><a href="#">Internship Opportunities</a></li>
-        <li class="service"><a href="#">Information Sessions</a></li>
-=======
         <li class="service"><a href="employers/student-employment/on-campus.html">On-Campus Employment</a></li>
         <li class="service"><a href="employers/ocr.html#oci">On-Campus Interviewing</a></li>
         <li class="service"><a href="employers/student-employment/off-campus.html">Off-Campus Employment</a></li>
         <li class="service"><a href="employers/ocr.html#info-sessions">Information Sessions</a></li>
->>>>>>> master
       </ul>
     </div>
     <a class="flat-btn report-hiring" href="#">Report Hiring</a>
   </div>
 </section>
 
-<<<<<<< HEAD
-<section class="row flex">
-  <div class="contacts content extra-content">
-    <h2>Recruiting Contacts</h2>
-    <p>All email addresses listed here end in "@auburn.edu".</p>
-    <div class="contacts-container">
-      <div class="contact">
-        <h3>All Majors <span class="muted">Career Center</span></h3>
-        <div class="contact-details">
-          <img src="assets/images/staff/jay.jpg">
-          <div class="contact-info">
-            <p class="name">Jay Skipworth</p>
-            <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
-            <p class="email"><a href="mailto:skipworth@auburn.edu">skipworth</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="contact">
-        <h3>Business Majors <span class="muted">Harbert College of Business</span></h3>
-        <div class="contact-details">
-          <img src="assets/images/staff/melvin.jpg">
-          <div class="contact-info">
-            <p class="name">Mike Stover</p>
-            <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
-            <p class="email"><a href="mailto:mstover@auburn.edu">mstover</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <form class="login content extra-content" method="post" action="https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents%2Flogin">
-    <div class="login-wrapper">
-      <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
-      <p class="login-blurb">Your link to Auburn students.</p>
-      <div class="buttons">
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/">Sign in</a>
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=2">Register</a>
-        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/employers/policiesprocedures_emp.html">View policies</a>
-        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
-      </div>
-    </div>
-  </form>
-</section>
-
-<section class="row flex" ng-controller="calendar-ctrl">
-  <div class="events content extra-content content--no-padding">
-    <div class="first-event-wrapper">
-      <h2>Upcoming Events</h2>
-      <div class="first-event event" ng-repeat="event in firstEvents">
-        <div class="event-date">
-          <div class="event-date-month">[[ event.date['shortened-month'] ]]</div>
-          <div class="event-date-day">[[ event.date['day'] ]]</div>
-        </div>
-        <div class="event-details">
-          <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-          <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
-          <div class="event-details-location">[[ event.location ]]</div>
-          <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
-        </div>
-      </div>
-    </div>
-    <a ng-if="events.length > 0" class="collapsed accordion-header flat-btn" data-toggle="collapse" id="more-events" href="#events-list" role="tab" aria-expanded="false" aria-controls="events-list"></a>
-    <ul style="height: 0px;" aria-expanded="false" id="events-list" class="panel-collapse collapse" role="tabpanel" aria-labelledby="events-list-heading">
-      <li class="event" ng-repeat="event in events">
-        <div class="event-date">
-          <div class="event-date-month">[[ event.date['shortened-month'] ]]</div>
-          <div class="event-date-day">[[ event.date['day'] ]]</div>
-        </div>
-        <div class="event-details">
-          <a ng-if="event.url != ''" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-          <div ng-if="event.url == ''" class="event-details-name">[[ event.name ]]</div>
-          <div class="event-details-location">[[ event.location ]]</div>
-          <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
-          <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <a class="upcoming-event content extra-content content--no-padding" href="[[ firstEvents[0].url ]]"><img src="[[ img ]]"></img></a>
-=======
 <section class="employer-events-wrapper content extra-content content--no-padding row" ng-controller="calendar-ctrl">
   <h2 class="employer-events-title">Event Registration</h2>
   <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
@@ -208,7 +103,6 @@ component:
       </a>
     </li>
   </ul>
->>>>>>> master
 </section>
 
 <section class="row sponsors content extra-content">

@@ -11,9 +11,6 @@ component:
 ---
 <!-- Banner image -->
 <div class="hero">
-<<<<<<< HEAD
-  <img src="assets/images/events/EID_Webpage(F15).png"></img>
-=======
   <img class="img"
        src="assets/images/events/eid-banner.png"
        alt="Education Interview Day. Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom."></img>
@@ -21,7 +18,6 @@ component:
     <h1>Education Interview Day.</h1>
     <h2>Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom.</h2>
   </div>
->>>>>>> master
 </div>
 
 <div class="content" ng-controller="price-ctrl">
@@ -41,29 +37,6 @@ component:
       </div>
     </div>
     <div class="actions">
-<<<<<<< HEAD
-      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/eidfa15">Register <span class="muted">$300</span></a>
-      <div class="tipsheet">
-        <div class="tipsheet-wrapper">
-          <p>Download the tipsheet for detailed information about:</p>
-          <ul>
-            <li>Payment</li>
-            <li>Shipping</li>
-            <li>Space &amp; Equipment</li>
-            <li>Display Guidelines</li>
-          </ul>
-        </div>
-        <a class="flat-btn" href="employers/events/Tips_EID(F15).pdf">Download Tip Sheet</a>
-      </div>
-      <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=fe70cd4cb4d0b5f21c4591e7d76d32c7#/events/dd4b0f5ae7e282997e50fde9c271eeca/employers">View Attending Employers</a>
-    </div>
-  </div>
-  
-  <!-- Icons -->
-  <div class="attributes">
-    <div class="attribute">
-      <a class="icon parking" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" title="<h2>Priority Parking <p class='muted'>Stadium Parking Deck</p></h2>" data-content="<p>The last page of this event's tip sheet is a parking permit for the Stadium Parking Deck, only valid for the day of the event. Parking there is free and convenient, but limited, so plan to arrive early enough to snag a spot.</p>">
-=======
       <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/eidsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
       <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/eidsp16">
@@ -90,7 +63,6 @@ component:
          data-toggle="popover" 
          data-title="<h2>Priority Parking <p class='muted'>Stadium Parking Deck</p></h2>" 
          data-content="<p>The last page of this event's tip sheet is a parking permit for the Stadium Parking Deck, only valid for the day of the event. Parking there is free and convenient, but limited, so plan to arrive early enough to snag a spot.</p>">
->>>>>>> master
         <i class="icon-automobile"></i>
       </a>
       <div class="details">
@@ -98,9 +70,6 @@ component:
       </div>
     </div>
     <div class="attribute">
-<<<<<<< HEAD
-      <a class="icon dress" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" title="<h2>Early Bird Pricing <span class='muted'>$200</span></h2>" data-content="<p>If you register before September 18, you save $100 on your registration fee (per table)!</p>">
-=======
       <!-- 
         This SHOULD all be automated, but Angular and Popover weren't playing well 
         (Popover reads everything before Angular gets a chance to set up and populate), 
@@ -114,7 +83,6 @@ component:
          data-toggle="popover" 
          data-title="<h2>Early Bird Pricing</h2>" 
          data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
->>>>>>> master
         <i class="icon-star-full"></i>
       </a>
       <div class="details">
@@ -127,58 +95,6 @@ component:
         <span class="tooltip"></span>
       </a>
       <div class="details">Lunch Provided</div>
-<<<<<<< HEAD
-    </div>
-  </div>
-</div>
-
-<div class="content extra-content content--no-padding accordion-container">
-  <div class="cancellation-accordion accordion">
-    <a class="collapsed accordion-header" data-toggle="collapse" id="cancellation-heading" href="#cancellation" role="tab" aria-expanded="false" aria-controls="cancellation">
-      Cancellation Policy<i></i>
-    </a>
-    <div style="height: 0px;" aria-expanded="false" id="cancellation" class="panel-collapse collapse" role="tabpanel" aria-labelledby="cancellation-heading">
-      <div class="cancellation-policy">
-        <div class="cancellation-policy-brief">
-          <p>In brief:</p>
-          <ul>
-            <li>No refunds for cancellations after Friday, September 18, 2015</li>
-            <li>One half of the registration fee ($100.00 for Early Bird registrants) is charged for all cancellations prior to the deadline date whether the registration fee is paid in advance or not</li>
-            <li>If your organization is registered for the event and no one shows up, your organization is expected to pay the balance due</li>
-            <li>Registration fees cannot be applied to future events</li>
-          </ul>
-        </div>
-        <div class="contacts">
-          <div class="contact">
-            <h3>To cancel, contact</h3>
-            <div class="contact-details">
-              <img src="assets/images/staff/diane.jpg">
-              <div class="contact-info">
-                <p class="name">Diane Thorne</p>
-                <p class="phone"><a href="tel:(334) 844-3862">(334) 844-3862</a></p>
-                <p class="email"><a href="mailto:thornde@auburn.edu">thornde@auburn.edu</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="contact">
-            <h3>Direct all other inquiries to</h3>
-            <div class="contact-details">
-              <img src="assets/images/staff/melvin.jpg">
-              <div class="contact-info">
-                <p class="name">Melvin K. Smith</p>
-                <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
-                <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="flat-btn" href="employers/events/Tips_EID(F15).pdf">View Detailed Cancellation Policy</a>
-    </div>
-  </div>
-</div>
-
-=======
     </div>
   </div>
 </div>
@@ -228,7 +144,6 @@ component:
     </div>
   </div>
 </div>
->>>>>>> master
 <div class="content extra-content content--no-padding accordion-container">
   <div class="parking-accordion accordion">
     <a class="collapsed accordion-header" data-toggle="collapse" id="parking-heading" href="#parking" role="tab" aria-expanded="false" aria-controls="parking">
@@ -236,11 +151,7 @@ component:
     </a>
     <div style="height: 0px;" aria-expanded="false" id="parking" class="panel-collapse collapse" role="tabpanel" aria-labelledby="parking-heading">
       <div class="parking-information">
-<<<<<<< HEAD
-        <a href="http://auburn.edu/map?id=75"><img src="assets/images/events/parking/student-center.png"></a>
-=======
         <a href="http://auburn.edu/map?id=304"><img src="assets/images/events/parking/student-center.png"></a>
->>>>>>> master
         <div class="hotel-parking">
           <div class="parking-instruction">
             <h2>Stadium Parking Deck</h2>
@@ -253,12 +164,8 @@ component:
             <p>
               A parking pass will be emailed one week prior to 
               the event, and is also available by printing the
-<<<<<<< HEAD
-              last page of the <a href="employers/events/Tips_EID(F15).pdf">tip sheet</a>.
-=======
               last page of the tip sheet.
-<!--              last page of the <a href="employers/events/Tips_GPSF(F15).pdf">tip sheet</a>.-->
->>>>>>> master
+<!--          last page of the <a href="employers/events/Tips_GPSF(F15).pdf">tip sheet</a>. -->
             </p>
           </div>
           <div class="parking-instruction">
@@ -284,10 +191,4 @@ component:
     </div>
   </div>
 </div>
-<<<<<<< HEAD
-
-<a class="flat-btn accommodations" href="aboutus/plan-your-visit.html#Lodging">Accommodations</a>
-
-=======
 <a class="flat-btn accommodations" href="https://booking.ihotelier.com/istay/istay.jsp?hotelid=6493&identifier=WEPART">Accommodations</a>
->>>>>>> master
