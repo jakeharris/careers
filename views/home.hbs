@@ -81,26 +81,6 @@ component:
             <img src="assets/images/finish-in-four.jpg" alt="...">
           </a>
         </div>
-        <div class="item">
-          <a href="students/events/tech.html">
-            <img src="assets/images/events/ETCE_Homepage(F15).png" alt="...">
-          </a>
-        </div>
-        <div class="item">
-          <a href="students/events/gpsf.html">
-            <img src="assets/images/events/GPSF_Homepage(F15).png" alt="...">
-          </a>
-        </div>
-        <div class="item">
-          <a href="students/events/eid.html">
-            <img src="assets/images/events/EID_Homepage(F15).png" alt="...">
-          </a>
-        </div>
-        <div class="item">
-          <a href="students/events/am.html">
-            <img src="assets/images/events/AMCE_Homepage(F15).png" alt="...">
-          </a>
-        </div>
       </div>
     </div>
   </div>
@@ -212,7 +192,7 @@ component:
     <div class="sponsor" ng-repeat="sponsor in sponsors">
       <span class="vert-centerer"></span>
       <a href="[[ sponsor.url ]]">
-        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade"></img>
+        <img lazy-img="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade"></img>
       </a>
     </div>
   </div>
