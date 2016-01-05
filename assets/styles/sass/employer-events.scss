@@ -26,7 +26,7 @@
     background: $thisisdarkblue;
     color: white;
   }
-  @media (min-width: $medium-screen-size) {
+  @media (min-width: $medium-screen-width) {
     &,
     &:nth-of-type(2n) {
       background: $thisislightblue;
@@ -107,7 +107,7 @@
     text-align: center;
   }
 }
-@media (min-width: $medium-screen-size) {
+@media (min-width: $medium-screen-width) {
   .employer-events .employer-event {
     flex-basis: 50%; 
     max-width: 50%;

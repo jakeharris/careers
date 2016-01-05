@@ -16,7 +16,7 @@
 .login-welcome {
   padding-top: 1.5rem;
 }
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $moderate-screen-width) {
   .login-welcome {
     height: 500px; 
   }
