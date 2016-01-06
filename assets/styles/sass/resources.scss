@@ -153,11 +153,11 @@ header {
         font-family: $body-font-family;
       }
 
-      &:nth-child(3n - 2) {
+      &:nth-child(3n-2) {
         background: $thisisdarkblue;
         color: white;
       }
-      &:nth-child(3n - 1) {
+      &:nth-child(3n-1) {
         background: $bg-gray;
         color: $thisisdarkblue;
       }
