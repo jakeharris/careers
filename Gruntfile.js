@@ -51,7 +51,8 @@ module.exports = function (grunt) {
   // # jit-grunt
   // Load grunt plugins without using a .loadNpmTasks block at the end of the Gruntfile.
   require('jit-grunt')(grunt, {
-    useminPrepare: 'grunt-usemin'
+    useminPrepare: 'grunt-usemin',
+    autoprefixer: 'autoprefixer'
   });
 
   var VIEW_MAPPING = {
@@ -213,7 +214,7 @@ module.exports = function (grunt) {
       },
       assemble: {
         files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/{,*/}*.json'],
-        tasks: ['assemble:dev'] //tasks: ['assemble', 'processhtml']
+        tasks: ['newer:assemble:dev'] //tasks: ['assemble', 'processhtml']
       },
       gruntfile: {
         files: ['Gruntfile.js'],
@@ -221,11 +222,11 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= config.assets %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['sass', 'autoprefixer'] // tasks: ['sass', 'uncss', 'autoprefixer']
+        tasks: ['newer:sass'] // tasks: ['sass', 'uncss', 'postcss'] // postcss uses autoprefixer
       },
       js: {
         files: ['<%= config.assets %>/scripts/{,*/}*.js'],
-        tasks: ['jshint:all']
+        tasks: ['newer:jshint:all']
       },
       livereload: {
         options: {
@@ -339,7 +340,7 @@ module.exports = function (grunt) {
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
     },
 
-    // ## autoprefixer
+    // ## postcss, using autoprefixer
     //    Automagically adds vendor-prefixed rules to match non-prefixed rules
     //    we use that we might've forgotten about!
     //    e.g.
@@ -348,9 +349,11 @@ module.exports = function (grunt) {
     //    `display: flex;
     //     ms-display: flex-box;
     //     display: -webkit-flex;`
-    autoprefixer: {
+    postcss: {
       options: {
-        browsers: '> 5%, ie >= 8'
+        processors: [
+          require('autoprefixer')({browsers: '> 5%, ie >= 8'})
+        ]
       },
       all: {
         src: [
@@ -393,8 +396,21 @@ module.exports = function (grunt) {
     uglify: {
 
     },
+    
+    // ### imagemin
+    // Minify our image files.
+    imagemin: {
+      events: {
+        files: [{
+          expand: true,                       // Enable dynamic expansion
+          cwd: '<% config.assets %>/images',  // Src matches are relative to this path
+          src: ['events/*-slide.{png,jpg,gif}', 'events/*-banner.{png,jpg,gif}'],        // Actual patterns to match
+          dest: 'dist/'                       // Destination path prefix
+        }]
+      }
+    },
 
-    // ## filerev
+    // ### filerev
     // Rename files to bust browser caches.
     filerev: {
       css: {
@@ -437,7 +453,7 @@ module.exports = function (grunt) {
     }
     grunt.task.run([
       'sass',
-      'autoprefixer',
+      'postcss',
       'assemble:' + target
     ]);
   });
@@ -445,12 +461,14 @@ module.exports = function (grunt) {
   // # grunt enhance
   // Improve upon the compiled project. Minify files, cache bust.
   grunt.registerTask('enhance', [
+    'postcss',
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',
     'uglify:generated',
     'filerev',
     'usemin',
+    'newer:imagemin',
     'clean:post'
   ]);
 
@@ -480,10 +498,6 @@ module.exports = function (grunt) {
     'compile:prod',
     'enhance'
   ]);
-
-  // # watch fixes
-  // Only recompile changed files. Should dramatically
-  // speed up Sass build times.
 
   
   /*grunt.registerTask('publish', 'commit work, push to github, and deploy on server; requires target [valid: dev, prod]', function (target) {
