@@ -4,7 +4,7 @@
 /* MIXINS */
 /**********/
 @mixin color-alternator () {
-  &:nth-of-type(2n - 1) {
+  &:nth-of-type(2n-1) {
     background: $thisislightblue;
     color: white;
   }
@@ -33,7 +33,7 @@
       color: white;
     }
     &:nth-of-type(4n),
-    &:nth-of-type(4n - 3) {
+    &:nth-of-type(4n-3) {
       background: $thisisdarkblue;
       color: white;
     }
