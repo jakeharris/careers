@@ -34,6 +34,7 @@
     "*.css",
     "*.css.map",
     
+    "node_modules",
     "vendor",
     "images",
     "*.min.*.js",
