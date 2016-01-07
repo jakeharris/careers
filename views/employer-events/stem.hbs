@@ -1,17 +1,19 @@
 ---
 path-to-root: ../../
 ng-app: career-center-employer-events
-name: emp-tech
+name: emp-<%= eventName %>
 type: employer-event-pages
-title: Engineering and Technical Career Expo
 layout: employers.hbs
 component:
 - price
+
+eventName: stem
+title: STEM Career Expo
 ---
 <!-- Banner image -->
 <div class="hero">
   <img class="img"
-       src="assets/images/events/stem-banner.png"
+       src="assets/images/events/{{eventName}}-banner.png"
        alt="STEM Career Expo. February 9, 2016, 3pm-7pm, at the AU Hotel."></img>
   <div class="img-replace">
     <h1>STEM Career Expo.</h1>
@@ -43,9 +45,9 @@ component:
       </div>
     </div>
     <div class="actions">
-      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/stemsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{eventName}}sp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
       <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/stemsp16">
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{eventName}}sp16">
           Register ($[[ price.now ]])
         </a>
         <a class="flat-btn--info"
@@ -56,6 +58,19 @@ component:
            data-title="<h2>Early Bird Pricing</h2>" 
            data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
           ?</a>
+      </div>
+      
+      <div class="tipsheet">
+        <div class="tipsheet-wrapper">
+          <p>Download the tipsheet for detailed information about:</p>
+          <ul>
+            <li>Payment</li>
+            <li>Shipping</li>
+            <li>Space &amp; Equipment</li>
+            <li>Display Guidelines</li>
+          </ul>
+        </div>
+        <a class="flat-btn" href="assets/images/events/{{eventName}}.pdf">Download Tip Sheet</a>
       </div>
       <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=1282185d3bc076d8b8f3088c99f9ab0d#/events/1282185d3bc076d8b8f3088c99f9ab0d/employers">View Attending Employers</a>
     </div>
