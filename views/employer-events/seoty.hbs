@@ -1,16 +1,20 @@
 ---
 path-to-root: ../../
-ng-app: none
-name: emp-seoty
+ng-app: career-center-employer-events
+name: emp-<%= eventName %>
 type: employer-event-pages
-title: Student Employment Awards | Career Center
 layout: employers.hbs
+component:
+- price
+
+eventName: seoty
+title: Student Employment Awards | Career Center
 ---
 
 <!-- Banner image -->
 <div class="hero">
   <img class="img" 
-       src="assets/images/events/seoty-banner.png"
+       src="assets/images/events/{{eventName}}-banner.png"
        alt="Student Employee of the Year Awards.">
   <div class="img-replace">
     <h1>Student Employee of the Year Awards.</h1>
@@ -37,22 +41,24 @@ layout: employers.hbs
       </p>
     </div>
     <div class="actions">
-      <a class="flat-btn flat-btn--disabled" disabled>Nominate a Student Worker</a>
+      <a class="flat-btn" href="http://survey.az1.qualtrics.com/SE/?SID=SV_cCNbbWIHOfzxeAJ">Nominate a Student Worker</a>
       <div class="eligibility">
         <h2 class="checklist-header">
           Eligibility
         </h2>
         <ul class="checklist">
-          <li>Must be a current Auburn University student in good academic standing</li>
-          <li>Must have worked at least 4 months between June 2015 and May 2016 (anticipated)</li>
-          <li>May be a work-study, graduate assistants, or co-op student</li>
+          <li>Graduate, Research, and Teaching Assistants are NOT eligible.</li>
+          <li>Must be a current student in good standing</li>
+          <li>Enrolled during the Spring 2016 semester</li>
+          <li>Must have worked 3 full time OR 6 months part time between June 2015 and May 2016 (anticipated).</li>
+          <li>Only one nomination per nominator is permitted.</li>
         </ul>
       </div>
     </div>
   </div>
   <div class="dates desktop-only flex flex--space-between row">
     <h2 class="awards-ceremony-header flex-third">Awards Ceremony <span class="awards-ceremony">Apr 11</span></h2>
-    <h2 class="deadline-header flex-third">Nomination Deadline <span class="deadline">Feb 8</span></h2>
+    <h2 class="deadline-header flex-third">Nomination Deadline <span class="deadline">Feb 5 at 5pm</span></h2>
   </div>
 </section>
 
