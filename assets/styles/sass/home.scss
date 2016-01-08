@@ -7,19 +7,19 @@ address {
   width: 100%;
 }
 
-.card.banner {
-  height: 345px;
-}
-
 // STYLING THE BOOTSTRAP CAROUSEL WITHOUT BOOTSTRAP
 .carousel {
   position: relative;
+  display: none;
 }
 .carousel .item,
 .carousel .item a,
 .carousel .item img {
   width: 100%;
   height: 100%;
+}
+.carousel img {
+  margin: 0 auto;
 }
 .carousel .item:not(.active) {
   display: none;
@@ -57,6 +57,11 @@ address {
   }
   .carousel-inner {
     height: 370px; 
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .carousel {
+    display: block; 
   }
 }
 @media (min-width: $moderate-screen-width) {
