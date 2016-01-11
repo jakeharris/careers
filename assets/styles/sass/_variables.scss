@@ -36,8 +36,9 @@ $body-font-size: 1.6rem;
 $post-nav-font-size: 1.2rem;
 
 /* Common spacings */
-$content-division: 5rem;    // separates content conceptually
-$content-protection: 3rem;  // separates related content to make it easier to read
+$content-division: 5rem;     // separates content conceptually
+$content-protection: 3rem;   // separates similar content to make it easier to read
+$content-separation: 1.5rem; // separates very similar content (e.g. paragraphs)
 
 @mixin hex($width, $color) {
   $height: $width * (78/104);
