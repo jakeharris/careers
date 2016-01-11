@@ -355,8 +355,6 @@ body > .container {
 
 // EVENTS
 .event {
-  min-height: 14rem;
-  max-height: 14rem;
   margin: 0.4rem 0;
   width: 100%;
   flex-basis: 100%;
@@ -372,7 +370,7 @@ body > .container {
 .event-date {
   color: $thisisburntorange;
   text-align: right;
-  width: 18%;
+  width: 10%;
 }
 .event-date-day {
   font-size: $title-font-size;
@@ -392,6 +390,11 @@ body > .container {
   .event { 
     flex-basis: 45%;
     width: 45%;
+    min-height: 14rem;
+    max-height: 14rem;
+  }
+  .event-date {
+    width: 18%; 
   }
 }
 
