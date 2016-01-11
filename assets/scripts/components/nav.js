@@ -26,7 +26,7 @@ $(function() {
         e.preventDefault()
         
         // if we're in the mobile menu, don't add the delay
-        if(navWrapper.hasClass('main--mobile'))
+        if(navWrapper.hasClass('mobile'))
           $(this).removeClass('hover--active')
         else 
           clrTimeout = setTimeout(function () {
@@ -39,17 +39,19 @@ $(function() {
 
 // Positioning the nav 
 $(function () {
-  var preheader, nav, postheader;
+  var preheader, nav, postheader
   $(window).on('scroll', function () {
-    if(preheader === undefined) preheader = $('#preheader')
+    if(preheader === undefined) preheader = $('header .title')[0]
     if(preheader === undefined) return
 
-    if(nav === undefined) nav = $('#nav')
+    if(nav === undefined) nav = $('nav.main')[0]
     if(nav === undefined) return
 
-    if(postheader === undefined) postheader = $('#postheader')
+    if(postheader === undefined) postheader = $('nav.auburn')[0]
     if(postheader === undefined) return  
 
+    console.log(nav.classList)
+    console.log(nav.classList.contains('mobile'))
 
     if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
       nav.classList.add('fixed') 
@@ -74,7 +76,7 @@ $(function () {
     }
 
 
-    if(nav.children[1].classList.contains('mobile-nav--active') && !nav.classList.contains('fixed')) {
+    if(nav.classList.contains('mobile') && !nav.classList.contains('fixed')) {
       nav.classList.add('fixed')
     }
   })
@@ -83,18 +85,18 @@ $(function () {
 // Mobile menu
 $(function () {
   $('.nav-controller').on('click', function () {
-    var navWrapper = $('nav.main')
+    var nav = $('nav.main')
     
     $(this).toggleClass('nav-controller--active')
-    navWrapper.toggleClass('main--mobile')
+    nav.toggleClass('mobile')
   })
   $(window).on('resize', function () {
-    var navWrapper = $('#nav .nav-wrapper')
+    var nav = $('nav.main')[0]
     
-    if(window.innerWidth >= 768 && navWrapper.classList.contains('mobile-nav--active'))
-      navWrapper.remove('mobile-nav--active')
+    if(window.innerWidth >= 768 && nav.classList.contains('mobile'))
+      nav.remove('mobile')
   })
-  $('.nav-wrapper > ul > li').on('touchstart', function (e) {
+  $('nav.main > ul > li').on('touchstart', function (e) {
     e.preventDefault()
     
     if($(this).children('ul').length > 0) 
