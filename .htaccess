@@ -1,0 +1,8 @@
+AddType application/x-httpd-php php3
+Header add Access-Control-Allow-Origin "*"
+Header add Access-Control-Allow-Headers "Range"
+
+redirect /student_info/student_affairs/success/career/index.html http://www.auburn.edu/student_info/student_affairs/success/career/cds_home
+redirect /career/webresources/index.html http://auburn.edu/career/students/index.html
+redirect /career/fromwork http://auburn.edu/career/students/alumni.html 
+redirect /career/expoinfo http://auburn.edu/career/employers/events
