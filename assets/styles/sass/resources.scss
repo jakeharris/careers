@@ -1,277 +1,204 @@
 @import 'app';
 
-body {
-  counter-reset: c;
-}
-
-header {
-  margin-bottom: 6rem;
-}
-
-.links {
-  padding-top: 3rem;
-}
-
-.step {
-  width: 100%;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column-reverse;
-  
-  & > div {
-    width: 100%;
-    padding-bottom: 3rem;
+// BANNER IMAGE CORRECTIONS
+.hero {
+  height: 246px;
+  max-height: 246px;
+  img { 
+    display: none;
   }
-
-  &:nth-of-type(odd) > .links {
-    margin-right: 3rem;
-  }
-
-  & > div:nth-of-type(2) {
-    & > h2 {
-      font-size: 4rem;
-      padding-top: 1rem;
-      margin-bottom: 3rem;
-    }
-    & > h2::before {
-      counter-increment: c;
-    }
-    p {
-      line-height: 1.618; 
-    }
-  }
-  &:nth-of-type(2n) {
-    background: white;
-    box-shadow: $box-shadow;
-  }
-
-  & .link-wedges,
-  & .tooltips {
-    max-height: 6rem;
-    display: flex;
-
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-
-    box-shadow: $box-shadow;
-    counter-reset: i;
-
-    & > .wedge {
-      min-height: 4rem;
-      max-height: 6rem;
-      display: inline-block;
-      flex-basis: 100%;
-      width: 100%;
-      -ms-flex: 1;
-
-      counter-increment: i;
-      line-height: 1.42;
-
-      // ===== Icon stuff =====
-      &:before {
-        font-family: $header-font-family;
-        font-size: 5rem;
-
-        position: relative;
-        left: calc(100% - 4rem);
-        bottom: 3px;
-
-        content: counter(i);
-      }
-      &:nth-child(1):before {
-        left: calc(100% - 3.2rem);
-      }
-      &:only-child:before {
-        left: calc(50% - 1rem);
-      }
-
-      // ====== Triangle ======
-      &:after {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 10px 10px 10px;
-        border-color: transparent transparent $thisisdarkblue transparent;
-        line-height: 0px;
-        _border-color: #000000 #000000 #698db3 #000000;
-        _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
-
-        position: relative;
-        top: 9px;
-
-        margin-left: auto;
-        margin-right: auto;
-        content: ' ';
-        display: none;
-      }
-      &.wedge--hovered:after {
-        display: flex;
-      }
-
-      // ===== Link stuff =====
-      &:hover {
-        cursor: pointer;
-      }
-
-      & > .wedge-link {
-        display: block;
-        width: 50rem;
-
-        position: relative;
-        z-index: -1;
-
-        font-family: $body-font-family;
-      }
-
-      &:nth-child(3n-2) {
-        background: $thisisdarkblue;
-        color: white;
-      }
-      &:nth-child(3n-1) {
-        background: $bg-gray;
-        color: $thisisdarkblue;
-      }
-      &:nth-child(3n) {
-        background: $thisislightblue;
-        color: white;
-      }
-    }
-    &:nth-child(3) {
-      margin-top: 10rem;
-    }
-  }
-  
-  & .tooltips {
-    box-shadow: none;
-    border: 6px solid $thisisdarkblue;
-    box-sizing: content-box;
-    align-items: center;
-  }
-}
-
-.full-content {
-  display: none;
-}
-
-.step .tooltips {
-  margin-top: 3rem;
-  max-height: none;
-  height: 13rem;
-}
-
-.tooltip {
-  @extend .hover;
-  display: none;
-
-  padding: 1rem;
-  width: 100%;
-  
-  cursor: pointer;
-
-  //overwriting Bootstrap's styles
-  position: inherit;
-  z-index: 1;
-  opacity: 1;
-
-  & > h2 {
-    margin-top: 0;
-    text-align: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    font-size: 2.2rem;
-  }
-}
-a.tooltip[href$=".pdf"] {
-  &::after {
-    content: none;
-  }
-  h2::after {
-    content: ' (pdf)';
-  }
-}
-.tooltip--show {
-  display: block;
-}
-
-.cam {
-  width: 100%;
-  display: block;
-  margin-top: 3rem;
-  img {
-    width: 100%; 
-  }
-  &:hover {
-    background: $thisislightorange; 
-  }
-}
-
-.big-header {
-  font-size: 7rem;
-  text-align: center;
-}
-.international-content,
-.veterans-content,
-.lgbt-content,
-.accessibility-content,
-.federal-content,
-.service-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/*****************/
-/* MEDIA QUERIES */
-/*****************/
-@media (min-width: $tiny-screen-width) {
-  .tooltip {
-    padding: 2rem;
-  }
-}
-@media (min-width: $small-screen-width) {
-  .hero .img-replace {
-    font-size: 5rem; 
-  }
-  .tooltip > h2 {
-    font-size: 29px; 
+  .img-replace {
+    display: block;
+    font-size: $title-font-size;
+    padding: $content-division;
   }
 }
 @media (min-width: $moderate-screen-width) {
-  .hero .img-replace {
-    font-size: 8rem; 
-  }
-}
-@media (min-width: $medium-screen-width) {
   .hero {
     img {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin-top: -1.5rem;
+      display: block; 
     }
+    // don't hide it if there is no img
     img + .img-replace {
       display: none; 
     }
   }
-  
+}
+
+// GUIDE STEPS -- basic structure
+.step {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  padding: 0 $content-division;
+}
+.step:nth-of-type(even) {
+  @extend .card;
+}
+
+.step-links, .step-blurb {
+  width: 100%;
+}
+.step-links {
+  padding-top: $content-protection;
+}
+.step-blurb {
+  h2 {
+    font-size: $title-font-size;
+    padding-bottom: $content-separation;
+  }
+  p {
+    padding-bottom: $content-separation; 
+  }
+}
+.full-blurb {
+  display: none;
+}
+@media (min-width: $medium-screen-width) {
   .step {
+    flex-wrap: nowrap; 
     flex-direction: row;
-    flex-wrap: nowrap;
-    & > div {
-      flex-basis: 50%;
-      width: 50%;
-    }
-    &:nth-of-type(2n) {
-      flex-direction: row-reverse;
-    }
-    & .link-wedges,
-    & .tooltips {
-      max-width: 75%;
+  }
+  .step:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+  .step:nth-of-type(odd) {
+    .step-blurb {
+      padding-left: $content-division; 
     }
   }
-  
-  .full-content {
+  .step-links {
+    flex-basis: 35%; 
+    width: 35%;
+    padding-top: 0;
+  }
+  .step-blurb {
+    flex-basis: 50%; 
+    width: 50%;
+  }
+  .full-blurb {
     display: inline; 
   }
+}
+
+// GUIDE STEPS -- link details
+.wedges {
+  display: flex;
+  box-shadow: $box-shadow;
+  counter-reset: c;
+  
+  max-height: 6rem;
+  margin-top: 0;
+}
+.wedge {
+  display: inline-block;
+  flex-basis: 100%;
+  -ms-flex: 1;
+  
+  counter-increment: c;
+  
+  max-height: 6rem;
+  line-height: 1.42;
+  
+  cursor: pointer;
+  
+  // --- NUMBER STUFF ---
+  &::before {
+    font-family: $header-font-family;
+    font-size: $title-font-size;
+    
+    position: relative;
+    left: calc(100% - 4rem);
+    bottom: 3px;
+    
+    content: counter(c); 
+  }
+  // if it's a 1, but there are more elements
+  &:nth-child(1)::before {
+    left: calc(100% - 3.2rem);
+  }
+  // if it's a 1 and it's the only resource
+  &:only-child::before {
+    left: calc(50% - 1rem);
+  }
+  
+  // --- SELECTED ELEMENT TRIANGLE INDICATOR ---
+  &::after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent $thisisdarkblue transparent;
+    line-height: 0px;
+    _border-color: #000000 #000000 #698db3 #000000;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+
+    position: relative;
+    top: 9px;
+
+    margin-left: auto;
+    margin-right: auto;  
+    
+    // --- HIDING AUTO-PDF ---
+    content: ' ' !important;
+    
+    display: none;
+  }
+  &:hover::after,
+  &.wedge--hovered::after {
+    display: flex;
+  }
+  
+  // --- COLOR STUFF ---
+  &:nth-child(3n-2) {
+    background: $thisisdarkblue;
+    color: white;
+  }
+  &:nth-child(3n-1) {
+    background: $bg-gray;
+    color: $thisisdarkblue;
+  }
+  &:nth-child(3n) {
+    background: $thisislightblue;
+    color: white;
+  }
+}
+.tooltips {
+  box-shadow: none;
+  border: 6px solid $thisisdarkblue;
+  box-sizing: content-box;
+  align-items: center;
+  
+  margin-top: $content-protection;
+  max-height: none;
+  height: 13rem;
+}
+.tooltip {
+  @extend .hover;
+  display: none;
+  align-items: center;
+  height: 100%;
+
+  h2 {
+    text-align: center; 
+    width: 100%;
+  }
+  // fix auto-pdf
+  &[href$=".pdf"]::after {
+    content: none; 
+  }
+  &[href$=".pdf"] h2::after {
+    content: ' (pdf)';
+  }
+}
+.tooltip--show {
+  display: flex;
+}
+
+// FIXES FOR SPECIALIZED ADVICE PAGE
+.big-header {
+  font-size: 10rem;
+  padding: $content-division;
+  align-self: center;
 }

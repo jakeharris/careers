@@ -7,9 +7,9 @@ component:
 - tooltip
 ---
 
-<div class="hero card unpadded">
+<div class="hero card{{#if hero-img}} unpadded{{/if}}">
   {{#if hero-img}}
-  <img src="assets/images/resources/{{ hero-img }}">
+  <img src="assets/images/resources/{{ hero-img }}" alt="{{ hero-text}}">
   {{/if}}
   <h2 class="img-replace">{{ hero-text }}</h2>
 </div>
