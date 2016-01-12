@@ -50,10 +50,20 @@
           + ']').addClass('tooltip--show')
       }
     })
-    tooltips.each(function (i) {
-      console.log('tooltip: \n' + $(this))
-      console.log('wedge: \n' + $(this).parent().siblings('.wedges').children('[data-tooltip=' + $(this).data('for') + ']'))
-      $(this).attr('href', $(this).parent().siblings('.wedges').children('[data-tooltip=' + $(this).data('for') + ']').attr('href'))
+    tooltips.each(function (i) { 
+      $(this).parent()
+        .siblings('.wedges')
+        .children('[data-tooltip=' 
+                  + $(this).data('for') 
+                  + ']')
+      $(this).attr('href',
+                   $(this).parent()
+                      .siblings('.wedges')
+                      .children('[data-tooltip=' 
+                                + $(this).data('for') 
+                                + ']')
+                      .attr('href')
+                  )
     })
   })
 })()
