@@ -1,9 +1,7 @@
 (function () {
   document.addEventListener('DOMContentLoaded', function (event) {
-    console.log($('[data-tooltip]'))
-    console.log($('[data-for=' + $('[data-tooltip]').attr('data-tooltip') + ']'))
 
-    var wedgeContainers = $('.link-wedges'),
+    var wedgeContainers = $('.wedges'),
         wedges = $(wedgeContainers.children('.wedge')),
         tooltips = $($('.tooltips').children('.tooltip')),
         firstWedges = $(wedgeContainers.children('[data-tooltip]:first-child')),
@@ -32,8 +30,8 @@
     })
     tooltips.each(function (i) {
       console.log('tooltip: \n' + $(this))
-      console.log('wedge: \n' + $(this).parent().siblings('.link-wedges').children('[data-tooltip=' + $(this).data('for') + ']'))
-      $(this).attr('href', $(this).parent().siblings('.link-wedges').children('[data-tooltip=' + $(this).data('for') + ']').attr('href'))
+      console.log('wedge: \n' + $(this).parent().siblings('.wedges').children('[data-tooltip=' + $(this).data('for') + ']'))
+      $(this).attr('href', $(this).parent().siblings('.wedges').children('[data-tooltip=' + $(this).data('for') + ']').attr('href'))
     })
   })
 })()
