@@ -15,10 +15,13 @@ header {
   @extend .container;
   @extend .flex;
   
-  h1 a {
-    color: white;
-    &:hover {
-      color: $thisislightorange; 
+  h1 {
+    padding: $content-separation 0;
+    a {
+      color: white;
+      &:hover {
+        color: $thisislightorange; 
+      }
     }
   }
 }
