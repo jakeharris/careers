@@ -87,6 +87,25 @@ img {
   height: 100%;
 }
 
+/******************************
+** FORCE ALT TEXT FOR IMAGES **
+******************************/
+img:not([alt]) + * {
+  display: unset !important;
+  &::before {
+    content: 'I TOLD YOU ABOUT ALT TEXT, BRO';
+    font-family: 'Comic Sans', sans-serif;
+    display: inline-block;
+    color: aqua;
+    min-height: 10rem;
+    height: 10rem;
+    font-size: 5rem;
+  }
+}
+img:not([alt]) {
+  display: none !important;
+}
+
 /*********************
 ** UNDO DEFAULT.CSS **
 *********************/
