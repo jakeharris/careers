@@ -137,6 +137,12 @@ a:hover .about-icon::before {
 // TWEETS
 .tweets {
   @extend .watermarked;
+  ul {
+    max-width: 500px;
+  }
+}
+.tweet {
+  padding-bottom: $content-separation;
 }
 .tweet-date {
   display: block;
@@ -149,6 +155,25 @@ a:hover .about-icon::before {
 }
 .tweet-link {
   color: $charcoal;
+}
+@media (min-width: $medium-screen-width) {
+  .tweets {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: none;
+      min-height: 380px;
+      height: 380px;
+      max-height: 380px;
+    }
+  }
+  .tweet {
+    width: 44%;
+    flex-basis: 50%;
+  }
 }
 
 
