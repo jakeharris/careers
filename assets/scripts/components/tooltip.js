@@ -11,10 +11,21 @@
     firstTooltips.addClass('tooltip--show')
 
     wedges.hover(function () {
-      $($(this).parent().children('.wedge')).filter('.wedge--hovered').removeClass('wedge--hovered')
+      $($(this)
+          .parent()
+          .children('.wedge')
+       ).filter('.wedge--hovered')
+        .removeClass('wedge--hovered')
       $(this).addClass('wedge--hovered')
-      $($(this).parent().siblings('.tooltips').children('.tooltip')).filter('.tooltip--show').removeClass('tooltip--show')
-      $('[data-for=' + $(this).data('tooltip') + ']').addClass('tooltip--show')
+      $($(this)
+          .parent()
+          .siblings('.tooltips')
+          .children('.tooltip')
+       ).filter('.tooltip--show')
+        .removeClass('tooltip--show')
+      $('[data-for=' 
+        + $(this).data('tooltip') 
+        + ']').addClass('tooltip--show')
     })
     wedges.bind('touchstart', function(e) {
       e.preventDefault()
@@ -22,10 +33,21 @@
         window.location.href = $(this).attr('href')
       }
       else {
-        $($(this).parent().children('.wedge')).filter('.wedge--hovered').removeClass('wedge--hovered')
+        $($(this)
+            .parent()
+            .children('.wedge')
+         ).filter('.wedge--hovered')
+          .removeClass('wedge--hovered')
         $(this).addClass('wedge--hovered')
-        $($(this).parent().siblings('.tooltips').children('.tooltip')).filter('.tooltip--show').removeClass('tooltip--show')
-        $('[data-for=' + $(this).data('tooltip') + ']').addClass('tooltip--show')
+        $($(this)
+            .parent()
+            .siblings('.tooltips')
+            .children('.tooltip')
+         ).filter('.tooltip--show')
+          .removeClass('tooltip--show')
+        $('[data-for=' 
+          + $(this).data('tooltip') 
+          + ']').addClass('tooltip--show')
       }
     })
     tooltips.each(function (i) {
