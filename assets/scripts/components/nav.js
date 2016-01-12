@@ -50,9 +50,6 @@ $(function () {
     if(postheader === undefined) postheader = $('nav.auburn')[0]
     if(postheader === undefined) return  
 
-    console.log(nav.classList)
-    console.log(nav.classList.contains('mobile'))
-
     if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
       nav.classList.add('fixed') 
       postheader.classList.add('absolute')
