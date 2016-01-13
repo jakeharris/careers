@@ -271,12 +271,10 @@ body > .container {
 .flex-third,
 .flex-two-thirds {
   flex-basis: 100%;
-  width: 100%;
 }
 @media (min-width: $small-screen-width) {
   .flex-half {
     flex-basis: 50%;
-    width: 50%;
   }
 }
 @media (min-width: $medium-screen-width) {
@@ -285,11 +283,9 @@ body > .container {
   }
   .flex-third {
     flex-basis: 30%;
-    width: 30%;
   }
   .flex-two-thirds {
     flex-basis: 63%;
-    width: 63%;
   }
 }
 
@@ -376,7 +372,6 @@ body > .container {
 // EVENTS
 .event {
   margin: 0.4rem 0;
-  width: 100%;
   flex-basis: 100%;
   flex-wrap: nowrap;
   align-content: flex-start;
@@ -409,7 +404,6 @@ body > .container {
 @media (min-width: $medium-screen-width) {
   .event { 
     flex-basis: 45%;
-    width: 45%;
     min-height: 14rem;
     max-height: 14rem;
   }
