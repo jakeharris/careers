@@ -58,9 +58,9 @@ $content-separation: 1.5rem; // separates very similar content (e.g. paragraphs)
   &:before {
     content: "";
     width: 0; height: 0;
-    border-bottom: ($height / 4) solid $color;
-    border-left: ($width / 2) solid transparent;
-    border-right: ($width / 2) solid transparent;
+    border-bottom: ceil($height / 4) solid $color;
+    border-left: ceil($width / 2) solid transparent;
+    border-right: ceil($width / 2) solid transparent;
     position: absolute;
     top: (-1 * $height / 4);
     z-index: 1;
@@ -68,9 +68,9 @@ $content-separation: 1.5rem; // separates very similar content (e.g. paragraphs)
   &:after {
     content: "";
     width: 0; height: 0;
-    border-top: ($height / 4) solid $color;
-    border-left: ($width / 2) solid transparent;
-    border-right: ($width / 2) solid transparent;
+    border-top: ceil($height / 4) solid $color;
+    border-left: ceil($width / 2) solid transparent;
+    border-right: ceil($width / 2) solid transparent;
     position: absolute;
     bottom: (-1 * $height / 4);
     z-index: 1;
