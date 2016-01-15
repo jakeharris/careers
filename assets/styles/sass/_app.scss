@@ -37,6 +37,9 @@ body {
 p, div {
   line-height: $line-height;
 }
+h2, h3, h4, h5, h6, p, blockquote {
+  padding-bottom: $content-separation;
+}
 
 a { 
   color: $thisislightblue;
@@ -276,6 +279,9 @@ body > .container {
   .flex-half {
     flex-basis: 50%;
   }
+  .card.flex-half {
+    flex-basis: 45%; // if it's a card, we'll always want space enough to see the box-shadow 
+  }
 }
 @media (min-width: $medium-screen-width) {
   .flex {
@@ -451,6 +457,9 @@ body > .container {
 .flat-btn--half {
   flex-basis: 45%;
   width: 45%;
+}
+.flat-btn--bottom {
+  margin-top: -($content-division + 1rem);
 }
 @media (min-width: $tiny-screen-width) {
   .flat-btn {
