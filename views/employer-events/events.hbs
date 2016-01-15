@@ -1,7 +1,7 @@
 ---
 path-to-root: ../../
 ng-app: career-center-events
-name: employer-events
+name: employer-events-page
 type: employer-events
 title: Events | Career Center
 layout: employers.hbs
@@ -9,7 +9,7 @@ path-to-root: ../../
 component: 
 - calendar
 ---
-<section class="employer-events-wrapper content extra-content content--no-padding row" ng-controller="calendar-ctrl">
+<section class="card unpadded employer-events-wrapper" ng-controller="calendar-ctrl">
   <h2 class="employer-events-title">Event Registration</h2>
   <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
   <ul class="employer-events flex">
