@@ -142,7 +142,8 @@ nav.main {
       color: $thisislightorange;
     }
   }
-  ul li:hover ul {
+  ul li:hover ul,
+  ul li.hover--active ul {
     position: absolute;
     
     display: flex;
@@ -150,6 +151,12 @@ nav.main {
   }
   .about-us ul {
     margin-left: -500%; 
+  }
+  .part-time-employment ul {
+    margin-left: -100%; 
+  }
+  .hire-about-us ul {
+    margin-left: -300%; 
   }
 }
 

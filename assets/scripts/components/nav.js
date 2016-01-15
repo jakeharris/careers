@@ -41,7 +41,7 @@ $(function() {
 $(function () {
   var preheader, nav, postheader
   $(window).on('scroll', function () {
-    if(preheader === undefined) preheader = $('header .title')[0]
+    if(preheader === undefined) preheader = $('header > .title')[0]
     if(preheader === undefined) return
 
     if(nav === undefined) nav = $('nav.main')[0]
