@@ -12,10 +12,10 @@ component:
 - sponsors
 ---
 
-<section class="login-welcome row flex">
-  <div class="login content">
+<section class="flex login-recruiting">
+  <div class="card flex-half login">
     <div class="login-wrapper">
-      <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
+      <h2>Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
       <p class="login-blurb">Your link to Auburn students.</p>
       <div class="buttons">
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=0">Sign in</a>
@@ -25,9 +25,9 @@ component:
       </div>
     </div>
   </div>
-  <div class="welcome content content--no-padding">
-    <h2 class="padding">This is Recruiting.</h2>
-    <blockquote class="padding">
+  <div class="card flex-half recruiting">
+    <h2>This is Recruiting.</h2>
+    <blockquote>
       Highly effective employers place their emphasis on long-term
       objectives and building connections with students, faculty, 
       and the career staff, rather than focusing on recruiting 
@@ -39,7 +39,7 @@ component:
       Your success is our success. We look forward to helping you 
       put a Tiger On Your Team.
     </blockquote>
-    <p class="padding">
+    <p>
       <a href="mailto:skipworth@auburn.edu">Jay Skipworth</a>, Assistant Director of Employer Relations
     </p>
     <a class="flat-btn" 
@@ -62,15 +62,13 @@ component:
   </div>
 </section>
 
-<section class="row flex">
-  <div class="services content extra-content content--no-padding">
-    <div class="services-background"></div>
-    <div class="services-wrapper">
-      <div class="services-overlay"></div>
-      <h2 class="services-header">
+<section class="flex">
+  <div class="card unpadded services">
+    <div class="padded services-content">
+      <h2>
         Our Services
       </h2>
-      <ul class="services-content">
+      <ul class="services-list">
         <li class="service"><a href="#">Job Postings</a></li>
         <li class="service"><a href="employers/events/">Career Events</a></li>
         <li class="service"><a href="employers/student-employment/on-campus.html">On-Campus Employment</a></li>
@@ -83,7 +81,7 @@ component:
   </div>
 </section>
 
-<section class="employer-events-wrapper content extra-content content--no-padding row" ng-controller="calendar-ctrl">
+<section class="card unpadded employer-events-wrapper" ng-controller="calendar-ctrl">
   <h2 class="employer-events-title">Event Registration</h2>
   <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
   <ul class="employer-events flex">
@@ -105,13 +103,13 @@ component:
   </ul>
 </section>
 
-<section class="row sponsors content extra-content">
+<section class="card sponsors">
   <h2 class="sponsors-header">Sponsors</h2>
   <div class="sponsors-content" ng-controller="sponsors-ctrl">
     <div class="sponsor" ng-repeat="sponsor in sponsors">
       <span class="vert-centerer"></span>
       <a href="[[ sponsor.url ]]">
-        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade"></img>
+        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade" alt="[[ sponsor.company ]]"></img>
       </a>
     </div>
   </div>
