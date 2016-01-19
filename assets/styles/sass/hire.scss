@@ -53,7 +53,7 @@
     min-height: 50rem; 
   }
 }
-@media (min-width: $small-screen-width) {
+@media (min-width: $medium-screen-width) {
   .services {
     min-height: 36rem; 
   }
@@ -91,7 +91,7 @@
     }
   }
 }
-@media (min-width: $small-screen-width) {
+@media (min-width: $medium-screen-width) {
   .service {
     &:nth-of-type(even) {
       text-align: right; 
