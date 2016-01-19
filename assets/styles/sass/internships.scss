@@ -19,3 +19,44 @@
   }
 }
 
+.discovery-resources {
+  @extend .buttons;
+  padding-right: $content-separation;
+  padding-bottom: $content-protection;
+}
+
+.checklist {
+  padding: $content-division 0;
+  margin-right: $content-separation / 2;
+  width: 66%;
+  margin: 0 auto;
+}
+.condition {
+  text-align: center;
+  font-size: $nav-font-size;
+}
+.switch {
+  display: flex;
+  justify-content: space-between;
+  width: 66%;
+  margin: 0 auto;
+  .radio {
+    @extend .hidden; 
+  }
+  .radio + label {
+    @extend .flat-btn;
+    @extend .flat-btn--half;
+    @extend .flat-btn--white;
+    
+    cursor: pointer;
+  }
+  .radio:checked + label {
+    background-color: $thisislightblue;
+    color: white;
+  }
+}
+.switch-result {
+  padding: $content-protection 0;
+  width: 66%;
+  margin: 0 auto;
+}
