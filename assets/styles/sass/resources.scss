@@ -148,6 +148,7 @@
   &:hover::after,
   &.wedge--hovered::after {
     display: flex;
+
   }
   
   // --- COLOR STUFF ---
@@ -183,6 +184,7 @@
   h2 {
     text-align: center; 
     width: 100%;
+    padding: 0 $content-protection;
   }
   // fix auto-pdf
   &[href$=".pdf"]::after {

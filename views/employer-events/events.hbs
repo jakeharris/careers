@@ -19,8 +19,16 @@ component:
         <h3>[[ event.name ]]</h3>
         <div class="employer-event-details">
           <div class="employer-event-when">
-            <div class="employer-event-date">[[ event.date.month ]] [[ event.date.day ]]</div>
-            <div class="employer-event-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
+            <div ng-if="event.dates" class="employer-event-date"><span ng-if="event.dates.start">[[ event.dates.start ]] - </span>[[ event.dates.end ]]</div>
+            <div ng-if="event.dates === undefined" class="employer-event-date">
+              [[ event.date.month ]] [[ event.date.day ]]
+            </div>
+            <div ng-if="event.date.time === undefined || event.date.time.start === ''" class="employer-event-time">
+              All day
+            </div>
+            <div ng-if="event.date.time.start !== '' && event.date.time.start !== undefined" class="employer-event-time">
+              [[ event.date.time.start ]] - [[ event.date.time.end ]]
+            </div>
           </div>
           <div class="employer-event-cost" ng-if="event.cost">
             $[[ event.cost ]]

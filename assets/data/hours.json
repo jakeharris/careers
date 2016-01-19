@@ -12,9 +12,13 @@
     ],
     "walkIn": [
       {
-        "startDay": "Mon",
-        "endDay": "Fri",
-        "startTime": "1pm",
+        "days": ["Mon", "Thurs", "Fri"],
+        "startTime": "12n",
+        "endTime": "4pm"
+      },
+      {
+        "days": ["Tue", "Wed"],
+        "startTime": "9am",
         "endTime": "4pm"
       }
     ]

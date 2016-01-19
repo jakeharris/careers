@@ -1,17 +1,19 @@
 ---
 path-to-root: ../../
 ng-app: career-center-employer-events
-name: emp-cmcd
+name: emp-<%= eventName %>
 type: employer-event-pages
-title: Communication and Media Career Day
 layout: employers.hbs
 component:
 - price
+
+eventName: cmcd
+title: Communication and Media Career Day
 ---
 <!-- Banner image -->
 <div class="hero">
   <img class="img"
-       src="assets/images/events/cmcd-banner.png"
+       src="assets/images/events/{{eventName}}-banner.png"
        alt="Communication & Media Career Day. March 8, 2016, 8am-3pm, in the Student Center Ballroom."></img>
   <div class="img-replace">
     <h1>Comm & Media Career Day.</h1>
@@ -41,9 +43,9 @@ component:
       </div>
     </div>
     <div class="actions">
-      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{eventName}}sp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
       <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">
+        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{eventName}}sp16">
           Register ($[[ price.now ]])
         </a>
         <a class="flat-btn--info"
@@ -54,8 +56,7 @@ component:
            data-title="<h2>Early Bird Pricing</h2>" 
            data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
           ?</a>
-      </div>
- <!--     
+      </div> 
       <div class="tipsheet">
         <div class="tipsheet-wrapper">
           <p>Download the tipsheet for detailed information about:</p>
@@ -66,10 +67,9 @@ component:
             <li>Display Guidelines</li>
           </ul>
         </div>
-        <a class="flat-btn" href="employers/events/{{name}}.pdf">Download Tip Sheet</a>
+        <a class="flat-btn" href="assets/images/events/{{eventName}}.pdf">Download Tip Sheet</a>
       </div>
--->
-      <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=fe70cd4cb4d0b5f21c4591e7d76d32c7#/events/dd4b0f5ae7e282997e50fde9c271eeca/employers">View Attending Employers</a>
+      <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=683d1dcae6cb1bb7cb58a4bc6a7ed2b1#/events/683d1dcae6cb1bb7cb58a4bc6a7ed2b1/employers">View Attending Employers</a>
     </div>
   </div>
   <div class="attributes">

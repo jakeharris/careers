@@ -49,7 +49,7 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
     if(staticMode)
       return true
     else
-      return (!isOver(el.date))
+      return (!isOver((el.dates) ? el.dates.end : el.date))
   }).sort(byRelativeImmediacy)
 
   if(employerMode) {
