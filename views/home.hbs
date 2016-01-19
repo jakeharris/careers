@@ -15,9 +15,9 @@ component:
 
 <div class="home-content content extra-content flex content--no-padding">
   <div class="login">
-    <div class="">
-      <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
-      <p class="">Your link to jobs, interviews and employers.</p>
+    <div>
+      <h2>Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
+      <p>Your link to jobs, interviews and employers.</p>
       <div class="buttons">
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/sso/students/">Current students sign in</a>
         <a class="flat-btn flat-btn--half" href="https://auburn-csm.symplicity.com/students/">Alumni sign in</a>
@@ -114,13 +114,13 @@ component:
           <div ng-if="office">
             <h6>Hours</h6>
             <p ng-repeat="hours in office">
-              <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
+              <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> | [[ hours.startTime ]]-[[ hours.endTime ]]
             </p>
           </div>
           <div ng-if="walkIn">
             <h6>Walk-ins</h6>
             <p ng-repeat="hours in walkIn">
-              <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
+              <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> | [[ hours.startTime ]]-[[ hours.endTime ]]
             </p>
           </div>
           <p class="subtle">
