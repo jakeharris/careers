@@ -454,6 +454,11 @@ body > .container {
     background: $thisisiceblue;
   }
 }
+.flat-btn--disabled {
+  color: $box-shadow-color;
+  background: transparent repeating-linear-gradient(-55deg, white, white 10px, $bg-gray 10px, $bg-gray 20px) repeat scroll 0% 0%;
+  cursor: default;
+}
 .flat-btn--half {
   flex-basis: 45%;
   width: 45%;
