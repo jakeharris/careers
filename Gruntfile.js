@@ -214,17 +214,25 @@ module.exports = function (grunt) {
       options: {
         forever: false
       },
-      assemble: {
-        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/{,*/}*.json'],
+      specificAssemble: {
+        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '!<%= config.views %>/{partials, layouts}/**/*.hbs', '<%= config.assets %>/data/{,*/}*.json'],
         tasks: ['newer:assemble:dev'] //tasks: ['assemble', 'processhtml']
+      },
+      rootAssemble: {
+        files: ['<%= config.views %>/{partials, layouts}/**/*.hbs'],
+        tasks: ['assemble:dev']
       },
       gruntfile: {
         files: ['Gruntfile.js'],
         tasks: ['default']
       },
-      sass: {
-        files: ['<%= config.assets %>/styles/sass/{,*/}*.{scss,sass}'],
+      specificSass: {
+        files: ['<%= config.assets %>/styles/sass/*.{scss,sass}'],
         tasks: ['newer:sass'] // tasks: ['sass', 'uncss', 'postcss'] // postcss uses autoprefixer
+      },
+      rootSass: {
+        files: ['<%= config.assets %>/styles/sass/*/*.{scss,sass}'],
+        tasks: ['sass']
       },
       js: {
         files: ['<%= config.assets %>/scripts/{,*/}*.js'],
@@ -303,10 +311,11 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.assets %>/styles/sass',
-          src: ['{,/*}*.{scss,sass}'],
+          cwd: '<%= config.assets %>/styles/sass/',
+          src: ['{,*/}*.{scss,sass}'],
           dest: '<%= config.assets %>/styles',
-          ext: '.css'
+          ext: '.css',
+          flatten: true
         }]
       }
     },
@@ -316,7 +325,7 @@ module.exports = function (grunt) {
     // into servable HTML.
     assemble: {
       options: {
-        helpers: ['<%= config.assets %>/scripts/helpers/{,/*}*.js'],
+        helpers: ['<%= config.assets %>/scripts/helpers/{,*/}*.js'],
         prod: 'false',
         layouts: '<%= config.layouts %>',
         partials: '<%= config.partials %>',
@@ -326,7 +335,8 @@ module.exports = function (grunt) {
         files: VIEW_MAPPING
       },
       prod: {
-        files: VIEW_MAPPING_PROD
+        files: VIEW_MAPPING_PROD,
+        production: true
       }
     },
 

@@ -1,22 +1,18 @@
----
-dir: assets/styles
----
-
-
-
 <!-- App styles -->
-<link rel="stylesheet" href="{{ dir }}/app.css">
+<link rel="stylesheet" href="assets/styles/app.{{#if production}}min.{{/if}}css">
 
 <!-- Style modules -->
 {{#is page.layout 'default.hbs'}}
-  <link rel="stylesheet" href="{{ dir }}/social.css">
+  <link rel="stylesheet" href="assets/styles/social-nav.{{#if production}}min.{{/if}}css">
 {{/is}}
 {{#each component}}
   {{#is this 'sponsors'}}
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
-    <link rel="stylesheet" href="{{ dir }}/sponsors.css">
   {{/is}}
+{{/each}}
+{{#each style}} 
+  <link rel="stylesheet" href="assets/styles/{{ this }}.{{#if production}}min.{{/if}}css">
 {{/each}}
 
 <!-- Page-specific styles -->
-<link rel="stylesheet" href="{{ dir }}/{{ type }}.css">
+<link rel="stylesheet" href="assets/styles/{{ type }}.{{#if production}}min.{{/if}}css">
