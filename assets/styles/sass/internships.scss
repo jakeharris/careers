@@ -1,5 +1,20 @@
 @import 'app';
 
+// APP OVERRIDES
+// in fact, consider making this the standard
+
+.flat-btn--half {
+  flex-basis: 100%;
+  width: 100%; 
+}
+@media (min-width: $medium-screen-width) {
+  .flat-btn--half {
+    flex-basis: 45%;
+    width: 45%; 
+  }
+}
+
+
 .accordion-content {
   overflow: hidden;
 }
@@ -24,12 +39,16 @@
   padding-right: $content-separation;
   padding-bottom: $content-protection;
 }
-
 .checklist {
   padding: $content-division 0;
   margin-right: $content-separation / 2;
-  width: 66%;
+  width: 100%;
   margin: 0 auto;
+}
+@media (min-width: $medium-screen-width) {
+  .checklist {
+    width: 66%;
+  }
 }
 .condition {
   text-align: center;
@@ -38,7 +57,7 @@
 .switch {
   display: flex;
   justify-content: space-between;
-  width: 66%;
+  width: 100%;
   margin: 0 auto;
   .radio {
     @extend .hidden; 
@@ -55,8 +74,18 @@
     color: white;
   }
 }
+@media (min-width: $medium-screen-width) {
+  .switch {
+    width: 66%; 
+  }
+}
 .switch-result {
   padding: $content-protection 0;
-  width: 66%;
+  width: 100%;
   margin: 0 auto;
+}
+@media (min-width: $medium-screen-width) {
+  .switch-result {
+    width: 66%; 
+  }
 }
