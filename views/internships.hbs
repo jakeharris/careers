@@ -3,15 +3,16 @@ layout: no-social.hbs
 title: Internships | Career Center
 name: internships
 type: internships
+path-to-root: ../
 component:
 - faq-checklist
 ---
 
-<section class="content extra-content hero">
+<section class="card hero">
   <h1>Internships</h1>
 </section>
 
-<section class="resources content extra-content">
+<section class="card">
   <h2>Resources</h2>
   <div class="buttons">
     <a href="experience/dept-contacts.html" class="flat-btn flat-btn--half"><span class="desktop-show">Department </span>Contacts</a>
@@ -19,74 +20,141 @@ component:
   </div>
 </section>
 
-<section class="faq content extra-content">
+<section class="card faq">
   <h2 class="faq-header">Frequently Asked Questions</h2>
-  {{#each internships.question}}
-    <a class="collapsed accordion-header" data-toggle="collapse" id="{{ id }}-heading" href="#{{ id }}" role="tab" aria-expanded="false" aria-controls="{{ id }}">
-      <h3>{{ question }}</h3>
+    <a class="collapsed accordion-header" 
+       data-toggle="collapse" 
+       id="definition-heading" 
+       href="#definition" 
+       role="tab" 
+       aria-expanded="false" 
+       aria-controls="definition">
+      <h3>What is an internship?</h3>
     </a>
-    {{#if sidelist}}
-      <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-question-contents" role="tabpanel" aria-labelledby="{{ id }}-heading">
-        <div class="faq-answer faq-answer--with-sidelist">
-          {{ answer }}
-        </div>
-        <div class="faq-sidelist-container">
-          <ul class="faq-sidelist">
-          {{#each sidelist.items}} 
-            <li class="faq-sidelist-item"> {{ this }}</li>
-          {{/each}}
-          </ul>
-        </div>
+    <div style="height: 0px;" 
+         aria-expanded="false" 
+         id="definition" 
+         class="collapse flex accordion-content" 
+         role="tabpanel" 
+         aria-labelledby="definition-heading">
+      <div class="flex-half">
+        An internship is a professional development opportunity that integrates practical career related experience with postsecondary education in a structured, supervised work environment.
       </div>
-    {{else}} {{#if checklist}}
-      <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-question-contents" role="tabpanel" aria-labelledby="{{ id }}-heading">
-        <div class="faq-answer faq-answer--with-checklist">
-          {{ answer }}
-        </div>
-        <div class="faq-checklist-container">
-          <ul class="faq-checklist">
-            {{#each checklist.items}}
-              <li class="faq-checklist-item hidden">
-                <h4 class="condition">{{ condition }}</h4>
-                <div class="switch">
-                  {{#if if-no}}
-                    <input id="{{ id }}-yes" name="{{ id }}" class="radio" type="radio">
-                    <label for="{{ id }}-yes" class="if-yes-label half-label">Yes</label>
-                    <input id="{{ id }}-no" name="{{ id }}" class="radio" type="radio">
-                    <label for="{{ id }}-no" class="if-no-label half-label">No</label>
-                  {{else}}
-                    <a class="flat-btn" href="{{if-yes-button.url}}">{{if-yes-button.text}}</a>
-                  {{/if}}
-                </div>
-                {{#if if-yes}}
-                  <div class="if-yes switch-result" data-for="{{id}}-yes" {{#unless if-yes-button}} style="display: none;" {{/unless}}>
-                    {{ if-yes }}
-                  </div>
-                {{/if}}
-                {{#if if-no}}
-                  <div class="if-no switch-result" data-for="{{id}}-no" style="display: none;">
-                    {{ if-no }}
-                  </div>
-                {{/if}}
-              </li>
-            {{/each}}
-          </ol>
-        </div>
-    </div>
-    {{else}} {{#if resources}}
-      <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-answer" role="tabpanel" aria-labelledby="{{ id }}-heading">
-        <p>{{answer}}</p>
-        <p class="note"><strong>Note: </strong> {{note}}</p>
-        <ul class="faq-resources">
-          {{#each resources}}
-            <li><a class="flat-btn {{#if external}}flat-btn--white{{/if}}" href="{{ url }}">{{text}}</a></li>
-          {{/each}}
+      <div class="flex-half">
+        <ul class="sidelist">
+          <li>May be paid</li>
+          <li>Typically one semester long</li>
+          <li>May count as class credit (consult your academic or faculty advisor for approval)</li>
+          <li>Available year-round</li>
         </ul>
       </div>
-    {{else}}
-      <div style="height: 0px;" aria-expanded="false" id="{{ id }}" class="panel-collapse collapse faq-answer" role="tabpanel" aria-labelledby="{{ id }}-heading">
-        {{ answer }}
+    </div>
+    <a class="collapsed accordion-header" 
+       data-toggle="collapse" 
+       id="benefits-heading" 
+       href="#benefits" 
+       role="tab" 
+       aria-expanded="false" 
+       aria-controls="benefits">
+        <h3>What are the benefits of completing an internship?</h3>
+      </a>
+    <div style="height: 0px;" 
+         aria-expanded="false" 
+         id="benefits" 
+         class="collapse flex accordion-content" 
+         role="tabpanel" 
+         aria-labelledby="benefits-heading">
+      <div class="flex-half">
+        An internship is a professional development opportunity that integrates practical career related experience with postsecondary education in a structured, supervised work environment.
       </div>
-    {{/if}}{{/if}}{{/if}}
-  {{/each}}
+      <div class="flex-half">
+        <ul class="sidelist">
+          <li>May be paid</li>
+          <li>Typically one semester long</li>
+          <li>May count as class credit (consult your academic or faculty advisor for approval)</li>
+          <li>Available year-round</li>
+        </ul>
+      </div>
+    </div>
+    <a class="collapsed accordion-header" 
+       data-toggle="collapse" 
+       id="discovery-heading" 
+       href="#discovery" 
+       role="tab" 
+       aria-expanded="false" 
+       aria-controls="discovery">
+      <h3>How do I find an internship?</h3>
+    </a>
+    <div style="height: 0px;" 
+         aria-expanded="false" 
+         id="discovery" 
+         class="panel-collapse collapse accordion-content" 
+         role="tabpanel" 
+         aria-labelledby="discovery-heading">
+      <p>Begin your search three to four months in advance of your desired start date.</p>
+      <p class="muted"><strong>Note: </strong>Connect with employers and interview on-campus by creating or logging in to your TRL account. Be sure to use your Auburn credentials when accessing TRL.</p>
+      <div class="discovery-resources">
+          <a class="flat-btn flat-btn--half" href="https://auburn-csm.symplicity.com/sso/students/">Connect with Employers</a>
+          <a class="flat-btn flat-btn--half" href="events">Attend Career Fairs &amp; Events</a>
+          <a class="flat-btn flat-btn--half" href="interviews#on-campus">Interview On-Campus</a>
+          <a class="flat-btn flat-btn--half flat-btn--white" href="http://www.internmatch.com/">Discover External Internships</a>
+      </div>
+    </div>
+    <a class="collapsed accordion-header" 
+       data-toggle="collapse" 
+       id="preparation-heading" 
+       href="#preparation" 
+       role="tab" 
+       aria-expanded="false" 
+       aria-controls="preperation">
+      <h3>What do I do when I find an internship?</h3>
+    </a>
+      <div style="height: 0px;" 
+           aria-expanded="false" 
+           id="preparation" 
+           class="panel-collapse collapse accordion-content" 
+           role="tabpanel" 
+           aria-labelledby="preparation-heading">
+        <p>
+          Glad you asked! Here's a checklist:
+        </p>
+        <ul class="checklist">
+          <li class="checklist-item hidden">
+            <h4 class="condition">Will you be receiving academic credit for your internship?</h4>
+            <div class="switch">
+              <input id="academic-credit-yes" name="academic-credit" class="radio" type="radio">
+              <label for="academic-credit-yes">Yes</label>
+              <input id="academic-credit-no" name="academic-credit" class="radio" type="radio">
+              <label for="academic-credit-no">No</label>
+            </div>
+            <p class="switch-result" data-for="academic-credit-yes" style="display: none;">
+              Consult with your faculty advisor or academic unit to determine credit requirements. Each academic unit on campus handles credit for internships individually. Visit the Departmental Contacts link for contact information by major.
+            </p>
+            <p class="switch-result" data-for="academic-credit-no" style="display: none;">
+              If you are completing your internship during the summer semester and are not receiving course credit, in most cases, you do not have to consult with the university or complete any forms.
+            </p>
+          </li>
+          <li class="checklist-item hidden">
+            <h4 class="condition">Will you be interning during a semester in which you would ordinarily receive scholarship funding?</h4>
+            <div class="switch">
+              <input id="scholarship-yes" name="scholarship" class="radio" type="radio">
+              <label for="scholarship-yes">Yes</label>
+              <input id="scholarship-no" name="scholarship" class="radio" type="radio">
+              <label for="scholarship-no">No</label>
+            </div>
+            <p class="switch-result" data-for="scholarship-yes" style="display: none;">
+              Get in touch with your scholarship provider or financial aid representative to delay your scholarships to a semester in which you'll be a full-time student, if necessary.
+            </p>
+            <p class="switch-result" data-for="scholarship-no" style="display: none;">
+              Continue.
+            </p>
+          </li>
+          <li class="checklist-item hidden">
+              <h4 class="condition">Share your success by reporting your placement.</h4>
+              <div class="switch">
+                <a class="flat-btn" href="https://auburn.qualtrics.com/SE/?SID=SV_74mAlxbPUGBM8lf">Report your placement</a>
+              </div>
+            </li>
+        </ul>
+    </div>
 </section>
