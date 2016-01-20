@@ -1,8 +1,7 @@
+@import '../partials/variables';
+
 // TRL LOGIN
-.login {
-  @extend .padded;
-  @extend .flex-half;
-  
+.login {  
   justify-content: center;
   align-self: center;
   position: relative;

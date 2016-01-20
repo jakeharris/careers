@@ -1,4 +1,4 @@
-@import 'variables';
+@import '../partials/variables';
 
 /* *************************************************** **
 **                      HEADER                         **
@@ -13,10 +13,7 @@ header {
 **                    TITLE BAR                     **
 ** (contains auburn logo, Career Center title link) **
 *************************************************** **/
-.title {
-  @extend .container;
-  @extend .flex;
-  
+.title {  
   h1 {
     padding: $content-separation 0;
     a {
@@ -50,13 +47,10 @@ nav ul li {
   text-align: center;
   list-style: none !important;
 }
-nav ul {
-  @extend .container;
-}
 nav a {
   color: white;
   &:hover {
-    @extend a:hover;
+    color: $thisislightorange;
   } 
 }
 
@@ -73,9 +67,7 @@ nav a {
   
   &::before {
     display: block;
-  
-    @extend .icon;
-    @extend .icon-navicon::before;
+    
     font-size: 2rem;
   
     padding: 2rem;
@@ -98,8 +90,6 @@ nav.main {
   background-color: $thisislightblue;
   
   ul {
-    @extend .container;
-    
     display: flex;
     flex-wrap: nowrap;
   }
@@ -110,7 +100,7 @@ nav.main {
     background-color: $thisislightblue;
     cursor: pointer;
     
-    &:hover {
+    &:hover, &.hover--active {
       background-color: white; 
     }
   }
@@ -119,7 +109,7 @@ nav.main {
     width: 100%;
     padding: ($content-protection / 2) 0;
   }
-  a:hover, li:hover a {
+  a:hover, li:hover a, li.hover--active a {
     color: $thisislightblue; 
   }
   
@@ -134,6 +124,7 @@ nav.main {
     color: $thisislightblue;
     
     box-shadow: $box-shadow;
+    width: 600%;
   }
   ul li ul li { 
     font-size: $nav-font-size * 0.7;

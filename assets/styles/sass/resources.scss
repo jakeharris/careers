@@ -31,6 +31,8 @@
   flex-wrap: wrap;
   flex-direction: column-reverse;
   justify-content: space-between;
+}
+.step:not(.card) {
   padding: 0 $content-division;
 }
 
