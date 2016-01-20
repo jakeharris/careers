@@ -1,0 +1,30 @@
+@import 'variables';
+
+/**********************************/
+/* COLORS, EMPHASIS, AND FUNCTION */
+/**********************************/
+.muted {
+  color: $muted-text-color;
+}
+.disabled {
+  color: $box-shadow-color;
+  background: -webkit-repeating-linear-gradient(145deg, white, white 10px, $bg-gray 10px, $bg-gray 20px);
+  background: repeating-linear-gradient(-55deg, white, white 10px, $bg-gray 10px, $bg-gray 20px);
+  &:hover {
+    color: $box-shadow-color;
+    background: -webkit-repeating-linear-gradient(145deg, white, white 10px, $bg-gray 10px, $bg-gray 20px);
+    background: repeating-linear-gradient(-55deg, white, white 10px, $bg-gray 10px, $bg-gray 20px);
+  }
+}
+.padded {
+  padding: $content-division;
+}
+.protected {
+  padding: $content-protection;
+}
+.unpadded {
+  padding: 0;
+}
+.hidden {
+  display: none;
+}

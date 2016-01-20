@@ -15,7 +15,7 @@ component:
 
 <div class="card flex unpadded banner">
   <div class="login padded flex-half">
-    <div class="login-container">
+    <div class="login-container watermarked">
       <i class="watermark icon-compass"></i>
       <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
       <p class="">Your link to jobs, interviews and employers.</p>
@@ -93,7 +93,7 @@ component:
 </div>
 <div class="card" role="main">
   <div class="flex">
-    <div class="about  flex-third">
+    <div class="about watermarked flex-third">
       <h2><a href="http://www.auburn.edu/career/aboutus/">About Our Office</a></h2>
       <a href="http://auburn.edu/map/?id=76" class="place">
         <i class="about-icon icon-map-marker"></i>
@@ -143,7 +143,7 @@ component:
       </div>
       <i class="watermark icon-briefcase"></i>
     </div>
-    <div class="calendar flex-two-thirds">
+    <div class="calendar watermarked flex-two-thirds">
       <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
       <ul ng-controller="calendar-ctrl">
         <li class="event" ng-repeat="event in events">
@@ -166,7 +166,7 @@ component:
     </div>
   </div>
   <div class="flex">
-    <div class="tweets flex-two-thirds">
+    <div class="tweets watermarked flex-two-thirds">
       <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
       <ul ng-controller="twitter-ctrl">
         <li class="tweet" ng-repeat="tweet in tweets">
@@ -179,7 +179,7 @@ component:
       </ul>
       <i class="watermark icon-twitter"></i>
     </div>
-    <div class="blog   flex-third">
+    <div class="blog watermarked flex-third">
       <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
       <ul ng-controller="blogger-ctrl">
         <li class="blog-post" ng-repeat="post in blog.posts">

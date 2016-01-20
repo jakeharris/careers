@@ -1,4 +1,4 @@
-@import 'staff';
+@import 'partials/variables';
 
 h3 {
   font-family: $header-font-family;
@@ -24,8 +24,6 @@ h4 a {
 }
 
 .phone:before {
-  @extend .icon-phone;
-  font-family: "icomoon";
   padding-right: 1.2rem;
   position: relative;
   top: 3px;
@@ -40,7 +38,6 @@ h4 a {
   &:before {
     color: white;
     font-family: $icon-font-family;
-    @extend .icon-user;
     font-size: 10rem;
     position: relative;
     left: calc(50% - 4rem);

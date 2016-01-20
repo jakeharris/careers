@@ -1,0 +1,74 @@
+// FLAT BUTTONS
+.flat-btn {
+  flex-basis: 100%;
+  width: 100%;
+
+  height: auto;
+
+  margin: 1rem 0;
+  padding: 2rem 0; 
+
+  text-align: center;
+  vertical-align: middle;
+
+  display: inline-block;
+
+  background: $thisislightblue;
+  color: white;
+  font-family: $header-font-family;
+  font-size: $button-font-size;
+
+  border: none;
+  box-shadow: $box-shadow;
+
+
+  &:hover {
+    background: $thisisiceblue;
+    color: $charcoal;
+  } 
+}
+.flat-btn--white {
+  background: white;
+  color: $thisislightblue;
+  &:hover {
+    background: $thisisiceblue;
+  }
+}
+
+.flat-btn--half {
+  flex-basis: 45%;
+  width: 45%;
+}
+.flat-btn--bottom {
+  margin-top: -($content-division + 1rem);
+}
+@media (min-width: $tiny-screen-width) {
+  .flat-btn {
+    padding: 2.3rem 0;
+  }
+}
+@media (min-width: $small-screen-width) {
+  .flat-btn {
+    padding: 2.1rem 0; 
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .flat-btn {
+    font-size: $button-font-size * 1.2;
+    padding: 1.6rem 0;   
+  }
+}
+@media (min-width: $social-shrink-width) {
+  .flat-btn {
+    padding: 1.2rem 0;
+  }
+}
+
+// BUTTONS
+// (usually .flat-btns)
+.buttons {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

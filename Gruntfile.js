@@ -223,7 +223,7 @@ module.exports = function (grunt) {
         tasks: ['default']
       },
       sass: {
-        files: ['<%= config.assets %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= config.assets %>/styles/sass/{,*/}*.{scss,sass}'],
         tasks: ['newer:sass'] // tasks: ['sass', 'uncss', 'postcss'] // postcss uses autoprefixer
       },
       js: {
@@ -304,7 +304,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.assets %>/styles/sass',
-          src: ['*.{scss,sass}'],
+          src: ['{,/*}*.{scss,sass}'],
           dest: '<%= config.assets %>/styles',
           ext: '.css'
         }]

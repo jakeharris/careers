@@ -1,6 +1,4 @@
-@import 'app';
-@import 'social';
-@import 'sponsors';
+@import 'partials/variables';
 
 address {
   display: block;
@@ -85,7 +83,7 @@ address {
 
 // ABOUT OUR OFFICE
 .about {
-  @extend .watermarked;
+
 }
 .about-icon {
   display: block;
@@ -131,12 +129,11 @@ a:hover .about-icon::before {
 
 // CALENDAR
 .calendar {
-  @extend .watermarked;
+
 }
 
 // TWEETS
 .tweets {
-  @extend .watermarked;
   ul {
     max-width: 500px;
   }
@@ -179,7 +176,6 @@ a:hover .about-icon::before {
 
 // BLOG POSTS
 .blog {
-  @extend .watermarked;
   h3 {
     font-family: $body-font-family;
     font-size: $body-font-size;

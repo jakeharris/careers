@@ -1,0 +1,8 @@
+// BANNERS
+.banner {
+  width: 100%;
+}
+@media (min-width: $medium-screen-width) {
+  height: 400px;
+  overflow: hidden;
+}

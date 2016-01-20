@@ -1,0 +1,10 @@
+// CARDS
+.card {
+  background: white;
+  
+  @extend .padded;
+  box-shadow: $box-shadow;
+  
+  margin: $content-division 0;
+  overflow: hidden;
+}

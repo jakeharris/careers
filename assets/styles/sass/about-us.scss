@@ -1,4 +1,4 @@
-@import 'app';
+@import 'partials/variables';
 
 .quick-about {
   display: flex;
@@ -71,8 +71,6 @@ iframe {
 }
 
 .information-row-element:before {
-  @extend [class^="icon-"], [class*=" icon-"];
-  
   display: inline-block;
   margin: 0 auto;
   
@@ -85,15 +83,12 @@ iframe {
 }
 
 .address:before {
-  @extend .icon-map-marker;
 }
 .hours:before {
-  @extend .icon-clock-o;
   position: relative;
   top: 3px;
 }
 .phone:before {
-  @extend .icon-phone;
   position: relative;
   top: 10px;
 }

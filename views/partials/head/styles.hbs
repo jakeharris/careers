@@ -1,11 +1,22 @@
-<!-- Bootstrap & Core CSS -->
+---
+dir: assets/styles
+---
+
+
+
+<!-- App styles -->
+<link rel="stylesheet" href="{{ dir }}/app.css">
+
+<!-- Style modules -->
+{{#is page.layout 'default.hbs'}}
+  <link rel="stylesheet" href="{{ dir }}/social.css">
+{{/is}}
 {{#each component}}
   {{#is this 'sponsors'}}
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
+    <link rel="stylesheet" href="{{ dir }}/sponsors.css">
   {{/is}}
 {{/each}}
-    
-<!-- Application CSS -->
-<!-- build:css assets/styles/{{ name }}.min.css -->
-  <link rel="stylesheet" href="assets/styles/{{ type }}.css">
-<!-- endbuild -->
+
+<!-- Page-specific styles -->
+<link rel="stylesheet" href="{{ dir }}/{{ type }}.css">

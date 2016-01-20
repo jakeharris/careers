@@ -1,4 +1,4 @@
-@import 'app';
+@import 'partials/variables';
 
 .content-type {
   background-color: white;
@@ -203,7 +203,6 @@ iframe {
 
   
   .address:before, .phone:before {
-    @extend [class^="icon-"], [class*=" icon-"];
   
     display: inline-block;
     margin: 0 auto;
@@ -212,11 +211,9 @@ iframe {
     color: $box-shadow;
   }
   .address:before {
-    @extend .icon-map-marker;
     padding-right: 1.3rem;
   }
   .phone:before {
-    @extend .icon-phone; 
   }
   
   .location-info,

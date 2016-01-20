@@ -1,4 +1,4 @@
-@import 'app';
+@import 'partials/variables';
 
 .pathways-content {
   text-align: center;
@@ -47,13 +47,10 @@
     width: 100%;
     padding: 2.6rem 0;
     font-size: 4rem;
-    @extend .icon;
-    @extend .icon-chevron-up;
   }
   &.collapsed {
     i:before {
       text-align: center;
-      @extend .icon-chevron-down; 
     }
   }
 }

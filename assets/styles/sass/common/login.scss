@@ -1,0 +1,63 @@
+// TRL LOGIN
+.login {
+  @extend .padded;
+  @extend .flex-half;
+  
+  justify-content: center;
+  align-self: center;
+  position: relative;
+  -ms-flex-negative: 1;
+  
+  h2, p {
+    text-align: center; 
+  }
+  p {
+    font-size: 16px; 
+  }
+}
+.login-container {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+// Ensure the watermark doesn't
+// overlap anything.
+.login .watermark::before {
+  font-size: 20rem;
+  top: -3rem;
+  right: -6rem;
+}
+.login-container .buttons {
+  z-index: 2;
+}
+.login + * {
+  z-index: 2;
+}
+@media (min-width: $small-screen-width) {
+  .login {
+    height: auto;
+  }
+}
+
+.trl {
+  position: relative;
+  z-index: 1;
+}
+.trl::before {
+  content: 'TRL';
+}
+@media (min-width: $tiny-screen-width) {
+  .trl::before {
+    content: 'Tiger Recruiting Link'; 
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .trl::before {
+    content: 'TRL'; 
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .trl::before {
+    content: 'Tiger Recruiting Link';
+  }
+}

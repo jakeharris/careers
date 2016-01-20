@@ -1,14 +1,12 @@
-@import 'resume';
+@import 'partials/variables';
 
 
 .interview-banner {
-  @extend .resume-banner;
   & > h2 {
     font-size: 4rem; 
   }
 }
 .interview-types {
-  @extend .document-review;
   .mock p a {
     font-family: $header-font-family;
     font-size: 1.6rem;

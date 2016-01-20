@@ -1,4 +1,4 @@
-@import 'event-pages';
+@import 'partials/variables';
 
 // OVERRIDES
 .content > .row {
@@ -99,7 +99,6 @@
   }
   
   .address:before, .phone:before, .email:before {
-    @extend [class^="icon-"], [class*=" icon-"];
   
     display: inline-block;
 
@@ -108,15 +107,12 @@
     width: 2rem;
   }
   .address:before {
-    @extend .icon-map-marker;
   }
   .phone:before {
-    @extend .icon-phone; 
     position: relative;
     top: 6px;
   }
   .email:before {
-    @extend .icon-comments-o; 
   }
   .name {
     padding-top: 3rem;
@@ -143,7 +139,6 @@
 }
 
 .tipsheet {
-  @extend .content;
   padding: 0;
   margin-top: 1rem;
   border: 1px solid $box-shadow;
@@ -242,13 +237,10 @@
     padding: 2.6rem;
     padding-right: 0;
     font-size: 4rem;
-    @extend .icon;
-    @extend .icon-chevron-up;
   }
   &.collapsed {
     i:before {
       text-align: center;
-      @extend .icon-chevron-down; 
     }
   }
 }

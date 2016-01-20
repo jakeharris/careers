@@ -1,4 +1,4 @@
-@import 'app';
+@import 'partials/variables';
 
 // APP OVERRIDES
 // in fact, consider making this the standard
@@ -35,7 +35,6 @@
 }
 
 .discovery-resources {
-  @extend .buttons;
   padding-right: $content-separation;
   padding-bottom: $content-protection;
 }
@@ -60,13 +59,8 @@
   width: 100%;
   margin: 0 auto;
   .radio {
-    @extend .hidden; 
   }
-  .radio + label {
-    @extend .flat-btn;
-    @extend .flat-btn--half;
-    @extend .flat-btn--white;
-    
+  .radio + label {    
     cursor: pointer;
   }
   .radio:checked + label {
