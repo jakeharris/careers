@@ -283,6 +283,20 @@
     width: 40%;
   }
 }
+.workshops {
+
+}
+.workshop {
+  position: relative;
+  .flat-btn--bottom {
+    position: absolute;
+    bottom: 0; 
+  }
+  .padding {
+    padding-top: 3rem;
+    padding-bottom: 12rem;
+  }
+}
 
 @media (min-width: $medium-screen-size) {
   .hero {
