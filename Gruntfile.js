@@ -216,7 +216,7 @@ module.exports = function (grunt) {
       },
       specificAssemble: {
         files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '!<%= config.views %>/{partials, layouts}/**/*.hbs', '<%= config.assets %>/data/{,*/}*.json'],
-        tasks: ['newer:assemble:dev'] //tasks: ['assemble', 'processhtml']
+        tasks: ['newer:assemble:dev']
       },
       rootAssemble: {
         files: ['<%= config.views %>/{partials, layouts}/**/*.hbs'],
@@ -228,7 +228,7 @@ module.exports = function (grunt) {
       },
       specificSass: {
         files: ['<%= config.assets %>/styles/sass/*.{scss,sass}'],
-        tasks: ['newer:sass'] // tasks: ['sass', 'uncss', 'postcss'] // postcss uses autoprefixer
+        tasks: ['newer:sass', 'newer:postcss:all']
       },
       rootSass: {
         files: ['<%= config.assets %>/styles/sass/*/*.{scss,sass}'],
