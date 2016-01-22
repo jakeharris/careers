@@ -156,7 +156,9 @@ nav.main {
     margin-left: -300%; 
   }
 }
-
+.hire-header nav.main ul li ul {
+  width: 400%;
+}
 // if we've clicked the nav-controller button,
 // we should be at a mobile-ready resolution.
 // these are the styles that should be applied
