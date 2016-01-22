@@ -10,6 +10,11 @@ analytics-token: UA-12338791-4
 component:
 - calendar
 - sponsors
+
+style:
+- sponsors
+- login
+- employer-calendar
 ---
 
 <section class="flex login-recruiting">
@@ -81,28 +86,28 @@ component:
   </div>
 </section>
 
-<section class="card unpadded employer-events-wrapper" ng-controller="calendar-ctrl">
-  <h2 class="employer-events-title">Event Registration</h2>
+<section class="card unpadded events-wrapper" ng-controller="calendar-ctrl">
+  <h2 class="events-title">Event Registration</h2>
   <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
-  <ul class="employer-events flex">
-    <li ng-if="events.length % 2 !== 0" class="employer-event employer-event--blurb">Click any event to get more information and register.</li>
-    <li class="employer-event" ng-repeat="event in events">
-      <a class="employer-event-link" href="[[ event.url ]]">
+  <ul class="events flex">
+    <li ng-if="events.length % 2 !== 0" class="event event--blurb">Click any event to get more information and register.</li>
+    <li class="event" ng-repeat="event in events">
+      <a class="event-link" href="[[ event.url ]]">
         <h3>[[ event.name ]]</h3>
-        <div class="employer-event-details">
-          <div class="employer-event-when">
-            <div ng-if="event.dates" class="employer-event-date"><span ng-if="event.dates.start">[[ event.dates.start ]] - </span>[[ event.dates.end ]]</div>
-            <div ng-if="event.dates === undefined" class="employer-event-date">
+        <div class="event-details">
+          <div class="event-when">
+            <div ng-if="event.dates" class="event-date"><span ng-if="event.dates.start">[[ event.dates.start ]] - </span>[[ event.dates.end ]]</div>
+            <div ng-if="event.dates === undefined" class="event-date">
               [[ event.date.month ]] [[ event.date.day ]]
             </div>
-            <div ng-if="event.date.time === undefined || event.date.time.start === ''" class="employer-event-time">
+            <div ng-if="event.date.time === undefined || event.date.time.start === ''" class="event-time">
               All day
             </div>
-            <div ng-if="event.date.time.start !== '' && event.date.time.start !== undefined" class="employer-event-time">
+            <div ng-if="event.date.time.start !== '' && event.date.time.start !== undefined" class="event-time">
               [[ event.date.time.start ]] - [[ event.date.time.end ]]
             </div>
           </div>
-          <div class="employer-event-cost" ng-if="event.cost">
+          <div class="event-cost" ng-if="event.cost">
             $[[ event.cost ]]
           </div>
         </div>

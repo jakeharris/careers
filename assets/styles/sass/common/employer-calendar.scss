@@ -1,4 +1,4 @@
-@import 'partials/variables';
+@import '../partials/variables';
 
 /**********/
 /* MIXINS */
@@ -39,27 +39,28 @@
     }
   }
 }
-.employer-events-title, .employer-events-wrapper > p {
+
+.events-title, .events-wrapper > p {
   padding: 5rem;
   text-align: center;
 }
-.employer-events-wrapper > p {
+.events-wrapper > p {
   padding-top: 0;
 }
-.employer-events {
+.events {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: row;
   width: 100%;
   margin-top: 0;
-  .employer-event {
+  .event {
     flex-basis: 100%;
     max-width: 100%;
     padding: 3rem;
     @include checkerboard;
     transition: background-color 0.3s, color 0.1s;
-    .employer-event-link {
+    .event-link {
       color: inherit;
     }
     h3 {
@@ -77,10 +78,7 @@
       background-color: $thisislightorange;
       color: white;
     }
-    &.employer-event--big.employer-event--big-even {
-      //order: -1; // what should this be?
-    }
-    .employer-event-details {
+    .event-details {
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -88,17 +86,17 @@
       flex-wrap: nowrap;
       padding-top: 1.5rem;
     }
-    .employer-event-when,
-    .employer-event-cost {
+    .event-when,
+    .event-cost {
       flex-basis: 50%;
     }
-    .employer-event-cost {
+    .event-cost {
       text-align: right;
       font-size: 2.5rem;
       font-family: $header-font-family;
     }
   }
-  .employer-event.employer-event--blurb {
+  .event.event--blurb {
     background-color: white;
     color: $thisisdarkblue;
     font-family: $header-font-family;
@@ -108,11 +106,11 @@
   }
 }
 @media (min-width: $medium-screen-width) {
-  .employer-events .employer-event {
+  .events .event {
     flex-basis: 50%; 
     max-width: 50%;
   }
-  .employer-events .employer-event--big {
+  .events .event--big {
     flex-basis: 100%;
     height: 200%;
   }
