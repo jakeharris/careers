@@ -7,15 +7,12 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" defer></script> 
 <script src="//cdn.auburn.edu/assets/js/default.min.js" defer></script>
 
-<!-- Application-specific CSS/JS -->
-<!-- build:js assets/scripts/{{ name }}.min.js -->
-  <script src="assets/scripts/components/nav.{{#if production}}min.{{/if}}js" defer></script>
-  <script src="assets/scripts/components/touch-start.{{#if production}}min.{{/if}}js" defer></script>
-  {{#each component}}
-    <script src="assets/scripts/components/{{ this }}.{{#if production}}min.{{/if}}js" defer></script>
-    {{#is this 'sponsors'}}
-      <script src="bower_components/angular-lazy-img/release/angular-lazy-img.min.js" defer></script>
-    {{/is}}
-  {{/each}}
-  <script src="assets/scripts/{{ type }}.{{#if production}}min.{{/if}}js" defer></script>
-<!-- endbuild -->
+<script src="assets/scripts/components/nav.{{#if production}}min.{{/if}}js" defer></script>
+<script src="assets/scripts/components/touch-start.{{#if production}}min.{{/if}}js" defer></script>
+{{#each component}}
+  <script src="assets/scripts/components/{{ this }}.{{#if production}}min.{{/if}}js" defer></script>
+  {{#is this 'sponsors'}}
+    <script src="bower_components/angular-lazy-img/release/angular-lazy-img.min.js" defer></script>
+  {{/is}}
+{{/each}}
+<script src="assets/scripts/{{ type }}.{{#if production}}min.{{/if}}js" defer></script>

@@ -352,7 +352,7 @@ module.exports = function (grunt) {
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
     },
 
-    // ## postcss, using autoprefixer
+    // ## postcss, using autoprefixer, cssmin
     //    Automagically adds vendor-prefixed rules to match non-prefixed rules
     //    we use that we might've forgotten about!
     //    e.g.
@@ -361,10 +361,13 @@ module.exports = function (grunt) {
     //    `display: flex;
     //     ms-display: flex-box;
     //     display: -webkit-flex;`
+    //
+    //    Then, it minifies it! Hurray!
     postcss: {
       options: {
         processors: [
-          require('autoprefixer')({browsers: '> 5%, ie >= 8'})
+          require('autoprefixer')({browsers: '> 5%, ie >= 8'}),
+          require('cssnano')()
         ]
       },
       all: {
@@ -372,41 +375,6 @@ module.exports = function (grunt) {
           '  <%= config.assets %>/styles/{,*/}*.css', 
           '! <%= config.assets %>/styles/components/*.css']
       }
-    },
-
-    // ## *-min
-    // (usemin, htmlmin, cssmin, imagemin, svgmin, uglify)
-    // Minify our files.
-    
-    // ### useminPrepare
-    // Prepare files for serving based on usemin blocks found in HTML.
-    useminPrepare: {
-      html: [
-        'dist/**/*.html'
-      ],
-      options: {
-        root: '.',
-        dest: 'dist'
-      }
-    },
-
-    // ### concat
-    // Combines and moves around files. Relatively necessary for
-    // getting usemin to work properly.
-    concat: {
-      
-    },
-    
-    // ### cssmin
-    // Minify our CSS.
-    cssmin: {
-
-    },
-
-    // ### uglify
-    // Minify our JS.
-    uglify: {
-
     },
     
     // ### imagemin
@@ -419,31 +387,6 @@ module.exports = function (grunt) {
           src: ['events/*-slide.{png,jpg,gif}', 'events/*-banner.{png,jpg,gif}'],        // Actual patterns to match
           dest: 'dist/'                       // Destination path prefix
         }]
-      }
-    },
-
-    // ### filerev
-    // Rename files to bust browser caches.
-    filerev: {
-      css: {
-        src: '<%= config.dist %>/assets/styles/{,*/}*.min.css',
-        dest: '<%= config.dist %>/<%= config.assets %>/styles'
-      },
-      js: {
-        src: '<%= config.dist %>/assets/scripts/{,*/}*.min.js',
-        dest: '<%= config.dist %>/<%= config.assets %>/scripts'
-      }
-    },
-
-
-    // ## usemin
-    // Change blocks of local CSS and JS references
-    // into singular, cache-busting downloads n
-    // your production HTML!
-    usemin: {
-      html: 'dist/**/*.html',
-      options: {
-        assetsDirs: ['dist']
       }
     }
 
@@ -474,12 +417,6 @@ module.exports = function (grunt) {
   // Improve upon the compiled project. Minify files, cache bust.
   grunt.registerTask('enhance', [
     'postcss',
-    'useminPrepare',
-    'concat:generated',
-    'cssmin:generated',
-    'uglify:generated',
-    'filerev',
-    'usemin',
     'newer:imagemin',
     'clean:post'
   ]);
@@ -510,19 +447,4 @@ module.exports = function (grunt) {
     'compile:prod',
     'enhance'
   ]);
-
-  
-  /*grunt.registerTask('publish', 'commit work, push to github, and deploy on server; requires target [valid: dev, prod]', function (target) {
-    if (target !== 'dev' && target !== 'prod') {
-      grunt.log.error('Invalid target `' + target + '`. [valid: dev, prod]');
-      return false;
-    }
-
-    grunt.task.run([
-      'build',
-      //'commit',
-      //'push',
-      //'ftp-deploy:' + target
-    ])
-  });*/
 };

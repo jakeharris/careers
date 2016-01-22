@@ -93,20 +93,9 @@ img:not([alt]) {
   display: none !important;
 }
 
-/*********************
-** UNDO DEFAULT.CSS **
-*********************/
-body > .container {
-  overflow-x: visible;
-}
-
 /********************
-**      FRAME      **
+** THE MAIN FRAME  **
 ********************/
-.container {
-  width: 90vw;
-  max-width: 1200px;
-  
-  display: block;
-  margin: 0 auto;
+main {
+  @include main;
 }

@@ -41,6 +41,16 @@ $content-division: 5rem;     // separates content conceptually
 $content-protection: 3rem;   // separates similar content to make it easier to read
 $content-separation: 1.5rem; // separates very similar content (e.g. paragraphs)
 
+// styles that control the width of the main element, and some other elements that need to mirror it (e.g. the nav)
+@mixin main() {
+  overflow-x: visible; // undo default.css
+
+  width: 90vw;
+  max-width: 1200px;
+  
+  display: block;
+  margin: 0 auto;
+} 
 @mixin hex($width, $color) {
   $height: $width * (78/104);
   

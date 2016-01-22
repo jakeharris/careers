@@ -13,7 +13,8 @@ header {
 **                    TITLE BAR                     **
 ** (contains auburn logo, Career Center title link) **
 *************************************************** **/
-.title {  
+.title { 
+  @include main;
   h1 {
     padding: $content-separation 0;
     a {
@@ -39,6 +40,9 @@ header {
   }
 }
 
+nav > ul {
+  @include main;
+}
 /* Generally true in all site non-mobile navs: they're horizontal */
 nav ul li {
   display: inline-block;
