@@ -5,6 +5,7 @@
 
 .location-card {
   width: 100%;
+  margin: $content-division 0;
 }
 
 .visual {
@@ -25,6 +26,7 @@
   
   img {
     width: 100%;
+    height: 100%;
     
     position: relative;
     

@@ -2,6 +2,60 @@
 
 // SPECIFIC LOCATION IMAGE OVERRIDES
 .coa {
-  margin-top: -20rem;
+  margin-top: -10rem;
 }
 
+// TWEAKS
+.department-contacts {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.details {
+  > div,
+  > .info > p {
+    padding-bottom: $content-protection; 
+  }
+}
+
+
+// MAJOR-SPECIFIC CONTACTS ACCORDIONS
+.dept-accordion {
+  overflow-y: hidden;
+  margin: 0;
+  // I don't understand why, but the following line fixes
+  // a strange background-color issue in safari. perhaps
+  // this has something to do with poor integer division?
+  width: calc(100% - 1px); 
+  > a {
+    margin-top: 0;
+    box-shadow: none;
+    &::after {
+      font-family: $icon-font-family;
+      content: '\f078';
+      padding-left: $content-protection;
+    }
+    &:not(.collapsed){
+      background-color: $thisisiceblue;
+      color: $thisisdarkblue;
+      &::after {
+        content: '\f077'; 
+      }
+    }
+  }
+  .panel-collapse {
+    background-color: $thisislightblue;
+    margin-top: -1rem;
+  }
+}
+.dept-contact {
+  display: block;
+  color: white;
+  padding: $content-separation $content-protection;
+  &:hover {
+    background-color: $thisisiceblue;
+    color: $thisisdarkblue;
+  }
+  span {
+    display: block;
+  }
+}

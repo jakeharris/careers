@@ -1,1 +1,23 @@
 @import '../partials/variables';
+
+.address, .phone, .email {
+  font-family: $header-font-family;
+  font-size: 3rem;
+  > a::before {
+    font-family: $icon-font-family;
+    font-size: 3rem;
+    width: 3rem;
+    margin-right: $content-protection;
+  }
+}
+
+.address > a::before {
+  content: "\f041";
+}
+.phone > a::before {
+  content: "\f095";
+  margin-right: $content-protection - .5rem;
+}
+.email > a::before {
+  content: "\f0e0";
+}
