@@ -1,5 +1,8 @@
 @import 'partials/variables';
 
-.card > h2 {
+.card > h2, .banner > p {
   text-align: center;
+}
+strong {
+  font-family: $header-font-family;
 }
