@@ -1,20 +1,8 @@
 @import 'partials/variables';
 
 .regions {
-}
-
-.region {
-}
-
-.region-content {
-  padding: 0;
-}
-
-.listing {
-}
-
-.muted {
-  display: block;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .region-header {

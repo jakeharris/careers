@@ -3,44 +3,50 @@ name: housing
 type: housing
 title: Housing | Career Center
 layout: no-social.hbs
+
+path-to-root: ../
+
+style: 
+- location-card
+- accordion
 ---
 
-<section class="content extra-content pathways-content">
+<section class="card">
   <h2>Housing</h2>
   <p>Need a place to stay during your internship? Here are some intern-friendly homesteads.</p>
 </section>
 
-<div class="regions">
+<div class="regions flex">
   {{#each housing.region}}
-    <div class="region">
-      <div class="hero">
+    <div class="region location-card unpadded card flex-half">
+      <div class="visual">
         {{#if listings}}
-          <div class="region-header hero-content">
+          <div class="region-header visual-content">
             <h2>{{ fullname }}</h2>
           </div>
         {{else}}
-          <div class="region-header hero-content coming-soon">
+          <div class="region-header visual-content coming-soon">
             <h2>{{ fullname }}</h2>
           </div>
         {{/if}}
       </div>
       {{#if listings}}
-        <section class="content region-content">
-          <a class="collapsed accordion-header" data-toggle="collapse" id="{{ name }}-heading" href="#{{ name }}" role="tab" aria-expanded="false" aria-controls="{{ name }}">
+        <section class="region-content accordion">
+          <a class="collapsed accordion-header flat-btn flat-btn--white" data-toggle="collapse" id="{{ name }}-heading" href="#{{ name }}" role="tab" aria-expanded="false" aria-controls="{{ name }}">
             <i></i>
           </a>
           <div style="height: 0px;" aria-expanded="false" id="{{ name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ name }}-heading">
             {{#each listings}}
               {{#if link}}
-                <a class="listing" href="{{ link }}">{{ name }}<span class="muted"> {{ location }}</span></a>
+                <a class="accordion-entry listing" href="{{ link }}">{{ name }}<span class="muted"> {{ location }}</span></a>
               {{else}}
-                <a class="listing coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+                <a class="accordion-entry listing coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
               {{/if}}
             {{/each}}
           </div>
         </section>
       {{else}}
-        <section class="content coming-soon">
+        <section class="coming-soon">
           <h2>Coming soon</h2>
         </section>
       {{/if}}
