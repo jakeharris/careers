@@ -14,7 +14,7 @@
 }
 @media (min-width: $small-screen-width) {
   .flex-half {
-    flex-basis: 50%;
+    flex-basis: 45%;
   }
   .card.flex-half {
     flex-basis: 45%; // if it's a card, we'll always want space enough to see the box-shadow 
