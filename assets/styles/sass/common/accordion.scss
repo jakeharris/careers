@@ -1,0 +1,38 @@
+@import '../partials/variables';
+
+.accordion {
+  overflow-y: hidden;
+  margin: 0;
+  > a {
+    margin-top: 0;
+    box-shadow: none;
+    &::after {
+      font-family: $icon-font-family;
+      content: '\f078';
+      padding-left: $content-protection;
+    }
+    &:not(.collapsed){
+      background-color: $thisisiceblue;
+      color: $thisisdarkblue;
+      &::after {
+        content: '\f077'; 
+      }
+    }
+  }
+  .panel-collapse {
+    background-color: $thisislightblue;
+    margin-top: -1rem;
+  }
+}
+.accordion-entry {
+  display: block;
+  color: white;
+  padding: $content-separation $content-protection;
+  &:hover {
+    background-color: $thisisiceblue;
+    color: $thisisdarkblue;
+  }
+  span {
+    display: block;
+  }
+}
