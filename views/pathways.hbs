@@ -3,58 +3,58 @@ name: pathways
 type: pathways
 title: Pathways | Career Center
 layout: no-social.hbs
+
+path-to-root: ../
+
+style:
+- location-card
+- accordion
 ---
 
-<div class="extras">
-  <div class="buttons">
-    <a class="flat-btn flat-btn--half flat-btn--white" href="http://bulletin.auburn.edu/undergraduate/majors/">Majors &amp; Minors</a>
-    <a class="flat-btn flat-btn--half" href="experience">Gain Experience</a>
-  </div>
+<div class="buttons">
+  <a class="flat-btn flat-btn--half flat-btn--white" href="http://bulletin.auburn.edu/undergraduate/majors/">Majors &amp; Minors</a>
+  <a class="flat-btn flat-btn--half" href="experience">Gain Experience</a>
 </div>
 
-<section class="content extra-content pathways-content">
+<section class="card pathways-content">
   <h2>Pathways</h2>
   <p>Comprehensive guides for each major to enhance your academic experience and support your career preparation.</p>
 </section>
 
-<div class="colleges">
+<div class="colleges flex flex--wrap">
   
   {{#each pathways.college}}
-    <div class="college">
-      <div class="hero">
+    <div class="college location-card flex-half">
+      <div class="visual">
         {{#if pathways }}
-          <img class="{{ name }}" src="assets/images/pathways/{{ img }}.jpg">
-          <div class="college-header hero-content">
+          <img class="{{ name }}" src="assets/images/pathways/{{ img }}.jpg" alt="{{ fullname }}">
+          <div class="college-header visual-content">
             <div class="overlay"></div>
             <h2>{{ fullname }}</h2>
           </div>
         {{else}}
-          <img class="{{ name }} grayscale grayscale-fade" src="assets/images/pathways/{{ img }}.jpg">
-          <div class="college-header hero-content coming-soon">
+          <img class="{{ name }} grayscale grayscale-fade" src="assets/images/pathways/{{ img }}.jpg" alt="{{ fullname }}">
+          <div class="college-header visual-content coming-soon">
             <div class="overlay"></div>
             <h2>{{ fullname }}</h2>
           </div>
         {{/if}}
       </div>
       {{#if pathways}}
-        <section class="content college-content">
-          <a class="collapsed accordion-header" data-toggle="collapse" id="{{ name }}-heading" href="#{{ name }}" role="tab" aria-expanded="false" aria-controls="{{ name }}">
-            <i></i>
-          </a>
+        <section class="card unpadded accordion">
+          <a class="collapsed accordion-header flat-btn flat-btn--white" data-toggle="collapse" id="{{ name }}-heading" href="#{{ name }}" role="tab" aria-expanded="false" aria-controls="{{ name }}"></a>
           <div style="height: 0px;" aria-expanded="false" id="{{ name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ name }}-heading">
             {{#each pathways}}
               {{#if link}}
-                <a class="pathway" href="assets/images/pathways/pdfs/{{ link }}.pdf">{{ name }}</a>
+                <a class="pathway accordion-entry" href="assets/images/pathways/pdfs/{{ link }}.pdf">{{ name }}</a>
               {{else}}
-                <a class="pathway coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+                <a class="pathway accordion-entry" disabled="disabled">{{ name }} <span>(Coming soon)</span></a>
               {{/if}}
             {{/each}}
           </div>
         </section>
       {{else}}
-        <section class="content coming-soon">
-          <h2>Coming soon</h2>
-        </section>
+        <a class="accordion-entry disabled flat-btn">Coming soon</a>
       {{/if}}
     </div>
   {{/each}}
