@@ -4,18 +4,24 @@ name: resume
 type: resume
 layout: no-social.hbs
 ng-app: career-center-resume
+
+path-to-root: ../
+
 component: 
 - hours
 - eresume
+
+style:
+- contact 
 ---
 
-<section class="content resume-banner">
+<section class="card resume-banner">
   <h2>Resumes, Cover Letters, and CVs</h2>
   <p>Let's get you ready.</p>
 </section>
 
-<div class="document-review">
-  <section class="content" ng-controller="hours-ctrl">
+<div class="document-review flex flex--wrap">
+  <section class="card flex-half" ng-controller="hours-ctrl">
     <h2>Professional Document Review</h2>
     <p>
       Come to the Career Center during <a href="aboutus/#walk-ins">walk-in hours
@@ -23,7 +29,6 @@ component:
       sure to have your documents printed before you come to the office.
     </p>
     <div class="hours" ng-if="walkIn">
-      <i class="fa icon-clock-o times-icon"></i>
       <div class="hours-content">
         <h2>Walk-ins:</h2>
         <p ng-repeat="hours in walkIn">
@@ -32,23 +37,16 @@ component:
         <p ng-if="holiday" class="muted">[[ holiday ]]</p>
       </div>
     </div>
-    <div class="location">
-      <a href="http://auburn.edu/map/?id=76" class="place-icon">
-        <i class="icon-map-marker"></i>
+    <div class="address">
+      <a href="http://auburn.edu/map/?id=76">
+        303 Mary Martin Hall<br/>
+        Auburn, AL 36849
       </a>
-      <h2 class="place-address">
-        <address>
-          <a href="http://auburn.edu/map?id=76">
-            303 Mary Martin Hall <br />
-            Auburn, AL 36849
-          </a>
-        </address>
-      </h2>
     </div>
     <a class="flat-btn" href="resume/samples">Sample Documents</a>
     <a class="flat-btn" href="http://issuu.com/aucc/docs/jsg_f15_color/22">Job Search Guide</a>
   </section>
-  <section class="content resume">
+  <section class="card resume flex-half">
     <h2>Electronic Resume Review</h2>
     <p>
       The Career Center offers electronic review of your resume 
