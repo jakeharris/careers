@@ -1,6 +1,6 @@
 @import '../partials/variables';
 
-.address, .phone, .email {
+.hours, .address, .phone, .email {
   font-family: $header-font-family;
   font-size: 3rem;
   > a::before {
@@ -10,14 +10,16 @@
     margin-right: $content-protection;
   }
 }
-
+.hours *:first-child::before {
+  content: '\f017';
+}
 .address > a::before {
-  content: "\f041";
+  content: '\f041';
 }
 .phone > a::before {
-  content: "\f095";
+  content: '\f095';
   margin-right: $content-protection - .5rem;
 }
 .email > a::before {
-  content: "\f0e0";
+  content: '\f0e0';
 }
