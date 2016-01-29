@@ -19,3 +19,57 @@
     padding: 1rem 0;
   }
 }
+
+// E-RESUME STYLES
+.document-review {
+  overflow-y: hidden;
+}
+.eresume {
+  overflow-y: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+  > h2 {
+    padding-top: $content-protection; 
+  }
+  label, input[type="text"], textarea {
+    display: block; 
+  }
+  textarea {
+    width: 100%;
+    height: 10rem;
+  }
+  label {
+    font-family: $header-font-family;
+    padding-top: $content-separation;
+  }
+  #resume, #privacy, #good-resume {
+    margin-top: $content-separation; 
+    display: block;
+  }
+  label[for="good-resume"],
+  label[for="privacy"] {
+    font-family: $body-font-family; 
+    padding-top: 0;
+  }
+}
+#submitting {
+  display: none;
+}
+label[for="submitting"] {
+  cursor: pointer;
+}
+label[for="submitting"]::after {
+  font-family: $icon-font-family;
+  content: '\f078';
+  padding-left: $content-protection;
+}
+#submitting:checked ~ label[for="submitting"] {
+  background-color: $thisisiceblue;
+  color: $charcoal;
+  &::after {
+    content: '\f077'; 
+  }
+}
+#submitting:checked ~ .eresume {
+  max-height: 100000px;
+}
