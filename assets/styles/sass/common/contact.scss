@@ -10,8 +10,17 @@
     margin-right: $content-protection;
   }
 }
-.hours *:first-child::before {
+.hours > *:first-child::before {
   content: '\f017';
+  font-family: $icon-font-family;
+  font-size: 3rem;
+  width: 3rem;
+  margin-right: $content-protection;
+}
+.hours p {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  padding-left: 6rem;
 }
 .address > a::before {
   content: '\f041';
