@@ -2,7 +2,7 @@
 .flex {
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   height: 100%;
 }
@@ -15,9 +15,6 @@
 @media (min-width: $small-screen-width) {
   .flex-half {
     flex-basis: 45%;
-  }
-  .card.flex-half {
-    flex-basis: 45%; // if it's a card, we'll always want space enough to see the box-shadow 
   }
 }
 @media (min-width: $medium-screen-width) {
