@@ -6,7 +6,11 @@
 .location-card {
   width: 100%;
   margin: $content-division 0;
+  img {
+    min-height: 100%;
+  }
 }
+
 
 .visual {
   width: 100%;
