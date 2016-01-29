@@ -4,9 +4,13 @@ name: sample-docs
 type: sample-docs
 layout: no-social.hbs
 path-to-root: ../../
+
+style:
+- location-card
+- accordion
 ---
 
-<section class="content extra-content pathways-content">
+<section class="card">
   <h2>Sample Docs</h2>
   <p class="blurb">
     The resume samples provided are to be used as a guide when composing 
@@ -17,42 +21,54 @@ path-to-root: ../../
   </p>
 </section>
 
-<div class="colleges">
+<div class="colleges flex flex--wrap">
   
   {{#each docs.college}}
-    <div class="college">
-      <div class="hero {{#unless img}}hero--color{{/unless}}">
+    <div class="location-card college flex-half">
+      <div class="visual">
         {{#if docs }}
-          {{#if img }}<img class="{{ name }}" src="assets/images/pathways/{{ img }}.jpg">{{/if}}
-          <div class="college-header hero-content">
+          {{#if img }}
+            <img class="{{ name }}" 
+                 src="assets/images/pathways/{{ img }}.jpg"
+                 alt="{{ fullname }}">
+          {{/if}}
+          <div class="college-header visual-content">
             {{#if img}}<div class="overlay"></div>{{/if}}
             <h2>{{ fullname }}</h2>
           </div>
         {{else}}
-          <img class="{{ name }} grayscale grayscale-fade" src="assets/images/pathways/{{ img }}.jpg">
-          <div class="college-header hero-content coming-soon">
+          <img class="{{ name }} grayscale grayscale-fade" 
+               src="assets/images/pathways/{{ img }}.jpg"
+               alt="{{ fullname }}">
+          <div class="college-header visual-content coming-soon">
             <div class="overlay"></div>
             <h2>{{ fullname }}</h2>
           </div>
         {{/if}}
       </div>
       {{#if docs}}
-        <section class="content college-content">
-          <a class="collapsed accordion-header" data-toggle="collapse" id="{{ name }}-heading" href="#{{ name }}" role="tab" aria-expanded="false" aria-controls="{{ name }}">
-            <i></i>
+        <section class="card unpadded accordion college-content">
+          <a 
+             class="collapsed accordion-header flat-btn flat-btn--white" 
+             data-toggle="collapse" 
+             id="{{ name }}-heading" 
+             href="#{{ name }}" 
+             role="tab" 
+             aria-expanded="false" 
+             aria-controls="{{ name }}">
           </a>
           <div style="height: 0px;" aria-expanded="false" id="{{ name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ name }}-heading">
             {{#each docs}}
               {{#if link}}
-                <a class="doc" href="resume/samples/sample_{{ link }}.pdf">{{ name }}</a>
+                <a class="doc accordion-entry" href="resume/samples/sample_{{ link }}.pdf">{{ name }}</a>
               {{else}}
-                <a class="doc coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+                <a class="doc accordion-entry coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
               {{/if}}
             {{/each}}
           </div>
         </section>
       {{else}}
-        <section class="content coming-soon">
+        <section class="card unpadded coming-soon disabled">
           <h2>Coming soon</h2>
         </section>
       {{/if}}

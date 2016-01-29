@@ -1,28 +1,17 @@
 @import 'partials/variables';
 
-.doc {
-  
+.graduate-school {
+  margin-top: -5rem;
 }
-
-.hero--color {
-  background: $thisislightblue;
-  min-height: 220px;
+.general-use {
+  margin-top: -12rem;
 }
-.blurb {
-  display: none;
+.education {
+  margin-top: -35rem; 
 }
-
-@media (min-width: $tiny-screen-width) {
-  .graduate-school {
-    margin-top: -5rem;
-  }
-  .general-use {
-    margin-top: -12rem;
-  }
+.human-sciences {
+  margin-top: -10rem;
 }
-
-@media (min-width: $small-screen-width) {
-  .blurb {
-    display: block; 
-  }
+.interdisciplinary {
+  margin-top: -6rem;
 }
