@@ -1,0 +1,55 @@
+@import '../partials/variables';
+
+.attributes {
+  display: none;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  padding-top: 3rem;
+
+  & > .attribute {
+
+    flex-basis: 100%;
+    width: 100%;
+    min-width: 200px;
+    margin-bottom: 3rem;
+
+    & > a.icon:hover {
+      background: $thisislightblue;
+    }
+
+    & > .icon {
+      background: #ccc;
+      color: white;
+      border-radius: 10rem 10rem;
+      font-size: 6rem;
+      width: 10rem;
+      height: 10rem;
+
+      display: block;
+
+      margin-left: auto;
+      margin-right: auto;
+      
+      font-family: $icon-font-family;
+
+      &.calendar {
+        padding-left: 2.2rem;
+        padding-top: 2rem;
+      }
+    }
+    & > .details {
+      padding-top: 3rem;
+      text-align: center;
+      font-family: $header-font-family;
+      font-size: 2rem;
+    }
+  }
+}
+@media (min-width: $small-screen-width) {
+  .attributes {
+    display: flex; 
+  }
+}
