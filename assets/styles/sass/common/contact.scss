@@ -2,19 +2,19 @@
 
 .hours, .address, .phone, .email {
   font-family: $header-font-family;
-  font-size: 3rem;
+  font-size: $header-font-size;
   > a::before {
     font-family: $icon-font-family;
-    font-size: 3rem;
-    width: 3rem;
+    font-size: $header-font-size;
+    width: $header-font-size;
     margin-right: $content-protection;
   }
 }
 .hours > *:first-child::before {
   content: '\f017';
   font-family: $icon-font-family;
-  font-size: 3rem;
-  width: 3rem;
+  font-size: $header-font-size;
+  width: $header-font-size;
   margin-right: $content-protection;
 }
 .hours p {
@@ -31,4 +31,32 @@
 }
 .email > a::before {
   content: '\f0e0';
+}
+
+@media (min-width: $small-screen-width) {
+  .hours, .address, .phone, .email {
+    font-size: $button-font-size;
+    > a::before {
+      font-size: $button-font-size;
+      width: $button-font-size;
+    }
+  }
+  .hours > *:first-child::before {
+    font-size: $button-font-size;
+    width: $button-font-size;
+  }
+}
+
+@media (min-width: $moderate-screen-width) {
+  .hours, .address, .phone, .email {
+    font-size: $header-font-size;
+    > a::before {
+      font-size: $header-font-size;
+      width: $header-font-size;
+    }
+  }
+  .hours > *:first-child::before {
+    font-size: $header-font-size;
+    width: $header-font-size;
+  }
 }

@@ -69,15 +69,15 @@ footer {
         }
       }
     }
-    .address:before {
+    .footer-address:before {
       content: '\f041';
     }
-    .phone:before {
+    .footer-phone:before {
       content: '\f095'; 
       
       padding-right: 3.2rem;
     }
-    .email:before {
+    .footer-email:before {
       content: '\f0e0';
     }
   }
