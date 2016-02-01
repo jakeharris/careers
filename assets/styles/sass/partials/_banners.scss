@@ -1,8 +1,25 @@
+@import 'variables';
+
 // BANNERS
 .banner {
-  width: 100%;
+  font-family: $header-font-family;
+  text-align: center;
+  h2 {
+    font-size: $title-font-size;
+    color: $thisislightorange;
+  }
+  .subtitle { 
+    font-size: $button-font-size;
+    color: $thisisdarkblue;
+  }
 }
 @media (min-width: $medium-screen-width) {
-  height: 400px;
-  overflow: hidden;
+  .banner {
+    h2 {
+      font-size: $title-font-size * 1.5; 
+    }
+    .subtitle {
+      font-size: $button-font-size * 1.5;
+    }
+  }
 }
