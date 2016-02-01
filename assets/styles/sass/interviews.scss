@@ -1,94 +1,17 @@
 @import 'partials/variables';
 
-
-.interview-banner {
-  & > h2 {
-    font-size: 4rem; 
-  }
+.oci {
+  justify-content: center;
 }
-.interview-types {
-  .mock p a {
-    font-family: $header-font-family;
-    font-size: 1.6rem;
-  }
-  .content {
-    height: auto; 
-  }
-}
-.interview-details {
-  padding: 0;
-  margin-top: -5rem;
-}
-.interview-details > p {
-  width: auto;
-  margin: 3rem 5rem;
-  display: block;
-}
-.online-interview-requirements-header {
-  font-family: $header-font-family;
-  font-size: 2rem;
-  padding-top: 2rem;
-}
-.online-interview-requirements {
-  padding-bottom: 1rem;
+.requirements {
+  padding-left: $content-protection;
   li {
-    padding-left: 3rem;
-    padding-bottom: 1rem;
+    padding-bottom: $content-separation; 
   }
 }
-.desktop-hide {
-  display: block;
+.mock .protected {
+  padding: $content-protection 0;
 }
-.desktop-show {
-  display: none;
-}
-.phone-address {
-  display: inline-block;
-  padding-left: 3rem;
-  
-  position: relative;
-  top: -1.8rem;
-}
-.buttons {
-  padding: 5rem;
-  padding-top: 0;
-}
-
-@media (min-width: $small-screen-width) {
-  .desktop-hide {
-    display: none; 
-  }
-  .desktop-show {
-    display: block; 
-  }
-  .interview-banner > h2 {
-    font-size: 6rem; 
-  }
-}
-
-@media (min-width: $medium-screen-width) {
-  .document-review {
-    .content {
-      flex-basis: 48%;
-      width: 48%;
-      
-      margin-top: 0;
-      
-      #tips {
-        position: relative;
-        top: 21px;
-        margin-bottom: 0;
-      }
-    }
-  }
-  .interview-details > p {
-    width: 45%;
-    margin: 3rem auto;
-  }
-  .buttons {
-    width: 45%;
-    margin: 0 auto;
-    padding: 0;
-    padding-bottom: 5rem;
-  }
+.card {
+  margin: $content-protection 0;
 }
