@@ -4,12 +4,18 @@ title: About Our Office | Career Center
 name: about-us
 type: about-us
 layout: no-social.hbs
+
+path-to-root: ../
+
 component:
 - hours
+
+style:
+- contact
 ---
 
-<section class="quick-about">
-  <div class="content extra-content mission">
+<div class="flex">
+  <div class="card flex-third">
     <h2>Mission</h2>
     <p class="mission-content">
       The Auburn University Career Center delivers comprehensive services 
@@ -18,29 +24,29 @@ component:
       transition from college to career.
     </p>
   </div>
-  <div class="content extra-content services">
-    <h2 class="services-header">Services</h2>
-    <ul class="services-content">
-      <li class="service"><a href="assessments">Career Assessments</a></li>
-      <li class="service"><a href="http://issuu.com/aucc/docs/ymg-color-issuu/1">Choosing Your Major</a>
-      <li class="service"><a href="events">Workshops &amp; Career Fairs</a></li>
-      <li class="service"><a href="resume">Resume &amp; CV Review</a></li>
-      <li class="service"><a href="interviews">Interview Prep</a></li>
-      <li class="service"><a href="http://jobs.auburn.edu">Job &amp; Internship Listings</a></li>
-      <li class="service"><a href="students/graduate.html">Graduate School Prep</a></li>
-      <li class="service"><a href="students/alumni.html#develop-professionally">Professional Development</a></li>
+  <div class="card flex-two-thirds">
+    <h2>Services</h2>
+    <ul class="services flex flex--wrap">
+      <li class="flex-half"><a href="assessments">Career Assessments</a></li>
+      <li class="flex-half"><a href="http://issuu.com/aucc/docs/ymg-color-issuu/1">Choosing Your Major</a>
+      <li class="flex-half"><a href="events">Workshops &amp; Career Fairs</a></li>
+      <li class="flex-half"><a href="resume">Resume &amp; CV Review</a></li>
+      <li class="flex-half"><a href="interviews">Interview Prep</a></li>
+      <li class="flex-half"><a href="http://jobs.auburn.edu">Job &amp; Internship Listings</a></li>
+      <li class="flex-half"><a href="students/graduate.html">Graduate School Prep</a></li>
+      <li class="flex-half"><a href="students/alumni.html#develop-professionally">Professional Development</a></li>
     </ul>
   </div>
-</section>
+</div>
 
 <iframe src="http://auburn.edu/map?id=76"></iframe>
 
-<section ng-controller="hours-ctrl" class="content information">
-  <div class="information-row">
-    <address class="address information-row-element icon-thing">
-      <div class="information-important"><h3><a href="http://auburn.edu/map?id=76">303 Mary Martin Hall<br/>Auburn, AL 36849</a></h3></div>
+<section ng-controller="hours-ctrl" class="card">
+  <div class="flex">
+    <address class="address flex-third">
+      <a href="http://auburn.edu/map?id=76">303 Mary Martin Hall</a>
     </address>
-    <div ng-if="office" class="hours information-row-element">
+    <div ng-if="office" class="hours flex-third">
       <div ng-repeat="hours in office" class="information-important">
         <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
         <!-- OR -->
