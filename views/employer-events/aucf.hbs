@@ -38,20 +38,7 @@ title: Auburn University Career Fair
       </div>
     </div>
     <div class="actions">
-      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/aucfsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
-      <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/aucfsp16">
-          Register ($[[ price.now ]])
-        </a>
-        <a class="flat-btn--info"
-           data-html="true" 
-           data-trigger="hover" 
-           data-placement="top" 
-           data-toggle="popover" 
-           data-title="<h2>Early Bird Pricing</h2>" 
-           data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
-          ?</a>
-      </div>
+      <a class="flat-btn flat-btn--disabled">Registration Unavailable</a>
       <div class="tipsheet">
         <div class="tipsheet-wrapper">
           <p>Download the tipsheet for detailed information about:</p>
