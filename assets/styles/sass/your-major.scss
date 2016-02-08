@@ -75,12 +75,19 @@
   width: 100%;
 }
 
+.row--separate {
+  justify-content: space-between;
+}
+
 .content > .attributes {
   flex-wrap: wrap;
   & > .attribute {
     flex-basis: 100%;
     width: 100%;
   }
+}
+.event-list {
+  width: 100%;
 }
 
 @media (min-width: $small-screen-size) {

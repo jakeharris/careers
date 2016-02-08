@@ -9,41 +9,43 @@ layout: no-social.hbs
 
 <!-- Banner image -->
 <div class="hero">
-  <img class="cym" src="assets/images/events/CYM_Homepage(S15).png"></img>
+  <img src="assets/images/events/{{name}}-banner.png" 
+       alt="Your Major: Career Discovery Workshop. Spring through Summer."></img>
 </div>
 
 <div class="content">
   <!-- Blurb -->
   <div class="row">
     <p class="blurb">
-      This workshop is offered annually in the summer. Check back in the spring for workshop dates and registration information! (I don't know what this originally said, sorry, Alex!)
+      We invite you to attend our Choosing Your Major workshops during the Spring and Summer of 2016. These workshops are for Auburn students who are deciding on which major or career path to pursue.
     </p>
     <div class="buttons">
-      <a class="flat-btn flat-btn--disabled locations" disabled="disabled">
-        Register
+      <a class="flat-btn" href="students/events/your-major.html#register-student">
+        Register as a Student
       </a>
-      <a class="flat-btn flat-btn--disabled attendants" disabled="disabled">
+      <a class="flat-btn" href="students/events/your-major.html#register-parent">
+        Register as a Parent
+      </a>
+      <a class="flat-btn flat-btn--disabled" disabled="disabled">
         See Agenda
       </a>
     </div>
   </div>
-  <div class="row">
-    <ul>
-      <li class="event">
-        <div class="event-details">
-          <div class="event-details-name">Student Session</div>
-          <div class="event-details-location">Student Center Ballroom</div>
-          <div class="event-details-time">9am - 3pm</div>
-        </div>
-      </li>
-      <li class="event">
-        <div class="event-details">
-          <div class="event-details-name">Parent Session</div>
-          <div class="event-details-location">Student Center</div>
-          <div class="event-details-time">9:30am - 12:30pm</div>
-        </div>
-      </li>
-    </ul>
+  <div class="row row--separate">
+    <div class="event">
+      <div class="event-details">
+        <div class="event-details-name">Student Session</div>
+        <div class="event-details-location">Student Center Room 2222/2223</div>
+        <div class="event-details-time">9am - 3pm</div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="event-details">
+        <div class="event-details-name">Parent Session</div>
+        <div class="event-details-location">Student Center Room 2218</div>
+        <div class="event-details-time">9:30am - 12:30pm</div>
+      </div>
+    </div>
   </div>
   
   <!-- Icons -->
@@ -88,29 +90,54 @@ layout: no-social.hbs
   </div>
 </div>
 
-<div id="register" class="content extra-content">
-  <h2>Register <span class="muted">$80, including assessments and lunch</span></h2>
+<div id="register-student" class="content extra-content">
+  <h2>Register as a Student <span class="muted">$80, including assessments and lunch</span></h2>
   <div class="flex">
     <div class="blurb">
       <p>Click any date to register for that particular session.</p>
       <p>
-        If you are a <strong>parent or guardian</strong>, or want your parent or 
-        guardian to attend, the registration forms have a field 
-        for that. Remember to fill it out when you're registering!
-      </p>
-      <p>The parent session is free for parents of attending students.</p>
+        The parent session is $15 for parents of attending students.</p>
       <p>
-        If you are a student in financial need of a sponsorship 
-        to attend this workshop, they are available on a limited 
-        basis. Please contact Addye Buckley-Burnell at 
-        <a href="mailto:addyebb@auburn.edu">addyebb@auburn.edu</a> 
+        If you are a student in financial need of a sponsorship to 
+        attend this workshop, they are available on a limited basis. 
+        Please contact Dori Weldon at 
+        <a href="mailto:doriweldon@auburn.edu">doriweldon@auburn.edu</a>
         if you would like to be considered for sponsorship.
       </p>
     </div>
     <div class="buttons">
-      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/YM3">June 3rd</a>
-      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/YM4">June 10th</a>
-      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/YM5">June 24th</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymstudent1">March 18th</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymstudent2">March 25th</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymstudent3">March 31st</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymstudent4">June 8th</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymstudent5">June 22nd</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymstudent6">July 13th</a>
+    </div>
+  </div>
+</div>
+
+<div id="register-parent" class="content extra-content">
+  <h2>Register as a Parent <span class="muted">$15, including assessments and lunch</span></h2>
+  <div class="flex">
+    <div class="blurb">
+      <p>Click any date to register for that particular session.</p>
+      <p>
+        The parent session is $15 for parents of <strong>attending</strong> students.</p>
+      <p>
+        If you are a student in financial need of a sponsorship to 
+        attend this workshop, they are available on a limited basis. 
+        Please contact Dori Weldon at 
+        <a href="mailto:doriweldon@auburn.edu">doriweldon@auburn.edu</a>
+        if you would like to be considered for sponsorship.
+      </p>
+    </div>
+    <div class="buttons">
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymparents1">March 18th</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymparents2">March 25th</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymparents3">March 31st</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymparents4">June 8th</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymparents5">June 22nd</a>
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymparents6">July 13th</a>
     </div>
   </div>
 </div>
