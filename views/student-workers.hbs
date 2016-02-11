@@ -3,20 +3,26 @@ title: Student Workers | Career Center
 name: student-workers
 type: staff
 layout: no-social.hbs
+
+path-to-root: ../
+
+style:
+- contact-card
 ---
 
-<div class="content content--no-padding"><a href="aboutus/staff.html" class="flat-btn flat-btn--white">Back to Full-time Staff</a></div>
+<div class="card unpadded"><a href="aboutus/staff.html" class="flat-btn flat-btn--white">Back to Full-time Staff</a></div>
 
 {{#each student-workers.category}}
-  <div class="content extra-content">
+  <div class="card">
     <h2>{{this}}</h2>
   </div>
   <div class="staff-container">
     {{#each ../student-workers.member}}
       {{#is category ../this}}
         <section class="contact-card">
-          <div class="img-liaison-container">
-            <img src="assets/images/staff/student-workers/{{getImageName name}}.png">
+          <div class="contact-image">
+            <img src="assets/images/staff/student-workers/{{getImageName name}}.png"
+                 alt="{{ name }}">
           </div>
           <div class="contact-info">
             <h2>{{getFirstName name}}</h2>
