@@ -3,23 +3,27 @@ title: Staff | Career Center
 name: staff
 type: staff
 layout: no-social.hbs
+
+path-to-root: ../
+
+style:
+- contact-card
+- contact
 ---
 
 
-<div class="content content--no-padding"><a href="aboutus/student-workers.html" class="flat-btn flat-btn--white">Meet the Student Staff</a></div>
+<div class="card unpadded"><a href="aboutus/student-workers.html" class="flat-btn flat-btn--white">Meet the Student Staff</a></div>
 
 {{#each staff.category}}
-  <div class="content extra-content">
+  <div class="card">
     <h2>{{this}}</h2>
   </div>
   <div class="staff-container">
     {{#each ../staff.member}}
       {{#is category ../this}}
-        <section class="contact-card">
-          <div class="img-liaison-container">
-            {{#if img}}
-            <img class="{{img}}" src="assets/images/staff/{{img}}.jpg">
-            {{/if}}
+        <div class="contact-card card">
+          <div class="contact-image">
+            <img src="assets/images/staff/{{getImageName name}}.jpg" alt="{{ name }}">
             {{#if liaison}}
             <div class="overlay">
             </div>
@@ -34,14 +38,14 @@ layout: no-social.hbs
             {{/if}}
           </div>
           <div class="contact-info">
-            <h2>{{firstName}}</br>{{lastName}}</h2>
+            <h2>{{ getFirstName name }}</br>{{ getLastName name }}</h2>
             <h3>{{position}}</h3>
-            <h3><a class="email" href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>
+            <h3 class="email"><a href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>
           </div>
           {{#if portfolio}}
-          <a class="flat-btn contact-more" href="{{ portfolio }}">Learn More</a>
+          <a class="flat-btn flat-btn--bottom" href="{{ portfolio }}">Learn More</a>
           {{/if}}
-        </section>
+        </div>
       {{/is}}
     {{/each}}
   </div>
