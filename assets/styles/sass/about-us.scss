@@ -5,10 +5,49 @@ iframe {
   width: 100%;
   min-height: 60rem;
   margin-bottom: -1rem;
+  + .card {
+    margin-top: 0; 
+  }
 }
 
 .services li {
   font-family: $header-font-family;
   font-size: $nav-font-size;
   padding-bottom: $content-separation;
+}
+
+.contact {
+  padding-bottom: $content-protection;
+}
+h3 {
+  font-size: $nav-font-size;
+}
+.contact h3 {
+  display: inline;
+}
+.address a, .hours h3, .phone a {
+  font-size: $header-font-size;
+  padding-bottom: 0;
+}
+.address { order: 2; }
+.phone { order: 3; }
+.hours { order: 1; }
+
+@media (min-width: $medium-screen-width) {
+  .address a, .hours h3, .phone a {
+    font-size: $button-font-size;
+    padding-bottom: 0;
+  } 
+  h3 {
+    font-size: $button-font-size; 
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .address a, .hours h3, .phone a {
+    font-size: $nav-font-size;
+    padding-bottom: 0;
+  } 
+  h3 {
+    font-size: $nav-font-size; 
+  }
 }
