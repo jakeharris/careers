@@ -28,6 +28,10 @@
   img {
     height: 100%;
     min-width: 100%;
+    width: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .overlay,
