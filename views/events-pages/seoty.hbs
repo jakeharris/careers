@@ -1,15 +1,19 @@
 ---
-ng-app: none
+ng-app: career-center-seoty
 name: seoty
 type: event-pages
 title: Student Employment Awards | Career Center
 path-to-root: ../../
 layout: no-social.hbs
+
+component:
+- sponsors
 ---
 
 <!-- Banner image -->
 <div class="hero">
-  <img src="assets/images/events/{{name}}-banner.png" alt="Student Employee of the Year Awards. Celebrated during National Student Employee Week, April 11-15, 2016."></img>
+  <img src="assets/images/events/{{ name }}-banner.png" 
+       alt="Student Employee of the Year Awards. Celebrated during National Student Employee Week, April 11-15, 2016.">
 </div>
 
 <section class="content">
@@ -75,3 +79,15 @@ layout: no-social.hbs
     </div>
   </div>
 </section>
+
+<div class="row sponsors content extra-content">
+  <h2 class="sponsors-header">Sponsors</h2>
+  <div class="sponsors-content" ng-controller="sponsors-ctrl">
+    <div class="sponsor" ng-repeat="sponsor in sponsors">
+      <span class="vert-centerer"></span>
+      <a href="[[ sponsor.url ]]">
+        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade">
+      </a>
+    </div>
+  </div>
+</div>
