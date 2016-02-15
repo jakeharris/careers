@@ -25,6 +25,10 @@
 .address > a::before {
   content: '\f041';
 }
+.address .address-second {
+  display: block;
+  margin-left: 5.3rem;
+}
 .phone > a::before {
   content: '\f095';
   margin-right: $content-protection - .5rem;
