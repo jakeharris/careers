@@ -3,12 +3,19 @@ ng-app: career-center-events
 name: events-page
 type: events
 title: Events | Career Center
+
 layout: no-social.hbs
+
+path-to-root: ../
+
 component:
+- calendar
+
+style:
 - calendar
 ---
 
-<div class="content extra-content events">
+<div class="card calendar">
   <h2>Career Events This Month</h2>
   <ul ng-controller="month-ctrl" ng-class="{'flex-row': events.length <= 2}">
     <li class="event" ng-repeat="event in events">
@@ -26,7 +33,7 @@ component:
   </ul>
 </div>
 
-<div class="content extra-content events">
+<div class="card calendar">
   <h2>Future Events</h2>
   <ul ng-controller="calendar-ctrl" ng-class="{'flex-row': events.length <= 2}">
     <li class="event" ng-repeat="event in events">
