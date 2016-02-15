@@ -1,0 +1,53 @@
+@import 'partials/variables';
+
+h3 {
+  font-size: $header-font-size;
+}
+
+.icon-interviewer::before {
+  position: relative;
+  left: 2rem;
+  top: 1.8rem;
+}
+.icon-briefcase::before {
+  position: relative;
+  left: 2rem;
+  top: 1.8rem;
+}
+.icon-graduation-cap::before {
+  position: relative;
+  left: 1.2rem;
+  top: 2rem;
+}
+
+.buttons--no-margin {
+  margin: 0;
+  .flat-btn {
+    flex-basis: auto;
+    margin: 0; 
+  }
+}
+
+.restrictions {
+  p {
+    max-width: 60%;
+  }
+  ul {
+    width: 100%;
+  }
+  ul li {
+    padding: $content-separation 0;
+    list-style: disc;
+    font-family: $header-font-family;
+    font-size: $header-font-size;
+    color: $box-shadow-color;
+    margin: 0 auto;
+    max-width: 60%;
+  }
+}
+
+@media (min-width: $tiny-screen-width) {
+  .attributes > .attribute {
+    flex-basis: 30%; 
+  }
+}
