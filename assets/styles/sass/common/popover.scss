@@ -1,0 +1,8 @@
+@import '../partials/variables';
+
+.popover {
+  position: absolute;
+  z-index: 2;
+  padding: $content-protection;
+  background: white;
+}
