@@ -1,0 +1,38 @@
+<div class="card unpadded"><a href="{{#is name 'employer-staff'}}employers/{{/is}}aboutus/student-workers.html" class="flat-btn flat-btn--white">Meet the Student Staff</a></div>
+
+{{#each staff.category}}
+  <div class="card">
+    <h2>{{this}}</h2>
+  </div>
+  <div class="staff-container">
+    {{#each ../staff.member}}
+      {{#is category ../this}}
+        <div class="contact-card card">
+          <div class="contact-image">
+            <img src="assets/images/staff/{{getImageName name}}.jpg" alt="{{ name }}">
+            {{#if liaison}}
+            <div class="overlay">
+            </div>
+            <div class="overlay-text">
+              <h2>Liaison to</h2>
+              <ul>
+                {{#each liaison}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            {{/if}}
+          </div>
+          <div class="contact-info">
+            <h2>{{ getFirstName name }}</br>{{ getLastName name }}</h2>
+            <h3>{{position}}</h3>
+            <h3 class="email"><a href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>
+          </div>
+          {{#if portfolio}}
+          <a class="flat-btn flat-btn--bottom" href="{{ portfolio }}">Learn More</a>
+          {{/if}}
+        </div>
+      {{/is}}
+    {{/each}}
+  </div>
+{{/each}}

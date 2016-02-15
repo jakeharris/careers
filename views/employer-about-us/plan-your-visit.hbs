@@ -1,86 +1,16 @@
 ---
-path-to-root: ../../
 ng-app: career-center-plan-your-visit
 title: Plan Your Visit | Career Center
 name: employer-plan-your-visit
 type: employer-plan-your-visit
+
 layout: employers.hbs
+
 path-to-root: ../../
+
+style:
+- location-card
+- contact
 ---
 
-<div class="content content-nav">
-  <div class="options flex">
-    <div class="option"><a href="employers/aboutus/plan-your-visit.html#Directions"><h3>Directions</h3></a></div>
-    <div class="option"><a href="employers/aboutus/plan-your-visit.html#Parking"><h3>Parking</h3></a></div>
-    <div class="option"><a href="employers/aboutus/plan-your-visit.html#Lodging"><h3>Lodging</h3></a></div>
-  </div>
-</div>
-
-<div class="content content-type" id="Directions">
-  <h1>Directions</h1>
-</div>
-
-<div class="hero map">
-  <iframe src="http://auburn.edu/map?id=76"></iframe>
-</div>
-<section class="content directions-content">
-  <a href="assets/images/directions-to-auburn.pdf" class="flat-btn">Directions to Auburn</a>
-</section>
-
-<div class="content content-type" id="Parking">
-  <h1>Parking</h1>
-</div>
-
-<section class="content parking-content">
-  <div class="parking-instructions">
-    <p>
-      As on most college campuses, parking is very limited. 
-      A Guest Parking Pass will be e-mailed to you upon request. 
-    </p>
-    <p>
-      Please contact Mr. Jay Skipworth at 
-      <a href="mailto:skipworth@auburn.edu">skipworth@auburn.edu</a>
-      prior to the day of your visit to have a Guest Parking Pass 
-      e-mailed to you. 
-    </p>
-  </div>
-  <div class="flat-btns">
-    <a href="mailto:skipworth@auburn.edu" class="flat-btn">Request a Parking Pass</a>
-  </div>
-</section>
-
-<div class="content content-type" id="Lodging">
-  <h1>Lodging</h1>
-</div>
-
-<div class="hero first-lodging">
-  <img class="auhcc" src="assets/images/lodging/auhcc-banner.jpg">
-  <div class="hero-content">
-    <div class="overlay"></div>
-    <h2>The Hotel at Auburn University</h2>
-  </div>
-</div>
-<section class="content location-content">
-  <div class="location-contact">
-    <div class="address">
-      <a href="https://cws.auburn.edu/map?id=75">
-        241 South College Street <br />
-        Auburn, AL 36849
-      </a>
-    </div>
-    <div class="phone">
-      <a href="tel:3348218200">(334) 821-8200</a>
-    </div>
-  </div>
-  <div class="location-info">
-    <p>
-      The Hotel at Auburn University and Dixon Conference Center 
-      is located one block from the Auburn University Career Center. 
-      If you are staying at the Hotel during your visit you can leave 
-      your car in the Hotel parking lot and walk to campus.
-    </p>
-    <a href="http://www.auhcc.com/accommodations/auburn-accommodations/" class="flat-btn">Visit Site</a>
-  </div>
-</section>
-<a href="http://www.aotourism.com/Accommodations/" class="flat-btn">More Lodging</a>
-
+{{> plan-your-visit}}
