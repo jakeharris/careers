@@ -15,6 +15,9 @@
   padding-bottom: $content-division;
   border-bottom: 1px solid $box-shadow-color;
 }
+.blurb:last-of-type {
+  border-bottom: none;
+}
 .schedule {
   padding: $content-division 0;
   border-bottom: 1px solid $box-shadow-color;
