@@ -11,10 +11,19 @@
 
   & > .attribute {
 
+    display: inline-block;
     flex-basis: 100%;
     width: 100%;
     min-width: 200px;
     margin-bottom: 3rem;
+    
+    // pdf overwrite
+    a[href$='.pdf']::after {
+      content: none;
+    }
+    a[href$='.pdf'] + .details::after {
+      content: ' (pdf)';
+    }
 
     & > a.icon:hover {
       background: $thisislightblue;
@@ -51,5 +60,16 @@
 @media (min-width: $small-screen-width) {
   .attributes {
     display: flex; 
+    .attribute {
+      flex-basis: 33%;
+      width: 33%;
+      & > .details {
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+      }
+      &:last-of-type > .details {
+         padding-bottom: 0;
+      }
+    }
   }
 }

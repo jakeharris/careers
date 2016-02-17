@@ -1,0 +1,36 @@
+@import '../partials/variables';
+
+.event-banner-card {
+  box-shadow: $box-shadow;
+  margin-top: $content-division;
+  
+  > img {
+    margin: 0;
+  }
+  .card {
+    margin-top: -1rem;
+  }
+}
+.blurb {
+  padding-bottom: $content-division;
+  border-bottom: 1px solid $box-shadow-color;
+}
+.attributes {
+  padding-top: $content-division;
+}
+.icon i::before {
+  position: relative;
+  top: 2rem;
+  left: 2rem;
+}
+.icon i.icon-comments-o::before {
+  top: 1.8rem;
+}
+.icon i.icon-tie::before {
+  left: 1.9rem;
+}
+.icon i.icon-graduation-cap::before {
+  top: 2.2rem;
+  left: 1.2rem;
+}
+
