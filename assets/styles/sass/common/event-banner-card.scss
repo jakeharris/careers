@@ -5,6 +5,7 @@
   margin-top: $content-division;
   
   > img {
+    display: none;
     margin: 0;
   }
   .card {
@@ -47,3 +48,18 @@
   left: 1.2rem;
 }
 
+.img-replace {
+  display: block;
+  h2 {
+    color: $thisislightorange;
+  }
+}
+
+@media (min-width: $tiny-screen-width) {
+  .event-banner-card > img {
+    display: block;
+  }
+  .img-replace {
+    display: none;
+  }
+}
