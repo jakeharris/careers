@@ -1,55 +1,62 @@
 ---
-path-to-root: ../../
 ng-app: career-center-employer-events
-name: emp-aucf
+name: emp-<%= eventName %>
 type: employer-event-pages
+eventName: aucf
 title: Auburn University Career Fair
+
 layout: employers.hbs
+
+path-to-root: ../../
+
 component: 
 - price
+
+style:
+- event-banner-card
+- contact
 ---
 <!-- Banner image -->
-<div class="hero">
-  <img class="img"
-       src="assets/images/events/aucf-banner.png"
-       alt="Auburn University Career Fair. Wednesday, February 17, 2016, 3pm-7pm, at the Auburn Arena."></img>
+<div class="event-banner-card">
+  <img src="assets/images/events/{{ eventName }}-banner.png"
+       alt="Auburn University Career Fair. Wednesday, February 17, 2016, 3pm-7pm, at the Auburn Arena.">
   <div class="img-replace">
     <h1>Auburn University Career Fair.</h1>
     <h2>Wednesday, February 17, 2016, 3pm-7pm, at the Auburn Arena.</h2>
   </div>
-</div>
-
-<div class="content" ng-controller="price-ctrl">
-  <div class="row">
-    <div class="brief">
-      <p class="blurb">Explore Auburn's diverse student body and network with students from all disciplines.</p>
-      <div class="contact">
-        <h3>Point of Contact</h3>
-        <div class="contact-details">
-          <img src="assets/images/staff/melvin.jpg">
-          <div class="contact-info">
-            <p class="name">Melvin K. Smith</p>
-            <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
-            <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+  <div class="card" ng-controller="price-ctrl">
+    <div class="blurb flex">
+      <div class="flex-half">
+        <p>Explore Auburn's diverse student body and network with students from all disciplines.</p>
+        <div class="contact">
+          <h3>Point of Contact</h3>
+          <div class="contact-details">
+            <img src="assets/images/staff/melvin.jpg" alt="A picture of Melvin K. Smith.">
+            <div class="contact-info">
+              <p class="name">Melvin K. Smith</p>
+              <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
+              <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="actions">
-      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/aucfsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
-      <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/aucfsp16">
-          Register ($[[ price.now ]])
-        </a>
-        <a class="flat-btn--info"
-           data-html="true" 
-           data-trigger="hover" 
-           data-placement="top" 
-           data-toggle="popover" 
-           data-title="<h2>Early Bird Pricing</h2>" 
-           data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
-          ?</a>
+      <div class="actions flex-half">
+        <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{ eventName }}sp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+        <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
+          <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{ eventName }}sp16">
+            Register ($[[ price.now ]])
+          </a>
+          <a class="flat-btn--info"
+             data-html="true" 
+             data-trigger="hover" 
+             data-placement="top" 
+             data-toggle="popover" 
+             data-title="<h2>Early Bird Pricing</h2>" 
+             data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
+            ?</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
