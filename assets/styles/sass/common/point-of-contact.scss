@@ -1,0 +1,12 @@
+@import '../partials/variables';
+
+.point-of-contact {
+  h3 {
+    font-size: $header-font-size;
+    padding: $content-division*1.5 0;
+    padding-bottom: $content-protection;
+  }
+  img {
+    box-shadow: $box-shadow;
+  }
+}
