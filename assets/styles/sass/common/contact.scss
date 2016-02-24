@@ -1,6 +1,6 @@
 @import '../partials/variables';
 
-.hours, .address, .phone, .email {
+.hours, .address, .phone, .email, .name {
   font-family: $header-font-family;
   font-size: $header-font-size;
   > a::before {
@@ -9,6 +9,9 @@
     width: $header-font-size;
     margin-right: $content-protection;
   }
+}
+.name {
+  color: $box-shadow-color;
 }
 .hours > *:first-child::before {
   content: '\f017';
@@ -38,7 +41,7 @@
 }
 
 @media (min-width: $small-screen-width) {
-  .hours, .address, .phone, .email {
+  .hours, .address, .phone, .email, .name {
     font-size: $button-font-size;
     > a::before {
       font-size: $button-font-size;
@@ -52,7 +55,7 @@
 }
 
 @media (min-width: $moderate-screen-width) {
-  .hours, .address, .phone, .email {
+  .hours, .address, .phone, .email, .name {
     font-size: $header-font-size;
     > a::before {
       font-size: $header-font-size;
