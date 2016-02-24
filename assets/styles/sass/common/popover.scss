@@ -34,6 +34,11 @@
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
   border-radius: 5px 5px 0 0;
+  
+  padding: $content-separation $content-protection;
+  h2, p {
+    padding: 0;
+  }
 }
 .popover-content {
   padding: $content-protection;
