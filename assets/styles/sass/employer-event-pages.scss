@@ -1,1 +1,231 @@
 @import 'partials/variables';
+
+.tipsheet {
+  padding: 0;
+  margin-top: 1rem;
+  border: 1px solid $box-shadow-color;
+  box-shadow: $box-shadow;
+  color: #999;
+  .tipsheet-wrapper {
+    padding: 5rem;
+    padding-bottom: 3rem;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+    li {
+      color: $charcoal;
+      
+      width: 45%;
+      flex-basis: 45%;
+    }
+  }
+  .flat-btn {
+    margin-bottom: 0; 
+  }
+}
+
+a.icon:hover {
+  cursor: pointer;
+  position: relative;
+}
+.attributes > .attribute .popover {
+  min-width: 300px;
+  width: 300px;
+}
+.flat-btn--info .popover {
+  min-width: 200px;
+}
+@media (min-width: $medium-screen-width) {
+  .attributes > .attribute .popover {
+    min-width: 400px;
+    width: 400px;
+  }
+  .flat-btn--info .popover {
+    min-width: 250px; 
+  }
+}
+
+.accordion-header {
+  font-family: $header-font-family;
+  font-size: $header-font-size;
+  color: $thisisdarkblue;
+  &::after {
+    content: '\f078';
+  }
+}
+.accordion > a:not(.collapsed) {
+  background: white;
+}
+.accordion .panel-collapse {
+  background: white;
+}
+
+.cancellation-policy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5rem;
+}
+.cancellation-policy-brief {
+  width: 100%;
+  flex-basis: 100%;
+  p {
+    font-family: $header-font-family;
+    font-size: 3rem;
+  }
+  ul {
+    font-size: 2rem;
+    li {
+      padding-bottom: 2rem; 
+    }
+  }
+}
+.contacts {
+  width: 100%;
+  flex-basis: 100%;
+  align-items: flex-start;
+  .point-of-contact {
+    h3 {
+      padding-top: 1rem;
+    }
+    padding-bottom: $content-protection;
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .cancellation-policy {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .cancellation-policy-brief {
+    flex-basis: 40%;
+    width: 40%;
+    padding-right: 3rem;
+  }
+  .contacts {
+    flex-basis: 55%;
+    width: 55%;
+    align-items: flex-start;
+    .contact img {
+      margin: 0;
+    }
+    .contact .contact-info {
+      margin: auto 0;
+      padding-left: 3rem; 
+    }
+  }
+}
+
+.parking-information {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  & > a {
+    display: block;
+    width: 100%;
+    flex-basis: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .hotel-parking {
+    padding-right: 1rem;
+    width: 100%;
+    flex-basis: 100%;
+    counter-reset: instruction;
+    .parking-instruction {
+      padding: 3rem; 
+    }
+    .parking-instruction h2:before {
+      content: counter(instruction) '. ';
+      counter-increment: instruction;
+    }
+    .parking-instruction p {
+      padding-right: 5rem;
+      line-spacing: 1.618;
+    }
+  }
+}
+@media (min-width: $small-screen-width) {
+  .parking-information {
+    flex-wrap: nowrap;
+    padding-top: $content-division;
+    a {
+      flex-basis: 33%;
+      width: 33%;
+    }
+    .hotel-parking {
+      flex-basis: 63%;
+      width: 63%;
+      .parking-instruction {
+        padding: 0;
+        padding-bottom: 3rem;
+      }
+    }
+  }
+}
+
+.accommodations {
+  margin-top: 5rem;
+}
+
+.flat-btn--with-info {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-basis: 100%;
+  box-shadow: $box-shadow;
+  height: 70px;
+  margin-bottom: $content-separation;
+  .flat-btn {
+    flex-basis: 80%;
+    width: 80%;
+    max-width: 80%;
+    height: 100%;
+    margin: 0;
+    box-shadow: none;
+    padding: 2rem;
+  }
+  .flat-btn--info {
+    flex-basis: 20%;
+    font-family: $header-font-family;
+    font-size: 3rem;
+    background-color: white;
+    color: $thisislightblue;
+    text-align: center;
+    padding: 1.2rem;
+    height: 100%;
+    width: 100%;
+    min-width: 20%;
+    max-width: 20%;
+    cursor: pointer;
+  }
+}
+
+
+.icon {
+  .icon-comment-o:before {
+    position: relative;
+    top: 3px;
+  }
+  .icon-automobile:before {
+    position: relative;
+    top: 1.7rem;
+    left: 1.5rem;
+  }
+  .icon-circuit-board:before {
+    position: relative;
+    top: 0.7rem;
+  }
+  .icon-coin-dollar:before {
+    position: relative;
+    top: 0.4rem;
+    left: 0.2rem;
+  }
+}
