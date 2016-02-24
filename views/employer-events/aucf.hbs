@@ -15,6 +15,7 @@ component:
 style:
 - event-banner-card
 - contact
+- point-of-contact
 ---
 <!-- Banner image -->
 <div class="event-banner-card">
@@ -28,22 +29,19 @@ style:
     <div class="blurb flex">
       <div class="flex-half">
         <p>Explore Auburn's diverse student body and network with students from all disciplines.</p>
-        <div class="contact">
-          <h3>Point of Contact</h3>
-          <div class="contact-details">
-            <img src="assets/images/staff/melvin.jpg" alt="A picture of Melvin K. Smith.">
-            <div class="contact-info">
-              <p class="name">Melvin K. Smith</p>
-              <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
-              <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="actions flex-half">
-        <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{ eventName }}sp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
-        <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
-          <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{ eventName }}sp16">
+        <a ng-if="price.now === price.standard" 
+           class="flat-btn" 
+           href="https://auburn-csm.symplicity.com/events/{{ eventName }}sp16">
+          Register 
+          <span ng-if="price.now === '0'">for Free</span>
+          <span ng-if="price.now !== '0'">($[[ price.now ]])</span>
+        </a>
+        <div ng-if="price.now === price.earlyBird" 
+             class="flat-btn--with-info">
+          <a class="flat-btn" 
+             href="https://auburn-csm.symplicity.com/events/{{ eventName }}sp16">
             Register ($[[ price.now ]])
           </a>
           <a class="flat-btn--info"
@@ -54,6 +52,19 @@ style:
              data-title="<h2>Early Bird Pricing</h2>" 
              data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
             ?</a>
+        </div>
+      </div>
+    </div>
+    <div class="point-of-contact">
+      <h3>Point of Contact</h3>
+      <div class="flex">
+        <img class="flex-third"
+             src="assets/images/staff/melvin.jpg" 
+             alt="A picture of Melvin K. Smith.">
+        <div class="poc-info contact flex-two-thirds">
+          <p class="name">Melvin K. Smith</p>
+          <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
+          <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
         </div>
       </div>
     </div>
