@@ -27,79 +27,79 @@ style:
     <h1>Graduate & Professional School Fair.</h1>
     <h2>The date of this event is still unknown.</h2>
   </div>
-</div>
 
-<div class="card" ng-controller="price-ctrl">
-  <div class="blurb flex">
-    <div class="flex-half">
-      <p>Speak with students interested in furthering their education at your institution.</p>
-      <div class="point-of-contact">
-        <h3>Point of Contact</h3>
-        <div class="flex">
-          <img class="flex-third"
-               src="assets/images/staff/melvin.jpg"
-               alt="Melvin K. Smith.">
-          <div class="poc-info contact flex-two-thirds">
-            <p class="name">Melvin K. Smith</p>
-            <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
-            <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+  <div class="card" ng-controller="price-ctrl">
+    <div class="blurb flex">
+      <div class="flex-half">
+        <p>Speak with students interested in furthering their education at your institution.</p>
+        <div class="point-of-contact">
+          <h3>Point of Contact</h3>
+          <div class="flex">
+            <img class="flex-third"
+                 src="assets/images/staff/melvin.jpg"
+                 alt="Melvin K. Smith.">
+            <div class="poc-info contact flex-two-thirds">
+              <p class="name">Melvin K. Smith</p>
+              <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
+              <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="actions flex-half">
-      <a ng-if="price.now === price.standard" class="flat-btn" href="http://alabamaconnection.org">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
-      <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
-        <a class="flat-btn" href="http://alabamaconnection.org">
-          Register ($[[ price.now ]])
-        </a>
-        <a class="flat-btn--info"
-           data-html="true" 
-           data-trigger="hover" 
-           data-placement="top" 
-           data-toggle="popover" 
-           data-title="<h2>Early Bird Pricing</h2>" 
-           data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
-          ?</a>
-      </div>
-      <div class="tipsheet">
-        <div class="tipsheet-wrapper">
-          <p>Download the tipsheet for detailed information about:</p>
-          <ul>
-            <li>Payment</li>
-            <li>Shipping</li>
-            <li>Space &amp; Equipment</li>
-            <li>Display Guidelines</li>
-          </ul>
+      <div class="actions flex-half">
+        <a ng-if="price.now === price.standard" class="flat-btn" href="http://alabamaconnection.org">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+        <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
+          <a class="flat-btn" href="http://alabamaconnection.org">
+            Register ($[[ price.now ]])
+          </a>
+          <a class="flat-btn--info"
+             data-html="true" 
+             data-trigger="hover" 
+             data-placement="top" 
+             data-toggle="popover" 
+             data-title="<h2>Early Bird Pricing</h2>" 
+             data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
+            ?</a>
         </div>
-        <a class="flat-btn" href="assets/images/events/{{eventName}}.pdf">Download Tip Sheet</a>
-      </div>
-      <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=fe70cd4cb4d0b5f21c4591e7d76d32c7#/events/dd4b0f5ae7e282997e50fde9c271eeca/employers">View Attending Employers</a>
-    </div>
-  </div>
-  
-  <!-- Icons -->
-  <div class="attributes">
-    <div class="attribute">
-      <a class="icon format" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-title="<h2>Circuit <span class='muted'>Oct 5-7</span></h2>" data-content="<p>Registering for this event grants you freedom to go to any number of the circuit's events this year. There are five in total.</p>">
-        <i class="icon-circuit-board"></i>
-      </a>
-      <div class="details">Circuit Event</div>
-    </div>
-    <div class="attribute">
-      <a class="icon parking" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" title="<h2>Priority Parking <p class='muted'>Stadium Parking Deck</p></h2>" data-content="<p>The last page of this event's tip sheet is a parking permit for the Stadium Parking Deck, only valid for the day of the event. Parking there is free and convenient, but limited, so plan to arrive early enough to snag a spot.</p>">
-        <i class="icon-automobile"></i>
-      </a>
-      <div class="details">
-        Limited Priority Parking
+        <div class="tipsheet">
+          <div class="tipsheet-wrapper">
+            <p>Download the tipsheet for detailed information about:</p>
+            <ul>
+              <li>Payment</li>
+              <li>Shipping</li>
+              <li>Space &amp; Equipment</li>
+              <li>Display Guidelines</li>
+            </ul>
+          </div>
+          <a class="flat-btn" href="assets/images/events/{{eventName}}.pdf">Download Tip Sheet</a>
+        </div>
+        <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=fe70cd4cb4d0b5f21c4591e7d76d32c7#/events/dd4b0f5ae7e282997e50fde9c271eeca/employers">View Attending Employers</a>
       </div>
     </div>
-    <div class="attribute">
-      <a class="icon population">
-        <i class="icon-spoon-knife"></i>
-        <span class="tooltip hover"></span>
-      </a>
-      <div class="details">Lunch Provided</div>
+
+    <!-- Icons -->
+    <div class="attributes">
+      <div class="attribute">
+        <a class="icon format" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-title="<h2>Circuit <span class='muted'>Oct 5-7</span></h2>" data-content="<p>Registering for this event grants you freedom to go to any number of the circuit's events this year. There are five in total.</p>">
+          <i class="icon-circuit-board"></i>
+        </a>
+        <div class="details">Circuit Event</div>
+      </div>
+      <div class="attribute">
+        <a class="icon parking" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" title="<h2>Priority Parking <p class='muted'>Stadium Parking Deck</p></h2>" data-content="<p>The last page of this event's tip sheet is a parking permit for the Stadium Parking Deck, only valid for the day of the event. Parking there is free and convenient, but limited, so plan to arrive early enough to snag a spot.</p>">
+          <i class="icon-automobile"></i>
+        </a>
+        <div class="details">
+          Limited Priority Parking
+        </div>
+      </div>
+      <div class="attribute">
+        <a class="icon population">
+          <i class="icon-spoon-knife"></i>
+          <span class="tooltip hover"></span>
+        </a>
+        <div class="details">Lunch Provided</div>
+      </div>
     </div>
   </div>
 </div>
@@ -121,24 +121,26 @@ style:
           </ul>
         </div>
         <div class="contacts">
-          <div class="contact">
+          <div class="point-of-contact">
             <h3>To cancel, contact</h3>
-            <div class="contact-details">
-              <img src="assets/images/staff/diane.jpg"
+            <div class="flex">
+              <img class="flex-third"
+                   src="assets/images/staff/diane.jpg"
                    alt="Diane Thorne.">
-              <div class="contact-info">
+              <div class="poc-info contact flex-two-thirds">
                 <p class="name">Diane Thorne</p>
                 <p class="phone"><a href="tel:(334) 844-3862">(334) 844-3862</a></p>
                 <p class="email"><a href="mailto:thornde@auburn.edu">thornde@auburn.edu</a></p>
               </div>
             </div>
           </div>
-          <div class="contact">
+          <div class="point-of-contact">
             <h3>Direct all other inquiries to</h3>
-            <div class="contact-details">
-              <img src="assets/images/staff/melvin.jpg"
+            <div class="flex">
+              <img class="flex-third"
+                   src="assets/images/staff/melvin.jpg"
                    alt="Melvin K. Smith.">
-              <div class="contact-info">
+              <div class="poc-info contact flex-two-thirds">
                 <p class="name">Melvin K. Smith</p>
                 <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
                 <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
