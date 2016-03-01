@@ -32,8 +32,13 @@ style:
       </div>
       {{#if listings}}
         <section class="region-content accordion">
-          <a class="collapsed accordion-header flat-btn flat-btn--white" data-toggle="collapse" id="{{ name }}-heading" href="#{{ name }}" role="tab" aria-expanded="false" aria-controls="{{ name }}">
-            <i></i>
+          <a class="collapsed accordion-header flat-btn flat-btn--white" 
+             data-toggle="collapse" 
+             id="{{ name }}-heading" 
+             href="#{{ name }}" 
+             role="button" 
+             aria-expanded="false" 
+             aria-controls="{{ name }}">
           </a>
           <div style="height: 0px;" aria-expanded="false" id="{{ name }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ name }}-heading">
             {{#each listings}}
