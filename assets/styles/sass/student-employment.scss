@@ -1,0 +1,66 @@
+@import 'partials/variables';
+
+h3 {
+  font-size: $header-font-size;
+}
+.card.banner p {
+  font-family: $body-font-family;
+}
+.login {
+  align-self: flex-start;
+}
+.quick-guide .card {
+  margin: 0;
+}
+ol li {
+  list-style: decimal;
+}
+.faq {
+  counter-reset: faq;
+}
+// accordion overrides
+.accordion {
+  overflow: hidden;
+  margin-bottom: $content-separation;
+  box-shadow: $box-shadow;
+}
+.accordion-header {
+  
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  text-align: left;
+  border: 1px solid $box-shadow-color;
+  z-index: 2;
+  position: relative;
+  &::before {
+    font-family: $header-font-family;
+    content: counter(faq);
+    counter-increment: faq;
+    padding: 0 $content-protection;
+  }
+  &::after {
+    position: absolute;
+    right: 3rem;
+  }
+}
+.accordion > a:not(.collapsed),
+.accordion > a.collapsed {
+  background: white;
+  color: $thisisdarkblue;
+}
+.accordion > a:hover {
+  color: white;
+  background: $thisisdarkblue;
+}
+.accordion-entry,
+.accordion-entry:hover {
+  color: black;
+  background: white;
+  border: 1px solid $box-shadow-color;
+  border-top: none;
+  box-shadow: $box-shadow;
+  margin-top: -1rem;
+  padding: 0 7rem;
+  padding-top: $content-separation;
+  z-index: 1;
+}

@@ -3,13 +3,19 @@ path-to-root: ../../
 ng-app: career-center-hire
 name: off-campus
 type: student-employment
+
 layout: employers.hbs
 title: Off-Campus Employment | Career Center
-analytics-token: UA-12338791-4
-path-to-root: ../../
+
+style:
+- attributes
+- login
+- point-of-contact
+- contact
+- accordion
 ---
 
-<section class="content">
+<section class="card banner">
   <h2>Off-Campus Employment</h2>
   <p>
     Welcome! Thank you for your interest in recruiting Auburn students and alumni. 
@@ -20,7 +26,7 @@ path-to-root: ../../
 </section>
 
 <section class="flex">
-  <div class="content extra-content recruiting-link">
+  <div class="card flex-two-thirds login">
     <h3 class="trl"></h3>
     <p>
       Your source for student recruitment.
@@ -57,11 +63,13 @@ path-to-root: ../../
     </div>
   </div>
   
-  <div class="content extra-content contact welcome">
+  <div class="card flex-third">
     <h3>Point of Contact</h3>
-    <div class="contact-details">
-      <img src="assets/images/staff/lauren.jpg">
-      <div class="contact-info">
+    <div class="flex flex--wrap">
+      <img class="flex-half"
+           src="assets/images/staff/lauren.jpg"
+           alt="Lauren Hobbs.">
+      <div class="poc-info contact flex-item">
         <p class="name">Lauren Hobbs</p>
         <p class="phone"><a href="tel:(334) 844-3867">(334) 844-3867</a></p>
         <p class="email"><a href="mailto:hobbs@auburn.edu">hobbs<span class="at-auburn">@auburn.edu</span></a></p>
@@ -72,7 +80,7 @@ path-to-root: ../../
 
 <section class="quick-guide"> 
   <div class="flex">
-    <div class="flex-third content report-placement">
+    <div class="card flex-third report-placement">
       <h3>Report Placement</h3>
       <p>
         The Student Employment office is supported by the Job 
@@ -106,8 +114,8 @@ path-to-root: ../../
   </div>
 </section>
 
-<section class="content extra-content content--no-padding content--tips">
-  <h3 class="how-to-header">Tips and Advice</h3>
+<section class="card unpadded">
+  <h3>Tips and Advice</h3>
   <div class="flex buttons buttons--no-padding">
     <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/12" class="flat-btn                 flex-quarter">Posting a Job</a>
     <a href="http://issuu.com/aucc/docs/studentemploymentpolicies/14" class="flat-btn flat-btn--white flex-quarter">Reviewing Applications</a>
@@ -116,21 +124,27 @@ path-to-root: ../../
   </div>
 </section>
 
-<section class="content extra-content">
-  <h3 class="faq-header"></h3>
-  
-  <div class="panel-group faq" id="faq" role="tablist" aria-multiselectable="true">
+<section class="card">
+  <h3>Frequently Asked Questions</h3>
+  <div class="faq" id="faq">
     {{#each off-campus-faq.question }}
-    <div class="panel panel-default">
-      <div class="panel-heading accordion-header" role="tab" id="{{ id }}-heading">
-        <h4 class="panel-title faq-question">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ id }}" aria-expanded="false" aria-controls="{{ id }}">
-            {{ question }}
-          </a>
-        </h4>
-      </div>
-      <div id="{{ id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ id }}-heading">
-        <div class="panel-body faq-answer">
+    <div class="accordion">
+      <a class="accordion-header flat-btn flat-btn--white faq-header collapsed"
+         role="tab" 
+         data-toggle="collapse" 
+         data-parent="#accordion"
+         id="{{ id }}-heading"
+         href="#{{ id }}" 
+         aria-expanded="false" 
+         aria-controls="{{ id }}">
+        {{ question }}
+      </a>
+      <div style="height: 0px;"
+           role="tabpanel"
+           aria-expanded="false"
+           id="{{ id }}" 
+           aria-labelledby="{{ id }}-heading">
+        <div class="accordion-entry">
           {{#each answer}}
             <p>{{ this }}</p>
           {{/each}}
