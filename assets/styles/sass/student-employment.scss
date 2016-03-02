@@ -6,15 +6,40 @@ h3 {
 .card.banner p {
   font-family: $body-font-family;
 }
+.login, .point-of-contact {
+  height: 100%;
+}
 .login {
   align-self: flex-start;
 }
 .quick-guide .card {
   margin: 0;
 }
+.advice h3 {
+  text-align: center;
+}
 ol li {
   list-style: decimal;
 }
+// point-of-contact overrides
+.point-of-contact {
+  h3 {
+    padding-top: 0;
+  }
+  img {
+    display: block;
+    width: 50%;
+    flex-basis: 50%;
+    margin: 0 auto;
+    margin-bottom: $content-protection;
+  }
+  .phone, .email,
+  .phone a::before, .email a::before {
+    font-size: $button-font-size;
+  }
+}
+
+
 .faq {
   counter-reset: faq;
 }
@@ -25,7 +50,6 @@ ol li {
   box-shadow: $box-shadow;
 }
 .accordion-header {
-  
   font-family: $body-font-family;
   font-size: $body-font-size;
   text-align: left;
