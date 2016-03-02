@@ -44,9 +44,15 @@
       
       font-family: $icon-font-family;
 
+      padding-left: 2rem;
+      padding-top: 2rem;
+      
       &.calendar {
         padding-left: 2.2rem;
-        padding-top: 2rem;
+      }
+      &.post {
+        padding-left: 2.1rem;
+        padding-top: 1.9rem;
       }
     }
     & > .details {
