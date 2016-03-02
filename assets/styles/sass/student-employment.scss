@@ -15,11 +15,120 @@ h3 {
 .quick-guide .card {
   margin: 0;
 }
-.advice h3 {
+.advice h3, .content--guide .padded {
   text-align: center;
 }
 ol li {
   list-style: decimal;
+}
+
+// how-to-hire guide (on-campus only)
+.content--guide {
+  overflow: visible;
+}
+.guide {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  padding-top: 3rem;
+  
+  counter-reset: step;
+}
+.guide-step {
+  flex-basis: 100%;
+  width: 100%;
+  min-width: 200px;
+  
+  padding: 5rem;
+  
+  position: relative;
+  counter-increment: step;
+  
+  & > .icon {
+    &::after {
+      font-family: $header-font-family;
+      content: counter(step);
+      position: relative;
+      top: 1.8rem;
+      left: 3.4rem;
+      color: white;
+      &:hover {
+        color: white; 
+      }
+    }
+  }
+  &:first-of-type > .icon::after {
+    left: 3.8rem;
+  }
+  &:nth-of-type(4) > .icon::after {
+    left: 3.1rem; 
+  }
+  
+  & > .details {
+    padding-top: 3rem;
+    text-align: center;
+    font-family: $header-font-family;
+    font-size: 2rem;
+  }
+  
+  &::after {    
+    @include arrow(down, 30px, white);
+  }
+
+  &:nth-of-type(2n) {
+    background-color: $bg-gray;
+    &::after {
+      @include arrow(down, 30px, $bg-gray); 
+    }
+  }
+  &:last-of-type::after {
+    content: none;
+    border: none;
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .guide-step {
+    $steps: 6;
+    
+    flex-basis: 33.33333%;
+    width: 33.33333%;
+    
+    &::after {
+      @include arrow(right, 30px, white); 
+    }
+    &:nth-of-type(2n) {
+      background-color: $bg-gray;
+      color: inherit;
+      &::after {
+        @include arrow(right, 30px, $bg-gray); 
+      }
+    }
+    &:nth-of-type(#{$steps / 2})::after {
+      @include arrow(down, 30px, white);
+    }
+    &:nth-of-type(#{$steps})::after {
+      @include arrow(left, 30px, $bg-gray); 
+    }
+    @for $step from ($steps / 2) + 1 through $steps {
+      &:nth-of-type(#{$step})::after {
+        $color: white;
+        @if $step % 2 == 0 {
+          $color: $bg-gray; 
+        }
+        @include arrow(left, 30px, $color);
+      }
+    }
+    $counter: ($steps / 2 + 1);
+    @for $step from $steps through ($steps / 2 + 1) {
+      &:nth-of-type(#{$step}) {
+        order: $counter;
+      }
+      $counter: $counter + 1;
+    }
+  }
 }
 // point-of-contact overrides
 .point-of-contact {
