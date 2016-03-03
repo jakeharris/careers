@@ -40,6 +40,10 @@ ol li {
 .guide-step {
   flex-basis: 100%;
   width: 100%;
+  &.attribute {
+    flex-basis: 100%;
+    width: 100%;
+  }
   min-width: 200px;
   
   padding: 5rem;
@@ -51,9 +55,7 @@ ol li {
     &::after {
       font-family: $header-font-family;
       content: counter(step);
-      position: relative;
-      top: 1.8rem;
-      left: 3.4rem;
+      padding-left: 1.5rem;
       color: white;
       &:hover {
         color: white; 
@@ -61,10 +63,10 @@ ol li {
     }
   }
   &:first-of-type > .icon::after {
-    left: 3.8rem;
+    padding-left: 1.8rem;
   }
   &:nth-of-type(4) > .icon::after {
-    left: 3.1rem; 
+    padding-left: 1rem; 
   }
   
   & > .details {
@@ -95,6 +97,10 @@ ol li {
     
     flex-basis: 33.33333%;
     width: 33.33333%;
+    &.attribute {
+      flex-basis: 33.33333%;
+      width: 33.33333%;
+    }
     
     &::after {
       @include arrow(right, 30px, white); 
@@ -130,6 +136,10 @@ ol li {
     }
   }
 }
+.popover h4 {
+  padding-top: $content-separation;
+}
+
 // point-of-contact overrides
 .point-of-contact {
   h3 {
