@@ -159,6 +159,19 @@ nav.main {
 .hire-header nav.main ul li ul {
   width: 400%;
 }
+
+// if we've scrolled down, we want the main nav
+// to follow us.
+nav.main.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100000;
+}
+nav.main.shadowed {
+  box-shadow: $box-shadow;
+}
+// we should also fix the positioning of the post-header
 // if we've clicked the nav-controller button,
 // we should be at a mobile-ready resolution.
 // these are the styles that should be applied
@@ -206,6 +219,7 @@ nav.main--mobile {
 ** (contains navigation elements present on all Auburn pages) **
 ** ********************************************************** **/
 nav.auburn { 
+  background: $thisisdarkblue;
   ul {
     display: flex;
     justify-content: flex-end;
@@ -226,4 +240,9 @@ nav.auburn {
     vertical-align: middle;
     line-height: $line-height;
   }
+}
+nav.auburn.absolute {
+  position: relative;
+  top: 52px;
+  margin-bottom: 80px;
 }

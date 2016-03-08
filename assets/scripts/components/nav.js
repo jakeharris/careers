@@ -40,36 +40,41 @@ $(function() {
 // Positioning the nav 
 $(function () {
   var preheader, nav, postheader
+  preheader = $('header > .title')[0]
+  nav = $('nav.main')[0]
+  postheader = $('nav.auburn')[0]
+  
+  console.log(preheader)
+  
+  var isAboveScreen = function (el) {
+    return el.getBoundingClientRect().bottom <= 0
+  } 
+  
   $(window).on('scroll', function () {
-    if(preheader === undefined) preheader = $('header > .title')[0]
     if(preheader === undefined) return
-
-    if(nav === undefined) nav = $('nav.main')[0]
     if(nav === undefined) return
-
-    if(postheader === undefined) postheader = $('nav.auburn')[0]
     if(postheader === undefined) return  
 
-    if(preheader.getBoundingClientRect().bottom <= 0 && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
+    if(isAboveScreen(preheader) && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
       nav.classList.add('fixed') 
       postheader.classList.add('absolute')
-    } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed') && window.innerWidth >= 768) {
+    } else if (!isAboveScreen(preheader) && nav.classList.contains('fixed') && window.innerWidth >= 768) {
       nav.classList.remove('fixed')
       postheader.classList.remove('absolute')
-    } else if (preheader.getBoundingClientRect().bottom <= 0 && nav.children[0].getBoundingClientRect().top <= 0 && !nav.classList.contains('fixed')) {
+    } else if (isAboveScreen(preheader) && nav.children[0].getBoundingClientRect().top <= 0 && !nav.classList.contains('fixed')) {
       nav.classList.add('fixed') 
-    } else if (preheader.getBoundingClientRect().bottom > 0 && nav.classList.contains('fixed')) {
+    } else if (!isAboveScreen(preheader) && nav.classList.contains('fixed')) {
       nav.classList.remove('fixed') 
     } 
 
-    if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth >= 768) { 
-      nav.classList.add('bordered')
-    } else if (postheader.getBoundingClientRect().top > 0 + 30  && nav.classList.contains('bordered') && window.innerWidth >= 768) {
-      nav.classList.remove('bordered') 
-    } else if (nav.children[0].getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('bordered') && window.innerWidth < 768) {
-      nav.classList.add('bordered') 
-    } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('bordered') && window.innerWidth < 768) {
-      nav.classList.remove('bordered') 
+    if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('shadowed') && window.innerWidth >= 768) { 
+      nav.classList.add('shadowed')
+    } else if (postheader.getBoundingClientRect().top > 0 + 30  && nav.classList.contains('shadowed') && window.innerWidth >= 768) {
+      nav.classList.remove('shadowed') 
+    } else if (nav.children[0].getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('shadowed') && window.innerWidth < 768) {
+      nav.classList.add('shadowed') 
+    } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('shadowed') && window.innerWidth < 768) {
+      nav.classList.remove('shadowed') 
     }
 
 
