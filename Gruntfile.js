@@ -122,7 +122,7 @@ module.exports = function (grunt) {
     'dist/students/events/aucf.html': ['<%= config.views %>/events-pages/aucf.hbs'],
     'dist/students/events/eid.html': ['<%= config.views %>/events-pages/eid.hbs'],
     'dist/students/events/iptjf.html': ['<%= config.views %>/events-pages/iptjf.hbs'],
-    'dist/students/events/tech.html': ['<%= config.views %>/events-pages/tech.hbs'],
+    'dist/students/events/stem.html': ['<%= config.views %>/events-pages/stem.hbs'],
     'dist/students/events/cmcd.html': ['<%= config.views %>/events-pages/cmcd.hbs'],
     'dist/students/events/your-major.html': ['<%= config.views %>/events-pages/your-major.hbs'],
     'dist/students/events/gpsf.html': ['<%= config.views %>/events-pages/gpsf.hbs'],
@@ -232,11 +232,11 @@ module.exports = function (grunt) {
       },
       specificSass: {
         files: ['<%= config.assets %>/styles/sass/*.{scss,sass}'],
-        tasks: ['newer:sass', 'newer:postcss:all']
+        tasks: ['newer:sass:dev', 'newer:postcss:all']
       },
       rootSass: {
         files: ['<%= config.assets %>/styles/sass/*/*.{scss,sass}'],
-        tasks: ['sass']
+        tasks: ['sass:dev']
       },
       js: {
         files: ['<%= config.assets %>/scripts/{,*/}*.js'],
@@ -289,22 +289,18 @@ module.exports = function (grunt) {
             'assets/styles/*.css*',
             '!assets/styles/*.min.*.css',
             '.tmp',
-            'dist/assets/styles/*.css',
-            '!dist/assets/styles/*.min.*.css',
-            'dist/assets/scripts/*.js',
-            '!dist/assets/scripts/*.min.*.js'
           ]
         }]
       }
     },
     
     // # copy
-    // Move files around.
+    // Move files around. NOTE: CURRENTLY NOT BEING USED. PENDING REMOVAL.
     copy: {
-      components: {
+      styles: {
         cwd: 'assets/styles/',
-        src:  ['components/*.css*'],
-        dest: '.',
+        src:  ['*.css', '*.css.map'],
+        dest: 'dist/assets/styles/',
         flatten: true
       }
     },
@@ -312,12 +308,22 @@ module.exports = function (grunt) {
     // # sass
     // Compiles Sass to CSS.
     sass: {
-      dist: {
+      dev: {
         files: [{
           expand: true,
           cwd: '<%= config.assets %>/styles/sass/',
           src: ['{,*/}*.{scss,sass}'],
           dest: '<%= config.assets %>/styles',
+          ext: '.css',
+          flatten: true
+        }]
+      },
+      prod: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.assets %>/styles/sass/',
+          src: ['{,*/}*.{scss,sass}'],
+          dest: 'dist/assets/styles',
           ext: '.css',
           flatten: true
         }]
@@ -375,21 +381,35 @@ module.exports = function (grunt) {
         ]
       },
       all: {
-        src: [
-          '  <%= config.assets %>/styles/{,*/}*.css', 
-          '! <%= config.assets %>/styles/components/*.css']
+        src: ['dist/assets/styles/{,*/}*.css']
       }
     },
     
     // ### imagemin
-    // Minify our image files.
+    //     Minify our image files.
     imagemin: {
       events: {
         files: [{
           expand: true,                       // Enable dynamic expansion
           cwd: '<% config.assets %>/images',  // Src matches are relative to this path
-          src: ['events/*-slide.{png,jpg,gif}', 'events/*-banner.{png,jpg,gif}'],        // Actual patterns to match
-          dest: 'dist/'                       // Destination path prefix
+          src: 
+          ['events/*-slide.{png,jpg,gif}', 
+          'events/*-banner.{png,jpg,gif}'],   // Actual patterns to match
+          dest: 'dist/assets/images'          // Destination path prefix
+        }]
+      }
+    },
+    
+    // ### uglify
+    //     Minify our JS.
+    uglify: {
+      all: {
+        files: [{
+          expand: true,
+          cwd: 'assets/scripts',
+          src: ['{,*/}*.js'],
+          dest: 'dist/assets/scripts/',
+          flatten: false
         }]
       }
     }
@@ -411,8 +431,7 @@ module.exports = function (grunt) {
       return false;
     }
     grunt.task.run([
-      'sass',
-      'postcss',
+      'sass:' + target,
       'assemble:' + target
     ]);
   });
@@ -422,13 +441,13 @@ module.exports = function (grunt) {
   grunt.registerTask('enhance', [
     'postcss',
     'newer:imagemin',
-    'clean:post'
+    'uglify'
   ]);
 
   // # grunt build
   // Build the project. Don't serve it. Crafted from scratch.
   grunt.registerTask('build', [
-    'clean',
+    'clean:dist',
     'validate',
     'compile:dev'
   ]);
