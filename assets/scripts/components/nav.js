@@ -90,13 +90,13 @@ $(function () {
     var nav = $('nav.main')
     
     $(this).toggleClass('nav-controller--active')
-    nav.toggleClass('mobile')
+    nav.toggleClass('main--mobile')
   })
   $(window).on('resize', function () {
     var nav = $('nav.main')[0]
     
-    if(window.innerWidth >= 768 && nav.classList.contains('mobile'))
-      nav.remove('mobile')
+    if(window.innerWidth >= 768 && nav.classList.contains('main--mobile'))
+      nav.remove('main--mobile')
   })
   $('nav.main > ul > li').on('touchstart', function (e) {
     e.preventDefault()
