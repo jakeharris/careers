@@ -64,8 +64,10 @@ nav a {
 ** **************************************************************** **/
 .nav-controller {
   position: absolute;
-  top: 2rem;
+  top: 12rem;
   right: 0;
+  
+  z-index: 300000;
   
   cursor: pointer;
   
@@ -85,6 +87,16 @@ nav a {
     background-color: white;
     color: $thisislightblue;
   }
+  
+  &.nav-controller--active::before {
+    background-color: white;
+    color: $thisislightblue;
+  }
+}
+.nav-controller.fixed {
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 nav.main {
   display: none;
@@ -146,13 +158,13 @@ nav.main {
     display: flex;
     list-style: none;
   }
-  .about-us ul {
+  &:not(.main--mobile) .about-us ul {
     margin-left: -500%; 
   }
-  .part-time-employment ul {
+  &:not(.main--mobile) .part-time-employment ul {
     margin-left: -100%; 
   }
-  .hire-about-us ul {
+  &:not(.main--mobile) .hire-about-us ul {
     margin-left: -300%; 
   }
 }
@@ -167,6 +179,15 @@ nav.main.fixed {
   top: 0;
   width: 100%;
   z-index: 100000;
+  ul li ul { 
+    z-index: 200000;
+  }
+  ul li ul li {
+    z-index: 300000;
+    a {
+      color: $thisislightblue;
+    }
+  }
 }
 nav.main.shadowed {
   box-shadow: $box-shadow;
@@ -179,6 +200,7 @@ nav.main.shadowed {
 // when the user clicks it and requests the menu.
 nav.main--mobile {
   display: block;
+  box-shadow: $box-shadow;
   ul {
     width: 100%;
     max-width: none;
@@ -187,6 +209,15 @@ nav.main--mobile {
   }
   li {
     flex-basis: 100%; 
+  }
+  ul li:hover {
+    box-shadow: $box-shadow;
+    ul {
+      position: absolute;
+      left: 10%;
+      width: 80%;
+      box-shadow: $box-shadow;
+    }
   }
 }
 
@@ -203,6 +234,10 @@ nav.main--mobile {
     }
     li {
       flex: 1; 
+      order: 2;
+    }
+    .about-us {
+      order: 1;
     }
   }
   .nav-controller::before {

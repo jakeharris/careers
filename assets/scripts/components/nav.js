@@ -44,8 +44,6 @@ $(function () {
   nav = $('nav.main')[0]
   postheader = $('nav.auburn')[0]
   
-  console.log(preheader)
-  
   var isAboveScreen = function (el) {
     return el.getBoundingClientRect().bottom <= 0
   } 
@@ -54,7 +52,7 @@ $(function () {
     if(preheader === undefined) return
     if(nav === undefined) return
     if(postheader === undefined) return  
-
+    
     if(isAboveScreen(preheader) && !nav.classList.contains('fixed') && window.innerWidth >= 768) {
       nav.classList.add('fixed') 
       postheader.classList.add('absolute')
@@ -76,11 +74,6 @@ $(function () {
     } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('shadowed') && window.innerWidth < 768) {
       nav.classList.remove('shadowed') 
     }
-
-
-    if(nav.classList.contains('mobile') && !nav.classList.contains('fixed')) {
-      nav.classList.add('fixed')
-    }
   })
 });
 
@@ -91,12 +84,18 @@ $(function () {
     
     $(this).toggleClass('nav-controller--active')
     nav.toggleClass('main--mobile')
+    
+    if(nav.hasClass('main--mobile') && !nav.hasClass('fixed')) {
+      nav.addClass('fixed')
+    }
   })
   $(window).on('resize', function () {
     var nav = $('nav.main')[0]
     
-    if(window.innerWidth >= 768 && nav.classList.contains('main--mobile'))
-      nav.remove('main--mobile')
+    if(window.innerWidth >= 768 && nav.classList.contains('main--mobile')) {
+      $(nav).removeClass('main--mobile')
+      $('.nav-controller--active').removeClass('nav-controller--active')
+    }
   })
   $('nav.main > ul > li').on('touchstart', function (e) {
     e.preventDefault()
