@@ -112,6 +112,7 @@ nav.main {
   li {
     min-width: 16%;
     flex: 1;
+    order: 3;
     
     background-color: $thisislightblue;
     cursor: pointer;
@@ -208,7 +209,7 @@ nav.main--mobile {
     flex-wrap: wrap;
   }
   li {
-    flex-basis: 100%; 
+    flex-basis: 100%;
   }
   ul li:hover {
     box-shadow: $box-shadow;
@@ -218,6 +219,15 @@ nav.main--mobile {
       width: 80%;
       box-shadow: $box-shadow;
     }
+  }
+  ul li ul li a:hover {
+    color: $thisislightorange;
+  }
+  .about-us {
+    order: 1;
+  }
+  .students {
+    order: 2;
   }
 }
 

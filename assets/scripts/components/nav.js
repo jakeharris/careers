@@ -26,7 +26,7 @@ $(function() {
         e.preventDefault()
         
         // if we're in the mobile menu, don't add the delay
-        if(navWrapper.hasClass('mobile'))
+        if(navWrapper.hasClass('main--mobile'))
           $(this).removeClass('hover--active')
         else 
           clrTimeout = setTimeout(function () {
@@ -61,9 +61,7 @@ $(function () {
       postheader.classList.remove('absolute')
     } else if (isAboveScreen(preheader) && nav.children[0].getBoundingClientRect().top <= 0 && !nav.classList.contains('fixed')) {
       nav.classList.add('fixed') 
-    } else if (!isAboveScreen(preheader) && nav.classList.contains('fixed')) {
-      nav.classList.remove('fixed') 
-    } 
+    }
 
     if(postheader.getBoundingClientRect().top <= 0 + 30 && !nav.classList.contains('shadowed') && window.innerWidth >= 768) { 
       nav.classList.add('shadowed')
@@ -74,12 +72,32 @@ $(function () {
     } else if (nav.children[0].getBoundingClientRect().top > 0 + 30 && nav.classList.contains('shadowed') && window.innerWidth < 768) {
       nav.classList.remove('shadowed') 
     }
+    
+    // Nav controller positioning
+    var navController = $('.nav-controller'),
+        header = $('header')[0]
+    
+    if(window.innerWidth < 768 && header.getBoundingClientRect().bottom + 10 <= 0) {
+      console.log(header.getBoundingClientRect().bottom + 10)
+      if(!navController.hasClass('fixed'))
+         navController.addClass('fixed');
+    }
+    else if (window.innerWidth < 768 && header.getBoundingClientRect().bottom + 10 > 0){
+      navController.removeClass('fixed')
+    }
   })
 });
 
 // Mobile menu
 $(function () {
-  $('.nav-controller').on('click', function () {
+  var nav = $('nav.main'),
+      navController = $('.nav-controller')
+  
+  if(window.innerWidth < 768 && !nav.hasClass('fixed')) {
+    nav.addClass('fixed')
+  }
+  
+  navController.on('click', function () {
     var nav = $('nav.main')
     
     $(this).toggleClass('nav-controller--active')
@@ -87,6 +105,7 @@ $(function () {
     
     if(nav.hasClass('main--mobile') && !nav.hasClass('fixed')) {
       nav.addClass('fixed')
+      $(this).addClass('fixed')
     }
   })
   $(window).on('resize', function () {
