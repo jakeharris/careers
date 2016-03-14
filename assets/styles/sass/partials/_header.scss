@@ -17,6 +17,7 @@ header {
   @include main;
   h1 {
     padding: $content-separation 0;
+    font-size: $header-font-size;
     a {
       color: white;
       &:hover {
@@ -33,6 +34,11 @@ header {
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: contain;
+}
+@media (min-width: $small-screen-width) {
+  .title h1 {
+    font-size: $title-font-size;
+  }
 }
 @media (min-width: $moderate-screen-width) {
   .logo-ribbon {
@@ -64,7 +70,7 @@ nav a {
 ** **************************************************************** **/
 .nav-controller {
   position: absolute;
-  top: 12rem;
+  top: 15rem;
   right: 0;
   
   z-index: 300000;
@@ -230,7 +236,11 @@ nav.main--mobile {
     order: 2;
   }
 }
-
+@media (min-width: $tiny-screen-width) {
+  .nav-controller:not(.fixed) {
+    top: 12rem;
+  }
+}
 @media (min-width: $small-screen-width) {
   nav.main {
     display: block; 
@@ -270,6 +280,8 @@ nav.auburn {
     display: flex;
     justify-content: flex-end;
     padding: 3px 0;
+    margin: 0;
+    width: auto;
   }
   li {
     padding: 0 ($content-protection / 4); 
@@ -285,6 +297,7 @@ nav.auburn {
     color: white;
     vertical-align: middle;
     line-height: $line-height;
+    max-width: 8rem;
   }
 }
 nav.auburn.absolute {
@@ -292,4 +305,14 @@ nav.auburn.absolute {
   top: 52px;
   margin-bottom: 80px;
   box-shadow: $box-shadow;
+}
+@media (min-width: $small-screen-width) {
+  nav.auburn {
+    ul {
+      width: 90vw;
+    }
+    input {
+      max-width: none;
+    }
+  }
 }

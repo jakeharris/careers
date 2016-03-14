@@ -26,8 +26,8 @@
   width: 10%;
 }
 .event-date-day {
-  font-size: $title-font-size;
-  margin-top: -1.8rem;
+  font-size: $header-font-size;
+  margin-top: -1.2rem;
 }
 .event-details {
   color: $thisisdarkgray;
@@ -38,6 +38,12 @@
 .event-details-name {
   color: $thisisdarkblue;
   font-size: 2rem;
+}
+@media (min-width: $small-screen-width ) {
+  .event-date-day {
+    font-size: $title-font-size;
+    margin-top: -1.8rem;
+  }
 }
 @media (min-width: $medium-screen-width) {
   .event { 
