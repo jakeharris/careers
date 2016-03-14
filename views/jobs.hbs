@@ -122,12 +122,12 @@ component:
 </div>
 
 <div class="card sponsors">
-  <h2 class="sponsors-header">Sponsors</h2>
+  <h2  class="sponsors-header">Sponsors</h2>
   <div class="sponsors-content" ng-controller="sponsors-ctrl">
     <div class="sponsor" ng-repeat="sponsor in sponsors">
       <span class="vert-centerer"></span>
       <a href="[[ sponsor.url ]]">
-        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade" alt="[[ sponsor.company ]]"></img>
+        <img lazy-img="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade" alt="[[ sponsor.company ]]">
       </a>
     </div>
   </div>

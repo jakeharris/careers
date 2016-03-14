@@ -9,8 +9,13 @@
   }
   .img-replace {
     display: block;
-    font-size: $title-font-size;
+    font-size: $header-font-size;
     padding: $content-division;
+  }
+}
+@media (min-width: $tiny-screen-width    ) {
+  .hero .img-replace {
+    font-size: $title-font-size;
   }
 }
 @media (min-width: $moderate-screen-width) {
