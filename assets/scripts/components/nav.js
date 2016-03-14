@@ -78,7 +78,6 @@ $(function () {
         header = $('header')[0]
     
     if(window.innerWidth < 768 && header.getBoundingClientRect().bottom + 10 <= 0) {
-      console.log(header.getBoundingClientRect().bottom + 10)
       if(!navController.hasClass('fixed'))
          navController.addClass('fixed');
     }
