@@ -1,10 +1,5 @@
 @import 'partials/variables';
 
-// SPECIFIC LOCATION IMAGE OVERRIDES
-.coa {
-  margin-top: -10rem;
-}
-
 // TWEAKS
 .department-contacts {
   flex-wrap: wrap;
@@ -15,4 +10,10 @@
   > .info > p {
     padding-bottom: $content-protection; 
   }
+}
+
+.visual img.harbert {
+  width: auto;
+  height: auto;
+  margin-left: -333px;
 }

@@ -31,3 +31,8 @@
 .marginless {
   margin: 0 !important;
 }
+@media (max-width: $moderate-screen-width - 1) {
+  .hidden--unless-desktop {
+    display: none;
+  }
+}

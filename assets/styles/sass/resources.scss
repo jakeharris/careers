@@ -2,24 +2,25 @@
 
 // BANNER IMAGE CORRECTIONS
 .hero {
-  height: 246px;
-  max-height: 246px;
   img { 
     display: none;
   }
   .img-replace {
     display: block;
     font-size: $header-font-size;
-    padding: $content-division;
+    padding: $content-protection;
   }
 }
 @media (min-width: $tiny-screen-width    ) {
   .hero .img-replace {
     font-size: $title-font-size;
+    padding: $content-division;
   }
 }
 @media (min-width: $moderate-screen-width) {
   .hero {
+    height: 246px;
+    max-height: 246px;
     img {
       display: block; 
     }
@@ -38,9 +39,13 @@
   justify-content: space-between;
 }
 .step:not(.card) {
-  padding: 0 $content-division;
+  padding: 0 $content-protection;
 }
-
+@media (min-width: $tiny-screen-width) {
+  .step:not(.card) {
+    padding: 0 $content-division;
+  }
+}
 .step-links, .step-blurb {
   width: 100%;
 }
@@ -49,7 +54,7 @@
 }
 .step-blurb {
   h2 {
-    font-size: $title-font-size;
+    font-size: $header-font-size;
     padding-bottom: $content-separation;
   }
   p {
@@ -58,6 +63,11 @@
 }
 .full-blurb {
   display: none;
+}
+@media (min-width: $tiny-screen-width  ) {
+  .step-blurb h2 {
+    font-size: $title-font-size;
+  }
 }
 @media (min-width: $medium-screen-width) {
   .step {
@@ -110,17 +120,17 @@
   // --- NUMBER STUFF ---
   &::before {
     font-family: $header-font-family;
-    font-size: $title-font-size;
+    font-size: $header-font-size;
     
     position: relative;
-    left: calc(100% - 4rem);
-    bottom: 3px;
+    left: calc(100% - 2.9rem);
+    bottom: -6px;
     
     content: counter(c); 
   }
   // if it's a 1, but there are more elements
   &:nth-child(1)::before {
-    left: calc(100% - 3.2rem);
+    left: calc(100% - 2.9rem);
   }
   // if it's a 1 and it's the only resource
   &:only-child::before {
@@ -139,7 +149,7 @@
     _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
 
     position: relative;
-    top: 9px;
+    top: 30px;
 
     margin-left: auto;
     margin-right: auto;  
@@ -169,6 +179,20 @@
     color: white;
   }
 }
+@media (min-width: $tiny-screen-width) {
+  .wedge{
+    &::before {
+      font-size: $title-font-size;
+
+      position: relative;
+      left: calc(100% - 4rem);
+      bottom: 3px;
+    }
+    &::after {
+      top: 9px;
+    }
+  }
+}
 .tooltips {
   box-shadow: none;
   border: 6px solid $thisisdarkblue;
@@ -187,7 +211,7 @@
   h2 {
     text-align: center; 
     width: 100%;
-    padding: 0 $content-protection;
+    padding: 0 $content-separation;
   }
   // fix auto-pdf
   &[href$=".pdf"]::after {
@@ -200,15 +224,35 @@
 .tooltip--show {
   display: flex;
 }
+@media (min-width: $tiny-screen-width) {
+  .tooltip h2 {
+    padding: 0 $content-protection;
+  }
+}
 
 // FIXES FOR SPECIALIZED ADVICE PAGE
-.big-header {
-  font-size: 10rem;
-  padding: $content-division;
-  align-self: center;
+.specialized-advice .step-blurb {
+  display: flex;
+  justify-content: space-around;
+  h2 {
+    font-size: $header-font-size;
+    padding: $content-protection;
+    align-self: center;
+    text-align: center;
+  }
+}
+@media (min-width: $tiny-screen-width) {
+  .specialized-advice .step-blurb h2 {
+    font-size: $title-font-size;
+  }
 }
 
 // FIX FOR ALUMNI HELPING LINK IMAGE
 .alumni-help {
   display: block;
+}
+
+// FIX FOR PROSPECTIVE STUDENTS LINK IMAGE
+a.hero[href$=".pdf"]::after {
+  content: none; 
 }

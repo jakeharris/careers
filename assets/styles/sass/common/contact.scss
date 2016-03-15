@@ -2,10 +2,10 @@
 
 .hours, .address, .phone, .email, .name {
   font-family: $header-font-family;
-  font-size: $header-font-size;
+  font-size: $button-font-size;
   > a::before {
     font-family: $icon-font-family;
-    font-size: $header-font-size;
+    font-size: $button-font-size;
     width: $header-font-size;
     margin-right: $content-protection;
   }
@@ -16,8 +16,8 @@
 .hours > *:first-child::before {
   content: '\f017';
   font-family: $icon-font-family;
-  font-size: $header-font-size;
-  width: $header-font-size;
+  font-size: $button-font-size;
+  width: $button-font-size;
   margin-right: $content-protection;
 }
 .hours p {

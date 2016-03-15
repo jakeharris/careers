@@ -217,7 +217,8 @@ nav.main--mobile {
   li {
     flex-basis: 100%;
   }
-  ul li:hover {
+  ul li:hover,
+  ul li.hover--active {
     box-shadow: $box-shadow;
     ul {
       position: absolute;
@@ -310,6 +311,7 @@ nav.auburn.absolute {
   nav.auburn {
     ul {
       width: 90vw;
+      margin: 0 auto;
     }
     input {
       max-width: none;

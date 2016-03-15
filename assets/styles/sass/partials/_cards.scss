@@ -2,9 +2,14 @@
 .card {
   background: white;
   
-  @extend .padded;
+  padding: $content-protection;
   box-shadow: $box-shadow;
   
   margin: $content-division 0;
   overflow: hidden;
+}
+@media (min-width: $tiny-screen-width) {
+  .card {
+    padding: $content-division;
+  }
 }

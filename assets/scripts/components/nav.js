@@ -119,11 +119,11 @@ $(function () {
     e.preventDefault()
     
     if($(this).children('ul').length > 0) 
-      if($(this).hasClass('hover--active'))
+      if($(this).hasClass('touched'))
         e.target.click()
       else
-        $(this).addClass('hover--active')
-        
-    e.target.click()
+        $(this).addClass('touched')
+    else 
+      e.target.click()
   })
 })
