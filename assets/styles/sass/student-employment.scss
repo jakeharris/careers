@@ -15,8 +15,26 @@ h3 {
 .quick-guide .card {
   margin: 0;
 }
+.quick-guide .flex-third {
+  padding-bottom: $content-protection;
+}
+@media (max-width: $small-screen-width) {
+  .quick-guide {
+    padding: 0 $content-protection;
+  }
+}
+@media (min-width: $small-screen-width) {
+  .quick-guide .flex-third {
+    padding-bottom: 0;
+  }
+}
 .advice h3, .content--guide .padded {
   text-align: center;
+}
+@media (max-width: $small-screen-width) {
+  .content--guide .padded {
+    padding-bottom: 0;
+  }
 }
 ol li {
   list-style: decimal;
@@ -32,10 +50,13 @@ ol li {
   flex-wrap: wrap;
 
   width: 100%;
-
-  padding-top: 3rem;
   
   counter-reset: step;
+}
+@media (min-width: $small-screen-width) {
+  .guide {
+    padding-top: 3rem;
+  }
 }
 .guide-step {
   flex-basis: 100%;
@@ -175,15 +196,16 @@ ol li {
   border: 1px solid $box-shadow-color;
   z-index: 2;
   position: relative;
+  padding: $content-separation;
   &::before {
     font-family: $header-font-family;
     content: counter(faq);
     counter-increment: faq;
-    padding: 0 $content-protection;
+    padding-right: $content-separation;
   }
   &::after {
     position: absolute;
-    right: 3rem;
+    right: $content-separation;
   }
 }
 .accordion > a:not(.collapsed),
@@ -203,7 +225,20 @@ ol li {
   border-top: none;
   box-shadow: $box-shadow;
   margin-top: -1rem;
-  padding: 0 7rem;
   padding-top: $content-separation;
   z-index: 1;
+}
+@media (min-width: $small-screen-width) {
+  .accordion-header {
+    padding: $content-protection;
+    &::before {
+      padding: 0 $content-protection;
+    }
+    &::after {
+      right: $content-protection;
+    }
+  }
+  .accordion-entry {
+    padding: 0 7rem;
+  }
 }
