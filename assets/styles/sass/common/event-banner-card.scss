@@ -46,12 +46,16 @@ h2.img-replace {
 }
 .schedule {
   padding: $content-division 0;
-  border-bottom: 1px solid $box-shadow-color;
   h3 {
     padding-bottom: $content-separation;
   }
   p {
     padding-bottom: $content-protection;
+  }
+}
+@media (min-width: $small-screen-width) {
+  .schedule {
+    border-bottom: 1px solid $box-shadow-color;
   }
 }
 .attributes {

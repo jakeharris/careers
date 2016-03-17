@@ -24,10 +24,8 @@ style:
 <div class="event-banner-card">
   <img src="assets/images/events/{{eventName}}-banner.png"
        alt="STEM Career Expo. February 9, 2016, 3pm-7pm, at the AU Hotel.">
-  <div class="img-replace">
-    <h1>STEM Career Expo.</h1>
-    <h2>February 9, 2016, 3pm-7pm, at the AU Hotel.</h2>
-  </div>
+  <h2 class="img-replace">STEM Career Expo.</h2>
+  <h3 class="img-replace">February 9, 2016, 3pm-7pm, at the AU Hotel.</h3>
 
   <div class="card" ng-controller="price-ctrl">
     <div class="blurb flex">
@@ -73,11 +71,11 @@ style:
         <div class="tipsheet">
           <div class="tipsheet-wrapper">
             <p>Download the tipsheet for detailed information about:</p>
-            <ul>
-              <li>Payment</li>
-              <li>Shipping</li>
-              <li>Space &amp; Equipment</li>
-              <li>Display Guidelines</li>
+            <ul class="flex">
+              <li class="flex-half">Payment</li>
+              <li class="flex-half">Shipping</li>
+              <li class="flex-half">Space &amp; Equipment</li>
+              <li class="flex-half">Display Guidelines</li>
             </ul>
           </div>
           <a class="flat-btn" href="assets/images/events/{{eventName}}.pdf">Download Tip Sheet</a>
@@ -133,9 +131,10 @@ style:
           <div class="point-of-contact">
             <h3>To cancel, contact</h3>
             <div class="flex">
-              <img class="flex-third"
-                   src="assets/images/staff/diane.jpg"
-                   alt="Diane Thorne.">
+              <div class="flex-third">
+                <img src="assets/images/staff/diane.jpg"
+                     alt="Diane Thorne.">
+              </div>
               <div class="poc-info contact flex-two-thirds">
                 <p class="name">Diane Thorne</p>
                 <p class="phone"><a href="tel:(334) 844-3862">(334) 844-3862</a></p>
@@ -146,9 +145,10 @@ style:
           <div class="point-of-contact">
             <h3>Direct all other inquiries to</h3>
             <div class="flex">
-              <img class="flex-third"
-                   src="assets/images/staff/melvin.jpg"
-                   alt="Melvin K. Smith.">
+              <div class="flex-third">
+                <img src="assets/images/staff/melvin.jpg"
+                     alt="Melvin K. Smith.">
+              </div>
               <div class="contact-info">
                 <p class="name">Melvin K. Smith</p>
                 <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>

@@ -8,5 +8,14 @@
   }
   img {
     box-shadow: $box-shadow;
+    max-width: 33%;
+    margin: 0 auto;
+    margin-bottom: $content-protection;
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .point-of-contact img {
+    max-width: 50%;
+    margin-bottom: none;
   }
 }
