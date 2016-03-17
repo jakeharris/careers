@@ -1,7 +1,6 @@
 @import '../partials/variables';
 
 .event-banner-card {
-  box-shadow: $box-shadow;
   margin-top: $content-division;
   
   > img {
@@ -12,11 +11,37 @@
     margin-top: -1rem;
   }
 }
+.img-replace {
+  display: block;
+  padding: $content-separation $content-protection;
+}
+h2.img-replace {
+  color: $thisislightorange;
+}
+.img-replace:last-of-type {
+  padding-bottom: $content-protection;
+}
+@media (min-width: $tiny-screen-width) {
+  .event-banner-card {
+    box-shadow: $box-shadow;
+    > img {
+      display: block;
+    }
+  }
+  .img-replace {
+    display: none;
+  }
+}
 .blurb {
   padding-bottom: $content-division;
-  border-bottom: 1px solid $box-shadow-color;
 }
-.blurb:last-of-type {
+@media (min-width: $small-screen-width) {
+  .blurb {
+    border-bottom: 1px solid $box-shadow-color;
+  }
+}
+.blurb:last-of-type,
+.schedule:last-of-type {
   border-bottom: none;
 }
 .schedule {
@@ -31,35 +56,4 @@
 }
 .attributes {
   padding-top: $content-division;
-}
-.icon i::before {
-  position: relative;
-  top: 2rem;
-  left: 2rem;
-}
-.icon i.icon-comments-o::before {
-  top: 1.8rem;
-}
-.icon i.icon-tie::before {
-  left: 1.9rem;
-}
-.icon i.icon-graduation-cap::before {
-  top: 2.2rem;
-  left: 1.2rem;
-}
-
-.img-replace {
-  display: block;
-  h2 {
-    color: $thisislightorange;
-  }
-}
-
-@media (min-width: $tiny-screen-width) {
-  .event-banner-card > img {
-    display: block;
-  }
-  .img-replace {
-    display: none;
-  }
 }
