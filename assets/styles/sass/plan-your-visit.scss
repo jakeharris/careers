@@ -16,7 +16,7 @@
 .content-nav {
   
   padding: 0;
-  margin-top: 5rem;
+  margin-top: $content-protection;
   
   .options {
     display: flex;
@@ -63,18 +63,40 @@
     }
     h3 {
       font-family: $header-font-family;
-      font-size: 2.5rem;
+      font-size: $button-font-size;
       padding: 0;
       margin: 0;
     }
   }
 }
+@media (min-width: $tiny-screen-width ) {
+  .content-nav .options h3 {
+    font-size: $nav-font-size;
+  }
+}
+@media (min-width: $small-screen-width) {
+  .content-nav .options h3 {
+    font-size: $header-font-size;
+  }
+}
 
 iframe {
+  display: none;
   border: none;
   width: 100%;
   min-height: 60rem;
   margin-bottom: -1rem;
+}
+@media (min-width: $tiny-screen-width) {
+  iframe {
+    display: block;
+    min-height: 20rem;
+  }
+}
+@media (min-width: $small-screen-width) {
+  iframe {
+    min-height: 40rem;
+  }
 }
 
 .map {
