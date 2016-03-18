@@ -76,8 +76,6 @@
   padding-top: $content-protection;
 }
 .service {
-  @extend .flex-half;
-  
   font-family: $header-font-family;
   font-size: $button-font-size * 1.11;
   padding-bottom: $content-separation;

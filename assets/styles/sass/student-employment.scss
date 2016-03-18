@@ -225,20 +225,20 @@ ol li {
   border-top: none;
   box-shadow: $box-shadow;
   margin-top: -1rem;
-  padding-top: $content-separation;
   z-index: 1;
 }
 @media (min-width: $small-screen-width) {
   .accordion-header {
-    padding: $content-protection;
+    padding: $content-separation;
     &::before {
-      padding: 0 $content-protection;
+      padding: 0 $content-separation;
     }
     &::after {
-      right: $content-protection;
+      right: $content-separation;
     }
   }
   .accordion-entry {
-    padding: 0 7rem;
+    padding: $content-separation 7rem;
+    padding-bottom: 0;
   }
 }

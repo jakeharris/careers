@@ -3,19 +3,8 @@
 .flat-btn--bottom {
   margin: 0;
 }
-.icon i::before {
-  position: relative;
-  top: 2rem;
-  left: 2rem;
-}
-.icon i.icon-folder-download::before {
-  top: 1.8rem;
-}
-.icon i.icon-folder-open::before {
-  top: 1.8rem;
-  left: 2.4rem;
-}
-.icon i.icon-enter::before {
-  top: 2.5rem;
-  left: 1.5rem;
+@media (min-width: $small-screen-width) {
+  .attributes .attribute {
+    flex-basis: 45%;
+  }
 }
