@@ -241,7 +241,13 @@
     {
       "name": "education",
       "fullname": "College of Education",
-      "img": "college-education-banner"
+      "img": "college-education-banner",
+      "pathways": [
+          {
+              "name":"Education",
+              "link":"education"
+          }
+      ]
     },
     {
       "name": "engineering",
