@@ -241,7 +241,73 @@
     {
       "name": "education",
       "fullname": "College of Education",
-      "img": "college-education-banner"
+      "img": "college-education-banner",
+      "pathways": [
+          {
+              "name":"Agriscience Education",
+              "link":"agriscience-education"
+          },
+          {
+              "name":"Business Marketing Education",
+              "link":"business-marketing-education"
+          },
+          {
+              "name":"Early Childhood Education",
+              "link":"early-childhood-education"
+          },
+          {
+              "name":"Elementary Education",
+              "link":"elementary-education"
+          },
+          {
+              "name":"English/Language Arts Education",
+              "link":"english-language-arts-education"
+          },
+          {
+              "name":"Foreign Language Education",
+              "link":"foreign-language-education"
+          },
+          {
+              "name":"Mathematics Education",
+              "link":"mathematics-education"
+          },
+          {
+              "name":"Music Education",
+              "link":"music-education"
+          },
+          {
+              "name":"Rehabilitation & Disability Studies",
+              "link":"rehabilitation-and-disability-studies"
+          },
+          {
+              "name":"Science Education",
+              "link":"science-education"
+          },
+          {
+              "name":"Social Science Education",
+              "link":"social-science-education"
+          },
+          {
+              "name":"Special Education",
+              "link":"special-education"
+          },
+          {
+              "name":"Exercise Science",
+              "link":"exercise-science"
+          },
+          {
+              "name":"Physical Activity & Health",
+              "link":"physical-activity-and-health"
+          },
+          {
+              "name":"Fitness, Conditioning, & Performance",
+              "link":"fitness-conditioning-and-performance"
+          },
+          {
+              "name":"Physical Education/Teacher Education",
+              "link":"physical-teacher-education"
+          }
+      ]
     },
     {
       "name": "engineering",
