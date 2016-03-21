@@ -76,10 +76,10 @@ a.icon:hover {
   flex-basis: 100%;
   p {
     font-family: $header-font-family;
-    font-size: 3rem;
+    font-size: $nav-font-size;
   }
   ul {
-    font-size: 2rem;
+    font-size: $body-font-size;
     li {
       padding-bottom: 2rem; 
     }
