@@ -192,3 +192,10 @@ address {
 .blog-link {
   color: $text-color; 
 }
+
+// IE-SPECIFIC STYLES
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .tweets ul {
+    flex: 0 1 auto;
+  }
+}
