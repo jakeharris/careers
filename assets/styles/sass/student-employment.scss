@@ -104,10 +104,10 @@ ol li {
     $steps: 6;
     
     flex-basis: 33.33333%;
-    width: 33.33333%;
+    max-width: 33.33333%;
     &.attribute {
       flex-basis: 33.33333%;
-      width: 33.33333%;
+      max-width: 33.33333%;
     }
     
     &::after {

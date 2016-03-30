@@ -264,10 +264,19 @@ nav.main--mobile {
   .nav-controller::before {
     display: none; 
   }
+  .hire-header nav.main ul li {
+    font-size: $body-font-size;
+  }
 }
 @media (min-width: $medium-screen-width) {
-  nav.main ul li ul li {
+  nav.main ul li ul li,
+  .hire-header nav.main ul li {
     font-size: $nav-font-size; 
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .hire-header nav.main ul li {
+    font-size: $nav-font-size;
   }
 }
 

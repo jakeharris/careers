@@ -15,6 +15,7 @@
 @media (min-width: $small-screen-width) {
   .flex-half {
     flex-basis: 45%;
+    max-width: 45%;
   }
 }
 @media (min-width: $medium-screen-width) {
@@ -23,10 +24,11 @@
   }
   .flex-third {
     flex-basis: 30%;
-    width: 30%;
+    max-width: 30%;
   }
   .flex-two-thirds {
     flex-basis: 63%;
+    max-width: 63%;
   }
 }
 .flex--wrap {

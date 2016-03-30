@@ -10,11 +10,13 @@
 @media (min-width: $small-screen-width) {
   .flex-half {
     flex-basis: 100%;
+    max-width: none;
   }
 }
 @media (min-width: $medium-screen-width) {
   .flex-half {
     flex-basis: 45%; 
+    max-width: 45%;
   }
 }
 
@@ -32,7 +34,7 @@
   height: 100%;
   min-height: 55rem;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   &::before {
     background: url('../images/services-banner.png') 100% 100% no-repeat;
     background-size: cover;
@@ -60,6 +62,7 @@
 .services .flat-btn {
   z-index: 5;
   position: absolute;
+  width: 100%;
 }
 .services .flat-btn {
   margin: 0;
