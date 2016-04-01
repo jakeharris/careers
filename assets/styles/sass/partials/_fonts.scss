@@ -217,6 +217,9 @@
 }
 .icon-graduation-cap::before {
     content: '\f19d';
+    position: relative;
+    margin-left: -8px;
+    margin-top: 2px;
 }
 .fa-blogger {
   background-image: url("../images/blogger-invert.svg") !important;
