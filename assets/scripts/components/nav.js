@@ -96,7 +96,7 @@ $(function () {
     nav.addClass('fixed')
   }
   
-  navController.on('click', function () {
+  navController.on('click touchend', function () {
     var nav = $('nav.main')
     
     $(this).toggleClass('nav-controller--active')
