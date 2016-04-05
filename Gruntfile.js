@@ -51,7 +51,8 @@ module.exports = function (grunt) {
   // # jit-grunt
   // Load grunt plugins without using a .loadNpmTasks block at the end of the Gruntfile.
   require('jit-grunt')(grunt, {
-    useminPrepare: 'grunt-usemin'
+    useminPrepare: 'grunt-usemin',
+    autoprefixer: 'autoprefixer'
   });
 
   var VIEW_MAPPING = {
@@ -94,15 +95,16 @@ module.exports = function (grunt) {
     'employers/events/index.html': ['<%= config.views %>/employer-events/events.hbs'],
     'employers/events/stem.html': ['<%= config.views %>/employer-events/stem.hbs'],
     'employers/events/aucf.html': ['<%= config.views %>/employer-events/aucf.hbs'],
+    'employers/events/cmcd.html': ['<%= config.views %>/employer-events/cmcd.hbs'],
     'employers/events/eid.html': ['<%= config.views %>/employer-events/eid.hbs'],
     'employers/events/iptjf.html': ['<%= config.views %>/employer-events/iptjf.hbs'],
     'employers/events/gpsf.html': ['<%= config.views %>/employer-events/gpsf.hbs'],
     'employers/events/seoty.html': ['<%= config.views %>/employer-events/seoty.hbs'],
-    'employers/events/cmcd.html': ['<%= config.views %>/employer-events/cmcd.hbs'],
     'employers/aboutus/index.html': ['<%= config.views %>/employer-about-us/about-us.hbs'],
     'employers/aboutus/recruiting-contacts.html': ['<%= config.views %>/employer-about-us/recruiting-contacts.hbs'],
     'employers/aboutus/plan-your-visit.html': ['<%= config.views %>/employer-about-us/plan-your-visit.hbs'],
     'employers/aboutus/staff.html': ['<%= config.views %>/employer-about-us/staff.hbs'],
+    'employers/aboutus/student-workers.html': ['<%= config.views %>/employer-about-us/student-workers.hbs'],
     'employers/student-employment/off-campus.html': ['<%= config.views %>/off-campus-employment.hbs'],
     'employers/student-employment/on-campus.html': ['<%= config.views %>/on-campus-employment.hbs'],
     'employers/ocr.html': ['<%= config.views %>/ocr.hbs'],
@@ -111,9 +113,7 @@ module.exports = function (grunt) {
     'experience/index.html': ['<%= config.views %>/experience.hbs'],
     'experience/internships.html': ['<%= config.views %>/internships.hbs'],
     'experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
-    'experience/housing.html': ['<%= config.views %>/housing.hbs'],
-    'auburn-on-the-hill/index.html': ['<%= config.views %>/auburn-on-the-hill/index.hbs'],
-    'auburn-on-the-hill/about.html': ['<%= config.views %>/auburn-on-the-hill/about.hbs']
+    'experience/housing.html': ['<%= config.views %>/housing.hbs']
   },
   VIEW_MAPPING_PROD = {
     'dist/index.html':    ['<%= config.views %>/home.hbs'],
@@ -155,15 +155,16 @@ module.exports = function (grunt) {
     'dist/employers/events/index.html': ['<%= config.views %>/employer-events/events.hbs'],
     'dist/employers/events/stem.html': ['<%= config.views %>/employer-events/stem.hbs'],
     'dist/employers/events/aucf.html': ['<%= config.views %>/employer-events/aucf.hbs'],
+    'dist/employers/events/cmcd.html': ['<%= config.views %>/employer-events/cmcd.hbs'],
     'dist/employers/events/eid.html': ['<%= config.views %>/employer-events/eid.hbs'],
     'dist/employers/events/iptjf.html': ['<%= config.views %>/employer-events/iptjf.hbs'],
     'dist/employers/events/gpsf.html': ['<%= config.views %>/employer-events/gpsf.hbs'],
     'dist/employers/events/seoty.html': ['<%= config.views %>/employer-events/seoty.hbs'],
-    'dist/employers/events/cmcd.html': ['<%= config.views %>/employer-events/cmcd.hbs'],
     'dist/employers/aboutus/index.html': ['<%= config.views %>/employer-about-us/about-us.hbs'],
     'dist/employers/aboutus/recruiting-contacts.html': ['<%= config.views %>/employer-about-us/recruiting-contacts.hbs'],
     'dist/employers/aboutus/plan-your-visit.html': ['<%= config.views %>/employer-about-us/plan-your-visit.hbs'],
     'dist/employers/aboutus/staff.html': ['<%= config.views %>/employer-about-us/staff.hbs'],
+    'dist/employers/aboutus/student-workers.html': ['<%= config.views %>/employer-about-us/student-workers.hbs'],
     'dist/employers/student-employment/off-campus.html': ['<%= config.views %>/off-campus-employment.hbs'],
     'dist/employers/student-employment/on-campus.html': ['<%= config.views %>/on-campus-employment.hbs'],
     'dist/employers/ocr.html': ['<%= config.views %>/ocr.hbs'],
@@ -172,9 +173,7 @@ module.exports = function (grunt) {
     'dist/experience/index.html': ['<%= config.views %>/experience.hbs'],
     'dist/experience/internships.html': ['<%= config.views %>/internships.hbs'],
     'dist/experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
-    'dist/experience/housing.html': ['<%= config.views %>/housing.hbs'],
-    'dist/auburn-on-the-hill/index.html': ['<%= config.views %>/auburn-on-the-hill/index.hbs'],
-    'dist/auburn-on-the-hill/about.html': ['<%= config.views %>/auburn-on-the-hill/about.hbs']
+    'dist/experience/housing.html': ['<%= config.views %>/housing.hbs']
   }
   
   grunt.initConfig({
@@ -187,7 +186,7 @@ module.exports = function (grunt) {
       master: 'views/layouts/default.hbs',
       jobsmaster: 'views/layouts/jobs.hbs',
       nosocial: 'views/layouts/no-social.hbs',
-      partials: 'views/partials/*.hbs',
+      partials: 'views/partials/{,*/}*.hbs',
       dist: 'dist'
     },
 
@@ -219,21 +218,29 @@ module.exports = function (grunt) {
       options: {
         forever: false
       },
-      assemble: {
-        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '<%= config.assets %>/data/{,*/}*.json'],
-        tasks: ['assemble:dev'] //tasks: ['assemble', 'processhtml']
+      specificAssemble: {
+        files: ['<%= config.views %>/{,*/}*.{md,hbs,yml}', '!<%= config.views %>/{partials, layouts}/**/*.hbs', '<%= config.assets %>/data/{,*/}*.json'],
+        tasks: ['newer:assemble:dev']
+      },
+      rootAssemble: {
+        files: ['<%= config.views %>/{partials, layouts}/**/*.hbs'],
+        tasks: ['assemble:dev']
       },
       gruntfile: {
         files: ['Gruntfile.js'],
         tasks: ['default']
       },
-      sass: {
-        files: ['<%= config.assets %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['sass', 'autoprefixer'] //tasks: ['sass', 'uncss', 'autoprefixer']
+      specificSass: {
+        files: ['<%= config.assets %>/styles/sass/*.{scss,sass}'],
+        tasks: ['newer:sass:dev', 'newer:postcss:all']
+      },
+      rootSass: {
+        files: ['<%= config.assets %>/styles/sass/*/*.{scss,sass}'],
+        tasks: ['sass:dev']
       },
       js: {
         files: ['<%= config.assets %>/scripts/{,*/}*.js'],
-        tasks: ['jshint:all']
+        tasks: ['newer:jshint:all']
       },
       livereload: {
         options: {
@@ -282,22 +289,18 @@ module.exports = function (grunt) {
             'assets/styles/*.css*',
             '!assets/styles/*.min.*.css',
             '.tmp',
-            'dist/assets/styles/*.css',
-            '!dist/assets/styles/*.min.*.css',
-            'dist/assets/scripts/*.js',
-            '!dist/assets/scripts/*.min.*.js'
           ]
         }]
       }
     },
     
     // # copy
-    // Move files around.
+    // Move files around. NOTE: CURRENTLY NOT BEING USED. PENDING REMOVAL.
     copy: {
-      components: {
+      styles: {
         cwd: 'assets/styles/',
-        src:  ['components/*.css*'],
-        dest: '.',
+        src:  ['*.css', '*.css.map'],
+        dest: 'dist/assets/styles/',
         flatten: true
       }
     },
@@ -305,13 +308,24 @@ module.exports = function (grunt) {
     // # sass
     // Compiles Sass to CSS.
     sass: {
-      dist: {
+      dev: {
         files: [{
           expand: true,
-          cwd: '<%= config.assets %>/styles/sass',
-          src: ['*.{scss,sass}'],
+          cwd: '<%= config.assets %>/styles/sass/',
+          src: ['{,*/}*.{scss,sass}'],
           dest: '<%= config.assets %>/styles',
-          ext: '.css'
+          ext: '.css',
+          flatten: true
+        }]
+      },
+      prod: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.assets %>/styles/sass/',
+          src: ['{,*/}*.{scss,sass}'],
+          dest: 'dist/assets/styles',
+          ext: '.css',
+          flatten: true
         }]
       }
     },
@@ -321,7 +335,7 @@ module.exports = function (grunt) {
     // into servable HTML.
     assemble: {
       options: {
-        helpers: ['<%= config.assets %>/scripts/helpers/{,/*}*.js'],
+        helpers: ['<%= config.assets %>/scripts/helpers/{,*/}*.js'],
         prod: 'false',
         layouts: '<%= config.layouts %>',
         partials: '<%= config.partials %>',
@@ -331,7 +345,8 @@ module.exports = function (grunt) {
         files: VIEW_MAPPING
       },
       prod: {
-        files: VIEW_MAPPING_PROD
+        files: VIEW_MAPPING_PROD,
+        production: true
       }
     },
 
@@ -347,7 +362,7 @@ module.exports = function (grunt) {
       all: ['<%= config.assets %>/scripts/{,*/}*.js']
     },
 
-    // ## autoprefixer
+    // ## postcss, using autoprefixer, cssmin
     //    Automagically adds vendor-prefixed rules to match non-prefixed rules
     //    we use that we might've forgotten about!
     //    e.g.
@@ -356,77 +371,51 @@ module.exports = function (grunt) {
     //    `display: flex;
     //     ms-display: flex-box;
     //     display: -webkit-flex;`
-    autoprefixer: {
+    //
+    //    Then, it minifies it! Hurray!
+    postcss: {
       options: {
-        browsers: '> 5%, ie >= 8'
+        processors: [
+          require('autoprefixer')({browsers: '> 5%, ie >= 8'}),
+          require('cssnano')()
+        ]
       },
       all: {
-        src: ['<%= config.assets %>/styles/{,*/}*.css']
+        src: ['dist/assets/styles/{,*/}*.css']
       }
     },
-
-    // ## *-min
-    // (usemin, htmlmin, cssmin, imagemin, svgmin, uglify)
-    // Minify our files.
     
-    // ### useminPrepare
-    // Prepare files for serving based on usemin blocks found in HTML.
-    useminPrepare: {
-      html: [
-        'dist/**/*.html'
-      ],
-      options: {
-        root: '.',
-        dest: 'dist'
+    // ### imagemin
+    //     Minify our image files.
+    imagemin: {
+      events: {
+        files: [{
+          expand: true,                       // Enable dynamic expansion
+          cwd: '<% config.assets %>/images',  // Src matches are relative to this path
+          src: 
+          ['events/*-slide.{png,jpg,gif}', 
+          'events/*-banner.{png,jpg,gif}'],   // Actual patterns to match
+          dest: 'dist/assets/images'          // Destination path prefix
+        }]
       }
     },
-
-    // ### concat
-    // Combines and moves around files. Relatively necessary for
-    // getting usemin to work properly.
-    concat: {
-      
-    },
     
-    // ### cssmin
-    // Minify our CSS.
-    cssmin: {
-
-    },
-
     // ### uglify
-    // Minify our JS.
+    //     Minify our JS.
     uglify: {
-
-    },
-
-    // ## filerev
-    // Rename files to bust browser caches.
-    filerev: {
-      css: {
-        src: '<%= config.dist %>/assets/styles/{,*/}*.min.css',
-        dest: '<%= config.dist %>/<%= config.assets %>/styles'
-      },
-      js: {
-        src: '<%= config.dist %>/assets/scripts/{,*/}*.min.js',
-        dest: '<%= config.dist %>/<%= config.assets %>/scripts'
-      }
-    },
-
-
-    // ## usemin
-    // Change blocks of local CSS and JS references
-    // into singular, cache-busting downloads n
-    // your production HTML!
-    usemin: {
-      html: 'dist/**/*.html',
-      options: {
-        assetsDirs: ['dist']
+      all: {
+        files: [{
+          expand: true,
+          cwd: 'assets/scripts',
+          src: ['{,*/}*.js'],
+          dest: 'dist/assets/scripts/',
+          flatten: false
+        }]
       }
     }
 
   });
-
+  
   // # grunt validate
   // Validate project files, checking for syntax errors.
   // If we had test code, it would go here.
@@ -442,8 +431,7 @@ module.exports = function (grunt) {
       return false;
     }
     grunt.task.run([
-      'sass',
-      'autoprefixer',
+      'sass:' + target,
       'assemble:' + target
     ]);
   });
@@ -451,19 +439,15 @@ module.exports = function (grunt) {
   // # grunt enhance
   // Improve upon the compiled project. Minify files, cache bust.
   grunt.registerTask('enhance', [
-    'useminPrepare',
-    'concat:generated',
-    'cssmin:generated',
-    'uglify:generated',
-    'filerev',
-    'usemin',
-    'clean:post'
+    'postcss',
+    'newer:imagemin',
+    'uglify'
   ]);
 
   // # grunt build
   // Build the project. Don't serve it. Crafted from scratch.
   grunt.registerTask('build', [
-    'clean',
+    'clean:dist',
     'validate',
     'compile:dev'
   ]);
@@ -486,18 +470,4 @@ module.exports = function (grunt) {
     'compile:prod',
     'enhance'
   ]);
-
-  /*grunt.registerTask('publish', 'commit work, push to github, and deploy on server; requires target [valid: dev, prod]', function (target) {
-    if (target !== 'dev' && target !== 'prod') {
-      grunt.log.error('Invalid target `' + target + '`. [valid: dev, prod]');
-      return false;
-    }
-
-    grunt.task.run([
-      'build',
-      //'commit',
-      //'push',
-      //'ftp-deploy:' + target
-    ])
-  });*/
 };

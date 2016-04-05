@@ -8,20 +8,14 @@
   "member": [
     {
       "name": "Nancy Bernard",
-      "firstName": "Nancy",
-      "lastName": "Bernard",
       "position": "Director",
       "email": "nmb",
-      "img": "nancy",
       "category": "Administration Team"
     },
     {
       "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
       "position": "AD, Career Development",
       "email": "addyebb",
-      "img": "addye",
       "category": "Administration Team",
       "liaison": [
         "College of Liberal Arts",
@@ -32,11 +26,8 @@
     },
     {
       "name": "Jay Skipworth",
-      "firstName": "Jay",
-      "lastName": "Skipworth",
       "position": "AD, Employer Relations",
       "email": "skipworth",
-      "img": "jay",
       "category": "Administration Team",
       "liaison": [
         "Raymond J. Harbert College of Business"
@@ -44,11 +35,8 @@
     },
     {
       "name": "Addye Buckley-Burnell",
-      "firstName": "Addye",
-      "lastName": "Buckley-Burnell",
       "position": "AD, Career Development",
       "email": "addyebb",
-      "img": "addye",
       "portfolio": "http://addyebb.weebly.com/",
       "category": "Career Development",
       "liaison": [
@@ -60,11 +48,8 @@
     },
     {
       "name": "Torey Palmer",
-      "firstName": "Torey",
-      "lastName": "Palmer",
       "position": "Career Counselor",
       "email": "palmemt",
-      "img": "torey",
       "portfolio": "http://toreyp.weebly.com/",
       "category": "Career Development",
       "liaison": [
@@ -76,11 +61,8 @@
     },
     {
       "name": "Meaghan Weir",
-      "firstName": "Meaghan",
-      "lastName": "Weir",
       "position": "Career Counselor",
       "email": "meaghan",
-      "img": "meaghan",
       "portfolio": "http://meaghanweir.wix.com/careercoach",
       "category": "Career Development",
       "liaison": [
@@ -92,11 +74,8 @@
     },
     {
       "name": "Dori Weldon",
-      "firstName": "Dori",
-      "lastName": "Weldon",
       "position": "Career Counselor",
       "email": "doriweldon",
-      "img": "dori",
       "category": "Career Development",
       "liaison": [
         "College of Agriculture",
@@ -106,40 +85,28 @@
     },
     {
       "name": "Shari Black",
-      "firstName": "Shari",
-      "lastName": "Black",
       "position": "Graduate Assistant",
       "email": "smb0059",
-      "img": "shari",
       "portfolio": "http://smb0059.wix.com/shari-black",
       "category": "Career Development"
     },
     {
       "name": "Wade Manora",
-      "firstName": "Wade",
-      "lastName": "Manora",
       "position": "Graduate Assistant",
       "email": "wzm0004",
-      "img": "wade",
       "portfolio": "http://wademanorajr.wix.com/wademanorajr",
       "category": "Career Development"
     },
     {
       "name": "Kaela Jimenez",
-      "firstName": "Kaela",
-      "lastName": "Jimenez",
       "position": "Graduate Assistant",
       "email": "kmj0016",
-      "img": "kaela",
       "category": "Career Development"
     },
     {
       "name": "Jay Skipworth",
-      "firstName": "Jay",
-      "lastName": "Skipworth",
       "position": "AD, Employer Relations",
       "email": "skipworth",
-      "img": "jay",
       "category": "Employer Relations",
       "liaison": [
         "Raymond J. Harbert College of Business"
@@ -147,56 +114,38 @@
     },
     {
       "name": "Melvin K. Smith",
-      "firstName": "Melvin K.",
-      "lastName": "Smith",
       "position": "Special Events Coordinator",
       "email": "mks",
-      "img": "melvin",
       "category": "Employer Relations"
     },
     {
       "name": "Lauren Hobbs",
-      "firstName": "Lauren",
-      "lastName": "Hobbs",
       "position": "Student Employment Coordinator",
       "email": "hobbs",
-      "img": "lauren",
       "category": "Employer Relations"
     },
     {
       "name": "Diane Thorne",
-      "firstName": "Diane",
-      "lastName": "Thorne",
       "position": "IT Specialist",
       "email": "thornde",
-      "img": "diane",
       "category": "Employer Relations"
     },
     {
       "name": "Karla Kirkemo",
-      "firstName": "Karla",
-      "lastName": "Kirkemo",
       "position": "Administrative Support Associate",
       "email": "kjk0018",
-      "img": "karla",
       "category": "Operations"
     },
     {
       "name": "Sue Olson",
-      "firstName": "Sue",
-      "lastName": "Olson",
       "position": "Administrative Support Associate",
       "email": "olson",
-      "img": "sue",
       "category": "Operations"
     },
     {
       "name": "Alex Williamson",
-      "firstName": "Alex",
-      "lastName": "Williamson",
       "position": "Marketing & Communications Specialist",
       "email": "anw0040",
-      "img": "alex",
       "category": "Operations"
     }
   ]

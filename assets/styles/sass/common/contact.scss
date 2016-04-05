@@ -1,0 +1,69 @@
+@import '../partials/variables';
+
+.hours, .address, .phone, .email, .name {
+  font-family: $header-font-family;
+  font-size: $button-font-size;
+  > a::before {
+    font-family: $icon-font-family;
+    font-size: $button-font-size;
+    width: $header-font-size;
+    margin-right: $content-protection;
+  }
+}
+.name {
+  color: $box-shadow-color;
+}
+.hours > *:first-child::before {
+  content: '\f017';
+  font-family: $icon-font-family;
+  font-size: $button-font-size;
+  width: $button-font-size;
+  margin-right: $content-protection;
+}
+.hours p {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  padding-left: 6rem;
+}
+.address > a::before {
+  content: '\f041';
+}
+.address .address-second {
+  display: block;
+  margin-left: 5.3rem;
+}
+.phone > a::before {
+  content: '\f095';
+  margin-right: $content-protection - .5rem;
+}
+.email > a::before {
+  content: '\f0e0';
+}
+
+@media (min-width: $small-screen-width) {
+  .hours, .address, .phone, .email, .name {
+    font-size: $button-font-size;
+    > a::before {
+      font-size: $button-font-size;
+      width: $button-font-size;
+    }
+  }
+  .hours > *:first-child::before {
+    font-size: $button-font-size;
+    width: $button-font-size;
+  }
+}
+
+@media (min-width: $moderate-screen-width) {
+  .hours, .address, .phone, .email, .name {
+    font-size: $header-font-size;
+    > a::before {
+      font-size: $header-font-size;
+      width: $header-font-size;
+    }
+  }
+  .hours > *:first-child::before {
+    font-size: $header-font-size;
+    width: $header-font-size;
+  }
+}

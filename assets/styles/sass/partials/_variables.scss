@@ -1,0 +1,138 @@
+/* Colors */
+$border-color: #d7d7d7;
+$bg-gray: #f4f4f4;
+$charcoal: #333;
+$box-shadow-color: #ccc;
+$muted-text-color: #aaa;
+$text-color: $charcoal;
+$thisisdarkblue: #03244d;
+$thisislightblue: #496e9c;
+$thisisiceblue: #e4eeff;
+$thisisburntorange: #dd550c;
+$thisislightorange: #f68026;
+$thisisdarkgray: #747474;
+
+/* Typefaces */
+$header-font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-font-family: "Source Sans Pro", serif;
+$icon-font-family: icomoon;
+
+$border: 1px solid $border-color;
+$box-shadow: 6px 6px 0 $box-shadow-color;
+$line-height: 1.618;
+$header-line-height: 1.2;
+
+$iPad-screen-width: 768px;
+
+$tiny-screen-width: 480px;
+$small-screen-width: $iPad-screen-width + 1;
+$medium-screen-width: 992px;
+$moderate-screen-width: 1105px;
+$social-shrink-width: 1440px;
+
+/* Font sizes */
+$title-font-size: 5rem;
+$header-font-size: 2.9rem;
+$nav-font-size: 2.2rem;
+$button-font-size: 1.8rem;
+$body-font-size: 1.6rem;
+$post-nav-font-size: 1.2rem;
+
+/* Common spacings */
+$content-division: 5rem;     // separates content conceptually
+$content-protection: 3rem;   // separates similar content to make it easier to read
+$content-separation: 1.5rem; // separates very similar content (e.g. paragraphs)
+
+// styles that control the width of the main element, and some other elements that need to mirror it (e.g. the nav)
+@mixin main() {
+  overflow-x: visible; // undo default.css
+
+  width: 90vw;
+  max-width: 1200px;
+  
+  display: block;
+  margin: 0 auto;
+} 
+@mixin hex($width, $color) {
+  $height: $width * (78/104);
+  
+  
+  /* A good standard is 104w x 120h. */
+  /* We want wider than that, though */
+  background-color: $color;
+  
+  width: $width;
+  height: ceil($height / 2);
+  
+  position: relative;
+  z-index: 5;
+  
+  &:before {
+    content: "";
+    width: 0; height: 0;
+    border-bottom: ceil($height / 4) solid $color;
+    border-left: ceil($width / 2) solid transparent;
+    border-right: ceil($width / 2) solid transparent;
+    position: absolute;
+    top: (-1 * $height / 4);
+    z-index: 1;
+  }
+  &:after {
+    content: "";
+    width: 0; height: 0;
+    border-top: ceil($height / 4) solid $color;
+    border-left: ceil($width / 2) solid transparent;
+    border-right: ceil($width / 2) solid transparent;
+    position: absolute;
+    bottom: (-1 * $height / 4);
+    z-index: 1;
+  }
+}
+@mixin arrow($direction, $height, $color) {
+  content: ' ';
+  height: 0; width: 0;
+  
+  display: block;
+  margin: 0 auto;
+  
+  position: absolute;
+  z-index: 2;
+  
+  @if $direction == left {
+    border-bottom: $height solid transparent;
+    border-top:    $height solid transparent;
+    border-left:   0;
+    border-right:  $height solid $color;
+    bottom: auto;
+    right: auto;
+    left: -$height;
+    top: calc(50% - #{$height});
+  } @else if $direction == up {
+    border-bottom: $height solid $color;
+    border-top:    0;
+    border-left:   $height solid transparent;
+    border-right:  $height solid transparent;
+    bottom: auto;
+    right: auto;
+    top: -$height;
+    left: calc(50% - #{$height});
+  } @else if $direction == right {
+    border-bottom: $height solid transparent;
+    border-top:    $height solid transparent;
+    border-left:   $height solid $color;
+    border-right:  0;
+    bottom: auto;
+    left: auto;
+    right: -$height;
+    top: calc(50% - #{$height});
+  } @else if $direction == down {
+    border-bottom: 0;
+    border-top:    $height solid $color;
+    border-left:   $height solid transparent;
+    border-right:  $height solid transparent;
+    top: auto;
+    right: auto;
+    bottom: -$height;
+    left: calc(50% - #{$height});
+  } 
+}

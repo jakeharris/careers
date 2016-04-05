@@ -1,0 +1,16 @@
+// CARDS
+.card {
+  background: white;
+  
+  padding: $content-protection;
+  box-shadow: $box-shadow;
+  
+  margin: $content-protection 0;
+  overflow: hidden;
+}
+@media (min-width: $tiny-screen-width) {
+  .card {
+    padding: $content-division;
+    margin: $content-division 0;
+  }
+}

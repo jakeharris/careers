@@ -1,0 +1,101 @@
+/********************
+**  BROWSER RESETS **
+********************/
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  color: $text-color;
+}
+body {
+  background: #f4f4f4;
+  font-family: $body-font-family;
+  font-size: 1.6rem; 
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+p, div {
+  line-height: $line-height;
+}
+h2, h3, h4, h5, h6, p, blockquote {
+  padding-bottom: $content-separation;
+}
+
+a { 
+  color: $thisislightblue;
+}
+a,
+a:hover {
+  outline: none;
+  text-decoration: none;
+}
+a:hover {
+  color: $thisislightorange;
+}
+a[href$=".pdf"]::after {
+  content: ' (pdf)';
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  color: $thisisdarkblue;
+  font-family: $header-font-family;
+  line-height: $header-line-height;
+  
+  a {
+    color: $thisislightblue; 
+  }
+}
+h1 {
+  font-size: $title-font-size;
+}
+h2 {
+  font-size: $header-font-size;
+}
+h3 {
+  font-size: 2rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/******************************
+** FORCE ALT TEXT FOR IMAGES **
+******************************/
+img:not([alt]) + * {
+  display: unset !important;
+  &::before {
+    content: 'I TOLD YOU ABOUT ALT TEXT, BRO';
+    font-family: 'Comic Sans', sans-serif;
+    display: inline-block;
+    color: aqua;
+    min-height: 10rem;
+    height: 10rem;
+    font-size: 5rem;
+  }
+}
+img:not([alt]) {
+  display: none !important;
+}
+
+/********************
+** THE MAIN FRAME  **
+********************/
+main {
+  @include main;
+}

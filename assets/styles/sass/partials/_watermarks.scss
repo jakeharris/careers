@@ -1,0 +1,21 @@
+// WATERMARK ICONS
+// Class for containers with watermarks
+.watermarked {
+  position: relative;
+}
+// Watermarks themselves
+.watermark::before {
+  position: absolute;
+  z-index: 1;
+  top: -2rem;
+  right: -2rem;
+  
+  opacity: .1;
+  
+  font-size: 13rem;
+}
+@media (min-width: $tiny-screen-width) {
+  .flat-btn--half {
+    flex-basis: 45%;
+  }
+}

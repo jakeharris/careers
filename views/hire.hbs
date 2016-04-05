@@ -6,15 +6,23 @@ type: hire
 layout: employers.hbs
 title: Employers | Career Center
 analytics-token: UA-12338791-4
+
 component:
 - calendar
 - sponsors
+- popover
+
+style:
+- sponsors
+- login
+- employer-calendar
+- popover
 ---
 
-<section class="login-welcome row flex">
-  <div class="login content">
+<section class="flex login-recruiting">
+  <div class="card flex-half login">
     <div class="login-wrapper">
-      <h2 class="">Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
+      <h2>Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
       <p class="login-blurb">Your link to Auburn students.</p>
       <div class="buttons">
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/?signin_tab=0">Sign in</a>
@@ -24,9 +32,9 @@ component:
       </div>
     </div>
   </div>
-  <div class="welcome content content--no-padding">
-    <h2 class="padding">This is Recruiting.</h2>
-    <blockquote class="padding">
+  <div class="card flex-half recruiting">
+    <h2>This is Recruiting.</h2>
+    <blockquote>
       Highly effective employers place their emphasis on long-term
       objectives and building connections with students, faculty, 
       and the career staff, rather than focusing on recruiting 
@@ -38,7 +46,7 @@ component:
       Your success is our success. We look forward to helping you 
       put a Tiger On Your Team.
     </blockquote>
-    <p class="padding">
+    <p>
       <a href="mailto:skipworth@auburn.edu">Jay Skipworth</a>, Assistant Director of Employer Relations
     </p>
     <a class="flat-btn" 
@@ -61,48 +69,59 @@ component:
   </div>
 </section>
 
-<section class="row flex">
-  <div class="services content extra-content content--no-padding">
-    <div class="services-wrapper">
-      <div class="services-overlay"></div>
-      <h2 class="services-header">
-        Employer Services
+<section class="flex">
+  <div class="card unpadded services">
+    <div class="padded services-content">
+      <h2>
+        Our Services
       </h2>
-      <ul class="services-content">
-        <li class="service"><a href="employers/job-postings.html">Job Postings</a></li>
-        <li class="service"><a href="employers/events/">Career Events</a></li>
-        <li class="service"><a href="employers/student-employment/on-campus.html">On-Campus Employment</a></li>
-        <li class="service"><a href="employers/ocr.html#oci">On-Campus Interviewing</a></li>
-        <li class="service"><a href="employers/student-employment/off-campus.html">Off-Campus Employment</a></li>
-        <li class="service"><a href="employers/ocr.html#info-sessions">Information Sessions</a></li>
+      <ul class="services-list flex">
+        <li class="service flex-half">
+          <a href="employers/job-postings.html">Job Postings</a>
+        </li>
+        <li class="service flex-half">
+          <a href="employers/events/">Career Events</a>
+        </li>
+        <li class="service flex-half">
+          <a href="employers/student-employment/on-campus.html">On-Campus Employment</a>
+        </li>
+        <li class="service flex-half">
+          <a href="employers/ocr.html#oci">On-Campus Interviewing</a>
+        </li>
+        <li class="service flex-half">
+          <a href="employers/student-employment/off-campus.html">Off-Campus Employment</a>
+        </li>
+        <li class="service flex-half">
+          <a href="employers/ocr.html#info-sessions">Information Sessions</a>
+        </li>
       </ul>
     </div>
-    <a class="flat-btn flat-btn--disabled report-hiring" href="" disabled="disabled">Report Hiring</a>
+    <a class="flat-btn disabled" disabled="disabled">Report Hiring</a>
   </div>
 </section>
 
-<section class="employer-events-wrapper content extra-content content--no-padding row" ng-controller="calendar-ctrl">
-  <h2 class="employer-events-title">Event Registration</h2>
+<section class="card unpadded events-wrapper" ng-controller="calendar-ctrl">
+  <h2 class="events-title">Event Registration</h2>
   <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
-  <ul class="employer-events flex">
-    <li ng-if="events.length % 2 !== 0" class="employer-event employer-event--blurb">Click any event to get more information and register.</li>
-    <li class="employer-event" ng-repeat="event in events">
-      <a class="employer-event-link" href="[[ event.url ]]">
+  <ul class="events flex">
+    <li ng-if="events.length % 2 !== 0" class="event event--blurb">Click any event to get more information and register.</li>
+    <li class="event" ng-repeat="event in events">
+      <a class="event-link" href="[[ event.url ]]">
         <h3>[[ event.name ]]</h3>
-        <div class="employer-event-details">
-          <div class="employer-event-when">
-            <div ng-if="event.dates" class="employer-event-date"><span ng-if="event.dates.start">[[ event.dates.start ]] - </span>[[ event.dates.end ]]</div>
-            <div ng-if="event.dates === undefined" class="employer-event-date">
+        <div class="event-details">
+          <div class="event-when">
+            <div ng-if="event.dates" class="event-date"><span ng-if="event.dates.start">[[ event.dates.start ]] - </span>[[ event.dates.end ]]</div>
+            <div ng-if="event.dates === undefined" class="event-date">
               [[ event.date.month ]] [[ event.date.day ]]
             </div>
-            <div ng-if="event.date.time === undefined || event.date.time.start === ''" class="employer-event-time">
+            <div ng-if="event.date.time === undefined || event.date.time.start === ''" class="event-time">
               All day
             </div>
-            <div ng-if="event.date.time.start !== '' && event.date.time.start !== undefined" class="employer-event-time">
+            <div ng-if="event.date.time.start !== '' && event.date.time.start !== undefined" class="event-time">
               [[ event.date.time.start ]] - [[ event.date.time.end ]]
             </div>
           </div>
-          <div class="employer-event-cost" ng-if="event.cost">
+          <div class="event-cost" ng-if="event.cost">
             $[[ event.cost ]]
           </div>
         </div>
@@ -111,14 +130,15 @@ component:
   </ul>
 </section>
 
-<section class="row sponsors content extra-content">
-  <h2 class="sponsors-header">Sponsors</h2>
+
+<div class="card sponsors">
+  <h2  class="sponsors-header">Sponsors</h2>
   <div class="sponsors-content" ng-controller="sponsors-ctrl">
     <div class="sponsor" ng-repeat="sponsor in sponsors">
       <span class="vert-centerer"></span>
       <a href="[[ sponsor.url ]]">
-        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade"></img>
+        <img lazy-img="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade" alt="[[ sponsor.company ]]">
       </a>
     </div>
   </div>
-</section>
+</div>

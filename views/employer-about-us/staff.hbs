@@ -1,49 +1,15 @@
 ---
-path-to-root: ../../
 title: Staff | Career Center
 name: employer-staff
 type: employer-staff
+
 layout: employers.hbs
+
+path-to-root: ../../
+
+style:
+- contact-card
+- contact
 ---
 
-{{#each staff.category}}
-  <div class="content">
-    <h2>{{this}}</h2>
-  </div>
-  <div class="staff-container">
-    {{#each ../staff.member}}
-      {{#is category ../this}}
-        <section class="contact-card">
-          <div class="img-liaison-container">
-            {{#if img}}
-            <img class="{{img}}" src="assets/images/staff/{{img}}.jpg">
-            {{/if}}
-            {{#if liaison}}
-            <div class="overlay">
-            </div>
-            <div class="overlay-text">
-              <h2>Liaison to</h2>
-              <ul>
-                {{#each liaison}}
-                <li>{{this}}</li>
-                {{/each}}
-              </ul>
-            </div>
-            {{/if}}
-          </div>
-          <div class="contact-info">
-            <h2>{{firstName}}</br>{{lastName}}</h2>
-            <h3>{{position}}</h3>
-            <h3><a class="email" href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>
-            {{#if quote}}
-            <p class="muted"><span class="big-quote">"</span>{{quote}}<span class="big-quote">"</span></p>
-            {{/if}}
-          </div>
-          {{#if portfolio}}
-          <a class="flat-btn contact-more" href="{{ portfolio }}">Learn More</a>
-          {{/if}}
-        </section>
-      {{/is}}
-    {{/each}}
-  </div>
-{{/each}}
+{{> staff }}

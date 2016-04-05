@@ -1,297 +1,103 @@
-@import 'app';
-@import 'sponsors';
+@import 'partials/variables';
 
-.jobs .inbetween {
-  background: #03244d;
-  padding: 2rem;
-  box-shadow: inset 0px 4px 4px -4px black, inset 0px -4px 4px -4px black;
-}
-
+// BROWSER RESETS
 iframe {
   border: none !important;
   width: 100% !important;
   height: 100% !important;
 }
 
-.jobs .inbetween {
-  background: #03244d;
-  padding: 2rem;
-  box-shadow: inset 0px 4px 4px -4px black, inset 0px -4px 4px -4px black;
-  color: white;
-}
-
-.jobs .events {
-  width: 100%;
+// APP STYLE OVERRIDES
+.event {
   flex-basis: 100%;
-  padding: 5rem;
 }
 
-.jobs .events ul {
-  height: auto;
-  max-height: none;
-  
-  margin-bottom: 1rem;
-  padding-top: 0.5rem;
-}
-
-.jobs .event {
-  flex-basis: 100%;
-  width: 100%;
-  
-  min-height: 8.5rem;
-}
-
-.jobs .blanker-wrap:before {
-  margin-top: -2.8rem;
-}
-
-.features {
+// JOBS-SPECIFIC STYLES
+.features-card {
   display: none;
 }
-
+@media (min-width: $small-screen-width) {
+  .features-card {
+    display: block;
+  }
+}
+.features {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: $content-protection;
+}
 .feature {
-  flex-basis: 33%;
-  width: 33%;
+  flex-basis: 100%;
   margin-bottom: 3rem;
 }
-
-.buttons {
-  position: relative;
-  display: -webkit-flex;
-  display:     -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-between;
-      -ms-justify-content: space-between;
-          justify-content: space-between;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-}
-
-.flat-btn {
-  font-size: 18px;
-  height: auto;
-  padding: 1.2rem 0.5rem;
-}
-.flat-btn--half {
-  box-sizing: border-box;
-  flex-basis: 45%;
-  width: 45%;
-}
-.flat-btn--auto {
-  flex-basis: auto;
-  width: auto;
-  padding: 1.2rem 3rem;
-}
-.flat-btn--white {
-  background: white;
-  color: $thisislightblue;
-  &:hover {
-    background: $thisisiceblue;
-  }
-  &.flat-btn--half {
-    margin-right: 0; 
+@media (min-width: $small-screen-width) {
+  .feature {
+    flex-basis: 33%; 
   }
 }
-
-.login-wrap::before {
-  z-index: 0;
-}
-.login-wrap .flat-btn {
-  z-index: 101;
-}
-
-.resource-buttons {
-  width: 100%;
-  flex-basis: 100%;
-  margin-left: -1px;
-  cursor: pointer;
-  img {
-    height: auto;
+@media (min-width: $moderate-screen-width) {
+  .feature {
+    flex-basis: 16%; 
   }
 }
-
-
-
-.features-header {
-    width: 100%;
-    text-align: center;
-    margin: 2rem 0;
-    font-family: "Norwester", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 .feature-icon {
-    background: $box-shadow;
-    border-radius: 50%;
-    height: 12rem;
-    width: 12rem;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
-}
-
-.feature-icon:before {
-    color: white;
-    font-family: 'icomoon';
-    font-size: 12rem;
-    z-index: 100;
-    position:relative;
-}
-
-.aw-parttime:before {
-    content: '\e604';
-    font-size: 11rem;
-    bottom: 2rem;
-}
-
-.aw-fulltime-internships:before {
-    content: '\f0f2';
-    font-size: 8.5rem;
-    bottom: 0.5rem;
-}
-
-.aw-events:before {
-    content: '\f073';
-    font-size: 8.5rem;
-    bottom: 0.4rem;
-}
-
-.aw-employers:before {
-    content: '\f041';
-    font-size: 11rem;
-    bottom: 2rem;
-}
-
-.aw-interviews:before {
-    content: '\e603';
-    font-size: 9rem;
-    bottom: 0.6rem;
-}
-
-.aw-ellipsis:before {
-    content: '\e602';
-    bottom: 1.5rem;
-    right: 10px;
-}
-
-.feature-content {
-    text-align: center;
-}
-
-
-.resources.resources.resources {
-  height: 100%;
-  border-top: none;
-  border-bottom: none;
+  background-color: $box-shadow-color;
+  height: 10rem;
+  width: 10rem;
+  margin: 0 auto;
+  border-radius: 50%;
   
-  justify-content: space-between;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &::before {
+    color: white;
+    font-size: 6rem;
+  }
+}
+.feature-description {
+  padding-top: $content-separation;
+  text-align: center;
+}
+
+.resources {
+  justify-content: flex-start;
+}
+.resource-buttons {
+  display: flex;
   flex-wrap: wrap;
 }
-
-.resources .row {
-    margin-left: 0;
-    margin-right: -17px;
-    width: 100%;
-}
-
-
 .resource-button {
-  align-content: center;
-  max-width: 50%;
-  margin-right: -3px;
-  margin-left: 0;
-  
-  background: #ddd;
-}
-img.resource-button {
-  width: 100%;
-}
-
-.resource-button.resource-button--yellow:hover {
-    background:#c90;
-}
-
-.resource-button.resource-button--green:hover {
-    background: #060;
-}
-
-.resource-button.resource-button--orange:hover {
-    background: #f63;
-}
-
-.resource-button.resource-button--blue:hover {
-    background: #036;
+  flex-basis: 50%;
+  background-color: $bg-gray;
+  img {
+    width: 100%; 
+  }
+  &:nth-of-type(1):hover {
+    background-color: #036;
+  }
+  &:nth-of-type(2):hover {
+    background-color: #060; 
+  }
+  &:nth-of-type(3):hover {
+    background-color: #db5; 
+  }
+  &:nth-of-type(4):hover {
+    background-color: #a50;
+  }
 }
 
 .widget {
-    flex-basis: 100%;
-    width: 100%;
-    max-height: 600px;
-    height: 600px;
-    padding: 3rem;
-    box-sizing: border-box;
+  padding-top: $content-separation;
+  padding-left: $content-protection;
+  min-height: 600px;
 }
-
-.widget iframe {
-    margin-top: 10px;
-    margin-left: 1px;
-}
-
-/*****************/
-/* MEDIA QUERIES */
-/*****************/
-
-@media(min-width: $small-screen-size) {
-  .features {
-      display: block;
-      position: relative;
-      background: white;
-      padding: 0 2rem;
-      padding-bottom: 2rem;
-
-      border: none;
-      border-top: none;
-  }
-  .jobs .login,
-  .jobs .events {
-    width: 50%;
-    flex-basis: 50%;
-    padding-top: 5rem;
-  }
-  .widget iframe {
-      margin-top: 0;
-      margin-left: 0;
-  }
-}
-@media(min-width: $medium-screen-size) {
-  .feature {
-    flex-basis: 16%;
-    width: 16%;
-  }
-}
-
-@media(min-width: $moderate-screen-size) {
-  .resource-buttons {
-    flex-basis: 66.9%;
-    width: 66.9%; 
-  }
+@media (min-width: $medium-screen-width) {
   .widget {
-    flex-basis: 33%;
-    width: 33%;
-    padding: 0;
-    padding-left: 1px;
-    height: 500px;
+    min-height: 400px; 
   }
 }
 
-@media(min-width: $social-shrink-size) {
-  .widget {
-    height: 520px; 
-  }
-  .widget iframe {
-      margin-top: 10px;
-      margin-left: 2px;
-  }
-}

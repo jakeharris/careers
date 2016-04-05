@@ -4,115 +4,123 @@ ng-app: career-center-employer-events
 name: emp-<%= eventName %>
 type: employer-event-pages
 layout: employers.hbs
+
 component:
 - price
+- popover
 
 eventName: eid
 title: Education Interview Day
+
+style:
+- event-banner-card
+- contact
+- point-of-contact
+- attributes
+- popover
+- accordion
 ---
 <!-- Banner image -->
-<div class="hero">
-  <img class="img"
-       src="assets/images/events/{{eventName}}-banner.png"
-       alt="Education Interview Day. Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom."></img>
-  <div class="img-replace">
-    <h1>Education Interview Day.</h1>
-    <h2>Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom.</h2>
-  </div>
-</div>
+<div class="event-banner-card">
+  <img src="assets/images/events/{{eventName}}-banner.png"
+       alt="Education Interview Day. Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom.">
+  <h2 class="img-replace">Education Interview Day.</h2>
+  <h3 class="img-replace">Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom.</h3>
 
-<div class="content" ng-controller="price-ctrl">
-  <div class="row">
-    <div class="brief">
-      <p class="blurb">A day dedicated to meeting, networking, and interviewing the educators of tomorrow.</p>
-      <div class="contact">
-        <h3>Point of Contact</h3>
-        <div class="contact-details">
-          <img src="assets/images/staff/melvin.jpg">
-          <div class="contact-info">
-            <p class="name">Melvin K. Smith</p>
-            <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
-            <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+  <div class="card" ng-controller="price-ctrl">
+    <div class="blurb flex">
+      <div class="flex-half">
+        <p>A day dedicated to meeting, networking, and interviewing the educators of tomorrow.</p>
+        <div class="point-of-contact">
+          <h3>Point of Contact</h3>
+          <div class="flex">
+            <img class="flex-third"
+                 src="assets/images/staff/melvin.jpg"
+                 alt="Melvin K. Smith.">
+            <div class="poc-info contact flex-two-thirds">
+              <p class="name">Melvin K. Smith</p>
+              <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
+              <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+            </div>
           </div>
         </div>
       </div>
+      <div class="actions flex-half">
+        <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{eventName}}sp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+        <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
+          <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{eventName}}sp16">
+            Register ($[[ price.now ]])
+          </a>
+          <a class="flat-btn--info"
+             data-html="true" 
+             data-trigger="hover" 
+             data-placement="top" 
+             data-toggle="popover" 
+             data-title="<h2>Early Bird Pricing</h2>" 
+             data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
+            ?</a>
+        </div>
+        <div class="tipsheet">
+          <div class="tipsheet-wrapper">
+            <p>Download the tipsheet for detailed information about:</p>
+            <ul class="flex">
+              <li class="flex-half">Payment</li>
+              <li class="flex-half">Shipping</li>
+              <li class="flex-half">Space &amp; Equipment</li>
+              <li class="flex-half">Display Guidelines</li>
+            </ul>
+          </div>
+          <a class="flat-btn" href="assets/images/events/{{eventName}}.pdf">Download Tip Sheet</a>
+        </div>
+        <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=40c05a0aced688a6d1306001fbd32cd6#/events/40c05a0aced688a6d1306001fbd32cd6/employers">View Attending Employers</a>
+      </div>
     </div>
-    <div class="actions">
-      <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{eventName}}sp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
-      <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/{{eventName}}sp16">
-          Register ($[[ price.now ]])
+    <div class="attributes">
+      <div class="attribute">
+        <a class="icon parking" 
+           data-html="true" 
+           data-trigger="hover" 
+           data-placement="top" 
+           data-toggle="popover" 
+           data-title="<h2>Priority Parking <p class='muted'>Stadium Parking Deck</p></h2>" 
+           data-content="<p>The last page of this event's tip sheet is a parking permit for the Stadium Parking Deck, only valid for the day of the event. Parking there is free and convenient, but limited, so plan to arrive early enough to snag a spot.</p>">
+          <i class="icon-automobile"></i>
         </a>
-        <a class="flat-btn--info"
+        <div class="details">
+          Limited Priority Parking
+        </div>
+      </div>
+      <div class="attribute">
+        <!-- 
+          This SHOULD all be automated, but Angular and Popover weren't playing well 
+          (Popover reads everything before Angular gets a chance to set up and populate), 
+          and I couldn't get the cost in the title to render, so you'll need to keep this 
+          up to date manually.  
+        -->
+        <a class="icon dress" 
            data-html="true" 
            data-trigger="hover" 
            data-placement="top" 
            data-toggle="popover" 
            data-title="<h2>Early Bird Pricing</h2>" 
-           data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
-          ?</a>
-      </div>
-      <div class="tipsheet">
-        <div class="tipsheet-wrapper">
-          <p>Download the tipsheet for detailed information about:</p>
-          <ul>
-            <li>Payment</li>
-            <li>Shipping</li>
-            <li>Space &amp; Equipment</li>
-            <li>Display Guidelines</li>
-          </ul>
+           data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
+          <i class="icon-star-full"></i>
+        </a>
+        <div class="details">
+          Early Bird Pricing
         </div>
-        <a class="flat-btn" href="assets/images/events/{{eventName}}.pdf">Download Tip Sheet</a>
       </div>
-      <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/students.php?cf={{ eventName }}sp16">View Attending Employers</a>
-    </div>
-  </div>
-  <div class="attributes">
-    <div class="attribute">
-      <a class="icon parking" 
-         data-html="true" 
-         data-trigger="hover" 
-         data-placement="top" 
-         data-toggle="popover" 
-         data-title="<h2>Priority Parking <p class='muted'>Stadium Parking Deck</p></h2>" 
-         data-content="<p>The last page of this event's tip sheet is a parking permit for the Stadium Parking Deck, only valid for the day of the event. Parking there is free and convenient, but limited, so plan to arrive early enough to snag a spot.</p>">
-        <i class="icon-automobile"></i>
-      </a>
-      <div class="details">
-        Limited Priority Parking
+      <div class="attribute">
+        <a class="icon population">
+          <i class="icon-spoon-knife"></i>
+          <span class="tooltip hover"></span>
+        </a>
+        <div class="details">Lunch Provided</div>
       </div>
-    </div>
-    <div class="attribute">
-      <!-- 
-        This SHOULD all be automated, but Angular and Popover weren't playing well 
-        (Popover reads everything before Angular gets a chance to set up and populate), 
-        and I couldn't get the cost in the title to render, so you'll need to keep this 
-        up to date manually.  
-      -->
-      <a class="icon dress" 
-         data-html="true" 
-         data-trigger="hover" 
-         data-placement="top" 
-         data-toggle="popover" 
-         data-title="<h2>Early Bird Pricing</h2>" 
-         data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
-        <i class="icon-star-full"></i>
-      </a>
-      <div class="details">
-        Early Bird Pricing
-      </div>
-    </div>
-    <div class="attribute">
-      <a class="icon population">
-        <i class="icon-spoon-knife"></i>
-        <span class="tooltip"></span>
-      </a>
-      <div class="details">Lunch Provided</div>
     </div>
   </div>
 </div>
-
-<div class="content extra-content content--no-padding accordion-container">
+<div class="card accordion-container">
   <div class="cancellation-accordion accordion">
     <a class="collapsed accordion-header" data-toggle="collapse" id="cancellation-heading" href="#cancellation" role="tab" aria-expanded="false" aria-controls="cancellation">
       Cancellation Policy<i></i>
@@ -129,22 +137,28 @@ title: Education Interview Day
           </ul>
         </div>
         <div class="contacts">
-          <div class="contact">
+          <div class="point-of-contact">
             <h3>To cancel, contact</h3>
-            <div class="contact-details">
-              <img src="assets/images/staff/diane.jpg">
-              <div class="contact-info">
+            <div class="flex">
+              <div class="flex-third">
+                <img src="assets/images/staff/diane.jpg"
+                     alt="Diane Thorne.">
+              </div>
+              <div class="poc-info contact flex-two-thirds">
                 <p class="name">Diane Thorne</p>
                 <p class="phone"><a href="tel:(334) 844-3862">(334) 844-3862</a></p>
                 <p class="email"><a href="mailto:thornde@auburn.edu">thornde@auburn.edu</a></p>
               </div>
             </div>
           </div>
-          <div class="contact">
+          <div class="point-of-contact">
             <h3>Direct all other inquiries to</h3>
-            <div class="contact-details">
-              <img src="assets/images/staff/melvin.jpg">
-              <div class="contact-info">
+            <div class="flex">
+              <div class="flex-third">
+                <img src="assets/images/staff/melvin.jpg"
+                     alt="Melvin K. Smith.">
+              </div>
+              <div class="poc-info contact flex-two-thirds">
                 <p class="name">Melvin K. Smith</p>
                 <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
                 <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
@@ -157,14 +171,17 @@ title: Education Interview Day
     </div>
   </div>
 </div>
-<div class="content extra-content content--no-padding accordion-container">
+<div class="card accordion-container">
   <div class="parking-accordion accordion">
     <a class="collapsed accordion-header" data-toggle="collapse" id="parking-heading" href="#parking" role="tab" aria-expanded="false" aria-controls="parking">
       Parking<i></i>
     </a>
     <div style="height: 0px;" aria-expanded="false" id="parking" class="panel-collapse collapse" role="tabpanel" aria-labelledby="parking-heading">
       <div class="parking-information">
-        <a href="http://auburn.edu/map?id=304"><img src="assets/images/events/parking/student-center.png"></a>
+        <a href="http://auburn.edu/map?id=304">
+          <img src="assets/images/events/parking/student-center.png"
+               alt="Student Center parking map.">
+        </a>
         <div class="hotel-parking">
           <div class="parking-instruction">
             <h2>Stadium Parking Deck</h2>
@@ -178,7 +195,7 @@ title: Education Interview Day
               A parking pass will be emailed one week prior to 
               the event, and is also available by printing the
               last page of the tip sheet.
-<!--              last page of the <a href="employers/events/Tips_GPSF(F15).pdf">tip sheet</a>.-->
+<!--          last page of the <a href="employers/events/Tips_GPSF(F15).pdf">tip sheet</a>. -->
             </p>
           </div>
           <div class="parking-instruction">

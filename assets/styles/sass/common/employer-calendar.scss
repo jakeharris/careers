@@ -1,0 +1,117 @@
+@import '../partials/variables';
+
+/**********/
+/* MIXINS */
+/**********/
+@mixin color-alternator () {
+  &:nth-of-type(2n-1) {
+    background: $thisislightblue;
+    color: white;
+  }
+  &:nth-of-type(2n) {
+    background: $thisisdarkblue;
+    color: white;
+  }
+  &:nth-child(3n) {   
+    background: $bg-gray;
+    color: $thisisdarkblue; 
+  }
+}
+@mixin checkerboard() {
+  & {
+    background: $thisislightblue;
+    color: white;
+  }
+  &:nth-of-type(2n) {
+    background: $thisisdarkblue;
+    color: white;
+  }
+  @media (min-width: $medium-screen-width) {
+    &,
+    &:nth-of-type(2n) {
+      background: $thisislightblue;
+      color: white;
+    }
+    &:nth-of-type(4n),
+    &:nth-of-type(4n-3) {
+      background: $thisisdarkblue;
+      color: white;
+    }
+  }
+}
+
+.events-title, .events-wrapper > p {
+  padding: 5rem;
+  text-align: center;
+}
+.events-wrapper > p {
+  padding-top: 0;
+}
+.events {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 0;
+  .event {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 3rem;
+    @include checkerboard;
+    transition: background-color 0.3s, color 0.1s;
+    .event-link {
+      color: inherit;
+    }
+    h3 {
+      display: block;
+      text-align: center;
+      width: 100%;
+      font-family: $header-font-family;
+      color: inherit;
+      font-size: 3rem;
+    }
+    &:not(:hover) {
+      
+    }
+    &:hover {
+      background-color: $thisislightorange;
+      color: white;
+    }
+    .event-details {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding-top: 1.5rem;
+    }
+    .event-when,
+    .event-cost {
+      flex-basis: 50%;
+    }
+    .event-cost {
+      text-align: right;
+      font-size: 2.5rem;
+      font-family: $header-font-family;
+    }
+  }
+  .event.event--blurb {
+    background-color: white;
+    color: $thisisdarkblue;
+    font-family: $header-font-family;
+    font-size: 3rem;
+    padding: 3rem 5rem;
+    text-align: center;
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .events .event {
+    flex-basis: 50%; 
+    max-width: 50%;
+  }
+  .events .event--big {
+    flex-basis: 100%;
+    height: 200%;
+  }
+}

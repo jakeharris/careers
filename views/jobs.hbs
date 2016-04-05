@@ -3,27 +3,34 @@ ng-app: career-center-jobs
 title: Tiger Recruiting Link | Career Center
 name: jobs
 type: jobs
-path-to-root: http://www.auburn.edu/career/
+path-to-root: ../
 analytics-token: UA-12338791-3
 layout: default.hbs
+
 component:
+- calendar
+- sponsors
+
+style:
+- login
 - calendar
 - sponsors
 ---
 
-<div class="content extra-content flex content--no-padding">
-  <form class="login" method="post" action="https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauburn-csm.symplicity.com%2Fsso%2Fstudents%2Flogin">
-    <div>
+<div class="card flex unpadded">
+  <div class="login padded flex-half">
+    <div class="login-container watermarked">
+      <i class="watermark icon-compass"></i>
       <h2>Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
       <p>Sign in with your AU username. <span>(ex. abc0001)</span></p>
       <div class="buttons">
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/sso/students/">Current students sign in</a>
-        <a class="flat-btn flat-btn--half" href="https://auburn-csm.symplicity.com/students/">Alumni sign in</a>
-        <a class="flat-btn flat-btn--half flat-btn--white" href="jobs/tipsheets.html">View tips</a>
+        <a class="flat-btn flex-half" href="https://auburn-csm.symplicity.com/students/">Alumni sign in</a>
+        <a class="flat-btn flex-half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
       </div>
     </div>
-  </form>
-  <div class="events" ng-controller="calendar-ctrl">
+  </div>
+  <div class="calendar padded flex-half" ng-controller="calendar-ctrl">
     <h2><a href="events">Upcoming Events</a></h2>
     <ul>
       <li class="event" ng-repeat="event in events">
@@ -38,52 +45,56 @@ component:
         </div>
       </li>
     </ul>
-    <a class="flat-btn flat-btn--auto" href="events">More events</a>
+    <a class="flat-btn" href="events">More events</a>
   </div>
 </div>
 
-<div class="row features content extra-content">
-  <h2 class="features-header">TRL Features</h3>
-  <div class="features-content flex">
+<div class="card features-card">
+  <h2>TRL Features</h2>
+  <div class="features flex">
     <div class="feature">
-      <div class="feature-icon aw-parttime"></div>
-      <div class="feature-content">Part-time Jobs</div>
+      <div class="feature-icon icon-tie"></div>
+      <div class="feature-description">Part-time Jobs</div>
     </div>
     <div class="feature">
-      <div class="aw-fulltime-internships feature-icon"></div>
-      <div class="feature-content">Full-time Jobs and Internships</div>
+      <div class="feature-icon icon-briefcase"></div>
+      <div class="feature-description">Full-time Jobs and Internships</div>
     </div>
     <div class="feature">
-      <div class="aw-events feature-icon"></div>
-      <div class="feature-content">Events</div>
+      <div class="feature-icon icon-calendar"></div>
+      <div class="feature-description">Events</div>
     </div>
     <div class="feature">
-      <div class="aw-employers feature-icon"></div>
-      <div class="feature-content">Employers Coming to Campus</div>
+      <div class="feature-icon icon-map-marker"></div>
+      <div class="feature-description">Employers Coming to Campus</div>
     </div>
     <div class="feature">
-      <div class="aw-interviews feature-icon"></div>
-      <div class="feature-content">Interviews</div>
+      <div class="feature-icon icon-interviewer"></div>
+      <div class="feature-description">Interviews</div>
     </div>
     <div class="feature">
-      <div class="aw-ellipsis feature-icon"></div>
-      <div class="feature-content">...and more!</div>
+      <div class="feature-icon icon-ellipsis-glass"></div>
+      <div class="feature-description">...and more!</div>
     </div>
   </div>
 </div>
 
-<div class="row resources flex content extra-content content--no-padding">
-  <div class="resource-buttons">
-    <div>
-      <a href="http://issuu.com/aucc/docs/jsg_f15_color/1"><img class="resource-button resource-button--blue" src="assets/images/handbook.png" /></a>
-      <a href="http://www.auburn.edu/academic/provost/undergrad_studies/career/resume/index.html"><img class="resource-button resource-button--green" src="assets/images/resume-writing.png" /></a>
-    </div>
-    <div>
-      <a href="experience"><img class="resource-button resource-button--yellow" src="assets/images/gain-experience.png" /></a>
-      <a href="interviews"><img class="resource-button resource-button--orange" src="assets/images/interview-prep.png" /></a>
-    </div>
+<div class="card resources flex unpadded">
+  <div class="resource-buttons flex-two-thirds">
+    <a class="resource-button" href="http://issuu.com/aucc/docs/jsg_f15_color/1">
+      <img src="assets/images/handbook.png" alt="Link to the student handbook">
+    </a>
+    <a class="resource-button" href="http://www.auburn.edu/academic/provost/undergrad_studies/career/resume/index.html">
+      <img src="assets/images/resume-writing.png" alt="Link to resume writing advice">
+    </a>
+    <a class="resource-button" href="experience">
+      <img src="assets/images/gain-experience.png" alt="Link to advice about gaining experience">
+    </a>
+    <a class="resource-button" href="interviews">
+      <img src="assets/images/interview-prep.png" alt="Link to interview preparation resources">
+    </a>
   </div>
-  <div class="widget">
+  <div class="widget flex-third">
     <div id="symp_jobswidget"
          data-csm="auburn-csm.symplicity.com"
          data-id="cafc7f8b2e4d76da719080d5cc417823"
@@ -116,13 +127,13 @@ component:
   </div>
 </div>
 
-<div class="row sponsors content extra-content">
-  <h2 class="sponsors-header">Sponsors</h2>
+<div class="card sponsors">
+  <h2  class="sponsors-header">Sponsors</h2>
   <div class="sponsors-content" ng-controller="sponsors-ctrl">
     <div class="sponsor" ng-repeat="sponsor in sponsors">
       <span class="vert-centerer"></span>
       <a href="[[ sponsor.url ]]">
-        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade"></img>
+        <img lazy-img="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade" alt="[[ sponsor.company ]]">
       </a>
     </div>
   </div>

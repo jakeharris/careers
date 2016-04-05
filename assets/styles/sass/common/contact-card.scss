@@ -1,0 +1,111 @@
+@import '../partials/variables';
+
+.contact-card {
+  flex-basis: 234px;
+  width: 234px;
+  
+  min-width: 234px;
+  
+  display: block;
+  
+  background: white;
+  box-shadow: $box-shadow;
+  
+  padding: 0;
+  margin: 0 1.5rem;
+  margin-bottom: 3rem;
+  
+  position: relative;
+  
+  .contact-image {
+    position: relative;
+    
+    overflow: hidden;
+    width: 234px;
+    height: 389px;
+  }
+  
+  img {
+    height: 100%;
+    min-width: 100%;
+    width: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .overlay,
+  .overlay-text {
+    display: none;
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    
+    padding: 1rem;
+    cursor: pointer; 
+  }
+  .overlay {
+    opacity: 0.7;
+    background-color: $charcoal;
+
+    z-index: 2;
+  }
+  .overlay-text {
+    opacity: 1;
+    background: transparent;
+    z-index: 3;
+    
+    h2 {
+      color: white; 
+      text-align: center;
+    }
+    ul {
+      padding: 1rem 2rem;
+      li {
+        color: white; 
+        padding: 1rem;
+        text-align: center;
+      }
+    }
+  }
+  .contact-image:hover .overlay,
+  .contact-image:hover .overlay-text {
+    display: block;
+  }
+  
+  .contact-info {
+    padding: $content-protection; 
+    height: 30rem;
+    h3, h3 a {
+      font-family: $body-font-family;
+      font-size: $nav-font-size;
+    }
+    margin-bottom: $content-protection;
+  }
+  .flat-btn--bottom {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media(min-width: $small-screen-width) {
+  .contact-card {
+    margin: 0 10%;
+    margin-bottom: 3rem;
+    display: inline-block;
+  }
+}
+
+@media(min-width: $moderate-screen-width) {
+  .contact-card {
+    margin: 0 1.5rem;
+    margin-bottom: 3rem;
+  }
+}

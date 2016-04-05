@@ -4,18 +4,24 @@ name: resume
 type: resume
 layout: no-social.hbs
 ng-app: career-center-resume
+
+path-to-root: ../
+
 component: 
 - hours
 - eresume
+
+style:
+- contact 
 ---
 
-<section class="content resume-banner">
+<section class="card resume-banner">
   <h2>Resumes, Cover Letters, and CVs</h2>
   <p>Let's get you ready.</p>
 </section>
 
-<div class="document-review">
-  <section class="content" ng-controller="hours-ctrl">
+<div class="document-review flex flex--wrap">
+  <section class="card flex-half" ng-controller="hours-ctrl">
     <h2>Professional Document Review</h2>
     <p>
       Come to the Career Center during <a href="aboutus/#walk-ins">walk-in hours
@@ -23,32 +29,21 @@ component:
       sure to have your documents printed before you come to the office.
     </p>
     <div class="hours" ng-if="walkIn">
-      <i class="fa icon-clock-o times-icon"></i>
-      <div class="hours-content">
-        <h2>Walk-ins:</h2>
-        <p ng-repeat="hours in walkIn">
-          <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
-        </p>
-        <p ng-if="holiday" class="muted">[[ holiday ]]</p>
-      </div>
+      <h2>Walk-ins:</h2>
+      <p ng-repeat="hours in walkIn">
+        <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> [[ hours.startTime ]]-[[ hours.endTime ]]
+      </p>
+      <p ng-if="holiday" class="muted">[[ holiday ]]</p>
     </div>
-    <div class="location">
-      <a href="http://auburn.edu/map/?id=76" class="place-icon">
-        <i class="icon-map-marker"></i>
+    <div class="address">
+      <a href="http://auburn.edu/map/?id=76">
+        303 Mary Martin Hall
       </a>
-      <h2 class="place-address">
-        <address>
-          <a href="http://auburn.edu/map?id=76">
-            303 Mary Martin Hall <br />
-            Auburn, AL 36849
-          </a>
-        </address>
-      </h2>
     </div>
     <a class="flat-btn" href="resume/samples">Sample Documents</a>
     <a class="flat-btn" href="http://issuu.com/aucc/docs/jsg_f15_color/22">Job Search Guide</a>
   </section>
-  <section class="content resume">
+  <section class="card resume flex-half">
     <h2>Electronic Resume Review</h2>
     <p>
       The Career Center offers electronic review of your resume 
@@ -70,31 +65,32 @@ component:
       <a href="aboutus/#walk-ins">walk-in hours</a>.
     </p>
     
+    
     <input type="checkbox" id="submitting">
-    <label for="submitting" class="flat-btn flat-btn--no-padding">Get Started <i class="icon-chevron-down"></i></label>
+    <label for="submitting" class="flat-btn">Get Started</label>
     
     <form id="eresume" name="eresume" class="eresume" method="post" enctype="multipart/form-data" action="resume/submission.php">
       <h2>Submit Your eResume</h2>
-      <label class="text-label" for="name">Name</label>
+      
+      <label for="name">Name</label>
       <input type="text" placeholder="First and last, please!" id="name" name="name">
       
-      <label class="text-label" for="gid">Auburn Username</label>
+      <label for="gid">Auburn Username</label>
       <input type="text" placeholder="e.g. jch0039" id="gid" name="gid">
       
-      <label class="text-label" for="job">Desired Job Title</label>
+      <label for="job">Desired Job Title</label>
       <input type="text" placeholder="Head of Marketing and Sales" id="job" name="job">
       
-      <label class="text-label" for="description">Job Description</label>
+      <label for="description">Job Description</label>
       <textarea placeholder="Responsibilities will include: SQL database management, scalable API development..." id="description" name="description"></textarea>
       
       <input type="file" placeholder="Your Resume" id="resume" name="resume">
 
-      <div class="good-resume">
-        <input type="checkbox" id="good-resume">
-        <label for="good-resume">
-          I affirm that the resume I've uploaded fits within the parameters listed above.
-        </label>
-      </div>
+      <input type="checkbox" id="good-resume">
+      <label for="good-resume">
+        I affirm that the resume I've uploaded fits within the parameters listed above.
+      </label>
+      
       <input type="checkbox" id="privacy">
       <label for="privacy">
         The Auburn University Career Center may evaluate and critique my resume by screen 
@@ -102,7 +98,13 @@ component:
         secure medium and grant the Career Center permission to use email for this 
         purpose.
       </label>
+      <button form="eresume" 
+              formmethod="post" 
+              type="submit" 
+              class="eresume-btn 
+                     flat-btn 
+                     disabled"
+              value="submit">Submit</button>
     </form>
-    <button form="eresume" formmethod="post" type="submit" class="eresume-btn flat-btn flat-btn--disabled" disabled="disabled" value="submit">Submit</button>
   </section>
 </div>

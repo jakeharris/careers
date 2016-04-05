@@ -3,52 +3,55 @@ ng-app: none
 name: gpsf
 type: event-pages
 title: Graduate and Professional School Fair
+
 path-to-root: ../../
+
 layout: no-social.hbs
+
+style:
+- attributes
+- event-banner-card
 ---
+<div class="event-banner-card">
 <!-- Banner image -->
-<div class="hero">
-  <img class="hero" src="assets/images/events/GPSF_Webpage(F15).png"></img>
-</div>
-
-<div class="content">    
-  <!-- Blurb -->
-  <div class="row">
-    <p class="blurb">
-      Come down to the Graduate &amp; Professional School Fair and learn about 
-      schools who can teach you what <strong>you</strong> want to learn.
-    </p>
-    <div class="buttons">
-      <a class="flat-btn attendants" href="http://www.alabamaconnection.org/STUDENT.htm">
-        View Details
-      </a>
-    </div>
-  </div>
+  <img src="assets/images/events/{{name}}-banner.png">
   
-  <!-- Icons -->
-  <div class="attributes">
-    <div class="attribute">
-      <div class="icon format">
-        <i class="icon-comments-o"></i>
-      </div>
-      <div class="details">Informational</div>
-    </div>
-    <div class="attribute">
-      <div class="icon dress">
-        <i class="icon-tie"></i>
-      </div>
-      <p class="details">
-        Casual dress
+  <div class="card">    
+    <!-- Blurb -->
+    <div class="blurb flex">
+      <p class="flex-half">
+        Come down to the Graduate &amp; Professional School Fair and learn about 
+        schools who can teach you what <strong>you</strong> want to learn.
       </p>
-    </div>  
-    <div class="attribute">
-      <div class="icon population">
-        <i class="icon-group"></i>
+      <div class="buttons flex-half">
+        <a class="flat-btn attendants" href="http://www.alabamaconnection.org/STUDENT.htm">
+          View Details
+        </a>
       </div>
-      <div class="details">Dozens of schools</div>
+    </div>
+
+    <!-- Icons -->
+    <div class="attributes">
+      <div class="attribute">
+        <div class="icon format">
+          <i class="icon-comments-o"></i>
+        </div>
+        <div class="details">Informational</div>
+      </div>
+      <div class="attribute">
+        <div class="icon dress">
+          <i class="icon-tie"></i>
+        </div>
+        <p class="details">
+          Casual dress
+        </p>
+      </div>  
+      <div class="attribute">
+        <div class="icon population">
+          <i class="icon-group"></i>
+        </div>
+        <div class="details">Dozens of schools</div>
+      </div>
     </div>
   </div>
-
-
-
 </div>

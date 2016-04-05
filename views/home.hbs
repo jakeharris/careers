@@ -5,27 +5,34 @@ type: home
 title: Career Center
 path-to-root: ./
 layout: default.hbs
+
 component:
 - calendar
 - twitter
 - blogger
 - hours
 - sponsors
+
+style:
+- login
+- calendar
+- sponsors
 ---
 
-<div class="home-content content extra-content flex content--no-padding">
-  <div class="login">
-    <div>
+<div class="card flex unpadded">
+  <div class="login padded flex-half">
+    <div class="login-container watermarked">
+      <i class="watermark icon-compass"></i>
       <h2>Sign in to <a href="http://jobs.auburn.edu" class="trl"></a></h2>
       <p>Your link to jobs, interviews and employers.</p>
       <div class="buttons">
         <a class="flat-btn" href="https://auburn-csm.symplicity.com/sso/students/">Current students sign in</a>
-        <a class="flat-btn flat-btn--half" href="https://auburn-csm.symplicity.com/students/">Alumni sign in</a>
-        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
+        <a class="flat-btn flex-half" href="https://auburn-csm.symplicity.com/students/">Alumni sign in</a>
+        <a class="flat-btn flex-half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
       </div>
     </div>
   </div>
-  <div class="carousel-container">
+  <div class="carousel-container flex-half unpadded">
     <div id="cc-carousel" class="carousel" data-ride="carousel">
 
       <ol class="carousel-indicators">
@@ -73,27 +80,23 @@ component:
     </div>
   </div>
 </div>
-
-<div class="content-division col-sm-12 content extra-content" role="main">
+<div class="card" role="main">
   <div class="flex">
-    <div class="block hours">
+    <div class="about watermarked flex-third">
       <h2><a href="http://www.auburn.edu/career/aboutus/">About Our Office</a></h2>
-      <div class="place">
-        <a href="http://auburn.edu/map/?id=76" class="place-icon">
-          <i class="icon-map-marker"></i>
-        </a>
-        <a href="http://auburn.edu/map/?id=76" class="place-address">
-          <address>
-            303 Mary Martin Hall<br>
-            Auburn, AL 36849
-          </address>
-        </a>
-      </div>
+      <a href="http://auburn.edu/map/?id=76" class="place">
+        <i class="about-icon icon-map-marker"></i>
+        <address>
+          303 Mary Martin Hall<br>
+          Auburn, AL 36849
+        </address>
+      </a>
       <div class="times">
-        <i class="fa icon-clock-o times-icon"></i>
-        <div class="times-address" ng-controller="hours-ctrl">
+        <i class="about-icon icon-clock-o"></i>
+        <div class="times-content" ng-controller="hours-ctrl">
           
           <p class="emphasized" ng-if="holiday">[[ holiday ]]</p>
+          
           <div ng-if="office">
             <h6>Hours</h6>
             <p ng-repeat="hours in office">
@@ -106,7 +109,7 @@ component:
               <span ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]-[[ hours.endDay ]]</span><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span> | [[ hours.startTime ]]-[[ hours.endTime ]]
             </p>
           </div>
-          <p class="subtle">
+          <p class="muted">
             Need assistance? Get started by coming in to the Career Center
             during walk-in hours for a brief 15 minute meeting. If 
             additional help is needed, an appointment can be made at that 
@@ -115,23 +118,21 @@ component:
         </div>
       </div>
       <div class="appointments">
-        <a href="tel:3348444744" class="appointments-icon">
-          <i class="fa icon-phone"></i>
-        </a>
-        <div class="appointments-address">
+        <a href="tel:3348444744" class="about-icon icon-phone"></a>
+        <div class="appointments-content">
           <p>
             To schedule an appointment, call <a href="tel:3348444744">(334) 844-4744.</a>
           </p>
-          <p class="subtle">
+          <p class="muted">
             Due to accessibility limitations of Martin
             Hall, please notify us when setting your
             appointment if accommodations are needed.
           </p>
         </div>
       </div>
-      <i class="fa icon-briefcase block-bg hours-bg"></i>
+      <i class="watermark icon-briefcase"></i>
     </div>
-    <div class="block events">
+    <div class="calendar watermarked flex-two-thirds">
       <h2><a href="http://www.auburn.edu/career/events/">Upcoming Events</a></h2>
       <ul ng-controller="calendar-ctrl">
         <li class="event" ng-repeat="event in events">
@@ -141,20 +142,21 @@ component:
           </div>
           <div class="event-details">
             <a ng-if="event.url !== undefined" href="[[ event.url ]]" class="event-details-name" target="_blank">[[ event.name ]]</a>
-            <div ng-if="event.url === undefined" class="event-details-name">[[ event.name ]]</div>
+            <a ng-if="event.abbrev !== undefined" href="students/events/[[ event.abbrev ]].html" class="event-details-name" target="_blank">[[ event.name ]]</a>
+            <div ng-if="event.url === undefined && event.abbrev === undefined" class="event-details-name">[[ event.name ]]</div>
             <div class="event-details-location">[[ event.location ]]</div>
-            <div ng-if="event.date.time != ''" class="event-details-time">[[ event.date.time.start ]] - [[ event.date.time.end ]]</div>
-            <div ng-if="event.date.time == '' && event.date.dates != ''" class="event-details-time">All day, continues until [[ event.date.dates.end ]]</div>
-            <div ng-if="event.date.time == '' && event.date.dates == ''" class="event-details-time">All day</div>
+            <div ng-if="event.date.time !== undefined && event.date.time !== undefined" class="event-details-time"><span ng-if="event.date.time.start !== undefined">[[ event.date.time.start ]] - </span>[[ event.date.time.end ]]</div>
+            <div ng-if="event.date.time === undefined && event.dates !== undefined" class="event-details-time">All day, continues until [[ event.dates.end ]]</div>
+            <div ng-if="event.date.time === undefined && event.dates === undefined" class="event-details-time">All day</div>
           </div>
         </li>
       </ul>
-      <a href="http://www.auburn.edu/career/events/">More events</a>
-      <i class="fa icon-calendar block-bg events-bg"></i>
+      <a class="flat-btn" href="events">More events</a>
+      <i class="watermark icon-calendar"></i>
     </div>
   </div>
   <div class="flex">
-    <div class="block tweets">
+    <div class="tweets watermarked flex-two-thirds">
       <h2><a href="https://twitter.com/aucareer">@AUCareer</a></h2>
       <ul ng-controller="twitter-ctrl">
         <li class="tweet" ng-repeat="tweet in tweets">
@@ -165,28 +167,28 @@ component:
           </div>
         </li>
       </ul>
-      <i class="fa icon-twitter block-bg tweets-bg"></i>
+      <i class="watermark icon-twitter"></i>
     </div>
-    <div class="block blog">
+    <div class="blog watermarked flex-third">
       <h2><a href="http://tigersprepare.blogspot.com" target="_blank">Tigers Prepare Blog</a></h2>
       <ul ng-controller="blogger-ctrl">
         <li class="blog-post" ng-repeat="post in blog.posts">
-          <h3><a class="h3-a post-title" href="[[ post.url ]]">[[ post.title ]]</a></h3>
+          <h3><a class="blog-link post-title" href="[[ post.url ]]">[[ post.title ]]</a></h3>
           <div class="post-details"><a class="tweet-date" href="[[post.author.url ]]">posted by [[ post.author.name ]]</a></div>
         </li>
       </ul>
-      <div class="blog-readmore"><a href="http://tigersprepare.blogspot.com">Read more</a></div>
-      <i class="fa icon-edit block-bg blog-bg"></i>
+      <div class="blog-readmore"><a class="flat-btn" href="http://tigersprepare.blogspot.com">Read more</a></div>
+      <i class="watermark icon-edit"></i>
     </div>
   </div>
 </div>
-<div class="row sponsors content extra-content">
-  <h2 class="sponsors-header">Sponsors</h2>
+<div class="card sponsors">
+  <h2  class="sponsors-header">Sponsors</h2>
   <div class="sponsors-content" ng-controller="sponsors-ctrl">
     <div class="sponsor" ng-repeat="sponsor in sponsors">
       <span class="vert-centerer"></span>
       <a href="[[ sponsor.url ]]">
-        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade">
+        <img lazy-img="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade" alt="[[ sponsor.company ]]">
       </a>
     </div>
   </div>

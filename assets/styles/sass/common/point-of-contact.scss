@@ -1,0 +1,19 @@
+@import '../partials/variables';
+
+.point-of-contact {
+  h3 {
+    font-size: $header-font-size;
+    padding: $content-division*1.5 0;
+    padding-bottom: $content-protection;
+  }
+  img {
+    box-shadow: $box-shadow;
+    margin: 0 auto;
+    margin-bottom: $content-protection;
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .point-of-contact img {
+    margin-bottom: none;
+  }
+}

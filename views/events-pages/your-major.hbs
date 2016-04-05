@@ -3,97 +3,83 @@ ng-app: none
 name: your-major
 type: your-major
 title: Your Major Workshop
+
 path-to-root: ../../
+
 layout: no-social.hbs
+
+style:
+- event-banner-card
+- attributes
 ---
 
 <!-- Banner image -->
-<div class="hero">
-  <img src="assets/images/events/{{name}}-banner.png" 
-       alt="Your Major: Career Discovery Workshop. Spring through Summer."></img>
-</div>
-
-<div class="content">
-  <!-- Blurb -->
-  <div class="row">
-    <p class="blurb">
-      We invite you to attend our Choosing Your Major workshops during the Spring and Summer of 2016. These workshops are for Auburn students who are deciding on which major or career path to pursue.
-    </p>
-    <div class="buttons">
-      <a class="flat-btn" href="students/events/your-major.html#register-student">
-        Register as a Student
-      </a>
-      <a class="flat-btn" href="students/events/your-major.html#register-parent">
-        Register as a Parent
-      </a>
-      <a class="flat-btn" href="assets/images/events/{{ name }}.pdf">
-        See Student Agenda
-      </a>
-    </div>
-  </div>
-  <div class="row row--separate">
-    <div class="event">
-      <div class="event-details">
-        <div class="event-details-name">Student Session</div>
-        <div class="event-details-location">Student Center Room 2222/2223</div>
-        <div class="event-details-time">9am - 3pm</div>
-      </div>
-    </div>
-    <div class="event">
-      <div class="event-details">
-        <div class="event-details-name">Parent Session</div>
-        <div class="event-details-location">Student Center Room 2218</div>
-        <div class="event-details-time">9:30am - 12:30pm</div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Icons -->
-  <div class="attributes">
-    <div class="attribute">
-      <i class="icon format icon-comments-o"></i>
-      <div class="details">Informational</div>
-    </div>
-    <div class="attribute">
-      <i class="icon dress icon-tie"></i>
-      <p class="details">
-        Casual dress
+<div class="event-banner-card">
+  <img src="assets/images/events/{{ name }}-banner.png"
+       alt="Your Major: Career Discovery Workshop. Spring through Summer.">
+  <h2 class="img-replace">Your Major Workshops.</h2>
+  <div class="card">
+    <!-- Blurb -->
+    <div class="blurb flex">
+      <p class="flex-half">
+        We invite you to attend our Choosing Your Major workshops during the Spring and Summer of 2016. These workshops are for Auburn students who are deciding on which major or career path to pursue.
       </p>
-    </div>  
-    <div class="attribute">
-      <i class="icon majors icon-graduation-cap"></i>
-      <div class="details">Any major</div>
+      <div class="buttons flex-half">
+        <a class="flat-btn" href="students/events/your-major.html#register-student">
+          Register as a Student
+        </a>
+        <a class="flat-btn" href="students/events/your-major.html#register-parent">
+          Register as a Parent
+        </a>
+        <a class="flat-btn" href="assets/images/events/{{ name }}.pdf">
+          See Student Agenda
+        </a>
+      </div>
     </div>
-  </div>
- 
-  <div class="topics">
-    <div class="topic students">
-      <h2>Students Learn How To:</h2>
-      <ul>
-        <li>Navigate the career and major exploration processes</li>
-        <li>Enhance self-awareness through self-assessments</li>
-        <li>Discover career options and specific majors available at Auburn University</li>
-        <li>Utilize a variety of resources to explore and gather information needed to make an informed decision</li>
-        <li>Evaluate career options based on professional interests, personality, skills, and values</li>
-      </ul>
+    <div class="attributes">
+      <div class="attribute">
+        <a class="icon format"><i class="icon-comments-o"></i></a>
+        <div class="details">Informational</div>
+      </div>
+      <div class="attribute">
+        <a class="icon dress"><i class="icon-tie"></i></a>
+        <p class="details">
+          Casual dress
+        </p>
+      </div>  
+      <div class="attribute">
+        <a class="icon major"><i class="icon-graduation-cap"></i></a>
+        <div class="details">Any major</div>
+      </div>
     </div>
-    <div class="topic parents">
-      <h2>Parents Learn:</h2>
-      <ul>
-        <li>How your student's brain is developing as they prepare for and enter college, and the impact this developmental stage has on their decision making</li>
-        <li>About academics at Auburn – policies, majors/minors, resources</li>
-        <li>About resources and tools that will help your student make informed and practical decisions about their future career</li>
-        <li>About the AU Career Center services and resources available to your student</li>
-        <li>How you can support your student’s career development as they are choosing a major and career</li>
-      </ul>
+    <div class="topics">
+      <div class="topic students">
+        <h2>Students Learn How To:</h2>
+        <ul>
+          <li>Navigate the career and major exploration processes</li>
+          <li>Enhance self-awareness through self-assessments</li>
+          <li>Discover career options and specific majors available at Auburn University</li>
+          <li>Utilize a variety of resources to explore and gather information needed to make an informed decision</li>
+          <li>Evaluate career options based on professional interests, personality, skills, and values</li>
+        </ul>
+      </div>
+      <div class="topic parents">
+        <h2>Parents Learn:</h2>
+        <ul>
+          <li>How your student's brain is developing as they prepare for and enter college, and the impact this developmental stage has on their decision making</li>
+          <li>About academics at Auburn – policies, majors/minors, resources</li>
+          <li>About resources and tools that will help your student make informed and practical decisions about their future career</li>
+          <li>About the AU Career Center services and resources available to your student</li>
+          <li>How you can support your student’s career development as they are choosing a major and career</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-
-<div id="register-student" class="content extra-content">
+<div id="register-student" class="card">
   <h2>Register as a Student <span class="muted">$80, including assessments and lunch</span></h2>
   <div class="flex">
-    <div class="blurb">
+    <div class="blurb flex-half">
       <p>Click any date to register for that particular session.</p>
       <p>
         The parent session is $15 for parents of attending students.</p>
@@ -105,7 +91,7 @@ layout: no-social.hbs
         if you would like to be considered for sponsorship.
       </p>
     </div>
-    <div class="buttons">
+    <div class="buttons flex-half">
       <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymstudent1">March 18th</a>
       <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymstudent2">March 25th</a>
       <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymstudent3">March 31st</a>
@@ -116,10 +102,10 @@ layout: no-social.hbs
   </div>
 </div>
 
-<div id="register-parent" class="content extra-content">
+<div id="register-parent" class="card">
   <h2>Register as a Parent <span class="muted">$15</span></h2>
   <div class="flex">
-    <div class="blurb">
+    <div class="blurb flex-half">
       <p>Click any date to register for that particular session.</p>
       <p>
         The parent session is $15 for parents of <strong>attending</strong> students.</p>
@@ -131,7 +117,7 @@ layout: no-social.hbs
         if you would like to be considered for sponsorship.
       </p>
     </div>
-    <div class="buttons">
+    <div class="buttons flex-half">
       <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymparents1">March 18th</a>
       <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymparents2">March 25th</a>
       <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/ymparents3">March 31st</a>

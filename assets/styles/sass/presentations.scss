@@ -1,4 +1,4 @@
-@import 'app';
+@import 'partials/variables';
 
 .presentations-banner {
   text-align: center;
@@ -198,8 +198,8 @@ input[type="checkbox"].form-control {
 /* MEDIA QUERIES */
 /*****************/
 
-@media (min-width: $tiny-screen-size) {}
-@media (min-width: $small-screen-size) {
+@media (min-width: $tiny-screen-width) {}
+@media (min-width: $small-screen-width) {
   .for-whom,
   .location-container {
     width: 40%;
@@ -219,8 +219,8 @@ input[type="checkbox"].form-control {
     flex-basis: 45%;
   }
 }
-@media (min-width: $medium-screen-size) {}
-@media (min-width: $moderate-screen-size) {
+@media (min-width: $medium-screen-width) {}
+@media (min-width: $moderate-screen-width) {
   .date-container {
     width: 30%;
     flex-basis: 30%;
@@ -244,7 +244,7 @@ input[type="checkbox"].form-control {
     flex-basis: 30%;
   }
 }
-@media (min-width: $social-shrink-size) {
+@media (min-width: $social-shrink-width) {
    .topic-groups {
     height: 1300px;
   }

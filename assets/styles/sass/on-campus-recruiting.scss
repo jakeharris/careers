@@ -1,0 +1,10 @@
+@import 'partials/variables';
+
+.flat-btn--bottom {
+  margin: 0;
+}
+@media (min-width: $small-screen-width) {
+  .attributes .attribute {
+    flex-basis: 45%;
+  }
+}

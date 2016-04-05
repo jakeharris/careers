@@ -1,4 +1,3 @@
-// input validation
 $(function () {
   
   $('#presentations input').on('change keyup', function () {
@@ -67,27 +66,4 @@ $(function () {
     $('.add-secondary').hide()
     $('.secondary').show()
   })
-});
-
-// datetimepicker stuff
-$(function () {
-  $('#date').datetimepicker({
-    defaultDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000),
-    daysOfWeekDisabled: [0,6],
-    format: 'MM/DD/YYYY'
-  })
-  $('#time-start').datetimepicker({
-    defaultDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000),
-    stepping: 5,
-    format: 'LT'
-  })
-  $('#time-end').datetimepicker({
-    defaultDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000 + 60 * 60 * 1000),
-    stepping: 5,
-    format: 'LT',
-    minDate: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000)
-  })
-  $('#time-start').on('dp.change', function (e) {
-      $('#time-end').data("DateTimePicker").minDate(e.date);
-  })
-});
+})

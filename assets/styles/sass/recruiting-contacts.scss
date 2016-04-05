@@ -1,11 +1,11 @@
-@import 'staff';
+@import 'partials/variables';
 
+// unique stuff
 h3 {
   font-family: $header-font-family;
   font-size: 2.2rem;
   margin-bottom: 0;
 }
-
 .major {
   padding: 3rem;
   background-color: $thisislightblue;
@@ -15,20 +15,33 @@ h3 {
   }
 }
 
+// contact-card overrides
+.staff-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.contact-card {
+  flex-basis: 300px;
+  width: 300px;
+  min-width: 300px;
+  .contact-image {
+    width: 300px;
+    height: 499px;
+  }
+}
+
 .contact-card .contact-info {
   height: auto;
 }
 
-h4 a {
-  font-family: $body-font-family;
-}
 
-.phone:before {
-  @extend .icon-phone;
-  font-family: "icomoon";
-  padding-right: 1.2rem;
-  position: relative;
-  top: 3px;
+// contact overrides
+.phone, .email {
+  font-size: $body-font-size;
 }
 
 .generic-person {
@@ -40,16 +53,13 @@ h4 a {
   &:before {
     color: white;
     font-family: $icon-font-family;
-    @extend .icon-user;
     font-size: 10rem;
     position: relative;
     left: calc(50% - 4rem);
     top: calc(50% - 9rem);
   }
 }
-
-
-@media(min-width: $moderate-screen-size) {
+@media(min-width: $moderate-screen-width) {
   .contact-card {
     margin: 0 3rem;
     margin-bottom: 3rem;

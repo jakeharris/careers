@@ -1,146 +1,19 @@
-@import 'campus-partners';
+@import 'partials/variables';
 
-.partner-content {
+// TWEAKS
+.department-contacts {
+  flex-wrap: wrap;
   align-items: flex-start;
 }
-.dept-accordion {
-  box-shadow: 6px 6px 0 $box-shadow;
-}
-.partner-info {
-  padding-top: 3rem;
-  p {
-    margin-bottom: 3rem;
-  }
-}
-.accordion-header {
-  z-index: 1;
-  @extend .flat-btn; 
-  margin: 0;
-  box-shadow: none;
-  background: $thisisdarkblue;
-  
-  i:before {
-    text-align: center;
-    display: inline-block;
-    padding: 0;
-    padding-left: 5rem;
-    font-size: 18px;
-    @extend .icon;
-    @extend .icon-chevron-up;
-  }
-  &.collapsed {
-    background: $thisislightblue;
-    i:before {
-      @extend .icon-chevron-down; 
-    }
-  }
-  &:hover {
-    background: $thisisdarkblue;
-    color: white;
+.details {
+  > div,
+  > .info > p {
+    padding-bottom: $content-protection; 
   }
 }
 
-.dept-contact {
-  display: block;
-  
-  width: 100%;
-  padding: 1.5rem 3rem;
-  
-  background: $thisislightblue;
-  color: white;
-  
-  .muted {
-    display: none;
-  }
-  &:hover {
-    background: $thisisdarkblue;
-    color: white;
-  }
-  &:hover .muted {
-    display: inline-block;
-    color: #aaa;
-    padding-left: 1rem; 
-  }
-}
-
-.desktop-show {
-  display: none;
-}
-
-/*****************/
-/* MEDIA QUERIES */
-/*****************/
-@media (min-width: $small-screen-size) {
-  .partner-content {
-    .partner-contact {
-      flex-basis: 100%;
-      width: 100%;
-      margin-bottom: 3rem;
-    }
-    .partner-info {
-      flex-basis: 100%;
-      width: 100%;
-    }
-    .address, .phone, .email {
-      width: 100%;
-      min-width: 40rem;
-    }
-  }
-}
-
-@media (min-width: $medium-screen-size) {
-  .partner-info {
-    padding-top: 0; 
-  }
-  .desktop-show {
-    display: inline; 
-  }
-}
-@media (min-width: $moderate-screen-size) {
-  .accordion-header {
-    h2 {
-      font-size: 2.5rem;
-      padding: 1.6rem 0;
-    }
-    i:before {
-      font-size: 2.5rem; 
-    }
-  }
-  .partner-content {
-    .partner-contact {
-      width: 40%;
-      flex-basis: 40%;
-    }
-    .partner-info {
-      width: 55%;
-      flex-basis: 55%;
-    }
-  }
-  /*********************/
-  /* IMAGE POSITIONING */
-  /*********************/
-  
-  .dudley {
-    margin-top: -300px;
-  }
-
-  .haley {
-    margin-top: -200px;
-  }
-
-  .fws {
-    margin-top: -120px;
-  }
-
-  .humsci {
-    margin-top: -50px;
-  }
-
-  .cola, .cosam {
-    margin-top: -50px;
-  }
-
-  .nursing {
-    margin-top: -380px;
-  }
+.visual img.harbert {
+  width: auto;
+  height: auto;
+  margin-left: -333px;
 }

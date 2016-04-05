@@ -3,90 +3,99 @@ ng-app: career-center-seoty
 name: seoty
 type: event-pages
 title: Student Employment Awards | Career Center
+
 path-to-root: ../../
+
 layout: no-social.hbs
+
+style:
+- event-banner-card
+- attributes
 
 component:
 - sponsors
 ---
 
 <!-- Banner image -->
-<div class="hero">
-  <img src="assets/images/events/{{ name }}-banner.png" 
-       alt="Student Employee of the Year Awards. Celebrated during National Student Employee Week, April 11-15, 2016.">
+<div class="event-banner-card">
+  <img src="assets/images/events/{{name}}-banner.png" alt="Student Employee of the Year Awards. Celebrated during National Student Employee Week, April 11-15, 2016.">
+  <h2 class="img-replace">Student Employee of the Year Awards.</h2>
+  <h3 class="img-replace">Celebrated during National Student Employee Week, April 11-15, 2016.</h3>
+  <section class="card">
+    <!-- Blurb -->
+    <div class="flex blurb">
+      <div class="brief flex-half">
+        <p class="muted">
+          You may <strong>only</strong> nominate your direct supervisor, and only 
+          if you are a student employee.
+        </p>
+        <p>
+          The National Student Employment Association (NSEA) designates one week each 
+          year, National Student Employment Week, for universities and colleges 
+          nationwide to recognize the substantial contributions of student employees.
+        </p>
+        <p>
+          In recognition of National Student Employment Week, April 11-15, 2016, the 
+          Career Center will host the Student Employee of the Year awards to recognize 
+          student employees for their unwavering dedication to both the campus and 
+          community. Supervisors nominate student employees to receive recognition for 
+          both on and off campus service. Additionally, outstanding supervisors will be 
+          recognized for their leadership and support of student employment. All 
+          nominees will be recognized and one will be selected as Supervisor of the Year.
+        </p>
+      </div>
+      <div class="actions flex-half">
+        <a class="flat-btn" href="http://survey.az1.qualtrics.com/SE/?SID=SV_0iWbJxg2W7xx5I1">Nominate Supervisor</a>
+        <a class="flat-btn flat-btn--white" href="employers/events/seoty.html">Nominate a Student Worker</a>
+        <div class="padded">
+          <h2>Eligibility</h2>
+          <ul>
+            <li>Must be a current, direct supervisor of an on-campus or off-campus student employee(s)</li>
+            <li>Nominations may be submitted by a student employee or a colleague who is knowledgeable of their supervisory skills</li>
+            <li>Only one nomination per nominator is permitted.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule flex">
+      <h2>Awards Ceremony <span class="muted">Apr 11</span></h2>
+      <h2>Nomination Deadline <span class="muted">Feb 5 at 5pm</span></h2>
+    </div>
+    
+    <!-- Icons -->
+    <div class="attributes">
+      <div class="attribute">
+        <a class="icon format">
+          <i class="icon-star-full"></i>
+        </a>
+        <div class="details">Invitation to follow</div>
+      </div>
+      <div class="attribute">
+        <a class="icon dress">
+          <i class="icon-tie"></i>
+        </a>
+        <p class="details">
+          Business casual dress
+        </p>
+      </div>  
+      <div class="attribute">
+        <a class="icon population">
+          <i class="icon-spoon-knife"></i>
+        </a>
+        <div class="details">Refreshments provided</div>
+      </div>
+    </div>
+  </section>
 </div>
 
-<section class="content">
-  <!-- Blurb -->
-  <div class="flex">
-    <div class="brief">
-      <p class="blurb muted">
-        You may <strong>only</strong> nominate your direct supervisor, and only 
-        if you are a student employee.
-      </p>
-      <p class="blurb">
-        The National Student Employment Association (NSEA) designates one week each 
-        year, National Student Employment Week, for universities and colleges 
-        nationwide to recognize the substantial contributions of student employees.
-      </p>
-      <p class="blurb">
-        In recognition of National Student Employment Week, April 11-15, 2016, the 
-        Career Center will host the Student Employee of the Year awards to recognize 
-        student employees for their unwavering dedication to both the campus and 
-        community. Supervisors nominate student employees to receive recognition for 
-        both on and off campus service. Additionally, outstanding supervisors will be 
-        recognized for their leadership and support of student employment. All 
-        nominees will be recognized and one will be selected as Supervisor of the Year.
-      </p>
-    </div>
-    <div class="actions">
-      <a class="flat-btn" href="http://survey.az1.qualtrics.com/SE/?SID=SV_0iWbJxg2W7xx5I1">Nominate Supervisor</a>
-      <a class="flat-btn flat-btn--white" href="employers/events/seoty.html">Nominate a Student Worker</a>
-      <h2>Eligibility</h2>
-      <ul>
-        <li>Must be a current, direct supervisor of an on-campus or off-campus student employee(s)</li>
-        <li>Nominations may be submitted by a student employee or a colleague who is knowledgeable of their supervisory skills</li>
-        <li>Only one nomination per nominator is permitted.</li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="dates flex row">
-    <h2 class="awards-ceremony-header">Awards Ceremony <span class="awards-ceremony">Apr 11</span></h2>
-    <h2 class="deadline-header">Nomination Deadline <span class="deadline">Feb 5 at 5pm</span></h2>
-  </div>
-  <!-- Icons -->
-  <div class="attributes">
-    <div class="attribute">
-      <a class="icon format">
-        <i class="icon-star-full"></i>
-      </a>
-      <div class="details">Invitation to follow</div>
-    </div>
-    <div class="attribute">
-      <a class="icon dress">
-        <i class="icon-tie"></i>
-      </a>
-      <p class="details">
-        Business casual dress
-      </p>
-    </div>  
-    <div class="attribute">
-      <a class="icon population">
-        <i class="icon-spoon-knife"></i>
-      </a>
-      <div class="details">Refreshments provided</div>
-    </div>
-  </div>
-</section>
-
-<div class="row sponsors content extra-content">
-  <h2 class="sponsors-header">Sponsors</h2>
+<div class="card sponsors">
+  <h2  class="sponsors-header">Sponsors</h2>
   <div class="sponsors-content" ng-controller="sponsors-ctrl">
     <div class="sponsor" ng-repeat="sponsor in sponsors">
       <span class="vert-centerer"></span>
       <a href="[[ sponsor.url ]]">
-        <img src="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade">
+        <img lazy-img="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade" alt="[[ sponsor.company ]]">
       </a>
     </div>
   </div>

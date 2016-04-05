@@ -1,509 +1,57 @@
-@import 'internships';
-
-.recruiting-link, .welcome,
-.flex-third, .guide-step {
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.hero {
-  width: 100%;
-  background: white;
-  box-shadow: 6px 6px 0 $box-shadow;
-  text-align: center;
-
-  padding: 5rem;
-  
-  img {
-    display: none;
-  }
-  .img-replace {
-    display: block;
-    text-align: center;
-    font-size: 5rem;
-    padding: 3rem;
-    vertical-align: middle;
-    font-family: $header-font-family;
-  }
-
-  & > h1 {
-    color: $thisislightorange;
-    font-size: 12rem;
-  }
-}
-
-.flex {
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.flex-quarter {
-  flex-basis: 25%;
-  width: 25%;
-  
-  display: inline-block;
-}
-.flex-third {
-  flex-basis: 100%;
-  max-width: none;
-  
-  display: inline-block;
-  padding: 1.2rem 0;
-  &:first-of-type {
-    padding-left: 0; 
-  }
-  &:last-of-type {
-    padding-right: 0; 
-  }
-  &.report-placement {
-    padding-left: 5rem; 
-  }
-}
-.flex-half {
-  flex-basis: 100%;
-  max-width: none;
-}
-.flex-two-thirds {
-  flex-basis: 100%;
-  max-width: none;
-  
-  display: inline-block;
-  padding-left: 3rem;
-}
-.contact {
-  .contact-details {
-    display: flex;
-    .contact-info {
-      flex-basis: 70%; 
-      
-      padding-left: 3rem;
-    }
-  }
-  &.content .contact-details {
-    display: block;
-    .contact-info {
-      width: 100%;
-      padding: 0;
-    }
-  }
-  img {
-    flex-basis: 25%;
-    width: 25%;
-    
-    border-radius: 50%;
-    box-sizing: padding-box;
-  }
-  &.content img {
-    width: 45%; 
-    display: block;
-    
-    margin: 0 auto;    
-    margin-bottom: 3rem;
-  }
-  h3 {
-    font-family: $header-font-family;
-    font-size: 3rem;
-  }
-  .address, .phone, .email, .name {
-    position: relative;
-    
-    font-family: $header-font-family;
-    font-size: 2rem;
-    
-    margin: 0;
-    padding-bottom: 1rem;
-    
-    a {
-      display: inline-block; 
-      word-wrap: break-word;
-      margin-left: 3.6rem;
-      position: absolute;
-    }
-    .muted {
-      font-size: 0.8em;
-      color: $box-shadow;
-      padding-top: 0;
-      margin-top: 0;
-      display: block;
-    }
-  }
-  .phone, .email {
-    
-  }
-  .email {
-    margin-top: -1rem;
-  }
-  
-  .address:before, .phone:before, .email:before {
-    @extend [class^="icon-"], [class*=" icon-"];
-  
-    display: inline-block;
-
-    font-size: 4rem;  
-    color: $box-shadow;
-    width: 2rem;
-  }
-  .address:before {
-    @extend .icon-map-marker;
-  }
-  .phone:before {
-    @extend .icon-phone; 
-  }
-  .email:before {
-    @extend .icon-comments-o; 
-  }
-  .name {
-    color: $box-shadow; 
-  }
-}
-@media (min-width: $small-screen-size) {
-  .contact {
-    .address, .phone, .email, .name {
-      font-size: 2.5rem; 
-    }
-  }
-  .flex-half {
-    flex-basis: 45%;
-    max-width: 45%;
-  }
-}
-@media (min-width: $moderate-screen-size) {
-  
-  .flex-third {
-    flex-basis: 34%;
-    max-width: 34%;
-  }
-  .flex-two-thirds {
-    flex-basis: 66%;
-    max-width: 66%;
-  }
-}
-.flat-btn.flex-half {
-  @extend .flex-half;
-  height: 100%;
-}
-.buttons--no-padding {
-  padding: 0;
-  margin: 0;
-  flex-wrap: nowrap;
-  .flat-btn {
-    margin: 0; 
-  }
-}
-
-.survey-length {
-  font-family: $header-font-family;
-  font-size: 2rem;
-  padding-top: 1rem;
-  @extend .muted;
-}
+@import 'partials/variables';
 
 h3 {
-  color: $thisisdarkblue;
+  font-size: $header-font-size;
 }
-h3:hover {
-  color: $thisisdarkblue;
-  cursor: default;
-}
-.quick-guide {
-  display: none;
-  
-  padding: 0;
-  padding-top: 3rem;
-  
-  background-color: $bg-gray;
-  
-  .flex {
-    justify-content: space-between;
-  }
-  .flex-third {
-    flex-basis: 30%; 
-    width: 30%;
-    &:last-of-type {
-      padding-left: 5rem; 
-      h4:nth-of-type(2) {
-        padding-top: 3rem;
-      }
-    }
-  }
-  h4 {
-    color: $thisisdarkblue;
-    padding-top: 0;
-  }
-  ol {
-    padding: 0 1.6rem; 
-  }
-}
-.attributes {
-  display: none;
-  justify-content: space-around;
-  flex-wrap: wrap;
-
-  width: 100%;
-
-  padding-top: 3rem;
-
-  & > .attribute {
-
-    flex-basis: 100%;
-    width: 100%;
-    min-width: 200px;
-    margin-bottom: 3rem;
-
-    & > a.icon:hover {
-      background: $thisislightblue;
-    }
-
-    & > .icon {
-      background: #ccc;
-      color: white;
-      border-radius: 10rem 10rem;
-      font-size: 6rem;
-      width: 10rem;
-      height: 10rem;
-
-      display: block;
-
-      margin-left: auto;
-      margin-right: auto;
-
-      &.calendar {
-        padding-left: 2.2rem;
-        padding-top: 2rem;
-      }
-    }
-    & > .details {
-      padding-top: 3rem;
-      text-align: center;
-      font-family: $header-font-family;
-      font-size: 2rem;
-    }
-  }
-}
-ol {
-  padding: 0;
-  margin: 0;
-}
-
-.recruiting-welcome {
-  min-height: 550px;
-  padding-top: 1.5rem;
-  margin-top: 4rem;
-}
-.recruiting-link {
-  flex-basis: 100%;
-  width: 100%;
-  
-  h3, p:first-of-type {
-    text-align: center;
-    padding-bottom: 0.5rem;
-    margin: 0;
-  }
-  ul {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 1rem 0;
-    li {
-      font-family: $header-font-family;
-      @extend .muted;
-      padding: 0.5rem 0; 
-    }
-  }
-  .attributes {
-    display: none; 
-  }
-}
-@media (min-width: $small-screen-size) {
-  .recruiting-link .attributes {
-    display: flex; 
-  }
-}
-
-.content--no-padding .flat-btn {
-  box-shadow: none;
-  margin: 0;
-}
-.flat-btn--bottom {
-  margin: 0;
-}
-.how-to-header + p {
-  text-align: center;
-}
-.popover {
-  min-width: 350px;
-  width: 100%;
-  height: auto;
-  padding: 1rem;
-  
-  p {
-    margin: 0; padding: 0.5rem; 
-  }
-  p.muted {
-    margin: 0; padding: 0; 
-  }
-  ol li{
-    list-style: decimal;
-    list-style-position: inside;
-    padding: 1rem 0;
-  }
-}
-.welcome {
-  flex-basis: 100%;
-  width: 100%;
-  height: 100%;
-  padding: 3rem;
-  &.flex-third {
-    padding-right: 3rem; 
-  }
-}
-.recruiting-link, .welcome {
-  height: 100%;
-  padding-top: 1.5rem;
-}
-.faq-header {
-  padding-top: 3.5rem;
-}
-.faq-header::before {
-  content: "FAQ";
-}
-.faq {
-  counter-reset: questionNumber;
-}
-.faq .panel.panel-default {
-  border-radius: 0; 
-  border: 1px solid $box-shadow;
-  margin-top: 2rem;
-  box-shadow: 6px 6px 0 $box-shadow;
-  .panel-body {
-    background: white;
-    border: none;
-    padding: 3rem;
-    p {
-      padding: 1.5rem 0;
-      max-width: 600px;
-    }
-    &:not(.collapsed) {
-      border-top: 1px solid $box-shadow; 
-    }
-  }
-  .panel-heading {
-    background: white; 
-    color: $thisisdarkblue;
-    padding: 0;
-    border-bottom: none;
-    border-radius: 0;
-  }
-  .panel-heading:hover {
-    background: $thisisdarkblue;
-    color: white;
-  }
-}
-.faq .faq-question {
+.card.banner p {
   font-family: $body-font-family;
-  font-size: 1.7rem;
-  position: relative;
-  line-height: 1.618;
+}
+.login, .point-of-contact {
   height: 100%;
-  a {
-    padding: 1.5rem 3rem; 
-    padding-right: 5rem;
-    display: block;
-    &:hover {
-      color: white;
-    }
-  }
-  a::before {
-    font-family: $header-font-family;
-    counter-increment: questionNumber;
-    content: counter(questionNumber) " ";
-    font-size: 2rem;
-    padding-right: 3rem;
-    display: none;
-  }
-  a::after {
-    @extend .icon-chevron-down:before; 
-    font-family: $icon-font-family;
-    position: absolute;
-    right: 3rem;
-  }
 }
-@media (min-width: $small-screen-size) {
-  .faq .faq-question {
-    a::before, a::after {
-      display: inline-block;
-    }
-  }
+.login {
+  align-self: flex-start;
 }
-
-.report-placement {
-  padding: 5rem;
-  padding-top: 1.5rem;
+.quick-guide .card {
+  margin: 0;
 }
-.flex-third.registration--starter {
-  padding-left: 5rem;
-}
-
-.content--no-padding > h3 {
-  padding: 5rem;
-  padding-bottom: 0;
-}
-.content--no-padding > h3 + div.padding {
-  padding: 5rem;
-  padding-top: 0;
-}
-.content--no-padding > h3.how-to-header {
-  padding: 5rem;
-  padding-top: 3rem;
-  padding-bottom: 1.5rem;
+.advice h3, .content--guide .padded {
   text-align: center;
 }
-.content--report .flex-half {
-  flex-basis: 100%;
-  width: 100%;
-  &:last-of-type {
-    padding-top: 5rem; 
+@media (max-width: $small-screen-width) {
+  .content--guide .padded {
+    padding-bottom: 0;
   }
 }
-.content--tips .buttons {
-  align-items: stretch;
-  flex-wrap: wrap;
-  .flat-btn {
-    flex-basis: 100%;
-    width: 100%;
-  }
-}
-@media (min-width: $moderate-screen-size + 50px) {
-  .content--tips .buttons {
-    flex-wrap: nowrap;
-    .flat-btn {
-      flex-basis: 25%;
-      width: 25%;
-    }
-    .flat-btn.flex-half {
-      flex-basis: 50%;
-      width: 50%;
-      max-width: 50%;
-    }
-  }
+ol li {
+  list-style: decimal;
 }
 
-.at-auburn {
-  display: none;
+// how-to-hire guide (on-campus only)
+.content--guide {
+  overflow: visible;
 }
-
 .guide {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 
   width: 100%;
-
-  padding-top: 3rem;
   
   counter-reset: step;
+}
+@media (min-width: $small-screen-width) {
+  .guide {
+    padding-top: 3rem;
+  }
 }
 .guide-step {
   flex-basis: 100%;
   width: 100%;
+  &.attribute {
+    flex-basis: 100%;
+    width: 100%;
+  }
   min-width: 200px;
   
   padding: 5rem;
@@ -512,24 +60,21 @@ ol {
   counter-increment: step;
   
   & > .icon {
-    color: white;
     &::after {
-      color: white;
       font-family: $header-font-family;
       content: counter(step);
-      position: relative;
-      top: 1.8rem;
-      left: 3.4rem;
+      padding-left: 1.5rem;
+      color: white;
       &:hover {
         color: white; 
       }
     }
   }
   &:first-of-type > .icon::after {
-    left: 3.8rem;
+    padding-left: 1.8rem;
   }
   &:nth-of-type(4) > .icon::after {
-    left: 3.1rem; 
+    padding-left: 1rem; 
   }
   
   & > .details {
@@ -554,137 +99,16 @@ ol {
     border: none;
   }
 }
-
-a.icon:hover {
-  background: $thisislightblue;
-  color: white;
-}
-.icon {
-  background: #ccc;
-  border-radius: 10rem 10rem;
-  font-size: 6rem;
-  width: 10rem;
-  height: 10rem;
-
-  display: block;
-
-  margin-left: auto;
-  margin-right: auto;
-  
-}
-.icon.calendar {
-  padding-left: 2.2rem;
-  padding-top: 2rem;
-}
-.icon.post {
-  @extend .icon-coin-dollar;
-  padding-left: 2.2rem;
-  padding-top: 1.8rem;
-}
-.icon.law {
-  @extend .icon-law;
-  padding-left: 2rem;
-  padding-top: 2rem;
-}
-#oci {
-  max-width: 100%;
-}
-#oci .icon {
-  padding-left: 2rem;
-  padding-top: 1.8rem;
-  & .icon-folder-download {
-    position: relative;
-    left: 1px;
-  }
-  & .icon-user-check {
-    position: relative;
-    left: 2px;
-    top: 2px;
-  }
-  & .icon-folder-open {
-    position: relative;
-    left: 3px;
-  }
-  & .icon-enter {
-    position: relative;
-    right: 6px;
-    top: 5px;
-  }
-}
-#oci .attributes {
-  display: flex;
-}
-.job-postings .icon i {
-  &::before {
-    position: relative;
-    top: 1.8rem;
-    left: 2rem;
-  }
-  &.icon-graduation-cap::before {
-    left: 1.2rem; 
-  }
-}
-
-.guide-step > .icon,
-.faq-question:hover > a {
-  color: white !important;
-}
-
-.ocr-blurb {
-  width: 100%;
-}
-@media (min-width: $medium-screen-size) {
-  .ocr-blurb {
-    width: 60%; 
-  }
-}
-
-@media (min-width: $small-screen-size) {
-  .hero .img-replace {
-    font-size: 5rem; 
-  }
-  .attributes {
-    display: flex; 
-    & > .attribute {
-      flex-basis: 33.33333%;
-    }
-  }
-  #oci .attributes {
-    padding: 5rem 0;
-    & > .attribute {
-      flex-basis: 100%; 
-    }
-  }
-  .content--tips .buttons {
-    align-items: flex-start; 
-  }
-}
-@media (min-width: $moderate-screen-size) {
-  .hero .img-replace {
-    font-size: 8rem; 
-  }
-  .faq-header::before {
-    content: "Frequently Asked Questions"; 
-  }
-  .recruiting-link {
-    flex-basis: 66%;
-    width: 66%;
-  }
-  .welcome {
-    flex-basis: 30%;
-    width: 30%;
-  }
-  .quick-guide {
-    display: block; 
-  }
-  .quick-guide .flex {
-    display: flex;
-  }
+@media (min-width: $moderate-screen-width) {
   .guide-step {
     $steps: 6;
     
     flex-basis: 33.33333%;
-    width: 33.33333%;
+    max-width: 33.33333%;
+    &.attribute {
+      flex-basis: 33.33333%;
+      max-width: 33.33333%;
+    }
     
     &::after {
       @include arrow(right, 30px, white); 
@@ -719,43 +143,89 @@ a.icon:hover {
       $counter: $counter + 1;
     }
   }
-  .interdigitator {
-    .content--guide {
-      order: 1;
-    }
-    .content--tips {
-      order: 2; 
-    }
-  }
-  .content--report .flex-half {
-    flex-basis: 45%;
-    width: 45%;
-  }
-  .content--tips .flat-btn {
-    font-size: 2.5rem; 
-  }
 }
-@media (min-width: $social-shrink-size) {
-  #oci .attributes .attribute {
-    flex-basis: 25%;
-    width: 25%;
-  }
+.popover h4 {
+  padding-top: $content-separation;
 }
 
-.restrictions {
-  width: 100%;
-  ul {
-    list-style: disc;
-    margin-left: 5rem;
-    li {
-      list-style: disc;
-    }
+// point-of-contact overrides
+.point-of-contact {
+  h3 {
+    padding-top: 0;
   }
-}
-@media (min-width: $moderate-screen-size) {
-  .restrictions {
-    width: 66%; 
+  img {
+    display: block;
+    width: 50%;
+    flex-basis: 50%;
+    margin: 0 auto;
+    margin-bottom: $content-protection;
+  }
+  .phone, .email,
+  .phone a::before, .email a::before {
+    font-size: $button-font-size;
   }
 }
 
 
+.faq {
+  counter-reset: faq;
+}
+// accordion overrides
+.accordion {
+  overflow: hidden;
+  margin-bottom: $content-separation;
+  box-shadow: $box-shadow;
+}
+.accordion-header {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  text-align: left;
+  border: 1px solid $box-shadow-color;
+  z-index: 2;
+  position: relative;
+  padding: $content-separation;
+  &::before {
+    font-family: $header-font-family;
+    content: counter(faq);
+    counter-increment: faq;
+    padding-right: $content-separation;
+  }
+  &::after {
+    position: absolute;
+    right: $content-separation;
+  }
+}
+.accordion > a:not(.collapsed),
+.accordion > a.collapsed {
+  background: white;
+  color: $thisisdarkblue;
+}
+.accordion > a:hover {
+  color: white;
+  background: $thisisdarkblue;
+}
+.accordion-entry,
+.accordion-entry:hover {
+  color: black;
+  background: white;
+  border: 1px solid $box-shadow-color;
+  border-top: none;
+  box-shadow: $box-shadow;
+  margin-top: -1rem;
+  z-index: 1;
+}
+@media (min-width: $small-screen-width) {
+  .accordion-header {
+    padding: $content-separation;
+    &::before {
+      padding: 0 $content-separation;
+    }
+    &::after {
+      right: $content-separation;
+    }
+  }
+  .accordion-entry {
+    padding: $content-separation 7rem;
+    padding-bottom: 0;
+  }
+}

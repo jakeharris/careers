@@ -1,0 +1,45 @@
+<!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
+<!--[if lt IE 9]>
+  <script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
+  <script src="//cdn.auburn.edu/assets/js/respond.src.js"></script>
+  <link href="//cdn.auburn.edu/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
+  <link href="//cdn.auburn.edu/assets/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
+  <script src="//cdn.auburn.edu/assets/js/respond.proxy.js"></script>
+<![endif]-->
+<!--[if lte IE 9]>
+  <script src="http://auburn.edu/career/assets/scripts/flexie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+  <style>
+    nav.header .nav-wrapper ul li,
+    nav.header .mobile-nav--active.nav-wrapper ul li {
+      width: 16%;
+      display: inline-block;
+    }
+    nav.header .nav-wrapper ul ul,
+    nav.header .mobile-nav--active.nav-wrapper ul ul {
+      width: 400%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    nav.header .nav-wrapper ul ul li,
+    nav.header .mobile-nav--active.nav-wrapper ul ul li {
+      width: 32%;
+    }
+    @media (min-width: 768px) {
+      nav.header .nav-wrapper ul ul,
+      nav.header .mobile-nav--active.nav-wrapper ul ul {
+        width: 100%;
+      }
+    }
+  </style>
+<![endif]-->
+<!--[if IE]>
+  <style>
+    /* IE SVG hotfix */
+    img,
+    #cc-carousel.carousel > .carousel-inner > .item > img,
+    #cc-carousel.carousel > .carousel-inner > .item > a > img {
+      height: 100%;
+    }
+  </style>
+<![endif]-->

@@ -3,70 +3,67 @@ ng-app: none
 name: eid
 type: event-pages
 title: Education Interview Day
+
 path-to-root: ../../
+
 layout: no-social.hbs
+
+style:
+- attributes
+- event-banner-card
 ---
-<!-- Banner image -->
-<div class="hero">
+<div class="event-banner-card">
   <img src="assets/images/events/{{name}}-banner.png"
-       alt="Education Interview Day. Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom."></img>
-</div>
-
-<div class="content">    
-  <!-- Blurb -->
-  <div class="row">
-    <p class="blurb">
-      If you are an aspiring educator, consider attending Education Interview Day.  Explore open positions, network with potential employers, and interview for your dream job all in one day!  
-    </p>
-    <div class="buttons">
-      <a class="flat-btn attendants" href="https://auburn-csm.symplicity.com/events/students.php?cf=eidsp16">
-        See Attending Employers
-      </a>
-      <a class="flat-btn flat-btn--disabled locations" disabled="disabled">
-        See Employer Locations On-Site
-      </a>
-    </div>
-  </div>
-  
-  <div class="schedule">
-    <div class="activity">
-      <div class="name">Registration</div>
-      <div class="duration">8<span class="meridiem">am</span> - 9<span class="meridiem">am</span></div>
-    </div>
-    <div class="activity">
-      <div class="name">Networking and scheduling interviews</div>
-      <div class="duration">9<span class="meridiem">am</span> - 10<span class="meridiem">am</span></div>
-    </div>
-    <div class="activity">
-      <div class="name">Interviews</div>
-      <div class="duration">10<span class="meridiem">am</span> - 3<span class="meridiem">pm</span></div>
-    </div>
-  </div>
-  
-  <!-- Icons -->
-  <div class="attributes">
-    <div class="attribute">
-      <a class="icon format" href="https://www.candidcareer.com/video-networking+101,1e866306e9b5f012419c,Auburn" target="_blank">
-        <i class="icon-comments-o"></i>
-      </a>
-      <div class="details">Scheduled interviews</div>
-    </div>
-    <div class="attribute">
-      <a class="icon dress" href="http://www.auburn.edu/career/tipsheets/Tip%20Sheet%20Dress%20Bus%20Professional%20-%20Bus%20Casual.pdf" target="_blank">
-        <i class="icon-tie"></i>
-      </a>
-      <p class="details">
-        Business professional required
+       alt="Education Interview Day. Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom.">
+  <h2 class="img-replace">Education Interview Day.</h2>
+  <h3 class="img-replace">Wednesday, March 2, 2016, 8am-3pm, in the Student Center Ballroom.</h3>
+  <div class="card">    
+    <!-- Blurb -->
+    <div class="blurb flex">
+      <p class="flex-half">
+        If you are an aspiring educator, consider attending Education Interview Day.  Explore open positions, network with potential employers, and interview for your dream job all in one day!  
       </p>
-    </div>  
-    <div class="attribute">
-      <div class="icon population">
-        <i class="icon-group"></i>
+      <div class="buttons flex-half">
+        <a class="flat-btn attendants" href="https://auburn-csm.symplicity.com/events/index.php?id=40c05a0aced688a6d1306001fbd32cd6#/events/40c05a0aced688a6d1306001fbd32cd6/employers">
+          See Attending Employers
+        </a>
+        <a class="flat-btn flat-btn--disabled locations" disabled="disabled">
+          See Employer Locations On-Site
+        </a>
       </div>
-      <div class="details">Dozens of schools</div>
+    </div>
+
+    <div class="schedule">
+      <h3>Registration</h3>
+      <p>8am - 9am</p>
+      <h3>Networking and scheduling interviews</h3>
+      <p class="duration">9am - 10am</p>
+      <h3>Interviews</h3>
+      <p>10am - 3pm</p>
+    </div>
+
+    <!-- Icons -->
+    <div class="attributes">
+      <div class="attribute">
+        <a class="icon format" href="https://www.candidcareer.com/video-networking+101,1e866306e9b5f012419c,Auburn" target="_blank">
+          <i class="icon-comments-o"></i>
+        </a>
+        <div class="details">Scheduled interviews</div>
+      </div>
+      <div class="attribute">
+        <a class="icon dress" href="http://www.auburn.edu/career/tipsheets/Tip%20Sheet%20Dress%20Bus%20Professional%20-%20Bus%20Casual.pdf" target="_blank">
+          <i class="icon-tie"></i>
+        </a>
+        <p class="details">
+          Business professional required
+        </p>
+      </div>  
+      <div class="attribute">
+        <div class="icon population">
+          <i class="icon-group"></i>
+        </div>
+        <div class="details">Dozens of schools</div>
+      </div>
     </div>
   </div>
-
-
-
 </div>

@@ -2,14 +2,15 @@
 layout: no-social.hbs
 type: resources
 path-to-root: ../
+ng-app: 
 hero-text: Undergraduate Students
 component:
 - tooltip
 ---
 
-<div class="hero row">
+<div class="hero card unpadded">
   {{#if hero-img}}
-  <img src="assets/images/resources/{{ hero-img }}">
+  <img src="assets/images/resources/{{ hero-img }}" alt="{{ hero-text}}">
   {{/if}}
   <h2 class="img-replace">{{ hero-text }}</h2>
 </div>

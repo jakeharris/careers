@@ -1,12 +1,4 @@
-@import 'app';
-
-.note {
-  border-left: 3px solid $box-shadow;
-  padding-left: 3rem;
-  margin: 0;
-  margin-top: 1rem;
-  color: $box-shadow;
-}
+@import 'partials/variables';
 
 .resume-banner {
   text-align: center;
@@ -28,146 +20,53 @@
   }
 }
 
-.resume--disabled {
-  color: #ccc;
-  background: -webkit-repeating-linear-gradient(145deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px);
-  background: repeating-linear-gradient(-55deg, white, white 10px, #f4f4f4 10px, #f4f4f4 20px); 
-}
-.resume-disabled {
-  font-family: $header-font-family;
-  font-size: 3rem;
-  background: transparent;
-}
-
-.document-review {
-  display: -webkit-box;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  
-  margin-top: 3rem;
-  
-  .content {
-    flex-basis: 100%;
+// E-RESUME STYLES
+.eresume {
+  overflow-y: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+  > h2 {
+    padding-top: $content-protection; 
+  }
+  label, input[type="text"], textarea {
+    display: block; 
+  }
+  textarea {
     width: 100%;
-    height: 100%;
-    
-    margin-top: 3rem;
-    -ms-flex-negative: 1;
+    height: 10rem;
+  }
+  label {
+    font-family: $header-font-family;
+    padding-top: $content-separation;
+  }
+  #resume, #privacy, #good-resume {
+    margin-top: $content-separation; 
+    display: block;
+  }
+  label[for="good-resume"],
+  label[for="privacy"] {
+    font-family: $body-font-family; 
+    padding-top: 0;
   }
 }
-
-.location, .hours {
-  display: flex;
-  flex-wrap: nowrap;
-  
-  padding-top: 2rem;
-}
-.place-address {
-  margin: 0;
-  padding-left: 5.6rem;
-}
-.place-icon, .times-icon {
-  font-size: 6rem;
-}
-
-.hours-content {
-  padding-left: 3rem;
-}
-.hours-content h2 {
-  margin-top: 0;
-}
-
-.flat-btn {
-  margin-top: 3rem;
-}
-
-// eResume stuff
-input#submitting {
+#submitting {
   display: none;
 }
 label[for="submitting"] {
   cursor: pointer;
 }
-input#submitting:checked + label {
-  margin-bottom: 5rem; 
+label[for="submitting"]::after {
+  font-family: $icon-font-family;
+  content: '\f078';
+  padding-left: $content-protection;
 }
-.eresume {
-  max-height: 0rem;
-  overflow-y: hidden;
-  transition: 0.2s ease-in-out max-height;
-  
-  h2, input, textarea, label {
-    margin-left: 3rem; 
-  }
-  
-  label {
-    font-weight: normal;
-    width: 72%;
-  }
-  label[for="name"] {
-    margin-top: 3rem; 
-  }
-  .text-label {
-    display: block; 
-    font-family: $header-font-family;
-    font-size: 2rem;
-  }
-  input[type="text"],
-  textarea {
-    padding: 0.5rem; 
-  }
-  input, textarea {
-    margin-bottom: 3rem;
-    width: auto;
-  }
-  textarea {
-    border-color: rgb(204, 204, 204);
-  }
-  input#job, textarea#description {
-    width: 30rem; 
-  }
-  input[type="checkbox"] {
-    margin-right: 2rem; 
-    vertical-align: top;
-    position: relative;
-    top: 0.2rem;
-  }
-  input#good-resume {
-    display: inline-block; 
-  }
-  label[for="good-resume"] {
-    display: inline-block; 
-  }
-  label[for="good-resume"],
-  label[for="privacy"] {
-    margin-left: 0; 
+#submitting:checked ~ label[for="submitting"] {
+  background-color: $thisisiceblue;
+  color: $charcoal;
+  &::after {
+    content: '\f077'; 
   }
 }
-.eresume-btn {
-  max-height: 0rem;
-  overflow-y: hidden;
-  padding: 0; margin: 0;
-  width: calc(100% - 3rem);
-  transition: 0.2s ease-in-out max-height;
-}
-input#submitting:checked ~ .eresume {
-  max-height: 120rem;
-}
-input#submitting:checked ~ .eresume-btn {
-  max-height: 80rem;
-  padding: 1.2rem 0;
-  margin-left: 3rem;
-  margin-top: 3rem;
-}
-
-@media (min-width: $medium-screen-size) {
-  .document-review {
-    .content {
-      flex-basis: 40%;
-      width: 40%;
-      
-      margin-top: 0;
-    }
-  }
+#submitting:checked ~ .eresume {
+  max-height: 100000px;
 }

@@ -1,199 +1,28 @@
-@import 'app';
+@import 'partials/variables';
+
+.buttons {
+  padding: 0;
+  padding-top: $content-protection;
+}
 
 .pathways-content {
   text-align: center;
+  padding-top: $content-protection;
+  margin: $content-protection 0;
   & > h2 {
     font-size: 5rem;
-    padding-top: 2rem;
   }
 }
-.pathways-content.content.extra-content {
-  margin-top: 2rem;
-}
 
-.hero {
+.disabled.flat-btn {
   margin: 0;
-  img {
-    height: 100%; 
-    min-height: 220px;
-  }
-  min-height: 220px;
+  color: $box-shadow-color;
 }
 
-.hero .hero-content h2 {
-  font-size: 3.5rem;
-}
-
-.colleges {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.college {
-  width: 80%;
-  margin-top: 3rem;
-  box-shadow: 6px 6px 0 $box-shadow;
-}
-
-.accordion-header {
-  font-size: 3rem;
-  padding: 3rem 0;
-  
-  i:before {
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    padding: 2.6rem 0;
-    font-size: 4rem;
-    @extend .icon;
-    @extend .icon-chevron-up;
-  }
-  &.collapsed {
-    i:before {
-      text-align: center;
-      @extend .icon-chevron-down; 
-    }
-  }
-}
-
-.college-content {
-  padding: 0;
-  & > h2 {
-    margin: 0;
-    padding: 3rem; 
-  }
-}
-
-.pathway {
-  display: block;
-  
-  width: 100%;
-  padding: 1.5rem 3rem;
-  
-  background: $thisislightblue;
-  color: white;
-  
-  &:hover {
-    background: $thisisdarkblue;
-    color: white;
-  }
-}
-
-a.pathway[href$=".pdf"] {
-  &::after {
-    content: none;
-  }
-}
-
-.extras {
-  padding: 0;
-}
-
-/**********************/
-/* COMING SOON STYLES */
-/**********************/
-
-.content.coming-soon {
-  padding: 0;
-  text-align: center;
-  & > h2 {
-    margin: 0;
-    padding: 3rem;
-    color: $box-shadow;
-    background: repeating-linear-gradient(
-      -55deg,
-      white,
-      white 10px,
-      $bg-gray 10px,
-      $bg-gray 20px
-    );
-  }
-}
-
-.pathway.coming-soon {
-  color: $box-shadow;
-  background: repeating-linear-gradient(
-    -55deg,
-    white,
-    white 10px,
-    $bg-gray 10px,
-    $bg-gray 20px
-  );
-}
-
-/***************************/
-/* COLLEGE-SPECIFIC STYLES */
-/***************************/
-.hero img.architecture {
-  width: auto;
-  height: 100%;
-}
 .education {
   margin-top: -25rem;
 }
 
-/*****************/
-/* MEDIA QUERIES */
-/*****************/
-@media (min-width: $tiny-screen-size) {
-  .hero .hero-content h2 {
-    font-size: 4rem;
-  }
-}
-
-@media (min-width: $small-screen-size) {
-  .pathways-content > h2 {
-    font-size: 8rem; 
-    padding-top: 1rem;
-  } 
-}
-
-@media (min-width: $medium-screen-size) {
-  .college {
-    width: 40%;
-    flex-basis: 40%;
-    max-width: 40%;
-  }
-  /***************************/
-  /* COLLEGE-SPECIFIC STYLES */
-  /***************************/
-  .liberal-arts {
-    margin-top: 0; 
-  }
-  .education {
-    margin-top: -20rem;
-  }
-  .architecture {
-    margin-left: -10rem; 
-  }
-  .human-sciences {
-    margin-top: -7rem;
-  }
-  .interdepartmental-interdisciplinary {
-    margin-top: -5rem;
-  }
-}
-@media (min-width: $social-shrink-size) {
-  .education {
-    margin-top: -30rem; 
-  }
-}
-
-// iPhone 6, portrait and landscape
-@media only screen 
-and (min-device-width : 375px) 
-and (max-device-width : 667px),
-// iPhone 6 Plus, portrait and landscape
-only screen 
-and (min-device-width : 414px) 
-and (max-device-width : 736px),
-// iPhone 5 and 5s, portrait and landscape 
-only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) {
-  .education {
-    margin-top: 0; 
-  }
+.visual img {
+  min-height: 250px;
 }

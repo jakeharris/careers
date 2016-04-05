@@ -1,168 +1,86 @@
-@import 'app';
+@import 'partials/variables';
 
-$thisislighterblue: #698ebc;
+// APP OVERRIDES
+// in fact, consider making this the standard
 
-
-h1, h2, h3, h4 {
-  font-family: $header-font-family;
+.flat-btn--half {
+  flex-basis: 100%;
+  width: 100%; 
 }
-// Add container wrapper so as not to affect the nav
-.container h1 {
-  font-size: 4rem;
-  padding-top: 2rem;
-}
-h2 {
-  font-size: 4rem;
-}
-h3 {
-  font-size: 2.7rem;
-  float: clear;
-  color: $thisislightblue;
-  padding-bottom: 1rem;
-  &:hover { 
-    color: $thisislighterblue; 
-  }
-}
-h4 {
-  font-size: 2.7rem;
-}
-
-.faq-header {
-  padding-bottom: 3rem;
-}
-.faq-answer {
-  line-height: 1.618;
-}
-.faq-question-contents {
-  margin-bottom: 3rem;
-}
-.faq-question-contents.in {
-  
-}
-.faq-answer--with-sidelist {
-  width: 40%;
-  display: none;
-  vertical-align: top;
-}
-.faq-sidelist-container {
-  display: inline-block;
-  width: 100%;
-  h3 {
-    color: $thisisdarkblue;
-    &:hover {
-      color: $thisisdarkblue; 
-    }
-  }
-  ul li {
-    padding-bottom: 2rem; 
-    @extend .muted;
-    font-size: 2.2rem;
+@media (min-width: $medium-screen-width) {
+  .flat-btn--half {
+    flex-basis: 45%;
+    width: 45%; 
   }
 }
 
-.faq-checklist-container {
-  display: block;
+
+.accordion-content {
+  overflow: hidden;
+}
+
+.sidelist {
+  padding: $content-separation 0; 
+  li {
+    font-family: $header-font-family;
+    font-size: $button-font-size;
+    color: $box-shadow-color;
+    padding-bottom: $content-separation / 2;
+  }
+}
+@media (min-width: $small-screen-width) {
+  .sidelist {
+    padding: 0;
+  }
+}
+
+.discovery-resources {
+  padding-right: $content-separation;
+  padding-bottom: $content-protection;
+}
+.checklist {
+  padding: $content-division 0;
+  margin-right: $content-separation / 2;
   width: 100%;
   margin: 0 auto;
 }
+@media (min-width: $medium-screen-width) {
+  .checklist {
+    width: 66%;
+  }
+}
 .condition {
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+  text-align: center;
+  font-size: $nav-font-size;
 }
 .switch {
-  padding-bottom: 3rem;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  .radio {
+    display: none;
+  }
+  .radio + label {    
+    cursor: pointer;
+  }
+  .radio:checked + label {
+    background-color: $thisislightblue;
+    color: white;
+  }
 }
-.hidden {
-  display: none;
+@media (min-width: $medium-screen-width) {
+  .switch {
+    width: 66%; 
+  }
 }
 .switch-result {
-  min-height: 10rem;
-}
-.radio {
-  position: absolute;
-  margin-left: -9999px;
-  visibility: hidden;
-}
-.radio + label {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  user-select: none;
-}
-input.radio + label {
-  @extend .flat-btn;
-  margin-right: 3rem;
-  background-color: white;
-  color: $thisislightblue;
-}
-input.radio + label.half-label {
-  @extend .flat-btn--half;
-  flex-basis: 40%;
-  width: 40%;
-}
-input.radio + label.disabled-label,
-input.radio:checked + label.disabled-label {
-  @extend .flat-btn--disabled;
-  color: $box-shadow;
-}
-input.radio:checked + label {
-  background-color: $thisislightblue;
-  color: white;
-}
-
-
-.faq-resources {
+  padding: $content-protection 0;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-top: 1rem;
-  padding-bottom: 3rem;
-  li {
-    flex-basis: 100%;
-    width: 100%;
-  }
+  margin: 0 auto;
 }
-.note {
-  @extend .muted;
-}
-
-.desktop-show {
-  display: none;
-}
-
-@media (min-width: $moderate-screen-size) {
-  h1 {
-    font-size: 10rem; 
-  }
-  h2 {
-    font-size: 6rem;
-  }
-  .desktop-show {
-    display: inline; 
-  }
-  .faq-checklist-container {
-    width: 70%; 
-  }
-  .faq-answer--with-sidelist {
-    display: inline-block;
-  }
-  .faq-sidelist-container {
-    width: 40%; 
-    margin-left: 5rem;
-    ul li {
-      font-family: $header-font-family;
-    }
-  }
-  .note {
-    width: 50%;
-  }
-  .faq-resources li {
-    display: inline-block;
-    flex-basis: 45%;
-    width: 45%;
+@media (min-width: $medium-screen-width) {
+  .switch-result {
+    width: 66%; 
   }
 }

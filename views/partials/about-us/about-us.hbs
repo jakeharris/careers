@@ -1,0 +1,82 @@
+<div class="flex">
+  <div class="card flex-third">
+    <h2>Mission</h2>
+    <p class="mission-content">
+      The Auburn University Career Center delivers comprehensive services 
+      for students to explore majors and careers, network with employers and 
+      professionals, prepare for advanced education, and successfully 
+      transition from college to career.
+    </p>
+  </div>
+  <div class="card flex-two-thirds">
+    <h2>Services</h2>
+    <ul class="services flex flex--wrap">
+      <li class="flex-half"><a href="assessments">Career Assessments</a></li>
+      <li class="flex-half"><a href="http://issuu.com/aucc/docs/ymg-color-issuu/1">Choosing Your Major</a>
+      <li class="flex-half"><a href="events">Workshops &amp; Career Fairs</a></li>
+      <li class="flex-half"><a href="resume">Resume &amp; CV Review</a></li>
+      <li class="flex-half"><a href="interviews">Interview Prep</a></li>
+      <li class="flex-half"><a href="http://jobs.auburn.edu">Job &amp; Internship Listings</a></li>
+      <li class="flex-half"><a href="students/graduate.html">Graduate School Prep</a></li>
+      <li class="flex-half"><a href="students/alumni.html#develop-professionally">Professional Development</a></li>
+    </ul>
+  </div>
+</div>
+
+<iframe src="http://auburn.edu/map?id=76"></iframe>
+
+<section ng-controller="hours-ctrl" class="card">
+  <div class="flex separated contact">
+    <address class="address flex-third">
+      <a href="http://auburn.edu/map?id=76">303 Mary Martin Hall</a>
+    </address>
+    <div ng-if="office" class="flex-third">
+      <div ng-repeat="hours in office" class="hours">
+        <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <!-- OR -->
+        <h3><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span></h3> 
+        <p>
+          [[ hours.startTime ]] - [[ hours.endTime ]]
+        </p>
+      </div>
+    </div>
+    <div class="flex-third phone">
+      <a href="tel:(334) 844-4744">(334) 844-4744</a>
+    </div>
+  </div>
+  <div class="flex">
+    <div class="flex-third protected">
+      <h2>Accessibility</h2>
+      <p>
+        Due to the accessibility limitations of Martin Hall, 
+        please notify us when scheduling your appointment if 
+        special accommodations are needed.
+      </p>
+    </div>
+    <div ng-if="walkIn" class="flex-third protected">
+      <h2>Walk-in Hours</h2>
+      <div ng-repeat="hours in walkIn">
+        <h3 ng-if="hours.startDay && !hours.days">[[ hours.startDay ]]day - [[ hours.endDay ]]day</h3>
+        <!-- OR -->
+        <h3><span ng-repeat="day in hours.days">[[ day ]]<span ng-if="!$last">, </span></span></h3>
+        <p>
+          [[ hours.startTime ]] - [[ hours.endTime ]]
+        </p>
+      </div>
+      <p ng-if="holiday" class="emphasized">
+        [[ holiday ]]
+      </p>
+    </div>
+    <div class="flex-third protected">
+      <h2 id="walk-ins">Walk-in Policy</h2>
+      <p>
+        Need assistance? Get started by coming in to the 
+        Career Center during walk-in hours for a brief 
+        15 minute meeting. If additional help is needed, 
+        an appointment can be made at that time. 
+      </p>
+    </div>
+  </div>
+</section>
+
+

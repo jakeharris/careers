@@ -1,358 +1,99 @@
-@import 'app';
-@import 'sponsors';
-@import 'employer-events';
+@import 'partials/variables';
 
-/****************/
-/*    BASICS    */
-/****************/
+/******************
+** APP OVERRIDES **
+******************/
 
-.content {
-  margin-top: 3rem;
-}
-.padding {
-  padding: 0 5rem;
-}
-.login-welcome {
-  padding-top: 1.5rem;
-}
-@media (min-width: $moderate-screen-size) {
-  .login-welcome {
-    height: 500px; 
-  }
-}
-.login, .welcome {
-  height: 100%;
-  margin-top: 0;
-  padding-top: 1.5rem;
-  -ms-flex-negative: 1;
-}
 .login {
-  background: none repeat scroll 0% 0% white;
-  overflow: visible;
-  flex-basis: 100%;
-  height: 100%;
-  position: relative;
-  align-items: flex-start;
-  .trl {
-    display: block; 
-  }
-  .login-blurb {
-    font-size: 1.8rem; 
+  align-self: flex-start;
+}
+@media (min-width: $small-screen-width) {
+  .flex-half {
+    flex-basis: 100%;
+    max-width: none;
   }
 }
-.login::before {
-  display: block;
-
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 0;
-
-  font-family: $icon-font-family;
-  content: '\f14e';
-  color: #85a2c6;
-  font-size: 20rem;
-  opacity: .1;
-}
-
-.flex.row {
-  display: -ms-flexbox;
-  display: flex;
-  flex-basis: wrap;
-}
-.welcome {
-  flex-basis: 100%;
-  position: relative;
-  padding: 5rem;
-  padding-bottom: 1.5rem;
-  margin-top: 3rem;
-  h2 {
-    padding-top: 1rem; 
-  }
-  blockquote {
-    border-left: 0;
-    &::before {
-      content: none;
-    }
-  }
-  p {
-    padding: 1rem 5rem; 
-  }
-  .flat-btn {
-    margin-bottom: 0; 
-    cursor: pointer; 
-  }
-}
-@media (min-width: $moderate-screen-size) {
-  .welcome-services {
-    flex-wrap: nowrap; 
-  }
-  .welcome {
+@media (min-width: $medium-screen-width) {
+  .flex-half {
     flex-basis: 45%; 
-    margin-top: 0;
-  }
-  .login {
-    flex-basis: 45%;
-  }
-}
-@media (min-width: $moderate-screen-size + 30px) {
-  .welcome .flat-btn {
-    position: absolute;
-    bottom: 0;
+    max-width: 45%;
   }
 }
 
+/****************************
+** EMPLOYER-SIDE SPECIFICS **
+****************************/
+.recruiting h2,
+.recruiting blockquote,
+.recruiting p {
+  padding-bottom: $content-separation;
+}
 
 .services {
-  flex-basis: 100%;
-  position: relative;
-  height: 100%;
-  padding: 3rem 0;
-  
-  min-height: 500px;
-  
-  background: url('../images/services-banner.png') center no-repeat;
-  background-size: cover;
-}
-.services-background {
-  height: 100%;
   width: 100%;
-  position: absolute;
-  top: 0; left: 0;
-  z-index: 1;
-}
-.services-overlay {
-  position: absolute;
-  top: 0; left: 0;
   height: 100%;
-  width: 100%;
-  background: $thisisdarkblue;
-  opacity: 0.2;
-  z-index: 2;
-  min-height: 500px;
-}
-.services-wrapper {
-  padding: 5rem;
-  padding-bottom: 3rem;
+  min-height: 55rem;
   position: relative;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 3;
-}
-.services-header {
-  text-align: center;
-  padding-bottom: 1rem;
-  color: white;
-}
-.services-content {
-  display: flex;
-  margin: 0 auto;
-  padding-top: 3rem;
-  padding-bottom: 5rem;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.services-header,
-.services-content {
-  z-index: 6;
-  position: relative;
-}
-.service {  
-  padding: 1rem;
-  flex-basis: 100%;
-  font-family: $header-font-family;
-  font-size: 2rem;
-  text-align: left;
-  display: inline-block;
-  & > a {
-    color: $box-shadow;
-  }
-  & > a:hover {
-    color: $thisisiceblue; 
-  }
-}
-@media (min-width: $small-screen-size) {
-  .service {
-    flex-basis: 45%; 
-  }
-  .service:nth-of-type(2n) {
-    text-align: right;
-  }
-}
-
-
-.flat-btn {
-  font-size: 18px;
-  height: auto;
-  padding: 1.2rem 0.5rem;
-}
-.report-hiring {
-  @extend .flat-btn--white;
-  position: absolute;
-  bottom: 0;
-  margin: 0;
-  z-index: 3;
-  display: block;
-}
-
-.contacts {
-  flex-basis: 100%;
-  height: 100%;
-  .contacts-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    padding-top: 4.1rem;
-  }
-  .contact {
-    flex-basis: 100%;
-  }
-}
-.contact {  
-  .contact-details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  img {
-    flex-basis: 25%;
-    width: 25%;
-    
-    border-radius: 50%;
-    box-sizing: padding-box;
-  }
-  .contact-info {
-    flex-basis: 65%;
-    width: 65%;
-  }
-  h3 {
-    font-family: $header-font-family;
-    font-size: 2rem;
-    
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    .muted {
-      display: block;
-      color: $box-shadow;
-    }
-  }
-  .address, .phone, .email, .name {
-    position: relative;
-    
-    font-family: $body-font-family;
-    font-size: 1.2rem;
-    
-    margin: 0;
-    padding-bottom: 0;
+  overflow: hidden;
+  &::before {
+    background: url('../images/services-banner.png') 100% 100% no-repeat;
+    background-size: cover;
+    background-position: 50% -3rem;
+    width: 100%;
     height: 100%;
     
-    a {
-      position: relative;
-      top: -1.5rem;
-      display: inline; 
-      word-wrap: break-word;
-      margin-left: 3.6rem;
-    }
-    .muted {
-      font-size: 0.8em;
-      color: $box-shadow;
-      padding-top: 0;
-      margin-top: 0;
-      display: block;
-    }
-  }
-  .phone, .email {
-    margin-top: 1rem;
-  }
-  .email {
-    margin-top: -1rem;
-  }
-  .name {
-    font-family: $header-font-family;
-    font-size: 2rem;
-  }
-  
-  .address:before, .phone:before, .email:before {
-    @extend [class^="icon-"], [class*=" icon-"];
-  
-    display: inline-block;
-
-    font-size: 4rem;  
-    color: $box-shadow;
-    width: 2rem;
-  }
-  .address:before {
-    @extend .icon-map-marker;
-  }
-  .phone:before {
-    @extend .icon-phone; 
-  }
-  .email:before {
-    @extend .icon-comments-o; 
-  }
-  .name {
-    color: $box-shadow; 
+    filter: brightness(70%);
+    position: absolute;
+    content: '';
+    z-index: 1;
   }
 }
-.contacts-login {
+@media (min-width: $tiny-screen-width) {
+  .services {
+    min-height: 50rem; 
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .services {
+    min-height: 36rem; 
+  }
+}
+.services-content, 
+.services .flat-btn {
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+}
+.services .flat-btn {
+  margin: 0;
+  bottom: 0;
+}
+.services h2 {
+  text-align: center;
+  color: white;
+}
+.services-list {
+  display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  padding-top: $content-protection;
 }
-@media (min-width: $small-screen-size) {
-  .contact {
-    .phone, .email, .address, .name {
-      font-family: $header-font-family; 
-      font-size: 2rem;
-      a {
-        top: -1rem; 
-      }
-    }
-  }
-}
-@media (min-width: $small-screen-size + 100px) { 
-  .contacts .contact {
-    flex-basis: 50%;
-  }
-}
-@media (min-width: $moderate-screen-size) {
-  .contacts {
-    flex-basis: 63%; 
-    .contact {
-      flex-basis: 100%; 
-    }
-  }
-  .contacts-login {
-    flex-wrap: nowrap; 
-  }
-}
-@media (min-width: $moderate-screen-size + 125px) {
-  .contacts {
-    flex-wrap: nowrap;
-    .contact {
-      flex-basis: 50%; 
-    }
-  }
-}
-
-.sponsorship-opportunities {
-  flex-basis: 45%;
-  width: 45%;
-  height: 100%;
-}
-
-// OVERWRITING BOOTSTRAP
-
-.row::before,
-.row::after {
-  display: block;
-  content: none;
-}
-.popover-title {
+.service {
   font-family: $header-font-family;
-  font-size: 2.2rem;
-  padding: 2rem 1.5rem;
+  font-size: $button-font-size * 1.11;
+  padding-bottom: $content-separation;
+
+  & > a {
+    color: $box-shadow-color;
+    &:hover {
+      color: $thisisiceblue; 
+    }
+  }
 }
-.popover-content ul {
-  li {
-    padding: 0.5rem 0; 
+@media (min-width: $medium-screen-width) {
+  .service {
+    &:nth-of-type(even) {
+      text-align: right; 
+    } 
   }
 }

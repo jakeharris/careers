@@ -1,17 +1,21 @@
 ---
 path-to-root: ../
 name: job-postings
-type: student-employment
+type: job-postings
 layout: employers.hbs
 title: Job Postings | Career Center
+
+style:
+- attributes
+- login
 ---
 
-<section class="content hero">
+<section class="card">
   <h2>Job Postings</h2>
 </section>
 
 <section class="flex recruiting-welcome">
-  <div class="content flex-two-thirds recruiting-link">
+  <div class="card flex-two-thirds login">
     <h3 class="trl"></h3>
     <p>
       Your source for student recruitment.
@@ -43,14 +47,14 @@ title: Job Postings | Career Center
       </div>
     </div>
     <div class="buttons">
-      <a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0" class="flat-btn flat-btn--half">Login</a>
-      <a href="https://auburn-csm.symplicity.com/employers/?signin_tab=2" class="flat-btn flat-btn--half">Register</a>
-      <a href="http://auburn.edu/co-op/" class="flat-btn flat-btn--half flat-btn--white">Discover Co-ops</a>
-      <a href="employers/internship-opportunities.html" class="flat-btn flat-btn--half flat-btn--white">Discover Internships</a>
+      <a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0" class="flat-btn flex-half">Login</a>
+      <a href="https://auburn-csm.symplicity.com/employers/?signin_tab=2" class="flat-btn flex-half">Register</a>
+      <a href="http://auburn.edu/co-op/" class="flat-btn flex-half flat-btn--white">Discover Co-ops</a>
+      <a href="employers/internship-opportunities.html" class="flat-btn flex-half flat-btn--white">Discover Internships</a>
     </div>
   </div>
   
-  <div class="content welcome flex-third">
+  <div class="card welcome flex-third">
     <h3>Helpful Hint</h3>
     <p>
       All job postings are evaluated and reviewed by our staff. 
@@ -65,14 +69,14 @@ title: Job Postings | Career Center
   </div>
 </section>
 
-<section class="content extra-content content--no-padding content--tips">
-  <div class="flex buttons buttons--no-padding">
-    <a href="http://bulletin.auburn.edu/undergraduate/majors/" class="flat-btn                 flex-half">Undergraduate Majors</a>
-    <a href="http://grad.auburn.edu/ps/areas_of_study.html" class="flat-btn flat-btn--white flex-half">Graduate Programs</a>
+<section class="card unpadded">
+  <div class="flex buttons buttons--no-margin">
+    <a href="http://bulletin.auburn.edu/undergraduate/majors/" class="flat-btn flat-btn--bottom">Undergraduate Majors</a>
+    <a href="http://grad.auburn.edu/ps/areas_of_study.html" class="flat-btn flat-btn--white flat-btn--bottom">Graduate Programs</a>
   </div>
 </section>
 
-<section class="content extra-content restrictions">
+<section class="card restrictions">
   <h3>Restrictions of TRL</h3>
   <p>
     Tiger Recruiting Link is intended for jobs and internships 

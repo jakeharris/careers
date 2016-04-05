@@ -4,120 +4,16 @@ analytics-token: UA-12338791-1
 
 <!doctype html>
 <html lang="en" ng-app="{{ ng-app  }}">
-  <head>
-    <base href="{{ path-to-root }}">
-    <!-- Meta Data -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta http-equiv="cache-control" content="no-cache" />
-    <title>{{ title }}</title>
 
-    <!-- Bootstrap & Core CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://cdn.auburn.edu/assets/css/default.min.css">
-    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
-
-    <!-- Application CSS -->
-    <!-- build:css assets/styles/{{ name }}.min.css -->
-      <link rel="stylesheet" href="assets/styles/{{ type }}.css">
-    <!-- endbuild -->
-
-    <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
-    <!--[if lt IE 9]>
-      <script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
-      <script src="//cdn.auburn.edu/assets/js/respond.src.js"></script>
-      <link href="//cdn.auburn.edu/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
-      <link href="//cdn.auburn.edu/assets/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
-      <script src="//cdn.auburn.edu/assets/js/respond.proxy.js"></script>
-    <![endif]-->
-    <!--[if lte IE 9]>
-      <script src="http://auburn.edu/career/assets/scripts/flexie.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
-      <style>
-        nav.header .nav-wrapper ul li,
-        nav.header .mobile-nav--active.nav-wrapper ul li {
-          width: 16%;
-          display: inline-block;
-        }
-        nav.header .nav-wrapper ul ul,
-        nav.header .mobile-nav--active.nav-wrapper ul ul {
-          width: 400%;
-          margin-left: 0;
-          margin-right: 0;
-        }
-        nav.header .nav-wrapper ul ul li,
-        nav.header .mobile-nav--active.nav-wrapper ul ul li {
-          width: 32%;
-        }
-        @media (min-width: 768px) {
-          nav.header .nav-wrapper ul ul,
-          nav.header .mobile-nav--active.nav-wrapper ul ul {
-            width: 100%;
-          }
-        }
-      </style>
-    <![endif]-->
-    <!--[if IE]>
-      <style>
-        /* IE SVG hotfix */
-        img,
-        #cc-carousel.carousel > .carousel-inner > .item > img,
-        #cc-carousel.carousel > .carousel-inner > .item > a > img {
-          height: 100%;
-        }
-      </style>
-    <![endif]-->
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
-
-    <!-- Angular & Core JS -->
-    {{#if page.component }}
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" defer></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js" defer></script>
-    {{/if}}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" defer></script> 
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" defer></script> 
-    <script src="//cdn.auburn.edu/assets/js/default.min.js" defer></script>
-    
-    <!-- Application-specific CSS/JS -->
-    <!-- build:js assets/scripts/{{ name }}.min.js -->
-      <script src="assets/scripts/components/nav.js" defer></script>
-      <script src="assets/scripts/components/touch-start.js" defer></script>
-      {{#each page.component}}
-        <script src="assets/scripts/components/{{ this }}.js" defer></script>
-      {{/each}}
-      <script src="assets/scripts/{{ type }}.js" defer></script>
-    <!-- endbuild -->
-  </head>
+  {{> head }}
 
   <body class="{{ name }}">
     {{> header }}
-    <div class="container">
+    <main>
       {{> social }}
       {{  body   }}
-    </div>
+    </main>
     {{> footer }}
-
-    <div class="to-top" style="display:none;"><a href="#top"></a></div>
   </body>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', '{{ analytics-token }}', 'auto');
-    ga('send', 'pageview');
-
-  </script>
+  {{> analytics }}
 </html>

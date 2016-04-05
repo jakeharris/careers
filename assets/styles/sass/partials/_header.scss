@@ -1,0 +1,329 @@
+@import '../partials/variables';
+
+/* *************************************************** **
+**                      HEADER                         **
+**  (container for all navs, title link, auburn logo)  **
+** *************************************************** **/
+header {
+  background-color: $thisisdarkblue;
+  box-shadow: $box-shadow;
+}
+
+/* ************************************************ **
+**                    TITLE BAR                     **
+** (contains auburn logo, Career Center title link) **
+*************************************************** **/
+.title { 
+  @include main;
+  h1 {
+    padding: $content-separation 0;
+    font-size: $header-font-size;
+    a {
+      color: white;
+      &:hover {
+        color: $thisislightorange; 
+      }
+    }
+  }
+}
+.logo-ribbon {
+  display: block;
+  @include hex(82px, white);
+  
+  background-image: url('../images/AU-emblem.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (min-width: $small-screen-width) {
+  .title h1 {
+    font-size: $title-font-size;
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .logo-ribbon {
+    @include hex(120px, white); 
+  }
+}
+
+nav > ul {
+  @include main;
+}
+/* Generally true in all site non-mobile navs: they're horizontal */
+nav ul li {
+  display: inline-block;
+  font-family: $header-font-family;
+  font-size: $nav-font-size;
+  text-align: center;
+  list-style: none !important;
+}
+nav a {
+  color: white;
+  &:hover {
+    color: $thisislightorange;
+  } 
+}
+
+/* **************************************************************** **
+**                             MAIN NAV                             **
+** (contains navigation elements for Career Center pages, submenus) **
+** **************************************************************** **/
+.nav-controller {
+  position: absolute;
+  top: 15rem;
+  right: 0;
+  
+  z-index: 300000;
+  
+  cursor: pointer;
+  
+  &::before {
+    display: block;
+    
+    font-size: 2rem;
+  
+    padding: 2rem;
+    box-shadow: $box-shadow;
+    
+    background-color: $thisislightblue;
+    color: white;
+  }
+  
+  &:hover::before {
+    background-color: white;
+    color: $thisislightblue;
+  }
+  
+  &.nav-controller--active::before {
+    background-color: white;
+    color: $thisislightblue;
+  }
+}
+.nav-controller.fixed {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+nav.main {
+  display: none;
+  
+  margin-bottom: 6px;
+    
+  background-color: $thisislightblue;
+  
+  ul {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  li {
+    min-width: 16%;
+    flex: 1;
+    order: 3;
+    
+    background-color: $thisislightblue;
+    cursor: pointer;
+    
+    &:hover, &.hover--active {
+      background-color: white; 
+    }
+  }
+  a {
+    display: inline-block;
+    width: 100%;
+    padding: ($content-protection / 2) 0;
+  }
+  a:hover, li:hover a, li.hover--active a {
+    color: $thisislightblue; 
+  }
+  
+  // submenus
+  ul li {
+    position: relative; 
+  }
+  ul li ul {
+    display: none;
+    
+    background-color: white;
+    color: $thisislightblue;
+    
+    box-shadow: $box-shadow;
+    width: 600%;
+  }
+  ul li ul li { 
+    font-size: $nav-font-size * 0.7;
+    background-color: white;
+    color: $thisislightblue;
+    
+    a:hover, &:hover a {
+      color: $thisislightorange;
+    }
+  }
+  ul li:hover ul,
+  ul li.hover--active ul {
+    position: absolute;
+    
+    display: flex;
+    list-style: none;
+  }
+  &:not(.main--mobile) .about-us ul {
+    margin-left: -500%; 
+  }
+  &:not(.main--mobile) .part-time-employment ul {
+    margin-left: -100%; 
+  }
+  &:not(.main--mobile) .hire-about-us ul {
+    margin-left: -300%; 
+  }
+}
+.hire-header nav.main ul li ul {
+  width: 400%;
+}
+
+// if we've scrolled down, we want the main nav
+// to follow us.
+nav.main.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100000;
+  ul li ul { 
+    z-index: 200000;
+  }
+  ul li ul li {
+    z-index: 300000;
+    a {
+      color: $thisislightblue;
+    }
+  }
+}
+nav.main.shadowed {
+  box-shadow: $box-shadow;
+}
+// we should also fix the positioning of the post-header.
+
+// if we've clicked the nav-controller button,
+// we should be at a mobile-ready resolution.
+// these are the styles that should be applied
+// when the user clicks it and requests the menu.
+nav.main--mobile {
+  display: block;
+  box-shadow: $box-shadow;
+  ul {
+    width: 100%;
+    max-width: none;
+    
+    flex-wrap: wrap;
+  }
+  li {
+    flex-basis: 100%;
+  }
+  ul li:hover,
+  ul li.hover--active {
+    box-shadow: $box-shadow;
+    ul {
+      position: absolute;
+      left: 10%;
+      width: 80%;
+      box-shadow: $box-shadow;
+    }
+  }
+  ul li ul li a:hover {
+    color: $thisislightorange;
+  }
+  .about-us, .hire-about-us {
+    order: 1;
+  }
+  .students {
+    order: 2;
+  }
+}
+@media (min-width: $tiny-screen-width) {
+  .nav-controller:not(.fixed) {
+    top: 12rem;
+  }
+}
+@media (min-width: $small-screen-width) {
+  nav.main {
+    display: block; 
+  }
+  nav.main--mobile {
+    ul {
+      width: 90vw;
+      max-width: 1200px;
+      
+      flex-wrap: nowrap;
+    }
+    li {
+      flex: 1; 
+      order: 2;
+    }
+    .about-us {
+      order: 1;
+    }
+  }
+  .nav-controller::before {
+    display: none; 
+  }
+  .hire-header nav.main ul li {
+    font-size: $body-font-size;
+  }
+}
+@media (min-width: $medium-screen-width) {
+  nav.main ul li ul li,
+  .hire-header nav.main ul li {
+    font-size: $nav-font-size; 
+  }
+}
+@media (min-width: $moderate-screen-width) {
+  .hire-header nav.main ul li {
+    font-size: $nav-font-size;
+  }
+}
+
+/* ********************************************************** **
+**                        AUBURN NAV                          **
+** (contains navigation elements present on all Auburn pages) **
+** ********************************************************** **/
+nav.auburn { 
+  background: $thisisdarkblue;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3px 0;
+    margin: 0;
+    width: auto;
+  }
+  li {
+    padding: 0 ($content-protection / 4); 
+    font-size: $post-nav-font-size;
+    font-family: $body-font-family;
+  }
+  input {
+    -webkit-appearance: none;
+    border: none;
+    margin: 0; padding: 0;
+    margin-top: -3px;
+    background-color: transparent;
+    color: white;
+    vertical-align: middle;
+    line-height: $line-height;
+    max-width: 8rem;
+  }
+}
+nav.auburn.absolute {
+  position: relative;
+  top: 52px;
+  margin-bottom: 80px;
+  box-shadow: $box-shadow;
+}
+@media (min-width: $small-screen-width) {
+  nav.auburn {
+    ul {
+      width: 90vw;
+      margin: 0 auto;
+    }
+    input {
+      max-width: none;
+    }
+  }
+}

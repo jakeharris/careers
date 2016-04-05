@@ -10,18 +10,18 @@ $(function() {
         ||  eresume.children('#gid') [0].value.length < 7  //auburn gids are always of the form xxx#### or xxxxxxx
         ||  eresume.children('#job' )[0].value.length < 1
         ||  eresume.children('#resume')[0].files.length < 1
-        || !$(eresume.children('.good-resume')[0]).children('#good-resume')[0].checked
+        || !$('#good-resume')[0].checked
         || !eresume.children('#privacy')[0].checked)
     {  
       submit.prop('disabled', true)
-      if(!submit.hasClass('flat-btn--disabled'))
-        submit.addClass('flat-btn--disabled')
+      if(!submit.hasClass('disabled'))
+        submit.addClass('disabled')
     }
 
     // otherwise, allow submission
     else {
       submit.prop('disabled', false)
-      submit.removeClass('flat-btn--disabled')
+      submit.removeClass('disabled')
     }
   }).bind(this)
 })

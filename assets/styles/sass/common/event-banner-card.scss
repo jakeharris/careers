@@ -1,0 +1,63 @@
+@import '../partials/variables';
+
+.event-banner-card {
+  margin-top: $content-division;
+  
+  > img {
+    display: none;
+    margin: 0;
+  }
+  .card {
+    margin-top: -1rem;
+  }
+}
+.img-replace {
+  display: block;
+  padding: $content-separation $content-protection;
+}
+h2.img-replace {
+  color: $thisislightorange;
+}
+.img-replace:last-of-type {
+  padding-bottom: $content-protection;
+}
+@media (min-width: $tiny-screen-width) {
+  .event-banner-card {
+    box-shadow: $box-shadow;
+    > img {
+      display: block;
+    }
+  }
+  .img-replace {
+    display: none;
+  }
+}
+.blurb {
+  padding-bottom: $content-division;
+}
+@media (min-width: $small-screen-width) {
+  .blurb {
+    border-bottom: 1px solid $box-shadow-color;
+  }
+}
+.blurb:last-of-type,
+.schedule:last-of-type {
+  border-bottom: none;
+}
+.schedule {
+  padding: $content-division 0;
+  h3 {
+    padding-bottom: $content-separation;
+  }
+  p {
+    padding-bottom: $content-protection;
+  }
+}
+@media (min-width: $small-screen-width) {
+  .schedule {
+    border-bottom: 1px solid $box-shadow-color;
+  }
+}
+.attributes {
+  padding-top: $content-division;
+}

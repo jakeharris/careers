@@ -1,5 +1,5 @@
 
-var home = angular.module('career-center-hire', [])
+var home = angular.module('career-center-hire', ['angularLazyImg'])
 
 home.config(['$interpolateProvider', function($interpolateProvider) {
   'use strict';

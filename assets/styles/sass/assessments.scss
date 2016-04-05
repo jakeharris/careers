@@ -1,58 +1,8 @@
-@import 'app';
+@import 'partials/variables';
 
-.content > h2,
-.hero > p,
-.more-guidance-header {
+.card > h2, .banner > p {
   text-align: center;
 }
-
-.content > h2 {
-  margin-bottom: 3rem;
-}
-
-.focus-description {
-}
-
-.other-assessments {
-  display: flex;
-}
-
-.assessment {
-  flex-basis: 50%;
-  width: 50%;
-}
-
-.focus-content-flex {
-  align-items: center;
-}
-
-.focus-description, .flat-btns {
-  flex-basis: 40%;
-  width: 40%;
-}
-
-.muted strong {
-  font-family: $header-font-family;
-  font-weight: normal;
-}
-
-.more-guidance-body.more-guidance-body {
-  text-align: left;
-  a {
-    font-family: $header-font-family; 
-  }
-}
-
-.more-guidance-descriptions {
-  padding-top: 3rem;
-  p {
-    flex-basis: 45%;
-    width: 45%;
-  }
-  .assessment-type {
-    color: #999; 
-  }
-}
-.assessment-type {
+strong {
   font-family: $header-font-family;
 }

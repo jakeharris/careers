@@ -1,0 +1,46 @@
+@import 'partials/variables';
+
+h3 {
+  font-size: $header-font-size;
+}
+
+.buttons--no-margin {
+  margin: 0;
+  .flat-btn {
+    flex-basis: auto;
+    margin: 0; 
+  }
+}
+
+.restrictions {
+  ul {
+    width: 100%;
+  }
+  ul li {
+    padding: $content-separation 0;
+    list-style: disc;
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+    margin: 0 auto;
+    list-style-position: inside;
+    line-height: $line-height;
+  }
+}
+
+@media (min-width: $tiny-screen-width) {
+  .attributes > .attribute {
+    flex-basis: 30%; 
+  }
+}
+@media (min-width: $small-screen-width) {
+  .restrictions {
+    ul li, p {
+      max-width: 60%;
+    }
+    ul li {
+      font-family: $header-font-family;
+      font-size: $header-font-size;
+      padding-left: 0;
+    }
+  }
+}

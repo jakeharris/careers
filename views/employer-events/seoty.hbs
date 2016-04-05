@@ -4,83 +4,82 @@ ng-app: career-center-employer-events
 name: emp-<%= eventName %>
 type: employer-event-pages
 layout: employers.hbs
-component:
-- price
 
 eventName: seoty
 title: Student Employment Awards | Career Center
+
+style:
+- event-banner-card
 ---
 
 <!-- Banner image -->
-<div class="hero">
+<div class="event-banner-card">
   <img class="img" 
        src="assets/images/events/{{eventName}}-banner.png"
        alt="Student Employee of the Year Awards.">
-  <div class="img-replace">
-    <h1>Student Employee of the Year Awards.</h1>
-  </div>
-</div>
+  <h2 class="img-replace">Student Employee of the Year Awards.</h2>
 
-<section class="content">
-  <div class="row row--no-padding">
-    <div class="brief">
-      <p class="blurb">
-        Do you have exceptional student workers? Off-campus or on-campus -- nominate 
-        outstanding student employees for Student Employee of the Year. 
-        <span class="desktop-only">The Career Center encourages Auburn University departments, colleges and offices as 
-        well as Auburn/Opelika area businesses to celebrate student employee contributions 
-        during National Student Employment Week, April 11 – 15, 2016.</span>
-      </p>
-      <p class="blurb desktop-only">
-        As a part of National Student Employment Week, on Monday, April 11, 2016, the Career 
-        Center hosts the Student Employee of the Year Awards (SEOTY). Two students are 
-        awarded for their efforts as an on-campus or off-campus student employee, and all 
-        nominees are recognized. Additionally, students submit nominations for Supervisor of
-        the Year. The award recipients will move on to represent Auburn University at 
-        regional and national levels of the National Student Employment Association awards.
-      </p>
-    </div>
-    <div class="actions">
-      <a class="flat-btn" href="http://survey.az1.qualtrics.com/SE/?SID=SV_cCNbbWIHOfzxeAJ">Nominate a Student Worker</a>
-      <div class="eligibility">
-        <h2 class="checklist-header">
-          Eligibility
-        </h2>
-        <ul class="checklist">
-          <li>Graduate, Research, and Teaching Assistants are NOT eligible.</li>
-          <li>Must be a current student in good standing</li>
-          <li>Enrolled during the Spring 2016 semester</li>
-          <li>Must have worked 3 full time OR 6 months part time between June 2015 and May 2016 (anticipated).</li>
-          <li>Only one nomination per nominator is permitted.</li>
-        </ul>
+  <div class="card">
+    <div class="blurb flex">
+      <div class="flex-half">
+        <p>
+          Do you have exceptional student workers? Off-campus or on-campus -- nominate 
+          outstanding student employees for Student Employee of the Year. 
+          The Career Center encourages Auburn University departments, colleges and offices as 
+          well as Auburn/Opelika area businesses to celebrate student employee contributions 
+          during National Student Employment Week, April 11 – 15, 2016.
+        </p>
+        <p>
+          As a part of National Student Employment Week, on Monday, April 11, 2016, the Career 
+          Center hosts the Student Employee of the Year Awards (SEOTY). Two students are 
+          awarded for their efforts as an on-campus or off-campus student employee, and all 
+          nominees are recognized. Additionally, students submit nominations for Supervisor of
+          the Year. The award recipients will move on to represent Auburn University at 
+          regional and national levels of the National Student Employment Association awards.
+        </p>
+      </div>
+      <div class="actions flex-half">
+        <a class="flat-btn" href="http://survey.az1.qualtrics.com/SE/?SID=SV_cCNbbWIHOfzxeAJ">Nominate a Student Worker</a>
+        <div class="eligibility">
+          <h2 class="checklist-header">
+            Eligibility
+          </h2>
+          <ul class="checklist">
+            <li>Graduate, Research, and Teaching Assistants are NOT eligible.</li>
+            <li>Must be a current student in good standing</li>
+            <li>Enrolled during the Spring 2016 semester</li>
+            <li>Must have worked 3 full time OR 6 months part time between June 2015 and May 2016 (anticipated).</li>
+            <li>Only one nomination per nominator is permitted.</li>
+          </ul>
+        </div>
+        <div class="dates">
+          <h2>Awards Ceremony <span class="muted">Apr 11</span></h2>
+          <h2>Nomination Deadline <span class="muted">Feb 5 at 5pm</span></h2>
+        </div>
       </div>
     </div>
   </div>
-  <div class="dates desktop-only flex flex--space-between row">
-    <h2 class="awards-ceremony-header flex-third">Awards Ceremony <span class="awards-ceremony">Apr 11</span></h2>
-    <h2 class="deadline-header flex-third">Nomination Deadline <span class="deadline">Feb 5 at 5pm</span></h2>
-  </div>
-</section>
-
-
-<div class="hero">
-  <img class="img" src="assets/images/events/SEOTY_officeDecorating.png">
-  <h1 class="img-replace">Office Decorating Contest</h1>
 </div>
-<section class="content">
-  <div class="row">
-    <div class="brief">
-      <p>
-        Decorate your office to show your appreciation for your
-        student workers during National Student Employment Week!
-        Better yet, compete against other on-campus offices doing
-        the same, and see if best the other participants in
-        celebrating your student workers!
-      </p>
-    </div>
-    <div class="actions">
-      <a class="flat-btn flat-btn--disabled" disabled>Register</a>
-      <a class="flat-btn flat-btn--white" href="assets/images/events/office-decorating.pdf">View Guidelines</a>
+
+<div class="event-banner-card">
+  <img src="assets/images/events/SEOTY_officeDecorating.png"
+       alt="Office Decorating Contest.">
+  <h1 class="img-replace">Office Decorating Contest</h1>
+  <div class="card">
+    <div class="blurb flex">
+      <div class="flex-half">
+        <p>
+          Decorate your office to show your appreciation for your
+          student workers during National Student Employment Week!
+          Better yet, compete against other on-campus offices doing
+          the same, and see if best the other participants in
+          celebrating your student workers!
+        </p>
+      </div>
+      <div class="actions flex-half">
+        <a class="flat-btn" href="">Register</a>
+        <a class="flat-btn flat-btn--white" href="">View Guidelines</a>
+      </div>
     </div>
   </div>
-</section>
+</div>

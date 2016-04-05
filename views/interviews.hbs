@@ -3,39 +3,20 @@ title: Interview Practice and Resources | Career Center
 name: interviews
 type: interviews
 layout: no-social.hbs
+
+path-to-root: ../
+
+style:
+- contact
 ---
 
-<section class="content interview-banner">
+<section class="card banner">
   <h2>Interview Practice</h2>
-  <p>Let's get you ready.</p>
+  <p class="subtitle">Let's get you ready.</p>
 </section>
 
-<div class="interview-types">
-  <section class="content resume">
-    <h2>Online Interview Practice</h2>
-    <p>
-      Create an InterviewStream account to digitally record multiple 
-      interviews, select questions to practice answering, and email videos 
-      to career counselors, professors, or employers.
-    </p>
-    <p class="online-interview-requirements-header">
-      You will need:
-    </p>
-    <ul class="online-interview-requirements">
-      <li>Computer</li>
-      <li>Webcam</li>
-      <li>Up-to-date Software</li>
-      <li>An Auburn email address</li>
-    </ul>
-    <p>
-      For your convenience, computers are also available in the Career Center for student use.
-    </p>
-    <p class="muted">
-      You MUST use your Auburn e-mail address to create your account. (e.g. aubie@auburn.edu)
-    </p>
-    <a class="flat-btn" href="https://auburn.interviewstream.com/Account/Login?ReturnUrl=%2f">Create an Account</a>
-  </section>
-  <section class="content mock">
+<section class="flex">
+  <div class="card flex-half mock">
     <h2>Mock Interviews</h2>
     <p>
       Have an upcoming interview? Call <a href="tel:(334) 844 4744">(334) 844 4744</a>
@@ -45,52 +26,69 @@ layout: no-social.hbs
       thing: dressed professionally and with a resume. Call in advance to 
       schedule as available appointments fill quickly.
     </p>
-    
-    <div class="location desktop-show">
-      <a href="tel:3348444744" class="place-icon">
-        <i class="icon-phone"></i>
-      </a>
-      <h2 class="phone-address"><a href="tel:(334) 844 4744">(334) 844 4744</a></h2>
+    <div class="protected">
+      <div class="phone">
+        <a href="tel:(334) 844 4744">(334) 844 4744</a>
+      </div>
+      <div class="address">
+        <a href="http://auburn.edu/map?id=76">
+          303 Mary Martin Hall
+        </a>
+      </div>
     </div>
-    <div class="location">
-      <a href="http://auburn.edu/map?id=76" class="place-icon">
-        <i class="icon-map-marker"></i>
-      </a>
-      <h2 class="place-address">
-        <address>
-          <a href="http://auburn.edu/map?id=76">
-            303 Mary Martin Hall <br />
-            Auburn, AL 36849
-          </a>
-        </address>
-      </h2>
+    <div class="buttons">
+      <a id="tips" class="flat-btn" href="http://auburn.edu/career/tipsheets/Tip%20Sheet%20Interview%20Prep.pdf">View Tips</a>
+      <a class="flat-btn desktop-hide" href="tel:3348444744">Schedule a Mock Interview</a>
     </div>
-    <a id="tips" class="flat-btn" href="http://auburn.edu/career/tipsheets/Tip%20Sheet%20Interview%20Prep.pdf">View Tips</a>
-    <a class="flat-btn desktop-hide" href="tel:3348444744">Schedule a Mock Interview</a>
-  </section>
-</div>
-
-<section class="content extra-content interview-banner" id="on-campus">
-  <h2>On-Campus Interviews</h2>
-  <p>Let's do this.</p>
-</section>
-
-<section class="content interview-details">
-  <p>
-    Now you're ready. Interview with employers who come to campus just to meet capable 
-    students like you &#8212; and know that you've got us behind you.
-  </p>
-  <p class="muted">
-    A variety of employers interview on-campus in several locations each semester. To 
-    sign up for interviews, search for All Interviews in the job postings section. 
-  </p>
-  <p class="muted">
-    In order to register for interviews, you must have a TRL account. If you do not already 
-    have a TRL account, you MUST use your Auburn e-mail address AND your Banner ID# to 
-    create your account. (e.g. aubie@auburn.edu, 90#####).
-  </p>
-  <div class="buttons">
-    <a class="flat-btn" href="https://auburn-csm.symplicity.com/sso/students/">Register for Interviews</a>
-    <a class="flat-btn flat-btn--white" href="http://www.auburn.edu/career/jobs/trl2_ocrinterview.pdf">View Tips</a>
+  </div>
+  <div class="card flex-half resume">
+    <h2>Online Interview Practice</h2>
+    <p>
+      Create an InterviewStream account to digitally record multiple 
+      interviews, select questions to practice answering, and email videos 
+      to career counselors, professors, or employers.
+    </p>
+    <h3>
+      You will need:
+    </h3>
+    <ul class="requirements">
+      <li>Computer</li>
+      <li>Webcam</li>
+      <li>Up-to-date software</li>
+      <li>An Auburn email address</li>
+    </ul>
+    <p>
+      For your convenience, computers are also available in the Career Center for student use.
+    </p>
+    <p class="muted">
+      You MUST use your Auburn e-mail address to create your account. (e.g. aubie@auburn.edu)
+    </p>
+    <a class="flat-btn" href="https://auburn.interviewstream.com/Account/Login?ReturnUrl=%2f">Create an Account</a>
   </div>
 </section>
+
+<div class="card banner" id="on-campus">
+  <h2>On-Campus Interviews</h2>
+  <p class="subtitle">Let's do this.</p>
+</div>
+<div class="flex oci">
+  <div class="card flex-half">
+    <p>
+      Now you're ready. Interview with employers who come to campus just to meet capable 
+      students like you &#8212; and know that you've got us behind you.
+    </p>
+    <p class="muted">
+      A variety of employers interview on-campus in several locations each semester. To 
+      sign up for interviews, search for All Interviews in the job postings section. 
+    </p>
+    <p class="muted">
+      In order to register for interviews, you must have a TRL account. If you do not already 
+      have a TRL account, you MUST use your Auburn e-mail address AND your Banner ID# to 
+      create your account. (e.g. aubie@auburn.edu, 90#####).
+    </p>
+    <div class="buttons">
+      <a class="flat-btn" href="https://auburn-csm.symplicity.com/sso/students/">Register for Interviews</a>
+      <a class="flat-btn flat-btn--white" href="http://www.auburn.edu/career/jobs/trl2_ocrinterview.pdf">View Tips</a>
+    </div>
+  </div>
+</div>

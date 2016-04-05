@@ -1,23 +1,8 @@
-@import 'pathways';
+@import 'partials/variables';
 
 .regions {
-  @extend .colleges;
-}
-
-.region {
-  @extend .college;
-}
-
-.region-content {
-  padding: 0;
-}
-
-.listing {
-  @extend .pathway;
-}
-
-.muted {
-  display: block;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .region-header {
