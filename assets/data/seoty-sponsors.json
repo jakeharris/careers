@@ -1,0 +1,23 @@
+[
+  {
+    "__example": "This object is here to teach you the format of the others.",
+    "company": "Human-readable identifier. This is just for human usage, and will never affect anything.",
+    "logo": "Logo filename, including extension. If no extension is included, this will break, so be careful.",
+    "url": "Company's website URL. Clicking on the logo will send you to the page at this URL."
+  },
+  {
+    "company": "",
+    "logo": "",
+    "url": ""
+  },
+  {
+    "company": "J&M Books",
+    "logo": "j&m.jpg",
+    "url": "http://www.jmbooks.com"
+  },
+  {
+    "company": "Neptune Technology Group",
+    "logo": "neptune.jpg",
+    "url": "http://www.neptunetg.com"
+  }
+]

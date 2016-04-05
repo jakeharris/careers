@@ -5,7 +5,8 @@ function Sponsors(res) {
     var list = []
     for(var s in sponsors) {
       // if it doesn't have a company, or the company field is blank, or if this is the example, skip it
-      if(!sponsors[s].hasOwnProperty('company') || sponsors[s].company === '' || sponsors[s].hasOwnProperty('__example')) continue
+      if(!sponsors[s].hasOwnProperty('company') || sponsors[s].company === '' || typeof sponsors[s].__example !== 'undefined')  
+        continue
       else list.push(sponsors[s])
     }
     list.sort(function(a, b){

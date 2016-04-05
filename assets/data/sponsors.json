@@ -11,19 +11,9 @@
     "url": ""
   },
   {
-    "company": "Denso",
-    "logo": "denso.jpg",
-    "url": "http://www.densocorp-na.com/"
-  },
-  {
-    "company": "Ascend Performance Materials",
-    "logo": "ascend.png",
-    "url": "http://www.ascendmaterials.com/"
-  },
-  {
-    "company": "BTG",
-    "logo": "btg.jpg",
-    "url": "http://www.btg.com/"
+    "company": "Atlantix Global Systems",
+    "logo": "atlantix.gif",
+    "url": "http://www.atlantixglobal.com/"
   },
   {
     "company": "CallidusCloud",
@@ -31,49 +21,19 @@
     "url": "http://calliduscloud.com/"
   },
   {
+    "company": "Denso",
+    "logo": "denso.jpg",
+    "url": "http://www.densocorp-na.com/"
+  },
+  {
+    "company": "Dillard's",
+    "logo": "dillards.jpg",
+    "url": "http://www.dillards.com"
+  },
+  {
     "company": "Equifax",
     "logo": "equifax.jpg",
     "url": "http://www.equifax.com/"
-  },
-  {
-    "company": "GKN Aerospace",
-    "logo": "gkn.jpg",
-    "url": "http://www.gkn.com/"
-  },
-  {
-    "company": "Intergraph",
-    "logo": "intergraph.png",
-    "url": "http://www.intergraph.com/"
-  },
-  {
-    "company": "Milliken & Company",
-    "logo": "milliken.png",
-    "url": "http://www.milliken.com/"
-  },
-  {
-    "company": "Neptune Technology Group",
-    "logo": "neptune.jpg",
-    "url": "http://www.neptunetg.com/"
-  },
-  {
-    "company": "SAIC",
-    "logo": "saic.png",
-    "url": "http://www.saic.com/"
-  },
-  {
-    "company": "Sherwin-Williams",
-    "logo": "sherwin-williams.jpg",
-    "url": "http://www.sherwin.com/MTP"
-  },
-  {
-    "company": "Chevron",
-    "logo": "chevron.gif",
-    "url": "http://www.chevron.com"
-  },
-  {
-    "company": "Exxon",
-    "logo": "exxon.png",
-    "url": "http://www.exxonmobil.com/careers"
   },
   {
     "company": "Honda Manufacturing",
@@ -81,8 +41,33 @@
     "url": "http://www.hondaalabama.com"
   },
   {
-    "company": "Voith",
-    "logo": "voith.jpg",
-    "url": "http://www.voith.com"
+    "company": "Intergraph",
+    "logo": "intergraph.png",
+    "url": "http://www.intergraph.com/"
+  },
+  {
+    "company": "Neptune Technology Group",
+    "logo": "neptune.jpg",
+    "url": "http://www.neptunetg.com/"
+  },
+  {
+    "company": "NextEra Energy",
+    "logo": "nextera-energy.png",
+    "url": "http://www.nexteraenergy.com/"
+  },
+  {
+    "company": "Sherwin-Williams",
+    "logo": "sherwin-williams.jpg",
+    "url": "http://www.sherwin.com/MTP"
+  },
+  {
+    "company": "Tower Loan",
+    "logo": "tower-loan.jpg",
+    "url": "https://www.towerloan.com/"
+  },
+  {
+    "company": "UDA Technologies",
+    "logo": "uda.png",
+    "url": "http://uniteddesign.com"
   }
 ]
