@@ -1,4 +1,4 @@
-var seoty = angular.module('career-center-seoty', [])
+var seoty = angular.module('career-center-seoty', ['angularLazyImg'])
 
 seoty.config(['$interpolateProvider', function ($interpolateProvider) {
   'use strict';

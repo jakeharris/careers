@@ -19,5 +19,15 @@
     "company": "Neptune Technology Group",
     "logo": "neptune.jpg",
     "url": "http://www.neptunetg.com"
+  },
+  {
+    "company": "Kinnucan's Specialty Outfitters",
+    "logo": "kinnucans.jpg",
+    "url": "http://www.kinnucans.com"
+  },
+  {
+    "company": "Porter Properties, LLC",
+    "logo": "porter.jpg",
+    "url": "http://www.porterproperties.com/"
   }
 ]
