@@ -106,7 +106,7 @@ style:
   <ul class="events flex">
     <li ng-if="events.length % 2 !== 0" class="event event--blurb">Click any event to get more information and register.</li>
     <li class="event" ng-repeat="event in events">
-      <a class="event-link" href="[[ event.url ]]">
+      <a class="event-link" ng-attr-href="[[ event.url || undefined ]]">
         <h3>[[ event.name ]]</h3>
         <div class="event-details">
           <div class="event-when">
