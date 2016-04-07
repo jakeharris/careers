@@ -1,0 +1,145 @@
+---
+layout: none
+---
+
+<!doctype html>
+<html>  
+  {{> head }}
+  <body>
+    {{> header}}
+    <main>
+      <div class="banner card">
+        <h2>The AUCC Style Guide</h2>
+        <p>(This is both a .banner and a .card!)</p>
+      </div> 
+      
+      <h1 class="padded">Card Elements</h1>
+      
+      <div class="card">
+        <p>
+          Cards are the basic building block of our site. Card elements are white, 
+          elevated containers with a thick, grey box-shadow. They are padded by default 
+          (their contents are not touching their border). Their padding will 
+          automatically change based on screen width, so don't worry about having to 
+          manually adjust that.
+        </p>
+      </div>
+      <div class="card unpadded">
+        <div class="padded">
+          <p>If you need to attach a button to the bottom of a card:</p>
+          <ul>
+            <li>add the .unpadded class to the .card element,</li>
+            <li>create another div (or other container element) inside the .card for the content,</li>
+            <li>add the .padded class to that inner container,</li>
+            <li>and create a button at the same level as that inner container with the classes .flat-btn and .flat-btn--bottom.</li>
+          </ul>
+          
+          <p class="muted">(You may like to view this in your browser's web inspector to see how it works in better detail.)</p>
+        </div>
+        <a class="flat-btn flat-btn--bottom">Here's an example.</a>
+      </div>
+      
+      <h1 class="padded">Flex Elements</h1>
+      
+      <div class="flex">
+        <div class="flex-half card">
+          <p>
+            Adding the .flex class to an element enables Flexbox layout for its children.
+            By default, flex-wrap is set to none, which means the browser will always try to force
+            direct children of the .flex element to be on the same row; this may need to be overridden 
+            for more nuanced layouts.
+          </p>
+        </div>
+        <div class="flex-half card">
+          <p>
+            We have multiple basic layout classes available for .flex children. These two adjacent cards
+            have the .flex-half class, and as such will each take up slightly less than half the available
+            width of the space (leaving enough for some space in-between them).
+          </p>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="flex-third card">
+          <p>
+            We also have the .flex-third and .flex-two-thirds classes, which do pretty intuitive things.
+          </p>
+          <p>
+            Note: only .flex-half, .flex-third, .flex-two-thirds, and .flex-item (the last of which is a full-width element)
+            are supported.
+          </p>
+        </div>
+        <div class="flex-two-thirds padded">
+          <p class="padded">
+            Note that the elements do not need to be .cards in order for these .flex classes to work. This
+            one is two-thirds the total width, though it may look strange to the eye because the box-shadow
+            and other indications of spacing on our elements are not present here.
+          </p>
+        </div>
+      </div>
+      
+      <h1 class="padded">Banner Elements</h1>
+      
+      <div class="banner card">
+        <h2>This is a banner element.</h2>
+        <p class="subtitle">Not much to say here.</p>
+        <p>
+          Any h2 element will get the big orange font, and any text container with the .subtitle class will look like that blue, well, subtitle above.
+          All other body copy in a banner element will use this off-black color, will be horizontally centered, and will use the header typeface ($header-font-family).
+        </p>
+        <p>Try not to put much body copy here. This font is harsh on the eyes when there's a lot of it.</p>
+      </div>
+      
+      <h1 class="padded">Buttons</h1>
+      <div class="flex">
+        <div class="flex-half card unpadded">
+          <div class="padded">
+            <p>
+              Our flat, thick button style is another very key part of our aesthetic. Makes us seem modern, but stable.
+              (I hope.) Here are some different button types we support.
+            </p>
+            <a class="flat-btn" href="#">.flat-btn</a>
+            <a class="flat-btn flat-btn--white" href="#">.flat-btn and .flat-btn--white</a>
+            <a class="flat-btn disabled">.flat-btn and .disabled</a>
+            <p class="muted">Note: the .disabled class doesn't start with "flat-btn--" because it can technically be used for anything. We'll explore that more later.</p>
+          </div>
+          <a class="flat-btn flat-btn--bottom">.flat-btn and .flat-btn--bottom</a>
+        </div>
+      </div>
+      
+      <h1 class="padded">Common States</h1>
+      <div class="card">
+        <p>Often, we'll want to modify the base behavior of one of our primary classes. Here is a quick runthrough of our supported "state" classes:</p>
+        <div class="flex">
+          <div class="flex-half">
+            <p>
+              Elements that require emphasis or de-emphasis (depending on context) deserve the .muted class. Often used for notes.
+            </p>
+            <p>
+              Elements that are interactible when active, but currently out of date or otherwise inactive deserve the .disabled class. Often used for event registration, buttons.
+            </p>
+            <p>
+              Elements that require spacing consistent with the remainder of our site should make use of either the .padded or .protected classes. The former provides more spacing, but should be reserved to separate elements that have nothing to do with one another. The .protected class should be applied to elements that are related, but deserve more separation than the space between paragraphs.
+            </p>
+            <p>
+              When you need to completely remove our built-in padding for certain elements/classes, the .unpadded and .marginless classes are available. 
+            </p>
+            <p>
+              The .hidden class will completely hide an element. Try to avoid using this one, and use .hidden--unless-desktop instead. Anything with .hidden--unless-desktop will be hidden on any screen of iPad width and lower, but will be visible on desktop-sized viewports.
+            </p>
+          </div>
+          <div class="flex-half">
+            <p class="muted">Note: this is .muted</p>
+            <a class="flat-btn disabled">.disabled</a>
+            <a class="flat-btn padded">.padded</a>
+            <a class="flat-btn protected">.protected</a>
+            <a class="flat-btn unpadded">.unpadded</a>
+            <a class="flat-btn marginless">.marginless</a>
+            <a class="flat-btn unpadded marginless">.unpadded and .marginless</a>
+            <p>This sentence is always visible. <span class="hidden--unless-desktop">But this sentence is only visible on desktop-sized viewports.</span></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    {{> footer}}
+  </body>
+</html>
