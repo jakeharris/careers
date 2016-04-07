@@ -175,7 +175,8 @@ module.exports = function (grunt) {
     'dist/experience/index.html': ['<%= config.views %>/experience.hbs'],
     'dist/experience/internships.html': ['<%= config.views %>/internships.hbs'],
     'dist/experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
-    'dist/experience/housing.html': ['<%= config.views %>/housing.hbs']
+    'dist/experience/housing.html': ['<%= config.views %>/housing.hbs'],
+    'dist/style-guide.html': ['<%= config.views %>/style-guide.hbs']
   }
   
   grunt.initConfig({
