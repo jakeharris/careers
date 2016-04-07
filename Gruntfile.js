@@ -114,7 +114,8 @@ module.exports = function (grunt) {
     'experience/internships.html': ['<%= config.views %>/internships.hbs'],
     'experience/dept-contacts.html': ['<%= config.views %>/dept-contacts.hbs'],
     'experience/housing.html': ['<%= config.views %>/housing.hbs'],
-    './style-guide.html': ['<%= config.views %>/style-guide.hbs']
+    './style-guide.html': ['<%= config.views %>/style-guide.hbs'],
+    './example.html': ['views/example.hbs']
   },
   VIEW_MAPPING_PROD = {
     'dist/index.html':    ['<%= config.views %>/home.hbs'],
