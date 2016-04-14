@@ -1,16 +1,19 @@
 ---
 title: Request a Presentation | Career Center
+layout: no-social.hbs
 name: presentations
 type: presentations
+
+path-to-root: ../
 ---
 
-<div class="presentations-banner content">
+<div class="presentations-banner card">
   <h2>Request a Presentation</h2>
   <p>We'll come talk to your students. You only have to ask.</p>
 </div>
 
 <form id="presentations" name="presentations" method="post" action="faculty/submission.php">
-  <div class="topics content extra-content">
+  <div class="topics card">
     <h2>Presentation Topic</h2>
     <p>
       Choose any <strong>one</strong> of the following topics:
@@ -30,19 +33,19 @@ type: presentations
     {{/each}}
     </div>
   </div>
-  <div class="content extra-content logistics">
+  <div class="card logistics">
     <h2>Logistics</h2>
     <div class="date-logistics-container">
       <div class="date-container">
         <h2>Date and Time</h2>
         <p>Requests must be made no less than <strong>two weeks</strong> in advance.</p>
         <div class="input-group date">
-          <input type="text" id="date" class="form-control" name="date"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+          <input type="text" id="date" class="form-control" name="date" placeholder="MM/DD/YYYY"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
         </div>
         <div class="bootstrap-timepicker input-group time">
-          <input id="time-start" type="text" class="form-control" name="start time">
+          <input id="time-start" type="text" class="form-control" name="start time" placeholder="9am">
           <span class="input-group-addon">to</span>
-          <input id="time-end"   type="text" class="form-control" name="end time">
+          <input id="time-end"   type="text" class="form-control" name="end time" placeholder="10am">
         </div>
       </div>
       <script type="text/javascript">
@@ -107,12 +110,12 @@ type: presentations
     </div>
   </div>
   
-  <div class="description content extra-content">
+  <div class="description card">
     <h2>Presentation Description</h2>
     <textarea class="form-control" name="description" placeholder="Type your description here..."></textarea>
   </div>
   
-  <div class="contacts content extra-content">
+  <div class="contacts card">
     <h2>Contact Information</h2>
     <div class="flex">
       <div class="primary">
