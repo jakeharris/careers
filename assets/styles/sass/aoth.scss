@@ -1,0 +1,23 @@
+@import 'partials/variables';
+
+.auoth-banner {
+  background: no-repeat url('../images/auoth-banner.png');
+  background-size: cover;
+  background-position: center center;
+  max-height: 239px;
+}
+@media (min-width: $tiny-screen-size) {
+  .auoth-banner {
+    min-height: 140px; 
+  }
+}
+@media (min-width: $medium-screen-size) {
+  .auoth-banner {
+    min-height: 220px; 
+  }
+}
+@media (min-width: $moderate-screen-size) {
+  .auoth-banner {
+    min-height: 239px;
+  }
+}
