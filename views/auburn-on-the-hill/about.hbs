@@ -6,15 +6,15 @@ path-to-root: ../
 layout: default.hbs
 ---
 
-<section class="content">
+<section class="card">
   <h2>What is Auburn on the Hill?</h2>
 </section>
 <section class="flex auoth-buttons">
-  <a class="flat-btn flat-btn--half" href="auburn-on-the-hill/about.html#faq">Frequently Asked Questions</a>
-  <a class="flat-btn flat-btn--half flat-btn--white" href="auburn-on-the-hill">Back to Overview</a>
+  <a class="flat-btn flex-half" href="auburn-on-the-hill/about.html#faq">Frequently Asked Questions</a>
+  <a class="flat-btn flex-half flat-btn--white" href="auburn-on-the-hill">Back to Overview</a>
 </section>
 
-<section class="content extra-content auoth-content">
+<section class="card auoth-content">
   <h3>Government.</h3>
   <blockquote>
     <em class="muted">
@@ -35,7 +35,7 @@ layout: default.hbs
     <li class="tie">Get leadership training</li>
   </ul>
 </section>
-<section class="content extra-content auoth-content">
+<section class="card auoth-content">
   <h3>Culture.</h3>
   <p>
     Beyond the amazing professional experience, 
@@ -49,7 +49,7 @@ layout: default.hbs
     <li class="baseball">See major sporting events</li>
   </ul>
 </section>
-<section class="content extra-content auoth-content">
+<section class="card auoth-content">
   <h3>You.</h3>
   <p>
     Most importantly, a congressional internship 
@@ -63,8 +63,8 @@ layout: default.hbs
     <li class="star-full">Pursue your dream</li>
   </ul>
 </section>
-<section class="contact-content">
-  <div class="contact flex-half content extra-content auoth-content">
+<section class="contact-content flex">
+  <div class="contact flex-half card auoth-content">
     <h3>
       Interested? 
     </h3>
@@ -78,7 +78,7 @@ layout: default.hbs
     </div>
   </div>
 </section>
-<section id="faq" class="faq content extra-content auoth-content">
+<section id="faq" class="faq card auoth-content">
   <h3 class="faq-header">Frequently Asked Questions</h3>
   <div class="panel-group faq" id="faq" role="tablist" aria-multiselectable="true">
     {{#each oth.question }}
