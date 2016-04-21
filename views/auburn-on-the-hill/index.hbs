@@ -5,9 +5,9 @@ title: Auburn on the Hill | Career Center
 path-to-root: ../
 layout: no-social.hbs
 ---
-<section class="content auoth-banner">
+<section class="card auoth-banner">
 </section>
-<section class="content auoth-content">
+<section class="card">
   <p class="auoth-tagline">
     Intern with Congress. Network with real politicians. Enhance
     your resume.
@@ -20,47 +20,47 @@ layout: no-social.hbs
 </section>
 
 <section class="flex intern-info">
-  <div class="intern-housing content content--no-padding intern-region region">
-    <div class="hero">
-      <div class="region-header hero-content">
+  <div class="card location-card unpadded">
+    <div class="visual">
+      <div class="region-header visual-content">
         <h2>Housing for Interns in Washington, D.C.</h2>
       </div>
     </div>
-    <section class="content region-content">
-      <a class="collapsed accordion-header" data-toggle="collapse" id="housing-heading" href="http://www.auburn.edu/projects/washington#housing" role="tab" aria-expanded="false" aria-controls="housing">
+    <section class="region-content accordion">
+      <a class="collapsed accordion-header flat-btn flat-btn--white" data-toggle="collapse" id="housing-heading" href="http://www.auburn.edu/projects/washington#housing" role="tab" aria-expanded="false" aria-controls="housing">
         <i></i>
       </a>
       <div style="height: 0px;" aria-expanded="false" id="housing" class="panel-collapse collapse" role="tabpanel" aria-labelledby="housing-heading">
         {{#each oth.housing}}
           {{#if link}}
-            <a class="listing" href="{{ link }}">{{ name }}<span class="muted"> {{ location }}</span></a>
+            <a class="accordion-entry listing" href="{{ link }}">{{ name }}<span class="muted"> {{ location }}</span></a>
           {{else}}
-            <a class="listing coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+            <a class="accordion-entry listing coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
           {{/if}}
         {{/each}}
       </div>
     </section>
   </div>
-  <div class="internship-opportunities content content--no-padding intern-region region">
-    <div class="hero">
-      <div class="region-header hero-content">
+  <div class="internship-opportunities location-card card unpadded intern-region region">
+    <div class="visual">
+      <div class="region-header visual-content">
         <h2>Internship Opportunities and Deadlines</h2>
       </div>
     </div>
-    <section class="content region-content">
-      <a class="collapsed accordion-header" data-toggle="collapse" id="opportunities-heading" href="http://www.auburn.edu/projects/washington#opportunities" role="tab" aria-expanded="false" aria-controls="opportunities">
+    <section class="accordion region-content">
+      <a class="collapsed accordion-header flat-btn flat-btn--white" data-toggle="collapse" id="opportunities-heading" href="http://www.auburn.edu/projects/washington#opportunities" role="tab" aria-expanded="false" aria-controls="opportunities">
         <i></i>
       </a>
       <div style="height: 0px;" aria-expanded="false" id="opportunities" class="panel-collapse collapse" role="tabpanel" aria-labelledby="opportunities-heading">
         {{#each oth.opportunity}}
           {{#if link}}
-            <a class="listing" href="{{ link }}">
+            <a class="accordion-entry listing" href="{{ link }}">
               {{ name }}
               <span class="muted"> {{ deadline }}</span>
               {{#if requirements}}<span class="muted"> Requires {{ requirements }}</span>{{/if}}
             </a>
           {{else}}
-            <a class="listing coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
+            <a class="accordion-entry listing coming-soon" disabled="disabled">{{ name }} <span class="coming-soon">(Coming soon)</span></a>
           {{/if}}
         {{/each}}
       </div>
