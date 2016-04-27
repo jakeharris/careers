@@ -1,20 +1,26 @@
 ---
 name: oth-about
-type: auburn-on-the-hill
+type: aoth
 title: Auburn on the Hill | Career Center
 path-to-root: ../
-layout: default.hbs
+layout: no-social.hbs
+
+style:
+- attributes
+- accordion
+- point-of-contact
+- contact
 ---
 
 <section class="card">
   <h2>What is Auburn on the Hill?</h2>
 </section>
-<section class="flex auoth-buttons">
+<section class="flex buttons">
   <a class="flat-btn flex-half" href="auburn-on-the-hill/about.html#faq">Frequently Asked Questions</a>
   <a class="flat-btn flex-half flat-btn--white" href="auburn-on-the-hill">Back to Overview</a>
 </section>
 
-<section class="card auoth-content">
+<section class="card aoth-content">
   <h3>Government.</h3>
   <blockquote>
     <em class="muted">
@@ -30,26 +36,43 @@ layout: default.hbs
     internship opportunities in Washington D.C. 
   </p>
   <ul class="attributes">
-    <li class="briefcase">Connect with the nation's leaders and their staffs</li>
-    <li class="law">Learn about government procedures</li>
-    <li class="tie">Get leadership training</li>
+    <li class="attribute">
+      <a class="icon icon-briefcase"></a>
+      <div class="details">Connect with the nation's leaders and their staffs</div>
+    </li>
+    <li class="attribute">
+      <a class="icon icon-law"></a>
+      <div class="details">Learn about government procedures</div></li>
+    <li class="attribute">
+      <a class="icon icon-tie"></a>
+      <div class="details">Get leadership training</div>
+    </li>
   </ul>
 </section>
-<section class="card auoth-content">
+<section class="card aoth-content">
   <h3>Culture.</h3>
   <p>
     Beyond the amazing professional experience, 
     you will meet people from around the world 
     and enjoy the many opportunities 
-    available in our nationís capitol.
+    available in our nation√≠s capitol.
   </p>
   <ul class="attributes">
-    <li class="office">Visit museums and cultural centers</li>
-    <li class="audiotrack">Go to a play or concert</li>
-    <li class="baseball">See major sporting events</li>
+    <li class="attribute">
+      <a class="icon icon-office"></a>
+      <div class="details">Visit museums and cultural centers</div>
+    </li>
+    <li class="attribute">
+      <a class="icon icon-audiotrack"></a>
+      <div class="details">Go to a play or concert</div>
+    </li>
+    <li class="attribute">
+      <a class="icon icon-baseball"></a>
+      <div class="details">See major sporting events</div>
+    </li>
   </ul>
 </section>
-<section class="card auoth-content">
+<section class="card aoth-content">
   <h3>You.</h3>
   <p>
     Most importantly, a congressional internship 
@@ -58,40 +81,51 @@ layout: default.hbs
     goals.
   </p>
   <ul class="attributes">
-    <li class="compass">Explore career options</li>
-    <li class="graduation-cap">Enrich your education</li>
-    <li class="star-full">Pursue your dream</li>
+    <li class="attribute">
+      <a class="icon icon-compass"></a>
+      <div class="details">Explore career options</div>
+    </li>
+    <li class="attribute">
+      <a class="icon icon-graduation-cap"></a>
+      <div class="details">Enrich your education</div>
+    </li>
+    <li class="attribute">
+      <a class="icon icon-star-full"></a>
+      <div class="details">Pursue your dream</div>
+    </li>
   </ul>
 </section>
-<section class="contact-content flex">
-  <div class="contact flex-half card auoth-content">
-    <h3>
-      Interested? 
-    </h3>
-    <div class="contact-details">
-      <img src="assets/images/staff/meaghan.jpg">
-      <div class="contact-info">
-        <p class="name">Meaghan Weir</p>
-        <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
-        <p class="email"><a href="mailto:meaghan@auburn.edu">meaghan@auburn.edu</a></p>
-      </div>
+<section class="contact card">
+  <h3>
+    Interested? 
+  </h3>
+  <div class="point-of-contact">
+    <img src="assets/images/staff/meaghan.jpg" alt="Meaghan Weir.">
+    <div class="poc-info contact">
+      <p class="name">Meaghan Weir</p>
+      <p class="phone"><a href="tel:(334) 844-4000">(334) 844-4000</a></p>
+      <p class="email"><a href="mailto:meaghan@auburn.edu">meaghan@auburn.edu</a></p>
     </div>
   </div>
 </section>
-<section id="faq" class="faq card auoth-content">
+<section class="card">
   <h3 class="faq-header">Frequently Asked Questions</h3>
-  <div class="panel-group faq" id="faq" role="tablist" aria-multiselectable="true">
+  <div class="faq" id="faq" aria-multiselectable="true">
     {{#each oth.question }}
-    <div class="panel panel-default">
-      <div class="panel-heading accordion-header" role="tab" id="{{ id }}-heading">
-        <h4 class="panel-title faq-question">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ id }}" aria-expanded="false" aria-controls="{{ id }}">
-            {{ question }}
-          </a>
-        </h4>
-      </div>
-      <div id="{{ id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ id }}-heading">
-        <div class="panel-body faq-answer">
+    <div class="accordion">
+      <a class="accordion-header flat-btn flat-btn--white faq-header collapsed"
+         role="tab" 
+         data-toggle="collapse"
+         href="#{{ id }}" 
+         aria-expanded="false" 
+         aria-controls="{{ id }}">
+        {{ question }}
+      </a>
+      <div style="height: 0px;"
+           id="{{ id }}"
+           role="tabpanel" 
+           aria-labelledby="{{ id }}-heading">
+        <div class="accordion-entry">
           {{ answer }}
         </div>
       </div>

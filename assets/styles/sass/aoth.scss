@@ -1,23 +1,119 @@
 @import 'partials/variables';
 
-.auoth-banner {
-  background: no-repeat url('../images/auoth-banner.png');
+.aoth-banner {
+  background: no-repeat url('../images/aoth-banner.png');
   background-size: cover;
   background-position: center center;
   max-height: 239px;
 }
-@media (min-width: $tiny-screen-size) {
-  .auoth-banner {
+@media (min-width: $tiny-screen-width) {
+  .aoth-banner {
     min-height: 140px; 
   }
 }
-@media (min-width: $medium-screen-size) {
-  .auoth-banner {
+@media (min-width: $medium-screen-width) {
+  .aoth-banner {
     min-height: 220px; 
   }
 }
-@media (min-width: $moderate-screen-size) {
-  .auoth-banner {
+@media (min-width: $moderate-screen-width) {
+  .aoth-banner {
     min-height: 239px;
+  }
+}
+
+// location-card overrides
+.location-card:nth-of-type(1) {
+  .visual-content {
+    background: $thisislightblue;
+    h2 { color: white; }
+  }
+  .listing {
+    background: $thisislightblue;
+    color: white;
+    &:hover {
+      background: $thisisdarkblue;
+    }
+  }
+}
+.location-card:nth-of-type(2) {
+  .visual-content {
+    background: $thisislightorange;
+    h2 { color: white; }
+  }
+  .listing {
+    background: $thisislightorange;
+    color: white;
+    &:hover {
+      background: $thisisburntorange;
+    }
+  }
+}
+
+//point-of-contact overrides
+.point-of-contact img {
+  height: 300px;
+  width: auto;
+}
+
+// accordion overrides
+.faq {
+  counter-reset: faq;
+  .accordion {
+    overflow: hidden;
+    margin-bottom: $content-separation;
+    box-shadow: $box-shadow;
+  }
+  .accordion-header {
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+    text-align: left;
+    border: 1px solid $box-shadow-color;
+    z-index: 2;
+    position: relative;
+    padding: $content-separation;
+    &::before {
+      font-family: $header-font-family;
+      content: counter(faq);
+      counter-increment: faq;
+      padding-right: $content-separation;
+    }
+    &::after {
+      position: absolute;
+      right: $content-separation;
+    }
+  }
+  .accordion > a:not(.collapsed),
+  .accordion > a.collapsed {
+    background: white;
+    color: $thisisdarkblue;
+  }
+  .accordion > a:hover {
+    color: white;
+    background: $thisisdarkblue;
+  }
+  .accordion-entry,
+  .accordion-entry:hover {
+    color: black;
+    background: white;
+    border: 1px solid $box-shadow-color;
+    border-top: none;
+    box-shadow: $box-shadow;
+    margin-top: -1rem;
+    z-index: 1;
+  }
+}
+@media (min-width: $small-screen-width) {
+  .faq .accordion-header {
+    padding: $content-separation;
+    &::before {
+      padding: 0 $content-separation;
+    }
+    &::after {
+      right: $content-separation;
+    }
+  }
+  .faq .accordion-entry {
+    padding: $content-separation 7rem;
   }
 }
