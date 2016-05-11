@@ -32,7 +32,7 @@
         {
           "name": "UNC Charlotte",
           "location": "Charlotte, NC",
-          "link": "http://housing.uncc.edu/conference-services/welcome"
+          "link": "http://housing.uncc.edu/conference-housing/summer-intern-housing"
         },
         {
           "name": "Queens University of Charlotte",
@@ -64,7 +64,7 @@
         {
           "name": "Seattle University",
           "location": "Seattle, WA",
-          "link": "http://www.seattleu.edu/housing/applying/summer/"
+          "link": "https://www.seattleu.edu/housing/applying-for-housing/summer-housing/"
         }
       ]
     },
@@ -86,7 +86,7 @@
         {
           "name": "Grand View University Summer Program",
           "location": "Des Moines, IO",
-          "link": "http://www.desmoinesmetro.com/regional-workforce/job-support-services/interns/default.asp"
+          "link": "http://www.grandview.edu/aspx/audience/content.aspx?pageid=1566"
         }
       ]
     },
@@ -108,7 +108,7 @@
         {
           "name": "Suffolk University",
           "location": "Boston, MA",
-          "link": "http://www2.suffolk.edu/offices/33815.html"
+          "link": "http://www.suffolk.edu/explore/25309.php"
         },
         {
           "name": "Columbia University",
@@ -143,7 +143,7 @@
         {
           "name": "University of Pennsylvania",
           "location": "Philadelphia, PA",
-          "link": "http://www.destinationpenn.com/housing/intern_housing.asp"
+          "link": "http://cms.business-services.upenn.edu/hospitality-services/accomodations/77-summer-housing-intro.html"
         },
         {
           "name": "Villanova University",
@@ -163,7 +163,7 @@
         {
           "name": "George Washington University",
           "location": "Washington, D.C.",
-          "link": "http://gwired.gwu.edu/gwhousing/?url=gwhousing"
+          "link": "https://summerhousing.gwu.edu/individuals"
         },
         {
           "name": "The International Student House",
@@ -171,9 +171,9 @@
           "link": "http://www.ishdc.org/"
         },
         {
-          "name": "Thompson-Markwood Hall",
+          "name": "Thompson-Markward Hall",
           "location": "Washington, D.C.",
-          "link": "http://www.ywch.org/"
+          "link": "https://www.tmhdc.org/"
         },
         {
           "name": "Washington Intern Student Housing",
@@ -183,7 +183,7 @@
         {
           "name": "Partnership for Public Service",
           "location": "Washington, D.C.",
-          "link": "http://makingthedifference.org/federalinternships/dchousingguide.shtml"
+          "link": "http://ourpublicservice.org/about-us/internship-program.php"
         }
       ]
     }
