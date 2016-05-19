@@ -14,7 +14,11 @@
   {{/is}}
 {{/each}}
 {{#each style}} 
+{{#is this 'grayscale'}}
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.gray/1.3.6/gray.min.css">
+{{else}}
   <link rel="stylesheet" href="assets/styles/{{ this }}.{{#if production}}min.{{/if}}css">
+{{/is}}
 {{/each}}
 
 <!-- Page-specific styles -->
