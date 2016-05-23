@@ -19,10 +19,30 @@
   color: $box-shadow-color;
 }
 
-.education {
-  margin-top: -25rem;
-}
-
 .visual img {
   min-height: 250px;
+}
+.visual img.education {
+  height: auto;
+  margin-top: -30rem;
+}
+@media (min-width: $tiny-screen-width + 50) {
+  .visual img.education {
+     margin-top: -45rem;
+  }
+}
+@media (min-width: $small-screen-width) {
+  .visual img.education {
+    margin-top: -25rem;
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .visual img.education {
+    margin-top: -35rem;
+  }
+}
+@media (min-width: $social-shrink-width) {
+  .visual img.education {
+    margin-top: -50rem;
+  }
 }
