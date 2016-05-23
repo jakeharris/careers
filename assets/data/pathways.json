@@ -223,11 +223,6 @@
       ]
     },
     {
-      "name": "architecture",
-      "fullname": "College of Architecture, Design, & Construction",
-      "img": "college-architecture-banner"
-    },
-    {
       "name": "education",
       "fullname": "College of Education",
       "img": "college-education-banner",
@@ -297,6 +292,11 @@
               "link":"physical-teacher-education"
           }
       ]
+    },
+    {
+      "name": "business",
+      "fullname": "Harbert College of Business",
+      "img": "harbert-college-business-banner"
     },
     {
       "name": "engineering",
