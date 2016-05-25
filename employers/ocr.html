@@ -14,12 +14,15 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <title>On-Campus Recruiting | Career Center</title>
   
-    <!-- Bootstrap & Core CSS -->
-        
-    <!-- Application CSS -->
-    <!-- build:css assets/styles/on-campus-recruiting.min.css -->
-      <link rel="stylesheet" href="assets/styles/student-employment.css">
-    <!-- endbuild -->  <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
+    <!-- App styles -->
+    <link rel="stylesheet" href="assets/styles/app.css">
+    
+    <!-- Style modules -->
+      <link rel="stylesheet" href="assets/styles/attributes.css">
+      <link rel="stylesheet" href="assets/styles/popover.css">
+    
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="assets/styles/on-campus-recruiting.css">  <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
     <!--[if lt IE 9]>
       <script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
       <script src="//cdn.auburn.edu/assets/js/respond.src.js"></script>
@@ -82,32 +85,29 @@
     <link 
           rel="shortcut icon" 
           href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">  <!-- Angular & Core JS -->
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" defer></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js" defer></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" defer></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" defer></script> 
     <script src="//cdn.auburn.edu/assets/js/default.min.js" defer></script>
     
-    <!-- Application-specific CSS/JS -->
-    <!-- build:js assets/scripts/on-campus-recruiting.min.js -->
-      <script src="assets/scripts/components/nav.js" defer></script>
-      <script src="assets/scripts/components/touch-start.js" defer></script>
-        <script src="assets/scripts/components/tooltip.js" defer></script>
-      <script src="assets/scripts/student-employment.js" defer></script>
-    <!-- endbuild -->
+    <script src="assets/scripts/components/nav.js" defer></script>
+    <script src="assets/scripts/components/touch-start.js" defer></script>
+      <script src="assets/scripts/components/popover.js" defer></script>
+    <script src="assets/scripts/on-campus-recruiting.js" defer></script>
+    <script src="assets/scripts/on-campus-recruiting.js" defer></script>
+  
   </head>
-  <body class="on-campus-recruiting">
+  <body>
     <header role="banner">
     
-      <div class="title">
+      <div class="title flex">
         <a class="logo-ribbon" href="http://auburn.edu"></a>
         <h1><a href=".">Career Center</a></h1>
       </div>
       
-      <a class="nav-controller"></a>
+      <a class="nav-controller icon-navicon"></a>
       <nav class="main">
         <ul>
-          <li id="students">
+          <li class="students hover">
             <a href="students/">Students</a>
             <ul>
               <li data-menu="students"><a href="students/">Undergraduate</a></li>
@@ -123,13 +123,20 @@
           <li>
             <a href="faculty/">Faculty</a>
           </li>
-          <li>
+          <li class="employers hover">
             <a href="employers/">Employers</a>
+            <ul>
+              <li><a href="employers/aboutus/recruiting-contacts.html">Contacts</a></li>
+              <li><a href="employers/ocr.html">Recruiting</a></li>
+              <li><a href="employers/job-postings.html">Job Postings</a></li>
+              <li><a href="employers/events/">Event Registration</a></li>
+              <li><a href="employers/events/seoty.html">Awards</a></li>
+            </ul>
           </li>
           <li>
             <a href="events/">Events</a>
           </li>
-          <li class="about-us">
+          <li class="about-us hover">
             <a href="aboutus/">About Us</a>
             <ul>
               <li data-menu="about-us"><a href="aboutus/">Office Info</a></li>
@@ -154,36 +161,31 @@
             </li>
         </ul>
       </nav>
-    </header>    <div class="container">
-      <div class="social-nav">
-        <a href="http://www.facebook.com/AUCareer" class="social-icon icon-facebook"></a>
-        <a href="http://www.twitter.com/AUCareer" class="social-icon icon-twitter"></a>
-        <a href="http://www.linkedin.com/groups?about=&gid=1878262" class="social-icon icon-linkedin"></a>
-        <a href="http://www.pinterest.com/AUCareer" class="social-icon icon-pinterest"></a>
-        <a href="http://www.vimeo.com/AUCareer" class="social-icon icon-vimeo-square"></a>
-        <a href="http://tigersprepare.blogspot.com/" class="social-icon fa-blogger"></a>
-      </div>      
+    </header>    <main>
+      
 
-<section class="content extra-content">
-  <h2 class="ocr-header">On-Campus Recruiting</h2>
-  <p class="blurb ocr-blurb">
-    All offices use Tiger Recruiting Link to manage employer 
-    and student interaction. This centralized system is the 
-    only place you need to post positions, request information 
-    sessions, register for events, and schedule on-campus 
-    interviews. Additionally, look below to utilize other 
-    recruiting services.
-  </p>
-  <p class="blurb ocr-blurb">
-    If you are looking to recruit students within a specific 
-    area of study, click on the button below connect with the 
-    corresponding recruiting contact for that college/major.
-  </p>
+<section class="card unpadded">
+  <div class="padded">
+    <h2>On-Campus Recruiting</h2>
+    <p>
+      All offices use Tiger Recruiting Link to manage employer 
+      and student interaction. This centralized system is the 
+      only place you need to post positions, request information 
+      sessions, register for events, and schedule on-campus 
+      interviews. Additionally, look below to utilize other 
+      recruiting services.
+    </p>
+    <p>
+      If you are looking to recruit students within a specific 
+      area of study, click on the button below connect with the 
+      corresponding recruiting contact for that college/major.
+    </p>
+  </div>
+  <a class="flat-btn flat-btn--bottom" href="employers/aboutus/recruiting-contacts.html">Find Your Recruiting Contact</a>
 </section>
-<a class="flat-btn flat-btn--bottom" href="employers/aboutus/recruiting-contacts.html">Find Your Recruiting Contact</a>
 
 <section class="flex">
-  <div id="oci" class="content extra-content flex-half">
+  <div id="oci" class="card flex-half">
     <h3>On-Campus Interviewing</h3>
     <p>
       On-campus interviewing (OCI) offers employers 
@@ -194,26 +196,26 @@
       degrees of control over who you will interview 
       during your visit to Auburn.
     </p>
-    <div class="attributes">
-      <div class="attribute">
+    <div class="attributes flex">
+      <div class="attribute flex-half">
         <a class="icon" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-content="<p>The employer screens resumes and invites select applicants to interview.</p>">
           <i class="icon-folder-download"></i>
         </a>
         <div class="details">Pre-Select</div>
       </div>
-      <div class="attribute">
+      <div class="attribute flex-half">
         <a class="icon" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-content="<p>The employer screens resumes and invites select applicants to interview, and can also select alternate candidates who may sign up for interviews if any pre-selected candidates decline the interview invitation.</p>">
           <i class="icon-user-check"></i>
         </a>
         <div class="details">Pre-Select with Alternates</div>
       </div>
-      <div class="attribute">
+      <div class="attribute flex-half">
         <a class="icon" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-content="<p>The employer does not screen applicants. Qualified candidates sign up for interviews on a first come, first served basis without an invitation.</p>">
           <i class="icon-folder-open"></i>
         </a>
         <div class="details">Open</div>
       </div>
-      <div class="attribute">
+      <div class="attribute flex-half">
         <a class="icon" role="button" tabindex="0" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover" data-content="<p>The employer is wholly responsible for building the interview schedule, contacting candidates, and providing the final schedule to the career center staff upon arrival. We will hold the room reservation for you.</p>">
           <i class="icon-enter"></i>
         </a>
@@ -233,7 +235,7 @@
     </p>
   </div>
   <div class="flex-half">
-    <div class="content extra-content" id="info-sessions">
+    <div class="card" id="info-sessions">
       <h3>Information Sessions</h3>
       <p>
         During these sessions, employers make presentations on topics that 
@@ -250,9 +252,9 @@
       </p>
     </div>
     
-    <div class="content extra-content">
-      <h3 class="how-to-header">Policies and NACE Guides</h3>
-      <div class="buttons--no-padding">
+    <div class="card">
+      <h3>Policies and NACE Guides</h3>
+      <div class="buttons">
         <a href="http://auburn.edu/career/employers/aucc_disclaimer.pdf" class="flat-btn">TRL Disclaimer</a>
         <a href="https://sites.auburn.edu/admin/universitypolicies/Policies/EqualEmploymentOpportunityPolicy.pdf" class="flat-btn flat-btn--white">EEO Policy</a>
         <a href="http://www.naceweb.org/knowledge/principles-for-professional-practice.aspx#employment" class="flat-btn">NACE Employer's Guide</a>
@@ -261,54 +263,58 @@
     </div>
   </div>
 </section>
-
-
-<section class="content extra-content content--no-padding content--tips">
-</section>
-
-      <div class="row footer-wrap hidden-print">
-        <footer>
-          <section>
+    </main>
+    <footer>
+      <div class="footer-wrap">
+        <section>
+          <h6>Our Office</h6>
+          <address>
             <ul>
-              <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
-              <li><a href="http://www.auburn.edu/fye">First Year Experience</a></li>
-              <li><a href="http://harbert.auburn.edu/students/current/professional-and-career-development-resources/index.php">College of Business OPCD</a></li>
+              <li>
+                <span class="footer-address beforecon">
+                  <a href="http://auburn.edu/map/?id=76">
+                    303 Martin Hall
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span class="footer-phone beforecon">
+                  <a href="tel:(334) 844-4744">
+                    (334) 844-4744
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span class="footer-email beforecon">
+                  <a href="aucc@auburn.edu">
+                    aucc@auburn.edu
+                  </a>
+                </span>       
+              </li>
             </ul>
-          </section>
-      
-          <section>
-            <ul>
-              <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
-              <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
-              <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
-            </ul>
-          </section>
-        </footer>
-      
-        <div class="subfooter" role="contentinfo">
-          <div>
-            <span>Auburn University</span>&sdot;
-            <span>Auburn, Alabama 36849</span>&sdot;
-            <span>(334) 844-4744</span>&sdot;
-            <span>
-              <script type="text/javascript">
-                emailE='auburn.edu';
-                emailE=('aucc' + '@' + emailE);
-                document.write("<a href='mailto:" + emailE + "'>" + emailE + "</a>");
-              </script>
-            </span>
-          </div>
-      
-          <div>
-            <span><a href="http://www.auburn.edu/websitefeedback/">Website Feedback</a></span>&sdot;
-            <span><a href="http://www.auburn.edu/privacy/">Privacy</a></span>&sdot;
-            <span><a href="http://www.auburn.edu/oit/it_policies/copyright_regulations.php">Copyright &copy; <script type="text/javascript">date = new Date(); document.write(date.getFullYear());</script></a></span>&sdot;
-            <span><a href="https://sites.auburn.edu/academic/provost/us/CareerCenter/SitePages/Home.aspx">Staff Intranet</a></span>
-          </div>
-        </div>
-      </div>    </div>
-
-    <div class="to-top" style="display:none;"><a href="#top"></a></div>
+          </address>
+        </section>
+        <section>
+          <h6>Tools</h6>
+          <ul>
+            <li><a href="events">Career Events</a></li>
+            <li><a href="pathways">Pathways: Major Guides</a></li>
+            <li><a href="resume">Resume Review</a></li>
+            <li><a href="http://jobs.auburn.edu">Tiger Recruiting Link</a></li>
+          </ul>
+        </section>
+        <section>
+          <h6>Beyond</h6>
+          <ul>
+            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
+            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
+            <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
+            <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
+          </ul>
+        </section>
+        <p class="copyright">Copyright <a href="https://sites.auburn.edu/academic/provost/us/CareerCenter/SitePages/Home.aspx">Auburn University Career Center</a>, <script type="text/javascript">document.write(new Date().getFullYear())</script>.</p>
+      </div>
+    </footer>
   </body>
   
   <script>
