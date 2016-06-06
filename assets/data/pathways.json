@@ -339,14 +339,64 @@
       ]
     },
     {
+      "name": "engineering",
+      "fullname": "Ginn College of Engineering",
+      "img": "ginn-college-engineering-banner",
+      "pathways": [
+        {
+          "name": "Aerospace Engineering",
+          "link": "aerospace"
+        },
+        {
+          "name": "Biosystems Engineering",
+          "link": "biosystems"
+        },
+        {
+          "name": "Chemical Engineering",
+          "link": "chemical"
+        },
+        {
+          "name": "Civil Engineering",
+          "link": "civil"
+        },
+        {
+          "name": "Computer Science",
+          "link": "computer-science"
+        },
+        {
+          "name": "Electrical Engineering",
+          "link": "electrical"
+        },
+        {
+          "name": "Electrical Engineering: Computer Option (ECE)",
+          "link": "electrical-engineering-computer-option"
+        },
+        {
+          "name": "Industrial & Systems Engineering",
+          "link": "industrial-and-systems"
+        },
+        {
+          "name": "Materials Engineering",
+          "link": "materials"
+        },
+        {
+          "name": "Software Engineering",
+          "link": "software"
+        },
+        {
+          "name": "Wireless Hardware Engineering",
+          "link": "wireless-hardware"
+        },
+        {
+          "name": "Wireless Software Engineering",
+          "link": "wireless-software"
+        }
+      ]
+    },
+    {
       "name": "business",
       "fullname": "Harbert College of Business",
       "img": "harbert-college-business-banner"
-    },
-    {
-      "name": "engineering",
-      "fullname": "Ginn College of Engineering",
-      "img": "ginn-college-engineering-banner"
     },
     {
       "name": "cosam",
