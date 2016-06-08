@@ -26,8 +26,17 @@ h3 {
 ol li {
   list-style: decimal;
 }
-
-// how-to-hire guide (on-campus only)
+.buttons.buttons--no-padding .flex-half {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+@media (min-width: $small-screen-width) {
+  .buttons.buttons--no-padding .flex-half {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+// how-to-hire guide (on-campus only) 
 .content--guide {
   overflow: visible;
 }
