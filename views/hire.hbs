@@ -18,6 +18,8 @@ style:
 - employer-calendar
 - popover
 - attributes
+- point-of-contact
+- contact
 ---
 
 <section class="flex login-recruiting">
@@ -88,4 +90,21 @@ style:
       </div>
     </div>
   </div>
+</section>
+
+<section class="flex flex--wrap recruiting">
+  <h2 class="card flex-item">Recruiting Contacts</h2>
+  {{#each recruiting.contact}}
+    <div class="point-of-contact flex-third card unpadded">
+      <h3 class="major separated">{{major}}</h3>
+      <div class="flex flex--wrap padded">
+        <img src="assets/images/staff/{{getImageName name}}.jpg" alt="{{name}}">
+        <div class="poc-info contact flex-item">
+          <h2>{{getFirstName name}}<br/>{{getLastName name}}</h2>
+          <h3 class="phone"><a href="tel:{{formatPhoneNumber phone}}">{{formatPhoneNumber phone}}</a></h3>
+          <h3 class="email"><a href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>
+        </div>
+      </div>
+    </div>
+  {{/each}}
 </section>

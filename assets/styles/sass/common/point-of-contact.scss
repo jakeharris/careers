@@ -2,14 +2,40 @@
 
 .point-of-contact {
   h3 {
+    padding-top: 0;
+  }
+  > h3 {
     font-size: $header-font-size;
-    padding: $content-division*1.5 0;
-    padding-bottom: $content-protection;
+    padding: $content-separation;
   }
   img {
     box-shadow: $box-shadow;
     margin: 0 auto;
     margin-bottom: $content-protection;
+  }
+  .major {
+    height: 10rem;
+    background: $thisislightblue;
+    color: white;
+  }
+}
+
+.point-of-contact {
+  height: 100%;
+}
+.point-of-contact {
+  img {
+    display: block;
+    width: 50%;
+    flex-basis: 50%;
+    margin: 0 auto;
+    margin-bottom: $content-protection;
+    height: 100%;
+    min-height: 195px;
+  }
+  .phone, .email,
+  .phone a::before, .email a::before {
+    font-size: $button-font-size;
   }
 }
 @media (min-width: $medium-screen-width) {

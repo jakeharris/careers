@@ -46,10 +46,8 @@
 /****************************
 ** EMPLOYER-SIDE SPECIFICS **
 ****************************/
-.recruiting h2,
-.recruiting blockquote,
-.recruiting p {
-  padding-bottom: $content-separation;
+.recruiting {
+  align-items: stretch;
 }
 .services {
   width: 100%;
