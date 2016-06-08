@@ -13,3 +13,16 @@
     flex-basis: 25%;
   }
 }
+.flex-third {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+@media (min-width: $small-screen-width) {
+  .flex-third {
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+}
+h3.padded {
+  text-align: center;
+}
