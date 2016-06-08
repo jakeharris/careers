@@ -17,6 +17,7 @@ style:
 - login
 - employer-calendar
 - popover
+- attributes
 ---
 
 <section class="flex login-recruiting">
@@ -52,31 +53,39 @@ style:
 
 <section class="flex">
   <div class="card unpadded services">
-    <div class="padded services-content">
+    <div class="padded">
       <h2>
         Our Services
       </h2>
-      <ul class="services-list flex">
-        <li class="service flex-half">
-          <a href="employers/job-postings.html">Job Postings</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/events/">Career Events</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/student-employment/on-campus.html">On-Campus Employment</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/ocr.html#oci">On-Campus Interviewing</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/student-employment/off-campus.html">Off-Campus Employment</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/ocr.html#info-sessions">Information Sessions</a>
-        </li>
-      </ul>
+      <p>Log in to Handshake to access these services.</p>
+      <div class="attributes">
+        <div class="attribute">
+          <a class="icon format" href="employers/events/">
+            <i class="icon-calendar"></i>
+          </a>
+          <div class="details">Career events</div>
+        </div>
+        <div class="attribute">
+          <a class="icon dress" href="employers/student-employment/off-campus.html">
+            <i class="icon-tie"></i>
+          </a>
+          <p class="details">
+            Part-time employment
+          </p>
+        </div>  
+        <div class="attribute">
+          <a class="icon majors" href="employers/ocr.html">
+            <i class="icon-interviewer"></i>
+          </a>
+          <div class="details">Recruiting</div>
+        </div>
+        <div class="attribute">
+          <a class="icon majors" href="employers/info-sessions.html">
+            <i class="icon-ellipsis-glass"></i>
+          </a>
+          <div class="details">Info sessions</div>
+        </div>
+      </div>
     </div>
-    <a class="flat-btn disabled" disabled="disabled">Report Hiring</a>
   </div>
 </section>

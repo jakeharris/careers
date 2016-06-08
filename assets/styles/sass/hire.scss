@@ -23,7 +23,26 @@
     max-width: 45%;
   }
 }
-
+.attributes {
+  display: flex;
+  flex-wrap: wrap;
+  .attribute {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: $small-screen-width) {
+  .attributes .attribute {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: $medium-screen-width) {
+  .attributes {
+    flex-wrap: nowrap;
+    .attribute {
+      flex-basis: 25%;
+    }
+  }
+}
 /****************************
 ** EMPLOYER-SIDE SPECIFICS **
 ****************************/
@@ -32,72 +51,6 @@
 .recruiting p {
   padding-bottom: $content-separation;
 }
-
 .services {
   width: 100%;
-  height: 100%;
-  min-height: 55rem;
-  position: relative;
-  overflow: hidden;
-  &::before {
-    background: url('../images/services-banner.png') 100% 100% no-repeat;
-    background-size: cover;
-    background-position: 50% -3rem;
-    width: 100%;
-    height: 100%;
-    
-    filter: brightness(70%);
-    position: absolute;
-    content: '';
-    z-index: 1;
-  }
-}
-@media (min-width: $tiny-screen-width) {
-  .services {
-    min-height: 50rem; 
-  }
-}
-@media (min-width: $medium-screen-width) {
-  .services {
-    min-height: 36rem; 
-  }
-}
-.services-content, 
-.services .flat-btn {
-  z-index: 5;
-  position: absolute;
-  width: 100%;
-}
-.services .flat-btn {
-  margin: 0;
-  bottom: 0;
-}
-.services h2 {
-  text-align: center;
-  color: white;
-}
-.services-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding-top: $content-protection;
-}
-.service {
-  font-family: $header-font-family;
-  font-size: $button-font-size * 1.11;
-  padding-bottom: $content-separation;
-
-  & > a {
-    color: $box-shadow-color;
-    &:hover {
-      color: $thisisiceblue; 
-    }
-  }
-}
-@media (min-width: $medium-screen-width) {
-  .service {
-    &:nth-of-type(even) {
-      text-align: right; 
-    } 
-  }
 }
