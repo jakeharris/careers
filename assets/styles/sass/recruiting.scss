@@ -8,3 +8,8 @@
     flex-basis: 45%;
   }
 }
+@media (min-width: $medium-screen-width) {
+  .attributes .attribute {
+    flex-basis: 25%;
+  }
+}
