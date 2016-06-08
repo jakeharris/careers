@@ -24,6 +24,7 @@ style:
     <div class="login-container watermarked">
       <i class="watermark icon-compass"></i>
       <img class="handshake" src="assets/images/handshake.png" alt="Handshake (formerly TRL)">
+      <p>A platform for student &amp; employer connection.</p>
       <div class="buttons">
         <a class="flat-btn" href="https://demo.joinhandshake.com/login">Sign in</a>
       </div>
@@ -46,23 +47,6 @@ style:
     <p>
       <a href="mailto:skipworth@auburn.edu">Jay Skipworth</a>, Assistant Director of Employer Relations
     </p>
-    <a class="flat-btn" 
-       role="button" 
-       tabindex="0"
-       data-toggle="popover" 
-       data-html="true" 
-       data-placement="top" 
-       data-trigger="click" 
-       data-title="Auburn University"
-       data-content="<ul>
-                      <li>One of the largest universities in the south</li>
-                      <li>Fall 2015 enrollment: 27,287</li>
-                      <li>140 degree options</li>
-                      <li>13 schools and colleges</li>
-                      <li>Undergraduate, graduate, and professional degree options</li>
-                     </ul>">
-      Learn about Auburn University
-    </a>
   </div>
 </section>
 
@@ -96,46 +80,3 @@ style:
     <a class="flat-btn disabled" disabled="disabled">Report Hiring</a>
   </div>
 </section>
-
-<section class="card unpadded events-wrapper" ng-controller="calendar-ctrl">
-  <h2 class="events-title">Event Registration</h2>
-  <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
-  <ul class="events flex">
-    <li ng-if="events.length % 2 !== 0" class="event event--blurb">Click any event to get more information and register.</li>
-    <li class="event" ng-repeat="event in events">
-      <a class="event-link" ng-attr-href="[[ event.url || undefined ]]">
-        <h3>[[ event.name ]]</h3>
-        <div class="event-details">
-          <div class="event-when">
-            <div ng-if="event.dates" class="event-date"><span ng-if="event.dates.start">[[ event.dates.start ]] - </span>[[ event.dates.end ]]</div>
-            <div ng-if="event.dates === undefined" class="event-date">
-              [[ event.date.month ]] [[ event.date.day ]]
-            </div>
-            <div ng-if="event.date.time === undefined || event.date.time.start === ''" class="event-time">
-              All day
-            </div>
-            <div ng-if="event.date.time.start !== '' && event.date.time.start !== undefined" class="event-time">
-              [[ event.date.time.start ]] - [[ event.date.time.end ]]
-            </div>
-          </div>
-          <div class="event-cost" ng-if="event.cost">
-            $[[ event.cost ]]
-          </div>
-        </div>
-      </a>
-    </li>
-  </ul>
-</section>
-
-
-<div class="card sponsors">
-  <h2  class="sponsors-header">Sponsors</h2>
-  <div class="sponsors-content" ng-controller="sponsors-ctrl">
-    <div class="sponsor" ng-repeat="sponsor in sponsors">
-      <span class="vert-centerer"></span>
-      <a href="[[ sponsor.url ]]">
-        <img lazy-img="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade" alt="[[ sponsor.company ]]">
-      </a>
-    </div>
-  </div>
-</div>

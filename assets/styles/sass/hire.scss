@@ -4,8 +4,12 @@
 ** APP OVERRIDES **
 ******************/
 
+
 .login {
-  align-self: flex-start;
+  align-self: stretch;
+}
+.login-container {
+  vertical-align: middle;
 }
 @media (min-width: $small-screen-width) {
   .flex-half {
