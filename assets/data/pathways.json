@@ -223,11 +223,6 @@
       ]
     },
     {
-      "name": "architecture",
-      "fullname": "College of Architecture, Design, & Construction",
-      "img": "college-architecture-banner"
-    },
-    {
       "name": "education",
       "fullname": "College of Education",
       "img": "college-education-banner",
@@ -299,19 +294,109 @@
       ]
     },
     {
-      "name": "engineering",
-      "fullname": "Ginn College of Engineering",
-      "img": "ginn-college-engineering-banner"
+      "name": "nursing",
+      "fullname": "School of Nursing",
+      "img": "nursing-banner",
+      "pathways": [ { "name": "Nursing", "link": "nursing" } ]
     },
     {
       "name": "human-sciences",
       "fullname": "College of Human Sciences",
-      "img": "college-human-sciences-banner"
+      "img": "college-human-sciences-banner",
+      "pathways": [
+        {
+          "name": "Apparel Merchandising",
+          "link": "apparel-merchandising"
+        },
+        {
+          "name": "Apparel Production Management",
+          "link": "apparel-production-management"
+        },
+        {
+          "name": "Global Studies",
+          "link": "global-studies"
+        },
+        {
+          "name": "Human Development and Family Studies: Child Life",
+          "link": "hdfs-child-life"
+        },
+        {
+          "name": "Human Development and Family Studies",
+          "link": "hdfs"
+        },
+        {
+          "name": "Hotel and Restaurant Management",
+          "link": "hotel-and-restaurant-management"
+        },
+        {
+          "name": "Interior Design",
+          "link": "interior-design"
+        },
+        {
+          "name": "Nutrition",
+          "link": "nutrition"
+        }
+      ]
     },
     {
-      "name": "nursing",
-      "fullname": "School of Nursing",
-      "img": "nursing-banner"
+      "name": "engineering",
+      "fullname": "Ginn College of Engineering",
+      "img": "ginn-college-engineering-banner",
+      "pathways": [
+        {
+          "name": "Aerospace Engineering",
+          "link": "aerospace"
+        },
+        {
+          "name": "Biosystems Engineering",
+          "link": "biosystems"
+        },
+        {
+          "name": "Chemical Engineering",
+          "link": "chemical"
+        },
+        {
+          "name": "Civil Engineering",
+          "link": "civil"
+        },
+        {
+          "name": "Computer Science",
+          "link": "computer-science"
+        },
+        {
+          "name": "Electrical Engineering",
+          "link": "electrical"
+        },
+        {
+          "name": "Electrical Engineering: Computer Option (ECE)",
+          "link": "electrical-engineering-computer-option"
+        },
+        {
+          "name": "Industrial & Systems Engineering",
+          "link": "industrial-and-systems"
+        },
+        {
+          "name": "Materials Engineering",
+          "link": "materials"
+        },
+        {
+          "name": "Software Engineering",
+          "link": "software"
+        },
+        {
+          "name": "Wireless Hardware Engineering",
+          "link": "wireless-hardware"
+        },
+        {
+          "name": "Wireless Software Engineering",
+          "link": "wireless-software"
+        }
+      ]
+    },
+    {
+      "name": "business",
+      "fullname": "Harbert College of Business",
+      "img": "harbert-college-business-banner"
     },
     {
       "name": "cosam",

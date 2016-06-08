@@ -1,10 +1,7 @@
 @import '../partials/variables';
 
-.contact-card {
-  flex-basis: 234px;
-  width: 234px;
-  
-  min-width: 234px;
+.contact-card {  
+  flex-basis: 100%;
   
   display: block;
   
@@ -12,17 +9,17 @@
   box-shadow: $box-shadow;
   
   padding: 0;
-  margin: 0 1.5rem;
-  margin-bottom: 3rem;
+  margin: 0 $content-separation;
+  margin-bottom: $content-protection;
   
   position: relative;
   
   .contact-image {
     position: relative;
     
+    display: none;
+    
     overflow: hidden;
-    width: 234px;
-    height: 389px;
   }
   
   img {
@@ -72,12 +69,17 @@
   }
   .contact-image:hover .overlay,
   .contact-image:hover .overlay-text {
-    display: block;
+    display: none;
   }
   
   .contact-info {
     padding: $content-protection; 
-    height: 30rem;
+    h2 br {
+      display: none;
+      &::after {
+        content: " ";
+      }
+    }
     h3, h3 a {
       font-family: $body-font-family;
       font-size: $nav-font-size;
@@ -85,8 +87,10 @@
     margin-bottom: $content-protection;
   }
   .flat-btn--bottom {
-    position: absolute;
+    position: relative;
     bottom: 0;
+    
+    margin-top: 0;
   }
 }
 
@@ -97,15 +101,32 @@
 
 @media(min-width: $small-screen-width) {
   .contact-card {
-    margin: 0 10%;
     margin-bottom: 3rem;
     display: inline-block;
   }
 }
 
 @media(min-width: $moderate-screen-width) {
-  .contact-card {
+  .contact-card {  
+    flex-basis: 234px;
+    width: 234px;
+
+    min-width: 234px;  
+    
     margin: 0 1.5rem;
     margin-bottom: 3rem;
+    
+    .contact-image {
+      display: block;
+      width: 234px;
+      height: 389px;
+    }  
+    .contact-image:hover .overlay,
+    .contact-image:hover .overlay-text {
+      display: block;
+    }
+    .contact-info {
+      height: 30rem;
+    }
   }
 }
