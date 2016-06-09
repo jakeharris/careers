@@ -23,12 +23,12 @@ h3 {
 ol li {
   list-style: decimal;
 }
-.buttons .flex-half {
+.advice .buttons .flex-half {
   flex-basis: 100%;
   max-width: 100%;
 }
 @media (min-width: $small-screen-width) {
-  .buttons .flex-half {
+  .advice .buttons .flex-half {
     flex-basis: 50%;
     max-width: 50%;
   }

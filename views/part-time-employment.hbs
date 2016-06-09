@@ -20,6 +20,32 @@ style:
       <i class="watermark icon-compass"></i>
       <img class="handshake" src="assets/images/handshake.png" alt="Handshake (formerly TRL)">
       <p>A platform for student &amp; employer connection.</p>
+      <div class="attributes">
+        <div class="attribute">
+          <a class="icon post">
+            <i class="icon-coin-dollar"></i>
+          </a>
+          <div class="details">
+            Post positions for free
+          </div>
+        </div>
+        <div class="attribute">
+          <a class="icon law">
+            <i class="icon-law"></i>
+          </a>
+          <div class="details">
+            Comply with equal opportunity laws
+          </div>
+        </div>
+        <div class="attribute">
+          <a class="icon calendar">
+            <i class="icon-calendar"></i>
+          </a>
+          <div class="details">
+            Register for Career Center events
+          </div>
+        </div>
+      </div>
       <div class="buttons">
         <a class="flat-btn flex-half" href="https://auburn.joinhandshake.com/login">Sign in</a>
         <a class="flat-btn flex-half" href="https://auburn.joinhandshake.com/register">Register</a>
@@ -57,24 +83,18 @@ style:
       </div>
       <a href="https://auburn.qualtrics.com/jfe/form/SV_5zkiOXqLCMt6J8h" class="flat-btn flat-btn--bottom">Take Survey</a>
     </div>
-    <div class="flex-third padded">
-      <h3>Registration</h3>
-      <ol>
-        <li><a href="https://auburn-csm.symplicity.com/employers/?signin_tab=2" target="_blank">Click here to create a new employer account.</a></li>
-        <li>Complete your company profile.</li>
-        <li>You may select “All Majors” under the Majors Recruited section.</li>
-        <li>Submit.</li>
-        <li>Allow at least one business day for the Career Center to verify your registration.</li>
-      </ol>
-    </div>
-    <div class="flex-third padded">
+    <div class="flex-two-thirds padded">
       <h3>Post jobs</h3>
+      <p>Once registered, follow the steps below to post your position(s):</p>
       <ol>
-        <li><a href="https://auburn-csm.symplicity.com/employers/index.php?signin_tab=0">Click here to log in.</a><br/><span class="muted">Username: your email address<br/>Password: will be emailed to you</span></li>
-        <li>Navigate to the Jobs tab and click "Add New."</li>
-        <li>Select “Post to this school only.”</li>
-        <li>Complete job description and submit.<br /><span class="muted">To re-open an old posting, select “Show Archived” under the Copy Existing category.</span></li>
+        <li><a href="https://auburn.joinhandshake.com/login">Log in</a> and click the “Jobs” tab on the left side navigation bar.</li>
+        <li>Select “New Job” in the upper right hand corner.</li>
+        <li>Complete the job description.</li>
+        <li>Select “Create Job” at the end of form.</li>
+        <li>Select “Update Qualification” to match it with qualified students.</li>
+        <li>Once finished, select “Post to Schools” and pick Auburn from your drop down menu.</li>
       </ol>
+      <p>And that's it! Your job opening will be submitted.</p>
     </div>
   </div>
 </section>
@@ -87,32 +107,3 @@ style:
   </div>
 </section>
 
-<section class="card">
-  <h3>Frequently Asked Questions</h3>
-  <div class="faq" id="faq">
-    {{#each off-campus-faq.question }}
-    <div class="accordion">
-      <a class="accordion-header flat-btn flat-btn--white faq-header collapsed"
-         role="tab" 
-         data-toggle="collapse" 
-         id="{{ id }}-heading"
-         href="#{{ id }}" 
-         aria-expanded="false" 
-         aria-controls="{{ id }}">
-        {{ question }}
-      </a>
-      <div style="height: 0px;"
-           role="tabpanel"
-           aria-expanded="false"
-           id="{{ id }}" 
-           aria-labelledby="{{ id }}-heading">
-        <div class="accordion-entry">
-          {{#each answer}}
-            <p>{{ this }}</p>
-          {{/each}}
-        </div>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-</section>
