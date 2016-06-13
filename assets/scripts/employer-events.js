@@ -17,5 +17,6 @@ events.controller('calendar-ctrl', ['$scope', '$http', function ($scope, $http) 
   .then(function (res) {
     calendar = new Calendar(res, 6, true, false)
     $scope.events = calendar.events
+    $scope.pastEvents = calendar.pastEvents
   })
 }])

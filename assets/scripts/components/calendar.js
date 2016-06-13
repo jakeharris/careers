@@ -11,9 +11,12 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
     
   var isOver = function (date) {
     var currentDate = new Date()
+    if(date['numerical-month'] < currentDate.getMonth() + 1) 
+      return true
     if(date['numerical-month'] == (currentDate.getMonth() + 1))
       if(date.day < currentDate.getDate())
-        return true;
+        return true
+    return false
   }
   var getRelativeMonth = function (month) {
     var currentMonth = new Date().getMonth() + 1
@@ -36,7 +39,31 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
     if(aRelativeMonth == bRelativeMonth) return a.date.day - b.date.day
     return aRelativeMonth - bRelativeMonth
   }
-  
+  var configureEmployerEvent = function (event, index, events) {
+    if('employer-event' in event) {
+      if(event.abbrev === undefined && event['employer-event'].registration !== undefined)
+        event.url = event['employer-event'].registration
+      else if (event.abbrev !== undefined) event.url = 'employers/events/' + event.abbrev + '.html'
+
+      if(this.img === undefined && event.abbrev !== undefined) {
+        this.img = 'assets/images/events/' + event.abbrev + '-slide.png'
+        this.url = 'employers/events/' + event.abbrev + '.html'
+      }
+
+      if(
+        event.cost !== undefined
+        && event.cost['early-bird-deadline']
+        && new Date(event.cost['early-bird-deadline']) >= new Date()
+      )
+        event.cost = event.cost['early-bird']
+
+      else if (event.cost !== undefined) 
+        event.cost = event.cost.standard
+
+      if(event.cost !== undefined && event.cost === '0')
+        event.cost = '0 (Free)'
+    }
+  }
   
   this.events = res.data.filter(function (el) {
     if('__HOW-TO' in el) return false
@@ -51,32 +78,23 @@ function Calendar (res, monthsOut, employerMode, staticMode) {
     else
       return (!isOver((el.dates) ? el.dates.end : el.date))
   }).sort(byRelativeImmediacy)
+  
+
 
   if(employerMode) {
-    this.events.forEach(function (event, index, events) {
-      if('employer-event' in event) {
-        if(event.abbrev === undefined && event['employer-event'].registration !== undefined)
-          event.url = event['employer-event'].registration
-        else if (event.abbrev !== undefined) event.url = 'employers/events/' + event.abbrev + '.html'
-        
-        if(this.img === undefined && event.abbrev !== undefined) {
-          this.img = 'assets/images/events/' + event.abbrev + '-slide.png'
-          this.url = 'employers/events/' + event.abbrev + '.html'
-        }
-        
-        if(
-          event.cost !== undefined
-          && event.cost['early-bird-deadline']
-          && new Date(event.cost['early-bird-deadline']) >= new Date()
+    this.pastEvents = res.data.filter(function (el) {
+      if('__HOW-TO' in el) return false
+      console.log(typeof(el.dates) !== 'undefined')
+      console.log(el.date)
+      return ('employer-event' in el) && 
+        (isOver(
+          (typeof(el.dates) !== 'undefined') ? 
+            el.dates.end : el.date
         )
-          event.cost = event.cost['early-bird']
-          
-        else if (event.cost !== undefined) 
-          event.cost = event.cost.standard
-          
-        if(event.cost !== undefined && event.cost === '0')
-          event.cost = '0 (Free)'
-      }
-    }.bind(this))
+      )
+    })
+    
+    this.events.forEach(configureEmployerEvent.bind(this))
+    this.pastEvents.forEach(configureEmployerEvent.bind(this))
   }
 }
