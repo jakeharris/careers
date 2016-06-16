@@ -10,11 +10,23 @@ layout: no-social.hbs
 style:
 - attributes
 ---
-<section class="card card--full-width unpadded marginless">
-  <img src="assets/images/about-auburn.png" 
+<section class="card marginless unpadded">
+  <img class="hidden--unless-desktop"
+       src="assets/images/about-auburn.png" 
        alt="Auburn Unversity Enrollment Statistics for the 2015-2016 Academic Year: 27,287 total students. 50% male, 50% female (200 more males). 21,768 students were undergraduate students, with 4,398 graduate students and 1,103 professional students.">
+  <div class="hidden--unless-mobile padded">
+    <h1>Auburn University Enrollment Statistics</h1>
+    <h2 class="muted">2015-2016</h2>
+    <ul>
+      <li>27,287 total students</li>
+      <li>50% male, 50% female</li>
+      <li>21,768 undergraduate students</li>
+      <li>4,398 graduate students</li>
+      <li>1,103 professional students</li>
+    </ul>
+  </div>
 </section>
-<section class="card card--full-width marginless blue">
+<section class="card marginless blue">
   <h1>Student Life</h1>
   <div class="attributes">
     <div class="attribute">
@@ -39,7 +51,7 @@ style:
     </div>
   </div>
 </section>
-<section class="card card--full-width marginless orange">
+<section class="card marginless orange">
   <h1>Logistics</h1>
   <div class="attributes">
     <div class="attribute">
