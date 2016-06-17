@@ -14,9 +14,9 @@ style:
 ---
 <section class="card unpadded events-wrapper" ng-controller="calendar-ctrl">
   <h2 class="events-title">Event Registration</h2>
-  <p ng-if="events.length % 2 === 0" class="blurb">Click any event to get more information and register.</p>
+  <p ng-if="events.length % 2 === 0" class="blurb">Registration will open July 11, 2016.</p>
   <ul class="events flex">
-    <li ng-if="events.length % 2 !== 0" class="event event--blurb">Click any event to get more information and register.</li>
+    <li ng-if="events.length % 2 !== 0" class="event event--blurb">Registration will open July 11, 2016.</li>
     <li class="event" ng-repeat="event in events">
       <a class="event-link" href="[[ event.url ]]">
         <h3>[[ event.name ]]</h3>

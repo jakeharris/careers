@@ -380,6 +380,10 @@
           "link": "materials"
         },
         {
+          "name": "Mechanical Engineering",
+          "link": "mechanical"
+        },
+        {
           "name": "Software Engineering",
           "link": "software"
         },
