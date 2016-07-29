@@ -6,11 +6,8 @@ h3 {
 .card.banner p {
   font-family: $body-font-family;
 }
-.login, .point-of-contact {
+.point-of-contact {
   height: 100%;
-}
-.login {
-  align-self: flex-start;
 }
 .quick-guide .card {
   margin: 0;
@@ -26,8 +23,17 @@ h3 {
 ol li {
   list-style: decimal;
 }
-
-// how-to-hire guide (on-campus only)
+.advice .buttons .flex-half {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+@media (min-width: $small-screen-width) {
+  .advice .buttons .flex-half {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+// how-to-hire guide (on-campus only) 
 .content--guide {
   overflow: visible;
 }

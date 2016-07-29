@@ -1,0 +1,74 @@
+@import 'partials/variables';
+
+main {
+  max-width: none;
+  width: 100%;
+  margin-top: 6px;
+}
+main ul {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  li {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
+img.hidden--unless-desktop {
+  padding-bottom: $content-division;
+}
+
+.card h1, .card h2 {
+  text-align: center;
+}
+.card .hidden--unless-mobile h2 {
+  font-size: 5rem;
+}
+
+.attributes {
+  justify-content: center;
+  display: flex;
+  .attribute {
+    flex-basis: auto;
+    width: auto;
+    .icon {
+      background-color: white;
+      color: $thisislightblue;
+      &:hover {
+        background-color: $thisisdarkblue;
+        color: white;
+      }
+    }
+  }
+}
+.card.blue {
+  background-color: $thisislightblue;
+  color: white;
+  h1 {
+    color: white;
+  }
+}
+.card.orange {
+  background-color: $thisislightorange;
+  color: white;
+  h1 {
+    color: white;
+  }
+  .attributes .attribute .icon {
+    color: $thisislightorange;
+    &:hover {
+      background-color: $thisisburntorange;
+      color: white;
+    }
+  }
+}
+.icon-automobile::before {
+  margin-left: -4px;
+}
+.icon-bank::before {
+  margin-left: -2px;
+}
+footer {
+  margin-top: 0;
+}

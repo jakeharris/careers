@@ -1,0 +1,468 @@
+
+
+<!doctype html>
+<html lang="en" ng-app="career-center-employer-events">
+
+  <head>
+  <base href="../../">
+  <!-- Meta Data -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta http-equiv="cache-control" content="no-cache" />
+  <title>Communication and Media Career Day</title>
+
+  <!-- App styles -->
+<link rel="stylesheet" href="assets/styles/app.css">
+
+<!-- Style modules -->
+
+
+
+  
+
+  
+
+ 
+  <link rel="stylesheet" href="assets/styles/event-banner-card.css">
+ 
+  <link rel="stylesheet" href="assets/styles/contact.css">
+ 
+  <link rel="stylesheet" href="assets/styles/point-of-contact.css">
+ 
+  <link rel="stylesheet" href="assets/styles/attributes.css">
+ 
+  <link rel="stylesheet" href="assets/styles/popover.css">
+ 
+  <link rel="stylesheet" href="assets/styles/accordion.css">
+
+
+<!-- Page-specific styles -->
+<link rel="stylesheet" href="assets/styles/employer-event-pages.css">
+  <!-- Less Than IE9 Support of HTML5 and CSS Media Queries -->
+<!--[if lt IE 9]>
+  <script src="//cdn.auburn.edu/assets/js/html5shiv.js"></script>
+  <script src="//cdn.auburn.edu/assets/js/respond.src.js"></script>
+  <link href="//cdn.auburn.edu/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
+  <link href="//cdn.auburn.edu/assets/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
+  <script src="//cdn.auburn.edu/assets/js/respond.proxy.js"></script>
+<![endif]-->
+<!--[if lte IE 9]>
+  <script src="http://auburn.edu/career/assets/scripts/flexie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+  <style>
+    nav.header .nav-wrapper ul li,
+    nav.header .mobile-nav--active.nav-wrapper ul li {
+      width: 16%;
+      display: inline-block;
+    }
+    nav.header .nav-wrapper ul ul,
+    nav.header .mobile-nav--active.nav-wrapper ul ul {
+      width: 400%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    nav.header .nav-wrapper ul ul li,
+    nav.header .mobile-nav--active.nav-wrapper ul ul li {
+      width: 32%;
+    }
+    @media (min-width: 768px) {
+      nav.header .nav-wrapper ul ul,
+      nav.header .mobile-nav--active.nav-wrapper ul ul {
+        width: 100%;
+      }
+    }
+  </style>
+<![endif]-->
+<!--[if IE]>
+  <style>
+    /* IE SVG hotfix */
+    img,
+    #cc-carousel.carousel > .carousel-inner > .item > img,
+    #cc-carousel.carousel > .carousel-inner > .item > a > img {
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+  <!-- Favicons -->
+<link 
+      rel="apple-touch-icon-precomposed" 
+      sizes="144x144" 
+      href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-144-precomposed.png">
+<link 
+      rel="apple-touch-icon-precomposed" 
+      sizes="114x114" 
+      href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-114-precomposed.png">
+<link 
+      rel="apple-touch-icon-precomposed" 
+      sizes="72x72" 
+      href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-72-precomposed.png">
+<link 
+      rel="apple-touch-icon-precomposed" 
+      href="https://www.auburn.edu/template/2013/assets/ico/apple-touch-icon-57-precomposed.png">
+<link 
+      rel="shortcut icon" 
+      href="https://www.auburn.edu/template/2013/assets/ico/favicon.png">
+  <!-- Angular & Core JS -->
+
+  
+    
+      
+        
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" defer></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js" defer></script>
+        
+      
+    
+  
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" defer></script> 
+<script src="//cdn.auburn.edu/assets/js/default.min.js" defer></script>
+
+<script src="assets/scripts/components/nav.js" defer></script>
+<script src="assets/scripts/components/touch-start.js" defer></script>
+
+  <script src="assets/scripts/components/price.js" defer></script>
+  
+
+  <script src="assets/scripts/components/popover.js" defer></script>
+  
+
+<script src="assets/scripts/employer-event-pages.js" defer></script>
+<script src="assets/scripts/emp-cmcd.js" defer></script>
+
+
+</head>
+
+  <body>
+    <header role="banner">
+
+  <div class="title flex">
+    <a class="logo-ribbon" href="http://auburn.edu"></a>
+    <h1><a href=".">Career Center</a></h1>
+  </div>
+  
+  <a class="nav-controller icon-navicon"></a>
+  <nav class="main">
+    <ul>
+      <li class="students hover">
+        <a href="students/">Students</a>
+        <ul>
+          <li data-menu="students"><a href="students/">Undergraduate</a></li>
+          <li data-menu="students"><a href="students/graduate.html">Graduate</a></li>
+          <li data-menu="students"><a href="students/alumni.html">Alumni</a></li>
+          <li data-menu="students"><a href="students/prospective.html">Prospective</a></li>
+          <li data-menu="students"><a href="students/specialized.html">Specialized Advice</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="parents/">Families</a>
+      </li>
+      <li>
+        <a href="faculty/">Faculty</a>
+      </li>
+      <li class="employers hover">
+        <a href="employers/">Employers</a>
+        <ul>
+          <li><a href="employers/aboutus/recruiting-contacts.html">Contacts</a></li>
+          <li><a href="employers/ocr.html">Recruiting</a></li>
+          <li><a href="employers/job-postings.html">Job Postings</a></li>
+          <li><a href="employers/events/">Event Registration</a></li>
+          <li><a href="employers/events/seoty.html">Awards</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="events/">Events</a>
+      </li>
+      <li class="about-us hover">
+        <a href="aboutus/">About Us</a>
+        <ul>
+          <li data-menu="about-us"><a href="aboutus/">Office Info</a></li>
+          <li data-menu="about-us"><a href="aboutus/staff.html">Staff</a></li>
+          <li data-menu="about-us"><a href="aboutus/plan-your-visit.html">Plan Your Visit</a></li>
+          <li data-menu="about-us"><a href="aboutus/campus-partners.html">Campus Partners</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <nav class="auburn">
+    <ul>
+        <li><a href="http://www.auburn.edu/main/sitemap.php">A-Z Index</a></li>
+        <li><a href="http://www.auburn.edu/map">Map</a></li>
+        <li><a href="http://www.auburn.edu/main/auweb_campus_directory.html">People Finder</a></li>
+        <li><a href="http://auaccess.auburn.edu/">AU Access</a></li>
+        <li>
+            <form action="http://search.auburn.edu" method="get">
+                <input type="search" placeholder="Search Auburn" name="q">
+            </form>
+        </li>
+    </ul>
+  </nav>
+</header>
+    <main>
+      
+<!-- Banner image -->
+<div class="event-banner-card">
+  <img src="assets/images/events/cmcd-banner.png"
+       alt="Communication & Media Career Day. March 8, 2016, 8am-3pm, in the Student Center Ballroom.">
+  <h2 class="img-replace">Comm & Media Career Day.</h2>
+  <h3 class="img-replace">March 8, 2016, 8am-3pm, in the Student Center Ballroom.</h3>
+  <div class="card" ng-controller="price-ctrl">
+    <div class="blurb flex">
+      <div class="flex-half">
+        <p>
+          Interested in recruiting students in Communication, Journalism, Public 
+          Relations, Radio, Television and Film, and/or Agricultural Communication? 
+          Come to Auburn to meet, network, and interview qualified students all in 
+          one day! 
+        </p>
+        <div class="point-of-contact">
+          <h3>Point of Contact</h3>
+          <div class="flex">
+            <img class="flex-third"
+                 src="assets/images/staff/melvin.jpg"
+                 alt="A picture of Melvin K. Smith.">
+            <div class="poc-info contact flex-two-thirds">
+              <p class="name">Melvin K. Smith</p>
+              <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
+              <p class="email"><a href="mailto:mks@auburn.edu">mks@auburn.edu</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions flex-half">
+        <a ng-if="price.now === price.standard" class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">Register <span ng-if="price.now === '0'">for Free</span><span ng-if="price.now !== '0'">($[[ price.now ]])</span></a>
+        <div ng-if="price.now === price.earlyBird" class="flat-btn--with-info">
+          <a class="flat-btn" href="https://auburn-csm.symplicity.com/events/cmcdsp16">
+            Register ($[[ price.now ]])
+          </a>
+          <a class="flat-btn--info"
+             data-html="true" 
+             data-trigger="hover" 
+             data-placement="top" 
+             data-toggle="popover" 
+             data-title="<h2>Early Bird Pricing</h2>" 
+             data-content="<p>Register before [[ price.earlyBirdDeadline ]] to receive our special Early Bird price of $[[ price.earlyBird ]]!</p><p>Regular registration price of $[[ price.standard ]] applies after this date.</p>">
+            ?</a>
+        </div> 
+        <div class="tipsheet">
+          <div class="tipsheet-wrapper">
+            <p>Download the tipsheet for detailed information about:</p>
+            <ul class="flex">
+              <li class="flex-half">Payment</li>
+              <li class="flex-half">Shipping</li>
+              <li class="flex-half">Space &amp; Equipment</li>
+              <li class="flex-half">Display Guidelines</li>
+            </ul>
+          </div>
+          <a class="flat-btn" href="assets/images/events/cmcd.pdf">Download Tip Sheet</a>
+        </div>
+        <a class="flat-btn flat-btn--white" href="https://auburn-csm.symplicity.com/events/index.php?id=683d1dcae6cb1bb7cb58a4bc6a7ed2b1#/events/683d1dcae6cb1bb7cb58a4bc6a7ed2b1/employers">View Attending Employers</a>
+      </div>
+    </div>
+    <div class="attributes">
+      <div class="attribute">
+        <a class="icon parking" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" title="<h2>Priority Parking <p class='muted'>Stadium Parking Deck</p></h2>" data-content="<p>The last page of this event's tip sheet is a parking permit for the Stadium Parking Deck, only valid for the day of the event. Parking there is free and convenient, but limited, so plan to arrive early enough to snag a spot.</p>">
+          <i class="icon-automobile"></i>
+        </a>
+        <div class="details">
+          Limited Priority Parking
+        </div>
+      </div>
+      <div class="attribute">
+        <!-- 
+          This SHOULD all be automated, but Angular and Popover weren't playing well 
+          (Popover reads everything before Angular gets a chance to set up and populate), 
+          and I couldn't get the cost in the title to render, so you'll need to keep this 
+          up to date manually.  
+        -->
+        <a class="icon dress" role="button" tabindex="0" data-html="true" data-trigger="hover" data-placement="top" data-toggle="popover" data-title="<h2>Early Bird Pricing</h2>" data-content="<p>If you register before [[ price.earlyBirdDeadline ]], you save $[[ price.savings ]] on your registration fee (per table)!</p>">
+          <i class="icon-star-full"></i>
+        </a>
+        <div class="details">
+          Early Bird Pricing
+        </div>
+      </div>
+      <div class="attribute">
+        <a class="icon population">
+          <i class="icon-spoon-knife"></i>
+          <span class="tooltip hover"></span>
+        </a>
+        <div class="details">Lunch Provided</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card accordion-container">
+  <div class="cancellation-accordion accordion">
+    <a class="collapsed accordion-header" data-toggle="collapse" id="cancellation-heading" href="#cancellation" role="tab" aria-expanded="false" aria-controls="cancellation">
+      Cancellation Policy<i></i>
+    </a>
+    <div style="height: 0px;" aria-expanded="false" id="cancellation" class="panel-collapse collapse" role="tabpanel" aria-labelledby="cancellation-heading">
+      <div class="cancellation-policy">
+        <div class="cancellation-policy-brief">
+          <p>In brief:</p>
+          <ul>
+            <li>No refunds for cancellations after Friday, February 26, 2016</li>
+            <li>One half of the registration fee ($75 for Early Bird registrants) is charged for all cancellations prior to the deadline date whether the registration fee is paid in advance or not</li>
+            <li>If your organization is registered for the event and no one shows up, your organization is expected to pay the balance due</li>
+            <li>Registration fees cannot be applied to future events</li>
+          </ul>
+        </div>
+        <div class="contacts">
+          <div class="point-of-contact">
+            <h3>To cancel, contact</h3>
+            <div class="flex">
+              <div class="flex-third">
+                <img src="assets/images/staff/diane.jpg"
+                     alt="Diane Thorne.">
+              </div>
+              <div class="poc-info contact flex-two-thirds">
+                <p class="name">Diane Thorne</p>
+                <p class="phone"><a href="tel:(334) 844-3862">(334) 844-3862</a></p>
+                <p class="email"><a href="mailto:thornde@auburn.edu">thornde</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="point-of-contact">
+            <h3>Direct all other inquiries to</h3>
+            <div class="flex">
+              <div class="flex-third">
+                <img src="assets/images/staff/melvin.jpg"
+                     alt="Melvin K. Smith.">
+              </div>
+              <div class="poc-info contact flex-two-thirds">
+                <p class="name">Melvin K. Smith</p>
+                <p class="phone"><a href="tel:(334) 844-4744">(334) 844-4744</a></p>
+                <p class="email"><a href="mailto:mks@auburn.edu">mks</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="flat-btn flat-btn--disabled" disabled>View Detailed Cancellation Policy</a>
+    </div>
+  </div>
+</div>
+<div class="card accordion-container">
+  <div class="parking-accordion accordion">
+    <a class="collapsed accordion-header" data-toggle="collapse" id="parking-heading" href="#parking" role="tab" aria-expanded="false" aria-controls="parking">
+      Parking<i></i>
+    </a>
+    <div style="height: 0px;" aria-expanded="false" id="parking" class="panel-collapse collapse" role="tabpanel" aria-labelledby="parking-heading">
+      <div class="parking-information">
+        <a href="http://auburn.edu/map?id=304">
+          <img alt="Student Center parking map."
+               src="assets/images/events/parking/student-center.png"></a>
+        <div class="hotel-parking">
+          <div class="parking-instruction">
+            <h2>Stadium Parking Deck</h2>
+            <p>
+              Space atop the Stadium Parking Deck has been reserved for representatives to park in. 
+              It is on a first come first serve basis. It is fairly limited! Upon your arrival, 
+              please remember to place your parking pass atop your dashboard in a manner visible from
+              the outside of the vehicle. 
+            </p>
+            <p>
+              A parking pass will be emailed one week prior to 
+              the event, and is also available by printing the
+              last page of the tip sheet.
+<!--              last page of the <a href="employers/events/Tips_GPSF(F15).pdf">tip sheet</a>.-->
+            </p>
+          </div>
+          <div class="parking-instruction">
+            <h2>Event Location: Student Center</h2>
+            <p>
+              The Student Center is the location of the event. Its proximity to the Stadium Parking Deck
+              is just another reason why you'll want to arrive early. 
+            </p>
+            <p>
+              Note: there is <strong>no</strong> parking at the Student Center.
+            </p>
+          </div>
+          <div class="parking-instruction">
+            <h2>Questions? Ask Parking Services</h2>
+            <p>
+              The Auburn University Parking Services office is located in the South Quad Parking Deck.
+              If you have any questions or concerns concerning your ability to park, don't hesitate to
+              <a href="tel:334.844.4143">call them at (334) 844 4143</a> or visit the office directly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a class="flat-btn accommodations" href="https://booking.ihotelier.com/istay/istay.jsp?hotelid=6493&identifier=WEPART">Accommodations</a>
+    </main>
+    <footer>
+  <div class="footer-wrap">
+    <section>
+      <h6>Our Office</h6>
+      <address>
+        <ul>
+          <li>
+            <span class="footer-address beforecon">
+              <a href="http://auburn.edu/map/?id=76">
+                303 Martin Hall
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="footer-phone beforecon">
+              <a href="tel:(334) 844-4744">
+                (334) 844-4744
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="footer-email beforecon">
+              <a href="aucc@auburn.edu">
+                aucc@auburn.edu
+              </a>
+            </span>       
+          </li>
+        </ul>
+      </address>
+    </section>
+    <section>
+      <h6>Tools</h6>
+      <ul>
+        <li><a href="events">Career Events</a></li>
+        <li><a href="pathways">Pathways: Major Guides</a></li>
+        <li><a href="resume">Resume Review</a></li>
+        <li><a href="http://jobs.auburn.edu">Tiger Recruiting Link</a></li>
+      </ul>
+    </section>
+    <section>
+      <h6>Beyond</h6>
+      <ul>
+        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/">Office of Undergraduate Studies</a></li>
+        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/academicadvising.html">Academic Advisors</a></li>
+        <li><a href="http://www.auburn.edu/academic/provost/undergrad_studies/majors/">Majors/Academic Departments</a></li>
+        <li><a href="http://www.auburn.edu/academicsupport">Academic Support Services</a></li>
+      </ul>
+    </section>
+    <p class="copyright">Copyright <a href="https://sites.auburn.edu/academic/provost/us/CareerCenter/SitePages/Home.aspx">Auburn University Career Center</a>, <script type="text/javascript">document.write(new Date().getFullYear())</script>.</p>
+  </div>
+</footer>
+
+  </body>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12338791-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

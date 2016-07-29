@@ -118,7 +118,7 @@ nav.main {
   li {
     min-width: 16%;
     flex: 1;
-    order: 3;
+    order: 4;
     
     background-color: $thisislightblue;
     cursor: pointer;
@@ -167,6 +167,9 @@ nav.main {
   }
   &:not(.main--mobile) .about-us ul {
     margin-left: -500%; 
+  }
+  &:not(.main--mobile) .employers ul {
+    margin-left: -100%;
   }
   &:not(.main--mobile) .part-time-employment ul {
     margin-left: -100%; 
@@ -235,6 +238,9 @@ nav.main--mobile {
   }
   .students {
     order: 2;
+  }
+  .employers {
+    order: 3;
   }
 }
 @media (min-width: $tiny-screen-width) {

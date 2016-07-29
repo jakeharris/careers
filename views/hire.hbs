@@ -17,17 +17,21 @@ style:
 - login
 - employer-calendar
 - popover
+- attributes
+- point-of-contact
+- contact
 ---
 
 <section class="flex login-recruiting">
-  <div class="card flex-half login">
-    <div class="login-wrapper">
-      <h2>Sign in to <a href="https://auburn-csm.symplicity.com/employers/" class="trl"></a></h2>
-      <p class="login-blurb">Your link to Auburn students.</p>
+  <div class="login card padded flex-half">
+    <div class="login-container watermarked">
+      <i class="watermark icon-compass"></i>
+      <img class="handshake" src="assets/images/handshake.png" alt="Handshake (formerly TRL)">
+      <p>A platform for student &amp; employer connection.</p>
       <div class="buttons">
-        <a class="flat-btn" href="https://auburn-csm.symplicity.com/employers/">Sign in</a>
-        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/employers/policiesprocedures_emp.html">View policies</a>
-        <a class="flat-btn flat-btn--half flat-btn--white" href="http://auburn.edu/career/jobs/tipsheets.html">View tips</a>
+        <a class="flat-btn flex-half" href="https://auburn.joinhandshake.com/login">Sign in</a>
+        <a class="flat-btn flex-half" href="https://auburn.joinhandshake.com/register">Register</a>
+        <a class="flat-btn flat-btn--white" href="http://support.joinhandshake.com/?b_id=10287">Contact Handshake Support</a>
       </div>
     </div>
   </div>
@@ -48,96 +52,61 @@ style:
     <p>
       <a href="mailto:skipworth@auburn.edu">Jay Skipworth</a>, Assistant Director of Employer Relations
     </p>
-    <a class="flat-btn" 
-       role="button" 
-       tabindex="0"
-       data-toggle="popover" 
-       data-html="true" 
-       data-placement="top" 
-       data-trigger="click" 
-       data-title="Auburn University"
-       data-content="<ul>
-                      <li>One of the largest universities in the south</li>
-                      <li>Fall 2015 enrollment: 27,287</li>
-                      <li>140 degree options</li>
-                      <li>13 schools and colleges</li>
-                      <li>Undergraduate, graduate, and professional degree options</li>
-                     </ul>">
-      Learn about Auburn University
-    </a>
   </div>
 </section>
 
 <section class="flex">
   <div class="card unpadded services">
-    <div class="padded services-content">
+    <div class="padded">
       <h2>
         Our Services
       </h2>
-      <ul class="services-list flex">
-        <li class="service flex-half">
-          <a href="employers/job-postings.html">Job Postings</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/events/">Career Events</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/student-employment/on-campus.html">On-Campus Employment</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/ocr.html#oci">On-Campus Interviewing</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/student-employment/off-campus.html">Off-Campus Employment</a>
-        </li>
-        <li class="service flex-half">
-          <a href="employers/ocr.html#info-sessions">Information Sessions</a>
-        </li>
-      </ul>
-    </div>
-    <a class="flat-btn disabled" disabled="disabled">Report Hiring</a>
-  </div>
-</section>
-
-<section class="card unpadded events-wrapper" ng-controller="calendar-ctrl">
-  <h2 class="events-title">Event Registration</h2>
-  <p ng-if="events.length % 2 === 0" class="blurb">Registration will open July 11, 2016.</p>
-  <ul class="events flex">
-    <li ng-if="events.length % 2 !== 0" class="event event--blurb">Registration will open July 11, 2016.</li>
-    <li class="event" ng-repeat="event in events">
-      <a class="event-link" ng-attr-href="[[ event.url || undefined ]]">
-        <h3>[[ event.name ]]</h3>
-        <div class="event-details">
-          <div class="event-when">
-            <div ng-if="event.dates" class="event-date"><span ng-if="event.dates.start">[[ event.dates.start ]] - </span>[[ event.dates.end ]]</div>
-            <div ng-if="event.dates === undefined" class="event-date">
-              [[ event.date.month ]] [[ event.date.day ]]
-            </div>
-            <div ng-if="event.date.time === undefined || event.date.time.start === ''" class="event-time">
-              All day
-            </div>
-            <div ng-if="event.date.time.start !== '' && event.date.time.start !== undefined" class="event-time">
-              [[ event.date.time.start ]] - [[ event.date.time.end ]]
-            </div>
-          </div>
-          <div class="event-cost" ng-if="event.cost">
-            $[[ event.cost ]]
-          </div>
+      <p>Log in to Handshake to access these services.</p>
+      <div class="attributes">
+        <div class="attribute">
+          <a class="icon format" href="employers/events/">
+            <i class="icon-calendar"></i>
+          </a>
+          <div class="details">Career events</div>
         </div>
-      </a>
-    </li>
-  </ul>
-</section>
-
-
-<div class="card sponsors">
-  <h2  class="sponsors-header">Sponsors</h2>
-  <div class="sponsors-content" ng-controller="sponsors-ctrl">
-    <div class="sponsor" ng-repeat="sponsor in sponsors">
-      <span class="vert-centerer"></span>
-      <a href="[[ sponsor.url ]]">
-        <img lazy-img="assets/images/sponsors/[[ sponsor.logo ]]" class="grayscale grayscale-fade" alt="[[ sponsor.company ]]">
-      </a>
+        <div class="attribute">
+          <a class="icon dress" href="employers/part-time-employment.html">
+            <i class="icon-tie"></i>
+          </a>
+          <p class="details">
+            Part-time employment
+          </p>
+        </div>  
+        <div class="attribute">
+          <a class="icon majors" href="employers/recruiting.html">
+            <i class="icon-interviewer"></i>
+          </a>
+          <div class="details">Recruiting</div>
+        </div>
+        <div class="attribute">
+          <a class="icon majors" href="employers/info-sessions.html">
+            <i class="icon-ellipsis-glass"></i>
+          </a>
+          <div class="details">Info sessions</div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<section class="flex flex--wrap recruiting" id="recruiting-contacts">
+  <h2 class="card flex-item">Recruiting Contacts</h2>
+  {{#each recruiting.contact}}
+    <div class="point-of-contact flex-third card unpadded">
+      <h3 class="major separated">{{major}}</h3>
+      <div class="flex flex--wrap padded">
+        <img src="assets/images/staff/{{getImageName name}}.jpg" alt="{{name}}">
+        <div class="poc-info contact flex-item">
+          <h2>{{getFirstName name}}<br/>{{getLastName name}}</h2>
+          <h3 class="phone"><a href="tel:{{formatPhoneNumber phone}}">{{formatPhoneNumber phone}}</a></h3>
+          <h3 class="email"><a href="mailto:{{email}}@auburn.edu">{{email}}</a></h3>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</section>

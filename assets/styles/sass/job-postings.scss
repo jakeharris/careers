@@ -4,6 +4,13 @@ h3 {
   font-size: $header-font-size;
 }
 
+.recruiting-welcome {
+  align-items: flex-start;
+  .login {
+    align-self: flex-start;
+  }
+}
+
 .buttons--no-margin {
   margin: 0;
   .flat-btn {

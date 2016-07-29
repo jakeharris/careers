@@ -2,10 +2,13 @@
 
 // TRL LOGIN
 .login {  
+  display: flex;
   justify-content: center;
-  align-self: center;
+  align-self: stretch;
+  align-items: center;
   position: relative;
   -ms-flex-negative: 1;
+  height: auto;
   
   h2, h3, p {
     text-align: center; 
@@ -19,6 +22,7 @@
 }
 .login-container {
   display: block;
+  flex-wrap: wrap;
   margin: auto;
   width: 100%;
 }
@@ -41,25 +45,10 @@
   }
 }
 
-.trl {
+.handshake {
   position: relative;
   z-index: 1;
 }
-.trl::before {
-  content: 'TRL';
-}
-@media (min-width: $tiny-screen-width) {
-  .trl::before {
-    content: 'Tiger Recruiting Link'; 
-  }
-}
-@media (min-width: $medium-screen-width) {
-  .trl::before {
-    content: 'TRL'; 
-  }
-}
-@media (min-width: $moderate-screen-width) {
-  .trl::before {
-    content: 'Tiger Recruiting Link';
-  }
+.handshake::before {
+  content: 'Handshake';
 }
